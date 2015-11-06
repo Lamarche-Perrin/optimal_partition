@@ -1,0 +1,214 @@
+\hypertarget{classGraph}{\section{Graph Class Reference}
+\label{classGraph}\index{Graph@{Graph}}
+}
+Inheritance diagram for Graph\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classGraph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGraph_a7e963f57fa2c368e79db1562112aed54}{{\bfseries Graph} (int size)}\label{classGraph_a7e963f57fa2c368e79db1562112aed54}
+
+\item 
+\hypertarget{classGraph_ae2f806a5d1fd576be15019f5386cc2e9}{void \hyperlink{classGraph_ae2f806a5d1fd576be15019f5386cc2e9}{set\-Random} ()}\label{classGraph_ae2f806a5d1fd576be15019f5386cc2e9}
+
+\begin{DoxyCompactList}\small\item\em Randomly set the algebraic constraints for quick experiments (warning\-: this method is not always implemented) \end{DoxyCompactList}\item 
+void \hyperlink{classGraph_a294aff8b11a1b11dae2b4cd39b78b91d}{set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Set the objective that one wants to optimise. \end{DoxyCompactList}\item 
+\hypertarget{classGraph_a2ecf3dd3c4897aa924da8e5c221a8509}{void \hyperlink{classGraph_a2ecf3dd3c4897aa924da8e5c221a8509}{print} ()}\label{classGraph_a2ecf3dd3c4897aa924da8e5c221a8509}
+
+\begin{DoxyCompactList}\small\item\em Print the set and its algebraic constraints. \end{DoxyCompactList}\item 
+\hypertarget{classGraph_a97b56f6ca766306c46778aab649acb93}{void {\bfseries add\-Edge} (int v1, int v2)}\label{classGraph_a97b56f6ca766306c46778aab649acb93}
+
+\item 
+\hypertarget{classGraph_aa68cd04b69f30175237dc951c14ed5ab}{void {\bfseries build\-From\-Binary} (int index)}\label{classGraph_aa68cd04b69f30175237dc951c14ed5ab}
+
+\item 
+\hypertarget{classGraph_a82a6e60e8156ce5920ab100301888df4}{bool {\bfseries are\-Adjacent} (int v1, int v2)}\label{classGraph_a82a6e60e8156ce5920ab100301888df4}
+
+\item 
+\hypertarget{classGraph_ac7e4433df9f5bf2daf9b656ca10a9447}{bool {\bfseries are\-Adjacent} (int v1, Vertices $\ast$v2)}\label{classGraph_ac7e4433df9f5bf2daf9b656ca10a9447}
+
+\item 
+\hypertarget{classGraph_a79fc06c760894df4a0672f8dd0cad813}{bool {\bfseries are\-Adjacent} (Vertices $\ast$v1, int v2)}\label{classGraph_a79fc06c760894df4a0672f8dd0cad813}
+
+\item 
+\hypertarget{classGraph_a9b9d58195496532784648a94d14a06ad}{bool {\bfseries are\-Adjacent} (Vertices $\ast$v1, Vertices $\ast$v2)}\label{classGraph_a9b9d58195496532784648a94d14a06ad}
+
+\item 
+\hypertarget{classGraph_a32d5402eb9ff745b679a2790142fae10}{bool {\bfseries are\-Adjacent} (int v1, V\-Vertices $\ast$v2)}\label{classGraph_a32d5402eb9ff745b679a2790142fae10}
+
+\item 
+\hypertarget{classGraph_ac4067cfdb2add845e54ace0dd90bac3c}{bool {\bfseries are\-Adjacent} (V\-Vertices $\ast$v1, int v2)}\label{classGraph_ac4067cfdb2add845e54ace0dd90bac3c}
+
+\item 
+\hypertarget{classGraph_a2e9ee0363fc146ad0681bdbaae99028b}{bool {\bfseries are\-Adjacent} (V\-Vertices $\ast$v1, V\-Vertices $\ast$v2)}\label{classGraph_a2e9ee0363fc146ad0681bdbaae99028b}
+
+\item 
+\hypertarget{classGraph_a44b45c4abab348e84369d0ebcbb2c120}{Vertices $\ast$ {\bfseries get\-Adjacent\-Vertices} (int v, int v\-Max=-\/1)}\label{classGraph_a44b45c4abab348e84369d0ebcbb2c120}
+
+\item 
+\hypertarget{classGraph_aee018750b2ee25ffee6f23a53d38d2bb}{void {\bfseries print\-Vertices} (Vertices $\ast$V)}\label{classGraph_aee018750b2ee25ffee6f23a53d38d2bb}
+
+\item 
+\hypertarget{classGraph_add6f4a13a70d1b15f370db0bd4669b90}{bool {\bfseries is\-Connected} ()}\label{classGraph_add6f4a13a70d1b15f370db0bd4669b90}
+
+\item 
+\hypertarget{classGraph_a269433faeb00d19be87c79569ecec4a0}{bool {\bfseries is\-Connected} (Vertices $\ast$V)}\label{classGraph_a269433faeb00d19be87c79569ecec4a0}
+
+\item 
+\hypertarget{classGraph_aea899acebf8ff5ed6ad466acb172e081}{void {\bfseries print\-Data\-Structure} (bool verbose=true)}\label{classGraph_aea899acebf8ff5ed6ad466acb172e081}
+
+\item 
+\hypertarget{classGraph_abfe064a8ae22d82ac4e3658c53ab6b4f}{Part\-Set $\ast$ {\bfseries get\-Parts} ()}\label{classGraph_abfe064a8ae22d82ac4e3658c53ab6b4f}
+
+\item 
+\hypertarget{classGraph_a96096076e108b089d6aad5f8552d81aa}{void {\bfseries print\-Parts} ()}\label{classGraph_a96096076e108b089d6aad5f8552d81aa}
+
+\item 
+\hypertarget{classGraph_a957d9c3a0bceddbec167d2eb63c3d447}{int {\bfseries print\-Partitions} (bool \hyperlink{classGraph_a2ecf3dd3c4897aa924da8e5c221a8509}{print}=true)}\label{classGraph_a957d9c3a0bceddbec167d2eb63c3d447}
+
+\item 
+\hypertarget{classGraph_a7714e4a70a69e7d78c2479f06970c453}{void \hyperlink{classGraph_a7714e4a70a69e7d78c2479f06970c453}{build\-Data\-Structure} ()}\label{classGraph_a7714e4a70a69e7d78c2479f06970c453}
+
+\begin{DoxyCompactList}\small\item\em Build a proper data structure to represent the set and its algebraic constraints (warning\-: this method should always be called after instantiating and parameterising a set, and before calling any other method, such as \hyperlink{classGraph_a2ecf3dd3c4897aa924da8e5c221a8509}{print()}, \hyperlink{classGraph_a237d09042d6411b64075e7b62bb5afaf}{compute\-Objective\-Values()}, compute\-Optimal\-Partition (double parameter), etc.) \end{DoxyCompactList}\item 
+\hypertarget{classGraph_a237d09042d6411b64075e7b62bb5afaf}{void \hyperlink{classGraph_a237d09042d6411b64075e7b62bb5afaf}{compute\-Objective\-Values} ()}\label{classGraph_a237d09042d6411b64075e7b62bb5afaf}
+
+\begin{DoxyCompactList}\small\item\em Compute the value of the objective function for each feasible part (warning\-: set\-Objective\-Function (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$objective) should have been called first) \end{DoxyCompactList}\item 
+\hypertarget{classGraph_ad475ae837e3a0ba750ea9e7975ff1887}{void \hyperlink{classGraph_ad475ae837e3a0ba750ea9e7975ff1887}{normalize\-Objective\-Values} ()}\label{classGraph_ad475ae837e3a0ba750ea9e7975ff1887}
+
+\begin{DoxyCompactList}\small\item\em Finish computing the value of the objective function for each feasible part when normalisation is required (warning\-: only after \hyperlink{classGraph_a237d09042d6411b64075e7b62bb5afaf}{compute\-Objective\-Values()} has been called) \end{DoxyCompactList}\item 
+\hypertarget{classGraph_a353894a995807b625cf5713e79696a9d}{void \hyperlink{classGraph_a353894a995807b625cf5713e79696a9d}{print\-Objective\-Values} ()}\label{classGraph_a353894a995807b625cf5713e79696a9d}
+
+\begin{DoxyCompactList}\small\item\em Print the value of the objective function for each feasible part. \end{DoxyCompactList}\item 
+\hypertarget{classGraph_a78cfa04d5b7ea02297ec5014cd4e3356}{void {\bfseries build\-Data\-Structure\-With\-Slyce} ()}\label{classGraph_a78cfa04d5b7ea02297ec5014cd4e3356}
+
+\item 
+\hypertarget{classGraph_aa8e39f9a9010d0a010098b5090913550}{void {\bfseries slyce} (V\-Vertices $\ast$R, V\-Vertices $\ast$F, int m)}\label{classGraph_aa8e39f9a9010d0a010098b5090913550}
+
+\item 
+\hypertarget{classGraph_a518d7674ed8a64999503eb42834d4dcc}{void {\bfseries enumerate\-Subsets} (V\-Vertices $\ast$R, V\-Vertices $\ast$F, int m, int n, V\-Vertices $\ast$T, int q, int r)}\label{classGraph_a518d7674ed8a64999503eb42834d4dcc}
+
+\item 
+void \hyperlink{classGraph_a484517e8cda854dbaf158d7bdae19fe7}{compute\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. \end{DoxyCompactList}\item 
+void \hyperlink{classGraph_a493dd2e19a08dd65ca49ac18944ad2cb}{print\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classGraph_a2ecf3dd3c4897aa924da8e5c221a8509}{print()} on the result) \end{DoxyCompactList}\item 
+\hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classGraph_a044d5401c498aa0c2d213986e7d747ca}{get\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classGraph_a2ecf3dd3c4897aa924da8e5c221a8509}{print()} on the result) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classGraph_a726d5df1025e915e8785b6522331b21c}{int {\bfseries size}}\label{classGraph_a726d5df1025e915e8785b6522331b21c}
+
+\item 
+\hypertarget{classGraph_a081d860caac68d343992620e0331e8ac}{Vertices $\ast$$\ast$ {\bfseries adjacency\-Sets}}\label{classGraph_a081d860caac68d343992620e0331e8ac}
+
+\item 
+\hypertarget{classGraph_a63a6b3665080e19df5eb58f774f45db7}{\hyperlink{classGraphComponent}{Graph\-Component} $\ast$$\ast$ {\bfseries graph\-Components}}\label{classGraph_a63a6b3665080e19df5eb58f774f45db7}
+
+\item 
+\hypertarget{classGraph_aa013b53bc5d8a3c39e535005d749afa7}{Graph\-Component\-Set $\ast$ {\bfseries graph\-Component\-Set}}\label{classGraph_aa013b53bc5d8a3c39e535005d749afa7}
+
+\item 
+\hypertarget{classGraph_a8fb82bdd92337f7d7504f4f3a0ddcf8b}{bool $\ast$ {\bfseries reached\-Vertices}}\label{classGraph_a8fb82bdd92337f7d7504f4f3a0ddcf8b}
+
+\item 
+\hypertarget{classGraph_ab992346e14cdaba017ba3bdc0db162de}{\hyperlink{classObjectiveValue}{Objective\-Value} $\ast$ {\bfseries value}}\label{classGraph_ab992346e14cdaba017ba3bdc0db162de}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classGraph_a484517e8cda854dbaf158d7bdae19fe7}{\index{Graph@{Graph}!compute\-Optimal\-Partition@{compute\-Optimal\-Partition}}
+\index{compute\-Optimal\-Partition@{compute\-Optimal\-Partition}!Graph@{Graph}}
+\subsubsection[{compute\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\-::compute\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGraph_a484517e8cda854dbaf158d7bdae19fe7}
+
+
+Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_acfc3004f18192f38e32bb7a5a12ec8df}{Abstract\-Set}.
+
+\hypertarget{classGraph_a044d5401c498aa0c2d213986e7d747ca}{\index{Graph@{Graph}!get\-Optimal\-Partition@{get\-Optimal\-Partition}}
+\index{get\-Optimal\-Partition@{get\-Optimal\-Partition}!Graph@{Graph}}
+\subsubsection[{get\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition} $\ast$ Graph\-::get\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGraph_a044d5401c498aa0c2d213986e7d747ca}
+
+
+Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classGraph_a2ecf3dd3c4897aa924da8e5c221a8509}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\-: The resulting optimal partition 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAbstractSet_a48fd08c4b61ed46946bed6e19cd11194}{Abstract\-Set}.
+
+\hypertarget{classGraph_a493dd2e19a08dd65ca49ac18944ad2cb}{\index{Graph@{Graph}!print\-Optimal\-Partition@{print\-Optimal\-Partition}}
+\index{print\-Optimal\-Partition@{print\-Optimal\-Partition}!Graph@{Graph}}
+\subsubsection[{print\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\-::print\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGraph_a493dd2e19a08dd65ca49ac18944ad2cb}
+
+
+Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classGraph_a2ecf3dd3c4897aa924da8e5c221a8509}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_a82a9ce5c2d30690f0d1b83b034e92e1e}{Abstract\-Set}.
+
+\hypertarget{classGraph_a294aff8b11a1b11dae2b4cd39b78b91d}{\index{Graph@{Graph}!set\-Objective\-Function@{set\-Objective\-Function}}
+\index{set\-Objective\-Function@{set\-Objective\-Function}!Graph@{Graph}}
+\subsubsection[{set\-Objective\-Function}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\-::set\-Objective\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf Objective\-Function} $\ast$}]{objective}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classGraph_a294aff8b11a1b11dae2b4cd39b78b91d}
+
+
+Set the objective that one wants to optimise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objective} & \-: The objective function itself \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}{Abstract\-Set}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/graph.\-hpp\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/graph.\-cpp\end{DoxyCompactItemize}

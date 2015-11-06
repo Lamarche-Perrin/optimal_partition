@@ -4,13 +4,13 @@
 #include <map>
 #include <vector>
 
-#include "constrained_set.hpp"
+#include "abstract_set.hpp"
 #include "partition.hpp"
 #include "datatree.hpp"
 
 extern bool VERBOSE;
 extern int VERBOSE_TAB;
-extern bool NORMALIZED_MEASURE;
+extern bool NORMALIZED_OBJECTIVE;
 extern double PARAMETER;
 
 typedef std::set<int> Vertices;
@@ -24,7 +24,7 @@ class GraphComponent;
 typedef std::set<GraphComponent*> GraphComponentSet;
 
 
-class Graph: public ConstrainedSet
+class Graph: public AbstractSet
 {
 public:
     int size;
@@ -33,13 +33,13 @@ public:
     GraphComponentSet *graphComponentSet;
 
     bool *reachedVertices;
-    Quality *quality;
+    ObjectiveValue *value;
 	
     Graph (int size);
     ~Graph ();
 	
     void setRandom ();
-    void setMeasure (Measure *m);
+    void setObjectiveFunction (ObjectiveFunction *m);
     void print ();
 
     void addEdge (int v1, int v2);
@@ -66,9 +66,9 @@ public:
     int printPartitions (bool print = true);
 
     void buildDataStructure ();
-    void computeQuality ();
-    void normalizeQuality ();
-    void printQuality ();
+    void computeObjectiveValues ();
+    void normalizeObjectiveValues ();
+    void printObjectiveValues ();
 
     void buildDataStructureWithSlyce ();
     void slyce (VVertices *R, VVertices *F, int m);
@@ -98,9 +98,9 @@ public:
     void printDataStructure (bool verbose = true);
 		
     void buildDataStructure ();
-    void computeQuality ();
-    void normalizeQuality ();
-    void printQuality ();
+    void computeObjectiveValues ();
+    void normalizeObjectiveValues ();
+    void printObjectiveValues ();
 				
     void computeOptimalPartition (double parameter);
     void printOptimalPartition (double parameter);		

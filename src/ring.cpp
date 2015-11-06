@@ -24,11 +24,11 @@ Ring::Ring (int s)
 }
 
 
-void Ring::setMeasure (Measure *m) {}
+void Ring::setObjectiveFunction (ObjectiveFunction *m) {}
 void Ring::setRandom () {}
 
 
-ConstrainedSet *Ring::getRandomSet (int s)
+AbstractSet *Ring::getRandomSet (int s)
 {
 	Ring *set = new Ring(s);
 	for (int v = 0; v < set->size; v++) { set->values[v] = rand() % 1024; }
@@ -65,7 +65,7 @@ void Ring::print ()
 void Ring::buildDataStructure () {}
 
 
-void Ring::computeQuality ()
+void Ring::computeObjectiveValues ()
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -101,7 +101,7 @@ void Ring::computeQuality ()
 }
 
 
-void Ring::normalizeQuality ()
+void Ring::normalizeObjectiveValues ()
 {
 	double maxSizeReduction = sizeReductions[getIndex(0,size-1)];
 	double maxDivergence = divergences[getIndex(0,size-1)];
@@ -122,7 +122,7 @@ void Ring::normalizeQuality ()
 }
 
 
-void Ring::printQuality ()
+void Ring::printObjectiveValues ()
 {
 	for (int i = 0; i < size; i++)
 	{
@@ -159,10 +159,10 @@ void Ring::computeOptimalPartition (double parameter)
 			
 			for (int cut = i+1; cut <= j; cut++)
 			{
-			    double quality = optimalQualities[getIndex(i,cut-1)] + parameter * sizeReductions[getIndex(cut,j)] - (1-parameter) * divergences[getIndex(cut,j)];
-				if (quality > optimalQualities[getIndex(i,j)])
+			    double value = optimalQualities[getIndex(i,cut-1)] + parameter * sizeReductions[getIndex(cut,j)] - (1-parameter) * divergences[getIndex(cut,j)];
+				if (value > optimalQualities[getIndex(i,j)])
 				{
-					optimalQualities[getIndex(i,j)] = quality;
+					optimalQualities[getIndex(i,j)] = value;
 					optimalCuts[getIndex(i,j)] = cut;			
 				}
 			}
@@ -177,12 +177,12 @@ void Ring::computeOptimalPartition (double parameter)
 	{
 		for (int j = i; j < size-1; j++)
 		{
-			double quality = optimalQualities[getIndex(i,j)] + parameter * sizeReductions[getIndex(j+1,i-1)] - (1-parameter) * divergences[getIndex(j+1,i-1)];
-			if (quality > optimalQualities[getIndex(0,size-1)])
+			double value = optimalQualities[getIndex(i,j)] + parameter * sizeReductions[getIndex(j+1,i-1)] - (1-parameter) * divergences[getIndex(j+1,i-1)];
+			if (value > optimalQualities[getIndex(0,size-1)])
 			{	
 				firstOptimalCut = i;
 				lastOptimalCut = j;
-				optimalQualities[getIndex(0,size-1)] = quality;
+				optimalQualities[getIndex(0,size-1)] = value;
 			}
 		}
 	}

@@ -1,14 +1,14 @@
 #ifndef INCLUDE_ORDERED_SET
 #define INCLUDE_ORDERED_SET
 
-#include "constrained_set.hpp"
+#include "abstract_set.hpp"
 
-class OrderedSet: public ConstrainedSet
+class OrderedSet: public AbstractSet
 {
 	public:
 		int size;
 	
-		Quality **qualities;	
+		ObjectiveValue **qualities;	
 		double *optimalValues;
 		int *optimalCuts;
 	
@@ -18,13 +18,13 @@ class OrderedSet: public ConstrainedSet
 		int getIndex (int i, int j);
 
 		void setRandom ();
-		void setMeasure (Measure *m);
+		void setObjectiveFunction (ObjectiveFunction *m);
 		void print ();
 
 		void buildDataStructure ();
-		void computeQuality ();
-		void normalizeQuality ();
-		void printQuality ();
+		void computeObjectiveValues ();
+		void normalizeObjectiveValues ();
+		void printObjectiveValues ();
 
 		void computeOptimalPartition (double parameter);
 		void printOptimalPartition (double parameter);

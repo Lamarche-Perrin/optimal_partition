@@ -3,7 +3,7 @@
 
 #include <list>
 
-#include "measure.hpp"
+#include "objective_function.hpp"
 
 class Datatree;
 typedef std::set<int> Vertices;
@@ -19,11 +19,11 @@ class Part
 {
 public:
 	std::list<int> *individuals;
-	Quality *quality;
+	ObjectiveValue *value;
 	
-	Part (Quality *quality = 0);
+	Part (ObjectiveValue *value = 0);
 	Part (Part *part);
-	Part (Datatree *node, Quality *quality = 0);
+	Part (Datatree *node, ObjectiveValue *value = 0);
 	virtual ~Part ();
 	
 	void addIndividual (int i, bool front = false);
@@ -41,7 +41,7 @@ public:
 	Part *firstPart;
 	Part *secondPart;
 	
-	BiPart (Part *part1, Part *part2, Quality *quality = 0);
+	BiPart (Part *part1, Part *part2, ObjectiveValue *value = 0);
 	BiPart (BiPart *biPart);
 	~BiPart ();
 
@@ -57,7 +57,7 @@ public:
 	int dimension;
 	Part **partArray;
 	
-	HyperPart (Part **partArray, int dimension, Quality *quality = 0);
+	HyperPart (Part **partArray, int dimension, ObjectiveValue *value = 0);
 	HyperPart (HyperPart *hyperPart);
 	~HyperPart ();
 
@@ -72,9 +72,9 @@ class Partition
 public:
 	double parameter;
 	std::list<Part*> *parts;
-	Quality *quality;
+	ObjectiveValue *value;
 		
-	Partition (Measure *measure = 0, double parameter = 0);
+	Partition (ObjectiveFunction *objective = 0, double parameter = 0);
 	Partition (Partition *partition);
 	~Partition ();
 		

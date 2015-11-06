@@ -4,14 +4,14 @@
 #include <list>
 
 #include "structure.hpp"
-#include "constrained_set.hpp"
+#include "abstract_set.hpp"
 
 
 class Aggregate2D;
 typedef std::list<Aggregate2D*> Aggregate2DSet;
 typedef std::list<Aggregate2DSet*> Aggregate2DSetSet;
 
-class Structure2D: public ConstrainedSet
+class Structure2D: public AbstractSet
 {
 public:
 	Structure *structure1;
@@ -28,13 +28,13 @@ public:
 
 	void initReached ();
 	void setRandom ();
-	void setMeasure (Measure *m);
+	void setObjectiveFunction (ObjectiveFunction *m);
 	void print ();
 
 	void buildDataStructure ();
-	void computeQuality ();
-	void normalizeQuality ();
-	void printQuality ();
+	void computeObjectiveValues ();
+	void normalizeObjectiveValues ();
+	void printObjectiveValues ();
 
 	void computeOptimalPartition (double parameter);
 	void printOptimalPartition (double parameter);
@@ -55,8 +55,8 @@ public:
 	Aggregate2DSetSet *aggregateSetSet;
 	Structure2D *structure;
 
-	Measure *measure;
-	Quality *quality;
+	ObjectiveFunction *objective;
+	ObjectiveValue *value;
 	double optimalValue;
 	Aggregate2DSet *optimalCut;
 
@@ -66,12 +66,12 @@ public:
 	void print ();
 	void printIndexSet (bool endl = false);
 	void addAggregateSet (Aggregate2DSet *aggregateSet);
-	void setMeasure (Measure *m);
+	void setObjectiveFunction (ObjectiveFunction *m);
 
 	void buildDataStructure ();
-	void computeQuality ();
-	void normalizeQuality (Quality *maxQual = 0);
-	void printQuality ();
+	void computeObjectiveValues ();
+	void normalizeObjectiveValues (ObjectiveValue *maxQual = 0);
+	void printObjectiveValues ();
 
 	void computeOptimalPartition (double parameter);
 	void printOptimalPartition (double parameter);

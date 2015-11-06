@@ -4,14 +4,14 @@
 #include <list>
 
 #include "structure.hpp"
-#include "constrained_set.hpp"
+#include "abstract_set.hpp"
 
 
 class HyperAggregate;
 typedef std::list<HyperAggregate*> HyperAggregateSet;
 typedef std::list<HyperAggregateSet*> HyperAggregateSetSet;
 
-class HyperStructure: public ConstrainedSet
+class HyperStructure: public AbstractSet
 {
 public:
 	int dimension;
@@ -34,13 +34,13 @@ public:
 	
 	void initReached ();
 	void setRandom ();
-	void setMeasure (Measure *m);
+	void setObjectiveFunction (ObjectiveFunction *m);
 	void print ();
 
 	void buildDataStructure ();
-	void computeQuality ();
-	void normalizeQuality ();
-	void printQuality ();
+	void computeObjectiveValues ();
+	void normalizeObjectiveValues ();
+	void printObjectiveValues ();
 
 	void computeOptimalPartition (double parameter);
 	void printOptimalPartition (double parameter);
@@ -63,8 +63,8 @@ public:
 	HyperAggregateSetSet *aggregateSetSet;
 	HyperStructure *structure;
 
-	Measure *measure;
-	Quality *quality;
+	ObjectiveFunction *objective;
+	ObjectiveValue *value;
 	double optimalValue;
 	HyperAggregateSet *optimalCut;
 
@@ -74,12 +74,12 @@ public:
 	void print ();
 	void printIndexSet (bool endl = false);
 	void addAggregateSet (HyperAggregateSet *aggregateSet);
-	void setMeasure (Measure *m);
+	void setObjectiveFunction (ObjectiveFunction *m);
 
 	void buildDataStructure ();
-	void computeQuality ();
-	void normalizeQuality (Quality *maxQual = 0);
-	void printQuality ();
+	void computeObjectiveValues ();
+	void normalizeObjectiveValues (ObjectiveValue *maxQual = 0);
+	void printObjectiveValues ();
 
 	void computeOptimalPartition (double parameter);
 	void printOptimalPartition (double parameter);

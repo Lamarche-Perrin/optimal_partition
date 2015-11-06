@@ -1,0 +1,148 @@
+\hypertarget{classNonconstrainedOrderedSet}{\section{Nonconstrained\-Ordered\-Set Class Reference}
+\label{classNonconstrainedOrderedSet}\index{Nonconstrained\-Ordered\-Set@{Nonconstrained\-Ordered\-Set}}
+}
+Inheritance diagram for Nonconstrained\-Ordered\-Set\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNonconstrainedOrderedSet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNonconstrainedOrderedSet_a6651cd5e2b0993f58ec8b60adf98593d}{{\bfseries Nonconstrained\-Ordered\-Set} (int size1, int size2)}\label{classNonconstrainedOrderedSet_a6651cd5e2b0993f58ec8b60adf98593d}
+
+\item 
+\hypertarget{classNonconstrainedOrderedSet_a731b472b246c259509c6bc0175972aca}{void \hyperlink{classNonconstrainedOrderedSet_a731b472b246c259509c6bc0175972aca}{set\-Random} ()}\label{classNonconstrainedOrderedSet_a731b472b246c259509c6bc0175972aca}
+
+\begin{DoxyCompactList}\small\item\em Randomly set the algebraic constraints for quick experiments (warning\-: this method is not always implemented) \end{DoxyCompactList}\item 
+void \hyperlink{classNonconstrainedOrderedSet_a67a4a72a5e1bff3d46473757199455d9}{set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Set the objective that one wants to optimise. \end{DoxyCompactList}\item 
+\hypertarget{classNonconstrainedOrderedSet_a19a923ee00c1ea0bbf875b2166099b0e}{void \hyperlink{classNonconstrainedOrderedSet_a19a923ee00c1ea0bbf875b2166099b0e}{print} ()}\label{classNonconstrainedOrderedSet_a19a923ee00c1ea0bbf875b2166099b0e}
+
+\begin{DoxyCompactList}\small\item\em Print the set and its algebraic constraints. \end{DoxyCompactList}\item 
+\hypertarget{classNonconstrainedOrderedSet_a53251872f1e632d770c971ca74552533}{void \hyperlink{classNonconstrainedOrderedSet_a53251872f1e632d770c971ca74552533}{build\-Data\-Structure} ()}\label{classNonconstrainedOrderedSet_a53251872f1e632d770c971ca74552533}
+
+\begin{DoxyCompactList}\small\item\em Build a proper data structure to represent the set and its algebraic constraints (warning\-: this method should always be called after instantiating and parameterising a set, and before calling any other method, such as \hyperlink{classNonconstrainedOrderedSet_a19a923ee00c1ea0bbf875b2166099b0e}{print()}, \hyperlink{classNonconstrainedOrderedSet_a26d8952d918cbd549ae66d0e595c1b44}{compute\-Objective\-Values()}, compute\-Optimal\-Partition (double parameter), etc.) \end{DoxyCompactList}\item 
+\hypertarget{classNonconstrainedOrderedSet_a26d8952d918cbd549ae66d0e595c1b44}{void \hyperlink{classNonconstrainedOrderedSet_a26d8952d918cbd549ae66d0e595c1b44}{compute\-Objective\-Values} ()}\label{classNonconstrainedOrderedSet_a26d8952d918cbd549ae66d0e595c1b44}
+
+\begin{DoxyCompactList}\small\item\em Compute the value of the objective function for each feasible part (warning\-: set\-Objective\-Function (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$objective) should have been called first) \end{DoxyCompactList}\item 
+\hypertarget{classNonconstrainedOrderedSet_acf86c9802cb55ff5d41379b9de4f2b6b}{void \hyperlink{classNonconstrainedOrderedSet_acf86c9802cb55ff5d41379b9de4f2b6b}{normalize\-Objective\-Values} ()}\label{classNonconstrainedOrderedSet_acf86c9802cb55ff5d41379b9de4f2b6b}
+
+\begin{DoxyCompactList}\small\item\em Finish computing the value of the objective function for each feasible part when normalisation is required (warning\-: only after \hyperlink{classNonconstrainedOrderedSet_a26d8952d918cbd549ae66d0e595c1b44}{compute\-Objective\-Values()} has been called) \end{DoxyCompactList}\item 
+\hypertarget{classNonconstrainedOrderedSet_a23614dac2b35a8139612b48c25beb2d1}{void \hyperlink{classNonconstrainedOrderedSet_a23614dac2b35a8139612b48c25beb2d1}{print\-Objective\-Values} ()}\label{classNonconstrainedOrderedSet_a23614dac2b35a8139612b48c25beb2d1}
+
+\begin{DoxyCompactList}\small\item\em Print the value of the objective function for each feasible part. \end{DoxyCompactList}\item 
+void \hyperlink{classNonconstrainedOrderedSet_a1a880ae970c47446a370a4b4679b59f5}{compute\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. \end{DoxyCompactList}\item 
+void \hyperlink{classNonconstrainedOrderedSet_a2fe53fd392a2b76a994b47857e8b9f8d}{print\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classNonconstrainedOrderedSet_a19a923ee00c1ea0bbf875b2166099b0e}{print()} on the result) \end{DoxyCompactList}\item 
+\hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classNonconstrainedOrderedSet_a56bc624037070551d43a72685bbe2347}{get\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classNonconstrainedOrderedSet_a19a923ee00c1ea0bbf875b2166099b0e}{print()} on the result) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNonconstrainedOrderedSet_a288742a1e94bd5059885a615c53fda3f}{int {\bfseries size1}}\label{classNonconstrainedOrderedSet_a288742a1e94bd5059885a615c53fda3f}
+
+\item 
+\hypertarget{classNonconstrainedOrderedSet_acef74e3fc45f4f07398076cdca8a4184}{int {\bfseries size2}}\label{classNonconstrainedOrderedSet_acef74e3fc45f4f07398076cdca8a4184}
+
+\item 
+\hypertarget{classNonconstrainedOrderedSet_a9ff9bbb398682cce7e3d6cd5bf39ebc7}{\hyperlink{classOrderedDatatree}{Ordered\-Datatree} $\ast$ {\bfseries data\-Tree}}\label{classNonconstrainedOrderedSet_a9ff9bbb398682cce7e3d6cd5bf39ebc7}
+
+\item 
+\hypertarget{classNonconstrainedOrderedSet_a7ee6387a6e18c48828b2349e3b8a3533}{\hyperlink{classObjectiveValue}{Objective\-Value} $\ast$$\ast$ {\bfseries qualities}}\label{classNonconstrainedOrderedSet_a7ee6387a6e18c48828b2349e3b8a3533}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classNonconstrainedOrderedSet_a1a880ae970c47446a370a4b4679b59f5}{\index{Nonconstrained\-Ordered\-Set@{Nonconstrained\-Ordered\-Set}!compute\-Optimal\-Partition@{compute\-Optimal\-Partition}}
+\index{compute\-Optimal\-Partition@{compute\-Optimal\-Partition}!NonconstrainedOrderedSet@{Nonconstrained\-Ordered\-Set}}
+\subsubsection[{compute\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void Nonconstrained\-Ordered\-Set\-::compute\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classNonconstrainedOrderedSet_a1a880ae970c47446a370a4b4679b59f5}
+
+
+Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_acfc3004f18192f38e32bb7a5a12ec8df}{Abstract\-Set}.
+
+\hypertarget{classNonconstrainedOrderedSet_a56bc624037070551d43a72685bbe2347}{\index{Nonconstrained\-Ordered\-Set@{Nonconstrained\-Ordered\-Set}!get\-Optimal\-Partition@{get\-Optimal\-Partition}}
+\index{get\-Optimal\-Partition@{get\-Optimal\-Partition}!NonconstrainedOrderedSet@{Nonconstrained\-Ordered\-Set}}
+\subsubsection[{get\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition} $\ast$ Nonconstrained\-Ordered\-Set\-::get\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classNonconstrainedOrderedSet_a56bc624037070551d43a72685bbe2347}
+
+
+Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classNonconstrainedOrderedSet_a19a923ee00c1ea0bbf875b2166099b0e}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\-: The resulting optimal partition 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAbstractSet_a48fd08c4b61ed46946bed6e19cd11194}{Abstract\-Set}.
+
+\hypertarget{classNonconstrainedOrderedSet_a2fe53fd392a2b76a994b47857e8b9f8d}{\index{Nonconstrained\-Ordered\-Set@{Nonconstrained\-Ordered\-Set}!print\-Optimal\-Partition@{print\-Optimal\-Partition}}
+\index{print\-Optimal\-Partition@{print\-Optimal\-Partition}!NonconstrainedOrderedSet@{Nonconstrained\-Ordered\-Set}}
+\subsubsection[{print\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void Nonconstrained\-Ordered\-Set\-::print\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classNonconstrainedOrderedSet_a2fe53fd392a2b76a994b47857e8b9f8d}
+
+
+Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classNonconstrainedOrderedSet_a19a923ee00c1ea0bbf875b2166099b0e}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_a82a9ce5c2d30690f0d1b83b034e92e1e}{Abstract\-Set}.
+
+\hypertarget{classNonconstrainedOrderedSet_a67a4a72a5e1bff3d46473757199455d9}{\index{Nonconstrained\-Ordered\-Set@{Nonconstrained\-Ordered\-Set}!set\-Objective\-Function@{set\-Objective\-Function}}
+\index{set\-Objective\-Function@{set\-Objective\-Function}!NonconstrainedOrderedSet@{Nonconstrained\-Ordered\-Set}}
+\subsubsection[{set\-Objective\-Function}]{\setlength{\rightskip}{0pt plus 5cm}void Nonconstrained\-Ordered\-Set\-::set\-Objective\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf Objective\-Function} $\ast$}]{objective}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classNonconstrainedOrderedSet_a67a4a72a5e1bff3d46473757199455d9}
+
+
+Set the objective that one wants to optimise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objective} & \-: The objective function itself \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}{Abstract\-Set}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/nonconstrained\-\_\-ordered\-\_\-set.\-hpp\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/nonconstrained\-\_\-ordered\-\_\-set.\-cpp\end{DoxyCompactItemize}

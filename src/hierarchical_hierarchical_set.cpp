@@ -19,10 +19,10 @@ HierarchicalHierarchicalSet::~HierarchicalHierarchicalSet ()
 }
 
 
-void HierarchicalHierarchicalSet::setMeasure (Measure *m)
+void HierarchicalHierarchicalSet::setObjectiveFunction (ObjectiveFunction *m)
 {
-	measure = m;
-	hyperarchy->setMeasure(m);
+	objective = m;
+	hyperarchy->setObjectiveFunction(m);
 }
 
 
@@ -96,9 +96,9 @@ void HierarchicalHierarchicalSet::buildDataStructure ()
 
 
 void HierarchicalHierarchicalSet::print () { hyperarchy->print(); }
-void HierarchicalHierarchicalSet::computeQuality () { measure->computeQuality(); hyperarchy->computeQuality(); }
-void HierarchicalHierarchicalSet::normalizeQuality () { hyperarchy->normalizeQuality(); }
-void HierarchicalHierarchicalSet::printQuality () { hyperarchy->printQuality(); }
+void HierarchicalHierarchicalSet::computeObjectiveValues () { objective->computeObjectiveValues(); hyperarchy->computeObjectiveValues(); }
+void HierarchicalHierarchicalSet::normalizeObjectiveValues () { hyperarchy->normalizeObjectiveValues(); }
+void HierarchicalHierarchicalSet::printObjectiveValues () { hyperarchy->printObjectiveValues(); }
 void HierarchicalHierarchicalSet::computeOptimalPartition (double parameter) { hyperarchy->computeOptimalPartition(parameter); }
 void HierarchicalHierarchicalSet::printOptimalPartition (double parameter) { hyperarchy->printOptimalPartition(parameter); }
 
@@ -106,7 +106,7 @@ void HierarchicalHierarchicalSet::printOptimalPartition (double parameter) { hyp
 Partition *HierarchicalHierarchicalSet::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
-	Partition *partition = new Partition(measure,parameter);
+	Partition *partition = new Partition(objective,parameter);
 	hyperarchy->buildOptimalPartition(partition);	
 	return partition;
 }
@@ -149,7 +149,7 @@ void HHNode::print ()
 
 	printIndices();
 	
-	if (quality != 0) { std::cout << " -> "; quality->print(false); } else { std::cout << std::endl; }
+	if (value != 0) { std::cout << " -> "; value->print(false); } else { std::cout << std::endl; }
 	
 	for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { (*it)->print(); }
 
@@ -165,69 +165,69 @@ void HHNode::printIndices (bool endl)
 }
 
 
-void HHNode::setMeasure (Measure *m)
+void HHNode::setObjectiveFunction (ObjectiveFunction *m)
 {
 	if (node1->level == 0)
-		for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { (*it)->setMeasure(m); }
+		for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { (*it)->setObjectiveFunction(m); }
 	
-	for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { (*it)->setMeasure(m); }
+	for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { (*it)->setObjectiveFunction(m); }
 
-	measure = m;
-	if (node1->index == -1 || node2->index == -1) { quality = m->newQuality(); }
-	else { quality = m->newQuality(node1->index + node2->index * node1->root->width); }
+	objective = m;
+	if (node1->index == -1 || node2->index == -1) { value = m->newObjectiveValue(); }
+	else { value = m->newObjectiveValue(node1->index + node2->index * node1->root->width); }
 }
 
 
-void HHNode::computeQuality ()
+void HHNode::computeObjectiveValues ()
 {
 	if (node1->level == 0)
-		for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { (*it)->computeQuality(); }
+		for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { (*it)->computeObjectiveValues(); }
 	
-	for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { (*it)->computeQuality(); }
+	for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { (*it)->computeObjectiveValues(); }
 
 	if (node1->index != -1) {
-		if (node2->index != -1) { quality->compute(); }
+		if (node2->index != -1) { value->compute(); }
 		else {
-			QualitySet *qSet = new QualitySet();
-			for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { qSet->insert((*it)->quality); }
-			quality->compute(qSet);
+			ObjectiveValueSet *qSet = new ObjectiveValueSet();
+			for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { qSet->insert((*it)->value); }
+			value->compute(qSet);
 			delete qSet;
 		}
 	} else {
-		QualitySet *qSet = new QualitySet();
-		for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { qSet->insert((*it)->quality); }
-		quality->compute(qSet);
+		ObjectiveValueSet *qSet = new ObjectiveValueSet();
+		for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { qSet->insert((*it)->value); }
+		value->compute(qSet);
 		delete qSet;
 	}
 }
 
 
-void HHNode::normalizeQuality (Quality *maxQual)
+void HHNode::normalizeObjectiveValues (ObjectiveValue *maxQual)
 {
-	if (maxQual == 0) { maxQual = quality; }
+	if (maxQual == 0) { maxQual = value; }
 
 	if (node1->level == 0)
-		for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { (*it)->normalizeQuality(maxQual); }
+		for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { (*it)->normalizeObjectiveValues(maxQual); }
 	
-	for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { (*it)->normalizeQuality(maxQual); }
+	for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { (*it)->normalizeObjectiveValues(maxQual); }
 
-	quality->normalize(maxQual);
+	value->normalize(maxQual);
 }
 
 
-void HHNode::printQuality ()
+void HHNode::printObjectiveValues ()
 {
 	if (node1->level == 0)
-		for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { (*it)->printQuality(); }
+		for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { (*it)->printObjectiveValues(); }
 
 	for (int i = 0; i < node1->level; i++) { std::cout << "..."; }
 	if (node1->level > 0) { std::cout << " "; }
 
 	printIndices();
 	std::cout << " -> ";
-	quality->print(true);
+	value->print(true);
 	
-	for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { (*it)->printQuality(); }
+	for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { (*it)->printObjectiveValues(); }
 
 	if (node1->level == 0) { std::cout << std::endl; }
 }
@@ -240,14 +240,14 @@ void HHNode::computeOptimalPartition (double parameter)
 	
 	for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { (*it)->computeOptimalPartition(parameter); }
 
-	optimalValue = quality->getValue(parameter);
+	optimalValue = value->getValue(parameter);
 	optimalCut = 0;
 	
 	if (!children1->empty())
 	{
 		double value1 = 0;
 		for (HHNodeSet::iterator it = children1->begin(); it != children1->end(); ++it) { value1 += (*it)->optimalValue; }
-		if ((measure->maximize && value1 > optimalValue) || (!measure->maximize && value1 < optimalValue))
+		if ((objective->maximize && value1 > optimalValue) || (!objective->maximize && value1 < optimalValue))
 		{
 			optimalValue = value1;
 			optimalCut = 1;
@@ -258,7 +258,7 @@ void HHNode::computeOptimalPartition (double parameter)
 	{
 		double value2 = 0;
 		for (HHNodeSet::iterator it = children2->begin(); it != children2->end(); ++it) { value2 += (*it)->optimalValue; }	
-		if ((measure->maximize && value2 > optimalValue) || (!measure->maximize && value2 < optimalValue))
+		if ((objective->maximize && value2 > optimalValue) || (!objective->maximize && value2 < optimalValue))
 		{
 			optimalValue = value2;
 			optimalCut = 2;
@@ -276,7 +276,7 @@ void HHNode::buildOptimalPartition (Partition *partition)
 	{
 		Part *p1 = new Part();
 		Part *p2 = new Part();
-		BiPart *part = new BiPart(p1,p2,quality);
+		BiPart *part = new BiPart(p1,p2,value);
 
 		for (std::set<int>::iterator it = node1->indices->begin(); it != node1->indices->end(); ++it) { p1->addIndividual(*it); }
 		for (std::set<int>::iterator it = node2->indices->begin(); it != node2->indices->end(); ++it) { p2->addIndividual(*it); }

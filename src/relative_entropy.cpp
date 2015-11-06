@@ -34,20 +34,20 @@ void RelativeEntropy::setRandom ()
 }
 
 
-Quality *RelativeEntropy::newQuality (int id)
+ObjectiveValue *RelativeEntropy::newObjectiveValue (int id)
 {
-	RelativeQuality *rq;
+	RelativeObjectiveValue *rq;
 	
-	rq = new RelativeQuality(this,id);
-	//qualitySet->insert(rq);
+	rq = new RelativeObjectiveValue(this,id);
+	//valueSet->insert(rq);
 
 	return rq;
 }
 
 
-void RelativeEntropy::computeQuality () {};
+void RelativeEntropy::computeObjectiveValues () {};
 
-void RelativeEntropy::printQuality (bool v) {};
+void RelativeEntropy::printObjectiveValues (bool v) {};
 
 double RelativeEntropy::getParameter (double unit) { return unit; }
 
@@ -57,9 +57,9 @@ double RelativeEntropy::getIntermediaryUnit (double uMin, double uMax) { return 
 
 
 
-RelativeQuality::RelativeQuality (RelativeEntropy *m, int id)
+RelativeObjectiveValue::RelativeObjectiveValue (RelativeEntropy *m, int id)
 {
-	measure = m;
+	objective = m;
 	index = id;
 	
 	sumValue = 0;
@@ -70,35 +70,35 @@ RelativeQuality::RelativeQuality (RelativeEntropy *m, int id)
 }
 
 
-RelativeQuality::~RelativeQuality () {}
+RelativeObjectiveValue::~RelativeObjectiveValue () {}
 
 
-void RelativeQuality::add (Quality *q)
+void RelativeObjectiveValue::add (ObjectiveValue *q)
 {
-	RelativeQuality *quality = (RelativeQuality *) q;
+	RelativeObjectiveValue *value = (RelativeObjectiveValue *) q;
 	
-	sumValue += quality->sumValue;
-	sumRefValue += quality->sumRefValue;
-	microInfo += quality->microInfo;
-	divergence += quality->divergence;
-	sizeReduction += quality->sizeReduction;
+	sumValue += value->sumValue;
+	sumRefValue += value->sumRefValue;
+	microInfo += value->microInfo;
+	divergence += value->divergence;
+	sizeReduction += value->sizeReduction;
 }
 
 
-void RelativeQuality::compute ()
+void RelativeObjectiveValue::compute ()
 {
-	sumValue = ((RelativeEntropy*)measure)->values[index];
-	sumRefValue = ((RelativeEntropy*)measure)->refValues[index];
+	sumValue = ((RelativeEntropy*)objective)->values[index];
+	sumRefValue = ((RelativeEntropy*)objective)->refValues[index];
 	if (sumValue > 0) { microInfo = - sumValue * log2(sumValue/sumRefValue); } else { microInfo = 0; }
 	sizeReduction = 0;
 	divergence = 0;
 }
 
 
-void RelativeQuality::compute (Quality *q1, Quality *q2)
+void RelativeObjectiveValue::compute (ObjectiveValue *q1, ObjectiveValue *q2)
 {
-	RelativeQuality *rq1 = (RelativeQuality *) q1;
-	RelativeQuality *rq2 = (RelativeQuality *) q2;
+	RelativeObjectiveValue *rq1 = (RelativeObjectiveValue *) q1;
+	RelativeObjectiveValue *rq2 = (RelativeObjectiveValue *) q2;
 
 	sumValue = rq1->sumValue + rq2->sumValue;
 	sumRefValue = rq1->sumRefValue + rq2->sumRefValue;
@@ -110,15 +110,15 @@ void RelativeQuality::compute (Quality *q1, Quality *q2)
 }
 
 
-void RelativeQuality::compute (QualitySet *qualitySet)
+void RelativeObjectiveValue::compute (ObjectiveValueSet *valueSet)
 {
 	sumValue = 0;
 	sumRefValue = 0;
 	microInfo = 0;
 	sizeReduction = 0;
-	for (QualitySet::iterator it = qualitySet->begin(); it != qualitySet->end(); ++it)
+	for (ObjectiveValueSet::iterator it = valueSet->begin(); it != valueSet->end(); ++it)
 	{
-		RelativeQuality *rq = (RelativeQuality *) (*it);
+		RelativeObjectiveValue *rq = (RelativeObjectiveValue *) (*it);
 
 		sumValue += rq->sumValue;
 		sumRefValue += rq->sumRefValue;
@@ -132,16 +132,16 @@ void RelativeQuality::compute (QualitySet *qualitySet)
 }
 
 
-void RelativeQuality::normalize (Quality *q)
+void RelativeObjectiveValue::normalize (ObjectiveValue *q)
 {
-	RelativeQuality *rq = (RelativeQuality *) q;
+	RelativeObjectiveValue *rq = (RelativeObjectiveValue *) q;
 
 	if (rq->sizeReduction > 0) { sizeReduction = sizeReduction / rq->sizeReduction; }
 	if (rq->divergence > 0) { divergence /= rq->divergence; }
 }
 
 
-void RelativeQuality::print (bool v)
+void RelativeObjectiveValue::print (bool v)
 {
 	if (v)
 	{
@@ -156,5 +156,5 @@ void RelativeQuality::print (bool v)
 }
 
 
-double RelativeQuality::getValue (double param) { return param * sizeReduction - (1-param) * divergence; }
+double RelativeObjectiveValue::getValue (double param) { return param * sizeReduction - (1-param) * divergence; }
 

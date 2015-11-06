@@ -1,13 +1,13 @@
 #ifndef INCLUDE_HIERARCHICAL_HIERARCHICAL_SET
 #define INCLUDE_HIERARCHICAL_HIERARCHICAL_SET
 
-#include "constrained_set.hpp"
+#include "abstract_set.hpp"
 #include "hierarchical_set.hpp"
 
 class HHNode;
 typedef std::set<HHNode*> HHNodeSet;
 
-class HierarchicalHierarchicalSet: public ConstrainedSet
+class HierarchicalHierarchicalSet: public AbstractSet
 {
 	public:
 		HNode *hierarchy1;
@@ -18,13 +18,13 @@ class HierarchicalHierarchicalSet: public ConstrainedSet
 		virtual ~HierarchicalHierarchicalSet ();
 		
 		void setRandom ();
-		void setMeasure (Measure *m);
+		void setObjectiveFunction (ObjectiveFunction *m);
 		void print ();
 
 		void buildDataStructure ();
-		void computeQuality ();
-		void normalizeQuality ();
-		void printQuality ();
+		void computeObjectiveValues ();
+		void normalizeObjectiveValues ();
+		void printObjectiveValues ();
 
 		void computeOptimalPartition (double parameter);
 		void printOptimalPartition (double parameter);
@@ -41,8 +41,8 @@ class HHNode
 		HHNodeSet *children1;
 		HHNodeSet *children2;
 		
-		Measure *measure;
-		Quality *quality;
+		ObjectiveFunction *objective;
+		ObjectiveValue *value;
 
 		double optimalValue;
 		int optimalCut;
@@ -52,14 +52,14 @@ class HHNode
 
 		void addChild1 (HHNode *node);
 		void addChild2 (HHNode *node);
-		void setMeasure (Measure *m);
+		void setObjectiveFunction (ObjectiveFunction *m);
 		void print ();
 		void printIndices (bool endl = false);
 		
 		void buildDataStructure (); // SUPPRESS ?
-		void computeQuality ();
-		void normalizeQuality (Quality *maxQual = 0);
-		void printQuality ();
+		void computeObjectiveValues ();
+		void normalizeObjectiveValues (ObjectiveValue *maxQual = 0);
+		void printObjectiveValues ();
 
 		void computeOptimalPartition (double parameter);
 		void printOptimalPartition (double parameter);		

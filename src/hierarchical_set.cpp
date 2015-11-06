@@ -15,18 +15,18 @@ HierarchicalSet::~HierarchicalSet ()
 }
 
 
-void HierarchicalSet::setMeasure (Measure *m)
+void HierarchicalSet::setObjectiveFunction (ObjectiveFunction *m)
 {
-	measure = m;
-	hierarchy->setMeasure(m);
+	objective = m;
+	hierarchy->setObjectiveFunction(m);
 }
 
 
 void HierarchicalSet::buildDataStructure () { hierarchy->buildDataStructure(); }
 void HierarchicalSet::print () { hierarchy->print(); }
-void HierarchicalSet::computeQuality () { measure->computeQuality(); hierarchy->computeQuality(); }
-void HierarchicalSet::normalizeQuality () { hierarchy->normalizeQuality(); }
-void HierarchicalSet::printQuality () { hierarchy->printQuality(); }
+void HierarchicalSet::computeObjectiveValues () { objective->computeObjectiveValues(); hierarchy->computeObjectiveValues(); }
+void HierarchicalSet::normalizeObjectiveValues () { hierarchy->normalizeObjectiveValues(); }
+void HierarchicalSet::printObjectiveValues () { hierarchy->printObjectiveValues(); }
 void HierarchicalSet::computeOptimalPartition (double parameter) { hierarchy->computeOptimalPartition(parameter); }
 void HierarchicalSet::printOptimalPartition (double parameter) { hierarchy->printOptimalPartition(parameter); }
 
@@ -34,7 +34,7 @@ void HierarchicalSet::printOptimalPartition (double parameter) { hierarchy->prin
 Partition *HierarchicalSet::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
-	Partition *partition = new Partition(measure,parameter);
+	Partition *partition = new Partition(objective,parameter);
 	hierarchy->buildOptimalPartition(partition);	
 	return partition;
 }
@@ -95,7 +95,7 @@ void HNode::print ()
 	printIndices();
 	std::cout << " -> ";
 	
-	quality->print(false);
+	value->print(false);
 	for (HNodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->print(); }
 }
 
@@ -114,47 +114,47 @@ void HNode::printIndices (bool endl)
 }
 
 
-void HNode::setMeasure (Measure *m)
+void HNode::setObjectiveFunction (ObjectiveFunction *m)
 {
-	for (HNodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->setMeasure(m); }
+	for (HNodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->setObjectiveFunction(m); }
 
-	measure = m;
-	if (index == -1) { quality = m->newQuality(); }
-	else { quality = m->newQuality(index); }
+	objective = m;
+	if (index == -1) { value = m->newObjectiveValue(); }
+	else { value = m->newObjectiveValue(index); }
 }
 
 
-void HNode::computeQuality ()
+void HNode::computeObjectiveValues ()
 {
-	QualitySet *qSet = new QualitySet();
+	ObjectiveValueSet *qSet = new ObjectiveValueSet();
 	for (HNodeSet::iterator it = children->begin(); it != children->end(); ++it)
 	{
 		HNode *node = *it;
-		node->computeQuality();
-		qSet->insert(node->quality);
+		node->computeObjectiveValues();
+		qSet->insert(node->value);
 	}
 
-	if (index == -1) { quality->compute(qSet); } else { quality->compute(); }
+	if (index == -1) { value->compute(qSet); } else { value->compute(); }
 	delete qSet;
 }
 
 
-void HNode::normalizeQuality (Quality *maxQual)
+void HNode::normalizeObjectiveValues (ObjectiveValue *maxQual)
 {
-	if (maxQual == 0) { maxQual = quality; }
+	if (maxQual == 0) { maxQual = value; }
 
-	for (HNodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->normalizeQuality(maxQual); }
-	quality->normalize(maxQual);
+	for (HNodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->normalizeObjectiveValues(maxQual); }
+	value->normalize(maxQual);
 }
 
 
-void HNode::printQuality ()
+void HNode::printObjectiveValues ()
 {
 	printIndices();
 	std::cout << " -> ";
 		
-	quality->print(true);
-	for (HNodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->printQuality(); }
+	value->print(true);
+	for (HNodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->printObjectiveValues(); }
 }
 
 
@@ -162,13 +162,13 @@ void HNode::computeOptimalPartition (double parameter)
 {
 	for (HNodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->computeOptimalPartition(parameter); }
 
-	optimalValue = quality->getValue(parameter);
+	optimalValue = value->getValue(parameter);
 	optimalCut = true;
 	
 	double value = 0;
 	for (HNodeSet::iterator it = children->begin(); it != children->end(); ++it) { value += (*it)->optimalValue; }
 	
-	if ((measure->maximize && value > optimalValue) || (!measure->maximize && value < optimalValue))
+	if ((objective->maximize && value > optimalValue) || (!objective->maximize && value < optimalValue))
 	{
 		optimalValue = value;
 		optimalCut = false;
@@ -183,7 +183,7 @@ void HNode::buildOptimalPartition (Partition *partition)
 {
 	if (optimalCut)
 	{
-		Part *part = new Part(quality);
+		Part *part = new Part(value);
 		for (std::set<int>::iterator it = indices->begin(); it != indices->end(); ++it) { part->addIndividual(*it); }
 		partition->addPart(part);
 	}

@@ -6,14 +6,14 @@
 #include "datatree.hpp"
 
 
-Part::Part (Quality *q)
+Part::Part (ObjectiveValue *q)
 {
 	individuals = new std::list<int>();
-	quality = q;
+	value = q;
 }
 
 
-Part::Part (Datatree *node, Quality *q)
+Part::Part (Datatree *node, ObjectiveValue *q)
 {
 	individuals = new std::list<int>();
 	while (node->vertex != -1)
@@ -21,13 +21,13 @@ Part::Part (Datatree *node, Quality *q)
 		addIndividual (node->vertex,true);
 		node = node->parent;
 	}
-	quality = q;
+	value = q;
 }
 
 
 Part::Part (Part *p)
 {
-	quality = p->quality;
+	value = p->value;
 
 	individuals = new std::list<int>();
 	for (std::list<int>::iterator it = p->individuals->begin(); it != p->individuals->end(); ++it)
@@ -96,12 +96,12 @@ void Part::print (bool endl)
 int Part::printSize () { return 2*individuals->size()+1; }
 
 
-BiPart::BiPart (Part *p1, Part *p2, Quality *q)
+BiPart::BiPart (Part *p1, Part *p2, ObjectiveValue *q)
 {
 	firstPart = p1;
 	secondPart = p2;
 	individuals = 0;
-	quality = q;
+	value = q;
 }
 
 
@@ -110,7 +110,7 @@ BiPart::BiPart (BiPart *bp)
 	firstPart = bp->firstPart;
 	secondPart = bp->secondPart;
 	individuals = 0;
-	quality = bp->quality;
+	value = bp->value;
 }
 
 
@@ -140,14 +140,14 @@ void BiPart::print (bool endl)
 int BiPart::printSize () { return firstPart->printSize() + secondPart->printSize() + 1; }
 
 
-HyperPart::HyperPart (Part **pArray, int dim, Quality *q) : Part(q)
+HyperPart::HyperPart (Part **pArray, int dim, ObjectiveValue *q) : Part(q)
 {
 	partArray = pArray;
 	dimension = dim;
 }
 
 
-HyperPart::HyperPart (HyperPart *hp) : Part(hp->quality)
+HyperPart::HyperPart (HyperPart *hp) : Part(hp->value)
 {
 	partArray = hp->partArray;
 	dimension = hp->dimension;
@@ -190,18 +190,18 @@ int HyperPart::printSize ()
 }
 
 
-Partition::Partition (Measure *m, double param)
+Partition::Partition (ObjectiveFunction *m, double param)
 {
 	parameter = param;
 	parts = new std::list<Part*>();
-	if (m != 0) { quality = m->newQuality(); } else { quality = 0; }
+	if (m != 0) { value = m->newObjectiveValue(); } else { value = 0; }
 }
 
 
 Partition::Partition (Partition *p)
 {
 	parameter = p->parameter;
-	quality = p->quality;
+	value = p->value;
 
 	parts = new std::list<Part*>();
 	for (std::list<Part*>::iterator it = p->parts->begin(); it != p->parts->end(); ++it)
@@ -216,14 +216,14 @@ Partition::~Partition ()
 {
 	for(std::list<Part*>::iterator it = parts->begin(); it != parts->end(); it++) { delete *it; }
 	delete parts;
-	if (quality != 0) { delete quality; }
+	if (value != 0) { delete value; }
 }
 
 
 void Partition::addPart (Part *p, bool front)
 {
 	if (front) { parts->push_front(p); } else { parts->push_back(p); }
-	if (p->quality != 0) { quality->add(p->quality); }
+	if (p->value != 0) { value->add(p->value); }
 }
 
 
@@ -251,7 +251,7 @@ bool Partition::equal (Partition *p)
 void Partition::print (bool endl)
 {
 	int printSize = 1;
-	if (quality != 0) { std::cout << std::setw(6) << std::setprecision(3) << parameter << " -> "; }
+	if (value != 0) { std::cout << std::setw(6) << std::setprecision(3) << parameter << " -> "; }
 	for (std::list<Part*>::iterator it = parts->begin(); it != parts->end(); ++it)
 	{
 		Part *part = *it;
@@ -260,7 +260,7 @@ void Partition::print (bool endl)
 		printSize += part->printSize() + 1;
 	}
 	//std::cout << std::setw(partition->printSize() - printSize) << " ";
-	if (quality != 0) { quality->print(); }
+	if (value != 0) { value->print(); }
 	if (endl) { std::cout << std::endl; }
 }
 

@@ -2,10 +2,10 @@
 #define INCLUDE_LOGARITHMIC_SCORE
 
 
-#include "measure.hpp"
+#include "objective_function.hpp"
 #include "prediction_dataset.hpp"
 
-class LogarithmicScore: public Measure
+class LogarithmicScore: public ObjectiveFunction
 {
 public:
 	PredictionDataset *dataset;
@@ -19,9 +19,9 @@ public:
 	~LogarithmicScore ();
 	
 	void setRandom ();
-	Quality *newQuality (int index = -1);
-	void computeQuality();
-	void printQuality (bool verbose = true);
+	ObjectiveValue *newObjectiveValue (int index = -1);
+	void computeObjectiveValues();
+	void printObjectiveValues (bool verbose = true);
 
 	double getParameter (double unit);
 	double getUnitDistance (double uMin, double uMax);
@@ -29,7 +29,7 @@ public:
 };
 
 
-class LogarithmicQuality: public Quality
+class LogarithmicObjectiveValue: public ObjectiveValue
 {
 public:
 	int preSize, postSize;
@@ -39,14 +39,14 @@ public:
 	int testCountTotal;
 	double score;
 	
-	LogarithmicQuality (LogarithmicScore *measure);
-	~LogarithmicQuality ();
+	LogarithmicObjectiveValue (LogarithmicScore *objective);
+	~LogarithmicObjectiveValue ();
 		
-	void add (Quality *quality);
+	void add (ObjectiveValue *value);
 	void compute ();
-	void compute (Quality *quality1, Quality *quality2);
-	void compute (QualitySet *qualityset);
-	void normalize (Quality *q);
+	void compute (ObjectiveValue *value1, ObjectiveValue *value2);
+	void compute (ObjectiveValueSet *valueset);
+	void normalize (ObjectiveValue *q);
 	void print (bool verbosex = true);
 	double getValue (double param);
 };

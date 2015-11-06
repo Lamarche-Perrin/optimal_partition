@@ -20,10 +20,10 @@ NonconstrainedSet::~NonconstrainedSet ()
 }
 
 
-void NonconstrainedSet::setMeasure (Measure *m)
+void NonconstrainedSet::setObjectiveFunction (ObjectiveFunction *m)
 {
-	measure = m;
-	dataTree->setMeasure(m);
+	objective = m;
+	dataTree->setObjectiveFunction(m);
 }
 
 
@@ -105,14 +105,14 @@ void NonconstrainedSet::print ()
 		Datatree *node = *it;
 		node->printVertices(false);
 		std::cout << " -> ";
-		node->quality->print(false);
+		node->value->print(false);
 	}
 }
 
 
-void NonconstrainedSet::computeQuality () { measure->computeQuality(); dataTree->computeQuality(); }
-void NonconstrainedSet::normalizeQuality () { dataTree->normalizeQuality(); }
-void NonconstrainedSet::printQuality () { dataTree->printQuality(); }
+void NonconstrainedSet::computeObjectiveValues () { objective->computeObjectiveValues(); dataTree->computeObjectiveValues(); }
+void NonconstrainedSet::normalizeObjectiveValues () { dataTree->normalizeObjectiveValues(); }
+void NonconstrainedSet::printObjectiveValues () { dataTree->printObjectiveValues(); }
 void NonconstrainedSet::computeOptimalPartition (double parameter) { dataTree->computeOptimalPartition(parameter); }
 void NonconstrainedSet::printOptimalPartition (double parameter) { dataTree->printOptimalPartition(parameter); }
 Partition *NonconstrainedSet::getOptimalPartition (double parameter) { return dataTree->getOptimalPartition(parameter); }

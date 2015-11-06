@@ -17,18 +17,18 @@ HierarchicalOrderedSet::~HierarchicalOrderedSet ()
 }
 
 
-void HierarchicalOrderedSet::setMeasure (Measure *m)
+void HierarchicalOrderedSet::setObjectiveFunction (ObjectiveFunction *m)
 {
-	measure = m;
-	hierarchy->setMeasure(m);
+	objective = m;
+	hierarchy->setObjectiveFunction(m);
 }
 
 
 void HierarchicalOrderedSet::buildDataStructure () { hierarchy->buildDataStructure(); }
 void HierarchicalOrderedSet::print () { hierarchy->print(); }
-void HierarchicalOrderedSet::computeQuality () { measure->computeQuality(); hierarchy->computeQuality(); }
-void HierarchicalOrderedSet::normalizeQuality () { hierarchy->normalizeQuality(); }
-void HierarchicalOrderedSet::printQuality () { hierarchy->printQuality(); }
+void HierarchicalOrderedSet::computeObjectiveValues () { objective->computeObjectiveValues(); hierarchy->computeObjectiveValues(); }
+void HierarchicalOrderedSet::normalizeObjectiveValues () { hierarchy->normalizeObjectiveValues(); }
+void HierarchicalOrderedSet::printObjectiveValues () { hierarchy->printObjectiveValues(); }
 void HierarchicalOrderedSet::computeOptimalPartition (double parameter) { hierarchy->computeOptimalPartition(parameter); }
 void HierarchicalOrderedSet::printOptimalPartition (double parameter) { hierarchy->printOptimalPartition(parameter); }
 
@@ -36,7 +36,7 @@ void HierarchicalOrderedSet::printOptimalPartition (double parameter) { hierarch
 Partition *HierarchicalOrderedSet::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
-	Partition *partition = new Partition(measure,parameter);
+	Partition *partition = new Partition(objective,parameter);
 	hierarchy->buildOptimalPartition(partition);	
 	return partition;
 }
@@ -56,7 +56,7 @@ HONode::HONode (int s, int i)
 	size = s;
 	int s2 = (s+1)*s/2;
 	
-	qualities = new Quality* [s2];
+	qualities = new ObjectiveValue* [s2];
 	optimalValues = new double [s2];
 	optimalCuts = new int [s2];
 }
@@ -120,38 +120,38 @@ void HONode::print ()
 }
 
 
-void HONode::setMeasure (Measure *m)
+void HONode::setObjectiveFunction (ObjectiveFunction *m)
 {
-	for (HONodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->setMeasure(m); }
+	for (HONodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->setObjectiveFunction(m); }
 
-	measure = m;
+	objective = m;
 	if (index == -1)
 	{
 		for (int j = 0; j < size; j++)
 			for (int i = 0; i < size-j; i++)
-				qualities[getIndex(i,j)] = measure->newQuality();
+				qualities[getIndex(i,j)] = objective->newObjectiveValue();
 	}
 	
 	else {
 		for (int i = 0; i < size; i++)
-			qualities[getIndex(i,0)] = measure->newQuality(index*size+i);
+			qualities[getIndex(i,0)] = objective->newObjectiveValue(index*size+i);
 	
 		for (int j = 1; j < size; j++)
 			for (int i = 0; i < size-j; i++)
-				qualities[getIndex(i,j)] = measure->newQuality();
+				qualities[getIndex(i,j)] = objective->newObjectiveValue();
 	}
 }
 
 
-void HONode::computeQuality ()
+void HONode::computeObjectiveValues ()
 {
-	for (HONodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->computeQuality(); }
+	for (HONodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->computeObjectiveValues(); }
 
 	if (index == -1)
 	{
 		for (int i = 0; i < size; i++)
 		{
-			QualitySet *qSet = new QualitySet();
+			ObjectiveValueSet *qSet = new ObjectiveValueSet();
 			for (HONodeSet::iterator it = children->begin(); it != children->end(); ++it) { qSet->insert((*it)->qualities[getIndex(i,0)]); }
 			qualities[getIndex(i,0)]->compute(qSet);		
 			delete qSet;
@@ -171,11 +171,11 @@ void HONode::computeQuality ()
 }
 
 
-void HONode::normalizeQuality (Quality *maxQual)
+void HONode::normalizeObjectiveValues (ObjectiveValue *maxQual)
 {
 	if (maxQual == 0) { maxQual = qualities[getIndex(0,size-1)]; }
 
-	for (HONodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->normalizeQuality(maxQual); }
+	for (HONodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->normalizeObjectiveValues(maxQual); }
 
 	for (int j = 0; j < size; j++)
 		for (int i = 0; i < size-j; i++)
@@ -183,7 +183,7 @@ void HONode::normalizeQuality (Quality *maxQual)
 }
 
 
-void HONode::printQuality ()
+void HONode::printObjectiveValues ()
 {
 	for (int i = 0; i < level; i++) { std::cout << "..."; }
 	if (level > 0) { std::cout << " "; }
@@ -206,7 +206,7 @@ void HONode::printQuality ()
 			qualities[getIndex(i,j)]->print(true);
 		}
 	
-	for (HONodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->printQuality(); }
+	for (HONodeSet::iterator it = children->begin(); it != children->end(); ++it) { (*it)->printObjectiveValues(); }
 }
 
 
@@ -228,7 +228,7 @@ void HONode::computeOptimalPartition (double parameter)
 				double value = 0;
 				for (HONodeSet::iterator it = children->begin(); it != children->end(); ++it) { value += (*it)->optimalValues[getIndex(i,j)]; }
 				
-				if ((measure->maximize && value > optimalValues[getIndex(i,j)]) || (!measure->maximize && value < optimalValues[getIndex(i,j)]))
+				if ((objective->maximize && value > optimalValues[getIndex(i,j)]) || (!objective->maximize && value < optimalValues[getIndex(i,j)]))
 				{
 					optimalValues[getIndex(i,j)] = value;
 					optimalCuts[getIndex(i,j)] = -1;
@@ -239,7 +239,7 @@ void HONode::computeOptimalPartition (double parameter)
 			{
 				//double value = qualities[getIndex(i,cut)]->getValue(parameter) + qualities[getIndex(i+cut+1,j-cut-1)]->getValue(parameter);
 				double value = optimalValues[getIndex(i,cut)] + optimalValues[getIndex(i+cut+1,j-cut-1)];
-				if ((measure->maximize && value > optimalValues[getIndex(i,j)]) || (!measure->maximize && value < optimalValues[getIndex(i,j)]))
+				if ((objective->maximize && value > optimalValues[getIndex(i,j)]) || (!objective->maximize && value < optimalValues[getIndex(i,j)]))
 				{
 					optimalValues[getIndex(i,j)] = value;
 					optimalCuts[getIndex(i,j)] = cut;

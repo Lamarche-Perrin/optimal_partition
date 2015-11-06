@@ -19,10 +19,10 @@ NonconstrainedOrderedSet::~NonconstrainedOrderedSet ()
 }
 
 
-void NonconstrainedOrderedSet::setMeasure (Measure *m)
+void NonconstrainedOrderedSet::setObjectiveFunction (ObjectiveFunction *m)
 {
-	measure = m;
-	dataTree->setMeasure(m);
+	objective = m;
+	dataTree->setObjectiveFunction(m);
 }
 
 
@@ -107,7 +107,7 @@ void NonconstrainedOrderedSet::print ()
 				//if (j == 0) { std::cout << " x [" << i << "]"; }
 				std::cout << " x [" << i << "," << (i+j) << "]";
 				
-				if (node->measure != 0)
+				if (node->objective != 0)
 				{
 					std::cout << " -> ";
 					node->qualities[node->getIndex(i,j)]->print(false);
@@ -118,9 +118,9 @@ void NonconstrainedOrderedSet::print ()
 }
 
 
-void NonconstrainedOrderedSet::computeQuality () { measure->computeQuality(); dataTree->computeQuality(); }
-void NonconstrainedOrderedSet::normalizeQuality () { dataTree->normalizeQuality(); }
-void NonconstrainedOrderedSet::printQuality () { dataTree->printQuality(); }
+void NonconstrainedOrderedSet::computeObjectiveValues () { objective->computeObjectiveValues(); dataTree->computeObjectiveValues(); }
+void NonconstrainedOrderedSet::normalizeObjectiveValues () { dataTree->normalizeObjectiveValues(); }
+void NonconstrainedOrderedSet::printObjectiveValues () { dataTree->printObjectiveValues(); }
 void NonconstrainedOrderedSet::computeOptimalPartition (double parameter) { dataTree->computeOptimalPartition(parameter); }
 void NonconstrainedOrderedSet::printOptimalPartition (double parameter) { dataTree->printOptimalPartition(parameter); }
 
@@ -134,7 +134,7 @@ Partition *NonconstrainedOrderedSet::getOptimalPartition (double parameter)
 Partition *NonconstrainedOrderedSet::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
-	Partition *partition = new Partition(measure,parameter);
+	Partition *partition = new Partition(objective,parameter);
 	dataTree->buildOptimalPartition(partition);	
 	return partition;
 }

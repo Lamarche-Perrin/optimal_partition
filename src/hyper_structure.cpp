@@ -92,11 +92,11 @@ void HyperStructure::initReached()
 void HyperStructure::setRandom () {}
 
 
-void HyperStructure::setMeasure (Measure *m)
+void HyperStructure::setObjectiveFunction (ObjectiveFunction *m)
 {
-	measure = m;
+	objective = m;
 	initReached();
-	firstAggregate->setMeasure(m);
+	firstAggregate->setObjectiveFunction(m);
 }
 
 
@@ -158,26 +158,26 @@ void HyperStructure::buildDataStructure ()
 }
 
 
-void HyperStructure::computeQuality ()
+void HyperStructure::computeObjectiveValues ()
 {
 	initReached();
-	measure->computeQuality();
-	firstAggregate->computeQuality();
+	objective->computeObjectiveValues();
+	firstAggregate->computeObjectiveValues();
 }
 
 
-void HyperStructure::normalizeQuality ()
+void HyperStructure::normalizeObjectiveValues ()
 {
 	initReached();
-	firstAggregate->normalizeQuality();
+	firstAggregate->normalizeObjectiveValues();
 }
 
 
-void HyperStructure::printQuality ()
+void HyperStructure::printObjectiveValues ()
 {
-	measure->printQuality();
+	objective->printObjectiveValues();
 	initReached();
-	firstAggregate->printQuality();
+	firstAggregate->printObjectiveValues();
 }
 
 
@@ -197,7 +197,7 @@ void HyperStructure::printOptimalPartition (double parameter)
 Partition *HyperStructure::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
-	Partition *partition = new Partition(measure,parameter);
+	Partition *partition = new Partition(objective,parameter);
 	firstAggregate->buildOptimalPartition(partition);	
 	return partition;
 }
@@ -217,7 +217,7 @@ HyperAggregate::HyperAggregate (Aggregate **aggArray, int dim)
 	aggregateArray = aggArray;
 	aggregateSetSet = new HyperAggregateSetSet();
 
-	quality = 0;
+	value = 0;
 	optimalCut = 0;
 }
 
@@ -227,7 +227,7 @@ HyperAggregate::~HyperAggregate ()
 	delete [] aggregateArray;
 	for (HyperAggregateSetSet::iterator it = aggregateSetSet->begin(); it != aggregateSetSet->end(); ++it) { delete *it; }
 	delete aggregateSetSet;
-	delete quality;
+	delete value;
 }
 
 
@@ -238,7 +238,7 @@ void HyperAggregate::addAggregateSet (HyperAggregateSet *aggregateSet)
 }
 
 
-void HyperAggregate::setMeasure (Measure *m)
+void HyperAggregate::setObjectiveFunction (ObjectiveFunction *m)
 {
 	for (HyperAggregateSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
 	{
@@ -249,12 +249,12 @@ void HyperAggregate::setMeasure (Measure *m)
 			if (!aggregate->reached)
 			{
 				aggregate->reached = true;
-				aggregate->setMeasure(m);
+				aggregate->setObjectiveFunction(m);
 			}
 		}
 	}
 
-	measure = m;
+	objective = m;
 	if (isAtomic)
 	{
 		int index = 0;
@@ -263,9 +263,9 @@ void HyperAggregate::setMeasure (Measure *m)
 			index += *aggregateArray[d]->indexSet->begin();
 			if (d+1 < dimension) { index *= aggregateArray[d]->structure->atomicAggregateNumber; }
 		}
-		quality = m->newQuality(index);
+		value = m->newObjectiveValue(index);
 	}
-	else { quality = m->newQuality(); }
+	else { value = m->newObjectiveValue(); }
 }
 
 
@@ -359,7 +359,7 @@ void HyperAggregate::buildDataStructure ()
 }
 
 
-void HyperAggregate::computeQuality ()
+void HyperAggregate::computeObjectiveValues ()
 {
 	for (HyperAggregateSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
 	{
@@ -370,25 +370,25 @@ void HyperAggregate::computeQuality ()
 			if (!aggregate->reached)
 			{
 				aggregate->reached = true;
-				aggregate->computeQuality();
+				aggregate->computeObjectiveValues();
 			}
 		}
 	}
 
-	if (isAtomic) { quality->compute(); }
+	if (isAtomic) { value->compute(); }
 	else {
-		QualitySet *qSet = new QualitySet();
+		ObjectiveValueSet *qSet = new ObjectiveValueSet();
 		HyperAggregateSet *aggregateSet = *aggregateSetSet->begin();
-		for (HyperAggregateSet::iterator it = aggregateSet->begin(); it != aggregateSet->end(); ++it) { qSet->insert((*it)->quality); }
-		quality->compute(qSet);
+		for (HyperAggregateSet::iterator it = aggregateSet->begin(); it != aggregateSet->end(); ++it) { qSet->insert((*it)->value); }
+		value->compute(qSet);
 		delete qSet;
 	}
 }
 
 
-void HyperAggregate::normalizeQuality (Quality *maxQual)
+void HyperAggregate::normalizeObjectiveValues (ObjectiveValue *maxQual)
 {
-	if (maxQual == 0) { maxQual = quality; }
+	if (maxQual == 0) { maxQual = value; }
 
 	for (HyperAggregateSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
 	{
@@ -399,20 +399,20 @@ void HyperAggregate::normalizeQuality (Quality *maxQual)
 			if (!aggregate->reached)
 			{
 				aggregate->reached = true;
-				aggregate->normalizeQuality(maxQual);
+				aggregate->normalizeObjectiveValues(maxQual);
 			}
 		}
 	}
 
-	quality->normalize(maxQual);
+	value->normalize(maxQual);
 }
 
 
-void HyperAggregate::printQuality ()
+void HyperAggregate::printObjectiveValues ()
 {
 	printIndexSet();
 	std::cout << " -> ";
-	quality->print(true);
+	value->print(true);
 	
 	for (HyperAggregateSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
 	{
@@ -423,7 +423,7 @@ void HyperAggregate::printQuality ()
 			if (!aggregate->reached)
 			{
 				aggregate->reached = true;
-				aggregate->printQuality();
+				aggregate->printObjectiveValues();
 			}
 		}
 	}
@@ -446,7 +446,7 @@ void HyperAggregate::computeOptimalPartition (double parameter)
 		}
 	}
 
-	optimalValue = quality->getValue(parameter);
+	optimalValue = value->getValue(parameter);
 	optimalCut = 0;
 
 	for (HyperAggregateSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
@@ -456,7 +456,7 @@ void HyperAggregate::computeOptimalPartition (double parameter)
 		double value = 0;
 		for (HyperAggregateSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2) { value += (*it2)->optimalValue; }
 
-		if ((measure->maximize && value > optimalValue) || (!measure->maximize && value < optimalValue))
+		if ((objective->maximize && value > optimalValue) || (!objective->maximize && value < optimalValue))
 		{
 			optimalValue = value;
 			optimalCut = aggregateSet;
@@ -480,7 +480,7 @@ void HyperAggregate::buildOptimalPartition (Partition *partition)
 			partArray[d] = p;
 		}
 
-		HyperPart *part = new HyperPart (partArray,dimension,quality);
+		HyperPart *part = new HyperPart (partArray,dimension,value);
 		partition->addPart(part,true);
 	}
 	else { for (HyperAggregateSet::iterator it = optimalCut->begin(); it != optimalCut->end(); it++) { (*it)->buildOptimalPartition(partition); } }

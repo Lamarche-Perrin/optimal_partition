@@ -33,11 +33,11 @@ void Structure2D::initReached()
 void Structure2D::setRandom () {}
 
 
-void Structure2D::setMeasure (Measure *m)
+void Structure2D::setObjectiveFunction (ObjectiveFunction *m)
 {
-	measure = m;
+	objective = m;
 	initReached();
-	firstAggregate->setMeasure(m);
+	firstAggregate->setObjectiveFunction(m);
 }
 
 
@@ -78,25 +78,25 @@ void Structure2D::buildDataStructure ()
 }
 
 
-void Structure2D::computeQuality ()
+void Structure2D::computeObjectiveValues ()
 {
-	measure->computeQuality();
+	objective->computeObjectiveValues();
 	initReached();
-	firstAggregate->computeQuality();
+	firstAggregate->computeObjectiveValues();
 }
 
 
-void Structure2D::normalizeQuality ()
+void Structure2D::normalizeObjectiveValues ()
 {
 	initReached();
-	firstAggregate->normalizeQuality();
+	firstAggregate->normalizeObjectiveValues();
 }
 
 
-void Structure2D::printQuality ()
+void Structure2D::printObjectiveValues ()
 {
 	initReached();
-	firstAggregate->printQuality();
+	firstAggregate->printObjectiveValues();
 }
 
 
@@ -116,7 +116,7 @@ void Structure2D::printOptimalPartition (double parameter)
 Partition *Structure2D::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
-	Partition *partition = new Partition(measure,parameter);
+	Partition *partition = new Partition(objective,parameter);
 	firstAggregate->buildOptimalPartition(partition);	
 	return partition;
 }
@@ -135,7 +135,7 @@ Aggregate2D::Aggregate2D (Aggregate *agg1, Aggregate *agg2)
 	aggregate2 = agg2;
 	aggregateSetSet = new Aggregate2DSetSet();
 
-	quality = 0;
+	value = 0;
 	optimalCut = 0;
 }
 
@@ -144,7 +144,7 @@ Aggregate2D::~Aggregate2D ()
 {
 	for (Aggregate2DSetSet::iterator it = aggregateSetSet->begin(); it != aggregateSetSet->end(); ++it) { delete *it; }
 	delete aggregateSetSet;
-	delete quality;
+	delete value;
 }
 
 
@@ -155,7 +155,7 @@ void Aggregate2D::addAggregateSet (Aggregate2DSet *aggregateSet)
 }
 
 
-void Aggregate2D::setMeasure (Measure *m)
+void Aggregate2D::setObjectiveFunction (ObjectiveFunction *m)
 {
 	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
 	{
@@ -166,19 +166,19 @@ void Aggregate2D::setMeasure (Measure *m)
 			if (!aggregate->reached)
 			{
 				aggregate->reached = true;
-				aggregate->setMeasure(m);
+				aggregate->setObjectiveFunction(m);
 			}
 		}
 	}
 	
-	measure = m;
+	objective = m;
 	if (isAtomic)
 	{
 		int index1 = *aggregate1->indexSet->begin();
 		int index2 = *aggregate2->indexSet->begin();
-		quality = m->newQuality(index1 + index2 * aggregate1->structure->atomicAggregateNumber);
+		value = m->newObjectiveValue(index1 + index2 * aggregate1->structure->atomicAggregateNumber);
 	}
-	else { quality = m->newQuality(); }
+	else { value = m->newObjectiveValue(); }
 }
 
 
@@ -274,7 +274,7 @@ void Aggregate2D::buildDataStructure ()
 }
 
 
-void Aggregate2D::computeQuality ()
+void Aggregate2D::computeObjectiveValues ()
 {
 	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
 	{
@@ -285,25 +285,25 @@ void Aggregate2D::computeQuality ()
 			if (!aggregate->reached)
 			{
 				aggregate->reached = true;
-				aggregate->computeQuality();
+				aggregate->computeObjectiveValues();
 			}
 		}
 	}
 
-	if (isAtomic) { quality->compute(); }
+	if (isAtomic) { value->compute(); }
 	else {
-		QualitySet *qSet = new QualitySet();
+		ObjectiveValueSet *qSet = new ObjectiveValueSet();
 		Aggregate2DSet *aggregateSet = *aggregateSetSet->begin();
-		for (Aggregate2DSet::iterator it = aggregateSet->begin(); it != aggregateSet->end(); ++it) { qSet->insert((*it)->quality); }
-		quality->compute(qSet);
+		for (Aggregate2DSet::iterator it = aggregateSet->begin(); it != aggregateSet->end(); ++it) { qSet->insert((*it)->value); }
+		value->compute(qSet);
 		delete qSet;
 	}
 }
 
 
-void Aggregate2D::normalizeQuality (Quality *maxQual)
+void Aggregate2D::normalizeObjectiveValues (ObjectiveValue *maxQual)
 {
-	if (maxQual == 0) { maxQual = quality; }
+	if (maxQual == 0) { maxQual = value; }
 
 	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
 	{
@@ -314,20 +314,20 @@ void Aggregate2D::normalizeQuality (Quality *maxQual)
 			if (!aggregate->reached)
 			{
 				aggregate->reached = true;
-				aggregate->normalizeQuality(maxQual);
+				aggregate->normalizeObjectiveValues(maxQual);
 			}
 		}
 	}
 
-	quality->normalize(maxQual);
+	value->normalize(maxQual);
 }
 
 
-void Aggregate2D::printQuality ()
+void Aggregate2D::printObjectiveValues ()
 {
 	printIndexSet();
 	std::cout << " -> ";
-	quality->print(true);
+	value->print(true);
 	
 	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
 	{
@@ -338,7 +338,7 @@ void Aggregate2D::printQuality ()
 			if (!aggregate->reached)
 			{
 				aggregate->reached = true;
-				aggregate->printQuality();
+				aggregate->printObjectiveValues();
 			}
 		}
 	}
@@ -361,7 +361,7 @@ void Aggregate2D::computeOptimalPartition (double parameter)
 		}
 	}
 
-	optimalValue = quality->getValue(parameter);
+	optimalValue = value->getValue(parameter);
 	optimalCut = 0;
 
 	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
@@ -371,7 +371,7 @@ void Aggregate2D::computeOptimalPartition (double parameter)
 		double value = 0;
 		for (Aggregate2DSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2) { value += (*it2)->optimalValue; }
 
-		if ((measure->maximize && value > optimalValue) || (!measure->maximize && value < optimalValue))
+		if ((objective->maximize && value > optimalValue) || (!objective->maximize && value < optimalValue))
 		{
 			optimalValue = value;
 			optimalCut = aggregateSet;
@@ -389,7 +389,7 @@ void Aggregate2D::buildOptimalPartition (Partition *partition)
 	{
 		Part *p1 = new Part();
 		Part *p2 = new Part();
-		BiPart *part = new BiPart(p1,p2,quality);
+		BiPart *part = new BiPart(p1,p2,value);
 
 		for (IndexSet::iterator it = aggregate1->indexSet->begin(); it != aggregate1->indexSet->end(); ++it) { p1->addIndividual(*it); }
 		for (IndexSet::iterator it = aggregate2->indexSet->begin(); it != aggregate2->indexSet->end(); ++it) { p2->addIndividual(*it); }

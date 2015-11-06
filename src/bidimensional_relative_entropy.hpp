@@ -2,9 +2,9 @@
 #define INCLUDE_BIDIMENSIONAL_RELATIVE_ENTROPY
 
 /*
-#include "measure.hpp"
+#include "objective_function.hpp"
 
-class BidimensionalRelativeEntropy: public Measure
+class BidimensionalRelativeEntropy: public ObjectiveFunction
 {
 	public:
 		int size1;
@@ -17,7 +17,7 @@ class BidimensionalRelativeEntropy: public Measure
 		~BidimensionalRelativeEntropy ();
 		
 		void setRandom ();
-		Quality *newQuality (int index = -1);
+		ObjectiveValue *newObjectiveValue (int index = -1);
 
 		double getParameter (double unit);
 		double getUnitDistance (double uMin, double uMax);
@@ -25,7 +25,7 @@ class BidimensionalRelativeEntropy: public Measure
 };
 
 
-class BidimensionalRelativeQuality: public Quality
+class BidimensionalRelativeObjectiveValue: public ObjectiveValue
 {
 	public:
 		int index;
@@ -36,15 +36,15 @@ class BidimensionalRelativeQuality: public Quality
 		double divergence;
 		double sizeReduction;
 		
-		BidimensionalRelativeQuality (BidimensionalRelativeEntropy *measure, int index = -1);
-		~BidimensionalRelativeQuality ();
+		BidimensionalRelativeObjectiveValue (BidimensionalRelativeEntropy *objective, int index = -1);
+		~BidimensionalRelativeObjectiveValue ();
 		
-		void add (Quality *quality);
+		void add (ObjectiveValue *value);
 		void compute ();
-		void compute (Quality *quality1, Quality *quality2);
-		void compute (QualitySet *qualityset);
-		void normalize (Quality *q);
-		void print (bool value = true);
+		void compute (ObjectiveValue *value1, ObjectiveValue *value2);
+		void compute (ObjectiveValueSet *valueset);
+		void normalize (ObjectiveValue *q);
+		void print (bool verbose = true);
 		double getValue (double param);
 };
 

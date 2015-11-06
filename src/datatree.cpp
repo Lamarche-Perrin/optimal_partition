@@ -12,14 +12,14 @@
 Datatree::Datatree (int v)
 {
 	vertex = v;	
-	measure = 0;
+	objective = 0;
 
 	parent = 0;
 	complement = 0;
 	complementList = new TreesList();
 	children = new TreesSet();
 	bipartitions = new BipartitionsSet();
-	quality = 0;
+	value = 0;
 
 	optimized = false;
 	wholeSet = false;
@@ -29,14 +29,14 @@ Datatree::Datatree (int v)
 Datatree::Datatree (Datatree &tree)
 {
 	vertex = tree.vertex;
-	measure = tree.measure;
+	objective = tree.objective;
 
 	parent = 0;
 	complement = 0;
 	complementList = new TreesList();
 	children = new TreesSet();
 	bipartitions = new BipartitionsSet();
-	quality = 0;
+	value = 0;
 
 	optimized = false;
 	wholeSet = false;
@@ -212,7 +212,7 @@ Datatree *Datatree::findOrBuildChild (Datatree *n)
 }
 */
 
-void Datatree::setMeasure (Measure *m)
+void Datatree::setObjectiveFunction (ObjectiveFunction *m)
 {
 	std::list<Datatree*> *list = new std::list<Datatree*>();
 	list->push_back(this);
@@ -222,18 +222,18 @@ void Datatree::setMeasure (Measure *m)
 		Datatree *node = list->front();
 		list->pop_front();
 
-		if (node->vertex == -1) { node->quality = m->newQuality(); }
-		else if (node->parent->vertex == -1) { node->quality = m->newQuality(node->vertex); }
-		else { node->quality = m->newQuality(); }
+		if (node->vertex == -1) { node->value = m->newObjectiveValue(); }
+		else if (node->parent->vertex == -1) { node->value = m->newObjectiveValue(node->vertex); }
+		else { node->value = m->newObjectiveValue(); }
 		
-		node->measure = m;
+		node->objective = m;
 
 		for (TreesSet::iterator it = node->children->begin(); it != node->children->end(); ++it) { list->push_back(*it); }
 	}
 }
 
 
-void Datatree::computeQuality ()
+void Datatree::computeObjectiveValues ()
 {
 	std::list<Datatree*> *list = new std::list<Datatree*>();
 	list->push_back(this);
@@ -246,14 +246,14 @@ void Datatree::computeQuality ()
 		if (node->vertex != -1)
 		{
 			if (node->parent->vertex == -1)
-				node->quality->compute();
+				node->value->compute();
 			
 			else if (node->vertex != -1)
 			{
-				Quality *q1 = findChild(node->vertex)->quality;
-				Quality *q2 = node->parent->quality;
+				ObjectiveValue *q1 = findChild(node->vertex)->value;
+				ObjectiveValue *q2 = node->parent->value;
 				
-				node->quality->compute(q1,q2);
+				node->value->compute(q1,q2);
 			}
 		}
 		
@@ -262,10 +262,10 @@ void Datatree::computeQuality ()
 }
 
 
-void Datatree::normalizeQuality (Quality *maxQuality)
+void Datatree::normalizeObjectiveValues (ObjectiveValue *maxObjectiveValue)
 {
-	Quality *maxQual = maxQuality; 
-	if (maxQual == 0) { maxQual = parent->quality; }
+	ObjectiveValue *maxQual = maxObjectiveValue; 
+	if (maxQual == 0) { maxQual = parent->value; }
 
 	std::list<Datatree*> *list = new std::list<Datatree*>();
 	list->push_back(this);
@@ -275,7 +275,7 @@ void Datatree::normalizeQuality (Quality *maxQuality)
 		Datatree *node = list->front();
 		list->pop_front();
 
-		if (node->vertex != -1) { node->quality->normalize(maxQual); }
+		if (node->vertex != -1) { node->value->normalize(maxQual); }
 
 		for (TreesSet::iterator it = node->children->begin(); it != node->children->end(); ++it) { list->push_back(*it); }
 	}
@@ -283,7 +283,7 @@ void Datatree::normalizeQuality (Quality *maxQuality)
 
 
 
-void Datatree::printQuality ()
+void Datatree::printObjectiveValues ()
 {
 	std::list<Datatree*> *list = new std::list<Datatree*>();
 	list->push_back(this);
@@ -297,7 +297,7 @@ void Datatree::printQuality ()
 		{
 			node->printVertices(false);
 			std::cout << " -> ";
-			node->quality->print(true);
+			node->value->print(true);
 		}
 
 		for (TreesSet::iterator it = node->children->begin(); it != node->children->end(); ++it) { list->push_back(*it); }
@@ -321,7 +321,7 @@ void Datatree::computeOptimalPartition (double parameter)
 		node->optimalBipartition->first = this;
 		node->optimalBipartition->second = node;
 		
-		node->optimalValue = node->quality->getValue(parameter);
+		node->optimalValue = node->value->getValue(parameter);
 
 		for (BipartitionsSet::iterator it = node->bipartitions->begin(); it != node->bipartitions->end(); ++it)
 		{
@@ -332,12 +332,12 @@ void Datatree::computeOptimalPartition (double parameter)
 			double value = 0;
 
 			if (n1->optimized) { value += n1->optimalValue; }
-			else { value += n1->quality->getValue(parameter); }
+			else { value += n1->value->getValue(parameter); }
 
 			if (n2->optimized) { value += n2->optimalValue; }
-			else { value += n2->quality->getValue(parameter); }
+			else { value += n2->value->getValue(parameter); }
 			
-			if ((measure->maximize && value > node->optimalValue) || (!measure->maximize && value < node->optimalValue))
+			if ((objective->maximize && value > node->optimalValue) || (!objective->maximize && value < node->optimalValue))
 			{
 				node->optimalBipartition->first = n1;
 				node->optimalBipartition->second = n2;
@@ -390,7 +390,7 @@ Partition *Datatree::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
 
-	Partition *partition = new Partition(measure,parameter);
+	Partition *partition = new Partition(objective,parameter);
 	
 	Datatree *node = parent;
 	
@@ -405,7 +405,7 @@ Partition *Datatree::getOptimalPartition (double parameter)
 		if (n2->optimized && n2 != node) { nextNode = n2; }
 		else if (n2->vertex != -1)
 		{
-			Part *part = new Part(n2->quality);
+			Part *part = new Part(n2->value);
 			Datatree *n = n2;
 			while (n->vertex != -1)
 			{
@@ -418,7 +418,7 @@ Partition *Datatree::getOptimalPartition (double parameter)
 		if (n1->optimized && n1 != node) { nextNode = n1; }
 		else if (n1->vertex != -1)
 		{
-			Part *part = new Part(n1->quality);
+			Part *part = new Part(n1->value);
 			Datatree *n = n1;
 			while (n->vertex != -1)
 			{
@@ -702,7 +702,7 @@ void Datatree::printVerticesRec ()
 OrderedDatatree::OrderedDatatree (int s, int v)
 {
 	vertex = v;	
-	measure = 0;
+	objective = 0;
 
 	parent = 0;
 	complement = 0;
@@ -714,7 +714,7 @@ OrderedDatatree::OrderedDatatree (int s, int v)
 	size2 = s;
 	int s2 = (s+1)*s/2;
 	
-	qualities = new Quality* [s2];
+	qualities = new ObjectiveValue* [s2];
 	optimalValues = new double [s2];
 	optimalCuts = new int [s2];
 	optimalBipartitions = new OrderedBipartition* [s2];
@@ -733,7 +733,7 @@ OrderedDatatree::OrderedDatatree (int s, int v)
 OrderedDatatree::OrderedDatatree (OrderedDatatree &tree)
 {
 	vertex = tree.vertex;
-	measure = tree.measure;
+	objective = tree.objective;
 
 	parent = 0;
 	complement = 0;
@@ -745,7 +745,7 @@ OrderedDatatree::OrderedDatatree (OrderedDatatree &tree)
 	size2 = tree.size2;
 	int s2 = (size2+1)*size2/2;
 	
-	qualities = new Quality* [s2];
+	qualities = new ObjectiveValue* [s2];
 	optimalValues = new double [s2];
 	optimalCuts = new int [s2];
 	optimalBipartitions = new OrderedBipartition* [s2];
@@ -863,7 +863,7 @@ OrderedDatatree *OrderedDatatree::findOrAddChild (int v, bool print)
 }
 
 
-void OrderedDatatree::setMeasure (Measure *m)
+void OrderedDatatree::setObjectiveFunction (ObjectiveFunction *m)
 {
 	std::list<OrderedDatatree*> *list = new std::list<OrderedDatatree*>();
 	list->push_back(this);
@@ -878,21 +878,21 @@ void OrderedDatatree::setMeasure (Measure *m)
 			if (node->parent->vertex == -1)
 			{
 				for (int i = 0; i < size2; i++)
-					node->qualities[getIndex(i,0)] = m->newQuality(node->vertex * node->parent->size2 + i);
+					node->qualities[getIndex(i,0)] = m->newObjectiveValue(node->vertex * node->parent->size2 + i);
 			
 				for (int j = 1; j < size2; j++)
 					for (int i = 0; i < size2-j; i++)
-						node->qualities[getIndex(i,j)] = m->newQuality();
+						node->qualities[getIndex(i,j)] = m->newObjectiveValue();
 			}
 	
 			else {
 				for (int j = 0; j < size2; j++)
 					for (int i = 0; i < size2-j; i++)
-						node->qualities[getIndex(i,j)] = m->newQuality();
+						node->qualities[getIndex(i,j)] = m->newObjectiveValue();
 			}
 		}
 		
-		node->measure = m;
+		node->objective = m;
 
 		for (OrderedTreesSet::iterator it = node->children->begin(); it != node->children->end(); ++it) { list->push_back(*it); }
 	}
@@ -900,7 +900,7 @@ void OrderedDatatree::setMeasure (Measure *m)
 
 
 
-void OrderedDatatree::computeQuality ()
+void OrderedDatatree::computeObjectiveValues ()
 {
 	std::list<OrderedDatatree*> *list = new std::list<OrderedDatatree*>();
 	list->push_back(this);
@@ -920,8 +920,8 @@ void OrderedDatatree::computeQuality ()
 			{
 				for (int i = 0; i < size2; i++)
 				{
-					Quality *q1 = findChild(node->vertex)->qualities[getIndex(i,0)];
-					Quality *q2 = node->parent->qualities[getIndex(i,0)];
+					ObjectiveValue *q1 = findChild(node->vertex)->qualities[getIndex(i,0)];
+					ObjectiveValue *q2 = node->parent->qualities[getIndex(i,0)];
 					
 					node->qualities[getIndex(i,0)]->compute(q1,q2);
 				}
@@ -937,9 +937,9 @@ void OrderedDatatree::computeQuality ()
 }
 
 
-void OrderedDatatree::normalizeQuality (Quality *maxQuality)
+void OrderedDatatree::normalizeObjectiveValues (ObjectiveValue *maxObjectiveValue)
 {
-	Quality *maxQual = maxQuality; 
+	ObjectiveValue *maxQual = maxObjectiveValue; 
 	if (maxQual == 0) { maxQual = parent->qualities[getIndex(0,size2-1)]; }
 
 	std::list<OrderedDatatree*> *list = new std::list<OrderedDatatree*>();
@@ -963,7 +963,7 @@ void OrderedDatatree::normalizeQuality (Quality *maxQuality)
 
 
 
-void OrderedDatatree::printQuality ()
+void OrderedDatatree::printObjectiveValues ()
 {
 	std::list<OrderedDatatree*> *list = new std::list<OrderedDatatree*>();
 	list->push_back(this);
@@ -1045,8 +1045,8 @@ void OrderedDatatree::computeOptimalPartition (double parameter)
 						if (n2->optimized) { value += n2->optimalValues[getIndex(i,j)]; }
 						else { value += n2->qualities[getIndex(i,j)]->getValue(parameter); }
 							
-						if ((measure->maximize && value > node->optimalValues[getIndex(i,j)])
-						|| (!measure->maximize && value < node->optimalValues[getIndex(i,j)]))
+						if ((objective->maximize && value > node->optimalValues[getIndex(i,j)])
+						|| (!objective->maximize && value < node->optimalValues[getIndex(i,j)]))
 						{
 							node->optimalBipartitions[getIndex(i,j)]->first = n1;
 							node->optimalBipartitions[getIndex(i,j)]->second = n2;
@@ -1058,8 +1058,8 @@ void OrderedDatatree::computeOptimalPartition (double parameter)
 					for (int cut = 0; cut < j; cut++)
 					{
 						double value = node->optimalValues[getIndex(i,cut)] + node->optimalValues[getIndex(i+cut+1,j-cut-1)];
-						if ((measure->maximize && value > node->optimalValues[getIndex(i,j)])
-						|| (!measure->maximize && value < node->optimalValues[getIndex(i,j)]))
+						if ((objective->maximize && value > node->optimalValues[getIndex(i,j)])
+						|| (!objective->maximize && value < node->optimalValues[getIndex(i,j)]))
 						{
 							node->optimalValues[getIndex(i,j)] = value;
 							node->optimalCuts[getIndex(i,j)] = cut;
@@ -1113,7 +1113,7 @@ Partition *OrderedDatatree::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
 
-	Partition *partition = new Partition(measure,parameter);
+	Partition *partition = new Partition(objective,parameter);
 	
 	OrderedDatatree *node = parent;
 	
@@ -1128,7 +1128,7 @@ Partition *OrderedDatatree::getOptimalPartition (double parameter)
 		if (n2->optimized && n2 != node) { nextNode = n2; }
 		else if (n2->vertex != -1)
 		{
-			Part *part = new Part(n2->quality);
+			Part *part = new Part(n2->value);
 			OrderedDatatree *n = n2;
 			while (n->vertex != -1)
 			{
@@ -1141,7 +1141,7 @@ Partition *OrderedDatatree::getOptimalPartition (double parameter)
 		if (n1->optimized && n1 != node) { nextNode = n1; }
 		else if (n1->vertex != -1)
 		{
-			Part *part = new Part(n1->quality);
+			Part *part = new Part(n1->value);
 			OrderedDatatree *n = n1;
 			while (n->vertex != -1)
 			{
@@ -1162,7 +1162,7 @@ Partition *OrderedDatatree::getOptimalPartition (double parameter)
 Partition *OrderedDatatree::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
-	Partition *partition = new Partition(measure,parameter);
+	Partition *partition = new Partition(objective,parameter);
 	parent->buildOptimalPartition(partition);
 	return partition;
 }

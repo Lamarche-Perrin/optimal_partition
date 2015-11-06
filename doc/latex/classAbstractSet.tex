@@ -1,0 +1,216 @@
+\hypertarget{classAbstractSet}{\section{Abstract\-Set Class Reference}
+\label{classAbstractSet}\index{Abstract\-Set@{Abstract\-Set}}
+}
+
+
+Abstract class defining a set of elements that one wants to partition while optimising some (decomposable) objective and preserving some algebraic constraints (set of feasible parts)  
+
+
+
+
+{\ttfamily \#include $<$abstract\-\_\-set.\-hpp$>$}
+
+Inheritance diagram for Abstract\-Set\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classAbstractSet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classAbstractSet_adc3db5afd11de63639ddd079ef4ecf45}{virtual \hyperlink{classAbstractSet_adc3db5afd11de63639ddd079ef4ecf45}{$\sim$\-Abstract\-Set} ()}\label{classAbstractSet_adc3db5afd11de63639ddd079ef4ecf45}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hypertarget{classAbstractSet_aac0cf2d0ef47c49aa0a7ac393691ff7a}{virtual void \hyperlink{classAbstractSet_aac0cf2d0ef47c49aa0a7ac393691ff7a}{set\-Random} ()=0}\label{classAbstractSet_aac0cf2d0ef47c49aa0a7ac393691ff7a}
+
+\begin{DoxyCompactList}\small\item\em Randomly set the algebraic constraints for quick experiments (warning\-: this method is not always implemented) \end{DoxyCompactList}\item 
+\hypertarget{classAbstractSet_a735009927cfae61baa66bbf7b53f76d5}{virtual void \hyperlink{classAbstractSet_a735009927cfae61baa66bbf7b53f76d5}{build\-Data\-Structure} ()=0}\label{classAbstractSet_a735009927cfae61baa66bbf7b53f76d5}
+
+\begin{DoxyCompactList}\small\item\em Build a proper data structure to represent the set and its algebraic constraints (warning\-: this method should always be called after instantiating and parameterising a set, and before calling any other method, such as \hyperlink{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}{print()}, \hyperlink{classAbstractSet_a341945c465179a52da09356a2aa50a8d}{compute\-Objective\-Values()}, compute\-Optimal\-Partition (double parameter), etc.) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}{set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$\hyperlink{classAbstractSet_a0217447a042827703e1ea7655f0fc099}{objective})=0
+\begin{DoxyCompactList}\small\item\em Set the objective that one wants to optimise. \end{DoxyCompactList}\item 
+\hypertarget{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}{virtual void \hyperlink{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}{print} ()=0}\label{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}
+
+\begin{DoxyCompactList}\small\item\em Print the set and its algebraic constraints. \end{DoxyCompactList}\item 
+\hypertarget{classAbstractSet_a341945c465179a52da09356a2aa50a8d}{virtual void \hyperlink{classAbstractSet_a341945c465179a52da09356a2aa50a8d}{compute\-Objective\-Values} ()=0}\label{classAbstractSet_a341945c465179a52da09356a2aa50a8d}
+
+\begin{DoxyCompactList}\small\item\em Compute the value of the objective function for each feasible part (warning\-: set\-Objective\-Function (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$objective) should have been called first) \end{DoxyCompactList}\item 
+\hypertarget{classAbstractSet_ae871ecbb69614c1028c3c688b90061b3}{virtual void \hyperlink{classAbstractSet_ae871ecbb69614c1028c3c688b90061b3}{normalize\-Objective\-Values} ()=0}\label{classAbstractSet_ae871ecbb69614c1028c3c688b90061b3}
+
+\begin{DoxyCompactList}\small\item\em Finish computing the value of the objective function for each feasible part when normalisation is required (warning\-: only after \hyperlink{classAbstractSet_a341945c465179a52da09356a2aa50a8d}{compute\-Objective\-Values()} has been called) \end{DoxyCompactList}\item 
+\hypertarget{classAbstractSet_a5589719db42d5fdf7f517b2e749f0675}{virtual void \hyperlink{classAbstractSet_a5589719db42d5fdf7f517b2e749f0675}{print\-Objective\-Values} ()=0}\label{classAbstractSet_a5589719db42d5fdf7f517b2e749f0675}
+
+\begin{DoxyCompactList}\small\item\em Print the value of the objective function for each feasible part. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAbstractSet_acfc3004f18192f38e32bb7a5a12ec8df}{compute\-Optimal\-Partition} (double parameter)=0
+\begin{DoxyCompactList}\small\item\em Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. \end{DoxyCompactList}\item 
+virtual \hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classAbstractSet_a48fd08c4b61ed46946bed6e19cd11194}{get\-Optimal\-Partition} (double parameter)=0
+\begin{DoxyCompactList}\small\item\em Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}{print()} on the result) \end{DoxyCompactList}\item 
+virtual void \hyperlink{classAbstractSet_a82a9ce5c2d30690f0d1b83b034e92e1e}{print\-Optimal\-Partition} (double parameter)=0
+\begin{DoxyCompactList}\small\item\em Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}{print()} on the result) \end{DoxyCompactList}\item 
+Partition\-List $\ast$ \hyperlink{classAbstractSet_af92c6c087fdb14e2426a1bf30960195e}{get\-Optimal\-Partition\-List} (double threshold)
+\begin{DoxyCompactList}\small\item\em Compute and return a list of partitions that fit with the algebraic constraints and that optimises the objective function that has been specified, while the parameter of the objective function varies on a proper ranged (defined by the objective itself) \end{DoxyCompactList}\item 
+void \hyperlink{classAbstractSet_ad8fd35092406335c40914c53ed2e5e34}{print\-Optimal\-Partition\-List} (double threshold)
+\begin{DoxyCompactList}\small\item\em Compute and print a list of partitions that fit with the algebraic constraints and that optimises the objective function that has been specified, while the parameter of the objective function varies on a proper ranged (defined by the objective itself) \end{DoxyCompactList}\item 
+void \hyperlink{classAbstractSet_ab72fbc5c1f339bb385d24565fd26d4fc}{print\-Optimal\-Partition\-List\-In\-C\-S\-V} (double threshold, \hyperlink{classDataset}{Dataset} $\ast$data, int dim, std\-::string file\-Name)
+\begin{DoxyCompactList}\small\item\em Compute and print in a C\-S\-V file a list of partitions that fit with the algebraic constraints and that optimises the objective function that has been specified, while the parameter of the objective function varies on a proper ranged (defined by the objective itself) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$ \hyperlink{classAbstractSet_a0217447a042827703e1ea7655f0fc099}{objective}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract class defining a set of elements that one wants to partition while optimising some (decomposable) objective and preserving some algebraic constraints (set of feasible parts) 
+
+\subsection{Member Function Documentation}
+\hypertarget{classAbstractSet_acfc3004f18192f38e32bb7a5a12ec8df}{\index{Abstract\-Set@{Abstract\-Set}!compute\-Optimal\-Partition@{compute\-Optimal\-Partition}}
+\index{compute\-Optimal\-Partition@{compute\-Optimal\-Partition}!AbstractSet@{Abstract\-Set}}
+\subsubsection[{compute\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Abstract\-Set\-::compute\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAbstractSet_acfc3004f18192f38e32bb7a5a12ec8df}
+
+
+Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classGraph_a484517e8cda854dbaf158d7bdae19fe7}{Graph}, \hyperlink{classHyperStructure_a22374eb5de711c6ded42c439fec90711}{Hyper\-Structure}, \hyperlink{classNonconstrainedSet_aa23eb0dca07ada8a3b35b0f5ea1b24b2}{Nonconstrained\-Set}, \hyperlink{classStructure2D_ae47a85c274cefe893414a09819b09806}{Structure2\-D}, \hyperlink{classRing_a196b62e9291ed1012ec89f0b2ccd489f}{Ring}, \hyperlink{classNHOSet_ae3d2e2f17d62402efbf0564e8b10ec1c}{N\-H\-O\-Set}, \hyperlink{classHierarchicalHierarchicalSet_a5fec3e288e01501f6ed0f56c7b64480c}{Hierarchical\-Hierarchical\-Set}, \hyperlink{classOrderedSet_a2b17cd7170d713309d0ae39f0d18fd59}{Ordered\-Set}, \hyperlink{classNonconstrainedOrderedSet_a1a880ae970c47446a370a4b4679b59f5}{Nonconstrained\-Ordered\-Set}, \hyperlink{classHierarchicalOrderedSet_aaaf67ab7d39ab2ca599c0c5a6ac22ce6}{Hierarchical\-Ordered\-Set}, and \hyperlink{classHierarchicalSet_a98c856781a0b5e1a7d4727f0078c6838}{Hierarchical\-Set}.
+
+\hypertarget{classAbstractSet_a48fd08c4b61ed46946bed6e19cd11194}{\index{Abstract\-Set@{Abstract\-Set}!get\-Optimal\-Partition@{get\-Optimal\-Partition}}
+\index{get\-Optimal\-Partition@{get\-Optimal\-Partition}!AbstractSet@{Abstract\-Set}}
+\subsubsection[{get\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Partition}$\ast$ Abstract\-Set\-::get\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAbstractSet_a48fd08c4b61ed46946bed6e19cd11194}
+
+
+Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\-: The resulting optimal partition 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classGraph_a044d5401c498aa0c2d213986e7d747ca}{Graph}, \hyperlink{classHyperStructure_a36cc3358d624e945de2946d7d706c6a2}{Hyper\-Structure}, \hyperlink{classNonconstrainedSet_a7d340ab2e3c6f0cb30b2375311376245}{Nonconstrained\-Set}, \hyperlink{classStructure2D_a3e4b40f2cf3b59ce3c39eaf75eda09e4}{Structure2\-D}, \hyperlink{classRing_ac9566fc23a18846375886fed4680b55a}{Ring}, \hyperlink{classNHOSet_a2269a3b8f493512859660d3a457303d7}{N\-H\-O\-Set}, \hyperlink{classHierarchicalHierarchicalSet_ab7f3e53d68e2a0191d37cd3febdaa285}{Hierarchical\-Hierarchical\-Set}, \hyperlink{classOrderedSet_ac347be002f2b52ebc08ef6fdb6214f08}{Ordered\-Set}, \hyperlink{classNonconstrainedOrderedSet_a56bc624037070551d43a72685bbe2347}{Nonconstrained\-Ordered\-Set}, \hyperlink{classHierarchicalOrderedSet_a627ce416d730e03c9d807366e4a79a78}{Hierarchical\-Ordered\-Set}, and \hyperlink{classHierarchicalSet_a1f7b6ed6c57f17fcdee7c7c2bfbe4925}{Hierarchical\-Set}.
+
+\hypertarget{classAbstractSet_af92c6c087fdb14e2426a1bf30960195e}{\index{Abstract\-Set@{Abstract\-Set}!get\-Optimal\-Partition\-List@{get\-Optimal\-Partition\-List}}
+\index{get\-Optimal\-Partition\-List@{get\-Optimal\-Partition\-List}!AbstractSet@{Abstract\-Set}}
+\subsubsection[{get\-Optimal\-Partition\-List}]{\setlength{\rightskip}{0pt plus 5cm}Partition\-List $\ast$ Abstract\-Set\-::get\-Optimal\-Partition\-List (
+\begin{DoxyParamCaption}
+\item[{double}]{threshold}
+\end{DoxyParamCaption}
+)}}\label{classAbstractSet_af92c6c087fdb14e2426a1bf30960195e}
+
+
+Compute and return a list of partitions that fit with the algebraic constraints and that optimises the objective function that has been specified, while the parameter of the objective function varies on a proper ranged (defined by the objective itself) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & \-: The minimal distance between two successive parameters giving birth to two different partitions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\-: The resulting list of optimal partitions 
+\end{DoxyReturn}
+\hypertarget{classAbstractSet_a82a9ce5c2d30690f0d1b83b034e92e1e}{\index{Abstract\-Set@{Abstract\-Set}!print\-Optimal\-Partition@{print\-Optimal\-Partition}}
+\index{print\-Optimal\-Partition@{print\-Optimal\-Partition}!AbstractSet@{Abstract\-Set}}
+\subsubsection[{print\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Abstract\-Set\-::print\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAbstractSet_a82a9ce5c2d30690f0d1b83b034e92e1e}
+
+
+Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classGraph_a493dd2e19a08dd65ca49ac18944ad2cb}{Graph}, \hyperlink{classHyperStructure_af96b6f648e4aa1459ae1c8d61352413c}{Hyper\-Structure}, \hyperlink{classNonconstrainedSet_ad0e6da309ffd9c5e2e87b2c3e62c353f}{Nonconstrained\-Set}, \hyperlink{classStructure2D_a45157c8978b9b67cd6efc2ea98b22398}{Structure2\-D}, \hyperlink{classRing_add25abfb4d058b0229a2582913118fcf}{Ring}, \hyperlink{classNHOSet_ad30bf8268a25aca0f11115e526ef7536}{N\-H\-O\-Set}, \hyperlink{classHierarchicalHierarchicalSet_a61add8eccdae0778ea3541b30b01b0b1}{Hierarchical\-Hierarchical\-Set}, \hyperlink{classOrderedSet_a14b48fdc9b30adb26a4c5d126160698e}{Ordered\-Set}, \hyperlink{classNonconstrainedOrderedSet_a2fe53fd392a2b76a994b47857e8b9f8d}{Nonconstrained\-Ordered\-Set}, \hyperlink{classHierarchicalOrderedSet_ae4df851956e9f11dce35c726b01c2bad}{Hierarchical\-Ordered\-Set}, and \hyperlink{classHierarchicalSet_a5cc9af69f6cf68fbfac2343207d125b5}{Hierarchical\-Set}.
+
+\hypertarget{classAbstractSet_ad8fd35092406335c40914c53ed2e5e34}{\index{Abstract\-Set@{Abstract\-Set}!print\-Optimal\-Partition\-List@{print\-Optimal\-Partition\-List}}
+\index{print\-Optimal\-Partition\-List@{print\-Optimal\-Partition\-List}!AbstractSet@{Abstract\-Set}}
+\subsubsection[{print\-Optimal\-Partition\-List}]{\setlength{\rightskip}{0pt plus 5cm}void Abstract\-Set\-::print\-Optimal\-Partition\-List (
+\begin{DoxyParamCaption}
+\item[{double}]{threshold}
+\end{DoxyParamCaption}
+)}}\label{classAbstractSet_ad8fd35092406335c40914c53ed2e5e34}
+
+
+Compute and print a list of partitions that fit with the algebraic constraints and that optimises the objective function that has been specified, while the parameter of the objective function varies on a proper ranged (defined by the objective itself) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & \-: The minimal distance between two successive parameters giving birth to two different partitions \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAbstractSet_ab72fbc5c1f339bb385d24565fd26d4fc}{\index{Abstract\-Set@{Abstract\-Set}!print\-Optimal\-Partition\-List\-In\-C\-S\-V@{print\-Optimal\-Partition\-List\-In\-C\-S\-V}}
+\index{print\-Optimal\-Partition\-List\-In\-C\-S\-V@{print\-Optimal\-Partition\-List\-In\-C\-S\-V}!AbstractSet@{Abstract\-Set}}
+\subsubsection[{print\-Optimal\-Partition\-List\-In\-C\-S\-V}]{\setlength{\rightskip}{0pt plus 5cm}void Abstract\-Set\-::print\-Optimal\-Partition\-List\-In\-C\-S\-V (
+\begin{DoxyParamCaption}
+\item[{double}]{threshold, }
+\item[{{\bf Dataset} $\ast$}]{data, }
+\item[{int}]{dim, }
+\item[{std\-::string}]{file\-Name}
+\end{DoxyParamCaption}
+)}}\label{classAbstractSet_ab72fbc5c1f339bb385d24565fd26d4fc}
+
+
+Compute and print in a C\-S\-V file a list of partitions that fit with the algebraic constraints and that optimises the objective function that has been specified, while the parameter of the objective function varies on a proper ranged (defined by the objective itself) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & \-: The minimal distance between two successive parameters giving birth to two different partitions \\
+\hline
+\end{DoxyParams}
+\hypertarget{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}{\index{Abstract\-Set@{Abstract\-Set}!set\-Objective\-Function@{set\-Objective\-Function}}
+\index{set\-Objective\-Function@{set\-Objective\-Function}!AbstractSet@{Abstract\-Set}}
+\subsubsection[{set\-Objective\-Function}]{\setlength{\rightskip}{0pt plus 5cm}virtual void Abstract\-Set\-::set\-Objective\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf Objective\-Function} $\ast$}]{objective}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}
+
+
+Set the objective that one wants to optimise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objective} & \-: The objective function itself \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classGraph_a294aff8b11a1b11dae2b4cd39b78b91d}{Graph}, \hyperlink{classHyperStructure_a744a8c5b7bf67dec8084c5d2b8a4927d}{Hyper\-Structure}, \hyperlink{classStructure2D_a85e5a4395ec60a75f3bcd1c7cacd6e2c}{Structure2\-D}, \hyperlink{classRing_af9bc7f0b325cbd2b6284aadeacdee6fb}{Ring}, \hyperlink{classNonconstrainedSet_a2d2b1ff5390c9c8bfa7e6e361ea1ddb1}{Nonconstrained\-Set}, \hyperlink{classNHOSet_ac1e59897d3af9dd6c019d6db9bb74dd1}{N\-H\-O\-Set}, \hyperlink{classHierarchicalHierarchicalSet_ae47e3171479131c47a2252b5c054ceef}{Hierarchical\-Hierarchical\-Set}, \hyperlink{classOrderedSet_a6051e561b7b5fcd1dc5ee8f9f67353fe}{Ordered\-Set}, \hyperlink{classNonconstrainedOrderedSet_a67a4a72a5e1bff3d46473757199455d9}{Nonconstrained\-Ordered\-Set}, \hyperlink{classHierarchicalOrderedSet_a813f90e2aff889461b9e089b7ff460bc}{Hierarchical\-Ordered\-Set}, and \hyperlink{classHierarchicalSet_aa555c69a5761820567bfe391969859d3}{Hierarchical\-Set}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classAbstractSet_a0217447a042827703e1ea7655f0fc099}{\index{Abstract\-Set@{Abstract\-Set}!objective@{objective}}
+\index{objective@{objective}!AbstractSet@{Abstract\-Set}}
+\subsubsection[{objective}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Objective\-Function}$\ast$ Abstract\-Set\-::objective}}\label{classAbstractSet_a0217447a042827703e1ea7655f0fc099}
+The objective that one wants to optimise (assumed to be decomposable\-: the objective of a partition is function of the objectives of its parts) 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{abstract__set_8hpp}{abstract\-\_\-set.\-hpp}\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/abstract\-\_\-set.\-cpp\end{DoxyCompactItemize}

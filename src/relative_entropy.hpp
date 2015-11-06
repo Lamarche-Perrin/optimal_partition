@@ -2,9 +2,9 @@
 #define INCLUDE_RELATIVE_ENTROPY
 
 
-#include "measure.hpp"
+#include "objective_function.hpp"
 
-class RelativeEntropy: public Measure
+class RelativeEntropy: public ObjectiveFunction
 {
 public:
 	int size;
@@ -15,9 +15,9 @@ public:
 	~RelativeEntropy ();
 		
 	void setRandom ();
-	Quality *newQuality (int index = -1);
-	void computeQuality ();
-	void printQuality (bool verbose = true);
+	ObjectiveValue *newObjectiveValue (int index = -1);
+	void computeObjectiveValues ();
+	void printObjectiveValues (bool verbose = true);
 
 	double getParameter (double unit);
 	double getUnitDistance (double uMin, double uMax);
@@ -25,7 +25,7 @@ public:
 };
 
 
-class RelativeQuality: public Quality
+class RelativeObjectiveValue: public ObjectiveValue
 {
 public:
 	int index;
@@ -35,15 +35,15 @@ public:
 	double divergence;
 	double sizeReduction;
 		
-	RelativeQuality (RelativeEntropy *measure, int index = -1);
-	~RelativeQuality ();
+	RelativeObjectiveValue (RelativeEntropy *objective, int index = -1);
+	~RelativeObjectiveValue ();
 		
-	void add (Quality *quality);
+	void add (ObjectiveValue *value);
 	void compute ();
-	void compute (Quality *quality1, Quality *quality2);
-	void compute (QualitySet *qualityset);
-	void normalize (Quality *q);
-	void print (bool value = true);
+	void compute (ObjectiveValue *value1, ObjectiveValue *value2);
+	void compute (ObjectiveValueSet *valueset);
+	void normalize (ObjectiveValue *q);
+	void print (bool verbose = true);
 	double getValue (double param);
 };
 

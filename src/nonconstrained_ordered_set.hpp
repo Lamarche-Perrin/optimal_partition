@@ -1,29 +1,29 @@
 #ifndef INCLUDE_NONCONSTRAINED_ORDERED_SET
 #define INCLUDE_NONCONSTRAINED_ORDERED_SET
 
-#include "constrained_set.hpp"
+#include "abstract_set.hpp"
 #include "datatree.hpp"
 
 
-class NonconstrainedOrderedSet: public ConstrainedSet
+class NonconstrainedOrderedSet: public AbstractSet
 {
 	public:
 		int size1;
 		int size2;
 		OrderedDatatree *dataTree;
-		Quality **qualities;	
+		ObjectiveValue **qualities;	
 				
 		NonconstrainedOrderedSet (int size1, int size2);
 		virtual ~NonconstrainedOrderedSet ();
 
 		void setRandom ();
-		void setMeasure (Measure *m);
+		void setObjectiveFunction (ObjectiveFunction *m);
 		void print ();
 
 		void buildDataStructure ();
-		void computeQuality ();
-		void normalizeQuality ();
-		void printQuality ();
+		void computeObjectiveValues ();
+		void normalizeObjectiveValues ();
+		void printObjectiveValues ();
 
 		void computeOptimalPartition (double parameter);
 		void printOptimalPartition (double parameter);

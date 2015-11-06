@@ -1,0 +1,147 @@
+\hypertarget{classNHOSet}{\section{N\-H\-O\-Set Class Reference}
+\label{classNHOSet}\index{N\-H\-O\-Set@{N\-H\-O\-Set}}
+}
+Inheritance diagram for N\-H\-O\-Set\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classNHOSet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNHOSet_a742973945209773c1e9011f8637fe05b}{{\bfseries N\-H\-O\-Set} (int N\-Size, \hyperlink{classHNode}{H\-Node} $\ast$H\-Hierarchy, int O\-Size)}\label{classNHOSet_a742973945209773c1e9011f8637fe05b}
+
+\item 
+\hypertarget{classNHOSet_ae73a4b22551df422392087730c9c26fd}{void \hyperlink{classNHOSet_ae73a4b22551df422392087730c9c26fd}{set\-Random} ()}\label{classNHOSet_ae73a4b22551df422392087730c9c26fd}
+
+\begin{DoxyCompactList}\small\item\em Randomly set the algebraic constraints for quick experiments (warning\-: this method is not always implemented) \end{DoxyCompactList}\item 
+void \hyperlink{classNHOSet_ac1e59897d3af9dd6c019d6db9bb74dd1}{set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Set the objective that one wants to optimise. \end{DoxyCompactList}\item 
+\hypertarget{classNHOSet_ad4e76f5034d84cb5c43c6df373113187}{void \hyperlink{classNHOSet_ad4e76f5034d84cb5c43c6df373113187}{print} ()}\label{classNHOSet_ad4e76f5034d84cb5c43c6df373113187}
+
+\begin{DoxyCompactList}\small\item\em Print the set and its algebraic constraints. \end{DoxyCompactList}\item 
+\hypertarget{classNHOSet_a97466bc5172f0e509f6a311a57b2e68c}{void \hyperlink{classNHOSet_a97466bc5172f0e509f6a311a57b2e68c}{build\-Data\-Structure} ()}\label{classNHOSet_a97466bc5172f0e509f6a311a57b2e68c}
+
+\begin{DoxyCompactList}\small\item\em Build a proper data structure to represent the set and its algebraic constraints (warning\-: this method should always be called after instantiating and parameterising a set, and before calling any other method, such as \hyperlink{classNHOSet_ad4e76f5034d84cb5c43c6df373113187}{print()}, \hyperlink{classNHOSet_a8f1438a5867b733f2788536609fbe18f}{compute\-Objective\-Values()}, compute\-Optimal\-Partition (double parameter), etc.) \end{DoxyCompactList}\item 
+\hypertarget{classNHOSet_a8f1438a5867b733f2788536609fbe18f}{void \hyperlink{classNHOSet_a8f1438a5867b733f2788536609fbe18f}{compute\-Objective\-Values} ()}\label{classNHOSet_a8f1438a5867b733f2788536609fbe18f}
+
+\begin{DoxyCompactList}\small\item\em Compute the value of the objective function for each feasible part (warning\-: set\-Objective\-Function (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$objective) should have been called first) \end{DoxyCompactList}\item 
+\hypertarget{classNHOSet_a19a2fa37a137eb7ff2459c5c6a0f9eb4}{void \hyperlink{classNHOSet_a19a2fa37a137eb7ff2459c5c6a0f9eb4}{normalize\-Objective\-Values} ()}\label{classNHOSet_a19a2fa37a137eb7ff2459c5c6a0f9eb4}
+
+\begin{DoxyCompactList}\small\item\em Finish computing the value of the objective function for each feasible part when normalisation is required (warning\-: only after \hyperlink{classNHOSet_a8f1438a5867b733f2788536609fbe18f}{compute\-Objective\-Values()} has been called) \end{DoxyCompactList}\item 
+\hypertarget{classNHOSet_af84d4b1f3b7c0adedbd7561545b8b2f0}{void \hyperlink{classNHOSet_af84d4b1f3b7c0adedbd7561545b8b2f0}{print\-Objective\-Values} ()}\label{classNHOSet_af84d4b1f3b7c0adedbd7561545b8b2f0}
+
+\begin{DoxyCompactList}\small\item\em Print the value of the objective function for each feasible part. \end{DoxyCompactList}\item 
+void \hyperlink{classNHOSet_ae3d2e2f17d62402efbf0564e8b10ec1c}{compute\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. \end{DoxyCompactList}\item 
+void \hyperlink{classNHOSet_ad30bf8268a25aca0f11115e526ef7536}{print\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classNHOSet_ad4e76f5034d84cb5c43c6df373113187}{print()} on the result) \end{DoxyCompactList}\item 
+\hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classNHOSet_a2269a3b8f493512859660d3a457303d7}{get\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classNHOSet_ad4e76f5034d84cb5c43c6df373113187}{print()} on the result) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classNHOSet_a0f67bd55ed5a178196c783f827dc75e6}{int {\bfseries N\-Size}}\label{classNHOSet_a0f67bd55ed5a178196c783f827dc75e6}
+
+\item 
+\hypertarget{classNHOSet_a4f27b2f8a1f743f3e0e66b2a8c7299cc}{\hyperlink{classHNode}{H\-Node} $\ast$ {\bfseries H\-Hierarchy}}\label{classNHOSet_a4f27b2f8a1f743f3e0e66b2a8c7299cc}
+
+\item 
+\hypertarget{classNHOSet_aafdd06ce3ed3a043b97f846b36115a36}{int {\bfseries O\-Size}}\label{classNHOSet_aafdd06ce3ed3a043b97f846b36115a36}
+
+\item 
+\hypertarget{classNHOSet_a083e3975e9efd5710770068145eae84a}{N\-H\-O\-Datatree $\ast$ {\bfseries N\-H\-O\-Datatree}}\label{classNHOSet_a083e3975e9efd5710770068145eae84a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classNHOSet_ae3d2e2f17d62402efbf0564e8b10ec1c}{\index{N\-H\-O\-Set@{N\-H\-O\-Set}!compute\-Optimal\-Partition@{compute\-Optimal\-Partition}}
+\index{compute\-Optimal\-Partition@{compute\-Optimal\-Partition}!NHOSet@{N\-H\-O\-Set}}
+\subsubsection[{compute\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void N\-H\-O\-Set\-::compute\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classNHOSet_ae3d2e2f17d62402efbf0564e8b10ec1c}
+
+
+Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_acfc3004f18192f38e32bb7a5a12ec8df}{Abstract\-Set}.
+
+\hypertarget{classNHOSet_a2269a3b8f493512859660d3a457303d7}{\index{N\-H\-O\-Set@{N\-H\-O\-Set}!get\-Optimal\-Partition@{get\-Optimal\-Partition}}
+\index{get\-Optimal\-Partition@{get\-Optimal\-Partition}!NHOSet@{N\-H\-O\-Set}}
+\subsubsection[{get\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition}$\ast$ N\-H\-O\-Set\-::get\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classNHOSet_a2269a3b8f493512859660d3a457303d7}
+
+
+Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classNHOSet_ad4e76f5034d84cb5c43c6df373113187}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\-: The resulting optimal partition 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAbstractSet_a48fd08c4b61ed46946bed6e19cd11194}{Abstract\-Set}.
+
+\hypertarget{classNHOSet_ad30bf8268a25aca0f11115e526ef7536}{\index{N\-H\-O\-Set@{N\-H\-O\-Set}!print\-Optimal\-Partition@{print\-Optimal\-Partition}}
+\index{print\-Optimal\-Partition@{print\-Optimal\-Partition}!NHOSet@{N\-H\-O\-Set}}
+\subsubsection[{print\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void N\-H\-O\-Set\-::print\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classNHOSet_ad30bf8268a25aca0f11115e526ef7536}
+
+
+Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classNHOSet_ad4e76f5034d84cb5c43c6df373113187}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_a82a9ce5c2d30690f0d1b83b034e92e1e}{Abstract\-Set}.
+
+\hypertarget{classNHOSet_ac1e59897d3af9dd6c019d6db9bb74dd1}{\index{N\-H\-O\-Set@{N\-H\-O\-Set}!set\-Objective\-Function@{set\-Objective\-Function}}
+\index{set\-Objective\-Function@{set\-Objective\-Function}!NHOSet@{N\-H\-O\-Set}}
+\subsubsection[{set\-Objective\-Function}]{\setlength{\rightskip}{0pt plus 5cm}void N\-H\-O\-Set\-::set\-Objective\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf Objective\-Function} $\ast$}]{objective}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classNHOSet_ac1e59897d3af9dd6c019d6db9bb74dd1}
+
+
+Set the objective that one wants to optimise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objective} & \-: The objective function itself \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}{Abstract\-Set}.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/N\-H\-O\-\_\-set.\-hpp\end{DoxyCompactItemize}

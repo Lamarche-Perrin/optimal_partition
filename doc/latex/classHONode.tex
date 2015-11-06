@@ -1,0 +1,81 @@
+\hypertarget{classHONode}{\section{H\-O\-Node Class Reference}
+\label{classHONode}\index{H\-O\-Node@{H\-O\-Node}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classHONode_a9aede08d7bddc624967aa4507a7321e2}{{\bfseries H\-O\-Node} (int size, int index=-\/1)}\label{classHONode_a9aede08d7bddc624967aa4507a7321e2}
+
+\item 
+\hypertarget{classHONode_ab0ee2ebf84a8f000307814d8a00c08d9}{int {\bfseries get\-Index} (int i, int j)}\label{classHONode_ab0ee2ebf84a8f000307814d8a00c08d9}
+
+\item 
+\hypertarget{classHONode_adae5c176d67b8987aa1d15c34452630c}{void {\bfseries add\-Child} (\hyperlink{classHONode}{H\-O\-Node} $\ast$node)}\label{classHONode_adae5c176d67b8987aa1d15c34452630c}
+
+\item 
+\hypertarget{classHONode_a2bc5353bc6ee8a94205d750275ffc075}{void {\bfseries set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$m)}\label{classHONode_a2bc5353bc6ee8a94205d750275ffc075}
+
+\item 
+\hypertarget{classHONode_ad877ce2e3b922508dc854c485abc34cf}{void {\bfseries print} ()}\label{classHONode_ad877ce2e3b922508dc854c485abc34cf}
+
+\item 
+\hypertarget{classHONode_a3c1d16d6337081b35de83af5c743bb51}{void {\bfseries build\-Data\-Structure} (int level=0)}\label{classHONode_a3c1d16d6337081b35de83af5c743bb51}
+
+\item 
+\hypertarget{classHONode_aa92d038a2def42f2ee9cb73dfbc422da}{void {\bfseries compute\-Objective\-Values} ()}\label{classHONode_aa92d038a2def42f2ee9cb73dfbc422da}
+
+\item 
+\hypertarget{classHONode_a1f780e020ab5150d27bb04a96af13133}{void {\bfseries normalize\-Objective\-Values} (\hyperlink{classObjectiveValue}{Objective\-Value} $\ast$max\-Qual=0)}\label{classHONode_a1f780e020ab5150d27bb04a96af13133}
+
+\item 
+\hypertarget{classHONode_a5ec6f4b4c9313d372282114af15d0a6d}{void {\bfseries print\-Objective\-Values} ()}\label{classHONode_a5ec6f4b4c9313d372282114af15d0a6d}
+
+\item 
+\hypertarget{classHONode_a1ede3a94ec46b81b2250874a6dcefb98}{void {\bfseries compute\-Optimal\-Partition} (double parameter)}\label{classHONode_a1ede3a94ec46b81b2250874a6dcefb98}
+
+\item 
+\hypertarget{classHONode_a9a4df13c77c8ab4b541446d3b3b4cacd}{void {\bfseries print\-Optimal\-Partition} (double parameter)}\label{classHONode_a9a4df13c77c8ab4b541446d3b3b4cacd}
+
+\item 
+\hypertarget{classHONode_af2905a01a848793e8614beb12bb62df8}{\hyperlink{classPartition}{Partition} $\ast$ {\bfseries get\-Optimal\-Partition} (double parameter)}\label{classHONode_af2905a01a848793e8614beb12bb62df8}
+
+\item 
+\hypertarget{classHONode_abfd6c5724bd46fd91c6537554e9d4d1b}{void {\bfseries build\-Optimal\-Partition} (\hyperlink{classPartition}{Partition} $\ast$partition, int pi=0, int pj=-\/1)}\label{classHONode_abfd6c5724bd46fd91c6537554e9d4d1b}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classHONode_afdceeb6b9dd641633be6b81380b9bb0f}{int {\bfseries index}}\label{classHONode_afdceeb6b9dd641633be6b81380b9bb0f}
+
+\item 
+\hypertarget{classHONode_ae8d4dd48892372be94f6e214450c5e44}{int {\bfseries level}}\label{classHONode_ae8d4dd48892372be94f6e214450c5e44}
+
+\item 
+\hypertarget{classHONode_a8d093f3290293ea7b7e03a185798fe64}{std\-::set$<$ int $>$ $\ast$ {\bfseries indices}}\label{classHONode_a8d093f3290293ea7b7e03a185798fe64}
+
+\item 
+\hypertarget{classHONode_a1c4e4ef9ffa03161b427606cd6255b52}{H\-O\-Node\-Set $\ast$ {\bfseries children}}\label{classHONode_a1c4e4ef9ffa03161b427606cd6255b52}
+
+\item 
+\hypertarget{classHONode_a3fd5dd67e556117b39d50412718f47e4}{\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$ {\bfseries objective}}\label{classHONode_a3fd5dd67e556117b39d50412718f47e4}
+
+\item 
+\hypertarget{classHONode_ad63d56300726c5d89d11276ab1c3fdec}{int {\bfseries size}}\label{classHONode_ad63d56300726c5d89d11276ab1c3fdec}
+
+\item 
+\hypertarget{classHONode_acf196983ba89362f7509dbf1758513d3}{\hyperlink{classObjectiveValue}{Objective\-Value} $\ast$$\ast$ {\bfseries qualities}}\label{classHONode_acf196983ba89362f7509dbf1758513d3}
+
+\item 
+\hypertarget{classHONode_af9e4cf35f08fe3c9d4ec44cabc1d439d}{double $\ast$ {\bfseries optimal\-Values}}\label{classHONode_af9e4cf35f08fe3c9d4ec44cabc1d439d}
+
+\item 
+\hypertarget{classHONode_ac2b2e15ed1a6893c073d2551c735b2d2}{int $\ast$ {\bfseries optimal\-Cuts}}\label{classHONode_ac2b2e15ed1a6893c073d2551c735b2d2}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/hierarchical\-\_\-ordered\-\_\-set.\-hpp\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/hierarchical\-\_\-ordered\-\_\-set.\-cpp\end{DoxyCompactItemize}

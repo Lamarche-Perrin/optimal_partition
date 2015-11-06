@@ -1,0 +1,157 @@
+\hypertarget{classStructure2D}{\section{Structure2\-D Class Reference}
+\label{classStructure2D}\index{Structure2\-D@{Structure2\-D}}
+}
+Inheritance diagram for Structure2\-D\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classStructure2D}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classStructure2D_acf11018d9c07b17ae9994a2748a5b595}{{\bfseries Structure2\-D} (\hyperlink{classStructure}{Structure} $\ast$structure1, \hyperlink{classStructure}{Structure} $\ast$structure2)}\label{classStructure2D_acf11018d9c07b17ae9994a2748a5b595}
+
+\item 
+\hypertarget{classStructure2D_a7d494335421734e80964f0907f0869d2}{void {\bfseries init\-Reached} ()}\label{classStructure2D_a7d494335421734e80964f0907f0869d2}
+
+\item 
+\hypertarget{classStructure2D_a0074288112f5f352f4d5b2f068551ae4}{void \hyperlink{classStructure2D_a0074288112f5f352f4d5b2f068551ae4}{set\-Random} ()}\label{classStructure2D_a0074288112f5f352f4d5b2f068551ae4}
+
+\begin{DoxyCompactList}\small\item\em Randomly set the algebraic constraints for quick experiments (warning\-: this method is not always implemented) \end{DoxyCompactList}\item 
+void \hyperlink{classStructure2D_a85e5a4395ec60a75f3bcd1c7cacd6e2c}{set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Set the objective that one wants to optimise. \end{DoxyCompactList}\item 
+\hypertarget{classStructure2D_ac51082d3ad73344ea13921dd450d865f}{void \hyperlink{classStructure2D_ac51082d3ad73344ea13921dd450d865f}{print} ()}\label{classStructure2D_ac51082d3ad73344ea13921dd450d865f}
+
+\begin{DoxyCompactList}\small\item\em Print the set and its algebraic constraints. \end{DoxyCompactList}\item 
+\hypertarget{classStructure2D_a337047bfc3a936c9e3255e8b4844e734}{void \hyperlink{classStructure2D_a337047bfc3a936c9e3255e8b4844e734}{build\-Data\-Structure} ()}\label{classStructure2D_a337047bfc3a936c9e3255e8b4844e734}
+
+\begin{DoxyCompactList}\small\item\em Build a proper data structure to represent the set and its algebraic constraints (warning\-: this method should always be called after instantiating and parameterising a set, and before calling any other method, such as \hyperlink{classStructure2D_ac51082d3ad73344ea13921dd450d865f}{print()}, \hyperlink{classStructure2D_a9c191ec37069690052006794045b7a72}{compute\-Objective\-Values()}, compute\-Optimal\-Partition (double parameter), etc.) \end{DoxyCompactList}\item 
+\hypertarget{classStructure2D_a9c191ec37069690052006794045b7a72}{void \hyperlink{classStructure2D_a9c191ec37069690052006794045b7a72}{compute\-Objective\-Values} ()}\label{classStructure2D_a9c191ec37069690052006794045b7a72}
+
+\begin{DoxyCompactList}\small\item\em Compute the value of the objective function for each feasible part (warning\-: set\-Objective\-Function (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$objective) should have been called first) \end{DoxyCompactList}\item 
+\hypertarget{classStructure2D_aa1d0292f7eff04ba4381246c778ab843}{void \hyperlink{classStructure2D_aa1d0292f7eff04ba4381246c778ab843}{normalize\-Objective\-Values} ()}\label{classStructure2D_aa1d0292f7eff04ba4381246c778ab843}
+
+\begin{DoxyCompactList}\small\item\em Finish computing the value of the objective function for each feasible part when normalisation is required (warning\-: only after \hyperlink{classStructure2D_a9c191ec37069690052006794045b7a72}{compute\-Objective\-Values()} has been called) \end{DoxyCompactList}\item 
+\hypertarget{classStructure2D_adfe22a0de3b19ded04792c3886933448}{void \hyperlink{classStructure2D_adfe22a0de3b19ded04792c3886933448}{print\-Objective\-Values} ()}\label{classStructure2D_adfe22a0de3b19ded04792c3886933448}
+
+\begin{DoxyCompactList}\small\item\em Print the value of the objective function for each feasible part. \end{DoxyCompactList}\item 
+void \hyperlink{classStructure2D_ae47a85c274cefe893414a09819b09806}{compute\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. \end{DoxyCompactList}\item 
+void \hyperlink{classStructure2D_a45157c8978b9b67cd6efc2ea98b22398}{print\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classStructure2D_ac51082d3ad73344ea13921dd450d865f}{print()} on the result) \end{DoxyCompactList}\item 
+\hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classStructure2D_a3e4b40f2cf3b59ce3c39eaf75eda09e4}{get\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classStructure2D_ac51082d3ad73344ea13921dd450d865f}{print()} on the result) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classStructure2D_ae6e35be16cee4391024f90435df4a081}{\hyperlink{classStructure}{Structure} $\ast$ {\bfseries structure1}}\label{classStructure2D_ae6e35be16cee4391024f90435df4a081}
+
+\item 
+\hypertarget{classStructure2D_a2454abc684270e0e416248fc59db7169}{\hyperlink{classStructure}{Structure} $\ast$ {\bfseries structure2}}\label{classStructure2D_a2454abc684270e0e416248fc59db7169}
+
+\item 
+\hypertarget{classStructure2D_a5802607fe276b9b18c9255d9c3af8696}{int {\bfseries aggregate\-Number}}\label{classStructure2D_a5802607fe276b9b18c9255d9c3af8696}
+
+\item 
+\hypertarget{classStructure2D_aa75c1404b8e20b3234a58b5eee9d76d2}{int {\bfseries atomic\-Aggregate\-Number}}\label{classStructure2D_aa75c1404b8e20b3234a58b5eee9d76d2}
+
+\item 
+\hypertarget{classStructure2D_aa48fa180714c86f4b51e8fef13ace772}{\hyperlink{classAggregate2D}{Aggregate2\-D} $\ast$ {\bfseries first\-Aggregate}}\label{classStructure2D_aa48fa180714c86f4b51e8fef13ace772}
+
+\item 
+\hypertarget{classStructure2D_a2cd160b5bb5b9404bc0d5232ddb94b12}{\hyperlink{classAggregate2D}{Aggregate2\-D} $\ast$$\ast$ {\bfseries aggregate\-Array}}\label{classStructure2D_a2cd160b5bb5b9404bc0d5232ddb94b12}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classStructure2D_ae47a85c274cefe893414a09819b09806}{\index{Structure2\-D@{Structure2\-D}!compute\-Optimal\-Partition@{compute\-Optimal\-Partition}}
+\index{compute\-Optimal\-Partition@{compute\-Optimal\-Partition}!Structure2D@{Structure2\-D}}
+\subsubsection[{compute\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void Structure2\-D\-::compute\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classStructure2D_ae47a85c274cefe893414a09819b09806}
+
+
+Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_acfc3004f18192f38e32bb7a5a12ec8df}{Abstract\-Set}.
+
+\hypertarget{classStructure2D_a3e4b40f2cf3b59ce3c39eaf75eda09e4}{\index{Structure2\-D@{Structure2\-D}!get\-Optimal\-Partition@{get\-Optimal\-Partition}}
+\index{get\-Optimal\-Partition@{get\-Optimal\-Partition}!Structure2D@{Structure2\-D}}
+\subsubsection[{get\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition} $\ast$ Structure2\-D\-::get\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classStructure2D_a3e4b40f2cf3b59ce3c39eaf75eda09e4}
+
+
+Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classStructure2D_ac51082d3ad73344ea13921dd450d865f}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\-: The resulting optimal partition 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAbstractSet_a48fd08c4b61ed46946bed6e19cd11194}{Abstract\-Set}.
+
+\hypertarget{classStructure2D_a45157c8978b9b67cd6efc2ea98b22398}{\index{Structure2\-D@{Structure2\-D}!print\-Optimal\-Partition@{print\-Optimal\-Partition}}
+\index{print\-Optimal\-Partition@{print\-Optimal\-Partition}!Structure2D@{Structure2\-D}}
+\subsubsection[{print\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void Structure2\-D\-::print\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classStructure2D_a45157c8978b9b67cd6efc2ea98b22398}
+
+
+Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classStructure2D_ac51082d3ad73344ea13921dd450d865f}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_a82a9ce5c2d30690f0d1b83b034e92e1e}{Abstract\-Set}.
+
+\hypertarget{classStructure2D_a85e5a4395ec60a75f3bcd1c7cacd6e2c}{\index{Structure2\-D@{Structure2\-D}!set\-Objective\-Function@{set\-Objective\-Function}}
+\index{set\-Objective\-Function@{set\-Objective\-Function}!Structure2D@{Structure2\-D}}
+\subsubsection[{set\-Objective\-Function}]{\setlength{\rightskip}{0pt plus 5cm}void Structure2\-D\-::set\-Objective\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf Objective\-Function} $\ast$}]{objective}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classStructure2D_a85e5a4395ec60a75f3bcd1c7cacd6e2c}
+
+
+Set the objective that one wants to optimise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objective} & \-: The objective function itself \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}{Abstract\-Set}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/structure2\-D.\-hpp\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/structure2\-D.\-cpp\end{DoxyCompactItemize}

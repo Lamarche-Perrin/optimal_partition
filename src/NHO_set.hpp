@@ -1,12 +1,12 @@
 #ifndef INCLUDE_NHO_SET
 #define INCLUDE_NHO_SET
 
-#include "constrained_set.hpp"
+#include "abstract_set.hpp"
 
 class NHONode;
 typedef std::set<NHONode*> NHONodeSet;
 
-class NHOSet: public ConstrainedSet
+class NHOSet: public AbstractSet
 {
 public:
 	int NSize;
@@ -19,13 +19,13 @@ public:
 	virtual ~NHOSet ();
 		
 	void setRandom ();
-	void setMeasure (Measure *m);
+	void setObjectiveFunction (ObjectiveFunction *m);
 	void print ();
 
 	void buildDataStructure ();
-	void computeQuality ();
-	void normalizeQuality ();
-	void printQuality ();
+	void computeObjectiveValues ();
+	void normalizeObjectiveValues ();
+	void printObjectiveValues ();
 
 	void computeOptimalPartition (double parameter);
 	void printOptimalPartition (double parameter);
@@ -41,10 +41,10 @@ public:
 	std::set<int> *indices;
 
 	HONodeSet *children;
-	Measure *measure;
+	ObjectiveFunction *objective;
 
 	int size;
-	Quality **qualities;
+	ObjectiveValue **qualities;
 	double *optimalValues;
 	int *optimalCuts;
 	
@@ -54,13 +54,13 @@ public:
 	int getIndex (int i, int j);
 
 	void addChild (HONode *node);
-	void setMeasure (Measure *m);
+	void setObjectiveFunction (ObjectiveFunction *m);
 	void print ();
 		
 	void buildDataStructure (int level = 0);
-	void computeQuality ();
-	void normalizeQuality (Quality *maxQual = 0);
-	void printQuality ();
+	void computeObjectiveValues ();
+	void normalizeObjectiveValues (ObjectiveValue *maxQual = 0);
+	void printObjectiveValues ();
 
 	void computeOptimalPartition (double parameter);
 	void printOptimalPartition (double parameter);

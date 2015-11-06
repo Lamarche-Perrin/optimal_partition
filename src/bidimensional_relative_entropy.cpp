@@ -48,12 +48,12 @@ void BidimensionalRelativeEntropy::setRandom ()
 }
 
 
-Quality *BidimensionalRelativeEntropy::newQuality (int id)
+ObjectiveValue *BidimensionalRelativeEntropy::newObjectiveValue (int id)
 {
-	BidimensionalRelativeQuality *rq;
+	BidimensionalRelativeObjectiveValue *rq;
 	
-	rq = new BidimensionalRelativeQuality(this,id);
-	qualitySet->insert(rq);
+	rq = new BidimensionalRelativeObjectiveValue(this,id);
+	valueSet->insert(rq);
 
 	return rq;
 }
@@ -67,9 +67,9 @@ double BidimensionalRelativeEntropy::getIntermediaryUnit (double uMin, double uM
 
 
 
-BidimensionalRelativeQuality::BidimensionalRelativeQuality (BidimensionalRelativeEntropy *m, int id)
+BidimensionalRelativeObjectiveValue::BidimensionalRelativeObjectiveValue (BidimensionalRelativeEntropy *m, int id)
 {
-	measure = m;
+	objective = m;
 	index = id;
 	
 	sumValue = 0;
@@ -80,35 +80,35 @@ BidimensionalRelativeQuality::BidimensionalRelativeQuality (BidimensionalRelativ
 }
 
 
-BidimensionalRelativeQuality::~BidimensionalRelativeQuality () {}
+BidimensionalRelativeObjectiveValue::~BidimensionalRelativeObjectiveValue () {}
 
 
-void BidimensionalRelativeQuality::add (Quality *q)
+void BidimensionalRelativeObjectiveValue::add (ObjectiveValue *q)
 {
-	BidimensionalRelativeQuality *quality = (BidimensionalRelativeQuality *) q;
+	BidimensionalRelativeObjectiveValue *value = (BidimensionalRelativeObjectiveValue *) q;
 	
-	sumValue += quality->sumValue;
-	sumRefValue += quality->sumRefValue;
-	microInfo += quality->microInfo;
-	divergence += quality->divergence;
-	sizeReduction += quality->sizeReduction;
+	sumValue += value->sumValue;
+	sumRefValue += value->sumRefValue;
+	microInfo += value->microInfo;
+	divergence += value->divergence;
+	sizeReduction += value->sizeReduction;
 }
 
 
-void BidimensionalRelativeQuality::compute ()
+void BidimensionalRelativeObjectiveValue::compute ()
 {
-	sumValue = ((BidimensionalRelativeEntropy*)measure)->values[index];
-	sumRefValue = ((BidimensionalRelativeEntropy*)measure)->refValues1[index] * ((BidimensionalRelativeEntropy*)measure)->refValues2[index];
+	sumValue = ((BidimensionalRelativeEntropy*)objective)->values[index];
+	sumRefValue = ((BidimensionalRelativeEntropy*)objective)->refValues1[index] * ((BidimensionalRelativeEntropy*)objective)->refValues2[index];
 	if (sumValue > 0) { microInfo = - sumValue * log2(sumValue/sumRefValue); } else { microInfo = 0; }
 	sizeReduction = 0;
 	divergence = 0;
 }
 
 
-void BidimensionalRelativeQuality::compute (Quality *q1, Quality *q2, bool dim1)
+void BidimensionalRelativeObjectiveValue::compute (ObjectiveValue *q1, ObjectiveValue *q2, bool dim1)
 {
-	BidimensionalRelativeQuality *rq1 = (BidimensionalRelativeQuality *) q1;
-	BidimensionalRelativeQuality *rq2 = (BidimensionalRelativeQuality *) q2;
+	BidimensionalRelativeObjectiveValue *rq1 = (BidimensionalRelativeObjectiveValue *) q1;
+	BidimensionalRelativeObjectiveValue *rq2 = (BidimensionalRelativeObjectiveValue *) q2;
 
 	sumValue = rq1->sumValue + rq2->sumValue;
 	if (dim1) { sumRefValue1 = rq1->sumRefValue1 + rq2->sumRefValue1; }
@@ -121,15 +121,15 @@ void BidimensionalRelativeQuality::compute (Quality *q1, Quality *q2, bool dim1)
 }
 
 
-void BidimensionalRelativeQuality::compute (QualitySet *qualitySet, bool dim1)
+void BidimensionalRelativeObjectiveValue::compute (ObjectiveValueSet *valueSet, bool dim1)
 {
 	sumValue = 0;
 	sumRefValue = 0;
 	microInfo = 0;
 	sizeReduction = 0;
-	for (QualitySet::iterator it = qualitySet->begin(); it != qualitySet->end(); ++it)
+	for (ObjectiveValueSet::iterator it = valueSet->begin(); it != valueSet->end(); ++it)
 	{
-		BidimensionalRelativeQuality *rq = (BidimensionalRelativeQuality *) (*it);
+		BidimensionalRelativeObjectiveValue *rq = (BidimensionalRelativeObjectiveValue *) (*it);
 
 		sumValue += rq->sumValue;
 		sumRefValue += rq->sumRefValue;
@@ -143,16 +143,16 @@ void BidimensionalRelativeQuality::compute (QualitySet *qualitySet, bool dim1)
 }
 
 
-void BidimensionalRelativeQuality::normalize (Quality *q)
+void BidimensionalRelativeObjectiveValue::normalize (ObjectiveValue *q)
 {
-	BidimensionalRelativeQuality *rq = (BidimensionalRelativeQuality *) q;
+	BidimensionalRelativeObjectiveValue *rq = (BidimensionalRelativeObjectiveValue *) q;
 
 	if (rq->sizeReduction > 0) { sizeReduction = sizeReduction / rq->sizeReduction; }
 	if (rq->divergence > 0) { divergence /= rq->divergence; }
 }
 
 
-void BidimensionalRelativeQuality::print (bool v)
+void BidimensionalRelativeObjectiveValue::print (bool v)
 {
 
 	if (v)
@@ -168,5 +168,5 @@ void BidimensionalRelativeQuality::print (bool v)
 }
 
 
-double BidimensionalRelativeQuality::getValue (double param) { return param * sizeReduction - (1-param) * divergence; }
+double BidimensionalRelativeObjectiveValue::getValue (double param) { return param * sizeReduction - (1-param) * divergence; }
 */

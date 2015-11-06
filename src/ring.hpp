@@ -1,9 +1,9 @@
 #ifndef INCLUDE_RING
 #define INCLUDE_RING
 
-#include "constrained_set.hpp"
+#include "abstract_set.hpp"
 
-class Ring: public ConstrainedSet
+class Ring: public AbstractSet
 {
 	public:
 		int size;
@@ -25,20 +25,20 @@ class Ring: public ConstrainedSet
 
 		int getIndex (int i, int j);
 
-		void setMeasure (Measure *m);
+		void setObjectiveFunction (ObjectiveFunction *m);
 		void setRandom ();
 		void print ();
 
 		void buildDataStructure ();
-		void computeQuality ();
-		void normalizeQuality ();
-		void printQuality ();
+		void computeObjectiveValues ();
+		void normalizeObjectiveValues ();
+		void printObjectiveValues ();
 
 		void computeOptimalPartition (double parameter);
 		void printOptimalPartition (double parameter);
 		Partition *getOptimalPartition (double parameter);
 
-		ConstrainedSet *getRandomSet (int size);
+		AbstractSet *getRandomSet (int size);
 };
 
 #endif

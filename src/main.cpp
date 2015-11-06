@@ -32,7 +32,7 @@
 bool VERBOSE = false;
 int VERBOSE_TAB = 0;
 
-bool NORMALIZED_MEASURE = true;
+bool NORMALIZED_OBJECTIVE = true;
 
 
 int main (int argc, char *argv[]) {
@@ -81,18 +81,18 @@ int main (int argc, char *argv[]) {
 			for (int v = 0; v < valueNb; v++) { values[v] = rand(); }
 
 			
-			RelativeEntropy *measure = new RelativeEntropy (valueNb,values);
+			RelativeEntropy *objective = new RelativeEntropy (valueNb,values);
 	
-			hyperStruct->setMeasure(measure);
-			hyperStruct->computeQuality();
-			hyperStruct->normalizeQuality();
+			hyperStruct->setObjectiveFunction(objective);
+			hyperStruct->computeObjectiveValues();
+			hyperStruct->normalizeObjectiveValues();
 
 			Partition *partition = hyperStruct->getOptimalPartition(parameter);
 			//partition->print();
 			//hyperStruct->printOptimalPartitionList(0.1);
 
 			delete partition;
-			delete measure;
+			delete objective;
 			delete hyperStruct;
 			delete structure;	
 			delete [] structureArray;
@@ -143,9 +143,9 @@ timer.step("FILL STRUCTURE");
 std::string label = data->getLabel1(i);
 RelativeEntropy *m = new RelativeEntropy(data->size2,data->getValues2(label),data->getRefValues2(label));
 
-set->setMeasure(m);
-set->computeQuality();
-set->normalizeQuality();
+set->setObjectiveFunction(m);
+set->computeObjectiveValues();
+set->normalizeObjectiveValues();
 	
 timer.step("COMPUTE PARTITIONS");
 	
@@ -167,9 +167,9 @@ delete set;
 
     RelativeEntropy *m = new RelativeEntropy(data->size1*data->size2,data->getValues(false),data->getRefValues(false));
 
-    set->setMeasure(m);
-    set->computeQuality();
-    set->normalizeQuality();
+    set->setObjectiveFunction(m);
+    set->computeObjectiveValues();
+    set->normalizeObjectiveValues();
 
     timer.step("COMPUTE PARTITIONS");
 
@@ -219,12 +219,12 @@ void testHierarchicalSet ()
 
     RelativeEntropy *m = new RelativeEntropy(size,values,refValues);
 	
-    set->setMeasure(m);
-    set->computeQuality();
-    set->normalizeQuality();
+    set->setObjectiveFunction(m);
+    set->computeObjectiveValues();
+    set->normalizeObjectiveValues();
 
     set->print();
-    set->printQuality();
+    set->printObjectiveValues();
 
     set->printOptimalPartitionList(0.001);
 
@@ -243,12 +243,12 @@ void testOrderedSet ()
     OrderedSet *set = new OrderedSet(size);	
     RelativeEntropy *m = new RelativeEntropy(size,values,refValues);
 	
-    set->setMeasure(m);
-    set->computeQuality();
-    set->normalizeQuality();
+    set->setObjectiveFunction(m);
+    set->computeObjectiveValues();
+    set->normalizeObjectiveValues();
 
     set->print();
-    set->printQuality();
+    set->printObjectiveValues();
 
     set->printOptimalPartitionList(0.001);
 
@@ -280,12 +280,12 @@ void testNonconstrainedSet ()
 
     RelativeEntropy *m = new RelativeEntropy(size,values,refValues);
 	
-    set->setMeasure(m);
-    set->computeQuality();
-    set->normalizeQuality();
+    set->setObjectiveFunction(m);
+    set->computeObjectiveValues();
+    set->normalizeObjectiveValues();
 
     set->print();
-    set->printQuality();
+    set->printObjectiveValues();
 
     set->printOptimalPartitionList(0.001);
 
@@ -311,12 +311,12 @@ void testNonconstrainedOrderedSet ()
 
     RelativeEntropy *m = new RelativeEntropy(size1*size2,values,refValues);
 	
-    set->setMeasure(m);
-    set->computeQuality();
-    set->normalizeQuality();
+    set->setObjectiveFunction(m);
+    set->computeObjectiveValues();
+    set->normalizeObjectiveValues();
 
     set->print();
-    set->printQuality();
+    set->printObjectiveValues();
     set->printOptimalPartitionList(0.001);
 
     delete m;
@@ -346,12 +346,12 @@ void testHierarchicalOrderedSet ()
 
     RelativeEntropy *m = new RelativeEntropy(size*2,values,refValues);
 	
-    set->setMeasure(m);
-    set->computeQuality();
-    set->normalizeQuality();
+    set->setObjectiveFunction(m);
+    set->computeObjectiveValues();
+    set->normalizeObjectiveValues();
 
     set->print();
-    set->printQuality();
+    set->printObjectiveValues();
     set->printOptimalPartitionList(0.001);
 
     delete m;
@@ -406,12 +406,12 @@ void testHierarchicalHierarchicalSet ()
 
     RelativeEntropy *m = new RelativeEntropy(size,values,refValues);
 	
-    set->setMeasure(m);
-    set->computeQuality();
-    set->normalizeQuality();
+    set->setObjectiveFunction(m);
+    set->computeObjectiveValues();
+    set->normalizeObjectiveValues();
 
     set->print();
-    set->printQuality();
+    set->printObjectiveValues();
     set->printOptimalPartitionList(0.01);
 
     delete m;
@@ -582,10 +582,10 @@ void testStructure2D ()
 	
     RelativeEntropy *m = new RelativeEntropy(16,values);
 	
-    hoStruct->setMeasure(m);
-    hoStruct->computeQuality();
-    hoStruct->normalizeQuality();
-    //hoStruct->printQuality();
+    hoStruct->setObjectiveFunction(m);
+    hoStruct->computeObjectiveValues();
+    hoStruct->normalizeObjectiveValues();
+    //hoStruct->printObjectiveValues();
 	
     hoStruct->printOptimalPartitionList(0.001);
 
@@ -610,12 +610,12 @@ void testStructure2D ()
     HierarchicalOrderedSet *set = new HierarchicalOrderedSet(n,size);
     set->buildDataStructure();
 
-    set->setMeasure(m);
-    set->computeQuality();
-    set->normalizeQuality();
+    set->setObjectiveFunction(m);
+    set->computeObjectiveValues();
+    set->normalizeObjectiveValues();
 
     //set->print();
-    //set->printQuality();
+    //set->printObjectiveValues();
     set->printOptimalPartitionList(0.001);
 }
 
@@ -669,9 +669,9 @@ void testHyperStructure ()
 	
     RelativeEntropy *m = new RelativeEntropy(16,values);
 	
-    hyperStruct->setMeasure(m);
-    hyperStruct->computeQuality();
-    hyperStruct->normalizeQuality();
+    hyperStruct->setObjectiveFunction(m);
+    hyperStruct->computeObjectiveValues();
+    hyperStruct->normalizeObjectiveValues();
 
 
 	int size = 4;
@@ -694,17 +694,17 @@ void testHyperStructure ()
     HierarchicalOrderedSet *set = new HierarchicalOrderedSet(n,size);
     set->buildDataStructure();
 
-    set->setMeasure(m);
-    set->computeQuality();
-    set->normalizeQuality();
+    set->setObjectiveFunction(m);
+    set->computeObjectiveValues();
+    set->normalizeObjectiveValues();
 
 	//hStruct->print();
 	oStruct->print();
 	//hyperStruct->print();
     //set->print();
 	
-	//hyperStruct->printQuality();
-    //set->printQuality();
+	//hyperStruct->printObjectiveValues();
+    //set->printObjectiveValues();
 
 	for (double p = 0; p <= 1; p += 0.01)
 	{		
@@ -753,12 +753,12 @@ void testLogarithmicScore ()
 
 	
 	LogarithmicScore *score = new LogarithmicScore (data, 1);
-	preStructure->setMeasure(score);
-	preStructure->computeQuality();
+	preStructure->setObjectiveFunction(score);
+	preStructure->computeObjectiveValues();
 
 	//preStructure->print();
 	//postStructure->print();
-	preStructure->printQuality();
+	preStructure->printObjectiveValues();
 
 	preStructure->getOptimalPartition(0)->print();
 	

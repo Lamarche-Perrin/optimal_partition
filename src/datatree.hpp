@@ -9,7 +9,7 @@
 
 extern bool VERBOSE;
 extern int VERBOSE_TAB;
-extern bool NORMALIZED_MEASURE;
+extern bool NORMALIZED_OBJECTIVE;
 extern double PARAMETER;
 
 class Graph;
@@ -30,13 +30,13 @@ class Datatree
 		int size;
 		int vertex;
 		bool wholeSet;
-		Measure *measure;
+		ObjectiveFunction *objective;
 		
 		Datatree *parent;
 		Datatree *complement;
 		TreesList *complementList;
 		TreesSet *children;
-		Quality *quality;
+		ObjectiveValue *value;
 		BipartitionsSet *bipartitions;
 
 		double optimalValue;
@@ -47,7 +47,7 @@ class Datatree
 		Datatree (int vertex = -1);
 		~Datatree ();
 
-		void setMeasure (Measure *measure);
+		void setObjectiveFunction (ObjectiveFunction *objective);
 		std::string toString ();
 
 		Vertices *getAllVertices ();
@@ -57,9 +57,9 @@ class Datatree
 		Datatree *findOrAddChild (int v, bool print = true);
 		void addBipartition (Datatree *n1, Datatree *n2);
 		
-		void computeQuality ();
-		void normalizeQuality (Quality *maxQuality = 0);
-		void printQuality ();
+		void computeObjectiveValues ();
+		void normalizeObjectiveValues (ObjectiveValue *maxObjectiveValue = 0);
+		void printObjectiveValues ();
 
 		void computeOptimalPartition (double parameter);
 		void printOptimalPartition (double parameter);
@@ -98,7 +98,7 @@ class OrderedDatatree
 		int size2;
 		int vertex;
 		bool wholeSet;
-		Measure *measure;
+		ObjectiveFunction *objective;
 		
 		OrderedDatatree *parent;
 		OrderedDatatree *complement;
@@ -106,7 +106,7 @@ class OrderedDatatree
 		OrderedTreesSet *children;
 		OrderedBipartitionsSet *bipartitions;
 		
-		Quality **qualities;
+		ObjectiveValue **qualities;
 		double *optimalValues;
 		int *optimalCuts;
 		OrderedBipartition **optimalBipartitions;
@@ -116,7 +116,7 @@ class OrderedDatatree
 		OrderedDatatree (int size2, int vertex = -1);
 		~OrderedDatatree ();
 
-		void setMeasure (Measure *measure);
+		void setObjectiveFunction (ObjectiveFunction *objective);
 
 		Vertices *getAllVertices ();
 		int getIndex (int i, int j);
@@ -126,9 +126,9 @@ class OrderedDatatree
 		OrderedDatatree *findOrAddChild (int v, bool print = true);
 		void addBipartition (OrderedDatatree *n1, OrderedDatatree *n2);
 		
-		void computeQuality ();
-		void normalizeQuality (Quality *maxQuality = 0);
-		void printQuality ();
+		void computeObjectiveValues ();
+		void normalizeObjectiveValues (ObjectiveValue *maxObjectiveValue = 0);
+		void printObjectiveValues ();
 
 		void buildOptimalPartition (Partition *partition, int pi = 0, int pj = -1);
 		void computeOptimalPartition (double parameter);

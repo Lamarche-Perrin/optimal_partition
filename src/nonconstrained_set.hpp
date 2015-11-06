@@ -1,30 +1,30 @@
 #ifndef INCLUDE_NONCONSTRAINED_SET
 #define INCLUDE_NONCONSTRAINED_SET
 
-#include "constrained_set.hpp"
+#include "abstract_set.hpp"
 #include "datatree.hpp"
 #include "partition.hpp"
 
 extern bool VERBOSE;
 extern int VERBOSE_TAB;
-extern bool NORMALIZED_MEASURE;
+extern bool NORMALIZED_OBJECTIVE;
 extern double PARAMETER;
 
 class Datatree;
 class Partition;
 
-class NonconstrainedSet: public ConstrainedSet
+class NonconstrainedSet: public AbstractSet
 {
 	public:
 		int size;
 		Datatree *dataTree;
-		Quality **qualities;	
+		ObjectiveValue **qualities;	
 		
 		NonconstrainedSet (int size);
 		~NonconstrainedSet ();
 
 		void setRandom ();
-		void setMeasure (Measure *m);
+		void setObjectiveFunction (ObjectiveFunction *m);
 		void print ();
 	
 		void printDataTree (bool verbose = true);
@@ -32,9 +32,9 @@ class NonconstrainedSet: public ConstrainedSet
 		int printPartitions (bool print = true);
 
 		void buildDataStructure ();
-		void computeQuality ();
-		void normalizeQuality ();
-		void printQuality ();
+		void computeObjectiveValues ();
+		void normalizeObjectiveValues ();
+		void printObjectiveValues ();
 				
 		void computeOptimalPartition (double parameter);
 		void printOptimalPartition (double parameter);		

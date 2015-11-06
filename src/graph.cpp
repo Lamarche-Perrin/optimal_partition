@@ -16,7 +16,7 @@ Graph::Graph (int s)
     graphComponents = new GraphComponent *[size];
     graphComponentSet = new GraphComponentSet();
 
-    quality = 0;
+    value = 0;
     reachedVertices = new bool [size];
 
     for (int v = 0; v < size; v++)
@@ -374,38 +374,38 @@ void Graph::printVertices (Vertices *V)
 
 
 
-void Graph::setMeasure (Measure *m)
+void Graph::setObjectiveFunction (ObjectiveFunction *m)
 {
-    measure = m;
-    quality = m->newQuality();
+    objective = m;
+    value = m->newObjectiveValue();
     for (GraphComponentSet::iterator it = graphComponentSet->begin(); it != graphComponentSet->end(); ++it)
-		(*it)->datatree->setMeasure(m);
+		(*it)->datatree->setObjectiveFunction(m);
 }
 
 
-void Graph::computeQuality ()
+void Graph::computeObjectiveValues ()
 {
-	measure->computeQuality();
+	objective->computeObjectiveValues();
     for (GraphComponentSet::iterator it = graphComponentSet->begin(); it != graphComponentSet->end(); ++it)
     {
 		GraphComponent *component = *it;
-		component->datatree->computeQuality();
-		quality->add(component->datatree->quality);
+		component->datatree->computeObjectiveValues();
+		value->add(component->datatree->value);
     }
 }
 
 
-void Graph::normalizeQuality ()
+void Graph::normalizeObjectiveValues ()
 {
     for (GraphComponentSet::iterator it = graphComponentSet->begin(); it != graphComponentSet->end(); ++it)
-		(*it)->datatree->normalizeQuality(quality);
+		(*it)->datatree->normalizeObjectiveValues(value);
 }
 
 
-void Graph::printQuality ()
+void Graph::printObjectiveValues ()
 {
     for (GraphComponentSet::iterator it = graphComponentSet->begin(); it != graphComponentSet->end(); ++it)
-		(*it)->datatree->printQuality();
+		(*it)->datatree->printObjectiveValues();
 }
 
 
@@ -1255,9 +1255,9 @@ datatree->addBipartition(datatree->parent,0);
 
 
 
-void GraphComponent::computeQuality () { datatree->computeQuality(); }
-void GraphComponent::normalizeQuality () { datatree->normalizeQuality(); }
-void GraphComponent::printQuality () { datatree->printQuality(); }
+void GraphComponent::computeObjectiveValues () { datatree->computeObjectiveValues(); }
+void GraphComponent::normalizeObjectiveValues () { datatree->normalizeObjectiveValues(); }
+void GraphComponent::printObjectiveValues () { datatree->printObjectiveValues(); }
 
 void GraphComponent::computeOptimalPartition (double parameter) { datatree->computeOptimalPartition(parameter); }
 void GraphComponent::printOptimalPartition (double parameter) { datatree->printOptimalPartition(parameter); }

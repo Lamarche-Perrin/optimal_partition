@@ -11,7 +11,7 @@ OrderedSet::OrderedSet (int s)
 	size = s;
 	int s2 = (s+1)*s/2;
 	
-	qualities = new Quality* [s2];
+	qualities = new ObjectiveValue* [s2];
 	optimalValues = new double [s];
 	optimalCuts = new int [s];
 }
@@ -29,15 +29,15 @@ OrderedSet::~OrderedSet ()
 }
 
 
-void OrderedSet::setMeasure (Measure *m)
+void OrderedSet::setObjectiveFunction (ObjectiveFunction *m)
 {
-	measure = m;
+	objective = m;
 	
-	for (int i = 0; i < size; i++) { qualities[getIndex(i,0)] = measure->newQuality(i); }
+	for (int i = 0; i < size; i++) { qualities[getIndex(i,0)] = objective->newObjectiveValue(i); }
 
 	for (int j = 1; j < size; j++)
 	{
-		for (int i = 0; i < size-j; i++) { qualities[getIndex(i,j)] = measure->newQuality(); }
+		for (int i = 0; i < size-j; i++) { qualities[getIndex(i,j)] = objective->newObjectiveValue(); }
 	}
 }
 
@@ -55,7 +55,7 @@ void OrderedSet::print ()
 }
 
 
-void OrderedSet::computeQuality ()
+void OrderedSet::computeObjectiveValues ()
 {
 	for (int i = 0; i < size; i++)
 		qualities[getIndex(i,0)]->compute();
@@ -66,9 +66,9 @@ void OrderedSet::computeQuality ()
 }
 
 
-void OrderedSet::normalizeQuality ()
+void OrderedSet::normalizeObjectiveValues ()
 {
-	Quality *maxQual = qualities[getIndex(0,size-1)];
+	ObjectiveValue *maxQual = qualities[getIndex(0,size-1)];
 
 	for (int j = 0; j < size; j++)
 		for (int i = 0; i < size-j; i++)
@@ -76,7 +76,7 @@ void OrderedSet::normalizeQuality ()
 }
 
 
-void OrderedSet::printQuality ()
+void OrderedSet::printObjectiveValues ()
 {
 	for (int j = 0; j < size; j++)
 		for (int i = 0; i < size-j; i++)
@@ -100,7 +100,7 @@ void OrderedSet::computeOptimalPartition (double parameter)
 		for (int cut = 1; cut < j+1; cut++)
 		{
 			float value = optimalValues[cut-1] + qualities[getIndex(cut,j-cut)]->getValue(parameter);
-			if ((measure->maximize && value > currentValue) || (!measure->maximize && value < currentValue))
+			if ((objective->maximize && value > currentValue) || (!objective->maximize && value < currentValue))
 			{
 				currentValue = value;
 				currentCut = cut;
@@ -143,7 +143,7 @@ Partition *OrderedSet::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
 
-	Partition *partition = new Partition(measure,parameter);
+	Partition *partition = new Partition(objective,parameter);
 //	std::list<Part*> *partList = new std::list<Part*>();
 	
 	int i;
@@ -155,7 +155,7 @@ Partition *OrderedSet::getOptimalPartition (double parameter)
 		int j = k-i;
 
 		Part *part = new Part(qualities[getIndex(i,j)]);
-//		part->quality->print();
+//		part->value->print();
 		for (int l = i; l <= k; l++) { part->addIndividual(l); }
 		partition->addPart(part,true);
 //		partList->push_front(part);
