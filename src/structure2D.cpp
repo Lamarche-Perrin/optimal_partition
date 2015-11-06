@@ -4,56 +4,56 @@
 #include "structure2D.hpp"
 
 		
-Structure2D::Structure2D (UniSet *uniSet1, UniSet *uniSet2)
+BiSet::BiSet (UniSet *uniSet1, UniSet *uniSet2)
 {
 	this->uniSet1 = uniSet1;
 	this->uniSet2 = uniSet2;
 
-	aggregateNumber = 0;
-	atomicAggregateNumber = 0;
+	biSubsetNumber = 0;
+	atomicBiSubsetNumber = 0;
 	
-	firstAggregate = 0;
-	aggregateArray = 0;
+	firstBiSubset = 0;
+	biSubsetArray = 0;
 }
 
 
-Structure2D::~Structure2D ()
+BiSet::~BiSet ()
 {
-	delete firstAggregate;
-	delete [] aggregateArray;
+	delete firstBiSubset;
+	delete [] biSubsetArray;
 }
 
 
-void Structure2D::initReached()
+void BiSet::initReached()
 {
-	for (int num = 0; num < aggregateNumber; num++) { aggregateArray[num]->reached = false; }
+	for (int num = 0; num < biSubsetNumber; num++) { biSubsetArray[num]->reached = false; }
 }
 
 
-void Structure2D::setRandom () {}
+void BiSet::setRandom () {}
 
 
-void Structure2D::setObjectiveFunction (ObjectiveFunction *m)
+void BiSet::setObjectiveFunction (ObjectiveFunction *m)
 {
 	objective = m;
 	initReached();
-	firstAggregate->setObjectiveFunction(m);
+	firstBiSubset->setObjectiveFunction(m);
 }
 
 
-void Structure2D::print ()
+void BiSet::print ()
 {
 	initReached();
-	firstAggregate->print();
+	firstBiSubset->print();
 	std::cout << std::endl;
 }
 
 
-void Structure2D::buildDataStructure ()
+void BiSet::buildDataStructure ()
 {
-	aggregateNumber = uniSet1->uniSubsetNumber * uniSet2->uniSubsetNumber;
-	atomicAggregateNumber = uniSet1->atomicUniSubsetNumber * uniSet2->atomicUniSubsetNumber;
-	aggregateArray = new Aggregate2D *[aggregateNumber];
+	biSubsetNumber = uniSet1->uniSubsetNumber * uniSet2->uniSubsetNumber;
+	atomicBiSubsetNumber = uniSet1->atomicUniSubsetNumber * uniSet2->atomicUniSubsetNumber;
+	biSubsetArray = new BiSubset *[biSubsetNumber];
 	
 	for (int num1 = 0; num1 < uniSet1->uniSubsetNumber; num1++)
 	{
@@ -63,69 +63,69 @@ void Structure2D::buildDataStructure ()
 		{
 			UniSubset *uniSubset2 = uniSet2->uniSubsetArray[num2];
 
-			Aggregate2D *aggregate = new Aggregate2D (uniSubset1,uniSubset2);
-			aggregate->structure = this;
+			BiSubset *biSubset = new BiSubset (uniSubset1,uniSubset2);
+			biSubset->biSet = this;
 
-			aggregate->isAtomic = uniSubset1->isAtomic && uniSubset2->isAtomic;
-			aggregate->num = num1 + num2 * uniSet1->uniSubsetNumber;
-			aggregateArray[aggregate->num] = aggregate;
+			biSubset->isAtomic = uniSubset1->isAtomic && uniSubset2->isAtomic;
+			biSubset->num = num1 + num2 * uniSet1->uniSubsetNumber;
+			biSubsetArray[biSubset->num] = biSubset;
 		}
 	}
 
 	initReached();
-	firstAggregate = aggregateArray[uniSet1->firstUniSubset->num + uniSet2->firstUniSubset->num * uniSet1->uniSubsetNumber];
-	firstAggregate->buildDataStructure();
+	firstBiSubset = biSubsetArray[uniSet1->firstUniSubset->num + uniSet2->firstUniSubset->num * uniSet1->uniSubsetNumber];
+	firstBiSubset->buildDataStructure();
 }
 
 
-void Structure2D::computeObjectiveValues ()
+void BiSet::computeObjectiveValues ()
 {
 	objective->computeObjectiveValues();
 	initReached();
-	firstAggregate->computeObjectiveValues();
+	firstBiSubset->computeObjectiveValues();
 }
 
 
-void Structure2D::normalizeObjectiveValues ()
+void BiSet::normalizeObjectiveValues ()
 {
 	initReached();
-	firstAggregate->normalizeObjectiveValues();
+	firstBiSubset->normalizeObjectiveValues();
 }
 
 
-void Structure2D::printObjectiveValues ()
+void BiSet::printObjectiveValues ()
 {
 	initReached();
-	firstAggregate->printObjectiveValues();
+	firstBiSubset->printObjectiveValues();
 }
 
 
-void Structure2D::computeOptimalPartition (double parameter)
+void BiSet::computeOptimalPartition (double parameter)
 {
 	initReached();
-	firstAggregate->computeOptimalPartition(parameter);
+	firstBiSubset->computeOptimalPartition(parameter);
 }
 
 
-void Structure2D::printOptimalPartition (double parameter)
+void BiSet::printOptimalPartition (double parameter)
 {
-	firstAggregate->printOptimalPartition(parameter);
+	firstBiSubset->printOptimalPartition(parameter);
 }
 
 
-Partition *Structure2D::getOptimalPartition (double parameter)
+Partition *BiSet::getOptimalPartition (double parameter)
 {
 	computeOptimalPartition(parameter);
 	Partition *partition = new Partition(objective,parameter);
-	firstAggregate->buildOptimalPartition(partition);	
+	firstBiSubset->buildOptimalPartition(partition);	
 	return partition;
 }
 
 
 
-Aggregate2D::Aggregate2D (UniSubset *agg1, UniSubset *agg2)
+BiSubset::BiSubset (UniSubset *agg1, UniSubset *agg2)
 {
-	structure = 0;
+	biSet = 0;
 	
 	num = -1;
 	isAtomic = false;
@@ -133,40 +133,40 @@ Aggregate2D::Aggregate2D (UniSubset *agg1, UniSubset *agg2)
 	
 	uniSubset1 = agg1;
 	uniSubset2 = agg2;
-	aggregateSetSet = new Aggregate2DSetSet();
+	biSubsetSetSet = new BiSubsetSetSet();
 
 	value = 0;
 	optimalCut = 0;
 }
 
 
-Aggregate2D::~Aggregate2D ()
+BiSubset::~BiSubset ()
 {
-	for (Aggregate2DSetSet::iterator it = aggregateSetSet->begin(); it != aggregateSetSet->end(); ++it) { delete *it; }
-	delete aggregateSetSet;
+	for (BiSubsetSetSet::iterator it = biSubsetSetSet->begin(); it != biSubsetSetSet->end(); ++it) { delete *it; }
+	delete biSubsetSetSet;
 	delete value;
 }
 
 
 
-void Aggregate2D::addAggregateSet (Aggregate2DSet *aggregateSet)
+void BiSubset::addBiSubsetSet (BiSubsetSet *biSubsetSet)
 {
-	aggregateSetSet->push_back(aggregateSet);
+	biSubsetSetSet->push_back(biSubsetSet);
 }
 
 
-void Aggregate2D::setObjectiveFunction (ObjectiveFunction *m)
+void BiSubset::setObjectiveFunction (ObjectiveFunction *m)
 {
-	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (BiSubsetSetSet::iterator it1 = biSubsetSetSet->begin(); it1 != biSubsetSetSet->end(); ++it1)
 	{
-		Aggregate2DSet *aggregateSet = *it1;
-		for (Aggregate2DSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		BiSubsetSet *biSubsetSet = *it1;
+		for (BiSubsetSet::iterator it2 = biSubsetSet->begin(); it2 != biSubsetSet->end(); ++it2)
 		{
-			Aggregate2D *aggregate = *it2;
-			if (!aggregate->reached)
+			BiSubset *biSubset = *it2;
+			if (!biSubset->reached)
 			{
-				aggregate->reached = true;
-				aggregate->setObjectiveFunction(m);
+				biSubset->reached = true;
+				biSubset->setObjectiveFunction(m);
 			}
 		}
 	}
@@ -182,42 +182,42 @@ void Aggregate2D::setObjectiveFunction (ObjectiveFunction *m)
 }
 
 
-void Aggregate2D::print ()
+void BiSubset::print ()
 {
 	printIndexSet(true);
-	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (BiSubsetSetSet::iterator it1 = biSubsetSetSet->begin(); it1 != biSubsetSetSet->end(); ++it1)
 	{
-		Aggregate2DSet *aggregateSet = *it1;
+		BiSubsetSet *biSubsetSet = *it1;
 
 		bool first = true;
 		std::cout << " -> ";
 		
-		for (Aggregate2DSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		for (BiSubsetSet::iterator it2 = biSubsetSet->begin(); it2 != biSubsetSet->end(); ++it2)
 		{
-			Aggregate2D *aggregate = *it2;
+			BiSubset *biSubset = *it2;
 			if (!first) { std::cout << " "; } else { first = false; }
-			aggregate->printIndexSet();
+			biSubset->printIndexSet();
 		}
 		std::cout << std::endl;
 	}
 
-	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (BiSubsetSetSet::iterator it1 = biSubsetSetSet->begin(); it1 != biSubsetSetSet->end(); ++it1)
 	{
-		Aggregate2DSet *aggregateSet = *it1;
-		for (Aggregate2DSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		BiSubsetSet *biSubsetSet = *it1;
+		for (BiSubsetSet::iterator it2 = biSubsetSet->begin(); it2 != biSubsetSet->end(); ++it2)
 		{
-			Aggregate2D *aggregate = *it2;
-			if (!aggregate->reached)
+			BiSubset *biSubset = *it2;
+			if (!biSubset->reached)
 			{
-				aggregate->reached = true;
-				aggregate->print();
+				biSubset->reached = true;
+				biSubset->print();
 			}
 		}
 	}
 }
 
 
-void Aggregate2D::printIndexSet (bool endl)
+void BiSubset::printIndexSet (bool endl)
 {
 	std::cout << "(";
 	uniSubset1->printIndexSet();
@@ -228,64 +228,64 @@ void Aggregate2D::printIndexSet (bool endl)
 }
 
 		
-void Aggregate2D::buildDataStructure ()
+void BiSubset::buildDataStructure ()
 {
 	for (UniSubsetSetSet::iterator it1 = uniSubset1->uniSubsetSetSet->begin(); it1 != uniSubset1->uniSubsetSetSet->end(); it1++)
 	{
 		UniSubsetSet *currentSet = *it1;
-		Aggregate2DSet *newSet = new Aggregate2DSet();
+		BiSubsetSet *newSet = new BiSubsetSet();
 
 		for (UniSubsetSet::iterator it2 = currentSet->begin(); it2 != currentSet->end(); it2++)
 		{
 			UniSubset *subAggregate1 = *it2;
-			newSet->push_back(structure->aggregateArray[subAggregate1->num + uniSubset2->num * subAggregate1->uniSet->uniSubsetNumber]);
+			newSet->push_back(biSet->biSubsetArray[subAggregate1->num + uniSubset2->num * subAggregate1->uniSet->uniSubsetNumber]);
 		}
 
-		addAggregateSet(newSet);
+		addBiSubsetSet(newSet);
 	}
 
 	for (UniSubsetSetSet::iterator it1 = uniSubset2->uniSubsetSetSet->begin(); it1 != uniSubset2->uniSubsetSetSet->end(); it1++)
 	{
 		UniSubsetSet *currentSet = *it1;
-		Aggregate2DSet *newSet = new Aggregate2DSet();
+		BiSubsetSet *newSet = new BiSubsetSet();
 
 		for (UniSubsetSet::iterator it2 = currentSet->begin(); it2 != currentSet->end(); it2++)
 		{
 			UniSubset *subAggregate2 = *it2;
-			newSet->push_back(structure->aggregateArray[uniSubset1->num + subAggregate2->num * uniSubset1->uniSet->uniSubsetNumber]);
+			newSet->push_back(biSet->biSubsetArray[uniSubset1->num + subAggregate2->num * uniSubset1->uniSet->uniSubsetNumber]);
 		}
 
-		addAggregateSet(newSet);
+		addBiSubsetSet(newSet);
 	}
 
-	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (BiSubsetSetSet::iterator it1 = biSubsetSetSet->begin(); it1 != biSubsetSetSet->end(); ++it1)
 	{
-		Aggregate2DSet *aggregateSet = *it1;
-		for (Aggregate2DSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		BiSubsetSet *biSubsetSet = *it1;
+		for (BiSubsetSet::iterator it2 = biSubsetSet->begin(); it2 != biSubsetSet->end(); ++it2)
 		{
-			Aggregate2D *aggregate = *it2;
-			if (!aggregate->reached)
+			BiSubset *biSubset = *it2;
+			if (!biSubset->reached)
 			{
-				aggregate->reached = true;
-				aggregate->buildDataStructure();
+				biSubset->reached = true;
+				biSubset->buildDataStructure();
 			}
 		}
 	}
 }
 
 
-void Aggregate2D::computeObjectiveValues ()
+void BiSubset::computeObjectiveValues ()
 {
-	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (BiSubsetSetSet::iterator it1 = biSubsetSetSet->begin(); it1 != biSubsetSetSet->end(); ++it1)
 	{
-		Aggregate2DSet *aggregateSet = *it1;
-		for (Aggregate2DSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		BiSubsetSet *biSubsetSet = *it1;
+		for (BiSubsetSet::iterator it2 = biSubsetSet->begin(); it2 != biSubsetSet->end(); ++it2)
 		{
-			Aggregate2D *aggregate = *it2;
-			if (!aggregate->reached)
+			BiSubset *biSubset = *it2;
+			if (!biSubset->reached)
 			{
-				aggregate->reached = true;
-				aggregate->computeObjectiveValues();
+				biSubset->reached = true;
+				biSubset->computeObjectiveValues();
 			}
 		}
 	}
@@ -293,28 +293,28 @@ void Aggregate2D::computeObjectiveValues ()
 	if (isAtomic) { value->compute(); }
 	else {
 		ObjectiveValueSet *qSet = new ObjectiveValueSet();
-		Aggregate2DSet *aggregateSet = *aggregateSetSet->begin();
-		for (Aggregate2DSet::iterator it = aggregateSet->begin(); it != aggregateSet->end(); ++it) { qSet->insert((*it)->value); }
+		BiSubsetSet *biSubsetSet = *biSubsetSetSet->begin();
+		for (BiSubsetSet::iterator it = biSubsetSet->begin(); it != biSubsetSet->end(); ++it) { qSet->insert((*it)->value); }
 		value->compute(qSet);
 		delete qSet;
 	}
 }
 
 
-void Aggregate2D::normalizeObjectiveValues (ObjectiveValue *maxQual)
+void BiSubset::normalizeObjectiveValues (ObjectiveValue *maxQual)
 {
 	if (maxQual == 0) { maxQual = value; }
 
-	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (BiSubsetSetSet::iterator it1 = biSubsetSetSet->begin(); it1 != biSubsetSetSet->end(); ++it1)
 	{
-		Aggregate2DSet *aggregateSet = *it1;
-		for (Aggregate2DSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		BiSubsetSet *biSubsetSet = *it1;
+		for (BiSubsetSet::iterator it2 = biSubsetSet->begin(); it2 != biSubsetSet->end(); ++it2)
 		{
-			Aggregate2D *aggregate = *it2;
-			if (!aggregate->reached)
+			BiSubset *biSubset = *it2;
+			if (!biSubset->reached)
 			{
-				aggregate->reached = true;
-				aggregate->normalizeObjectiveValues(maxQual);
+				biSubset->reached = true;
+				biSubset->normalizeObjectiveValues(maxQual);
 			}
 		}
 	}
@@ -323,40 +323,40 @@ void Aggregate2D::normalizeObjectiveValues (ObjectiveValue *maxQual)
 }
 
 
-void Aggregate2D::printObjectiveValues ()
+void BiSubset::printObjectiveValues ()
 {
 	printIndexSet();
 	std::cout << " -> ";
 	value->print(true);
 	
-	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (BiSubsetSetSet::iterator it1 = biSubsetSetSet->begin(); it1 != biSubsetSetSet->end(); ++it1)
 	{
-		Aggregate2DSet *aggregateSet = *it1;
-		for (Aggregate2DSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		BiSubsetSet *biSubsetSet = *it1;
+		for (BiSubsetSet::iterator it2 = biSubsetSet->begin(); it2 != biSubsetSet->end(); ++it2)
 		{
-			Aggregate2D *aggregate = *it2;
-			if (!aggregate->reached)
+			BiSubset *biSubset = *it2;
+			if (!biSubset->reached)
 			{
-				aggregate->reached = true;
-				aggregate->printObjectiveValues();
+				biSubset->reached = true;
+				biSubset->printObjectiveValues();
 			}
 		}
 	}
 }
 
 
-void Aggregate2D::computeOptimalPartition (double parameter)
+void BiSubset::computeOptimalPartition (double parameter)
 {
-	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (BiSubsetSetSet::iterator it1 = biSubsetSetSet->begin(); it1 != biSubsetSetSet->end(); ++it1)
 	{
-		Aggregate2DSet *aggregateSet = *it1;
-		for (Aggregate2DSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		BiSubsetSet *biSubsetSet = *it1;
+		for (BiSubsetSet::iterator it2 = biSubsetSet->begin(); it2 != biSubsetSet->end(); ++it2)
 		{
-			Aggregate2D *aggregate = *it2;
-			if (!aggregate->reached)
+			BiSubset *biSubset = *it2;
+			if (!biSubset->reached)
 			{
-				aggregate->reached = true;
-				aggregate->computeOptimalPartition(parameter);
+				biSubset->reached = true;
+				biSubset->computeOptimalPartition(parameter);
 			}
 		}
 	}
@@ -364,26 +364,26 @@ void Aggregate2D::computeOptimalPartition (double parameter)
 	optimalValue = value->getValue(parameter);
 	optimalCut = 0;
 
-	for (Aggregate2DSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (BiSubsetSetSet::iterator it1 = biSubsetSetSet->begin(); it1 != biSubsetSetSet->end(); ++it1)
 	{
-		Aggregate2DSet *aggregateSet = *it1;
+		BiSubsetSet *biSubsetSet = *it1;
 
 		double value = 0;
-		for (Aggregate2DSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2) { value += (*it2)->optimalValue; }
+		for (BiSubsetSet::iterator it2 = biSubsetSet->begin(); it2 != biSubsetSet->end(); ++it2) { value += (*it2)->optimalValue; }
 
 		if ((objective->maximize && value > optimalValue) || (!objective->maximize && value < optimalValue))
 		{
 			optimalValue = value;
-			optimalCut = aggregateSet;
+			optimalCut = biSubsetSet;
 		}
 	}
 }
 
 
-void Aggregate2D::printOptimalPartition (double parameter) {}
+void BiSubset::printOptimalPartition (double parameter) {}
 
 
-void Aggregate2D::buildOptimalPartition (Partition *partition)
+void BiSubset::buildOptimalPartition (Partition *partition)
 {
 	if (optimalCut == 0)
 	{
@@ -396,5 +396,5 @@ void Aggregate2D::buildOptimalPartition (Partition *partition)
 
 		partition->addPart(part,true);
 	}
-	else { for (Aggregate2DSet::iterator it = optimalCut->begin(); it != optimalCut->end(); it++) { (*it)->buildOptimalPartition(partition); } }
+	else { for (BiSubsetSet::iterator it = optimalCut->begin(); it != optimalCut->end(); it++) { (*it)->buildOptimalPartition(partition); } }
 }

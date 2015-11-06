@@ -10,7 +10,7 @@ void testNonconstrainedOrderedSet ();
 void testHierarchicalHierarchicalSet ();
 void testGraph ();
 void testGraphWithSlyce ();
-void testStructure2D ();
+void testBiSet ();
 void testHyperStructure ();
 void testLogarithmicScore ();
 

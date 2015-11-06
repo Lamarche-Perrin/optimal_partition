@@ -7,24 +7,24 @@
 #include "abstract_set.hpp"
 
 
-class Aggregate2D;
-typedef std::list<Aggregate2D*> Aggregate2DSet;
-typedef std::list<Aggregate2DSet*> Aggregate2DSetSet;
+class BiSubset;
+typedef std::list<BiSubset*> BiSubsetSet;
+typedef std::list<BiSubsetSet*> BiSubsetSetSet;
 
-class Structure2D: public AbstractSet
+class BiSet: public AbstractSet
 {
 public:
 	UniSet *uniSet1;
 	UniSet *uniSet2;
 
-	int aggregateNumber;
-	int atomicAggregateNumber;
+	int biSubsetNumber;
+	int atomicBiSubsetNumber;
 	
-	Aggregate2D *firstAggregate;
-	Aggregate2D **aggregateArray;
+	BiSubset *firstBiSubset;
+	BiSubset **biSubsetArray;
 	
-	Structure2D (UniSet *uniSet1, UniSet *uniSet2);
-	virtual ~Structure2D ();
+	BiSet (UniSet *uniSet1, UniSet *uniSet2);
+	virtual ~BiSet ();
 
 	void initReached ();
 	void setRandom ();
@@ -42,7 +42,7 @@ public:
 };
 
 
-class Aggregate2D
+class BiSubset
 {
 public:
 	UniSubset *uniSubset1;
@@ -52,20 +52,20 @@ public:
 	bool isAtomic;
 	bool reached;
 	
-	Aggregate2DSetSet *aggregateSetSet;
-	Structure2D *structure;
+	BiSubsetSetSet *biSubsetSetSet;
+	BiSet *biSet;
 
 	ObjectiveFunction *objective;
 	ObjectiveValue *value;
 	double optimalValue;
-	Aggregate2DSet *optimalCut;
+	BiSubsetSet *optimalCut;
 
-	Aggregate2D (UniSubset *uniSubset1, UniSubset *uniSubset2);
-	~Aggregate2D ();
+	BiSubset (UniSubset *uniSubset1, UniSubset *uniSubset2);
+	~BiSubset ();
 
 	void print ();
 	void printIndexSet (bool endl = false);
-	void addAggregateSet (Aggregate2DSet *aggregateSet);
+	void addBiSubsetSet (BiSubsetSet *biSubsetSet);
 	void setObjectiveFunction (ObjectiveFunction *m);
 
 	void buildDataStructure ();

@@ -472,7 +472,7 @@ void testGraphWithSlyce ()
 }
 
 
-void testStructure2D ()
+void testBiSet ()
 {
 	UniSubset *h00 = new UniSubset (0);
 	UniSubset *h01 = new UniSubset (1);
@@ -571,7 +571,7 @@ void testStructure2D ()
 	//oStruct->print();
 
 	
-	Structure2D *hoStruct = new Structure2D (oStruct,hStruct);
+	BiSet *hoStruct = new BiSet (oStruct,hStruct);
 	hoStruct->buildDataStructure();
 	//hoStruct->print();
 
