@@ -4,10 +4,10 @@
 #include "structure2D.hpp"
 
 		
-Structure2D::Structure2D (Structure *structure1, Structure *structure2)
+Structure2D::Structure2D (UniSet *uniSet1, UniSet *uniSet2)
 {
-	this->structure1 = structure1;
-	this->structure2 = structure2;
+	this->uniSet1 = uniSet1;
+	this->uniSet2 = uniSet2;
 
 	aggregateNumber = 0;
 	atomicAggregateNumber = 0;
@@ -51,29 +51,29 @@ void Structure2D::print ()
 
 void Structure2D::buildDataStructure ()
 {
-	aggregateNumber = structure1->aggregateNumber * structure2->aggregateNumber;
-	atomicAggregateNumber = structure1->atomicAggregateNumber * structure2->atomicAggregateNumber;
+	aggregateNumber = uniSet1->uniSubsetNumber * uniSet2->uniSubsetNumber;
+	atomicAggregateNumber = uniSet1->atomicUniSubsetNumber * uniSet2->atomicUniSubsetNumber;
 	aggregateArray = new Aggregate2D *[aggregateNumber];
 	
-	for (int num1 = 0; num1 < structure1->aggregateNumber; num1++)
+	for (int num1 = 0; num1 < uniSet1->uniSubsetNumber; num1++)
 	{
-		Aggregate *aggregate1 = structure1->aggregateArray[num1];
+		UniSubset *uniSubset1 = uniSet1->uniSubsetArray[num1];
 		
-		for (int num2 = 0; num2 < structure2->aggregateNumber; num2++)
+		for (int num2 = 0; num2 < uniSet2->uniSubsetNumber; num2++)
 		{
-			Aggregate *aggregate2 = structure2->aggregateArray[num2];
+			UniSubset *uniSubset2 = uniSet2->uniSubsetArray[num2];
 
-			Aggregate2D *aggregate = new Aggregate2D (aggregate1,aggregate2);
+			Aggregate2D *aggregate = new Aggregate2D (uniSubset1,uniSubset2);
 			aggregate->structure = this;
 
-			aggregate->isAtomic = aggregate1->isAtomic && aggregate2->isAtomic;
-			aggregate->num = num1 + num2 * structure1->aggregateNumber;
+			aggregate->isAtomic = uniSubset1->isAtomic && uniSubset2->isAtomic;
+			aggregate->num = num1 + num2 * uniSet1->uniSubsetNumber;
 			aggregateArray[aggregate->num] = aggregate;
 		}
 	}
 
 	initReached();
-	firstAggregate = aggregateArray[structure1->firstAggregate->num + structure2->firstAggregate->num * structure1->aggregateNumber];
+	firstAggregate = aggregateArray[uniSet1->firstUniSubset->num + uniSet2->firstUniSubset->num * uniSet1->uniSubsetNumber];
 	firstAggregate->buildDataStructure();
 }
 
@@ -123,7 +123,7 @@ Partition *Structure2D::getOptimalPartition (double parameter)
 
 
 
-Aggregate2D::Aggregate2D (Aggregate *agg1, Aggregate *agg2)
+Aggregate2D::Aggregate2D (UniSubset *agg1, UniSubset *agg2)
 {
 	structure = 0;
 	
@@ -131,8 +131,8 @@ Aggregate2D::Aggregate2D (Aggregate *agg1, Aggregate *agg2)
 	isAtomic = false;
 	reached = false;
 	
-	aggregate1 = agg1;
-	aggregate2 = agg2;
+	uniSubset1 = agg1;
+	uniSubset2 = agg2;
 	aggregateSetSet = new Aggregate2DSetSet();
 
 	value = 0;
@@ -174,9 +174,9 @@ void Aggregate2D::setObjectiveFunction (ObjectiveFunction *m)
 	objective = m;
 	if (isAtomic)
 	{
-		int index1 = *aggregate1->indexSet->begin();
-		int index2 = *aggregate2->indexSet->begin();
-		value = m->newObjectiveValue(index1 + index2 * aggregate1->structure->atomicAggregateNumber);
+		int index1 = *uniSubset1->indexSet->begin();
+		int index2 = *uniSubset2->indexSet->begin();
+		value = m->newObjectiveValue(index1 + index2 * uniSubset1->uniSet->atomicUniSubsetNumber);
 	}
 	else { value = m->newObjectiveValue(); }
 }
@@ -220,9 +220,9 @@ void Aggregate2D::print ()
 void Aggregate2D::printIndexSet (bool endl)
 {
 	std::cout << "(";
-	aggregate1->printIndexSet();
+	uniSubset1->printIndexSet();
 	std::cout << ",";
-	aggregate2->printIndexSet();
+	uniSubset2->printIndexSet();
 	std::cout << ")";
 	if (endl) { std::cout << std::endl; }
 }
@@ -230,29 +230,29 @@ void Aggregate2D::printIndexSet (bool endl)
 		
 void Aggregate2D::buildDataStructure ()
 {
-	for (AggregateSetSet::iterator it1 = aggregate1->aggregateSetSet->begin(); it1 != aggregate1->aggregateSetSet->end(); it1++)
+	for (UniSubsetSetSet::iterator it1 = uniSubset1->uniSubsetSetSet->begin(); it1 != uniSubset1->uniSubsetSetSet->end(); it1++)
 	{
-		AggregateSet *currentSet = *it1;
+		UniSubsetSet *currentSet = *it1;
 		Aggregate2DSet *newSet = new Aggregate2DSet();
 
-		for (AggregateSet::iterator it2 = currentSet->begin(); it2 != currentSet->end(); it2++)
+		for (UniSubsetSet::iterator it2 = currentSet->begin(); it2 != currentSet->end(); it2++)
 		{
-			Aggregate *subAggregate1 = *it2;
-			newSet->push_back(structure->aggregateArray[subAggregate1->num + aggregate2->num * subAggregate1->structure->aggregateNumber]);
+			UniSubset *subAggregate1 = *it2;
+			newSet->push_back(structure->aggregateArray[subAggregate1->num + uniSubset2->num * subAggregate1->uniSet->uniSubsetNumber]);
 		}
 
 		addAggregateSet(newSet);
 	}
 
-	for (AggregateSetSet::iterator it1 = aggregate2->aggregateSetSet->begin(); it1 != aggregate2->aggregateSetSet->end(); it1++)
+	for (UniSubsetSetSet::iterator it1 = uniSubset2->uniSubsetSetSet->begin(); it1 != uniSubset2->uniSubsetSetSet->end(); it1++)
 	{
-		AggregateSet *currentSet = *it1;
+		UniSubsetSet *currentSet = *it1;
 		Aggregate2DSet *newSet = new Aggregate2DSet();
 
-		for (AggregateSet::iterator it2 = currentSet->begin(); it2 != currentSet->end(); it2++)
+		for (UniSubsetSet::iterator it2 = currentSet->begin(); it2 != currentSet->end(); it2++)
 		{
-			Aggregate *subAggregate2 = *it2;
-			newSet->push_back(structure->aggregateArray[aggregate1->num + subAggregate2->num * aggregate1->structure->aggregateNumber]);
+			UniSubset *subAggregate2 = *it2;
+			newSet->push_back(structure->aggregateArray[uniSubset1->num + subAggregate2->num * uniSubset1->uniSet->uniSubsetNumber]);
 		}
 
 		addAggregateSet(newSet);
@@ -391,8 +391,8 @@ void Aggregate2D::buildOptimalPartition (Partition *partition)
 		Part *p2 = new Part();
 		BiPart *part = new BiPart(p1,p2,value);
 
-		for (IndexSet::iterator it = aggregate1->indexSet->begin(); it != aggregate1->indexSet->end(); ++it) { p1->addIndividual(*it); }
-		for (IndexSet::iterator it = aggregate2->indexSet->begin(); it != aggregate2->indexSet->end(); ++it) { p2->addIndividual(*it); }
+		for (IndexSet::iterator it = uniSubset1->indexSet->begin(); it != uniSubset1->indexSet->end(); ++it) { p1->addIndividual(*it); }
+		for (IndexSet::iterator it = uniSubset2->indexSet->begin(); it != uniSubset2->indexSet->end(); ++it) { p2->addIndividual(*it); }
 
 		partition->addPart(part,true);
 	}

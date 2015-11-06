@@ -14,8 +14,8 @@ typedef std::list<Aggregate2DSet*> Aggregate2DSetSet;
 class Structure2D: public AbstractSet
 {
 public:
-	Structure *structure1;
-	Structure *structure2;
+	UniSet *uniSet1;
+	UniSet *uniSet2;
 
 	int aggregateNumber;
 	int atomicAggregateNumber;
@@ -23,7 +23,7 @@ public:
 	Aggregate2D *firstAggregate;
 	Aggregate2D **aggregateArray;
 	
-	Structure2D (Structure *structure1, Structure *structure2);
+	Structure2D (UniSet *uniSet1, UniSet *uniSet2);
 	virtual ~Structure2D ();
 
 	void initReached ();
@@ -45,8 +45,8 @@ public:
 class Aggregate2D
 {
 public:
-	Aggregate *aggregate1;
-	Aggregate *aggregate2;
+	UniSubset *uniSubset1;
+	UniSubset *uniSubset2;
 
 	int num;
 	bool isAtomic;
@@ -60,7 +60,7 @@ public:
 	double optimalValue;
 	Aggregate2DSet *optimalCut;
 
-	Aggregate2D (Aggregate *aggregate1, Aggregate *aggregate2);
+	Aggregate2D (UniSubset *uniSubset1, UniSubset *uniSubset2);
 	~Aggregate2D ();
 
 	void print ();

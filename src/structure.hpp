@@ -3,24 +3,24 @@
 
 #include <list>
 
-class Aggregate;
-typedef std::list<Aggregate*> AggregateSet;
-typedef std::list<AggregateSet*> AggregateSetSet;
+class UniSubset;
+typedef std::list<UniSubset*> UniSubsetSet;
+typedef std::list<UniSubsetSet*> UniSubsetSetSet;
 typedef std::list<int> IndexSet;
 
 
-class Structure
+class UniSet
 {
 public:
-	int aggregateNumber;
-	int atomicAggregateNumber;
+	int uniSubsetNumber;
+	int atomicUniSubsetNumber;
 
-	Aggregate *firstAggregate;
-	Aggregate **aggregateArray;
-	Aggregate **atomicAggregateArray;
+	UniSubset *firstUniSubset;
+	UniSubset **uniSubsetArray;
+	UniSubset **atomicUniSubsetArray;
 
-	Structure (Aggregate *firstAggregate);
-	~Structure ();
+	UniSet (UniSubset *firstUniSubset);
+	~UniSet ();
 
 	void buildDataStructure ();
 	void initReached ();
@@ -28,25 +28,25 @@ public:
 };
 
 
-class OrderedStructure: public Structure
+class OrderedUniSet: public UniSet
 {
 public:
 	int size;
-	OrderedStructure (int size);
+	OrderedUniSet (int size);
 	int getIndex (int i, int j);
 };
 
 
-class HierarchicalStructure: public Structure
+class HierarchicalUniSet: public UniSet
 {
 public:
 	int depth;
-	HierarchicalStructure (int depth);
-	int buildHierarchy (Aggregate *aggregate, int depth, int index);
+	HierarchicalUniSet (int depth);
+	int buildHierarchy (UniSubset *uniSubset, int depth, int index);
 };
 
 
-class Aggregate
+class UniSubset
 {
 public:
 	int num;
@@ -56,15 +56,15 @@ public:
 	int count;
 
 	IndexSet *indexSet;
-	AggregateSetSet *aggregateSetSet;
-	Structure *structure;
+	UniSubsetSetSet *uniSubsetSetSet;
+	UniSet *uniSet;
 
-	Aggregate (int index = -1);
-	~Aggregate ();
+	UniSubset (int index = -1);
+	~UniSubset ();
 
 	void print ();
 	void printIndexSet (bool endl = false);
-	void addAggregateSet (AggregateSet *aggregateSet);
+	void addUniSubsetSet (UniSubsetSet *uniSubsetSet);
 
 	void buildDataStructure ();
 };

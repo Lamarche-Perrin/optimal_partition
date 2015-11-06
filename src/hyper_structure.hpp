@@ -15,7 +15,7 @@ class HyperStructure: public AbstractSet
 {
 public:
 	int dimension;
-	Structure **structureArray;
+	UniSet **structureArray;
 
 	int aggregateNumber;
 	int atomicAggregateNumber;
@@ -24,8 +24,8 @@ public:
 	HyperAggregate **aggregateArray;
 	HyperAggregate **atomicAggregateArray;
 	
-	HyperStructure (Structure *structure);
-	HyperStructure (Structure **structureArray, int dimension);
+	HyperStructure (UniSet *structure);
+	HyperStructure (UniSet **structureArray, int dimension);
 	virtual ~HyperStructure ();
 
 	int getNum (int *hyperNum);
@@ -52,7 +52,7 @@ class HyperAggregate
 {
 public:
 	int dimension;
-	Aggregate **aggregateArray;
+	UniSubset **aggregateArray;
 
 	int num;
 	int atomicNum;
@@ -68,7 +68,7 @@ public:
 	double optimalValue;
 	HyperAggregateSet *optimalCut;
 
-	HyperAggregate (Aggregate **aggregateArray, int dimension);
+	HyperAggregate (UniSubset **aggregateArray, int dimension);
 	~HyperAggregate ();
 
 	void print ();

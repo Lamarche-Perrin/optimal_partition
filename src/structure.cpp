@@ -5,150 +5,150 @@
 #include "structure.hpp"
 
 
-Structure::Structure (Aggregate *firstAgg)
+UniSet::UniSet (UniSubset *firstAgg)
 {
-	aggregateNumber = 0;
-	atomicAggregateNumber = 0;
-	firstAggregate = firstAgg;
-	aggregateArray = 0;
-	atomicAggregateArray = 0;
+	uniSubsetNumber = 0;
+	atomicUniSubsetNumber = 0;
+	firstUniSubset = firstAgg;
+	uniSubsetArray = 0;
+	atomicUniSubsetArray = 0;
 }
 
 
-Structure::~Structure ()
+UniSet::~UniSet ()
 {
-	for (int num = 0; num < aggregateNumber; num++) { delete aggregateArray[num]; }
-	delete [] aggregateArray;
-	delete [] atomicAggregateArray;
+	for (int num = 0; num < uniSubsetNumber; num++) { delete uniSubsetArray[num]; }
+	delete [] uniSubsetArray;
+	delete [] atomicUniSubsetArray;
 }
 
 
-void Structure::buildDataStructure()
+void UniSet::buildDataStructure()
 {
-	aggregateNumber = 0;
-	atomicAggregateNumber = 0;
+	uniSubsetNumber = 0;
+	atomicUniSubsetNumber = 0;
 
-	AggregateSet set;
-	std::list<Aggregate*> list;
+	UniSubsetSet set;
+	std::list<UniSubset*> list;
 
-	firstAggregate->structure = this;
-	list.push_back(firstAggregate);
+	firstUniSubset->uniSet = this;
+	list.push_back(firstUniSubset);
 	while (!list.empty())
 	{
-		Aggregate *currentAggregate = list.front();
+		UniSubset *currentUniSubset = list.front();
 		list.pop_front();
 
-		currentAggregate->num = aggregateNumber++;
-		set.push_back(currentAggregate);
-		if (currentAggregate->isAtomic) { currentAggregate->atomicNum = atomicAggregateNumber++; }
+		currentUniSubset->num = uniSubsetNumber++;
+		set.push_back(currentUniSubset);
+		if (currentUniSubset->isAtomic) { currentUniSubset->atomicNum = atomicUniSubsetNumber++; }
 
-		for (AggregateSetSet::iterator it1 = currentAggregate->aggregateSetSet->begin(); it1 != currentAggregate->aggregateSetSet->end(); ++it1)
+		for (UniSubsetSetSet::iterator it1 = currentUniSubset->uniSubsetSetSet->begin(); it1 != currentUniSubset->uniSubsetSetSet->end(); ++it1)
 		{
-			AggregateSet *aggregateSet = *it1;
-			for (AggregateSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+			UniSubsetSet *uniSubsetSet = *it1;
+			for (UniSubsetSet::iterator it2 = uniSubsetSet->begin(); it2 != uniSubsetSet->end(); ++it2)
 			{
-				Aggregate *aggregate = *it2;
-				if (aggregate->structure == 0) {
-					aggregate->structure = this;
-					list.push_back(aggregate);
+				UniSubset *uniSubset = *it2;
+				if (uniSubset->uniSet == 0) {
+					uniSubset->uniSet = this;
+					list.push_back(uniSubset);
 				}
 			}
 		}
 	}
 
-	aggregateArray = new Aggregate*[aggregateNumber];
-	atomicAggregateArray = new Aggregate*[atomicAggregateNumber];
-	for (AggregateSet::iterator it = set.begin(); it != set.end(); it++)
+	uniSubsetArray = new UniSubset*[uniSubsetNumber];
+	atomicUniSubsetArray = new UniSubset*[atomicUniSubsetNumber];
+	for (UniSubsetSet::iterator it = set.begin(); it != set.end(); it++)
 	{
-		Aggregate *agg = *it;
-		aggregateArray[agg->num] = agg;
-		if (agg->isAtomic) { atomicAggregateArray[agg->atomicNum] = agg; }
+		UniSubset *agg = *it;
+		uniSubsetArray[agg->num] = agg;
+		if (agg->isAtomic) { atomicUniSubsetArray[agg->atomicNum] = agg; }
 	}
 
-	for (AggregateSet::iterator it = set.begin(); it != set.end(); it++) { aggregateArray[(*it)->num] = *it; }
+	for (UniSubsetSet::iterator it = set.begin(); it != set.end(); it++) { uniSubsetArray[(*it)->num] = *it; }
 
 	initReached();
-	firstAggregate->buildDataStructure();
+	firstUniSubset->buildDataStructure();
 }
 
 
-void Structure::initReached ()
+void UniSet::initReached ()
 {
-	for (int num = 0; num < aggregateNumber; num++) { aggregateArray[num]->reached = false; }
+	for (int num = 0; num < uniSubsetNumber; num++) { uniSubsetArray[num]->reached = false; }
 }
 
 
-void Structure::print ()
+void UniSet::print ()
 {
 	initReached();
-	firstAggregate->print();
+	firstUniSubset->print();
 	std::cout << std::endl;
 }
 
 
-OrderedStructure::OrderedStructure (int s) : Structure (0)
+OrderedUniSet::OrderedUniSet (int s) : UniSet (0)
 {
 	size = s;
 	
 	int size2 = size*(size+1)/2;
-	Aggregate **aggArray = new Aggregate* [size2];
+	UniSubset **aggArray = new UniSubset* [size2];
 	for (int j = 0; j < size; j++)
 		for (int i = 0; i < size-j; i++)
 		{
 			int index = -1;
 			if (j == 0) { index = i; }
-			aggArray[getIndex(i,j)] = new Aggregate (index);
+			aggArray[getIndex(i,j)] = new UniSubset (index);
 		}
 
 	for (int j = 0; j < size; j++)
 		for (int i = 0; i < size-j; i++)
 			for (int c = 0; c < j; c++)
 			{
-				AggregateSet *aggSet = new AggregateSet ();
+				UniSubsetSet *aggSet = new UniSubsetSet ();
 				aggSet->push_back(aggArray[getIndex(i,c)]);
 				aggSet->push_back(aggArray[getIndex(i+c+1,j-c-1)]);
-				aggArray[getIndex(i,j)]->addAggregateSet(aggSet);
+				aggArray[getIndex(i,j)]->addUniSubsetSet(aggSet);
 			}
 
-	firstAggregate = aggArray[getIndex(0,size-1)];
+	firstUniSubset = aggArray[getIndex(0,size-1)];
 	delete [] aggArray;
 }
 
 
-int OrderedStructure::getIndex (int i, int j) { return j*size-j*(j-1)/2+i; }
+int OrderedUniSet::getIndex (int i, int j) { return j*size-j*(j-1)/2+i; }
 
 
-HierarchicalStructure::HierarchicalStructure (int d) : Structure (0)
+HierarchicalUniSet::HierarchicalUniSet (int d) : UniSet (0)
 {
 	depth = d;
-	if (d == 0) { firstAggregate = new Aggregate (0); }
+	if (d == 0) { firstUniSubset = new UniSubset (0); }
 	else {
-		firstAggregate = new Aggregate ();
-		buildHierarchy(firstAggregate,d-1,0);
+		firstUniSubset = new UniSubset ();
+		buildHierarchy(firstUniSubset,d-1,0);
 	}
 }
 
 
-int HierarchicalStructure::buildHierarchy (Aggregate *agg, int d, int i)
+int HierarchicalUniSet::buildHierarchy (UniSubset *agg, int d, int i)
 {
-	Aggregate *agg1;
-	Aggregate *agg2;
+	UniSubset *agg1;
+	UniSubset *agg2;
 
 	if (d == 0)
 	{
-		agg1 = new Aggregate (i++);
-		agg2 = new Aggregate (i++);		
+		agg1 = new UniSubset (i++);
+		agg2 = new UniSubset (i++);		
 	}
 
 	else {
-		agg1 = new Aggregate ();
-		agg2 = new Aggregate ();	
+		agg1 = new UniSubset ();
+		agg2 = new UniSubset ();	
 	}
 
-	AggregateSet *aggSet = new AggregateSet ();
+	UniSubsetSet *aggSet = new UniSubsetSet ();
 	aggSet->push_back(agg1);
 	aggSet->push_back(agg2);
-	agg->addAggregateSet(aggSet);
+	agg->addUniSubsetSet(aggSet);
 
 	if (d > 0)
 	{
@@ -160,9 +160,9 @@ int HierarchicalStructure::buildHierarchy (Aggregate *agg, int d, int i)
 }
 
 
-Aggregate::Aggregate (int index)
+UniSubset::UniSubset (int index)
 {
-	structure = 0;
+	uniSet = 0;
 	count = 0;
 
 	num = -1;
@@ -170,7 +170,7 @@ Aggregate::Aggregate (int index)
 	isAtomic = false;
 	reached = false;
 
-	aggregateSetSet = new AggregateSetSet();
+	uniSubsetSetSet = new UniSubsetSetSet();
 	indexSet = new IndexSet();
 	
 	if (index != -1) { indexSet->push_back(index); }
@@ -178,50 +178,50 @@ Aggregate::Aggregate (int index)
 }
 
 
-Aggregate::~Aggregate ()
+UniSubset::~UniSubset ()
 {
-	for (AggregateSetSet::iterator it = aggregateSetSet->begin(); it != aggregateSetSet->end(); ++it) { delete *it; }
-	delete aggregateSetSet;
+	for (UniSubsetSetSet::iterator it = uniSubsetSetSet->begin(); it != uniSubsetSetSet->end(); ++it) { delete *it; }
+	delete uniSubsetSetSet;
 	delete indexSet;
 }
 
 
-void Aggregate::print ()
+void UniSubset::print ()
 {
 	printIndexSet(true);
-	for (AggregateSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (UniSubsetSetSet::iterator it1 = uniSubsetSetSet->begin(); it1 != uniSubsetSetSet->end(); ++it1)
 	{
-		AggregateSet *aggregateSet = *it1;
+		UniSubsetSet *uniSubsetSet = *it1;
 
 		bool first = true;
 		std::cout << " -> ";
 
-		for (AggregateSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		for (UniSubsetSet::iterator it2 = uniSubsetSet->begin(); it2 != uniSubsetSet->end(); ++it2)
 		{
-			Aggregate *aggregate = *it2;
+			UniSubset *uniSubset = *it2;
 			if (!first) { std::cout << " "; } else { first = false; }
-			aggregate->printIndexSet();
+			uniSubset->printIndexSet();
 		}
 		std::cout << std::endl;
 	}
 	
-	for (AggregateSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (UniSubsetSetSet::iterator it1 = uniSubsetSetSet->begin(); it1 != uniSubsetSetSet->end(); ++it1)
 	{
-		AggregateSet *aggregateSet = *it1;
-		for (AggregateSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		UniSubsetSet *uniSubsetSet = *it1;
+		for (UniSubsetSet::iterator it2 = uniSubsetSet->begin(); it2 != uniSubsetSet->end(); ++it2)
 		{
-			Aggregate *aggregate = *it2;
-			if (!aggregate->reached)
+			UniSubset *uniSubset = *it2;
+			if (!uniSubset->reached)
 			{
-				aggregate->reached = true;
-				aggregate->print();
+				uniSubset->reached = true;
+				uniSubset->print();
 			}
 		}
 	}	
 }
 
 
-void Aggregate::printIndexSet (bool endl)
+void UniSubset::printIndexSet (bool endl)
 {
 	bool first = true;
 	std::cout << "{";
@@ -235,35 +235,35 @@ void Aggregate::printIndexSet (bool endl)
 }
 
 
-void Aggregate::addAggregateSet (AggregateSet *aggregateSet)
+void UniSubset::addUniSubsetSet (UniSubsetSet *uniSubsetSet)
 {
-	aggregateSetSet->push_back(aggregateSet);
+	uniSubsetSetSet->push_back(uniSubsetSet);
 }
 
 
-void Aggregate::buildDataStructure ()
+void UniSubset::buildDataStructure ()
 {
-	for (AggregateSetSet::iterator it1 = aggregateSetSet->begin(); it1 != aggregateSetSet->end(); ++it1)
+	for (UniSubsetSetSet::iterator it1 = uniSubsetSetSet->begin(); it1 != uniSubsetSetSet->end(); ++it1)
 	{
-		AggregateSet *aggregateSet = *it1;
-		for (AggregateSet::iterator it2 = aggregateSet->begin(); it2 != aggregateSet->end(); ++it2)
+		UniSubsetSet *uniSubsetSet = *it1;
+		for (UniSubsetSet::iterator it2 = uniSubsetSet->begin(); it2 != uniSubsetSet->end(); ++it2)
 		{
-			Aggregate *aggregate = *it2;
-			if (!aggregate->reached)
+			UniSubset *uniSubset = *it2;
+			if (!uniSubset->reached)
 			{
-				aggregate->reached = true;
-				aggregate->buildDataStructure();
+				uniSubset->reached = true;
+				uniSubset->buildDataStructure();
 			}
 		}
 	}
 
 	if (!isAtomic)
 	{
-		AggregateSet *set = *aggregateSetSet->begin();
-		for (AggregateSet::iterator it1 = set->begin(); it1 != set->end(); ++it1)
+		UniSubsetSet *set = *uniSubsetSetSet->begin();
+		for (UniSubsetSet::iterator it1 = set->begin(); it1 != set->end(); ++it1)
 		{
-			Aggregate *aggregate = *it1;
-			for (IndexSet::iterator it2 = aggregate->indexSet->begin(); it2 != aggregate->indexSet->end(); ++it2)
+			UniSubset *uniSubset = *it1;
+			for (IndexSet::iterator it2 = uniSubset->indexSet->begin(); it2 != uniSubset->indexSet->end(); ++it2)
 			{
 				indexSet->push_back(*it2);
 			}

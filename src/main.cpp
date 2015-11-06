@@ -62,12 +62,12 @@ int main (int argc, char *argv[]) {
 			bool hierarchical = false;
 			double parameter = 0.5;
 
-			Structure *structure;
+			UniSet *structure;
 			if (hierarchical) { structure = new HierarchicalStructure (depth); }
 			else { structure = new OrderedStructure (size); }
 			structure->buildDataStructure();
 
-			Structure **structureArray = new Structure* [dimension];
+			UniSet **structureArray = new UniSet* [dimension];
 			for (int d = 0; d < dimension; d++) { structureArray[d] = structure; }
 
 			HyperStructure *hyperStruct = new HyperStructure (structureArray, dimension);
@@ -474,99 +474,99 @@ void testGraphWithSlyce ()
 
 void testStructure2D ()
 {
-	Aggregate *h00 = new Aggregate (0);
-	Aggregate *h01 = new Aggregate (1);
-	Aggregate *h10 = new Aggregate (2);
-	Aggregate *h11 = new Aggregate (3);
+	UniSubset *h00 = new UniSubset (0);
+	UniSubset *h01 = new UniSubset (1);
+	UniSubset *h10 = new UniSubset (2);
+	UniSubset *h11 = new UniSubset (3);
 
-	Aggregate *h0 = new Aggregate();
-	AggregateSet *h0Set = new AggregateSet();
+	UniSubset *h0 = new UniSubset();
+	UniSubsetSet *h0Set = new UniSubsetSet();
 	h0Set->push_back(h00);
 	h0Set->push_back(h01);
-	h0->addAggregateSet(h0Set);
+	h0->addUniSubsetSet(h0Set);
 	
-	Aggregate *h1 = new Aggregate();
-	AggregateSet *h1Set = new AggregateSet();
+	UniSubset *h1 = new UniSubset();
+	UniSubsetSet *h1Set = new UniSubsetSet();
 	h1Set->push_back(h10);
 	h1Set->push_back(h11);
-	h1->addAggregateSet(h1Set);
+	h1->addUniSubsetSet(h1Set);
 
-	Aggregate *h = new Aggregate();
-	AggregateSet *hSet = new AggregateSet();
+	UniSubset *h = new UniSubset();
+	UniSubsetSet *hSet = new UniSubsetSet();
 	hSet->push_back(h0);
 	hSet->push_back(h1);
-	h->addAggregateSet(hSet);
+	h->addUniSubsetSet(hSet);
 
-	Structure *hStruct = new Structure (h);
+	UniSet *hStruct = new UniSet (h);
 	hStruct->buildDataStructure();
 	//hStruct->print();
 
 	
-	Aggregate *o0 = new Aggregate (0);
-	Aggregate *o1 = new Aggregate (1);
-	Aggregate *o2 = new Aggregate (2);
-	Aggregate *o3 = new Aggregate (3);
+	UniSubset *o0 = new UniSubset (0);
+	UniSubset *o1 = new UniSubset (1);
+	UniSubset *o2 = new UniSubset (2);
+	UniSubset *o3 = new UniSubset (3);
 
-	Aggregate *o01 = new Aggregate();
-	AggregateSet *o0c1Set = new AggregateSet();
+	UniSubset *o01 = new UniSubset();
+	UniSubsetSet *o0c1Set = new UniSubsetSet();
 	o0c1Set->push_back(o0);
 	o0c1Set->push_back(o1);
-	o01->addAggregateSet(o0c1Set);
+	o01->addUniSubsetSet(o0c1Set);
 
-	Aggregate *o12 = new Aggregate();
-	AggregateSet *o1c2Set = new AggregateSet();
+	UniSubset *o12 = new UniSubset();
+	UniSubsetSet *o1c2Set = new UniSubsetSet();
 	o1c2Set->push_back(o1);
 	o1c2Set->push_back(o2);
-	o12->addAggregateSet(o1c2Set);
+	o12->addUniSubsetSet(o1c2Set);
 
-	Aggregate *o23 = new Aggregate();
-	AggregateSet *o2c3Set = new AggregateSet();
+	UniSubset *o23 = new UniSubset();
+	UniSubsetSet *o2c3Set = new UniSubsetSet();
 	o2c3Set->push_back(o2);
 	o2c3Set->push_back(o3);
-	o23->addAggregateSet(o2c3Set);
+	o23->addUniSubsetSet(o2c3Set);
 
-	Aggregate *o012 = new Aggregate();
+	UniSubset *o012 = new UniSubset();
 
-	AggregateSet *o0c12Set = new AggregateSet();
+	UniSubsetSet *o0c12Set = new UniSubsetSet();
 	o0c12Set->push_back(o0);
 	o0c12Set->push_back(o12);
-	o012->addAggregateSet(o0c12Set);
+	o012->addUniSubsetSet(o0c12Set);
 
-	AggregateSet *o01c2Set = new AggregateSet();
+	UniSubsetSet *o01c2Set = new UniSubsetSet();
 	o01c2Set->push_back(o01);
 	o01c2Set->push_back(o2);
-	o012->addAggregateSet(o01c2Set);
+	o012->addUniSubsetSet(o01c2Set);
 
-	Aggregate *o123 = new Aggregate();
+	UniSubset *o123 = new UniSubset();
 
-	AggregateSet *o1c23Set = new AggregateSet();
+	UniSubsetSet *o1c23Set = new UniSubsetSet();
 	o1c23Set->push_back(o1);
 	o1c23Set->push_back(o23);
-	o123->addAggregateSet(o1c23Set);
+	o123->addUniSubsetSet(o1c23Set);
 
-	AggregateSet *o12c3Set = new AggregateSet();
+	UniSubsetSet *o12c3Set = new UniSubsetSet();
 	o12c3Set->push_back(o12);
 	o12c3Set->push_back(o3);
-	o123->addAggregateSet(o12c3Set);
+	o123->addUniSubsetSet(o12c3Set);
 
-	Aggregate *o0123 = new Aggregate();
+	UniSubset *o0123 = new UniSubset();
 
-	AggregateSet *o0c123Set = new AggregateSet();
+	UniSubsetSet *o0c123Set = new UniSubsetSet();
 	o0c123Set->push_back(o0);
 	o0c123Set->push_back(o123);
-	o0123->addAggregateSet(o0c123Set);
+	o0123->addUniSubsetSet(o0c123Set);
 
-	AggregateSet *o01c23Set = new AggregateSet();
+	UniSubsetSet *o01c23Set = new UniSubsetSet();
 	o01c23Set->push_back(o01);
 	o01c23Set->push_back(o23);
-	o0123->addAggregateSet(o01c23Set);
+	o0123->addUniSubsetSet(o01c23Set);
 
-	AggregateSet *o012c3Set = new AggregateSet();
+	UniSubsetSet *o012c3Set = new UniSubsetSet();
 	o012c3Set->push_back(o012);
 	o012c3Set->push_back(o3);
-	o0123->addAggregateSet(o012c3Set);
+	o0123->addUniSubsetSet(o012c3Set);
 
-	Structure *oStruct = new Structure (o0123);
+	UniSet *oStruct = new UniSet (o0123);
 	oStruct->buildDataStructure();
 	//oStruct->print();
 
@@ -623,39 +623,39 @@ void testStructure2D ()
 
 void testHyperStructure ()
 {
-	Aggregate *h00 = new Aggregate (0);
-	Aggregate *h01 = new Aggregate (1);
-	Aggregate *h10 = new Aggregate (2);
-	Aggregate *h11 = new Aggregate (3);
+	UniSubset *h00 = new UniSubset (0);
+	UniSubset *h01 = new UniSubset (1);
+	UniSubset *h10 = new UniSubset (2);
+	UniSubset *h11 = new UniSubset (3);
 
-	Aggregate *h0 = new Aggregate();
-	AggregateSet *h0Set = new AggregateSet();
+	UniSubset *h0 = new UniSubset();
+	UniSubsetSet *h0Set = new UniSubsetSet();
 	h0Set->push_back(h00);
 	h0Set->push_back(h01);
-	h0->addAggregateSet(h0Set);
+	h0->addUniSubsetSet(h0Set);
 	
-	Aggregate *h1 = new Aggregate();
-	AggregateSet *h1Set = new AggregateSet();
+	UniSubset *h1 = new UniSubset();
+	UniSubsetSet *h1Set = new UniSubsetSet();
 	h1Set->push_back(h10);
 	h1Set->push_back(h11);
-	h1->addAggregateSet(h1Set);
+	h1->addUniSubsetSet(h1Set);
 
-	Aggregate *h = new Aggregate();
-	AggregateSet *hSet = new AggregateSet();
+	UniSubset *h = new UniSubset();
+	UniSubsetSet *hSet = new UniSubsetSet();
 	hSet->push_back(h0);
 	hSet->push_back(h1);
-	h->addAggregateSet(hSet);
+	h->addUniSubsetSet(hSet);
 
-	Structure *hStruct = new Structure (h);
+	UniSet *hStruct = new UniSet (h);
 	hStruct->buildDataStructure();
 
 	
-	Structure *oStruct = new OrderedStructure (4);
+	UniSet *oStruct = new OrderedUniSet (4);
 	oStruct->buildDataStructure();
 
 	
 	int dimension = 2;
-	Structure **structureArray = new Structure* [dimension];
+	UniSet **structureArray = new UniSet* [dimension];
 	structureArray[0] = hStruct;
 	structureArray[1] = oStruct;
 		
@@ -721,12 +721,12 @@ void testHyperStructure ()
 
 void testLogarithmicScore ()
 {
-	Structure *preStruct = new OrderedStructure (5);
+	UniSet *preStruct = new OrderedUniSet (5);
 	preStruct->buildDataStructure();
 	HyperStructure *preStructure = new HyperStructure(preStruct);
 	preStructure->buildDataStructure();
 	
-	Structure *postStruct = new OrderedStructure (5);
+	UniSet *postStruct = new OrderedUniSet (5);
 	postStruct->buildDataStructure();
 	HyperStructure *postStructure = new HyperStructure(postStruct);
 	postStructure->buildDataStructure();

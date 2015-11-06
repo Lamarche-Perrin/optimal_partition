@@ -4,10 +4,10 @@
 #include "hyper_structure.hpp"
 
 
-HyperStructure::HyperStructure (Structure *str)
+HyperStructure::HyperStructure (UniSet *str)
 {
 	dimension = 1;
-	structureArray = new Structure* [1];
+	structureArray = new UniSet* [1];
 	structureArray[0] = str;
 
 	aggregateNumber = 0;
@@ -19,7 +19,7 @@ HyperStructure::HyperStructure (Structure *str)
 }
 
 
-HyperStructure::HyperStructure (Structure **strArray, int dim)
+HyperStructure::HyperStructure (UniSet **strArray, int dim)
 {
 	dimension = dim;
 	structureArray = strArray;
@@ -46,7 +46,7 @@ int HyperStructure::getNum (int *hyperNum)
 	int num = 0;
 	for (int d = dimension-1; d >= 0; d--)
 	{
-		if (d < dimension-1) { num *= structureArray[d]->aggregateNumber; }
+		if (d < dimension-1) { num *= structureArray[d]->uniSubsetNumber; }
 		num += hyperNum[d];
 	}
 	return num;
@@ -58,9 +58,9 @@ int *HyperStructure::getHyperNum (int num)
 	int *hyperNum = new int [dimension];
 	for (int d = 0; d < dimension; d++)
 	{
-		hyperNum[d] = num % structureArray[d]->aggregateNumber;
+		hyperNum[d] = num % structureArray[d]->uniSubsetNumber;
 		num -= hyperNum[d];
-		num /= structureArray[d]->aggregateNumber;
+		num /= structureArray[d]->uniSubsetNumber;
 	}
 	return hyperNum;
 }
@@ -76,7 +76,7 @@ HyperAggregate *HyperStructure::getAtomicAggregate (int index)
 	
 	for (int num = 0; num < atomicAggregateNumber; num++)
 	{
-		Aggregate *agg = atomicAggregateArray[num]->aggregateArray[0];
+		UniSubset *agg = atomicAggregateArray[num]->aggregateArray[0];
 		if (agg->isAtomic && index == agg->indexSet->front()) { return atomicAggregateArray[num]; }
 	}
 	return 0;
@@ -116,8 +116,8 @@ void HyperStructure::buildDataStructure ()
 
 	for (int d = 0; d < dimension; d++)
 	{
-		aggregateNumber *= structureArray[d]->aggregateNumber;
-		atomicAggregateNumber *= structureArray[d]->atomicAggregateNumber;
+		aggregateNumber *= structureArray[d]->uniSubsetNumber;
+		atomicAggregateNumber *= structureArray[d]->atomicUniSubsetNumber;
 	}
 	
 	aggregateArray = new HyperAggregate* [aggregateNumber];
@@ -127,8 +127,8 @@ void HyperStructure::buildDataStructure ()
 	for (int num = 0; num < aggregateNumber; num++)
 	{
 		int *hyperNum = getHyperNum(num);
-		Aggregate **aggArray = new Aggregate* [dimension];
-		for (int d = 0; d < dimension; d++) { aggArray[d] = structureArray[d]->aggregateArray[hyperNum[d]]; }
+		UniSubset **aggArray = new UniSubset* [dimension];
+		for (int d = 0; d < dimension; d++) { aggArray[d] = structureArray[d]->uniSubsetArray[hyperNum[d]]; }
 
 		HyperAggregate *aggregate = new HyperAggregate (aggArray,dimension);
 		aggregateArray[num] = aggregate;
@@ -136,7 +136,7 @@ void HyperStructure::buildDataStructure ()
 		aggregate->structure = this;
 		aggregate->num = num;
 		aggregate->isAtomic = true;
-		for (int d = 0; d < dimension && aggregate->isAtomic; d++) { aggregate->isAtomic = structureArray[d]->aggregateArray[hyperNum[d]]->isAtomic; }
+		for (int d = 0; d < dimension && aggregate->isAtomic; d++) { aggregate->isAtomic = structureArray[d]->uniSubsetArray[hyperNum[d]]->isAtomic; }
 		if (aggregate->isAtomic)
 		{
 			aggregate->atomicNum = atomicNum++;
@@ -146,7 +146,7 @@ void HyperStructure::buildDataStructure ()
 		if (firstAggregate == 0)
 		{
 			bool isFirstAggregate = true;
-			for (int d = 0; d < dimension && isFirstAggregate; d++) { isFirstAggregate = (aggArray[d] == structureArray[d]->firstAggregate); }
+			for (int d = 0; d < dimension && isFirstAggregate; d++) { isFirstAggregate = (aggArray[d] == structureArray[d]->firstUniSubset); }
 			if (isFirstAggregate) { firstAggregate = aggregate; }
 		}
 
@@ -204,7 +204,7 @@ Partition *HyperStructure::getOptimalPartition (double parameter)
 
 
 
-HyperAggregate::HyperAggregate (Aggregate **aggArray, int dim)
+HyperAggregate::HyperAggregate (UniSubset **aggArray, int dim)
 {
 	structure = 0;
 	
@@ -261,7 +261,7 @@ void HyperAggregate::setObjectiveFunction (ObjectiveFunction *m)
 		for (int d = 0; d < dimension; d++)
 		{
 			index += *aggregateArray[d]->indexSet->begin();
-			if (d+1 < dimension) { index *= aggregateArray[d]->structure->atomicAggregateNumber; }
+			if (d+1 < dimension) { index *= aggregateArray[d]->uniSet->atomicUniSubsetNumber; }
 		}
 		value = m->newObjectiveValue(index);
 	}
@@ -325,14 +325,14 @@ void HyperAggregate::buildDataStructure ()
 
 	for (int d = 0; d < dimension; d++)
 	{
-		for (AggregateSetSet::iterator it1 = aggregateArray[d]->aggregateSetSet->begin(); it1 != aggregateArray[d]->aggregateSetSet->end(); it1++)
+		for (UniSubsetSetSet::iterator it1 = aggregateArray[d]->uniSubsetSetSet->begin(); it1 != aggregateArray[d]->uniSubsetSetSet->end(); it1++)
 		{
-			AggregateSet *currentSet = *it1;
+			UniSubsetSet *currentSet = *it1;
 			HyperAggregateSet *newSet = new HyperAggregateSet();
 
-			for (AggregateSet::iterator it2 = currentSet->begin(); it2 != currentSet->end(); it2++)
+			for (UniSubsetSet::iterator it2 = currentSet->begin(); it2 != currentSet->end(); it2++)
 			{
-				Aggregate *subAggregate = *it2;
+				UniSubset *subAggregate = *it2;
 				hyperNum[d] = subAggregate->num;
 				newSet->push_back(structure->aggregateArray[structure->getNum(hyperNum)]);
 			}
