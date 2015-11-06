@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INCLUDE_RELATIVE_ENTROPY</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;objective_function.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objective__function_8hpp.html">objective_function.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classRelativeEntropy.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRelativeEntropy.html">RelativeEntropy</a>: <span class="keyword">public</span> <a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
@@ -103,10 +103,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classRelativeEntropy.html">RelativeEntropy</a> (<span class="keywordtype">int</span> size, <span class="keywordtype">double</span> *values = 0, <span class="keywordtype">double</span> *refValues = 0);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    ~<a class="code" href="classRelativeEntropy.html">RelativeEntropy</a> ();</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> setRandom ();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *newObjectiveValue (<span class="keywordtype">int</span> index = -1);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> computeObjectiveValues ();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> printObjectiveValues (<span class="keywordtype">bool</span> verbose = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRelativeEntropy.html#aa34a724f03a10c7aa273cc6aa1444881">setRandom</a> ();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *<a class="code" href="classRelativeEntropy.html#a88c993870571948119498a5004879730">newObjectiveValue</a> (<span class="keywordtype">int</span> index = -1);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRelativeEntropy.html#ad2b1237540c333fc7bb7289579935598">computeObjectiveValues</a> ();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classRelativeEntropy.html#affe7e822cc677fedfbc3ee259331763c">printObjectiveValues</a> (<span class="keywordtype">bool</span> verbose = <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">double</span> getParameter (<span class="keywordtype">double</span> unit);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">double</span> getUnitDistance (<span class="keywordtype">double</span> uMin, <span class="keywordtype">double</span> uMax);</div>
@@ -138,14 +138,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:10</div></div>
+<div class="ttc" id="objective__function_8hpp_html"><div class="ttname"><a href="objective__function_8hpp.html">objective_function.hpp</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div></div>
+<div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div><div class="ttdef"><b>Definition:</b> objective_function.hpp:20</div></div>
 <div class="ttc" id="classRelativeEntropy_html"><div class="ttname"><a href="classRelativeEntropy.html">RelativeEntropy</a></div><div class="ttdef"><b>Definition:</b> relative_entropy.hpp:7</div></div>
-<div class="ttc" id="classObjectiveValue_html"><div class="ttname"><a href="classObjectiveValue.html">ObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:29</div></div>
+<div class="ttc" id="classObjectiveValue_html"><div class="ttname"><a href="classObjectiveValue.html">ObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:64</div></div>
+<div class="ttc" id="classRelativeEntropy_html_affe7e822cc677fedfbc3ee259331763c"><div class="ttname"><a href="classRelativeEntropy.html#affe7e822cc677fedfbc3ee259331763c">RelativeEntropy::printObjectiveValues</a></div><div class="ttdeci">void printObjectiveValues(bool verbose=true)</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> relative_entropy.cpp:50</div></div>
+<div class="ttc" id="classRelativeEntropy_html_ad2b1237540c333fc7bb7289579935598"><div class="ttname"><a href="classRelativeEntropy.html#ad2b1237540c333fc7bb7289579935598">RelativeEntropy::computeObjectiveValues</a></div><div class="ttdeci">void computeObjectiveValues()</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> relative_entropy.cpp:48</div></div>
 <div class="ttc" id="classRelativeObjectiveValue_html"><div class="ttname"><a href="classRelativeObjectiveValue.html">RelativeObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> relative_entropy.hpp:28</div></div>
+<div class="ttc" id="classRelativeEntropy_html_a88c993870571948119498a5004879730"><div class="ttname"><a href="classRelativeEntropy.html#a88c993870571948119498a5004879730">RelativeEntropy::newObjectiveValue</a></div><div class="ttdeci">ObjectiveValue * newObjectiveValue(int index=-1)</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> relative_entropy.cpp:37</div></div>
+<div class="ttc" id="classRelativeEntropy_html_aa34a724f03a10c7aa273cc6aa1444881"><div class="ttname"><a href="classRelativeEntropy.html#aa34a724f03a10c7aa273cc6aa1444881">RelativeEntropy::setRandom</a></div><div class="ttdeci">void setRandom()</div><div class="ttdoc">Randomly set the initial data from which the objective function is computed. </div><div class="ttdef"><b>Definition:</b> relative_entropy.cpp:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 6 2015 15:30:07 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 6 2015 16:16:18 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INCLUDE_ABSTRACT_SET</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;timer.hpp&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;objective_function.hpp&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objective__function_8hpp.html">objective_function.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;partition.hpp&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;dataset.hpp&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
@@ -103,47 +103,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classAbstractSet.html#adc3db5afd11de63639ddd079ef4ecf45">~AbstractSet</a> ();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#aac0cf2d0ef47c49aa0a7ac393691ff7a">setRandom</a> () = 0;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#a735009927cfae61baa66bbf7b53f76d5">buildDataStructure</a> () = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#a7aef71679a18ab7965d1098da15b26c2">setObjectiveFunction</a> (<a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a> *<a class="code" href="classAbstractSet.html#a0217447a042827703e1ea7655f0fc099">objective</a>) = 0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#ae20f14f4e4209570d26c3614c00e02df">print</a> () = 0;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#a341945c465179a52da09356a2aa50a8d">computeObjectiveValues</a> () = 0;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#ae871ecbb69614c1028c3c688b90061b3">normalizeObjectiveValues</a> () = 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#a5589719db42d5fdf7f517b2e749f0675">printObjectiveValues</a> () = 0;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#acfc3004f18192f38e32bb7a5a12ec8df">computeOptimalPartition</a> (<span class="keywordtype">double</span> parameter) = 0;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classPartition.html">Partition</a> *<a class="code" href="classAbstractSet.html#a48fd08c4b61ed46946bed6e19cd11194">getOptimalPartition</a> (<span class="keywordtype">double</span> parameter) = 0;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#a82a9ce5c2d30690f0d1b83b034e92e1e">printOptimalPartition</a> (<span class="keywordtype">double</span> parameter) = 0;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    PartitionList *<a class="code" href="classAbstractSet.html#af92c6c087fdb14e2426a1bf30960195e">getOptimalPartitionList</a> (<span class="keywordtype">double</span> threshold);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#ad8fd35092406335c40914c53ed2e5e34">printOptimalPartitionList</a> (<span class="keywordtype">double</span> threshold);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#ab72fbc5c1f339bb385d24565fd26d4fc">printOptimalPartitionListInCSV</a> (<span class="keywordtype">double</span> threshold, <a class="code" href="classDataset.html">Dataset</a> *data, <span class="keywordtype">int</span> dim, std::string fileName);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">//void testAggregationAlgorithm (bool verbose = false, int param = -1);</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">//void complexityAnalysis (char *fName, int start, int stop, int step, int number = 1);</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> addOptimalPartitionList (PartitionList *partitionList, <a class="code" href="classPartition.html">Partition</a> *minPartition, <a class="code" href="classPartition.html">Partition</a> *maxPartition,</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;                                  <span class="keywordtype">double</span> minUnit, <span class="keywordtype">double</span> maxUnit, <span class="keywordtype">double</span> threshold);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;};</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#a735009927cfae61baa66bbf7b53f76d5">buildDataStructure</a> () = 0;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#a7aef71679a18ab7965d1098da15b26c2">setObjectiveFunction</a> (<a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a> *<a class="code" href="classAbstractSet.html#a0217447a042827703e1ea7655f0fc099">objective</a>) = 0;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#ae20f14f4e4209570d26c3614c00e02df">print</a> () = 0;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#a341945c465179a52da09356a2aa50a8d">computeObjectiveValues</a> () = 0;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#ae871ecbb69614c1028c3c688b90061b3">normalizeObjectiveValues</a> () = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#a5589719db42d5fdf7f517b2e749f0675">printObjectiveValues</a> () = 0;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#acfc3004f18192f38e32bb7a5a12ec8df">computeOptimalPartition</a> (<span class="keywordtype">double</span> parameter) = 0;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classPartition.html">Partition</a> *<a class="code" href="classAbstractSet.html#a48fd08c4b61ed46946bed6e19cd11194">getOptimalPartition</a> (<span class="keywordtype">double</span> parameter) = 0;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#a82a9ce5c2d30690f0d1b83b034e92e1e">printOptimalPartition</a> (<span class="keywordtype">double</span> parameter) = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    PartitionList *<a class="code" href="classAbstractSet.html#af92c6c087fdb14e2426a1bf30960195e">getOptimalPartitionList</a> (<span class="keywordtype">double</span> threshold);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#ad8fd35092406335c40914c53ed2e5e34">printOptimalPartitionList</a> (<span class="keywordtype">double</span> threshold);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classAbstractSet.html#ab72fbc5c1f339bb385d24565fd26d4fc">printOptimalPartitionListInCSV</a> (<span class="keywordtype">double</span> threshold, <a class="code" href="classDataset.html">Dataset</a> *data, <span class="keywordtype">int</span> dim, std::string fileName);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="comment">//void testAggregationAlgorithm (bool verbose = false, int param = -1);</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">//void complexityAnalysis (char *fName, int start, int stop, int step, int number = 1);</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> addOptimalPartitionList (PartitionList *partitionList, <a class="code" href="classPartition.html">Partition</a> *minPartition, <a class="code" href="classPartition.html">Partition</a> *maxPartition,</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;                                  <span class="keywordtype">double</span> minUnit, <span class="keywordtype">double</span> maxUnit, <span class="keywordtype">double</span> threshold);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;};</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classAbstractSet_html_a735009927cfae61baa66bbf7b53f76d5"><div class="ttname"><a href="classAbstractSet.html#a735009927cfae61baa66bbf7b53f76d5">AbstractSet::buildDataStructure</a></div><div class="ttdeci">virtual void buildDataStructure()=0</div><div class="ttdoc">Build a proper data structure to represent the set and its algebraic constraints (warning: this metho...</div></div>
 <div class="ttc" id="classAbstractSet_html_ae20f14f4e4209570d26c3614c00e02df"><div class="ttname"><a href="classAbstractSet.html#ae20f14f4e4209570d26c3614c00e02df">AbstractSet::print</a></div><div class="ttdeci">virtual void print()=0</div><div class="ttdoc">Print the set and its algebraic constraints. </div></div>
+<div class="ttc" id="objective__function_8hpp_html"><div class="ttname"><a href="objective__function_8hpp.html">objective_function.hpp</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div></div>
 <div class="ttc" id="classAbstractSet_html"><div class="ttname"><a href="classAbstractSet.html">AbstractSet</a></div><div class="ttdoc">Abstract class defining a set of elements that one wants to partition while optimising some (decompos...</div><div class="ttdef"><b>Definition:</b> abstract_set.hpp:22</div></div>
 <div class="ttc" id="classPartition_html"><div class="ttname"><a href="classPartition.html">Partition</a></div><div class="ttdef"><b>Definition:</b> partition.hpp:70</div></div>
-<div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:10</div></div>
+<div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div><div class="ttdef"><b>Definition:</b> objective_function.hpp:20</div></div>
 <div class="ttc" id="classAbstractSet_html_adc3db5afd11de63639ddd079ef4ecf45"><div class="ttname"><a href="classAbstractSet.html#adc3db5afd11de63639ddd079ef4ecf45">AbstractSet::~AbstractSet</a></div><div class="ttdeci">virtual ~AbstractSet()</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> abstract_set.cpp:13</div></div>
 <div class="ttc" id="classAbstractSet_html_a0217447a042827703e1ea7655f0fc099"><div class="ttname"><a href="classAbstractSet.html#a0217447a042827703e1ea7655f0fc099">AbstractSet::objective</a></div><div class="ttdeci">ObjectiveFunction * objective</div><div class="ttdef"><b>Definition:</b> abstract_set.hpp:25</div></div>
 <div class="ttc" id="classAbstractSet_html_a5589719db42d5fdf7f517b2e749f0675"><div class="ttname"><a href="classAbstractSet.html#a5589719db42d5fdf7f517b2e749f0675">AbstractSet::printObjectiveValues</a></div><div class="ttdeci">virtual void printObjectiveValues()=0</div><div class="ttdoc">Print the value of the objective function for each feasible part. </div></div>
@@ -161,7 +163,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 6 2015 15:30:07 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 6 2015 16:16:18 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

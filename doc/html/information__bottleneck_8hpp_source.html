@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef INCLUDE_INFORMATION_BOTTLENECK</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INCLUDE_INFORMATION_BOTTLENECK</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;objective_function.hpp&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objective__function_8hpp.html">objective_function.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;markov_process.hpp&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="classInformationBottleneck.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classInformationBottleneck.html">InformationBottleneck</a>: <span class="keyword">public</span> <a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a></div>
@@ -101,8 +101,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classInformationBottleneck.html">InformationBottleneck</a> (MarkovProcess *process);</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        ~<a class="code" href="classInformationBottleneck.html">InformationBottleneck</a> ();</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">void</span> setRandom ();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *newObjectiveValue (<span class="keywordtype">int</span> index = -1);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classInformationBottleneck.html#a10e4ace575f79977f3f6d2f39403dd84">setRandom</a> ();</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *<a class="code" href="classInformationBottleneck.html#af710cb93d1be643a5f67c5d879669b8b">newObjectiveValue</a> (<span class="keywordtype">int</span> index = -1);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">double</span> getParameter (<span class="keywordtype">double</span> unit);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">double</span> getUnitDistance (<span class="keywordtype">double</span> uMin, <span class="keywordtype">double</span> uMax);</div>
@@ -134,14 +134,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:10</div></div>
-<div class="ttc" id="classObjectiveValue_html"><div class="ttname"><a href="classObjectiveValue.html">ObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:29</div></div>
+<div class="ttc" id="objective__function_8hpp_html"><div class="ttname"><a href="objective__function_8hpp.html">objective_function.hpp</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div></div>
+<div class="ttc" id="classInformationBottleneck_html_af710cb93d1be643a5f67c5d879669b8b"><div class="ttname"><a href="classInformationBottleneck.html#af710cb93d1be643a5f67c5d879669b8b">InformationBottleneck::newObjectiveValue</a></div><div class="ttdeci">ObjectiveValue * newObjectiveValue(int index=-1)</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> information_bottleneck.cpp:22</div></div>
+<div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div><div class="ttdef"><b>Definition:</b> objective_function.hpp:20</div></div>
+<div class="ttc" id="classObjectiveValue_html"><div class="ttname"><a href="classObjectiveValue.html">ObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:64</div></div>
+<div class="ttc" id="classInformationBottleneck_html_a10e4ace575f79977f3f6d2f39403dd84"><div class="ttname"><a href="classInformationBottleneck.html#a10e4ace575f79977f3f6d2f39403dd84">InformationBottleneck::setRandom</a></div><div class="ttdeci">void setRandom()</div><div class="ttdoc">Randomly set the initial data from which the objective function is computed. </div><div class="ttdef"><b>Definition:</b> information_bottleneck.cpp:19</div></div>
 <div class="ttc" id="classBottleneckObjectiveValue_html"><div class="ttname"><a href="classBottleneckObjectiveValue.html">BottleneckObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> information_bottleneck.hpp:24</div></div>
 <div class="ttc" id="classInformationBottleneck_html"><div class="ttname"><a href="classInformationBottleneck.html">InformationBottleneck</a></div><div class="ttdef"><b>Definition:</b> information_bottleneck.hpp:7</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 6 2015 15:30:07 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 6 2015 16:16:18 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

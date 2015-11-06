@@ -85,11 +85,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classObjectiveFunction-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ObjectiveFunction Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Abstract class defining an objective function to be associated to a constrained set in order to define the optimisation problem that one wants to solve.  
+ <a href="classObjectiveFunction.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="objective__function_8hpp_source.html">objective_function.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for ObjectiveFunction:</div>
 <div class="dyncontent">
@@ -104,34 +110,58 @@ Inheritance diagram for ObjectiveFunction:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a227885b9e68935571bf25d36689f029a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a227885b9e68935571bf25d36689f029a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a227885b9e68935571bf25d36689f029a">ObjectiveFunction</a> ()</td></tr>
+<tr class="memdesc:a227885b9e68935571bf25d36689f029a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
+<tr class="separator:a227885b9e68935571bf25d36689f029a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a877b09fea55318719b9f37661ecdedf8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a877b09fea55318719b9f37661ecdedf8"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a877b09fea55318719b9f37661ecdedf8">~ObjectiveFunction</a> ()</td></tr>
+<tr class="memdesc:a877b09fea55318719b9f37661ecdedf8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:a877b09fea55318719b9f37661ecdedf8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a897009c58cc55bc84c29e5e3a2bfcb61"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a897009c58cc55bc84c29e5e3a2bfcb61"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>setRandom</b> ()=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a897009c58cc55bc84c29e5e3a2bfcb61">setRandom</a> ()=0</td></tr>
+<tr class="memdesc:a897009c58cc55bc84c29e5e3a2bfcb61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly set the initial data from which the objective function is computed. <br/></td></tr>
 <tr class="separator:a897009c58cc55bc84c29e5e3a2bfcb61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d302f7cdf40ca80d6d186cbf8851b8f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d302f7cdf40ca80d6d186cbf8851b8f"></a>
-virtual <a class="el" href="classObjectiveValue.html">ObjectiveValue</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>newObjectiveValue</b> (int index=-1)=0</td></tr>
-<tr class="separator:a4d302f7cdf40ca80d6d186cbf8851b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a517095eb98863d0727a768d92fe2da0f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a517095eb98863d0727a768d92fe2da0f"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>computeObjectiveValues</b> ()=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a517095eb98863d0727a768d92fe2da0f">computeObjectiveValues</a> ()=0</td></tr>
+<tr class="memdesc:a517095eb98863d0727a768d92fe2da0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by child classes of <a class="el" href="classAbstractSet.html" title="Abstract class defining a set of elements that one wants to partition while optimising some (decompos...">AbstractSet</a> (do not use directly) <br/></td></tr>
 <tr class="separator:a517095eb98863d0727a768d92fe2da0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c59c162ea11841ade84d62fd29f0694"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c59c162ea11841ade84d62fd29f0694"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>printObjectiveValues</b> (bool verbose=true)=0</td></tr>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a7c59c162ea11841ade84d62fd29f0694">printObjectiveValues</a> (bool verbose=true)=0</td></tr>
+<tr class="memdesc:a7c59c162ea11841ade84d62fd29f0694"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by child classes of <a class="el" href="classAbstractSet.html" title="Abstract class defining a set of elements that one wants to partition while optimising some (decompos...">AbstractSet</a> (do not use directly) <br/></td></tr>
 <tr class="separator:a7c59c162ea11841ade84d62fd29f0694"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33d5014b560a6bb540558d25595b7c35"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33d5014b560a6bb540558d25595b7c35"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>getParameter</b> (double unit)=0</td></tr>
-<tr class="separator:a33d5014b560a6bb540558d25595b7c35"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf21d384a51182fd183a580c1a4a5962"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf21d384a51182fd183a580c1a4a5962"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>getUnitDistance</b> (double uMin, double uMax)=0</td></tr>
-<tr class="separator:abf21d384a51182fd183a580c1a4a5962"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac554fa0076afa2d68a544e626e2e28a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac554fa0076afa2d68a544e626e2e28a2"></a>
-virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>getIntermediaryUnit</b> (double uMin, double uMax)=0</td></tr>
-<tr class="separator:ac554fa0076afa2d68a544e626e2e28a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d302f7cdf40ca80d6d186cbf8851b8f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d302f7cdf40ca80d6d186cbf8851b8f"></a>
+virtual <a class="el" href="classObjectiveValue.html">ObjectiveValue</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a4d302f7cdf40ca80d6d186cbf8851b8f">newObjectiveValue</a> (int index=-1)=0</td></tr>
+<tr class="memdesc:a4d302f7cdf40ca80d6d186cbf8851b8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method is called by child classes of <a class="el" href="classAbstractSet.html" title="Abstract class defining a set of elements that one wants to partition while optimising some (decompos...">AbstractSet</a> (do not use directly) <br/></td></tr>
+<tr class="separator:a4d302f7cdf40ca80d6d186cbf8851b8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a325f3c8284ebfac0a170e0b8143dd7b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a325f3c8284ebfac0a170e0b8143dd7b5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>maximize</b></td></tr>
+<tr class="memitem:a325f3c8284ebfac0a170e0b8143dd7b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a325f3c8284ebfac0a170e0b8143dd7b5">maximize</a></td></tr>
 <tr class="separator:a325f3c8284ebfac0a170e0b8143dd7b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ab0bb5b94706efff511fee401e71bf087"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab0bb5b94706efff511fee401e71bf087"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>AbstractSet</b></td></tr>
+<tr class="separator:ab0bb5b94706efff511fee401e71bf087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Abstract class defining an objective function to be associated to a constrained set in order to define the optimisation problem that one wants to solve. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a325f3c8284ebfac0a170e0b8143dd7b5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ObjectiveFunction::maximize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>True if one deals with a maximisation problem, and false if one deals with a minimisation problem </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/lamarche/programming/optimal_partition/src/<a class="el" href="objective__function_8hpp_source.html">objective_function.hpp</a></li>
 <li>/home/lamarche/programming/optimal_partition/src/objective_function.cpp</li>
@@ -139,7 +169,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>maximize</b></td></tr
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 6 2015 15:30:09 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 6 2015 16:16:20 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

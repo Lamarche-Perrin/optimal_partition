@@ -1,25 +1,60 @@
 #ifndef INCLUDE_OBJECTIVE_FUNCTION
 #define INCLUDE_OBJECTIVE_FUNCTION
 
+/*!
+ * \file objective_function.hpp
+ * \brief Abstract class defining an objective function to be associated to a constrained set in order to define the optimisation problem that one wants to solve
+ * \author Robin Lamarche-Perrin
+ * \date 06/11/2015
+ */
 
 #include <set>
 
 class ObjectiveValue;
 typedef std::set<ObjectiveValue*> ObjectiveValueSet;
 
+/*!
+ * \class ObjectiveFunction
+ * \brief Abstract class defining an objective function to be associated to a constrained set in order to define the optimisation problem that one wants to solve
+ */
 class ObjectiveFunction
 {
-public:
-	bool maximize;
+	friend class AbstractSet;
 
+public:
+	bool maximize; /*!< True if one deals with a maximisation problem, and false if one deals with a minimisation problem*/
+
+	/*!
+     * \brief Constructor
+     */
 	ObjectiveFunction ();
+
+	/*!
+	 * \brief Destructor
+     */
 	virtual ~ObjectiveFunction ();
 
+	/*!
+	 * \brief Randomly set the initial data from which the objective function is computed
+     */
 	virtual void setRandom () = 0;
-	virtual ObjectiveValue *newObjectiveValue (int index = -1) = 0;
+	
+	/*!
+	 * \brief This method is called by child classes of AbstractSet (do not use directly)
+     */
 	virtual void computeObjectiveValues () = 0;
+	
+	/*!
+	 * \brief This method is called by child classes of AbstractSet (do not use directly)
+     */
 	virtual void printObjectiveValues (bool verbose = true) = 0;
-		
+
+	/*!
+	 * \brief This method is called by child classes of AbstractSet (do not use directly)
+     */
+	virtual ObjectiveValue *newObjectiveValue (int index = -1) = 0;
+
+private:
 	virtual double getParameter (double unit) = 0;
 	virtual double getUnitDistance (double uMin, double uMax) = 0;
 	virtual double getIntermediaryUnit (double uMin, double uMax) = 0;

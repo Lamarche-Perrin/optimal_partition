@@ -33,7 +33,6 @@ public:
 	 * \brief Randomly set the algebraic constraints for quick experiments (warning: this method is not always implemented)
      */
 	virtual void setRandom () = 0;
-
 	
 	/*!
 	 * \brief Build a proper data structure to represent the set and its algebraic constraints (warning: this method should always be called after instantiating and parameterising a set, and before calling any other method, such as print(), computeObjectiveValues(), computeOptimalPartition (double parameter), etc.)
@@ -112,5 +111,7 @@ private:
 	void addOptimalPartitionList (PartitionList *partitionList, Partition *minPartition, Partition *maxPartition,
 								  double minUnit, double maxUnit, double threshold);
 };
+
+
 
 #endif

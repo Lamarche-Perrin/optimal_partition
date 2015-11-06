@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INCLUDE_LOGARITHMIC_SCORE</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;objective_function.hpp&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objective__function_8hpp.html">objective_function.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;prediction_dataset.hpp&quot;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="classLogarithmicScore.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLogarithmicScore.html">LogarithmicScore</a>: <span class="keyword">public</span> <a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a></div>
@@ -107,10 +107,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classLogarithmicScore.html">LogarithmicScore</a> (<a class="code" href="classPredictionDataset.html">PredictionDataset</a> *dataset, <span class="keywordtype">int</span> prior = 0);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    ~<a class="code" href="classLogarithmicScore.html">LogarithmicScore</a> ();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> setRandom ();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *newObjectiveValue (<span class="keywordtype">int</span> index = -1);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> computeObjectiveValues();</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> printObjectiveValues (<span class="keywordtype">bool</span> verbose = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLogarithmicScore.html#a7e3c601e96541b3156b02d84ce6b754e">setRandom</a> ();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *<a class="code" href="classLogarithmicScore.html#ab64011283bff491364cdffb0420dc89b">newObjectiveValue</a> (<span class="keywordtype">int</span> index = -1);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLogarithmicScore.html#ac0a5eb6f03d9afd66a05aded42e6647f">computeObjectiveValues</a>();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classLogarithmicScore.html#add0be2f6175a2aa0ef5e20026f9eb2be">printObjectiveValues</a> (<span class="keywordtype">bool</span> verbose = <span class="keyword">true</span>);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">double</span> getParameter (<span class="keywordtype">double</span> unit);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">double</span> getUnitDistance (<span class="keywordtype">double</span> uMin, <span class="keywordtype">double</span> uMax);</div>
@@ -142,15 +142,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="objective__function_8hpp_html"><div class="ttname"><a href="objective__function_8hpp.html">objective_function.hpp</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div></div>
 <div class="ttc" id="classLogarithmicObjectiveValue_html"><div class="ttname"><a href="classLogarithmicObjectiveValue.html">LogarithmicObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> logarithmic_score.hpp:32</div></div>
-<div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:10</div></div>
-<div class="ttc" id="classObjectiveValue_html"><div class="ttname"><a href="classObjectiveValue.html">ObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:29</div></div>
+<div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div><div class="ttdef"><b>Definition:</b> objective_function.hpp:20</div></div>
+<div class="ttc" id="classLogarithmicScore_html_ab64011283bff491364cdffb0420dc89b"><div class="ttname"><a href="classLogarithmicScore.html#ab64011283bff491364cdffb0420dc89b">LogarithmicScore::newObjectiveValue</a></div><div class="ttdeci">ObjectiveValue * newObjectiveValue(int index=-1)</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:33</div></div>
+<div class="ttc" id="classLogarithmicScore_html_add0be2f6175a2aa0ef5e20026f9eb2be"><div class="ttname"><a href="classLogarithmicScore.html#add0be2f6175a2aa0ef5e20026f9eb2be">LogarithmicScore::printObjectiveValues</a></div><div class="ttdeci">void printObjectiveValues(bool verbose=true)</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:68</div></div>
+<div class="ttc" id="classObjectiveValue_html"><div class="ttname"><a href="classObjectiveValue.html">ObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:64</div></div>
 <div class="ttc" id="classPredictionDataset_html"><div class="ttname"><a href="classPredictionDataset.html">PredictionDataset</a></div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:6</div></div>
+<div class="ttc" id="classLogarithmicScore_html_ac0a5eb6f03d9afd66a05aded42e6647f"><div class="ttname"><a href="classLogarithmicScore.html#ac0a5eb6f03d9afd66a05aded42e6647f">LogarithmicScore::computeObjectiveValues</a></div><div class="ttdeci">void computeObjectiveValues()</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:41</div></div>
+<div class="ttc" id="classLogarithmicScore_html_a7e3c601e96541b3156b02d84ce6b754e"><div class="ttname"><a href="classLogarithmicScore.html#a7e3c601e96541b3156b02d84ce6b754e">LogarithmicScore::setRandom</a></div><div class="ttdeci">void setRandom()</div><div class="ttdoc">Randomly set the initial data from which the objective function is computed. </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:30</div></div>
 <div class="ttc" id="classLogarithmicScore_html"><div class="ttname"><a href="classLogarithmicScore.html">LogarithmicScore</a></div><div class="ttdef"><b>Definition:</b> logarithmic_score.hpp:8</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Nov 6 2015 15:30:07 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Nov 6 2015 16:16:18 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
