@@ -1,28 +1,27 @@
-# Compiled Object files
-*.slo
-*.lo
+# executable
+optimal_partition
+
+# C++ and Dev-C++
 *.o
-*.obj
+*.layout
 
-# Precompiled Headers
-*.gch
-*.pch
+# RStudio
+.RData
+.Rhistory
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# Temp files
+*~
+\#*\#
+\*R\*
+*.backup
 
-# Fortran module files
-*.mod
+# Data files
+data/*
+!data/*.R
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+# Source files
+src/*
+!src/*.cpp
+!src/*.hpp
+!src/Makefile*
 
-# Executables
-*.exe
-*.out
-*.app
