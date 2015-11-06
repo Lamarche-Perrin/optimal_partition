@@ -51,15 +51,15 @@ public:
 };
 
 
-class HyperPart: public Part
+class MultiPart: public Part
 {
 public:
 	int dimension;
 	Part **partArray;
 	
-	HyperPart (Part **partArray, int dimension, ObjectiveValue *value = 0);
-	HyperPart (HyperPart *hyperPart);
-	~HyperPart ();
+	MultiPart (Part **partArray, int dimension, ObjectiveValue *value = 0);
+	MultiPart (MultiPart *multiPart);
+	~MultiPart ();
 
 	bool equal (Part *p);
 	void print (bool endl = false);

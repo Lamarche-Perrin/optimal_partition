@@ -24,9 +24,9 @@
 #include "logarithmic_score.hpp"
 #include "prediction_dataset.hpp"
 
-#include "structure.hpp"
-#include "structure2D.hpp"
-#include "hyper_structure.hpp"
+#include "uni_set.hpp"
+#include "bi_set.hpp"
+#include "multi_set.hpp"
 
 
 bool VERBOSE = false;
@@ -70,8 +70,8 @@ int main (int argc, char *argv[]) {
 			UniSet **structureArray = new UniSet* [dimension];
 			for (int d = 0; d < dimension; d++) { structureArray[d] = structure; }
 
-			HyperStructure *hyperStruct = new HyperStructure (structureArray, dimension);
-			hyperStruct->buildDataStructure();
+			MultiSet *multiStruct = new MultiSet (structureArray, dimension);
+			multiStruct->buildDataStructure();
 
 			int valueNb;
 			if (hierarchical) { valueNb = pow(depth,2*dimension); }
@@ -83,17 +83,17 @@ int main (int argc, char *argv[]) {
 			
 			RelativeEntropy *objective = new RelativeEntropy (valueNb,values);
 	
-			hyperStruct->setObjectiveFunction(objective);
-			hyperStruct->computeObjectiveValues();
-			hyperStruct->normalizeObjectiveValues();
+			multiStruct->setObjectiveFunction(objective);
+			multiStruct->computeObjectiveValues();
+			multiStruct->normalizeObjectiveValues();
 
-			Partition *partition = hyperStruct->getOptimalPartition(parameter);
+			Partition *partition = multiStruct->getOptimalPartition(parameter);
 			//partition->print();
-			//hyperStruct->printOptimalPartitionList(0.1);
+			//multiStruct->printOptimalPartitionList(0.1);
 
 			delete partition;
 			delete objective;
-			delete hyperStruct;
+			delete multiStruct;
 			delete structure;	
 			delete [] structureArray;
 
@@ -106,7 +106,7 @@ int main (int argc, char *argv[]) {
 	}
 	*/
 		
-	//testHyperStructure();
+	//testMultiSet();
 
 
 	return EXIT_SUCCESS;
@@ -480,26 +480,26 @@ void testBiSet ()
 	UniSubset *h11 = new UniSubset (3);
 
 	UniSubset *h0 = new UniSubset();
-	UniSubsetSet *h0Set = new UniSubsetSet();
-	h0Set->push_back(h00);
-	h0Set->push_back(h01);
-	h0->addUniSubsetSet(h0Set);
+	UniSubsetSet *h0Subset = new UniSubsetSet();
+	h0Subset->push_back(h00);
+	h0Subset->push_back(h01);
+	h0->addUniSubsetSet(h0Subset);
 	
 	UniSubset *h1 = new UniSubset();
-	UniSubsetSet *h1Set = new UniSubsetSet();
-	h1Set->push_back(h10);
-	h1Set->push_back(h11);
-	h1->addUniSubsetSet(h1Set);
+	UniSubsetSet *h1Subset = new UniSubsetSet();
+	h1Subset->push_back(h10);
+	h1Subset->push_back(h11);
+	h1->addUniSubsetSet(h1Subset);
 
 	UniSubset *h = new UniSubset();
-	UniSubsetSet *hSet = new UniSubsetSet();
-	hSet->push_back(h0);
-	hSet->push_back(h1);
-	h->addUniSubsetSet(hSet);
+	UniSubsetSet *hSubset = new UniSubsetSet();
+	hSubset->push_back(h0);
+	hSubset->push_back(h1);
+	h->addUniSubsetSet(hSubset);
 
-	UniSet *hStruct = new UniSet (h);
-	hStruct->buildDataStructure();
-	//hStruct->print();
+	UniSet *hSet = new UniSet (h);
+	hSet->buildDataStructure();
+	//hSet->print();
 
 	
 	UniSubset *o0 = new UniSubset (0);
@@ -566,14 +566,14 @@ void testBiSet ()
 	o012c3Set->push_back(o3);
 	o0123->addUniSubsetSet(o012c3Set);
 
-	UniSet *oStruct = new UniSet (o0123);
-	oStruct->buildDataStructure();
-	//oStruct->print();
+	UniSet *oSet = new UniSet (o0123);
+	oSet->buildDataStructure();
+	//oSet->print();
 
 	
-	BiSet *hoStruct = new BiSet (oStruct,hStruct);
-	hoStruct->buildDataStructure();
-	//hoStruct->print();
+	BiSet *hoSet = new BiSet (oSet,hSet);
+	hoSet->buildDataStructure();
+	//hoSet->print();
 
 	double values [16]		= {	54,	30,	4, 5,
 								54,	58,	64, 22,
@@ -582,12 +582,12 @@ void testBiSet ()
 	
     RelativeEntropy *m = new RelativeEntropy(16,values);
 	
-    hoStruct->setObjectiveFunction(m);
-    hoStruct->computeObjectiveValues();
-    hoStruct->normalizeObjectiveValues();
-    //hoStruct->printObjectiveValues();
+    hoSet->setObjectiveFunction(m);
+    hoSet->computeObjectiveValues();
+    hoSet->normalizeObjectiveValues();
+    //hoSet->printObjectiveValues();
 	
-    hoStruct->printOptimalPartitionList(0.001);
+    hoSet->printOptimalPartitionList(0.001);
 
 
 	int size = 4;
@@ -621,7 +621,7 @@ void testBiSet ()
 
 
 
-void testHyperStructure ()
+void testMultiSet ()
 {
 	UniSubset *h00 = new UniSubset (0);
 	UniSubset *h01 = new UniSubset (1);
@@ -629,38 +629,38 @@ void testHyperStructure ()
 	UniSubset *h11 = new UniSubset (3);
 
 	UniSubset *h0 = new UniSubset();
-	UniSubsetSet *h0Set = new UniSubsetSet();
-	h0Set->push_back(h00);
-	h0Set->push_back(h01);
-	h0->addUniSubsetSet(h0Set);
+	UniSubsetSet *h0Subset = new UniSubsetSet();
+	h0Subset->push_back(h00);
+	h0Subset->push_back(h01);
+	h0->addUniSubsetSet(h0Subset);
 	
 	UniSubset *h1 = new UniSubset();
-	UniSubsetSet *h1Set = new UniSubsetSet();
-	h1Set->push_back(h10);
-	h1Set->push_back(h11);
-	h1->addUniSubsetSet(h1Set);
+	UniSubsetSet *h1Subset = new UniSubsetSet();
+	h1Subset->push_back(h10);
+	h1Subset->push_back(h11);
+	h1->addUniSubsetSet(h1Subset);
 
 	UniSubset *h = new UniSubset();
-	UniSubsetSet *hSet = new UniSubsetSet();
-	hSet->push_back(h0);
-	hSet->push_back(h1);
-	h->addUniSubsetSet(hSet);
+	UniSubsetSet *hSubset = new UniSubsetSet();
+	hSubset->push_back(h0);
+	hSubset->push_back(h1);
+	h->addUniSubsetSet(hSubset);
 
-	UniSet *hStruct = new UniSet (h);
-	hStruct->buildDataStructure();
+	UniSet *hSet = new UniSet (h);
+	hSet->buildDataStructure();
 
 	
-	UniSet *oStruct = new OrderedUniSet (4);
-	oStruct->buildDataStructure();
+	UniSet *oSet = new OrderedUniSet (4);
+	oSet->buildDataStructure();
 
 	
 	int dimension = 2;
-	UniSet **structureArray = new UniSet* [dimension];
-	structureArray[0] = hStruct;
-	structureArray[1] = oStruct;
+	UniSet **uniSetArray = new UniSet* [dimension];
+	uniSetArray[0] = hSet;
+	uniSetArray[1] = oSet;
 		
-	HyperStructure *hyperStruct = new HyperStructure (structureArray, dimension);
-	hyperStruct->buildDataStructure();
+	MultiSet *multiSet = new MultiSet (uniSetArray, dimension);
+	multiSet->buildDataStructure();
 
 	double values [16]		= {	54,	30,	4, 5,
 								54,	58,	64, 22,
@@ -669,9 +669,9 @@ void testHyperStructure ()
 	
     RelativeEntropy *m = new RelativeEntropy(16,values);
 	
-    hyperStruct->setObjectiveFunction(m);
-    hyperStruct->computeObjectiveValues();
-    hyperStruct->normalizeObjectiveValues();
+    multiSet->setObjectiveFunction(m);
+    multiSet->computeObjectiveValues();
+    multiSet->normalizeObjectiveValues();
 
 
 	int size = 4;
@@ -698,22 +698,22 @@ void testHyperStructure ()
     set->computeObjectiveValues();
     set->normalizeObjectiveValues();
 
-	//hStruct->print();
-	oStruct->print();
-	//hyperStruct->print();
+	//hSet->print();
+	oSet->print();
+	//multiSet->print();
     //set->print();
 	
-	//hyperStruct->printObjectiveValues();
+	//multiSet->printObjectiveValues();
     //set->printObjectiveValues();
 
 	for (double p = 0; p <= 1; p += 0.01)
 	{		
-		hyperStruct->getOptimalPartition(p)->print();
+		multiSet->getOptimalPartition(p)->print();
 		set->getOptimalPartition(p)->print();
 		std::cout << std::endl;
 	}
 
-    //hyperStruct->printOptimalPartitionList(0.001);
+    //multiSet->printOptimalPartitionList(0.001);
     //set->printOptimalPartitionList(0.001);
 
 }
@@ -721,17 +721,17 @@ void testHyperStructure ()
 
 void testLogarithmicScore ()
 {
-	UniSet *preStruct = new OrderedUniSet (5);
-	preStruct->buildDataStructure();
-	HyperStructure *preStructure = new HyperStructure(preStruct);
-	preStructure->buildDataStructure();
+	UniSet *preMultiSet = new OrderedUniSet (5);
+	preMultiSet->buildDataStructure();
+	MultiSet *preMultiSeture = new MultiSet(preMultiSet);
+	preMultiSeture->buildDataStructure();
 	
-	UniSet *postStruct = new OrderedUniSet (5);
-	postStruct->buildDataStructure();
-	HyperStructure *postStructure = new HyperStructure(postStruct);
-	postStructure->buildDataStructure();
+	UniSet *postMultiSet = new OrderedUniSet (5);
+	postMultiSet->buildDataStructure();
+	MultiSet *postMultiSeture = new MultiSet(postMultiSet);
+	postMultiSeture->buildDataStructure();
 	
-	PredictionDataset *data = new PredictionDataset (preStructure, postStructure);
+	PredictionDataset *data = new PredictionDataset (preMultiSeture, postMultiSeture);
 
 	data->addTrainValue (0,0,2);
 	data->addTrainValue (0,1,2);
@@ -753,14 +753,14 @@ void testLogarithmicScore ()
 
 	
 	LogarithmicScore *score = new LogarithmicScore (data, 1);
-	preStructure->setObjectiveFunction(score);
-	preStructure->computeObjectiveValues();
+	preMultiSeture->setObjectiveFunction(score);
+	preMultiSeture->computeObjectiveValues();
 
-	//preStructure->print();
-	//postStructure->print();
-	preStructure->printObjectiveValues();
+	//preMultiSeture->print();
+	//postMultiSeture->print();
+	preMultiSeture->printObjectiveValues();
 
-	preStructure->getOptimalPartition(0)->print();
+	preMultiSeture->getOptimalPartition(0)->print();
 	
 	delete data;
 }

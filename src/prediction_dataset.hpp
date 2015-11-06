@@ -1,26 +1,26 @@
 #ifndef INCLUDE_PREDICTION_DATASET
 #define INCLUDE_PREDICTION_DATASET
 
-#include "hyper_structure.hpp"
+#include "multi_set.hpp"
 
 class PredictionDataset {
 public:
-	HyperStructure *preStructure;
-	HyperStructure *postStructure;
+	MultiSet *preMultiSet;
+	MultiSet *postMultiSet;
 
-	std::vector<HyperAggregate*> *trainPreValues;
-	std::vector<HyperAggregate*> *trainPostValues;
+	std::vector<MultiSubset*> *trainPreValues;
+	std::vector<MultiSubset*> *trainPostValues;
 	std::vector<int> *trainCountValues;
 
-	std::vector<HyperAggregate*> *testPreValues;
-	std::vector<HyperAggregate*> *testPostValues;
+	std::vector<MultiSubset*> *testPreValues;
+	std::vector<MultiSubset*> *testPostValues;
 	std::vector<int> *testCountValues;
 	
-	PredictionDataset (HyperStructure *preM, HyperStructure *post);
+	PredictionDataset (MultiSet *preM, MultiSet *post);
 	~PredictionDataset ();
 
-	void addTrainValue (HyperAggregate *preValue, HyperAggregate *postValue, int count = 1);
-	void addTestValue (HyperAggregate *preValue, HyperAggregate *postValue, int count = 1);
+	void addTrainValue (MultiSubset *preValue, MultiSubset *postValue, int count = 1);
+	void addTestValue (MultiSubset *preValue, MultiSubset *postValue, int count = 1);
 
 	void addTrainValue (int preNum, int postNum, int count = 1);
 	void addTestValue (int preNum, int postNum, int count = 1);

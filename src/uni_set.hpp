@@ -1,5 +1,5 @@
-#ifndef INCLUDE_STRUCTURE
-#define INCLUDE_STRUCTURE
+#ifndef INCLUDE_UNI_SET
+#define INCLUDE_UNI_SET
 
 #include <list>
 

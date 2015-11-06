@@ -2,14 +2,14 @@
 #include <iostream>
 #include <list>
 
-#include "structure.hpp"
+#include "uni_set.hpp"
 
 
-UniSet::UniSet (UniSubset *firstAgg)
+UniSet::UniSet (UniSubset *firstSubset)
 {
 	uniSubsetNumber = 0;
 	atomicUniSubsetNumber = 0;
-	firstUniSubset = firstAgg;
+	firstUniSubset = firstSubset;
 	uniSubsetArray = 0;
 	atomicUniSubsetArray = 0;
 }
@@ -60,9 +60,9 @@ void UniSet::buildDataStructure()
 	atomicUniSubsetArray = new UniSubset*[atomicUniSubsetNumber];
 	for (UniSubsetSet::iterator it = set.begin(); it != set.end(); it++)
 	{
-		UniSubset *agg = *it;
-		uniSubsetArray[agg->num] = agg;
-		if (agg->isAtomic) { atomicUniSubsetArray[agg->atomicNum] = agg; }
+		UniSubset *subset = *it;
+		uniSubsetArray[subset->num] = subset;
+		if (subset->isAtomic) { atomicUniSubsetArray[subset->atomicNum] = subset; }
 	}
 
 	for (UniSubsetSet::iterator it = set.begin(); it != set.end(); it++) { uniSubsetArray[(*it)->num] = *it; }
@@ -91,27 +91,27 @@ OrderedUniSet::OrderedUniSet (int s) : UniSet (0)
 	size = s;
 	
 	int size2 = size*(size+1)/2;
-	UniSubset **aggArray = new UniSubset* [size2];
+	UniSubset **subsetArray = new UniSubset* [size2];
 	for (int j = 0; j < size; j++)
 		for (int i = 0; i < size-j; i++)
 		{
 			int index = -1;
 			if (j == 0) { index = i; }
-			aggArray[getIndex(i,j)] = new UniSubset (index);
+			subsetArray[getIndex(i,j)] = new UniSubset (index);
 		}
 
 	for (int j = 0; j < size; j++)
 		for (int i = 0; i < size-j; i++)
 			for (int c = 0; c < j; c++)
 			{
-				UniSubsetSet *aggSet = new UniSubsetSet ();
-				aggSet->push_back(aggArray[getIndex(i,c)]);
-				aggSet->push_back(aggArray[getIndex(i+c+1,j-c-1)]);
-				aggArray[getIndex(i,j)]->addUniSubsetSet(aggSet);
+				UniSubsetSet *subsetSet = new UniSubsetSet ();
+				subsetSet->push_back(subsetArray[getIndex(i,c)]);
+				subsetSet->push_back(subsetArray[getIndex(i+c+1,j-c-1)]);
+				subsetArray[getIndex(i,j)]->addUniSubsetSet(subsetSet);
 			}
 
-	firstUniSubset = aggArray[getIndex(0,size-1)];
-	delete [] aggArray;
+	firstUniSubset = subsetArray[getIndex(0,size-1)];
+	delete [] subsetArray;
 }
 
 
@@ -129,31 +129,31 @@ HierarchicalUniSet::HierarchicalUniSet (int d) : UniSet (0)
 }
 
 
-int HierarchicalUniSet::buildHierarchy (UniSubset *agg, int d, int i)
+int HierarchicalUniSet::buildHierarchy (UniSubset *subset, int d, int i)
 {
-	UniSubset *agg1;
-	UniSubset *agg2;
+	UniSubset *subset1;
+	UniSubset *subset2;
 
 	if (d == 0)
 	{
-		agg1 = new UniSubset (i++);
-		agg2 = new UniSubset (i++);		
+		subset1 = new UniSubset (i++);
+		subset2 = new UniSubset (i++);		
 	}
 
 	else {
-		agg1 = new UniSubset ();
-		agg2 = new UniSubset ();	
+		subset1 = new UniSubset ();
+		subset2 = new UniSubset ();	
 	}
 
-	UniSubsetSet *aggSet = new UniSubsetSet ();
-	aggSet->push_back(agg1);
-	aggSet->push_back(agg2);
-	agg->addUniSubsetSet(aggSet);
+	UniSubsetSet *subsetSet = new UniSubsetSet ();
+	subsetSet->push_back(subset1);
+	subsetSet->push_back(subset2);
+	subset->addUniSubsetSet(subsetSet);
 
 	if (d > 0)
 	{
-		i = buildHierarchy(agg1,d-1,i);
-		i = buildHierarchy(agg2,d-1,i);
+		i = buildHierarchy(subset1,d-1,i);
+		i = buildHierarchy(subset2,d-1,i);
 	}
 	
 	return i;

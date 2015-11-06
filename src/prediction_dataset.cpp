@@ -2,17 +2,17 @@
 #include "prediction_dataset.hpp"
 
 
-PredictionDataset::PredictionDataset (HyperStructure *preM, HyperStructure *postM)
+PredictionDataset::PredictionDataset (MultiSet *preM, MultiSet *postM)
 {
-	preStructure = preM;
-	postStructure = postM;
+	preMultiSet = preM;
+	postMultiSet = postM;
 
-	trainPreValues = new std::vector<HyperAggregate*> ();
-	trainPostValues = new std::vector<HyperAggregate*> ();
+	trainPreValues = new std::vector<MultiSubset*> ();
+	trainPostValues = new std::vector<MultiSubset*> ();
 	trainCountValues = new std::vector<int> ();
 
-	testPreValues = new std::vector<HyperAggregate*> ();
-	testPostValues = new std::vector<HyperAggregate*> ();
+	testPreValues = new std::vector<MultiSubset*> ();
+	testPostValues = new std::vector<MultiSubset*> ();
 	testCountValues = new std::vector<int> ();
 }
 
@@ -29,7 +29,7 @@ PredictionDataset::~PredictionDataset ()
 }
 
 
-void PredictionDataset::addTrainValue (HyperAggregate *preValue, HyperAggregate *postValue, int count)
+void PredictionDataset::addTrainValue (MultiSubset *preValue, MultiSubset *postValue, int count)
 {
 	trainPreValues->push_back(preValue);
 	trainPostValues->push_back(postValue);
@@ -37,7 +37,7 @@ void PredictionDataset::addTrainValue (HyperAggregate *preValue, HyperAggregate 
 }
 
 
-void PredictionDataset::addTestValue (HyperAggregate *preValue, HyperAggregate *postValue, int count)
+void PredictionDataset::addTestValue (MultiSubset *preValue, MultiSubset *postValue, int count)
 {
 	testPreValues->push_back(preValue);
 	testPostValues->push_back(postValue);
@@ -47,13 +47,13 @@ void PredictionDataset::addTestValue (HyperAggregate *preValue, HyperAggregate *
 
 void PredictionDataset::addTrainValue (int preIndex, int postIndex, int count)
 {
-	addTrainValue(preStructure->getAtomicAggregate(preIndex), preStructure->getAtomicAggregate(postIndex), count);
+	addTrainValue(preMultiSet->getAtomicMultiSubset(preIndex), preMultiSet->getAtomicMultiSubset(postIndex), count);
 }
 
 
 void PredictionDataset::addTestValue (int preIndex, int postIndex, int count)
 {
-	addTestValue(preStructure->getAtomicAggregate(preIndex), preStructure->getAtomicAggregate(postIndex), count);
+	addTestValue(preMultiSet->getAtomicMultiSubset(preIndex), preMultiSet->getAtomicMultiSubset(postIndex), count);
 }
 
 

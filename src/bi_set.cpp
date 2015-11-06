@@ -1,7 +1,7 @@
 
 #include <iostream>
 
-#include "structure2D.hpp"
+#include "bi_set.hpp"
 
 		
 BiSet::BiSet (UniSet *uniSet1, UniSet *uniSet2)
@@ -123,7 +123,7 @@ Partition *BiSet::getOptimalPartition (double parameter)
 
 
 
-BiSubset::BiSubset (UniSubset *agg1, UniSubset *agg2)
+BiSubset::BiSubset (UniSubset *subset1, UniSubset *subset2)
 {
 	biSet = 0;
 	
@@ -131,8 +131,8 @@ BiSubset::BiSubset (UniSubset *agg1, UniSubset *agg2)
 	isAtomic = false;
 	reached = false;
 	
-	uniSubset1 = agg1;
-	uniSubset2 = agg2;
+	uniSubset1 = subset1;
+	uniSubset2 = subset2;
 	biSubsetSetSet = new BiSubsetSetSet();
 
 	value = 0;
@@ -237,8 +237,8 @@ void BiSubset::buildDataStructure ()
 
 		for (UniSubsetSet::iterator it2 = currentSet->begin(); it2 != currentSet->end(); it2++)
 		{
-			UniSubset *subAggregate1 = *it2;
-			newSet->push_back(biSet->biSubsetArray[subAggregate1->num + uniSubset2->num * subAggregate1->uniSet->uniSubsetNumber]);
+			UniSubset *subSubset1 = *it2;
+			newSet->push_back(biSet->biSubsetArray[subSubset1->num + uniSubset2->num * subSubset1->uniSet->uniSubsetNumber]);
 		}
 
 		addBiSubsetSet(newSet);
@@ -251,8 +251,8 @@ void BiSubset::buildDataStructure ()
 
 		for (UniSubsetSet::iterator it2 = currentSet->begin(); it2 != currentSet->end(); it2++)
 		{
-			UniSubset *subAggregate2 = *it2;
-			newSet->push_back(biSet->biSubsetArray[uniSubset1->num + subAggregate2->num * uniSubset1->uniSet->uniSubsetNumber]);
+			UniSubset *subSubset2 = *it2;
+			newSet->push_back(biSet->biSubsetArray[uniSubset1->num + subSubset2->num * uniSubset1->uniSet->uniSubsetNumber]);
 		}
 
 		addBiSubsetSet(newSet);

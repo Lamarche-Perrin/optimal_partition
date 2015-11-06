@@ -11,7 +11,7 @@ void testHierarchicalHierarchicalSet ();
 void testGraph ();
 void testGraphWithSlyce ();
 void testBiSet ();
-void testHyperStructure ();
+void testMultiSet ();
 void testLogarithmicScore ();
 
 #endif

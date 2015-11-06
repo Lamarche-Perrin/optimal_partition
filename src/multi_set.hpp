@@ -1,36 +1,36 @@
-#ifndef INCLUDE_HYPER_STRUCTURE
-#define INCLUDE_HYPER_STRUCTURE
+#ifndef INCLUDE_MULTI_SET
+#define INCLUDE_MULTI_SET
 
 #include <list>
 
-#include "structure.hpp"
+#include "uni_set.hpp"
 #include "abstract_set.hpp"
 
 
-class HyperAggregate;
-typedef std::list<HyperAggregate*> HyperAggregateSet;
-typedef std::list<HyperAggregateSet*> HyperAggregateSetSet;
+class MultiSubset;
+typedef std::list<MultiSubset*> MultiSubsetSet;
+typedef std::list<MultiSubsetSet*> MultiSubsetSetSet;
 
-class HyperStructure: public AbstractSet
+class MultiSet: public AbstractSet
 {
 public:
 	int dimension;
-	UniSet **structureArray;
+	UniSet **uniSetArray;
 
-	int aggregateNumber;
-	int atomicAggregateNumber;
+	int multiSubsetNumber;
+	int atomicMultiSubsetNumber;
 	
-	HyperAggregate *firstAggregate;
-	HyperAggregate **aggregateArray;
-	HyperAggregate **atomicAggregateArray;
+	MultiSubset *firstMultiSubset;
+	MultiSubset **multiSubsetArray;
+	MultiSubset **atomicMultiSubsetArray;
 	
-	HyperStructure (UniSet *structure);
-	HyperStructure (UniSet **structureArray, int dimension);
-	virtual ~HyperStructure ();
+	MultiSet (UniSet *uniSet);
+	MultiSet (UniSet **uniSetArray, int dimension);
+	virtual ~MultiSet ();
 
-	int getNum (int *hyperNum);
-	int *getHyperNum (int num);
-	HyperAggregate *getAtomicAggregate (int index);
+	int getNum (int *multiNum);
+	int *getMultiNum (int num);
+	MultiSubset *getAtomicMultiSubset (int index);
 	
 	void initReached ();
 	void setRandom ();
@@ -48,11 +48,11 @@ public:
 };
 
 
-class HyperAggregate
+class MultiSubset
 {
 public:
 	int dimension;
-	UniSubset **aggregateArray;
+	UniSubset **uniSubsetArray;
 
 	int num;
 	int atomicNum;
@@ -60,20 +60,20 @@ public:
 	bool isAtomic;
 	bool reached;
 	
-	HyperAggregateSetSet *aggregateSetSet;
-	HyperStructure *structure;
+	MultiSubsetSetSet *multiSubsetSetSet;
+	MultiSet *multiSet;
 
 	ObjectiveFunction *objective;
 	ObjectiveValue *value;
 	double optimalValue;
-	HyperAggregateSet *optimalCut;
+	MultiSubsetSet *optimalCut;
 
-	HyperAggregate (UniSubset **aggregateArray, int dimension);
-	~HyperAggregate ();
+	MultiSubset (UniSubset **uniSubsetArray, int dimension);
+	~MultiSubset ();
 
 	void print ();
 	void printIndexSet (bool endl = false);
-	void addAggregateSet (HyperAggregateSet *aggregateSet);
+	void addMultiSubsetSet (MultiSubsetSet *multiSubsetSet);
 	void setObjectiveFunction (ObjectiveFunction *m);
 
 	void buildDataStructure ();

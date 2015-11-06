@@ -1,9 +1,9 @@
-#ifndef INCLUDE_STRUCTURE2D
-#define INCLUDE_STRUCTURE2D
+#ifndef INCLUDE_BI_SET
+#define INCLUDE_BI_SET
 
 #include <list>
 
-#include "structure.hpp"
+#include "uni_set.hpp"
 #include "abstract_set.hpp"
 
 

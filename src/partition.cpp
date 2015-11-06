@@ -140,30 +140,30 @@ void BiPart::print (bool endl)
 int BiPart::printSize () { return firstPart->printSize() + secondPart->printSize() + 1; }
 
 
-HyperPart::HyperPart (Part **pArray, int dim, ObjectiveValue *q) : Part(q)
+MultiPart::MultiPart (Part **pArray, int dim, ObjectiveValue *q) : Part(q)
 {
 	partArray = pArray;
 	dimension = dim;
 }
 
 
-HyperPart::HyperPart (HyperPart *hp) : Part(hp->value)
+MultiPart::MultiPart (MultiPart *hp) : Part(hp->value)
 {
 	partArray = hp->partArray;
 	dimension = hp->dimension;
 }
 
 
-HyperPart::~HyperPart ()
+MultiPart::~MultiPart ()
 {
 	for (int d = 0; d < dimension; d++) { delete partArray[d]; }
 	delete [] partArray;
 }
 
 
-bool HyperPart::equal (Part *p)
+bool MultiPart::equal (Part *p)
 {
-	HyperPart *hp = (HyperPart *) p;
+	MultiPart *hp = (MultiPart *) p;
 	if (hp->dimension != dimension) { return false; }
 	for (int d = 0; d < dimension; d++)
 		if (!hp->partArray[d]->equal(partArray[d])) { return false; }
@@ -171,7 +171,7 @@ bool HyperPart::equal (Part *p)
 }
 
 
-void HyperPart::print (bool endl)
+void MultiPart::print (bool endl)
 {
 	for (int d = 0; d < dimension; d++)
 	{
@@ -182,7 +182,7 @@ void HyperPart::print (bool endl)
 }
 
 
-int HyperPart::printSize ()
+int MultiPart::printSize ()
 {
 	int size = 1;
 	for (int d = 0; d < dimension; d++) { size += partArray[d]->printSize(); }

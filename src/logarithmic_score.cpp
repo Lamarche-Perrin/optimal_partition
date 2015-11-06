@@ -12,8 +12,8 @@ LogarithmicScore::LogarithmicScore (PredictionDataset *ds, int p)
 	maximize = false;
 	prior = p;
 
-	preSize = ds->preStructure->atomicAggregateNumber;
-	postSize = ds->postStructure->atomicAggregateNumber;
+	preSize = ds->preMultiSet->atomicMultiSubsetNumber;
+	postSize = ds->postMultiSet->atomicMultiSubsetNumber;
 
 	trainCountArray = new int [postSize];
 	for (int l = 0; l < postSize; l++) { trainCountArray[l] = prior * preSize; }
@@ -42,8 +42,8 @@ void LogarithmicScore::computeObjectiveValues ()
 {
 	for (unsigned int n = 0; n < dataset->trainPreValues->size(); n++)
 	{
-		HyperAggregate *preValue = dataset->trainPreValues->at(n);
-		HyperAggregate *postValue = dataset->trainPostValues->at(n);
+		MultiSubset *preValue = dataset->trainPreValues->at(n);
+		MultiSubset *postValue = dataset->trainPostValues->at(n);
 		int countValue = dataset->trainCountValues->at(n);
 
 		trainCountArray[postValue->atomicNum] += countValue;
@@ -55,8 +55,8 @@ void LogarithmicScore::computeObjectiveValues ()
 
 	for (unsigned int n = 0; n < dataset->testPreValues->size(); n++)
 	{
-		HyperAggregate *preValue = dataset->testPreValues->at(n);
-		HyperAggregate *postValue = dataset->testPostValues->at(n);
+		MultiSubset *preValue = dataset->testPreValues->at(n);
+		MultiSubset *postValue = dataset->testPostValues->at(n);
 		int countValue = dataset->testCountValues->at(n);
 
 		((LogarithmicObjectiveValue*)preValue->value)->testCountArray[postValue->atomicNum] += countValue;
