@@ -200,7 +200,6 @@ int HierarchicalUniSet::buildHierarchy (UniSubset *subset, int d, int i)
 UniSubset::UniSubset (int index)
 {
 	uniSet = 0;
-	count = 0;
 
 	num = -1;
 	atomicNum = -1;

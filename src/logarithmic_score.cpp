@@ -146,7 +146,15 @@ LogarithmicObjectiveValue::~LogarithmicObjectiveValue ()
 }
 
 
-void LogarithmicObjectiveValue::add (ObjectiveValue *q) {}
+void LogarithmicObjectiveValue::add (ObjectiveValue *v)
+{
+	LogarithmicObjectiveValue *value = (LogarithmicObjectiveValue*) v;
+	for (int l = 0; l < postSize; l++) { trainCountArray[l] += value->trainCountArray[l]; }
+	for (int l = 0; l < postSize; l++) { testCountArray[l] += value->testCountArray[l]; }
+	trainCountTotal += value->trainCountTotal;
+	testCountTotal += value->testCountTotal;
+	score += value->score;
+}
 
 
 void LogarithmicObjectiveValue::compute ()

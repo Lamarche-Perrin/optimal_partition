@@ -38,40 +38,65 @@
 #ifndef INCLUDE_MULTI_SET
 #define INCLUDE_MULTI_SET
 
+/*!
+ * \file multi_set.hpp
+ * \brief Classes to represent multi-dimensional sets of elements and their algebraic structure (feasible subsets and feasible refinements)
+ * \author Robin Lamarche-Perrin
+ * \date 06/11/2015
+ */
+
+
 #include <list>
 
 #include "uni_set.hpp"
 #include "abstract_set.hpp"
 
+class UniSet;
+class UniSubset;
 
 class MultiSubset;
 typedef std::list<MultiSubset*> MultiSubsetSet;
 typedef std::list<MultiSubsetSet*> MultiSubsetSetSet;
 
+/*!
+ * \class MultiSet
+ * \brief A multi-dimensional set of elements based on the Cartesian product of several uni-dimensional sets (UniSet) and their algebraic structures (feasible subsets and feasible refinements)
+ */
 class MultiSet: public AbstractSet
 {
+	friend MultiSubset;
 public:
-	int dimension;
-	UniSet **uniSetArray;
+	int dimension; /*!< Number of dimensions */
+	int atomicMultiSubsetNumber; /*!< Number of elements (e.g., atomic feasible subsets) */
+	int multiSubsetNumber; /*!< Number of feasible subsets */
 
-	int multiSubsetNumber;
-	int atomicMultiSubsetNumber;
-	
-	MultiSubset *firstMultiSubset;
-	MultiSubset **multiSubsetArray;
-	MultiSubset **atomicMultiSubsetArray;
-	
+	/*!
+	 * \brief Constructor for a one-dimensional set
+	 * \param uniSet : Pointer to one uni-dimensional set (UniSet)
+	 */
 	MultiSet (UniSet *uniSet);
+	
+	/*!
+	 * \brief Constructor
+	 * \param uniSetArray : Array of pointers to uni-dimensional sets from which the Cartesian product is computed
+	 * \param dimension : Number of uni-dimensional sets
+	 */
 	MultiSet (UniSet **uniSetArray, int dimension);
+
+	/*!
+	 * Destructor
+	 */
 	virtual ~MultiSet ();
 
-	int getNum (int *multiNum);
-	int *getMultiNum (int num);
+	/*!
+	 * Access to an element (e.g., atomic feasible subset) from its index
+	 * /param The index of the element to access
+	 * /return A pointer to the unique atomic feasible subset that contains the element
+	 */
 	MultiSubset *getAtomicMultiSubset (int index);
 	
-	void initReached ();
 	void setRandom ();
-	void setObjectiveFunction (ObjectiveFunction *m);
+	void setObjectiveFunction (ObjectiveFunction *objective);
 	void print ();
 
 	void buildDataStructure ();
@@ -82,7 +107,19 @@ public:
 	void computeOptimalPartition (double parameter);
 	void printOptimalPartition (double parameter);
 	Partition *getOptimalPartition (double parameter);
+
+protected:
+	UniSet **uniSetArray;
+
+	MultiSubset *firstMultiSubset;
+	MultiSubset **multiSubsetArray;
+	MultiSubset **atomicMultiSubsetArray;
+
+	int getNum (int *multiNum);
+	int *getMultiNum (int num);
+	void initReached ();
 };
+
 
 
 class MultiSubset

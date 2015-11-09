@@ -1,0 +1,157 @@
+\hypertarget{classBiSet}{\section{Bi\-Set Class Reference}
+\label{classBiSet}\index{Bi\-Set@{Bi\-Set}}
+}
+Inheritance diagram for Bi\-Set\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classBiSet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classBiSet_afe9de2b49fc94e52d01b6b48175393dd}{{\bfseries Bi\-Set} (\hyperlink{classUniSet}{Uni\-Set} $\ast$uni\-Set1, \hyperlink{classUniSet}{Uni\-Set} $\ast$uni\-Set2)}\label{classBiSet_afe9de2b49fc94e52d01b6b48175393dd}
+
+\item 
+\hypertarget{classBiSet_adf57958f51107b7ce2af16d72a1f872b}{void {\bfseries init\-Reached} ()}\label{classBiSet_adf57958f51107b7ce2af16d72a1f872b}
+
+\item 
+\hypertarget{classBiSet_addab16bb60c987ae2f08f23dbbc30864}{void \hyperlink{classBiSet_addab16bb60c987ae2f08f23dbbc30864}{set\-Random} ()}\label{classBiSet_addab16bb60c987ae2f08f23dbbc30864}
+
+\begin{DoxyCompactList}\small\item\em Randomly set the algebraic constraints for quick experiments (warning\-: this method is not always implemented) \end{DoxyCompactList}\item 
+void \hyperlink{classBiSet_aa81de5cee7bae0c86493b31ceb5199b8}{set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$m)
+\begin{DoxyCompactList}\small\item\em Set the objective that one wants to optimise. \end{DoxyCompactList}\item 
+\hypertarget{classBiSet_aec73ba21855b517d003d3c02b14fbcec}{void \hyperlink{classBiSet_aec73ba21855b517d003d3c02b14fbcec}{print} ()}\label{classBiSet_aec73ba21855b517d003d3c02b14fbcec}
+
+\begin{DoxyCompactList}\small\item\em Print the set and its algebraic constraints. \end{DoxyCompactList}\item 
+\hypertarget{classBiSet_a4be98bd081fec38aeaaa630c358fcac2}{void \hyperlink{classBiSet_a4be98bd081fec38aeaaa630c358fcac2}{build\-Data\-Structure} ()}\label{classBiSet_a4be98bd081fec38aeaaa630c358fcac2}
+
+\begin{DoxyCompactList}\small\item\em Build a proper data structure to represent the set and its algebraic constraints (warning\-: this method should always be called after instantiating and parameterising a set, and before calling any other method, such as \hyperlink{classBiSet_aec73ba21855b517d003d3c02b14fbcec}{print()}, \hyperlink{classBiSet_ad2ee8efa76c2d023d60cb8d203b4b365}{compute\-Objective\-Values()}, compute\-Optimal\-Partition (double parameter), etc.) \end{DoxyCompactList}\item 
+\hypertarget{classBiSet_ad2ee8efa76c2d023d60cb8d203b4b365}{void \hyperlink{classBiSet_ad2ee8efa76c2d023d60cb8d203b4b365}{compute\-Objective\-Values} ()}\label{classBiSet_ad2ee8efa76c2d023d60cb8d203b4b365}
+
+\begin{DoxyCompactList}\small\item\em Compute the value of the objective function for each feasible part (warning\-: set\-Objective\-Function (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$objective) should have been called first) \end{DoxyCompactList}\item 
+\hypertarget{classBiSet_ae630d13ca1803d3c0d0422f839d8806a}{void \hyperlink{classBiSet_ae630d13ca1803d3c0d0422f839d8806a}{normalize\-Objective\-Values} ()}\label{classBiSet_ae630d13ca1803d3c0d0422f839d8806a}
+
+\begin{DoxyCompactList}\small\item\em Finish computing the value of the objective function for each feasible part when normalisation is required (warning\-: only after \hyperlink{classBiSet_ad2ee8efa76c2d023d60cb8d203b4b365}{compute\-Objective\-Values()} has been called) \end{DoxyCompactList}\item 
+\hypertarget{classBiSet_aabdac7b50292f744157c3ffd0b37f648}{void \hyperlink{classBiSet_aabdac7b50292f744157c3ffd0b37f648}{print\-Objective\-Values} ()}\label{classBiSet_aabdac7b50292f744157c3ffd0b37f648}
+
+\begin{DoxyCompactList}\small\item\em Print the value of the objective function for each feasible part. \end{DoxyCompactList}\item 
+void \hyperlink{classBiSet_a1604b2e1d322552fe83e5e2933ac2bd3}{compute\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. \end{DoxyCompactList}\item 
+void \hyperlink{classBiSet_ad8abd03c606bb3e3bdac6037c1b955a6}{print\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classBiSet_aec73ba21855b517d003d3c02b14fbcec}{print()} on the result) \end{DoxyCompactList}\item 
+\hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classBiSet_a5f79a8811a0638bcfc418c100b4f67af}{get\-Optimal\-Partition} (double parameter)
+\begin{DoxyCompactList}\small\item\em Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classBiSet_aec73ba21855b517d003d3c02b14fbcec}{print()} on the result) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classBiSet_abd13f5daf7fdc2851463c493e0a3abbb}{\hyperlink{classUniSet}{Uni\-Set} $\ast$ {\bfseries uni\-Set1}}\label{classBiSet_abd13f5daf7fdc2851463c493e0a3abbb}
+
+\item 
+\hypertarget{classBiSet_a094429b1556bda1cdf62a2d9372980db}{\hyperlink{classUniSet}{Uni\-Set} $\ast$ {\bfseries uni\-Set2}}\label{classBiSet_a094429b1556bda1cdf62a2d9372980db}
+
+\item 
+\hypertarget{classBiSet_af7577011b1a03a83a822300d8f1dacc6}{int {\bfseries bi\-Subset\-Number}}\label{classBiSet_af7577011b1a03a83a822300d8f1dacc6}
+
+\item 
+\hypertarget{classBiSet_a2d2c420ff44d5e1f022c7459b902fd0c}{int {\bfseries atomic\-Bi\-Subset\-Number}}\label{classBiSet_a2d2c420ff44d5e1f022c7459b902fd0c}
+
+\item 
+\hypertarget{classBiSet_a1c5df2c47b9a34e0870836e199fba6a0}{\hyperlink{classBiSubset}{Bi\-Subset} $\ast$ {\bfseries first\-Bi\-Subset}}\label{classBiSet_a1c5df2c47b9a34e0870836e199fba6a0}
+
+\item 
+\hypertarget{classBiSet_a67c530d5795d293b94a57cfa4cc35461}{\hyperlink{classBiSubset}{Bi\-Subset} $\ast$$\ast$ {\bfseries bi\-Subset\-Array}}\label{classBiSet_a67c530d5795d293b94a57cfa4cc35461}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classBiSet_a1604b2e1d322552fe83e5e2933ac2bd3}{\index{Bi\-Set@{Bi\-Set}!compute\-Optimal\-Partition@{compute\-Optimal\-Partition}}
+\index{compute\-Optimal\-Partition@{compute\-Optimal\-Partition}!BiSet@{Bi\-Set}}
+\subsubsection[{compute\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void Bi\-Set\-::compute\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBiSet_a1604b2e1d322552fe83e5e2933ac2bd3}
+
+
+Compute a partition that fits with the algebraic constraints and that optimises the objective function that has been specified. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_acfc3004f18192f38e32bb7a5a12ec8df}{Abstract\-Set}.
+
+\hypertarget{classBiSet_a5f79a8811a0638bcfc418c100b4f67af}{\index{Bi\-Set@{Bi\-Set}!get\-Optimal\-Partition@{get\-Optimal\-Partition}}
+\index{get\-Optimal\-Partition@{get\-Optimal\-Partition}!BiSet@{Bi\-Set}}
+\subsubsection[{get\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition} $\ast$ Bi\-Set\-::get\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBiSet_a5f79a8811a0638bcfc418c100b4f67af}
+
+
+Compute and return a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classBiSet_aec73ba21855b517d003d3c02b14fbcec}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\-: The resulting optimal partition 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classAbstractSet_a48fd08c4b61ed46946bed6e19cd11194}{Abstract\-Set}.
+
+\hypertarget{classBiSet_ad8abd03c606bb3e3bdac6037c1b955a6}{\index{Bi\-Set@{Bi\-Set}!print\-Optimal\-Partition@{print\-Optimal\-Partition}}
+\index{print\-Optimal\-Partition@{print\-Optimal\-Partition}!BiSet@{Bi\-Set}}
+\subsubsection[{print\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void Bi\-Set\-::print\-Optimal\-Partition (
+\begin{DoxyParamCaption}
+\item[{double}]{parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBiSet_ad8abd03c606bb3e3bdac6037c1b955a6}
+
+
+Compute and print a partition that fits with the algebraic constraints and that optimises the objective function that has been specified (warning\-: this method is not always implemented, but one can obtain a similar result by using get\-Optimal\-Partition (double parameter) and by calling \hyperlink{classBiSet_aec73ba21855b517d003d3c02b14fbcec}{print()} on the result) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parameter} & \-: The parameter of the objective function to be optimised (if the objective is parametrised) \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_a82a9ce5c2d30690f0d1b83b034e92e1e}{Abstract\-Set}.
+
+\hypertarget{classBiSet_aa81de5cee7bae0c86493b31ceb5199b8}{\index{Bi\-Set@{Bi\-Set}!set\-Objective\-Function@{set\-Objective\-Function}}
+\index{set\-Objective\-Function@{set\-Objective\-Function}!BiSet@{Bi\-Set}}
+\subsubsection[{set\-Objective\-Function}]{\setlength{\rightskip}{0pt plus 5cm}void Bi\-Set\-::set\-Objective\-Function (
+\begin{DoxyParamCaption}
+\item[{{\bf Objective\-Function} $\ast$}]{objective}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classBiSet_aa81de5cee7bae0c86493b31ceb5199b8}
+
+
+Set the objective that one wants to optimise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objective} & \-: The objective function itself \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}{Abstract\-Set}.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/bi\-\_\-set.\-hpp\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/bi\-\_\-set.\-cpp\end{DoxyCompactItemize}

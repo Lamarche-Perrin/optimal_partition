@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['objectivefunction',['ObjectiveFunction',['../classObjectiveFunction.html#a227885b9e68935571bf25d36689f029a',1,'ObjectiveFunction']]]
+  ['hierarchicaluniset',['HierarchicalUniSet',['../classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0',1,'HierarchicalUniSet']]]
 ];

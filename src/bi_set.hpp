@@ -40,10 +40,12 @@
 
 #include <list>
 
-#include "uni_set.hpp"
 #include "abstract_set.hpp"
+#include "uni_set.hpp"
 
 
+class UniSet;
+class UniSubset;
 class BiSubset;
 typedef std::list<BiSubset*> BiSubsetSet;
 typedef std::list<BiSubsetSet*> BiSubsetSetSet;

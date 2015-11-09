@@ -756,20 +756,45 @@ void testMultiSet ()
 }
 
 
+
+/*
+ * Test the algorithm for optimal binning of uni-dimensional pre-measurements. We use
+ * the logarithmic score function. The microscopic binning of both the pre-measurement
+ * and the post-measurement contains 5 values.
+ */
 void testLogarithmicScore ()
 {
-	UniSet *preMultiSet = new OrderedUniSet (5);
-	preMultiSet->buildDataStructure();
-	MultiSet *preMultiSeture = new MultiSet(preMultiSet);
-	preMultiSeture->buildDataStructure();
-	
-	UniSet *postMultiSet = new OrderedUniSet (5);
-	postMultiSet->buildDataStructure();
-	MultiSet *postMultiSeture = new MultiSet(postMultiSet);
-	postMultiSeture->buildDataStructure();
-	
-	PredictionDataset *data = new PredictionDataset (preMultiSeture, postMultiSeture);
+	/*
+	 * Build the pre-measurement observation space, that is a set of 5 ordered elements
+	 * such that the feasible subsets (aggregates) are all the possible intervals of
+	 * elements. This is first represented by the OrderedUniSet class, representing a
+	 * particular kind of uni-dimensional set (UniSet), then this class is encapsulated
+	 * as a multi-dimensional set (MultiSet, even though it contains one dimension)
+	 */
+	UniSet *preUniSet = new OrderedUniSet (5);
+	preUniSet->buildDataStructure(); // Important: this method should always be called after construction
 
+	MultiSet *preMultiSet = new MultiSet (preUniSet);
+	preMultiSet->buildDataStructure(); // Important: this method should always be called after construction
+
+	/*
+	 * Idem for the post-measurement.
+	 */
+	UniSet *postUniSet = new OrderedUniSet (5);
+	postUniSet->buildDataStructure(); // Important: this method should always be called after construction
+
+	MultiSet *postMultiSet = new MultiSet (postUniSet);
+	postMultiSet->buildDataStructure(); // Important: this method should always be called after construction
+
+	/*
+	 * Create a new data set that will be use for prediction of the post-measurement
+	 * given the pre-measurement (train and test).
+	 */
+	PredictionDataset *data = new PredictionDataset (preMultiSet, postMultiSet);
+
+	/*
+	 * Feed train values to this data set.
+	 */
 	data->addTrainValue (0,0,2);
 	data->addTrainValue (0,1,2);
 	data->addTrainValue (0,2,1);
@@ -783,21 +808,44 @@ void testLogarithmicScore ()
 	data->addTrainValue (4,2,1);
 	data->addTrainValue (4,3,1);
 	
+	/*
+	 * Feed test values to this data set.
+	 */
 	data->addTestValue (0,1,1);
 	data->addTestValue (2,2,2);
 	data->addTestValue (2,3,4);
 	data->addTestValue (3,0,3);
 
-	
-	LogarithmicScore *score = new LogarithmicScore (data, 1);
-	preMultiSeture->setObjectiveFunction(score);
-	preMultiSeture->computeObjectiveValues();
+	/*
+	 * Set and compute the objective function to be optimised. We choose the logarithmic
+	 * score with a prior of 1 observation for all couple of pre-observation and post-observation.
+	 */
+	LogarithmicScore *score = new LogarithmicScore (data, 1); // Create the objective from the data.
+	preMultiSet->setObjectiveFunction (score); // Associate the objective to the pre-measurement structure.
+	preMultiSet->computeObjectiveValues (); // Compute the objective for all feasible subsets.
 
-	//preMultiSeture->print();
-	//postMultiSeture->print();
-	preMultiSeture->printObjectiveValues();
-
-	preMultiSeture->getOptimalPartition(0)->print();
+	/*
+	 * Compute the partition (binning) that optimises the objective. Here, because we use the
+	 * logarithmic score, that is a non-parametrised objective, the parameter (0) does not matter.
+	 */
+	Partition *optimalPartition = preMultiSet->getOptimalPartition (0);
 	
+	/*
+	 * Print the results.
+	 */
+	//preMultiSet->print();
+	//postMultiSet->print();
+	//preMultiSet->printObjectiveValues();
+	optimalPartition->print();
+
+	/*
+	 * Free memory.
+	 */
+	delete preUniSet;
+	delete preMultiSet;
+	delete postUniSet;
+	delete postMultiSet;
+	delete score;
+	delete optimalPartition;
 	delete data;
 }

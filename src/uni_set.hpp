@@ -38,71 +38,163 @@
 #ifndef INCLUDE_UNI_SET
 #define INCLUDE_UNI_SET
 
+
+/*!
+ * \file uni_set.hpp
+ * \brief Some classes to represent uni-dimensional sets of elements and their algebraic structure (feasible subsets and feasible refinements)
+ * \author Robin Lamarche-Perrin
+ * \date 06/11/2015
+ */
+
+
 #include <list>
+
+#include "bi_set.hpp"
+#include "multi_set.hpp"
+
+class BiSet;
+class BiSubset;
+class MultiSet;
+class MultiSubset;
 
 class UniSubset;
 typedef std::list<UniSubset*> UniSubsetSet;
 typedef std::list<UniSubsetSet*> UniSubsetSetSet;
 typedef std::list<int> IndexSet;
 
-
+/*!
+ * \class UniSet
+ * \brief A uni-dimensional set of elements and its algebraic structure (feasible subsets and feasible refinements)
+ */
 class UniSet
 {
+	friend BiSet;
+	friend BiSubset;
+	friend MultiSet;
+	friend MultiSubset;
+
 public:
-	int uniSubsetNumber;
-	int atomicUniSubsetNumber;
-
-	UniSubset *firstUniSubset;
-	UniSubset **uniSubsetArray;
-	UniSubset **atomicUniSubsetArray;
-
+	
+	/*!
+     * \brief Constructor
+	 * \param firstUniSubset : Top subset in the lattice of feasible subsets
+     */
 	UniSet (UniSubset *firstUniSubset);
+
+	/*!
+     * \brief Destructor
+     */
 	~UniSet ();
 
+	/*!
+     * \brief Build a proper data structure to represent the uni-dimensional set of elements and its algebraic structure (warning: this method should be called after construction, and before actually using the set)
+     */
 	void buildDataStructure ();
-	void initReached ();
+
+	/*!
+     * \brief Print the current state of the set and its algebraic structure
+     */
 	void print ();
+
+protected:
+	int atomicUniSubsetNumber; /*!< Number of elements (i.e., atomic feasible subsets)*/
+	int uniSubsetNumber; /*!< Number of feasible subsets */
+
+	UniSubset **atomicUniSubsetArray; /*!< Array of pointers to all elements (i.e., atomic feasible subsets) */
+	UniSubset **uniSubsetArray; /*!< Array of pointers to all feasible subsets */
+	UniSubset *firstUniSubset; /*!< Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets)*/
+
+	/*!
+	 * \brief Initialise the `reached` field of all feasible subsets to `false` (used by other methods to run through the algebraic structure in a recursive fashion without considering twice the same subset) 
+     */
+	void initReached ();
 };
 
 
+/*!
+ * \class OrderedUniSet
+ * \brief A uni-dimensional set of elements with a total order, and such that the feasible subsets are all the intervals induced by this order
+ */
 class OrderedUniSet: public UniSet
 {
 public:
-	int size;
+	int size; /*!< Number of ordered elements */
+
+	/*!
+	 * \brief Constructor
+	 * \param size : Number of ordered elements
+	 */
 	OrderedUniSet (int size);
+
+private:
 	int getIndex (int i, int j);
 };
 
 
+/*!
+ * \class HierarchicalUniSet
+ * \brief A uni-dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy
+ */
 class HierarchicalUniSet: public UniSet
 {
 public:
-	int depth;
+	int depth; /*!< Depth of the complete binary hierarchy */
+
+	/*!
+	 * \brief Constructor
+	 * \param size : Depth of the complete binary hierarchy
+	 */
 	HierarchicalUniSet (int depth);
+
+private:
 	int buildHierarchy (UniSubset *uniSubset, int depth, int index);
 };
 
 
+/*!
+ * \class UniSubset
+ * \brief A feasible subset associated to a uni-dimensional set of elements (UniSet)
+ */
 class UniSubset
 {
+	friend UniSet;
 public:
-	int num;
-	int atomicNum;
-	bool isAtomic;
-	bool reached;
-	int count;
+	UniSet *uniSet; /*<! Pointer to the set of elements to which this subset is associated */
+	bool isAtomic; /*<! `true` if and only if this subset is actually an element of the associated set (i.e., an atomic feasible subset) */
+	int atomicNum; /*<! If this subset is an element (i.e., an atomic feasible subset), identifier of this subset among all the elements of the associated set; if not, always equal to `-1` */
+	int num; /*<! Identifier of this subset among all the feasible subsets of the associated set */
 
-	IndexSet *indexSet;
-	UniSubsetSetSet *uniSubsetSetSet;
-	UniSet *uniSet;
+	IndexSet *indexSet; /*<! Indexes of all the elements in this subset (only one index / one element in the case of an atomic subset) */
+	UniSubsetSetSet *uniSubsetSetSet; /*<! Set of the refinements of this subset, that is the set of all partitions of this subset that are made of other feasible subsets; this hence properly defines the algebraic structure */
 
+	/*!
+	 * \brief Constructor
+	 * \param index : The index of the unique element in the case of an atomic subset
+	 */
 	UniSubset (int index = -1);
+
+	/*!
+	 * \brief Destructor
+	 */
 	~UniSubset ();
 
+	/*!
+	 * \brief Print the actual state of this subset
+	 */
 	void print ();
+	
+	/*!
+	 * \brief Print indexes of the elements in this subset
+	 */
 	void printIndexSet (bool endl = false);
+
+	/*!
+	 * \brief Add a refinement to this subset, that is a partition of this subset that is made of other feasible subsets
+	 */
 	void addUniSubsetSet (UniSubsetSet *uniSubsetSet);
 
+private:
+	bool reached; /*<! Boolean value used by external methods to run through the algebraic structure in a recursive fashion, without considering twice the same subset */
 	void buildDataStructure ();
 };
 

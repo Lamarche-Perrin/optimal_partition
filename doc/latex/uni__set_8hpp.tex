@@ -1,0 +1,43 @@
+\hypertarget{uni__set_8hpp}{\section{/home/lamarche/programming/optimal\-\_\-partition/src/uni\-\_\-set.hpp File Reference}
+\label{uni__set_8hpp}\index{/home/lamarche/programming/optimal\-\_\-partition/src/uni\-\_\-set.\-hpp@{/home/lamarche/programming/optimal\-\_\-partition/src/uni\-\_\-set.\-hpp}}
+}
+
+
+Some classes to represent uni-\/dimensional sets of elements and their algebraic structure (feasible subsets and feasible refinements)  
+
+
+{\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include \char`\"{}bi\-\_\-set.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multi\-\_\-set.\-hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classUniSet}{Uni\-Set}
+\begin{DoxyCompactList}\small\item\em A uni-\/dimensional set of elements and its algebraic structure (feasible subsets and feasible refinements) \end{DoxyCompactList}\item 
+class \hyperlink{classOrderedUniSet}{Ordered\-Uni\-Set}
+\begin{DoxyCompactList}\small\item\em A uni-\/dimensional set of elements with a total order, and such that the feasible subsets are all the intervals induced by this order. \end{DoxyCompactList}\item 
+class \hyperlink{classHierarchicalUniSet}{Hierarchical\-Uni\-Set}
+\begin{DoxyCompactList}\small\item\em A uni-\/dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy. \end{DoxyCompactList}\item 
+class \hyperlink{classUniSubset}{Uni\-Subset}
+\begin{DoxyCompactList}\small\item\em A feasible subset associated to a uni-\/dimensional set of elements (\hyperlink{classUniSet}{Uni\-Set}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{uni__set_8hpp_a1a878ac6b5057a8e48adcf68ff12281a}{typedef std\-::list$<$ \hyperlink{classUniSubset}{Uni\-Subset} $\ast$ $>$ {\bfseries Uni\-Subset\-Set}}\label{uni__set_8hpp_a1a878ac6b5057a8e48adcf68ff12281a}
+
+\item 
+\hypertarget{uni__set_8hpp_a6a25033d27ee517648989255cbc70d0c}{typedef std\-::list$<$ Uni\-Subset\-Set $\ast$ $>$ {\bfseries Uni\-Subset\-Set\-Set}}\label{uni__set_8hpp_a6a25033d27ee517648989255cbc70d0c}
+
+\item 
+\hypertarget{uni__set_8hpp_a720d1607eec4eb1359f27cb2d39541e6}{typedef std\-::list$<$ int $>$ {\bfseries Index\-Set}}\label{uni__set_8hpp_a720d1607eec4eb1359f27cb2d39541e6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Some classes to represent uni-\/dimensional sets of elements and their algebraic structure (feasible subsets and feasible refinements) \begin{DoxyAuthor}{Author}
+Robin Lamarche-\/\-Perrin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+06/11/2015 
+\end{DoxyDate}
