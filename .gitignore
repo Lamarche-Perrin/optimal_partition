@@ -1,5 +1,7 @@
-# executable
+# executable and header files
 optimal_partition
+header
+add_header
 
 # C++ and Dev-C++
 *.o
