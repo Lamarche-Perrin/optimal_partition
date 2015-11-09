@@ -38,21 +38,38 @@
 #ifndef INCLUDE_LOGARITHMIC_SCORE
 #define INCLUDE_LOGARITHMIC_SCORE
 
-
 #include "objective_function.hpp"
 #include "prediction_dataset.hpp"
 
+/*!
+ * \file logarithmic_score.hpp
+ * \brief Classes to define and compute the logarithmic score function in the case of point prediction
+ * \author Robin Lamarche-Perrin
+ * \date 06/11/2015
+ */
+
+
+class LogarithmicScoreValue;
+
+/*!
+ * \class LogarithmicScore
+ * \brief Class to define and compute the logarithmic score function in the case of point prediction
+ */
 class LogarithmicScore: public ObjectiveFunction
 {
-public:
-	PredictionDataset *dataset;
-
-	int preSize, postSize;
-	int *trainCountArray;
-	int trainCountTotal;
-	int prior;
+	friend LogarithmicScoreValue;
 	
+public:
+	/*!
+	 * \brief Constructor
+	 * \param dataset : The prediction data set that is use to evaluate the score function (from a train set and a test set both containing pre-observations and post-observations)
+	 * \param prior : A prior giving the number of times each couple of (pre and post) observations has been observed in addition to the train set
+	 */
 	LogarithmicScore (PredictionDataset *dataset, int prior = 0);
+
+	/*!
+	 * \brief Destructor
+	 */
 	~LogarithmicScore ();
 	
 	void setRandom ();
@@ -63,10 +80,19 @@ public:
 	double getParameter (double unit);
 	double getUnitDistance (double uMin, double uMax);
 	double getIntermediaryUnit (double uMin, double uMax);
+
+private:
+	PredictionDataset *dataset;
+
+	int preSize, postSize;
+	int *trainCountArray;
+	int trainCountTotal;
+	int prior;
+   
 };
 
 
-class LogarithmicObjectiveValue: public ObjectiveValue
+class LogarithmicScoreValue: public ObjectiveValue
 {
 public:
 	int preSize, postSize;
@@ -76,8 +102,8 @@ public:
 	int testCountTotal;
 	double score;
 	
-	LogarithmicObjectiveValue (LogarithmicScore *objective);
-	~LogarithmicObjectiveValue ();
+	LogarithmicScoreValue (LogarithmicScore *objective);
+	~LogarithmicScoreValue ();
 		
 	void add (ObjectiveValue *value);
 	void compute ();

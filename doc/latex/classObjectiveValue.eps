@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 77.519380
+%%BoundingBox: 0 0 500 80.808081
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,7 +19,7 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 6.450000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 6.187500 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
@@ -175,7 +175,7 @@ boxfont setfont
 1 boundaspect scale
 (ObjectiveValue) cw
 (BottleneckObjectiveValue) cw
-(LogarithmicObjectiveValue) cw
+(LogarithmicScoreValue) cw
 (RelativeObjectiveValue) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
@@ -190,7 +190,7 @@ boundx scalefactor div boundy scalefactor div scale
 
  (ObjectiveValue) 1.000000 1.000000 box
  (BottleneckObjectiveValue) 0.000000 0.000000 box
- (LogarithmicObjectiveValue) 1.000000 0.000000 box
+ (LogarithmicScoreValue) 1.000000 0.000000 box
  (RelativeObjectiveValue) 2.000000 0.000000 box
 
 % ----- relations -----

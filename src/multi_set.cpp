@@ -37,6 +37,7 @@
 
 
 #include <iostream>
+#include <cstdlib>
 
 #include "multi_set.hpp"
 
@@ -118,6 +119,9 @@ MultiSubset *MultiSet::getAtomicMultiSubset (int index)
 	}
 	return 0;
 }
+
+
+MultiSubset *MultiSet::getRandomAtomicMultiSubset () { return atomicMultiSubsetArray[rand() % atomicMultiSubsetNumber]; }
 
 
 void MultiSet::initReached()

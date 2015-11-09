@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['size',['size',['../classOrderedUniSet.html#ae0c3867ab74ade7469492b48742adb2a',1,'OrderedUniSet']]]
+  ['postmultiset',['postMultiSet',['../classPredictionDataset.html#a22343b4582412434376af66cb42d2d50',1,'PredictionDataset']]]
 ];

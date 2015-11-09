@@ -59,7 +59,7 @@ class ObjectiveFunction
 	friend class AbstractSet;
 
 public:
-	bool maximize; /*!< True if one deals with a maximisation problem, and false if one deals with a minimisation problem*/
+	bool maximize; /** \brief True if one deals with a maximisation problem, and false if one deals with a minimisation problem*/
 
 	/*!
      * \brief Constructor

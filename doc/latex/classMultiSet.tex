@@ -20,17 +20,19 @@ Inheritance diagram for Multi\-Set\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classMultiSet_aa6ec2e2e6ef524acde12c795629f08c8}{Multi\-Set} (\hyperlink{classUniSet}{Uni\-Set} $\ast$uni\-Set)
-\begin{DoxyCompactList}\small\item\em Constructor for a one-\/dimensional set. \end{DoxyCompactList}\item 
-\hyperlink{classMultiSet_abafc2f4fb50484d3aabdd744dc1d6cc5}{Multi\-Set} (\hyperlink{classUniSet}{Uni\-Set} $\ast$$\ast$uni\-Set\-Array, int \hyperlink{classMultiSet_a1a49a7a8c3d0db003198312c3bd541af}{dimension})
+\begin{DoxyCompactList}\small\item\em Number of feasible subsets. \end{DoxyCompactList}\item 
+\hyperlink{classMultiSet_abafc2f4fb50484d3aabdd744dc1d6cc5}{Multi\-Set} (\hyperlink{classUniSet}{Uni\-Set} $\ast$$\ast$uni\-Set\-Array, int dimension)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classMultiSet_a3ad638b1613083b97a53ea58e9060a4d}{$\sim$\-Multi\-Set} ()
 \item 
 \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ \hyperlink{classMultiSet_a48a6504163110d377db974d6ea5bd8fe}{get\-Atomic\-Multi\-Subset} (int index)
 \item 
+\hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ \hyperlink{classMultiSet_afe3111c90692136b5141a4c5b96e2da3}{get\-Random\-Atomic\-Multi\-Subset} ()
+\item 
 \hypertarget{classMultiSet_aac2d5ee0afa30a8f565f29204a677cd9}{void \hyperlink{classMultiSet_aac2d5ee0afa30a8f565f29204a677cd9}{set\-Random} ()}\label{classMultiSet_aac2d5ee0afa30a8f565f29204a677cd9}
 
 \begin{DoxyCompactList}\small\item\em Randomly set the algebraic constraints for quick experiments (warning\-: this method is not always implemented) \end{DoxyCompactList}\item 
-void \hyperlink{classMultiSet_a0c7e6fb6d2eb064cf6bf2fe7e810726a}{set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$\hyperlink{classAbstractSet_a0217447a042827703e1ea7655f0fc099}{objective})
+void \hyperlink{classMultiSet_a0c7e6fb6d2eb064cf6bf2fe7e810726a}{set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$objective)
 \begin{DoxyCompactList}\small\item\em Set the objective that one wants to optimise. \end{DoxyCompactList}\item 
 \hypertarget{classMultiSet_ab08f0a90d249cecc0f7931caa2632f48}{void \hyperlink{classMultiSet_ab08f0a90d249cecc0f7931caa2632f48}{print} ()}\label{classMultiSet_ab08f0a90d249cecc0f7931caa2632f48}
 
@@ -56,12 +58,15 @@ void \hyperlink{classMultiSet_a5f8567d28993d4e5c6c314cc5dbca188}{print\-Optimal\
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classMultiSet_a1a49a7a8c3d0db003198312c3bd541af}{dimension}
+\hypertarget{classMultiSet_a1a49a7a8c3d0db003198312c3bd541af}{int {\bfseries dimension}}\label{classMultiSet_a1a49a7a8c3d0db003198312c3bd541af}
+
 \item 
-int \hyperlink{classMultiSet_a3084e5afaa18d1f19a38f7139f827cfc}{atomic\-Multi\-Subset\-Number}
-\item 
-int \hyperlink{classMultiSet_a9c0c781a33f40bb2cd28110805572b7a}{multi\-Subset\-Number}
-\end{DoxyCompactItemize}
+\hypertarget{classMultiSet_a3084e5afaa18d1f19a38f7139f827cfc}{int \hyperlink{classMultiSet_a3084e5afaa18d1f19a38f7139f827cfc}{atomic\-Multi\-Subset\-Number}}\label{classMultiSet_a3084e5afaa18d1f19a38f7139f827cfc}
+
+\begin{DoxyCompactList}\small\item\em Number of dimensions. \end{DoxyCompactList}\item 
+\hypertarget{classMultiSet_a9c0c781a33f40bb2cd28110805572b7a}{int \hyperlink{classMultiSet_a9c0c781a33f40bb2cd28110805572b7a}{multi\-Subset\-Number}}\label{classMultiSet_a9c0c781a33f40bb2cd28110805572b7a}
+
+\begin{DoxyCompactList}\small\item\em Number of elements (e.\-g., atomic feasible subsets) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -104,9 +109,9 @@ A multi-\/dimensional set of elements based on the Cartesian product of several 
 )}}\label{classMultiSet_aa6ec2e2e6ef524acde12c795629f08c8}
 
 
-Constructor for a one-\/dimensional set. 
+Number of feasible subsets. 
 
-
+Constructor for a one-\/dimensional set 
 \begin{DoxyParams}{Parameters}
 {\em uni\-Set} & \-: Pointer to one uni-\/dimensional set (\hyperlink{classUniSet}{Uni\-Set}) \\
 \hline
@@ -190,7 +195,14 @@ Compute and return a partition that fits with the algebraic constraints and that
 
 Implements \hyperlink{classAbstractSet_a48fd08c4b61ed46946bed6e19cd11194}{Abstract\-Set}.
 
-\hypertarget{classMultiSet_a5f8567d28993d4e5c6c314cc5dbca188}{\index{Multi\-Set@{Multi\-Set}!print\-Optimal\-Partition@{print\-Optimal\-Partition}}
+\hypertarget{classMultiSet_afe3111c90692136b5141a4c5b96e2da3}{\index{Multi\-Set@{Multi\-Set}!get\-Random\-Atomic\-Multi\-Subset@{get\-Random\-Atomic\-Multi\-Subset}}
+\index{get\-Random\-Atomic\-Multi\-Subset@{get\-Random\-Atomic\-Multi\-Subset}!MultiSet@{Multi\-Set}}
+\subsubsection[{get\-Random\-Atomic\-Multi\-Subset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Multi\-Subset} $\ast$ Multi\-Set\-::get\-Random\-Atomic\-Multi\-Subset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classMultiSet_afe3111c90692136b5141a4c5b96e2da3}
+Access to a random element (e.\-g., atomic feasible subset) /return A pointer to the unique atomic feasible subset that contains the element \hypertarget{classMultiSet_a5f8567d28993d4e5c6c314cc5dbca188}{\index{Multi\-Set@{Multi\-Set}!print\-Optimal\-Partition@{print\-Optimal\-Partition}}
 \index{print\-Optimal\-Partition@{print\-Optimal\-Partition}!MultiSet@{Multi\-Set}}
 \subsubsection[{print\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}void Multi\-Set\-::print\-Optimal\-Partition (
 \begin{DoxyParamCaption}
@@ -231,18 +243,6 @@ Set the objective that one wants to optimise.
 Implements \hyperlink{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}{Abstract\-Set}.
 
 
-
-\subsection{Member Data Documentation}
-\hypertarget{classMultiSet_a3084e5afaa18d1f19a38f7139f827cfc}{\index{Multi\-Set@{Multi\-Set}!atomic\-Multi\-Subset\-Number@{atomic\-Multi\-Subset\-Number}}
-\index{atomic\-Multi\-Subset\-Number@{atomic\-Multi\-Subset\-Number}!MultiSet@{Multi\-Set}}
-\subsubsection[{atomic\-Multi\-Subset\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Multi\-Set\-::atomic\-Multi\-Subset\-Number}}\label{classMultiSet_a3084e5afaa18d1f19a38f7139f827cfc}
-Number of elements (e.\-g., atomic feasible subsets) \hypertarget{classMultiSet_a1a49a7a8c3d0db003198312c3bd541af}{\index{Multi\-Set@{Multi\-Set}!dimension@{dimension}}
-\index{dimension@{dimension}!MultiSet@{Multi\-Set}}
-\subsubsection[{dimension}]{\setlength{\rightskip}{0pt plus 5cm}int Multi\-Set\-::dimension}}\label{classMultiSet_a1a49a7a8c3d0db003198312c3bd541af}
-Number of dimensions \hypertarget{classMultiSet_a9c0c781a33f40bb2cd28110805572b7a}{\index{Multi\-Set@{Multi\-Set}!multi\-Subset\-Number@{multi\-Subset\-Number}}
-\index{multi\-Subset\-Number@{multi\-Subset\-Number}!MultiSet@{Multi\-Set}}
-\subsubsection[{multi\-Subset\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Multi\-Set\-::multi\-Subset\-Number}}\label{classMultiSet_a9c0c781a33f40bb2cd28110805572b7a}
-Number of feasible subsets 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

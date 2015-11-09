@@ -107,8 +107,8 @@ Inheritance diagram for HierarchicalUniSet:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab6bfd19708056eb61eb0cd297a96aef0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0">HierarchicalUniSet</a> (int <a class="el" href="classHierarchicalUniSet.html#a3b87358df90ea24612e82df44c4eac04">depth</a>)</td></tr>
-<tr class="memdesc:ab6bfd19708056eb61eb0cd297a96aef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ab6bfd19708056eb61eb0cd297a96aef0">More...</a><br/></td></tr>
+<tr class="memitem:ab6bfd19708056eb61eb0cd297a96aef0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0">HierarchicalUniSet</a> (int depth)</td></tr>
+<tr class="memdesc:ab6bfd19708056eb61eb0cd297a96aef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Depth of the complete binary hierarchy.  <a href="#ab6bfd19708056eb61eb0cd297a96aef0">More...</a><br/></td></tr>
 <tr class="separator:ab6bfd19708056eb61eb0cd297a96aef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classUniSet"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classUniSet')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classUniSet.html">UniSet</a></td></tr>
 <tr class="memitem:a7e7a24e0c074fff21442f8ac9c5cd6aa inherit pub_methods_classUniSet"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a7e7a24e0c074fff21442f8ac9c5cd6aa">UniSet</a> (<a class="el" href="classUniSubset.html">UniSubset</a> *<a class="el" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">firstUniSubset</a>)</td></tr>
@@ -129,26 +129,35 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a3b87358df90ea24612e82df44c4eac04"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHierarchicalUniSet.html#a3b87358df90ea24612e82df44c4eac04">depth</a></td></tr>
+<tr class="memitem:a3b87358df90ea24612e82df44c4eac04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b87358df90ea24612e82df44c4eac04"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>depth</b></td></tr>
 <tr class="separator:a3b87358df90ea24612e82df44c4eac04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classUniSet"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classUniSet')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classUniSet.html">UniSet</a></td></tr>
-<tr class="memitem:a140f02dfb3f186cbc49fe28d238aa2e1 inherit pro_methods_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a140f02dfb3f186cbc49fe28d238aa2e1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a140f02dfb3f186cbc49fe28d238aa2e1">initReached</a> ()</td></tr>
-<tr class="memdesc:a140f02dfb3f186cbc49fe28d238aa2e1 inherit pro_methods_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise the <code>reached</code> field of all feasible subsets to <code>false</code> (used by other methods to run through the algebraic structure in a recursive fashion without considering twice the same subset) <br/></td></tr>
+<tr class="memitem:a140f02dfb3f186cbc49fe28d238aa2e1 inherit pro_methods_classUniSet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a140f02dfb3f186cbc49fe28d238aa2e1">initReached</a> ()</td></tr>
+<tr class="memdesc:a140f02dfb3f186cbc49fe28d238aa2e1 inherit pro_methods_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets)  <a href="#a140f02dfb3f186cbc49fe28d238aa2e1">More...</a><br/></td></tr>
 <tr class="separator:a140f02dfb3f186cbc49fe28d238aa2e1 inherit pro_methods_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classUniSet"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classUniSet')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classUniSet.html">UniSet</a></td></tr>
-<tr class="memitem:addac67921c058dc9ffa2074b3d59151f inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#addac67921c058dc9ffa2074b3d59151f">atomicUniSubsetNumber</a></td></tr>
+<tr class="memitem:addac67921c058dc9ffa2074b3d59151f inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addac67921c058dc9ffa2074b3d59151f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>atomicUniSubsetNumber</b></td></tr>
 <tr class="separator:addac67921c058dc9ffa2074b3d59151f inherit pro_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a159ec0413efd05616c2f2445b7d8b2b5 inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">uniSubsetNumber</a></td></tr>
+<tr class="memitem:a159ec0413efd05616c2f2445b7d8b2b5 inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a159ec0413efd05616c2f2445b7d8b2b5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">uniSubsetNumber</a></td></tr>
+<tr class="memdesc:a159ec0413efd05616c2f2445b7d8b2b5 inherit pro_attribs_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of elements (i.e., atomic feasible subsets) <br/></td></tr>
 <tr class="separator:a159ec0413efd05616c2f2445b7d8b2b5 inherit pro_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16746d02b5503c5d8c62fe4dff46c5b3 inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUniSubset.html">UniSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3">atomicUniSubsetArray</a></td></tr>
+<tr class="memitem:a16746d02b5503c5d8c62fe4dff46c5b3 inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16746d02b5503c5d8c62fe4dff46c5b3"></a>
+<a class="el" href="classUniSubset.html">UniSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3">atomicUniSubsetArray</a></td></tr>
+<tr class="memdesc:a16746d02b5503c5d8c62fe4dff46c5b3 inherit pro_attribs_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of feasible subsets. <br/></td></tr>
 <tr class="separator:a16746d02b5503c5d8c62fe4dff46c5b3 inherit pro_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a154ae422d9f248c8b50f39d575f9b3c0 inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUniSubset.html">UniSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a154ae422d9f248c8b50f39d575f9b3c0">uniSubsetArray</a></td></tr>
+<tr class="memitem:a154ae422d9f248c8b50f39d575f9b3c0 inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a154ae422d9f248c8b50f39d575f9b3c0"></a>
+<a class="el" href="classUniSubset.html">UniSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a154ae422d9f248c8b50f39d575f9b3c0">uniSubsetArray</a></td></tr>
+<tr class="memdesc:a154ae422d9f248c8b50f39d575f9b3c0 inherit pro_attribs_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of pointers to all elements (i.e., atomic feasible subsets) <br/></td></tr>
 <tr class="separator:a154ae422d9f248c8b50f39d575f9b3c0 inherit pro_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b2ca464176feddcd8d96c75514eba6b inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUniSubset.html">UniSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">firstUniSubset</a></td></tr>
+<tr class="memitem:a8b2ca464176feddcd8d96c75514eba6b inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b2ca464176feddcd8d96c75514eba6b"></a>
+<a class="el" href="classUniSubset.html">UniSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">firstUniSubset</a></td></tr>
+<tr class="memdesc:a8b2ca464176feddcd8d96c75514eba6b inherit pro_attribs_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of pointers to all feasible subsets. <br/></td></tr>
 <tr class="separator:a8b2ca464176feddcd8d96c75514eba6b inherit pro_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -168,27 +177,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
       </table>
 </div><div class="memdoc">
 
-<p>Constructor. </p>
+<p>Depth of the complete binary hierarchy. </p>
+<p>Constructor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">size</td><td>: Depth of the complete binary hierarchy </td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a3b87358df90ea24612e82df44c4eac04"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int HierarchicalUniSet::depth</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Depth of the complete binary hierarchy </p>
 
 </div>
 </div>
@@ -199,7 +195,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 16:56:48 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 9 2015 18:43:56 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

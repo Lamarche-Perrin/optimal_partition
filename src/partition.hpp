@@ -42,6 +42,14 @@
 
 #include "objective_function.hpp"
 
+/*!
+ * \file parition.hpp
+ * \brief Classes to represent partitions of sets (individuals/elements, parts/subsets, and partitions)
+ * \author Robin Lamarche-Perrin
+ * \date 06/11/2015
+ */
+
+
 class Datatree;
 typedef std::set<int> Vertices;
 
@@ -52,6 +60,10 @@ typedef std::set<Part*> PartSet;
 typedef std::list<Partition*> PartitionList;
 
 
+/*!
+ * \class Part
+ * \brief A part is a subset of a set of elements (individuals) represented by integers
+ */
 class Part
 {
 public:
@@ -72,6 +84,10 @@ public:
 };
 
 
+/*!
+ * \class BiPart
+ * \brief A bi-part is a subset of a bi-dimensional set of elements (individuals)
+ */
 class BiPart: public Part
 {
 public:
@@ -88,6 +104,10 @@ public:
 };
 
 
+/*!
+ * \class MultiPart
+ * \brief A multi-part is a subset of a multi-dimensional set of elements (individuals)
+ */
 class MultiPart: public Part
 {
 public:
@@ -104,6 +124,10 @@ public:
 };
 
 
+/*!
+ * \class Partition
+ * \brief A partition is a collection of pairwise-disjoint and covering subsets (parts) of a set of elements
+ */
 class Partition
 {
 public:

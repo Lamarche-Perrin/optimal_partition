@@ -64,13 +64,25 @@ LogarithmicScore::~LogarithmicScore ()
 }
 
 
-void LogarithmicScore::setRandom () {}
+void LogarithmicScore::setRandom ()
+{
+	PredictionDataset *newDataset = new PredictionDataset (dataset->preMultiSet, dataset->postMultiSet);
+	delete dataset;
+	dataset = newDataset;
+
+	int nb = dataset->preMultiSet->atomicMultiSubsetNumber * dataset->postMultiSet->atomicMultiSubsetNumber;
+	for (int i = 0; i < nb; i++)
+		dataset->addTrainValue (dataset->preMultiSet->getRandomAtomicMultiSubset(), dataset->postMultiSet->getRandomAtomicMultiSubset());
+
+	for (int i = 0; i < nb/10; i++)
+		dataset->addTestValue (dataset->preMultiSet->getRandomAtomicMultiSubset(), dataset->postMultiSet->getRandomAtomicMultiSubset());
+}
 
 
 ObjectiveValue *LogarithmicScore::newObjectiveValue (int id)
 {
-	LogarithmicObjectiveValue *rq;
-	rq = new LogarithmicObjectiveValue (this);
+	LogarithmicScoreValue *rq;
+	rq = new LogarithmicScoreValue (this);
 	return rq;
 }
 
@@ -86,8 +98,8 @@ void LogarithmicScore::computeObjectiveValues ()
 		trainCountArray[postValue->atomicNum] += countValue;
 		trainCountTotal += countValue;
 
-		((LogarithmicObjectiveValue*)preValue->value)->trainCountArray[postValue->atomicNum] += countValue;
-		((LogarithmicObjectiveValue*)preValue->value)->trainCountTotal += countValue;
+		((LogarithmicScoreValue*)preValue->value)->trainCountArray[postValue->atomicNum] += countValue;
+		((LogarithmicScoreValue*)preValue->value)->trainCountTotal += countValue;
 	}
 
 	for (unsigned int n = 0; n < dataset->testPreValues->size(); n++)
@@ -96,8 +108,8 @@ void LogarithmicScore::computeObjectiveValues ()
 		MultiSubset *postValue = dataset->testPostValues->at(n);
 		int countValue = dataset->testCountValues->at(n);
 
-		((LogarithmicObjectiveValue*)preValue->value)->testCountArray[postValue->atomicNum] += countValue;
-		((LogarithmicObjectiveValue*)preValue->value)->testCountTotal += countValue;
+		((LogarithmicScoreValue*)preValue->value)->testCountArray[postValue->atomicNum] += countValue;
+		((LogarithmicScoreValue*)preValue->value)->testCountTotal += countValue;
 	}
 }
 
@@ -123,7 +135,7 @@ double LogarithmicScore::getIntermediaryUnit (double uMin, double uMax) { return
 
 
 
-LogarithmicObjectiveValue::LogarithmicObjectiveValue (LogarithmicScore *m)
+LogarithmicScoreValue::LogarithmicScoreValue (LogarithmicScore *m)
 {
 	objective = m;
 	preSize = m->preSize;
@@ -139,16 +151,16 @@ LogarithmicObjectiveValue::LogarithmicObjectiveValue (LogarithmicScore *m)
 }
 
 
-LogarithmicObjectiveValue::~LogarithmicObjectiveValue ()
+LogarithmicScoreValue::~LogarithmicScoreValue ()
 {
 	delete [] trainCountArray;
 	delete [] testCountArray;
 }
 
 
-void LogarithmicObjectiveValue::add (ObjectiveValue *v)
+void LogarithmicScoreValue::add (ObjectiveValue *v)
 {
-	LogarithmicObjectiveValue *value = (LogarithmicObjectiveValue*) v;
+	LogarithmicScoreValue *value = (LogarithmicScoreValue*) v;
 	for (int l = 0; l < postSize; l++) { trainCountArray[l] += value->trainCountArray[l]; }
 	for (int l = 0; l < postSize; l++) { testCountArray[l] += value->testCountArray[l]; }
 	trainCountTotal += value->trainCountTotal;
@@ -157,7 +169,7 @@ void LogarithmicObjectiveValue::add (ObjectiveValue *v)
 }
 
 
-void LogarithmicObjectiveValue::compute ()
+void LogarithmicScoreValue::compute ()
 {
 	if (trainCountTotal > 0)
 	{
@@ -172,11 +184,11 @@ void LogarithmicObjectiveValue::compute ()
 }
 
 
-void LogarithmicObjectiveValue::compute (ObjectiveValue *q1, ObjectiveValue *q2)
+void LogarithmicScoreValue::compute (ObjectiveValue *q1, ObjectiveValue *q2)
 {
 	//std::cout << "compute q1+q2" << std::endl;
-	LogarithmicObjectiveValue *rq1 = (LogarithmicObjectiveValue *) q1;
-	LogarithmicObjectiveValue *rq2 = (LogarithmicObjectiveValue *) q2;
+	LogarithmicScoreValue *rq1 = (LogarithmicScoreValue *) q1;
+	LogarithmicScoreValue *rq2 = (LogarithmicScoreValue *) q2;
 
 	trainCountTotal = rq1->trainCountTotal + rq2->trainCountTotal;
 	testCountTotal = rq1->testCountTotal + rq2->testCountTotal;
@@ -188,7 +200,7 @@ void LogarithmicObjectiveValue::compute (ObjectiveValue *q1, ObjectiveValue *q2)
 }
 
 
-void LogarithmicObjectiveValue::compute (ObjectiveValueSet *valueSet)
+void LogarithmicScoreValue::compute (ObjectiveValueSet *valueSet)
 {
 	//std::cout << "compute q1+..+qn" << std::endl;
 	trainCountTotal = 0;
@@ -199,7 +211,7 @@ void LogarithmicObjectiveValue::compute (ObjectiveValueSet *valueSet)
 
 	for (ObjectiveValueSet::iterator it = valueSet->begin(); it != valueSet->end(); ++it)
 	{
-		LogarithmicObjectiveValue *rq = (LogarithmicObjectiveValue *) (*it);
+		LogarithmicScoreValue *rq = (LogarithmicScoreValue *) (*it);
 
 		trainCountTotal += rq->trainCountTotal;
 		testCountTotal += rq->testCountTotal;
@@ -212,10 +224,10 @@ void LogarithmicObjectiveValue::compute (ObjectiveValueSet *valueSet)
 }
 
 
-void LogarithmicObjectiveValue::normalize (ObjectiveValue *q) {}
+void LogarithmicScoreValue::normalize (ObjectiveValue *q) {}
 
 
-void LogarithmicObjectiveValue::print (bool v)
+void LogarithmicScoreValue::print (bool v)
 {
 	if (v)
 	{
@@ -237,5 +249,5 @@ void LogarithmicObjectiveValue::print (bool v)
 }
 
 
-double LogarithmicObjectiveValue::getValue (double param) { return score; }
+double LogarithmicScoreValue::getValue (double param) { return score; }
 

@@ -87,7 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">prediction_dataset.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<a href="prediction__dataset_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * This file is part of Optimal Partition.</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Optimal Partition is a toolbox to solve special versions of the Set</span></div>
@@ -129,38 +129,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multi__set_8hpp.html">multi_set.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classPredictionDataset.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPredictionDataset.html">PredictionDataset</a> {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classMultiSet.html">MultiSet</a> *preMultiSet;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classMultiSet.html">MultiSet</a> *postMultiSet;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::vector&lt;MultiSubset*&gt; *trainPreValues;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::vector&lt;MultiSubset*&gt; *trainPostValues;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::vector&lt;int&gt; *trainCountValues;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    std::vector&lt;MultiSubset*&gt; *testPreValues;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::vector&lt;MultiSubset*&gt; *testPostValues;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    std::vector&lt;int&gt; *testCountValues;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classPredictionDataset.html">PredictionDataset</a> (<a class="code" href="classMultiSet.html">MultiSet</a> *preM, <a class="code" href="classMultiSet.html">MultiSet</a> *post);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    ~<a class="code" href="classPredictionDataset.html">PredictionDataset</a> ();</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> addTrainValue (<a class="code" href="classMultiSubset.html">MultiSubset</a> *preValue, <a class="code" href="classMultiSubset.html">MultiSubset</a> *postValue, <span class="keywordtype">int</span> count = 1);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> addTestValue (<a class="code" href="classMultiSubset.html">MultiSubset</a> *preValue, <a class="code" href="classMultiSubset.html">MultiSubset</a> *postValue, <span class="keywordtype">int</span> count = 1);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> addTrainValue (<span class="keywordtype">int</span> preNum, <span class="keywordtype">int</span> postNum, <span class="keywordtype">int</span> count = 1);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> addTestValue (<span class="keywordtype">int</span> preNum, <span class="keywordtype">int</span> postNum, <span class="keywordtype">int</span> count = 1);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classPredictionDataset.html">   55</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPredictionDataset.html">PredictionDataset</a> {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classMultiSet.html">MultiSet</a> *preMultiSet; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classPredictionDataset.html#a22343b4582412434376af66cb42d2d50">   60</a></span>&#160;    <a class="code" href="classMultiSet.html">MultiSet</a> *<a class="code" href="classPredictionDataset.html#a22343b4582412434376af66cb42d2d50">postMultiSet</a>; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classPredictionDataset.html#af09491db0c4267fa086bf640c4740483">   62</a></span>&#160;    std::vector&lt;MultiSubset*&gt; *<a class="code" href="classPredictionDataset.html#af09491db0c4267fa086bf640c4740483">trainPreValues</a>; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classPredictionDataset.html#a30e9419638339a7497f3d234780b2c20">   63</a></span>&#160;    std::vector&lt;MultiSubset*&gt; *<a class="code" href="classPredictionDataset.html#a30e9419638339a7497f3d234780b2c20">trainPostValues</a>; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="classPredictionDataset.html#af4fdcf7cfd236a99a73f18d630199291">   64</a></span>&#160;    std::vector&lt;int&gt; *<a class="code" href="classPredictionDataset.html#af4fdcf7cfd236a99a73f18d630199291">trainCountValues</a>;</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classMultiSubset_html"><div class="ttname"><a href="classMultiSubset.html">MultiSubset</a></div><div class="ttdef"><b>Definition:</b> multi_set.hpp:125</div></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::vector&lt;MultiSubset*&gt; *testPreValues; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classPredictionDataset.html#ab6ed50cd17878109b9a41ebb6db172ea">   67</a></span>&#160;    std::vector&lt;MultiSubset*&gt; *<a class="code" href="classPredictionDataset.html#ab6ed50cd17878109b9a41ebb6db172ea">testPostValues</a>; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="classPredictionDataset.html#a7fe2eccbdae1cee136f5864b660c31ee">   68</a></span>&#160;    std::vector&lt;int&gt; *<a class="code" href="classPredictionDataset.html#a7fe2eccbdae1cee136f5864b660c31ee">testCountValues</a>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="classPredictionDataset.html#a5a2d75a4affa2b76dbb631f2f79c217e">PredictionDataset</a> (<a class="code" href="classMultiSet.html">MultiSet</a> *preMeasurement, <a class="code" href="classMultiSet.html">MultiSet</a> *postMeasurement);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="classPredictionDataset.html#a9a30fa528fa4a2507a1a0a5fe8c74269">~PredictionDataset</a> ();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPredictionDataset.html#ae2d6c192122c2f9f7a1b3232b486d86c">addTrainValue</a> (<a class="code" href="classMultiSubset.html">MultiSubset</a> *preValue, <a class="code" href="classMultiSubset.html">MultiSubset</a> *postValue, <span class="keywordtype">int</span> count = 1);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPredictionDataset.html#a097fc45e897544af6b5215a26fa41527">addTestValue</a> (<a class="code" href="classMultiSubset.html">MultiSubset</a> *preValue, <a class="code" href="classMultiSubset.html">MultiSubset</a> *postValue, <span class="keywordtype">int</span> count = 1);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPredictionDataset.html#ae2d6c192122c2f9f7a1b3232b486d86c">addTrainValue</a> (<span class="keywordtype">int</span> preIndex, <span class="keywordtype">int</span> postIndex, <span class="keywordtype">int</span> count = 1);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPredictionDataset.html#a097fc45e897544af6b5215a26fa41527">addTestValue</a> (<span class="keywordtype">int</span> preIndex, <span class="keywordtype">int</span> postIndex, <span class="keywordtype">int</span> count = 1);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classMultiSubset_html"><div class="ttname"><a href="classMultiSubset.html">MultiSubset</a></div><div class="ttdef"><b>Definition:</b> multi_set.hpp:132</div></div>
+<div class="ttc" id="classPredictionDataset_html_a5a2d75a4affa2b76dbb631f2f79c217e"><div class="ttname"><a href="classPredictionDataset.html#a5a2d75a4affa2b76dbb631f2f79c217e">PredictionDataset::PredictionDataset</a></div><div class="ttdeci">PredictionDataset(MultiSet *preMeasurement, MultiSet *postMeasurement)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> prediction_dataset.cpp:42</div></div>
 <div class="ttc" id="multi__set_8hpp_html"><div class="ttname"><a href="multi__set_8hpp.html">multi_set.hpp</a></div><div class="ttdoc">Classes to represent multi-dimensional sets of elements and their algebraic structure (feasible subse...</div></div>
-<div class="ttc" id="classPredictionDataset_html"><div class="ttname"><a href="classPredictionDataset.html">PredictionDataset</a></div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:43</div></div>
-<div class="ttc" id="classMultiSet_html"><div class="ttname"><a href="classMultiSet.html">MultiSet</a></div><div class="ttdoc">A multi-dimensional set of elements based on the Cartesian product of several uni-dimensional sets (U...</div><div class="ttdef"><b>Definition:</b> multi_set.hpp:65</div></div>
+<div class="ttc" id="classPredictionDataset_html_ab6ed50cd17878109b9a41ebb6db172ea"><div class="ttname"><a href="classPredictionDataset.html#ab6ed50cd17878109b9a41ebb6db172ea">PredictionDataset::testPostValues</a></div><div class="ttdeci">std::vector&lt; MultiSubset * &gt; * testPostValues</div><div class="ttdoc">A vector of pre-observations that are used to test the predictor. </div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:67</div></div>
+<div class="ttc" id="classPredictionDataset_html_a22343b4582412434376af66cb42d2d50"><div class="ttname"><a href="classPredictionDataset.html#a22343b4582412434376af66cb42d2d50">PredictionDataset::postMultiSet</a></div><div class="ttdeci">MultiSet * postMultiSet</div><div class="ttdoc">The pre-measurement modelled as a structured multi-dimensional set of elements (the possible observat...</div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:60</div></div>
+<div class="ttc" id="classPredictionDataset_html_af4fdcf7cfd236a99a73f18d630199291"><div class="ttname"><a href="classPredictionDataset.html#af4fdcf7cfd236a99a73f18d630199291">PredictionDataset::trainCountValues</a></div><div class="ttdeci">std::vector&lt; int &gt; * trainCountValues</div><div class="ttdoc">A vector of post-observations that are used to train the predictor. </div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:64</div></div>
+<div class="ttc" id="classPredictionDataset_html_ae2d6c192122c2f9f7a1b3232b486d86c"><div class="ttname"><a href="classPredictionDataset.html#ae2d6c192122c2f9f7a1b3232b486d86c">PredictionDataset::addTrainValue</a></div><div class="ttdeci">void addTrainValue(MultiSubset *preValue, MultiSubset *postValue, int count=1)</div><div class="ttdoc">Add a couple of (pre and post) observations to the train set. </div><div class="ttdef"><b>Definition:</b> prediction_dataset.cpp:69</div></div>
+<div class="ttc" id="classPredictionDataset_html"><div class="ttname"><a href="classPredictionDataset.html">PredictionDataset</a></div><div class="ttdoc">Class to represent a data set for the prediction of a post-measurement from the knowledge of a pre-me...</div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:55</div></div>
+<div class="ttc" id="classPredictionDataset_html_a9a30fa528fa4a2507a1a0a5fe8c74269"><div class="ttname"><a href="classPredictionDataset.html#a9a30fa528fa4a2507a1a0a5fe8c74269">PredictionDataset::~PredictionDataset</a></div><div class="ttdeci">~PredictionDataset()</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> prediction_dataset.cpp:57</div></div>
+<div class="ttc" id="classPredictionDataset_html_af09491db0c4267fa086bf640c4740483"><div class="ttname"><a href="classPredictionDataset.html#af09491db0c4267fa086bf640c4740483">PredictionDataset::trainPreValues</a></div><div class="ttdeci">std::vector&lt; MultiSubset * &gt; * trainPreValues</div><div class="ttdoc">The post-measurement modelled as a structured multi-dimensional set of elements (the possible observa...</div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:62</div></div>
+<div class="ttc" id="classPredictionDataset_html_a30e9419638339a7497f3d234780b2c20"><div class="ttname"><a href="classPredictionDataset.html#a30e9419638339a7497f3d234780b2c20">PredictionDataset::trainPostValues</a></div><div class="ttdeci">std::vector&lt; MultiSubset * &gt; * trainPostValues</div><div class="ttdoc">A vector of pre-observations that are used to train the predictor. </div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:63</div></div>
+<div class="ttc" id="classPredictionDataset_html_a7fe2eccbdae1cee136f5864b660c31ee"><div class="ttname"><a href="classPredictionDataset.html#a7fe2eccbdae1cee136f5864b660c31ee">PredictionDataset::testCountValues</a></div><div class="ttdeci">std::vector&lt; int &gt; * testCountValues</div><div class="ttdoc">A vector of post-observations that are used to test the predictor. </div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:68</div></div>
+<div class="ttc" id="classPredictionDataset_html_a097fc45e897544af6b5215a26fa41527"><div class="ttname"><a href="classPredictionDataset.html#a097fc45e897544af6b5215a26fa41527">PredictionDataset::addTestValue</a></div><div class="ttdeci">void addTestValue(MultiSubset *preValue, MultiSubset *postValue, int count=1)</div><div class="ttdoc">Add a couple of (pre and post) observations to the test set. </div><div class="ttdef"><b>Definition:</b> prediction_dataset.cpp:77</div></div>
+<div class="ttc" id="classMultiSet_html"><div class="ttname"><a href="classMultiSet.html">MultiSet</a></div><div class="ttdoc">A multi-dimensional set of elements based on the Cartesian product of several uni-dimensional sets (U...</div><div class="ttdef"><b>Definition:</b> multi_set.hpp:66</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 16:56:47 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 9 2015 18:43:51 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

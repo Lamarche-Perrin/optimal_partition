@@ -40,27 +40,82 @@
 
 #include "multi_set.hpp"
 
-class PredictionDataset {
-public:
-	MultiSet *preMultiSet;
-	MultiSet *postMultiSet;
+/*!
+ * \file prediction_dataset.hpp
+ * \brief Class to represent a data set for the prediction of a post-measurement from the knowledge of a pre-measurement (composed of a train set and a test set)
+ * \author Robin Lamarche-Perrin
+ * \date 06/11/2015
+ */
 
-	std::vector<MultiSubset*> *trainPreValues;
-	std::vector<MultiSubset*> *trainPostValues;
+
+/*!
+ * \class PredictionDataset
+ * \brief Class to represent a data set for the prediction of a post-measurement from the knowledge of a pre-measurement (composed of a train set and a test set)
+ */
+class PredictionDataset {
+
+public:
+	
+	MultiSet *preMultiSet; /** \brief The pre-measurement modelled as a structured multi-dimensional set of elements (the possible observation values) */
+	MultiSet *postMultiSet; /** \brief The post-measurement modelled as a structured multi-dimensional set of elements (the possible observation values) */
+
+	std::vector<MultiSubset*> *trainPreValues; /** \brief A vector of pre-observations that are used to train the predictor */
+	std::vector<MultiSubset*> *trainPostValues; /** \brief A vector of post-observations that are used to train the predictor */
 	std::vector<int> *trainCountValues;
 
-	std::vector<MultiSubset*> *testPreValues;
-	std::vector<MultiSubset*> *testPostValues;
+	std::vector<MultiSubset*> *testPreValues; /** \brief A vector of pre-observations that are used to test the predictor */
+	std::vector<MultiSubset*> *testPostValues; /** \brief A vector of post-observations that are used to test the predictor */
 	std::vector<int> *testCountValues;
+
+	/*!
+	 * \brief Constructor
+	 * \param preMeasurement : The pre-measurement modelled as a structured multi-dimensional set of elements (the possible observation values)
+	 * \param postMeasurement : The post-measurement modelled as a structured multi-dimensional set of elements (the possible observation values)
+	 */
+	PredictionDataset (MultiSet *preMeasurement, MultiSet *postMeasurement);
+
 	
-	PredictionDataset (MultiSet *preM, MultiSet *post);
+	/*!
+	 * \brief Destructor
+	 */
 	~PredictionDataset ();
 
+	
+	/*!
+	 * \brief Add a couple of (pre and post) observations to the train set
+	 * \param preValue : A pointer to the feasible subset that have been pre-observed in the multi-dimensional set representing the pre-measurement. It should always be an element of the set, that is an atomic feasible subset
+	 * \param preValue : A pointer to the feasible subset that have been post-observed in the multi-dimensional set representing the pre-measurement. It should always be an element of the set, that is an atomic feasible subset
+	 * \param count : The number of times the couple has been observed
+	 */
 	void addTrainValue (MultiSubset *preValue, MultiSubset *postValue, int count = 1);
+
+	
+	/*!
+	 * \brief Add a couple of (pre and post) observations to the test set
+	 * \param preValue : A pointer to the feasible subset that has been pre-observed in the multi-dimensional set representing the pre-measurement. It should always be an element of the set, that is an atomic feasible subset
+	 * \param preValue : A pointer to the feasible subset that has been post-observed in the multi-dimensional set representing the pre-measurement. It should always be an element of the set, that is an atomic feasible subset
+	 * \param count : The number of times the couple has been observed
+	 */
 	void addTestValue (MultiSubset *preValue, MultiSubset *postValue, int count = 1);
 
-	void addTrainValue (int preNum, int postNum, int count = 1);
-	void addTestValue (int preNum, int postNum, int count = 1);
+	
+	/*!
+	 * \brief Add a couple of (pre and post) observations to the train set <b>in the case of one-dimensional measurements</b>
+	 * \param preIndex : The index of the element that has been pre-observed in the one-dimensional set representing the pre-measurement
+	 * \param postIndex : The index of the element that has been post-observed in the one-dimensional set representing the pre-measurement
+	 * \param count : The number of times the couple has been observed
+	 */
+	void addTrainValue (int preIndex, int postIndex, int count = 1);
+
+	
+	/*!
+	 * \brief Add a couple of (pre and post) observations to the test set <b>in the case of one-dimensional measurements</b>
+	 * \param preIndex : The index of the element that has been pre-observed in the one-dimensional set representing the pre-measurement
+	 * \param postIndex : The index of the element that has been post-observed in the one-dimensional set representing the pre-measurement
+	 * \param count : The number of times the couple has been observed
+	 */
+	void addTestValue (int preIndex, int postIndex, int count = 1);
+
 };
 
 #endif

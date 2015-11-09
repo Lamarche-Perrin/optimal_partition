@@ -84,12 +84,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classLogarithmicScore-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">LogarithmicScore Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class to define and compute the logarithmic score function in the case of point prediction.  
+ <a href="classLogarithmicScore.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="logarithmic__score_8hpp_source.html">logarithmic_score.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for LogarithmicScore:</div>
 <div class="dyncontent">
@@ -102,9 +106,13 @@ Inheritance diagram for LogarithmicScore:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4fba67dfac53087dbfde7cb825501c97"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4fba67dfac53087dbfde7cb825501c97"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>LogarithmicScore</b> (<a class="el" href="classPredictionDataset.html">PredictionDataset</a> *dataset, int prior=0)</td></tr>
+<tr class="memitem:a4fba67dfac53087dbfde7cb825501c97"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogarithmicScore.html#a4fba67dfac53087dbfde7cb825501c97">LogarithmicScore</a> (<a class="el" href="classPredictionDataset.html">PredictionDataset</a> *dataset, int prior=0)</td></tr>
+<tr class="memdesc:a4fba67dfac53087dbfde7cb825501c97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a4fba67dfac53087dbfde7cb825501c97">More...</a><br/></td></tr>
 <tr class="separator:a4fba67dfac53087dbfde7cb825501c97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08b425a72eec8a2722bb2f4a9b0486ff"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a08b425a72eec8a2722bb2f4a9b0486ff"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogarithmicScore.html#a08b425a72eec8a2722bb2f4a9b0486ff">~LogarithmicScore</a> ()</td></tr>
+<tr class="memdesc:a08b425a72eec8a2722bb2f4a9b0486ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:a08b425a72eec8a2722bb2f4a9b0486ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e3c601e96541b3156b02d84ce6b754e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7e3c601e96541b3156b02d84ce6b754e"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classLogarithmicScore.html#a7e3c601e96541b3156b02d84ce6b754e">setRandom</a> ()</td></tr>
 <tr class="memdesc:a7e3c601e96541b3156b02d84ce6b754e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly set the initial data from which the objective function is computed. <br/></td></tr>
@@ -131,39 +139,59 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>getUnitDistance</b>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>getIntermediaryUnit</b> (double uMin, double uMax)</td></tr>
 <tr class="separator:a40576f47008aa6ab69d95535c0a5fa79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classObjectiveFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classObjectiveFunction')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classObjectiveFunction.html">ObjectiveFunction</a></td></tr>
-<tr class="memitem:a227885b9e68935571bf25d36689f029a inherit pub_methods_classObjectiveFunction"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a227885b9e68935571bf25d36689f029a"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a227885b9e68935571bf25d36689f029a">ObjectiveFunction</a> ()</td></tr>
-<tr class="memdesc:a227885b9e68935571bf25d36689f029a inherit pub_methods_classObjectiveFunction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br/></td></tr>
+<tr class="memitem:a227885b9e68935571bf25d36689f029a inherit pub_methods_classObjectiveFunction"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a227885b9e68935571bf25d36689f029a">ObjectiveFunction</a> ()</td></tr>
+<tr class="memdesc:a227885b9e68935571bf25d36689f029a inherit pub_methods_classObjectiveFunction"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if one deals with a maximisation problem, and false if one deals with a minimisation problem.  <a href="#a227885b9e68935571bf25d36689f029a">More...</a><br/></td></tr>
 <tr class="separator:a227885b9e68935571bf25d36689f029a inherit pub_methods_classObjectiveFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a877b09fea55318719b9f37661ecdedf8 inherit pub_methods_classObjectiveFunction"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a877b09fea55318719b9f37661ecdedf8"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a877b09fea55318719b9f37661ecdedf8">~ObjectiveFunction</a> ()</td></tr>
 <tr class="memdesc:a877b09fea55318719b9f37661ecdedf8 inherit pub_methods_classObjectiveFunction"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
 <tr class="separator:a877b09fea55318719b9f37661ecdedf8 inherit pub_methods_classObjectiveFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:afc0e37fc64d6dc1742120ea6b940fd0f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc0e37fc64d6dc1742120ea6b940fd0f"></a>
-<a class="el" href="classPredictionDataset.html">PredictionDataset</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>dataset</b></td></tr>
-<tr class="separator:afc0e37fc64d6dc1742120ea6b940fd0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab6a0f495948bbb7d877064baef838993"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6a0f495948bbb7d877064baef838993"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>preSize</b></td></tr>
-<tr class="separator:ab6a0f495948bbb7d877064baef838993"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:addfd4b0d086013c199a424628450f64b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addfd4b0d086013c199a424628450f64b"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>postSize</b></td></tr>
-<tr class="separator:addfd4b0d086013c199a424628450f64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a801f0da7f5ba568bf727387144cac392"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a801f0da7f5ba568bf727387144cac392"></a>
-int *&#160;</td><td class="memItemRight" valign="bottom"><b>trainCountArray</b></td></tr>
-<tr class="separator:a801f0da7f5ba568bf727387144cac392"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace0a8c93c27c83a3f209b1faf7fdb24e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ace0a8c93c27c83a3f209b1faf7fdb24e"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>trainCountTotal</b></td></tr>
-<tr class="separator:ace0a8c93c27c83a3f209b1faf7fdb24e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a221889c0e7f4c3a1ba3fd80b1f3603"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0a221889c0e7f4c3a1ba3fd80b1f3603"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>prior</b></td></tr>
-<tr class="separator:a0a221889c0e7f4c3a1ba3fd80b1f3603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_attribs_classObjectiveFunction"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classObjectiveFunction')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classObjectiveFunction.html">ObjectiveFunction</a></td></tr>
-<tr class="memitem:a325f3c8284ebfac0a170e0b8143dd7b5 inherit pub_attribs_classObjectiveFunction"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObjectiveFunction.html#a325f3c8284ebfac0a170e0b8143dd7b5">maximize</a></td></tr>
+<tr class="memitem:a325f3c8284ebfac0a170e0b8143dd7b5 inherit pub_attribs_classObjectiveFunction"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a325f3c8284ebfac0a170e0b8143dd7b5"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>maximize</b></td></tr>
 <tr class="separator:a325f3c8284ebfac0a170e0b8143dd7b5 inherit pub_attribs_classObjectiveFunction"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class to define and compute the logarithmic score function in the case of point prediction. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a4fba67dfac53087dbfde7cb825501c97"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LogarithmicScore::LogarithmicScore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classPredictionDataset.html">PredictionDataset</a> *&#160;</td>
+          <td class="paramname"><em>dataset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prior</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dataset</td><td>: The prediction data set that is use to evaluate the score function (from a train set and a test set both containing pre-observations and post-observations) </td></tr>
+    <tr><td class="paramname">prior</td><td>: A prior giving the number of times each couple of (pre and post) observations has been observed in addition to the train set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/lamarche/programming/optimal_partition/src/<a class="el" href="logarithmic__score_8hpp_source.html">logarithmic_score.hpp</a></li>
 <li>/home/lamarche/programming/optimal_partition/src/logarithmic_score.cpp</li>
@@ -171,7 +199,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>prior</b></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 16:56:49 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 9 2015 18:43:56 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

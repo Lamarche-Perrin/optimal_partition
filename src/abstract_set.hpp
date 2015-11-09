@@ -59,7 +59,7 @@
 class AbstractSet
 {
 public:
-	ObjectiveFunction *objective; /*!< The objective that one wants to optimise (assumed to be decomposable: the objective of a partition is function of the objectives of its parts)*/
+	ObjectiveFunction *objective; /** \brief The objective that one wants to optimise (assumed to be decomposable: the objective of a partition is function of the objectives of its parts)*/
 
 	/*!
      * \brief Destructor

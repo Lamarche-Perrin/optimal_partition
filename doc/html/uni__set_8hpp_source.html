@@ -127,132 +127,131 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#ifndef INCLUDE_UNI_SET</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INCLUDE_UNI_SET</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#include &quot;bi_set.hpp&quot;</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multi__set_8hpp.html">multi_set.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">class </span><a class="code" href="classBiSet.html">BiSet</a>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">class </span><a class="code" href="classBiSubset.html">BiSubset</a>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keyword">class </span><a class="code" href="classMultiSet.html">MultiSet</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">class </span><a class="code" href="classMultiSubset.html">MultiSubset</a>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">class </span><a class="code" href="classUniSubset.html">UniSubset</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">typedef</span> std::list&lt;UniSubset*&gt; UniSubsetSet;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keyword">typedef</span> std::list&lt;UniSubsetSet*&gt; UniSubsetSetSet;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="keyword">typedef</span> std::list&lt;int&gt; IndexSet;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classUniSet.html">   69</a></span>&#160;<span class="keyword">class </span><a class="code" href="classUniSet.html">UniSet</a></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;{</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classBiSet.html">BiSet</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classBiSubset.html">BiSubset</a>;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classMultiSet.html">MultiSet</a>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classMultiSubset.html">MultiSubset</a>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <a class="code" href="classUniSet.html#a7e7a24e0c074fff21442f8ac9c5cd6aa">UniSet</a> (<a class="code" href="classUniSubset.html">UniSubset</a> *<a class="code" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">firstUniSubset</a>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="classUniSet.html#a702d623676d4b30b832bdf17c1768fbe">~UniSet</a> ();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSet.html#a0ce5a8030b92cbbf2a810eb03bf65846">buildDataStructure</a> ();</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSet.html#a6a7601a93553783b443f4b4c65e3b1e8">print</a> ();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="classUniSet.html#addac67921c058dc9ffa2074b3d59151f">  100</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classUniSet.html#addac67921c058dc9ffa2074b3d59151f">atomicUniSubsetNumber</a>; </div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">  101</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">uniSubsetNumber</a>; </div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3">  103</a></span>&#160;    <a class="code" href="classUniSubset.html">UniSubset</a> **<a class="code" href="classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3">atomicUniSubsetArray</a>; </div>
-<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="classUniSet.html#a154ae422d9f248c8b50f39d575f9b3c0">  104</a></span>&#160;    <a class="code" href="classUniSubset.html">UniSubset</a> **<a class="code" href="classUniSet.html#a154ae422d9f248c8b50f39d575f9b3c0">uniSubsetArray</a>; </div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">  105</a></span>&#160;    <a class="code" href="classUniSubset.html">UniSubset</a> *<a class="code" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">firstUniSubset</a>; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSet.html#a140f02dfb3f186cbc49fe28d238aa2e1">initReached</a> ();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;};</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classOrderedUniSet.html">  118</a></span>&#160;<span class="keyword">class </span><a class="code" href="classOrderedUniSet.html">OrderedUniSet</a>: <span class="keyword">public</span> <a class="code" href="classUniSet.html">UniSet</a></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;{</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="classOrderedUniSet.html#ae0c3867ab74ade7469492b48742adb2a">  121</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classOrderedUniSet.html#ae0c3867ab74ade7469492b48742adb2a">size</a>; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <a class="code" href="classOrderedUniSet.html#ac09b90d14eda5aed31fcb11114591ef5">OrderedUniSet</a> (<span class="keywordtype">int</span> <a class="code" href="classOrderedUniSet.html#ae0c3867ab74ade7469492b48742adb2a">size</a>);</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">int</span> getIndex (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;};</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="classHierarchicalUniSet.html">  138</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHierarchicalUniSet.html">HierarchicalUniSet</a>: <span class="keyword">public</span> <a class="code" href="classUniSet.html">UniSet</a></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;{</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="classHierarchicalUniSet.html#a3b87358df90ea24612e82df44c4eac04">  141</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classHierarchicalUniSet.html#a3b87358df90ea24612e82df44c4eac04">depth</a>; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <a class="code" href="classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0">HierarchicalUniSet</a> (<span class="keywordtype">int</span> <a class="code" href="classHierarchicalUniSet.html#a3b87358df90ea24612e82df44c4eac04">depth</a>);</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">int</span> buildHierarchy (<a class="code" href="classUniSubset.html">UniSubset</a> *uniSubset, <span class="keywordtype">int</span> <a class="code" href="classHierarchicalUniSet.html#a3b87358df90ea24612e82df44c4eac04">depth</a>, <span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;};</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="classUniSubset.html">  158</a></span>&#160;<span class="keyword">class </span><a class="code" href="classUniSubset.html">UniSubset</a></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classUniSet.html">UniSet</a>;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="classUniSet.html">UniSet</a> *uniSet; <span class="comment">/*&lt;! Pointer to the set of elements to which this subset is associated */</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">bool</span> isAtomic; <span class="comment">/*&lt;! `true` if and only if this subset is actually an element of the associated set (i.e., an atomic feasible subset) */</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">int</span> atomicNum; <span class="comment">/*&lt;! If this subset is an element (i.e., an atomic feasible subset), identifier of this subset among all the elements of the associated set; if not, always equal to `-1` */</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">int</span> num; <span class="comment">/*&lt;! Identifier of this subset among all the feasible subsets of the associated set */</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    IndexSet *indexSet; <span class="comment">/*&lt;! Indexes of all the elements in this subset (only one index / one element in the case of an atomic subset) */</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    UniSubsetSetSet *uniSubsetSetSet; <span class="comment">/*&lt;! Set of the refinements of this subset, that is the set of all partitions of this subset that are made of other feasible subsets; this hence properly defines the algebraic structure */</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="classUniSubset.html#a07ff3af1804ad82899583c0207b233dc">UniSubset</a> (<span class="keywordtype">int</span> index = -1);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <a class="code" href="classUniSubset.html#a84519a983473e56ad479d29baff45a34">~UniSubset</a> ();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSubset.html#a1be7871c599958a13258e51b01832c25">print</a> ();</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    </div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSubset.html#aea0db49838de9813249152cd3128a47e">printIndexSet</a> (<span class="keywordtype">bool</span> endl = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSubset.html#a7000de6419fa5cdd69b577dbdb6f4b59">addUniSubsetSet</a> (UniSubsetSet *uniSubsetSet);</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordtype">bool</span> reached; <span class="comment">/*&lt;! Boolean value used by external methods to run through the algebraic structure in a recursive fashion, without considering twice the same subset */</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    <span class="keywordtype">void</span> buildDataStructure ();</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;};</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classMultiSubset_html"><div class="ttname"><a href="classMultiSubset.html">MultiSubset</a></div><div class="ttdef"><b>Definition:</b> multi_set.hpp:125</div></div>
-<div class="ttc" id="classUniSet_html_a140f02dfb3f186cbc49fe28d238aa2e1"><div class="ttname"><a href="classUniSet.html#a140f02dfb3f186cbc49fe28d238aa2e1">UniSet::initReached</a></div><div class="ttdeci">void initReached()</div><div class="ttdoc">Initialise the reached field of all feasible subsets to false (used by other methods to run through t...</div><div class="ttdef"><b>Definition:</b> uni_set.cpp:112</div></div>
-<div class="ttc" id="classUniSet_html_addac67921c058dc9ffa2074b3d59151f"><div class="ttname"><a href="classUniSet.html#addac67921c058dc9ffa2074b3d59151f">UniSet::atomicUniSubsetNumber</a></div><div class="ttdeci">int atomicUniSubsetNumber</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:100</div></div>
-<div class="ttc" id="classUniSubset_html_a07ff3af1804ad82899583c0207b233dc"><div class="ttname"><a href="classUniSubset.html#a07ff3af1804ad82899583c0207b233dc">UniSubset::UniSubset</a></div><div class="ttdeci">UniSubset(int index=-1)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:200</div></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#include &quot;bi_set.hpp&quot;</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="multi__set_8hpp.html">multi_set.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">class </span><a class="code" href="classBiSet.html">BiSet</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">class </span><a class="code" href="classBiSubset.html">BiSubset</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">class </span><a class="code" href="classMultiSet.html">MultiSet</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keyword">class </span><a class="code" href="classMultiSubset.html">MultiSubset</a>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">class </span><a class="code" href="classUniSubset.html">UniSubset</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">typedef</span> std::list&lt;UniSubset*&gt; UniSubsetSet;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">typedef</span> std::list&lt;UniSubsetSet*&gt; UniSubsetSetSet;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">typedef</span> std::list&lt;int&gt; IndexSet;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="classUniSet.html">   67</a></span>&#160;<span class="keyword">class </span><a class="code" href="classUniSet.html">UniSet</a></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classBiSet.html">BiSet</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classBiSubset.html">BiSubset</a>;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classMultiSet.html">MultiSet</a>;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classMultiSubset.html">MultiSubset</a>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="classUniSet.html#a7e7a24e0c074fff21442f8ac9c5cd6aa">UniSet</a> (<a class="code" href="classUniSubset.html">UniSubset</a> *<a class="code" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">firstUniSubset</a>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="classUniSet.html#a702d623676d4b30b832bdf17c1768fbe">~UniSet</a> ();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSet.html#a0ce5a8030b92cbbf2a810eb03bf65846">buildDataStructure</a> ();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSet.html#a6a7601a93553783b443f4b4c65e3b1e8">print</a> ();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">int</span> atomicUniSubsetNumber; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">   99</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">uniSubsetNumber</a>; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3">  101</a></span>&#160;    <a class="code" href="classUniSubset.html">UniSubset</a> **<a class="code" href="classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3">atomicUniSubsetArray</a>; </div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="classUniSet.html#a154ae422d9f248c8b50f39d575f9b3c0">  102</a></span>&#160;    <a class="code" href="classUniSubset.html">UniSubset</a> **<a class="code" href="classUniSet.html#a154ae422d9f248c8b50f39d575f9b3c0">uniSubsetArray</a>; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">  103</a></span>&#160;    <a class="code" href="classUniSubset.html">UniSubset</a> *<a class="code" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">firstUniSubset</a>; </div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSet.html#a140f02dfb3f186cbc49fe28d238aa2e1">initReached</a> ();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classOrderedUniSet.html">  116</a></span>&#160;<span class="keyword">class </span><a class="code" href="classOrderedUniSet.html">OrderedUniSet</a>: <span class="keyword">public</span> <a class="code" href="classUniSet.html">UniSet</a></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">int</span> size; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <a class="code" href="classOrderedUniSet.html#ac09b90d14eda5aed31fcb11114591ef5">OrderedUniSet</a> (<span class="keywordtype">int</span> size);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">int</span> getIndex (<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;};</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="classHierarchicalUniSet.html">  136</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHierarchicalUniSet.html">HierarchicalUniSet</a>: <span class="keyword">public</span> <a class="code" href="classUniSet.html">UniSet</a></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;{</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">int</span> depth; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0">HierarchicalUniSet</a> (<span class="keywordtype">int</span> depth);</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">int</span> buildHierarchy (<a class="code" href="classUniSubset.html">UniSubset</a> *uniSubset, <span class="keywordtype">int</span> depth, <span class="keywordtype">int</span> index);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;};</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="classUniSubset.html">  156</a></span>&#160;<span class="keyword">class </span><a class="code" href="classUniSubset.html">UniSubset</a></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keyword">friend</span> <a class="code" href="classUniSet.html">UniSet</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="classUniSet.html">UniSet</a> *uniSet; </div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="classUniSubset.html#a33f088ffb21e664508cfbfb75341513a">  161</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classUniSubset.html#a33f088ffb21e664508cfbfb75341513a">isAtomic</a>; </div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classUniSubset.html#af111f69a265de0069e5705ce2c222f45">  162</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classUniSubset.html#af111f69a265de0069e5705ce2c222f45">atomicNum</a>; </div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classUniSubset.html#a0b5a528a9edcc11061baff6ca4ce2657">  163</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classUniSubset.html#a0b5a528a9edcc11061baff6ca4ce2657">num</a>; </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classUniSubset.html#a32f7ed1b58639b5184c7c0321b08e6a1">  165</a></span>&#160;    IndexSet *<a class="code" href="classUniSubset.html#a32f7ed1b58639b5184c7c0321b08e6a1">indexSet</a>; </div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="classUniSubset.html#a00491b5c614c9f1a548bec0a9e8aad4f">  166</a></span>&#160;    UniSubsetSetSet *<a class="code" href="classUniSubset.html#a00491b5c614c9f1a548bec0a9e8aad4f">uniSubsetSetSet</a>; </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classUniSubset.html#a07ff3af1804ad82899583c0207b233dc">UniSubset</a> (<span class="keywordtype">int</span> index = -1);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <a class="code" href="classUniSubset.html#a84519a983473e56ad479d29baff45a34">~UniSubset</a> ();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSubset.html#a1be7871c599958a13258e51b01832c25">print</a> ();</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    </div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSubset.html#aea0db49838de9813249152cd3128a47e">printIndexSet</a> (<span class="keywordtype">bool</span> endl = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classUniSubset.html#a7000de6419fa5cdd69b577dbdb6f4b59">addUniSubsetSet</a> (UniSubsetSet *uniSubsetSet);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordtype">bool</span> reached; </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordtype">void</span> buildDataStructure ();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;};</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classMultiSubset_html"><div class="ttname"><a href="classMultiSubset.html">MultiSubset</a></div><div class="ttdef"><b>Definition:</b> multi_set.hpp:132</div></div>
+<div class="ttc" id="classUniSet_html_a140f02dfb3f186cbc49fe28d238aa2e1"><div class="ttname"><a href="classUniSet.html#a140f02dfb3f186cbc49fe28d238aa2e1">UniSet::initReached</a></div><div class="ttdeci">void initReached()</div><div class="ttdoc">Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subse...</div><div class="ttdef"><b>Definition:</b> uni_set.cpp:112</div></div>
+<div class="ttc" id="classUniSubset_html_a07ff3af1804ad82899583c0207b233dc"><div class="ttname"><a href="classUniSubset.html#a07ff3af1804ad82899583c0207b233dc">UniSubset::UniSubset</a></div><div class="ttdeci">UniSubset(int index=-1)</div><div class="ttdoc">Set of the refinements of this subset, that is the set of all partitions of this subset that are made...</div><div class="ttdef"><b>Definition:</b> uni_set.cpp:200</div></div>
 <div class="ttc" id="classUniSet_html_a702d623676d4b30b832bdf17c1768fbe"><div class="ttname"><a href="classUniSet.html#a702d623676d4b30b832bdf17c1768fbe">UniSet::~UniSet</a></div><div class="ttdeci">~UniSet()</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:55</div></div>
 <div class="ttc" id="multi__set_8hpp_html"><div class="ttname"><a href="multi__set_8hpp.html">multi_set.hpp</a></div><div class="ttdoc">Classes to represent multi-dimensional sets of elements and their algebraic structure (feasible subse...</div></div>
-<div class="ttc" id="classUniSet_html_a159ec0413efd05616c2f2445b7d8b2b5"><div class="ttname"><a href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">UniSet::uniSubsetNumber</a></div><div class="ttdeci">int uniSubsetNumber</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:101</div></div>
+<div class="ttc" id="classUniSet_html_a159ec0413efd05616c2f2445b7d8b2b5"><div class="ttname"><a href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">UniSet::uniSubsetNumber</a></div><div class="ttdeci">int uniSubsetNumber</div><div class="ttdoc">Number of elements (i.e., atomic feasible subsets) </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:99</div></div>
 <div class="ttc" id="classBiSet_html"><div class="ttname"><a href="classBiSet.html">BiSet</a></div><div class="ttdef"><b>Definition:</b> bi_set.hpp:53</div></div>
 <div class="ttc" id="classUniSet_html_a6a7601a93553783b443f4b4c65e3b1e8"><div class="ttname"><a href="classUniSet.html#a6a7601a93553783b443f4b4c65e3b1e8">UniSet::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Print the current state of the set and its algebraic structure. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:118</div></div>
+<div class="ttc" id="classUniSubset_html_a32f7ed1b58639b5184c7c0321b08e6a1"><div class="ttname"><a href="classUniSubset.html#a32f7ed1b58639b5184c7c0321b08e6a1">UniSubset::indexSet</a></div><div class="ttdeci">IndexSet * indexSet</div><div class="ttdoc">Identifier of this subset among all the feasible subsets of the associated set. </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:165</div></div>
 <div class="ttc" id="classUniSubset_html_a84519a983473e56ad479d29baff45a34"><div class="ttname"><a href="classUniSubset.html#a84519a983473e56ad479d29baff45a34">UniSubset::~UniSubset</a></div><div class="ttdeci">~UniSubset()</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:217</div></div>
 <div class="ttc" id="classBiSubset_html"><div class="ttname"><a href="classBiSubset.html">BiSubset</a></div><div class="ttdef"><b>Definition:</b> bi_set.hpp:84</div></div>
-<div class="ttc" id="classOrderedUniSet_html_ae0c3867ab74ade7469492b48742adb2a"><div class="ttname"><a href="classOrderedUniSet.html#ae0c3867ab74ade7469492b48742adb2a">OrderedUniSet::size</a></div><div class="ttdeci">int size</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:121</div></div>
-<div class="ttc" id="classUniSet_html"><div class="ttname"><a href="classUniSet.html">UniSet</a></div><div class="ttdoc">A uni-dimensional set of elements and its algebraic structure (feasible subsets and feasible refineme...</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:69</div></div>
+<div class="ttc" id="classUniSet_html"><div class="ttname"><a href="classUniSet.html">UniSet</a></div><div class="ttdoc">A uni-dimensional set of elements and its algebraic structure (feasible subsets and feasible refineme...</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:67</div></div>
 <div class="ttc" id="classUniSubset_html_a7000de6419fa5cdd69b577dbdb6f4b59"><div class="ttname"><a href="classUniSubset.html#a7000de6419fa5cdd69b577dbdb6f4b59">UniSubset::addUniSubsetSet</a></div><div class="ttdeci">void addUniSubsetSet(UniSubsetSet *uniSubsetSet)</div><div class="ttdoc">Add a refinement to this subset, that is a partition of this subset that is made of other feasible su...</div><div class="ttdef"><b>Definition:</b> uni_set.cpp:274</div></div>
 <div class="ttc" id="classUniSet_html_a7e7a24e0c074fff21442f8ac9c5cd6aa"><div class="ttname"><a href="classUniSet.html#a7e7a24e0c074fff21442f8ac9c5cd6aa">UniSet::UniSet</a></div><div class="ttdeci">UniSet(UniSubset *firstUniSubset)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:45</div></div>
-<div class="ttc" id="classOrderedUniSet_html"><div class="ttname"><a href="classOrderedUniSet.html">OrderedUniSet</a></div><div class="ttdoc">A uni-dimensional set of elements with a total order, and such that the feasible subsets are all the ...</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:118</div></div>
-<div class="ttc" id="classHierarchicalUniSet_html"><div class="ttname"><a href="classHierarchicalUniSet.html">HierarchicalUniSet</a></div><div class="ttdoc">A uni-dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy. </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:138</div></div>
+<div class="ttc" id="classOrderedUniSet_html"><div class="ttname"><a href="classOrderedUniSet.html">OrderedUniSet</a></div><div class="ttdoc">A uni-dimensional set of elements with a total order, and such that the feasible subsets are all the ...</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:116</div></div>
+<div class="ttc" id="classHierarchicalUniSet_html"><div class="ttname"><a href="classHierarchicalUniSet.html">HierarchicalUniSet</a></div><div class="ttdoc">A uni-dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy. </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:136</div></div>
 <div class="ttc" id="classUniSubset_html_aea0db49838de9813249152cd3128a47e"><div class="ttname"><a href="classUniSubset.html#aea0db49838de9813249152cd3128a47e">UniSubset::printIndexSet</a></div><div class="ttdeci">void printIndexSet(bool endl=false)</div><div class="ttdoc">Print indexes of the elements in this subset. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:260</div></div>
 <div class="ttc" id="classUniSubset_html_a1be7871c599958a13258e51b01832c25"><div class="ttname"><a href="classUniSubset.html#a1be7871c599958a13258e51b01832c25">UniSubset::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Print the actual state of this subset. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:225</div></div>
 <div class="ttc" id="classUniSet_html_a0ce5a8030b92cbbf2a810eb03bf65846"><div class="ttname"><a href="classUniSet.html#a0ce5a8030b92cbbf2a810eb03bf65846">UniSet::buildDataStructure</a></div><div class="ttdeci">void buildDataStructure()</div><div class="ttdoc">Build a proper data structure to represent the uni-dimensional set of elements and its algebraic stru...</div><div class="ttdef"><b>Definition:</b> uni_set.cpp:63</div></div>
-<div class="ttc" id="classOrderedUniSet_html_ac09b90d14eda5aed31fcb11114591ef5"><div class="ttname"><a href="classOrderedUniSet.html#ac09b90d14eda5aed31fcb11114591ef5">OrderedUniSet::OrderedUniSet</a></div><div class="ttdeci">OrderedUniSet(int size)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:126</div></div>
-<div class="ttc" id="classUniSubset_html"><div class="ttname"><a href="classUniSubset.html">UniSubset</a></div><div class="ttdoc">A feasible subset associated to a uni-dimensional set of elements (UniSet) </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:158</div></div>
-<div class="ttc" id="classUniSet_html_a8b2ca464176feddcd8d96c75514eba6b"><div class="ttname"><a href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">UniSet::firstUniSubset</a></div><div class="ttdeci">UniSubset * firstUniSubset</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:105</div></div>
-<div class="ttc" id="classUniSet_html_a154ae422d9f248c8b50f39d575f9b3c0"><div class="ttname"><a href="classUniSet.html#a154ae422d9f248c8b50f39d575f9b3c0">UniSet::uniSubsetArray</a></div><div class="ttdeci">UniSubset ** uniSubsetArray</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:104</div></div>
-<div class="ttc" id="classHierarchicalUniSet_html_ab6bfd19708056eb61eb0cd297a96aef0"><div class="ttname"><a href="classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0">HierarchicalUniSet::HierarchicalUniSet</a></div><div class="ttdeci">HierarchicalUniSet(int depth)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:158</div></div>
-<div class="ttc" id="classHierarchicalUniSet_html_a3b87358df90ea24612e82df44c4eac04"><div class="ttname"><a href="classHierarchicalUniSet.html#a3b87358df90ea24612e82df44c4eac04">HierarchicalUniSet::depth</a></div><div class="ttdeci">int depth</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:141</div></div>
-<div class="ttc" id="classUniSet_html_a16746d02b5503c5d8c62fe4dff46c5b3"><div class="ttname"><a href="classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3">UniSet::atomicUniSubsetArray</a></div><div class="ttdeci">UniSubset ** atomicUniSubsetArray</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:103</div></div>
-<div class="ttc" id="classMultiSet_html"><div class="ttname"><a href="classMultiSet.html">MultiSet</a></div><div class="ttdoc">A multi-dimensional set of elements based on the Cartesian product of several uni-dimensional sets (U...</div><div class="ttdef"><b>Definition:</b> multi_set.hpp:65</div></div>
+<div class="ttc" id="classOrderedUniSet_html_ac09b90d14eda5aed31fcb11114591ef5"><div class="ttname"><a href="classOrderedUniSet.html#ac09b90d14eda5aed31fcb11114591ef5">OrderedUniSet::OrderedUniSet</a></div><div class="ttdeci">OrderedUniSet(int size)</div><div class="ttdoc">Number of ordered elements. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:126</div></div>
+<div class="ttc" id="classUniSubset_html"><div class="ttname"><a href="classUniSubset.html">UniSubset</a></div><div class="ttdoc">A feasible subset associated to a uni-dimensional set of elements (UniSet) </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:156</div></div>
+<div class="ttc" id="classUniSet_html_a8b2ca464176feddcd8d96c75514eba6b"><div class="ttname"><a href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">UniSet::firstUniSubset</a></div><div class="ttdeci">UniSubset * firstUniSubset</div><div class="ttdoc">Array of pointers to all feasible subsets. </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:103</div></div>
+<div class="ttc" id="classUniSet_html_a154ae422d9f248c8b50f39d575f9b3c0"><div class="ttname"><a href="classUniSet.html#a154ae422d9f248c8b50f39d575f9b3c0">UniSet::uniSubsetArray</a></div><div class="ttdeci">UniSubset ** uniSubsetArray</div><div class="ttdoc">Array of pointers to all elements (i.e., atomic feasible subsets) </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:102</div></div>
+<div class="ttc" id="classUniSubset_html_a0b5a528a9edcc11061baff6ca4ce2657"><div class="ttname"><a href="classUniSubset.html#a0b5a528a9edcc11061baff6ca4ce2657">UniSubset::num</a></div><div class="ttdeci">int num</div><div class="ttdoc">If this subset is an element (i.e., an atomic feasible subset), identifier of this subset among all t...</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:163</div></div>
+<div class="ttc" id="classHierarchicalUniSet_html_ab6bfd19708056eb61eb0cd297a96aef0"><div class="ttname"><a href="classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0">HierarchicalUniSet::HierarchicalUniSet</a></div><div class="ttdeci">HierarchicalUniSet(int depth)</div><div class="ttdoc">Depth of the complete binary hierarchy. </div><div class="ttdef"><b>Definition:</b> uni_set.cpp:158</div></div>
+<div class="ttc" id="classUniSet_html_a16746d02b5503c5d8c62fe4dff46c5b3"><div class="ttname"><a href="classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3">UniSet::atomicUniSubsetArray</a></div><div class="ttdeci">UniSubset ** atomicUniSubsetArray</div><div class="ttdoc">Number of feasible subsets. </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:101</div></div>
+<div class="ttc" id="classUniSubset_html_a33f088ffb21e664508cfbfb75341513a"><div class="ttname"><a href="classUniSubset.html#a33f088ffb21e664508cfbfb75341513a">UniSubset::isAtomic</a></div><div class="ttdeci">bool isAtomic</div><div class="ttdoc">Pointer to the set of elements to which this subset is associated. </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:161</div></div>
+<div class="ttc" id="classUniSubset_html_a00491b5c614c9f1a548bec0a9e8aad4f"><div class="ttname"><a href="classUniSubset.html#a00491b5c614c9f1a548bec0a9e8aad4f">UniSubset::uniSubsetSetSet</a></div><div class="ttdeci">UniSubsetSetSet * uniSubsetSetSet</div><div class="ttdoc">Indexes of all the elements in this subset (only one index / one element in the case of an atomic sub...</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:166</div></div>
+<div class="ttc" id="classUniSubset_html_af111f69a265de0069e5705ce2c222f45"><div class="ttname"><a href="classUniSubset.html#af111f69a265de0069e5705ce2c222f45">UniSubset::atomicNum</a></div><div class="ttdeci">int atomicNum</div><div class="ttdoc">true if and only if this subset is actually an element of the associated set (i.e., an atomic feasible subset) </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:162</div></div>
+<div class="ttc" id="classMultiSet_html"><div class="ttname"><a href="classMultiSet.html">MultiSet</a></div><div class="ttdoc">A multi-dimensional set of elements based on the Cartesian product of several uni-dimensional sets (U...</div><div class="ttdef"><b>Definition:</b> multi_set.hpp:66</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 16:56:47 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 9 2015 18:43:51 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

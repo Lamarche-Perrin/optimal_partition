@@ -117,9 +117,8 @@ Inheritance diagram for AbstractSet:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:adc3db5afd11de63639ddd079ef4ecf45"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc3db5afd11de63639ddd079ef4ecf45"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSet.html#adc3db5afd11de63639ddd079ef4ecf45">~AbstractSet</a> ()</td></tr>
-<tr class="memdesc:adc3db5afd11de63639ddd079ef4ecf45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="memitem:adc3db5afd11de63639ddd079ef4ecf45"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSet.html#adc3db5afd11de63639ddd079ef4ecf45">~AbstractSet</a> ()</td></tr>
+<tr class="memdesc:adc3db5afd11de63639ddd079ef4ecf45"><td class="mdescLeft">&#160;</td><td class="mdescRight">The objective that one wants to optimise (assumed to be decomposable: the objective of a partition is function of the objectives of its parts)  <a href="#adc3db5afd11de63639ddd079ef4ecf45">More...</a><br/></td></tr>
 <tr class="separator:adc3db5afd11de63639ddd079ef4ecf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac0cf2d0ef47c49aa0a7ac393691ff7a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac0cf2d0ef47c49aa0a7ac393691ff7a"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSet.html#aac0cf2d0ef47c49aa0a7ac393691ff7a">setRandom</a> ()=0</td></tr>
@@ -129,7 +128,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSet.html#a735009927cfae61baa66bbf7b53f76d5">buildDataStructure</a> ()=0</td></tr>
 <tr class="memdesc:a735009927cfae61baa66bbf7b53f76d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a proper data structure to represent the set and its algebraic constraints (warning: this method should always be called after instantiating and parameterising a set, and before calling any other method, such as <a class="el" href="classAbstractSet.html#ae20f14f4e4209570d26c3614c00e02df" title="Print the set and its algebraic constraints. ">print()</a>, <a class="el" href="classAbstractSet.html#a341945c465179a52da09356a2aa50a8d" title="Compute the value of the objective function for each feasible part (warning: setObjectiveFunction (Ob...">computeObjectiveValues()</a>, computeOptimalPartition (double parameter), etc.) <br/></td></tr>
 <tr class="separator:a735009927cfae61baa66bbf7b53f76d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7aef71679a18ab7965d1098da15b26c2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSet.html#a7aef71679a18ab7965d1098da15b26c2">setObjectiveFunction</a> (<a class="el" href="classObjectiveFunction.html">ObjectiveFunction</a> *<a class="el" href="classAbstractSet.html#a0217447a042827703e1ea7655f0fc099">objective</a>)=0</td></tr>
+<tr class="memitem:a7aef71679a18ab7965d1098da15b26c2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSet.html#a7aef71679a18ab7965d1098da15b26c2">setObjectiveFunction</a> (<a class="el" href="classObjectiveFunction.html">ObjectiveFunction</a> *objective)=0</td></tr>
 <tr class="memdesc:a7aef71679a18ab7965d1098da15b26c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the objective that one wants to optimise.  <a href="#a7aef71679a18ab7965d1098da15b26c2">More...</a><br/></td></tr>
 <tr class="separator:a7aef71679a18ab7965d1098da15b26c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae20f14f4e4209570d26c3614c00e02df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae20f14f4e4209570d26c3614c00e02df"></a>
@@ -169,12 +168,40 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a0217447a042827703e1ea7655f0fc099"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classObjectiveFunction.html">ObjectiveFunction</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAbstractSet.html#a0217447a042827703e1ea7655f0fc099">objective</a></td></tr>
+<tr class="memitem:a0217447a042827703e1ea7655f0fc099"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0217447a042827703e1ea7655f0fc099"></a>
+<a class="el" href="classObjectiveFunction.html">ObjectiveFunction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>objective</b></td></tr>
 <tr class="separator:a0217447a042827703e1ea7655f0fc099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Abstract class defining a set of elements that one wants to partition while optimising some (decomposable) objective and preserving some algebraic constraints (set of feasible parts) </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="adc3db5afd11de63639ddd079ef4ecf45"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">AbstractSet::~AbstractSet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>The objective that one wants to optimise (assumed to be decomposable: the objective of a partition is function of the objectives of its parts) </p>
+<p>Destructor </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="acfc3004f18192f38e32bb7a5a12ec8df"></a>
 <div class="memitem">
 <div class="memproto">
@@ -407,20 +434,6 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a0217447a042827703e1ea7655f0fc099"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classObjectiveFunction.html">ObjectiveFunction</a>* AbstractSet::objective</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>The objective that one wants to optimise (assumed to be decomposable: the objective of a partition is function of the objectives of its parts) </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/lamarche/programming/optimal_partition/src/<a class="el" href="abstract__set_8hpp_source.html">abstract_set.hpp</a></li>
 <li>/home/lamarche/programming/optimal_partition/src/abstract_set.cpp</li>
@@ -428,7 +441,7 @@ Public Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 16:56:47 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 9 2015 18:43:52 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

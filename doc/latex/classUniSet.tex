@@ -33,22 +33,26 @@ Inheritance diagram for Uni\-Set\-:\begin{figure}[H]
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classUniSet_a140f02dfb3f186cbc49fe28d238aa2e1}{void \hyperlink{classUniSet_a140f02dfb3f186cbc49fe28d238aa2e1}{init\-Reached} ()}\label{classUniSet_a140f02dfb3f186cbc49fe28d238aa2e1}
-
-\begin{DoxyCompactList}\small\item\em Initialise the {\ttfamily reached} field of all feasible subsets to {\ttfamily false} (used by other methods to run through the algebraic structure in a recursive fashion without considering twice the same subset) \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{classUniSet_a140f02dfb3f186cbc49fe28d238aa2e1}{init\-Reached} ()
+\begin{DoxyCompactList}\small\item\em Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{classUniSet_addac67921c058dc9ffa2074b3d59151f}{atomic\-Uni\-Subset\-Number}
+\hypertarget{classUniSet_addac67921c058dc9ffa2074b3d59151f}{int {\bfseries atomic\-Uni\-Subset\-Number}}\label{classUniSet_addac67921c058dc9ffa2074b3d59151f}
+
 \item 
-int \hyperlink{classUniSet_a159ec0413efd05616c2f2445b7d8b2b5}{uni\-Subset\-Number}
-\item 
-\hyperlink{classUniSubset}{Uni\-Subset} $\ast$$\ast$ \hyperlink{classUniSet_a16746d02b5503c5d8c62fe4dff46c5b3}{atomic\-Uni\-Subset\-Array}
-\item 
-\hyperlink{classUniSubset}{Uni\-Subset} $\ast$$\ast$ \hyperlink{classUniSet_a154ae422d9f248c8b50f39d575f9b3c0}{uni\-Subset\-Array}
-\item 
-\hyperlink{classUniSubset}{Uni\-Subset} $\ast$ \hyperlink{classUniSet_a8b2ca464176feddcd8d96c75514eba6b}{first\-Uni\-Subset}
-\end{DoxyCompactItemize}
+\hypertarget{classUniSet_a159ec0413efd05616c2f2445b7d8b2b5}{int \hyperlink{classUniSet_a159ec0413efd05616c2f2445b7d8b2b5}{uni\-Subset\-Number}}\label{classUniSet_a159ec0413efd05616c2f2445b7d8b2b5}
+
+\begin{DoxyCompactList}\small\item\em Number of elements (i.\-e., atomic feasible subsets) \end{DoxyCompactList}\item 
+\hypertarget{classUniSet_a16746d02b5503c5d8c62fe4dff46c5b3}{\hyperlink{classUniSubset}{Uni\-Subset} $\ast$$\ast$ \hyperlink{classUniSet_a16746d02b5503c5d8c62fe4dff46c5b3}{atomic\-Uni\-Subset\-Array}}\label{classUniSet_a16746d02b5503c5d8c62fe4dff46c5b3}
+
+\begin{DoxyCompactList}\small\item\em Number of feasible subsets. \end{DoxyCompactList}\item 
+\hypertarget{classUniSet_a154ae422d9f248c8b50f39d575f9b3c0}{\hyperlink{classUniSubset}{Uni\-Subset} $\ast$$\ast$ \hyperlink{classUniSet_a154ae422d9f248c8b50f39d575f9b3c0}{uni\-Subset\-Array}}\label{classUniSet_a154ae422d9f248c8b50f39d575f9b3c0}
+
+\begin{DoxyCompactList}\small\item\em Array of pointers to all elements (i.\-e., atomic feasible subsets) \end{DoxyCompactList}\item 
+\hypertarget{classUniSet_a8b2ca464176feddcd8d96c75514eba6b}{\hyperlink{classUniSubset}{Uni\-Subset} $\ast$ \hyperlink{classUniSet_a8b2ca464176feddcd8d96c75514eba6b}{first\-Uni\-Subset}}\label{classUniSet_a8b2ca464176feddcd8d96c75514eba6b}
+
+\begin{DoxyCompactList}\small\item\em Array of pointers to all feasible subsets. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -73,23 +77,19 @@ Constructor.
 \end{DoxyParams}
 
 
-\subsection{Member Data Documentation}
-\hypertarget{classUniSet_a16746d02b5503c5d8c62fe4dff46c5b3}{\index{Uni\-Set@{Uni\-Set}!atomic\-Uni\-Subset\-Array@{atomic\-Uni\-Subset\-Array}}
-\index{atomic\-Uni\-Subset\-Array@{atomic\-Uni\-Subset\-Array}!UniSet@{Uni\-Set}}
-\subsubsection[{atomic\-Uni\-Subset\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uni\-Subset}$\ast$$\ast$ Uni\-Set\-::atomic\-Uni\-Subset\-Array\hspace{0.3cm}{\ttfamily [protected]}}}\label{classUniSet_a16746d02b5503c5d8c62fe4dff46c5b3}
-Array of pointers to all elements (i.\-e., atomic feasible subsets) \hypertarget{classUniSet_addac67921c058dc9ffa2074b3d59151f}{\index{Uni\-Set@{Uni\-Set}!atomic\-Uni\-Subset\-Number@{atomic\-Uni\-Subset\-Number}}
-\index{atomic\-Uni\-Subset\-Number@{atomic\-Uni\-Subset\-Number}!UniSet@{Uni\-Set}}
-\subsubsection[{atomic\-Uni\-Subset\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Uni\-Set\-::atomic\-Uni\-Subset\-Number\hspace{0.3cm}{\ttfamily [protected]}}}\label{classUniSet_addac67921c058dc9ffa2074b3d59151f}
-Number of elements (i.\-e., atomic feasible subsets) \hypertarget{classUniSet_a8b2ca464176feddcd8d96c75514eba6b}{\index{Uni\-Set@{Uni\-Set}!first\-Uni\-Subset@{first\-Uni\-Subset}}
-\index{first\-Uni\-Subset@{first\-Uni\-Subset}!UniSet@{Uni\-Set}}
-\subsubsection[{first\-Uni\-Subset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uni\-Subset}$\ast$ Uni\-Set\-::first\-Uni\-Subset\hspace{0.3cm}{\ttfamily [protected]}}}\label{classUniSet_a8b2ca464176feddcd8d96c75514eba6b}
-Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) \hypertarget{classUniSet_a154ae422d9f248c8b50f39d575f9b3c0}{\index{Uni\-Set@{Uni\-Set}!uni\-Subset\-Array@{uni\-Subset\-Array}}
-\index{uni\-Subset\-Array@{uni\-Subset\-Array}!UniSet@{Uni\-Set}}
-\subsubsection[{uni\-Subset\-Array}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Uni\-Subset}$\ast$$\ast$ Uni\-Set\-::uni\-Subset\-Array\hspace{0.3cm}{\ttfamily [protected]}}}\label{classUniSet_a154ae422d9f248c8b50f39d575f9b3c0}
-Array of pointers to all feasible subsets \hypertarget{classUniSet_a159ec0413efd05616c2f2445b7d8b2b5}{\index{Uni\-Set@{Uni\-Set}!uni\-Subset\-Number@{uni\-Subset\-Number}}
-\index{uni\-Subset\-Number@{uni\-Subset\-Number}!UniSet@{Uni\-Set}}
-\subsubsection[{uni\-Subset\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Uni\-Set\-::uni\-Subset\-Number\hspace{0.3cm}{\ttfamily [protected]}}}\label{classUniSet_a159ec0413efd05616c2f2445b7d8b2b5}
-Number of feasible subsets 
+\subsection{Member Function Documentation}
+\hypertarget{classUniSet_a140f02dfb3f186cbc49fe28d238aa2e1}{\index{Uni\-Set@{Uni\-Set}!init\-Reached@{init\-Reached}}
+\index{init\-Reached@{init\-Reached}!UniSet@{Uni\-Set}}
+\subsubsection[{init\-Reached}]{\setlength{\rightskip}{0pt plus 5cm}void Uni\-Set\-::init\-Reached (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}}\label{classUniSet_a140f02dfb3f186cbc49fe28d238aa2e1}
+
+
+Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) 
+
+Initialise the {\ttfamily reached} field of all feasible subsets to {\ttfamily false} (used by other methods to run through the algebraic structure in a recursive fashion without considering twice the same subset) 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

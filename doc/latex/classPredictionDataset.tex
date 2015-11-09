@@ -1,54 +1,177 @@
 \hypertarget{classPredictionDataset}{\section{Prediction\-Dataset Class Reference}
 \label{classPredictionDataset}\index{Prediction\-Dataset@{Prediction\-Dataset}}
 }
+
+
+Class to represent a data set for the prediction of a post-\/measurement from the knowledge of a pre-\/measurement (composed of a train set and a test set)  
+
+
+
+
+{\ttfamily \#include $<$prediction\-\_\-dataset.\-hpp$>$}
+
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classPredictionDataset_a420bfeab7b55ac8a696c750921eddd10}{{\bfseries Prediction\-Dataset} (\hyperlink{classMultiSet}{Multi\-Set} $\ast$pre\-M, \hyperlink{classMultiSet}{Multi\-Set} $\ast$post)}\label{classPredictionDataset_a420bfeab7b55ac8a696c750921eddd10}
+\hyperlink{classPredictionDataset_a5a2d75a4affa2b76dbb631f2f79c217e}{Prediction\-Dataset} (\hyperlink{classMultiSet}{Multi\-Set} $\ast$pre\-Measurement, \hyperlink{classMultiSet}{Multi\-Set} $\ast$post\-Measurement)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classPredictionDataset_a9a30fa528fa4a2507a1a0a5fe8c74269}{\hyperlink{classPredictionDataset_a9a30fa528fa4a2507a1a0a5fe8c74269}{$\sim$\-Prediction\-Dataset} ()}\label{classPredictionDataset_a9a30fa528fa4a2507a1a0a5fe8c74269}
 
-\item 
-\hypertarget{classPredictionDataset_ae2d6c192122c2f9f7a1b3232b486d86c}{void {\bfseries add\-Train\-Value} (\hyperlink{classMultiSubset}{Multi\-Subset} $\ast$pre\-Value, \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$post\-Value, int count=1)}\label{classPredictionDataset_ae2d6c192122c2f9f7a1b3232b486d86c}
-
-\item 
-\hypertarget{classPredictionDataset_a097fc45e897544af6b5215a26fa41527}{void {\bfseries add\-Test\-Value} (\hyperlink{classMultiSubset}{Multi\-Subset} $\ast$pre\-Value, \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$post\-Value, int count=1)}\label{classPredictionDataset_a097fc45e897544af6b5215a26fa41527}
-
-\item 
-\hypertarget{classPredictionDataset_a497f0627a6b80c71a3db7bd140cc0873}{void {\bfseries add\-Train\-Value} (int pre\-Num, int post\-Num, int count=1)}\label{classPredictionDataset_a497f0627a6b80c71a3db7bd140cc0873}
-
-\item 
-\hypertarget{classPredictionDataset_ad9e0f63562333d6e7a15134e3aa3894d}{void {\bfseries add\-Test\-Value} (int pre\-Num, int post\-Num, int count=1)}\label{classPredictionDataset_ad9e0f63562333d6e7a15134e3aa3894d}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classPredictionDataset_ae2d6c192122c2f9f7a1b3232b486d86c}{add\-Train\-Value} (\hyperlink{classMultiSubset}{Multi\-Subset} $\ast$pre\-Value, \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$post\-Value, int count=1)
+\begin{DoxyCompactList}\small\item\em Add a couple of (pre and post) observations to the train set. \end{DoxyCompactList}\item 
+void \hyperlink{classPredictionDataset_a097fc45e897544af6b5215a26fa41527}{add\-Test\-Value} (\hyperlink{classMultiSubset}{Multi\-Subset} $\ast$pre\-Value, \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$post\-Value, int count=1)
+\begin{DoxyCompactList}\small\item\em Add a couple of (pre and post) observations to the test set. \end{DoxyCompactList}\item 
+void \hyperlink{classPredictionDataset_a9615dd7ab9f8dd04fb2fb28d68bd96b1}{add\-Train\-Value} (int pre\-Index, int post\-Index, int count=1)
+\begin{DoxyCompactList}\small\item\em Add a couple of (pre and post) observations to the train set {\bfseries in the case of one-\/dimensional measurements} \end{DoxyCompactList}\item 
+void \hyperlink{classPredictionDataset_a8298f94fac0d5b3761effdb20405417a}{add\-Test\-Value} (int pre\-Index, int post\-Index, int count=1)
+\begin{DoxyCompactList}\small\item\em Add a couple of (pre and post) observations to the test set {\bfseries in the case of one-\/dimensional measurements} \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \hypertarget{classPredictionDataset_a47b4d8ccf188271ce59ee481377a3c5f}{\hyperlink{classMultiSet}{Multi\-Set} $\ast$ {\bfseries pre\-Multi\-Set}}\label{classPredictionDataset_a47b4d8ccf188271ce59ee481377a3c5f}
 
 \item 
-\hypertarget{classPredictionDataset_a22343b4582412434376af66cb42d2d50}{\hyperlink{classMultiSet}{Multi\-Set} $\ast$ {\bfseries post\-Multi\-Set}}\label{classPredictionDataset_a22343b4582412434376af66cb42d2d50}
+\hypertarget{classPredictionDataset_a22343b4582412434376af66cb42d2d50}{\hyperlink{classMultiSet}{Multi\-Set} $\ast$ \hyperlink{classPredictionDataset_a22343b4582412434376af66cb42d2d50}{post\-Multi\-Set}}\label{classPredictionDataset_a22343b4582412434376af66cb42d2d50}
 
-\item 
-\hypertarget{classPredictionDataset_af09491db0c4267fa086bf640c4740483}{std\-::vector$<$ \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ $>$ $\ast$ {\bfseries train\-Pre\-Values}}\label{classPredictionDataset_af09491db0c4267fa086bf640c4740483}
+\begin{DoxyCompactList}\small\item\em The pre-\/measurement modelled as a structured multi-\/dimensional set of elements (the possible observation values) \end{DoxyCompactList}\item 
+\hypertarget{classPredictionDataset_af09491db0c4267fa086bf640c4740483}{std\-::vector$<$ \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ $>$ $\ast$ \hyperlink{classPredictionDataset_af09491db0c4267fa086bf640c4740483}{train\-Pre\-Values}}\label{classPredictionDataset_af09491db0c4267fa086bf640c4740483}
 
-\item 
-\hypertarget{classPredictionDataset_a30e9419638339a7497f3d234780b2c20}{std\-::vector$<$ \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ $>$ $\ast$ {\bfseries train\-Post\-Values}}\label{classPredictionDataset_a30e9419638339a7497f3d234780b2c20}
+\begin{DoxyCompactList}\small\item\em The post-\/measurement modelled as a structured multi-\/dimensional set of elements (the possible observation values) \end{DoxyCompactList}\item 
+\hypertarget{classPredictionDataset_a30e9419638339a7497f3d234780b2c20}{std\-::vector$<$ \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ $>$ $\ast$ \hyperlink{classPredictionDataset_a30e9419638339a7497f3d234780b2c20}{train\-Post\-Values}}\label{classPredictionDataset_a30e9419638339a7497f3d234780b2c20}
 
-\item 
-\hypertarget{classPredictionDataset_af4fdcf7cfd236a99a73f18d630199291}{std\-::vector$<$ int $>$ $\ast$ {\bfseries train\-Count\-Values}}\label{classPredictionDataset_af4fdcf7cfd236a99a73f18d630199291}
+\begin{DoxyCompactList}\small\item\em A vector of pre-\/observations that are used to train the predictor. \end{DoxyCompactList}\item 
+\hypertarget{classPredictionDataset_af4fdcf7cfd236a99a73f18d630199291}{std\-::vector$<$ int $>$ $\ast$ \hyperlink{classPredictionDataset_af4fdcf7cfd236a99a73f18d630199291}{train\-Count\-Values}}\label{classPredictionDataset_af4fdcf7cfd236a99a73f18d630199291}
 
-\item 
+\begin{DoxyCompactList}\small\item\em A vector of post-\/observations that are used to train the predictor. \end{DoxyCompactList}\item 
 \hypertarget{classPredictionDataset_a6ef1712f6f3e944cad7f966b123c44d4}{std\-::vector$<$ \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ $>$ $\ast$ {\bfseries test\-Pre\-Values}}\label{classPredictionDataset_a6ef1712f6f3e944cad7f966b123c44d4}
 
 \item 
-\hypertarget{classPredictionDataset_ab6ed50cd17878109b9a41ebb6db172ea}{std\-::vector$<$ \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ $>$ $\ast$ {\bfseries test\-Post\-Values}}\label{classPredictionDataset_ab6ed50cd17878109b9a41ebb6db172ea}
+\hypertarget{classPredictionDataset_ab6ed50cd17878109b9a41ebb6db172ea}{std\-::vector$<$ \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ $>$ $\ast$ \hyperlink{classPredictionDataset_ab6ed50cd17878109b9a41ebb6db172ea}{test\-Post\-Values}}\label{classPredictionDataset_ab6ed50cd17878109b9a41ebb6db172ea}
 
-\item 
-\hypertarget{classPredictionDataset_a7fe2eccbdae1cee136f5864b660c31ee}{std\-::vector$<$ int $>$ $\ast$ {\bfseries test\-Count\-Values}}\label{classPredictionDataset_a7fe2eccbdae1cee136f5864b660c31ee}
+\begin{DoxyCompactList}\small\item\em A vector of pre-\/observations that are used to test the predictor. \end{DoxyCompactList}\item 
+\hypertarget{classPredictionDataset_a7fe2eccbdae1cee136f5864b660c31ee}{std\-::vector$<$ int $>$ $\ast$ \hyperlink{classPredictionDataset_a7fe2eccbdae1cee136f5864b660c31ee}{test\-Count\-Values}}\label{classPredictionDataset_a7fe2eccbdae1cee136f5864b660c31ee}
 
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A vector of post-\/observations that are used to test the predictor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to represent a data set for the prediction of a post-\/measurement from the knowledge of a pre-\/measurement (composed of a train set and a test set) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classPredictionDataset_a5a2d75a4affa2b76dbb631f2f79c217e}{\index{Prediction\-Dataset@{Prediction\-Dataset}!Prediction\-Dataset@{Prediction\-Dataset}}
+\index{Prediction\-Dataset@{Prediction\-Dataset}!PredictionDataset@{Prediction\-Dataset}}
+\subsubsection[{Prediction\-Dataset}]{\setlength{\rightskip}{0pt plus 5cm}Prediction\-Dataset\-::\-Prediction\-Dataset (
+\begin{DoxyParamCaption}
+\item[{{\bf Multi\-Set} $\ast$}]{pre\-Measurement, }
+\item[{{\bf Multi\-Set} $\ast$}]{post\-Measurement}
+\end{DoxyParamCaption}
+)}}\label{classPredictionDataset_a5a2d75a4affa2b76dbb631f2f79c217e}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pre\-Measurement} & \-: The pre-\/measurement modelled as a structured multi-\/dimensional set of elements (the possible observation values) \\
+\hline
+{\em post\-Measurement} & \-: The post-\/measurement modelled as a structured multi-\/dimensional set of elements (the possible observation values) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classPredictionDataset_a097fc45e897544af6b5215a26fa41527}{\index{Prediction\-Dataset@{Prediction\-Dataset}!add\-Test\-Value@{add\-Test\-Value}}
+\index{add\-Test\-Value@{add\-Test\-Value}!PredictionDataset@{Prediction\-Dataset}}
+\subsubsection[{add\-Test\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Prediction\-Dataset\-::add\-Test\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Multi\-Subset} $\ast$}]{pre\-Value, }
+\item[{{\bf Multi\-Subset} $\ast$}]{post\-Value, }
+\item[{int}]{count = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classPredictionDataset_a097fc45e897544af6b5215a26fa41527}
+
+
+Add a couple of (pre and post) observations to the test set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pre\-Value} & \-: A pointer to the feasible subset that has been pre-\/observed in the multi-\/dimensional set representing the pre-\/measurement. It should always be an element of the set, that is an atomic feasible subset \\
+\hline
+{\em pre\-Value} & \-: A pointer to the feasible subset that has been post-\/observed in the multi-\/dimensional set representing the pre-\/measurement. It should always be an element of the set, that is an atomic feasible subset \\
+\hline
+{\em count} & \-: The number of times the couple has been observed \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPredictionDataset_a8298f94fac0d5b3761effdb20405417a}{\index{Prediction\-Dataset@{Prediction\-Dataset}!add\-Test\-Value@{add\-Test\-Value}}
+\index{add\-Test\-Value@{add\-Test\-Value}!PredictionDataset@{Prediction\-Dataset}}
+\subsubsection[{add\-Test\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Prediction\-Dataset\-::add\-Test\-Value (
+\begin{DoxyParamCaption}
+\item[{int}]{pre\-Index, }
+\item[{int}]{post\-Index, }
+\item[{int}]{count = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classPredictionDataset_a8298f94fac0d5b3761effdb20405417a}
+
+
+Add a couple of (pre and post) observations to the test set {\bfseries in the case of one-\/dimensional measurements} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pre\-Index} & \-: The index of the element that has been pre-\/observed in the one-\/dimensional set representing the pre-\/measurement \\
+\hline
+{\em post\-Index} & \-: The index of the element that has been post-\/observed in the one-\/dimensional set representing the pre-\/measurement \\
+\hline
+{\em count} & \-: The number of times the couple has been observed \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPredictionDataset_ae2d6c192122c2f9f7a1b3232b486d86c}{\index{Prediction\-Dataset@{Prediction\-Dataset}!add\-Train\-Value@{add\-Train\-Value}}
+\index{add\-Train\-Value@{add\-Train\-Value}!PredictionDataset@{Prediction\-Dataset}}
+\subsubsection[{add\-Train\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Prediction\-Dataset\-::add\-Train\-Value (
+\begin{DoxyParamCaption}
+\item[{{\bf Multi\-Subset} $\ast$}]{pre\-Value, }
+\item[{{\bf Multi\-Subset} $\ast$}]{post\-Value, }
+\item[{int}]{count = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classPredictionDataset_ae2d6c192122c2f9f7a1b3232b486d86c}
+
+
+Add a couple of (pre and post) observations to the train set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pre\-Value} & \-: A pointer to the feasible subset that have been pre-\/observed in the multi-\/dimensional set representing the pre-\/measurement. It should always be an element of the set, that is an atomic feasible subset \\
+\hline
+{\em pre\-Value} & \-: A pointer to the feasible subset that have been post-\/observed in the multi-\/dimensional set representing the pre-\/measurement. It should always be an element of the set, that is an atomic feasible subset \\
+\hline
+{\em count} & \-: The number of times the couple has been observed \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPredictionDataset_a9615dd7ab9f8dd04fb2fb28d68bd96b1}{\index{Prediction\-Dataset@{Prediction\-Dataset}!add\-Train\-Value@{add\-Train\-Value}}
+\index{add\-Train\-Value@{add\-Train\-Value}!PredictionDataset@{Prediction\-Dataset}}
+\subsubsection[{add\-Train\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Prediction\-Dataset\-::add\-Train\-Value (
+\begin{DoxyParamCaption}
+\item[{int}]{pre\-Index, }
+\item[{int}]{post\-Index, }
+\item[{int}]{count = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classPredictionDataset_a9615dd7ab9f8dd04fb2fb28d68bd96b1}
+
+
+Add a couple of (pre and post) observations to the train set {\bfseries in the case of one-\/dimensional measurements} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pre\-Index} & \-: The index of the element that has been pre-\/observed in the one-\/dimensional set representing the pre-\/measurement \\
+\hline
+{\em post\-Index} & \-: The index of the element that has been post-\/observed in the one-\/dimensional set representing the pre-\/measurement \\
+\hline
+{\em count} & \-: The number of times the couple has been observed \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/lamarche/programming/optimal\-\_\-partition/src/prediction\-\_\-dataset.\-hpp\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{prediction__dataset_8hpp}{prediction\-\_\-dataset.\-hpp}\item 
 /home/lamarche/programming/optimal\-\_\-partition/src/prediction\-\_\-dataset.\-cpp\end{DoxyCompactItemize}

@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a07ff3af1804ad82899583c0207b233dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a07ff3af1804ad82899583c0207b233dc">UniSubset</a> (int index=-1)</td></tr>
-<tr class="memdesc:a07ff3af1804ad82899583c0207b233dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a07ff3af1804ad82899583c0207b233dc">More...</a><br/></td></tr>
+<tr class="memdesc:a07ff3af1804ad82899583c0207b233dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of the refinements of this subset, that is the set of all partitions of this subset that are made of other feasible subsets; this hence properly defines the algebraic structure.  <a href="#a07ff3af1804ad82899583c0207b233dc">More...</a><br/></td></tr>
 <tr class="separator:a07ff3af1804ad82899583c0207b233dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84519a983473e56ad479d29baff45a34"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a84519a983473e56ad479d29baff45a34"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a84519a983473e56ad479d29baff45a34">~UniSubset</a> ()</td></tr>
@@ -124,19 +124,24 @@ Public Attributes</h2></td></tr>
 <a class="el" href="classUniSet.html">UniSet</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>uniSet</b></td></tr>
 <tr class="separator:a8e80f41fd95fe897ff04c813395c85d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a33f088ffb21e664508cfbfb75341513a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33f088ffb21e664508cfbfb75341513a"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>isAtomic</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a33f088ffb21e664508cfbfb75341513a">isAtomic</a></td></tr>
+<tr class="memdesc:a33f088ffb21e664508cfbfb75341513a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the set of elements to which this subset is associated. <br/></td></tr>
 <tr class="separator:a33f088ffb21e664508cfbfb75341513a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af111f69a265de0069e5705ce2c222f45"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af111f69a265de0069e5705ce2c222f45"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>atomicNum</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#af111f69a265de0069e5705ce2c222f45">atomicNum</a></td></tr>
+<tr class="memdesc:af111f69a265de0069e5705ce2c222f45"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>true</code> if and only if this subset is actually an element of the associated set (i.e., an atomic feasible subset) <br/></td></tr>
 <tr class="separator:af111f69a265de0069e5705ce2c222f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b5a528a9edcc11061baff6ca4ce2657"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0b5a528a9edcc11061baff6ca4ce2657"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>num</b></td></tr>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a0b5a528a9edcc11061baff6ca4ce2657">num</a></td></tr>
+<tr class="memdesc:a0b5a528a9edcc11061baff6ca4ce2657"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this subset is an element (i.e., an atomic feasible subset), identifier of this subset among all the elements of the associated set; if not, always equal to <code>-1</code> <br/></td></tr>
 <tr class="separator:a0b5a528a9edcc11061baff6ca4ce2657"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32f7ed1b58639b5184c7c0321b08e6a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32f7ed1b58639b5184c7c0321b08e6a1"></a>
-IndexSet *&#160;</td><td class="memItemRight" valign="bottom"><b>indexSet</b></td></tr>
+IndexSet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a32f7ed1b58639b5184c7c0321b08e6a1">indexSet</a></td></tr>
+<tr class="memdesc:a32f7ed1b58639b5184c7c0321b08e6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier of this subset among all the feasible subsets of the associated set. <br/></td></tr>
 <tr class="separator:a32f7ed1b58639b5184c7c0321b08e6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00491b5c614c9f1a548bec0a9e8aad4f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00491b5c614c9f1a548bec0a9e8aad4f"></a>
-UniSubsetSetSet *&#160;</td><td class="memItemRight" valign="bottom"><b>uniSubsetSetSet</b></td></tr>
+UniSubsetSetSet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a00491b5c614c9f1a548bec0a9e8aad4f">uniSubsetSetSet</a></td></tr>
+<tr class="memdesc:a00491b5c614c9f1a548bec0a9e8aad4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indexes of all the elements in this subset (only one index / one element in the case of an atomic subset) <br/></td></tr>
 <tr class="separator:a00491b5c614c9f1a548bec0a9e8aad4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -156,7 +161,8 @@ UniSubsetSetSet *&#160;</td><td class="memItemRight" valign="bottom"><b>uniSubse
       </table>
 </div><div class="memdoc">
 
-<p>Constructor. </p>
+<p>Set of the refinements of this subset, that is the set of all partitions of this subset that are made of other feasible subsets; this hence properly defines the algebraic structure. </p>
+<p>Constructor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>: The index of the unique element in the case of an atomic subset </td></tr>
@@ -173,7 +179,7 @@ UniSubsetSetSet *&#160;</td><td class="memItemRight" valign="bottom"><b>uniSubse
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 16:56:50 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 9 2015 18:43:59 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

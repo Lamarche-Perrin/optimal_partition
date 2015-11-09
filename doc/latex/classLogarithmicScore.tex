@@ -1,6 +1,15 @@
 \hypertarget{classLogarithmicScore}{\section{Logarithmic\-Score Class Reference}
 \label{classLogarithmicScore}\index{Logarithmic\-Score@{Logarithmic\-Score}}
 }
+
+
+Class to define and compute the logarithmic score function in the case of point prediction.  
+
+
+
+
+{\ttfamily \#include $<$logarithmic\-\_\-score.\-hpp$>$}
+
 Inheritance diagram for Logarithmic\-Score\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,9 +19,11 @@ Inheritance diagram for Logarithmic\-Score\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classLogarithmicScore_a4fba67dfac53087dbfde7cb825501c97}{{\bfseries Logarithmic\-Score} (\hyperlink{classPredictionDataset}{Prediction\-Dataset} $\ast$dataset, int prior=0)}\label{classLogarithmicScore_a4fba67dfac53087dbfde7cb825501c97}
+\hyperlink{classLogarithmicScore_a4fba67dfac53087dbfde7cb825501c97}{Logarithmic\-Score} (\hyperlink{classPredictionDataset}{Prediction\-Dataset} $\ast$dataset, int prior=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classLogarithmicScore_a08b425a72eec8a2722bb2f4a9b0486ff}{\hyperlink{classLogarithmicScore_a08b425a72eec8a2722bb2f4a9b0486ff}{$\sim$\-Logarithmic\-Score} ()}\label{classLogarithmicScore_a08b425a72eec8a2722bb2f4a9b0486ff}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
 \hypertarget{classLogarithmicScore_a7e3c601e96541b3156b02d84ce6b754e}{void \hyperlink{classLogarithmicScore_a7e3c601e96541b3156b02d84ce6b754e}{set\-Random} ()}\label{classLogarithmicScore_a7e3c601e96541b3156b02d84ce6b754e}
 
 \begin{DoxyCompactList}\small\item\em Randomly set the initial data from which the objective function is computed. \end{DoxyCompactList}\item 
@@ -34,30 +45,35 @@ Inheritance diagram for Logarithmic\-Score\-:\begin{figure}[H]
 \hypertarget{classLogarithmicScore_a40576f47008aa6ab69d95535c0a5fa79}{double {\bfseries get\-Intermediary\-Unit} (double u\-Min, double u\-Max)}\label{classLogarithmicScore_a40576f47008aa6ab69d95535c0a5fa79}
 
 \end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\hypertarget{classLogarithmicScore_afc0e37fc64d6dc1742120ea6b940fd0f}{\hyperlink{classPredictionDataset}{Prediction\-Dataset} $\ast$ {\bfseries dataset}}\label{classLogarithmicScore_afc0e37fc64d6dc1742120ea6b940fd0f}
+\subsection*{Additional Inherited Members}
 
-\item 
-\hypertarget{classLogarithmicScore_ab6a0f495948bbb7d877064baef838993}{int {\bfseries pre\-Size}}\label{classLogarithmicScore_ab6a0f495948bbb7d877064baef838993}
 
-\item 
-\hypertarget{classLogarithmicScore_addfd4b0d086013c199a424628450f64b}{int {\bfseries post\-Size}}\label{classLogarithmicScore_addfd4b0d086013c199a424628450f64b}
+\subsection{Detailed Description}
+Class to define and compute the logarithmic score function in the case of point prediction. 
 
-\item 
-\hypertarget{classLogarithmicScore_a801f0da7f5ba568bf727387144cac392}{int $\ast$ {\bfseries train\-Count\-Array}}\label{classLogarithmicScore_a801f0da7f5ba568bf727387144cac392}
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classLogarithmicScore_a4fba67dfac53087dbfde7cb825501c97}{\index{Logarithmic\-Score@{Logarithmic\-Score}!Logarithmic\-Score@{Logarithmic\-Score}}
+\index{Logarithmic\-Score@{Logarithmic\-Score}!LogarithmicScore@{Logarithmic\-Score}}
+\subsubsection[{Logarithmic\-Score}]{\setlength{\rightskip}{0pt plus 5cm}Logarithmic\-Score\-::\-Logarithmic\-Score (
+\begin{DoxyParamCaption}
+\item[{{\bf Prediction\-Dataset} $\ast$}]{dataset, }
+\item[{int}]{prior = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classLogarithmicScore_a4fba67dfac53087dbfde7cb825501c97}
 
-\item 
-\hypertarget{classLogarithmicScore_ace0a8c93c27c83a3f209b1faf7fdb24e}{int {\bfseries train\-Count\-Total}}\label{classLogarithmicScore_ace0a8c93c27c83a3f209b1faf7fdb24e}
 
-\item 
-\hypertarget{classLogarithmicScore_a0a221889c0e7f4c3a1ba3fd80b1f3603}{int {\bfseries prior}}\label{classLogarithmicScore_a0a221889c0e7f4c3a1ba3fd80b1f3603}
+Constructor. 
 
-\end{DoxyCompactItemize}
+
+\begin{DoxyParams}{Parameters}
+{\em dataset} & \-: The prediction data set that is use to evaluate the score function (from a train set and a test set both containing pre-\/observations and post-\/observations) \\
+\hline
+{\em prior} & \-: A prior giving the number of times each couple of (pre and post) observations has been observed in addition to the train set \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/lamarche/programming/optimal\-\_\-partition/src/logarithmic\-\_\-score.\-hpp\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{logarithmic__score_8hpp}{logarithmic\-\_\-score.\-hpp}\item 
 /home/lamarche/programming/optimal\-\_\-partition/src/logarithmic\-\_\-score.\-cpp\end{DoxyCompactItemize}

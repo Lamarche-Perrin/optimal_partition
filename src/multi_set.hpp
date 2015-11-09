@@ -38,6 +38,12 @@
 #ifndef INCLUDE_MULTI_SET
 #define INCLUDE_MULTI_SET
 
+#include <list>
+
+#include "uni_set.hpp"
+#include "abstract_set.hpp"
+
+
 /*!
  * \file multi_set.hpp
  * \brief Classes to represent multi-dimensional sets of elements and their algebraic structure (feasible subsets and feasible refinements)
@@ -45,11 +51,6 @@
  * \date 06/11/2015
  */
 
-
-#include <list>
-
-#include "uni_set.hpp"
-#include "abstract_set.hpp"
 
 class UniSet;
 class UniSubset;
@@ -66,9 +67,9 @@ class MultiSet: public AbstractSet
 {
 	friend MultiSubset;
 public:
-	int dimension; /*!< Number of dimensions */
-	int atomicMultiSubsetNumber; /*!< Number of elements (e.g., atomic feasible subsets) */
-	int multiSubsetNumber; /*!< Number of feasible subsets */
+	int dimension; /** \brief Number of dimensions */
+	int atomicMultiSubsetNumber; /** \brief Number of elements (e.g., atomic feasible subsets) */
+	int multiSubsetNumber; /** \brief Number of feasible subsets */
 
 	/*!
 	 * \brief Constructor for a one-dimensional set
@@ -94,6 +95,12 @@ public:
 	 * /return A pointer to the unique atomic feasible subset that contains the element
 	 */
 	MultiSubset *getAtomicMultiSubset (int index);
+
+	/*!
+	 * Access to a random element (e.g., atomic feasible subset)
+	 * /return A pointer to the unique atomic feasible subset that contains the element
+	 */
+	MultiSubset *getRandomAtomicMultiSubset ();
 	
 	void setRandom ();
 	void setObjectiveFunction (ObjectiveFunction *objective);

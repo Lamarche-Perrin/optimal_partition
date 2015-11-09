@@ -90,24 +90,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">PredictionDataset Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class to represent a data set for the prediction of a post-measurement from the knowledge of a pre-measurement (composed of a train set and a test set)  
+ <a href="classPredictionDataset.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="prediction__dataset_8hpp_source.html">prediction_dataset.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a420bfeab7b55ac8a696c750921eddd10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a420bfeab7b55ac8a696c750921eddd10"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>PredictionDataset</b> (<a class="el" href="classMultiSet.html">MultiSet</a> *preM, <a class="el" href="classMultiSet.html">MultiSet</a> *post)</td></tr>
-<tr class="separator:a420bfeab7b55ac8a696c750921eddd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2d6c192122c2f9f7a1b3232b486d86c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2d6c192122c2f9f7a1b3232b486d86c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addTrainValue</b> (<a class="el" href="classMultiSubset.html">MultiSubset</a> *preValue, <a class="el" href="classMultiSubset.html">MultiSubset</a> *postValue, int count=1)</td></tr>
+<tr class="memitem:a5a2d75a4affa2b76dbb631f2f79c217e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a5a2d75a4affa2b76dbb631f2f79c217e">PredictionDataset</a> (<a class="el" href="classMultiSet.html">MultiSet</a> *preMeasurement, <a class="el" href="classMultiSet.html">MultiSet</a> *postMeasurement)</td></tr>
+<tr class="memdesc:a5a2d75a4affa2b76dbb631f2f79c217e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a5a2d75a4affa2b76dbb631f2f79c217e">More...</a><br/></td></tr>
+<tr class="separator:a5a2d75a4affa2b76dbb631f2f79c217e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a30fa528fa4a2507a1a0a5fe8c74269"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a30fa528fa4a2507a1a0a5fe8c74269"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a9a30fa528fa4a2507a1a0a5fe8c74269">~PredictionDataset</a> ()</td></tr>
+<tr class="memdesc:a9a30fa528fa4a2507a1a0a5fe8c74269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
+<tr class="separator:a9a30fa528fa4a2507a1a0a5fe8c74269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d6c192122c2f9f7a1b3232b486d86c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#ae2d6c192122c2f9f7a1b3232b486d86c">addTrainValue</a> (<a class="el" href="classMultiSubset.html">MultiSubset</a> *preValue, <a class="el" href="classMultiSubset.html">MultiSubset</a> *postValue, int count=1)</td></tr>
+<tr class="memdesc:ae2d6c192122c2f9f7a1b3232b486d86c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a couple of (pre and post) observations to the train set.  <a href="#ae2d6c192122c2f9f7a1b3232b486d86c">More...</a><br/></td></tr>
 <tr class="separator:ae2d6c192122c2f9f7a1b3232b486d86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a097fc45e897544af6b5215a26fa41527"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a097fc45e897544af6b5215a26fa41527"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addTestValue</b> (<a class="el" href="classMultiSubset.html">MultiSubset</a> *preValue, <a class="el" href="classMultiSubset.html">MultiSubset</a> *postValue, int count=1)</td></tr>
+<tr class="memitem:a097fc45e897544af6b5215a26fa41527"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a097fc45e897544af6b5215a26fa41527">addTestValue</a> (<a class="el" href="classMultiSubset.html">MultiSubset</a> *preValue, <a class="el" href="classMultiSubset.html">MultiSubset</a> *postValue, int count=1)</td></tr>
+<tr class="memdesc:a097fc45e897544af6b5215a26fa41527"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a couple of (pre and post) observations to the test set.  <a href="#a097fc45e897544af6b5215a26fa41527">More...</a><br/></td></tr>
 <tr class="separator:a097fc45e897544af6b5215a26fa41527"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a497f0627a6b80c71a3db7bd140cc0873"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a497f0627a6b80c71a3db7bd140cc0873"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addTrainValue</b> (int preNum, int postNum, int count=1)</td></tr>
-<tr class="separator:a497f0627a6b80c71a3db7bd140cc0873"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad9e0f63562333d6e7a15134e3aa3894d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9e0f63562333d6e7a15134e3aa3894d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addTestValue</b> (int preNum, int postNum, int count=1)</td></tr>
-<tr class="separator:ad9e0f63562333d6e7a15134e3aa3894d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9615dd7ab9f8dd04fb2fb28d68bd96b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a9615dd7ab9f8dd04fb2fb28d68bd96b1">addTrainValue</a> (int preIndex, int postIndex, int count=1)</td></tr>
+<tr class="memdesc:a9615dd7ab9f8dd04fb2fb28d68bd96b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a couple of (pre and post) observations to the train set <b>in the case of one-dimensional measurements</b>  <a href="#a9615dd7ab9f8dd04fb2fb28d68bd96b1">More...</a><br/></td></tr>
+<tr class="separator:a9615dd7ab9f8dd04fb2fb28d68bd96b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8298f94fac0d5b3761effdb20405417a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a8298f94fac0d5b3761effdb20405417a">addTestValue</a> (int preIndex, int postIndex, int count=1)</td></tr>
+<tr class="memdesc:a8298f94fac0d5b3761effdb20405417a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a couple of (pre and post) observations to the test set <b>in the case of one-dimensional measurements</b>  <a href="#a8298f94fac0d5b3761effdb20405417a">More...</a><br/></td></tr>
+<tr class="separator:a8298f94fac0d5b3761effdb20405417a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -115,27 +124,240 @@ Public Attributes</h2></td></tr>
 <a class="el" href="classMultiSet.html">MultiSet</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>preMultiSet</b></td></tr>
 <tr class="separator:a47b4d8ccf188271ce59ee481377a3c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22343b4582412434376af66cb42d2d50"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a22343b4582412434376af66cb42d2d50"></a>
-<a class="el" href="classMultiSet.html">MultiSet</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>postMultiSet</b></td></tr>
+<a class="el" href="classMultiSet.html">MultiSet</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a22343b4582412434376af66cb42d2d50">postMultiSet</a></td></tr>
+<tr class="memdesc:a22343b4582412434376af66cb42d2d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">The pre-measurement modelled as a structured multi-dimensional set of elements (the possible observation values) <br/></td></tr>
 <tr class="separator:a22343b4582412434376af66cb42d2d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af09491db0c4267fa086bf640c4740483"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af09491db0c4267fa086bf640c4740483"></a>
-std::vector&lt; <a class="el" href="classMultiSubset.html">MultiSubset</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>trainPreValues</b></td></tr>
+std::vector&lt; <a class="el" href="classMultiSubset.html">MultiSubset</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#af09491db0c4267fa086bf640c4740483">trainPreValues</a></td></tr>
+<tr class="memdesc:af09491db0c4267fa086bf640c4740483"><td class="mdescLeft">&#160;</td><td class="mdescRight">The post-measurement modelled as a structured multi-dimensional set of elements (the possible observation values) <br/></td></tr>
 <tr class="separator:af09491db0c4267fa086bf640c4740483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30e9419638339a7497f3d234780b2c20"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a30e9419638339a7497f3d234780b2c20"></a>
-std::vector&lt; <a class="el" href="classMultiSubset.html">MultiSubset</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>trainPostValues</b></td></tr>
+std::vector&lt; <a class="el" href="classMultiSubset.html">MultiSubset</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a30e9419638339a7497f3d234780b2c20">trainPostValues</a></td></tr>
+<tr class="memdesc:a30e9419638339a7497f3d234780b2c20"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of pre-observations that are used to train the predictor. <br/></td></tr>
 <tr class="separator:a30e9419638339a7497f3d234780b2c20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4fdcf7cfd236a99a73f18d630199291"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af4fdcf7cfd236a99a73f18d630199291"></a>
-std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>trainCountValues</b></td></tr>
+std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#af4fdcf7cfd236a99a73f18d630199291">trainCountValues</a></td></tr>
+<tr class="memdesc:af4fdcf7cfd236a99a73f18d630199291"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of post-observations that are used to train the predictor. <br/></td></tr>
 <tr class="separator:af4fdcf7cfd236a99a73f18d630199291"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ef1712f6f3e944cad7f966b123c44d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ef1712f6f3e944cad7f966b123c44d4"></a>
 std::vector&lt; <a class="el" href="classMultiSubset.html">MultiSubset</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>testPreValues</b></td></tr>
 <tr class="separator:a6ef1712f6f3e944cad7f966b123c44d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6ed50cd17878109b9a41ebb6db172ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6ed50cd17878109b9a41ebb6db172ea"></a>
-std::vector&lt; <a class="el" href="classMultiSubset.html">MultiSubset</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>testPostValues</b></td></tr>
+std::vector&lt; <a class="el" href="classMultiSubset.html">MultiSubset</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#ab6ed50cd17878109b9a41ebb6db172ea">testPostValues</a></td></tr>
+<tr class="memdesc:ab6ed50cd17878109b9a41ebb6db172ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of pre-observations that are used to test the predictor. <br/></td></tr>
 <tr class="separator:ab6ed50cd17878109b9a41ebb6db172ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7fe2eccbdae1cee136f5864b660c31ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7fe2eccbdae1cee136f5864b660c31ee"></a>
-std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>testCountValues</b></td></tr>
+std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a7fe2eccbdae1cee136f5864b660c31ee">testCountValues</a></td></tr>
+<tr class="memdesc:a7fe2eccbdae1cee136f5864b660c31ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of post-observations that are used to test the predictor. <br/></td></tr>
 <tr class="separator:a7fe2eccbdae1cee136f5864b660c31ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class to represent a data set for the prediction of a post-measurement from the knowledge of a pre-measurement (composed of a train set and a test set) </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a5a2d75a4affa2b76dbb631f2f79c217e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">PredictionDataset::PredictionDataset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMultiSet.html">MultiSet</a> *&#160;</td>
+          <td class="paramname"><em>preMeasurement</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMultiSet.html">MultiSet</a> *&#160;</td>
+          <td class="paramname"><em>postMeasurement</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preMeasurement</td><td>: The pre-measurement modelled as a structured multi-dimensional set of elements (the possible observation values) </td></tr>
+    <tr><td class="paramname">postMeasurement</td><td>: The post-measurement modelled as a structured multi-dimensional set of elements (the possible observation values) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a097fc45e897544af6b5215a26fa41527"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PredictionDataset::addTestValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td>
+          <td class="paramname"><em>preValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td>
+          <td class="paramname"><em>postValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a couple of (pre and post) observations to the test set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preValue</td><td>: A pointer to the feasible subset that has been pre-observed in the multi-dimensional set representing the pre-measurement. It should always be an element of the set, that is an atomic feasible subset </td></tr>
+    <tr><td class="paramname">preValue</td><td>: A pointer to the feasible subset that has been post-observed in the multi-dimensional set representing the pre-measurement. It should always be an element of the set, that is an atomic feasible subset </td></tr>
+    <tr><td class="paramname">count</td><td>: The number of times the couple has been observed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a8298f94fac0d5b3761effdb20405417a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PredictionDataset::addTestValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>preIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>postIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a couple of (pre and post) observations to the test set <b>in the case of one-dimensional measurements</b> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preIndex</td><td>: The index of the element that has been pre-observed in the one-dimensional set representing the pre-measurement </td></tr>
+    <tr><td class="paramname">postIndex</td><td>: The index of the element that has been post-observed in the one-dimensional set representing the pre-measurement </td></tr>
+    <tr><td class="paramname">count</td><td>: The number of times the couple has been observed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ae2d6c192122c2f9f7a1b3232b486d86c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PredictionDataset::addTrainValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td>
+          <td class="paramname"><em>preValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td>
+          <td class="paramname"><em>postValue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a couple of (pre and post) observations to the train set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preValue</td><td>: A pointer to the feasible subset that have been pre-observed in the multi-dimensional set representing the pre-measurement. It should always be an element of the set, that is an atomic feasible subset </td></tr>
+    <tr><td class="paramname">preValue</td><td>: A pointer to the feasible subset that have been post-observed in the multi-dimensional set representing the pre-measurement. It should always be an element of the set, that is an atomic feasible subset </td></tr>
+    <tr><td class="paramname">count</td><td>: The number of times the couple has been observed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="a9615dd7ab9f8dd04fb2fb28d68bd96b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PredictionDataset::addTrainValue </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>preIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>postIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a couple of (pre and post) observations to the train set <b>in the case of one-dimensional measurements</b> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preIndex</td><td>: The index of the element that has been pre-observed in the one-dimensional set representing the pre-measurement </td></tr>
+    <tr><td class="paramname">postIndex</td><td>: The index of the element that has been post-observed in the one-dimensional set representing the pre-measurement </td></tr>
+    <tr><td class="paramname">count</td><td>: The number of times the couple has been observed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/lamarche/programming/optimal_partition/src/<a class="el" href="prediction__dataset_8hpp_source.html">prediction_dataset.hpp</a></li>
 <li>/home/lamarche/programming/optimal_partition/src/prediction_dataset.cpp</li>
@@ -143,7 +365,7 @@ std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 16:56:50 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 9 2015 18:43:58 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

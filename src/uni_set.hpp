@@ -38,6 +38,10 @@
 #ifndef INCLUDE_UNI_SET
 #define INCLUDE_UNI_SET
 
+#include <list>
+
+#include "bi_set.hpp"
+#include "multi_set.hpp"
 
 /*!
  * \file uni_set.hpp
@@ -45,12 +49,6 @@
  * \author Robin Lamarche-Perrin
  * \date 06/11/2015
  */
-
-
-#include <list>
-
-#include "bi_set.hpp"
-#include "multi_set.hpp"
 
 class BiSet;
 class BiSubset;
@@ -97,12 +95,12 @@ public:
 	void print ();
 
 protected:
-	int atomicUniSubsetNumber; /*!< Number of elements (i.e., atomic feasible subsets)*/
-	int uniSubsetNumber; /*!< Number of feasible subsets */
+	int atomicUniSubsetNumber; /** \brief Number of elements (i.e., atomic feasible subsets)*/
+	int uniSubsetNumber; /** \brief Number of feasible subsets */
 
-	UniSubset **atomicUniSubsetArray; /*!< Array of pointers to all elements (i.e., atomic feasible subsets) */
-	UniSubset **uniSubsetArray; /*!< Array of pointers to all feasible subsets */
-	UniSubset *firstUniSubset; /*!< Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets)*/
+	UniSubset **atomicUniSubsetArray; /** \brief Array of pointers to all elements (i.e., atomic feasible subsets) */
+	UniSubset **uniSubsetArray; /** \brief Array of pointers to all feasible subsets */
+	UniSubset *firstUniSubset; /** \brief Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets)*/
 
 	/*!
 	 * \brief Initialise the `reached` field of all feasible subsets to `false` (used by other methods to run through the algebraic structure in a recursive fashion without considering twice the same subset) 
@@ -118,7 +116,7 @@ protected:
 class OrderedUniSet: public UniSet
 {
 public:
-	int size; /*!< Number of ordered elements */
+	int size; /** \brief Number of ordered elements */
 
 	/*!
 	 * \brief Constructor
@@ -138,7 +136,7 @@ private:
 class HierarchicalUniSet: public UniSet
 {
 public:
-	int depth; /*!< Depth of the complete binary hierarchy */
+	int depth; /** \brief Depth of the complete binary hierarchy */
 
 	/*!
 	 * \brief Constructor
@@ -159,13 +157,13 @@ class UniSubset
 {
 	friend UniSet;
 public:
-	UniSet *uniSet; /*<! Pointer to the set of elements to which this subset is associated */
-	bool isAtomic; /*<! `true` if and only if this subset is actually an element of the associated set (i.e., an atomic feasible subset) */
-	int atomicNum; /*<! If this subset is an element (i.e., an atomic feasible subset), identifier of this subset among all the elements of the associated set; if not, always equal to `-1` */
-	int num; /*<! Identifier of this subset among all the feasible subsets of the associated set */
+	UniSet *uniSet; /** \brief Pointer to the set of elements to which this subset is associated */
+	bool isAtomic; /** \brief `true` if and only if this subset is actually an element of the associated set (i.e., an atomic feasible subset) */
+	int atomicNum; /** \brief If this subset is an element (i.e., an atomic feasible subset), identifier of this subset among all the elements of the associated set; if not, always equal to `-1` */
+	int num; /** \brief Identifier of this subset among all the feasible subsets of the associated set */
 
-	IndexSet *indexSet; /*<! Indexes of all the elements in this subset (only one index / one element in the case of an atomic subset) */
-	UniSubsetSetSet *uniSubsetSetSet; /*<! Set of the refinements of this subset, that is the set of all partitions of this subset that are made of other feasible subsets; this hence properly defines the algebraic structure */
+	IndexSet *indexSet; /** \brief Indexes of all the elements in this subset (only one index / one element in the case of an atomic subset) */
+	UniSubsetSetSet *uniSubsetSetSet; /** \brief Set of the refinements of this subset, that is the set of all partitions of this subset that are made of other feasible subsets; this hence properly defines the algebraic structure */
 
 	/*!
 	 * \brief Constructor
@@ -194,7 +192,7 @@ public:
 	void addUniSubsetSet (UniSubsetSet *uniSubsetSet);
 
 private:
-	bool reached; /*<! Boolean value used by external methods to run through the algebraic structure in a recursive fashion, without considering twice the same subset */
+	bool reached; /** \brief Boolean value used by external methods to run through the algebraic structure in a recursive fashion, without considering twice the same subset */
 	void buildDataStructure ();
 };
 

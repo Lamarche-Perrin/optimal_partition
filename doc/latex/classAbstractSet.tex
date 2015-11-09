@@ -19,16 +19,15 @@ Inheritance diagram for Abstract\-Set\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{classAbstractSet_adc3db5afd11de63639ddd079ef4ecf45}{virtual \hyperlink{classAbstractSet_adc3db5afd11de63639ddd079ef4ecf45}{$\sim$\-Abstract\-Set} ()}\label{classAbstractSet_adc3db5afd11de63639ddd079ef4ecf45}
-
-\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classAbstractSet_adc3db5afd11de63639ddd079ef4ecf45}{$\sim$\-Abstract\-Set} ()
+\begin{DoxyCompactList}\small\item\em The objective that one wants to optimise (assumed to be decomposable\-: the objective of a partition is function of the objectives of its parts) \end{DoxyCompactList}\item 
 \hypertarget{classAbstractSet_aac0cf2d0ef47c49aa0a7ac393691ff7a}{virtual void \hyperlink{classAbstractSet_aac0cf2d0ef47c49aa0a7ac393691ff7a}{set\-Random} ()=0}\label{classAbstractSet_aac0cf2d0ef47c49aa0a7ac393691ff7a}
 
 \begin{DoxyCompactList}\small\item\em Randomly set the algebraic constraints for quick experiments (warning\-: this method is not always implemented) \end{DoxyCompactList}\item 
 \hypertarget{classAbstractSet_a735009927cfae61baa66bbf7b53f76d5}{virtual void \hyperlink{classAbstractSet_a735009927cfae61baa66bbf7b53f76d5}{build\-Data\-Structure} ()=0}\label{classAbstractSet_a735009927cfae61baa66bbf7b53f76d5}
 
 \begin{DoxyCompactList}\small\item\em Build a proper data structure to represent the set and its algebraic constraints (warning\-: this method should always be called after instantiating and parameterising a set, and before calling any other method, such as \hyperlink{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}{print()}, \hyperlink{classAbstractSet_a341945c465179a52da09356a2aa50a8d}{compute\-Objective\-Values()}, compute\-Optimal\-Partition (double parameter), etc.) \end{DoxyCompactList}\item 
-virtual void \hyperlink{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}{set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$\hyperlink{classAbstractSet_a0217447a042827703e1ea7655f0fc099}{objective})=0
+virtual void \hyperlink{classAbstractSet_a7aef71679a18ab7965d1098da15b26c2}{set\-Objective\-Function} (\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$objective)=0
 \begin{DoxyCompactList}\small\item\em Set the objective that one wants to optimise. \end{DoxyCompactList}\item 
 \hypertarget{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}{virtual void \hyperlink{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}{print} ()=0}\label{classAbstractSet_ae20f14f4e4209570d26c3614c00e02df}
 
@@ -57,12 +56,27 @@ void \hyperlink{classAbstractSet_ab72fbc5c1f339bb385d24565fd26d4fc}{print\-Optim
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$ \hyperlink{classAbstractSet_a0217447a042827703e1ea7655f0fc099}{objective}
+\hypertarget{classAbstractSet_a0217447a042827703e1ea7655f0fc099}{\hyperlink{classObjectiveFunction}{Objective\-Function} $\ast$ {\bfseries objective}}\label{classAbstractSet_a0217447a042827703e1ea7655f0fc099}
+
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Abstract class defining a set of elements that one wants to partition while optimising some (decomposable) objective and preserving some algebraic constraints (set of feasible parts) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAbstractSet_adc3db5afd11de63639ddd079ef4ecf45}{\index{Abstract\-Set@{Abstract\-Set}!$\sim$\-Abstract\-Set@{$\sim$\-Abstract\-Set}}
+\index{$\sim$\-Abstract\-Set@{$\sim$\-Abstract\-Set}!AbstractSet@{Abstract\-Set}}
+\subsubsection[{$\sim$\-Abstract\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Abstract\-Set\-::$\sim$\-Abstract\-Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{classAbstractSet_adc3db5afd11de63639ddd079ef4ecf45}
+
+
+The objective that one wants to optimise (assumed to be decomposable\-: the objective of a partition is function of the objectives of its parts) 
+
+Destructor 
 
 \subsection{Member Function Documentation}
 \hypertarget{classAbstractSet_acfc3004f18192f38e32bb7a5a12ec8df}{\index{Abstract\-Set@{Abstract\-Set}!compute\-Optimal\-Partition@{compute\-Optimal\-Partition}}
@@ -203,12 +217,6 @@ Set the objective that one wants to optimise.
 Implemented in \hyperlink{classMultiSet_a0c7e6fb6d2eb064cf6bf2fe7e810726a}{Multi\-Set}, \hyperlink{classGraph_a294aff8b11a1b11dae2b4cd39b78b91d}{Graph}, \hyperlink{classBiSet_aa81de5cee7bae0c86493b31ceb5199b8}{Bi\-Set}, \hyperlink{classRing_af9bc7f0b325cbd2b6284aadeacdee6fb}{Ring}, \hyperlink{classNonconstrainedSet_a2d2b1ff5390c9c8bfa7e6e361ea1ddb1}{Nonconstrained\-Set}, \hyperlink{classNHOSet_ac1e59897d3af9dd6c019d6db9bb74dd1}{N\-H\-O\-Set}, \hyperlink{classHierarchicalHierarchicalSet_ae47e3171479131c47a2252b5c054ceef}{Hierarchical\-Hierarchical\-Set}, \hyperlink{classOrderedSet_a6051e561b7b5fcd1dc5ee8f9f67353fe}{Ordered\-Set}, \hyperlink{classNonconstrainedOrderedSet_a67a4a72a5e1bff3d46473757199455d9}{Nonconstrained\-Ordered\-Set}, \hyperlink{classHierarchicalOrderedSet_a813f90e2aff889461b9e089b7ff460bc}{Hierarchical\-Ordered\-Set}, and \hyperlink{classHierarchicalSet_aa555c69a5761820567bfe391969859d3}{Hierarchical\-Set}.
 
 
-
-\subsection{Member Data Documentation}
-\hypertarget{classAbstractSet_a0217447a042827703e1ea7655f0fc099}{\index{Abstract\-Set@{Abstract\-Set}!objective@{objective}}
-\index{objective@{objective}!AbstractSet@{Abstract\-Set}}
-\subsubsection[{objective}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Objective\-Function}$\ast$ Abstract\-Set\-::objective}}\label{classAbstractSet_a0217447a042827703e1ea7655f0fc099}
-The objective that one wants to optimise (assumed to be decomposable\-: the objective of a partition is function of the objectives of its parts) 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
