@@ -1,0 +1,351 @@
+\begin{theindex}
+
+  \item {$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set}
+    \subitem {Abstract\discretionary {-}{}{}Set}, \hyperpage{11}
+  \item {$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set}
+    \subitem {Multi\discretionary {-}{}{}Set}, \hyperpage{36}
+  \item {/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/abstract\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp}, 
+		\hyperpage{65}
+  \item {/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/logarithmic\discretionary {-}{}{}\_\discretionary {-}{}{}score.\discretionary {-}{}{}hpp}, 
+		\hyperpage{65}
+  \item {/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/multi\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp}, 
+		\hyperpage{66}
+  \item {/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/objective\discretionary {-}{}{}\_\discretionary {-}{}{}function.\discretionary {-}{}{}hpp}, 
+		\hyperpage{67}
+  \item {/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/prediction\discretionary {-}{}{}\_\discretionary {-}{}{}dataset.\discretionary {-}{}{}hpp}, 
+		\hyperpage{67}
+  \item {/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/uni\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp}, 
+		\hyperpage{68}
+
+  \indexspace
+
+  \item {Abstract\discretionary {-}{}{}Set}, \hyperpage{9}
+    \subitem {$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set}, 
+		\hyperpage{11}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{11}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{11}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}, 
+		\hyperpage{11}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{11}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}, 
+		\hyperpage{13}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V}, 
+		\hyperpage{13}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{13}
+  \item {add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}
+    \subitem {Prediction\discretionary {-}{}{}Dataset}, 
+		\hyperpage{54, 55}
+  \item {add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}
+    \subitem {Prediction\discretionary {-}{}{}Dataset}, \hyperpage{55}
+
+  \indexspace
+
+  \item {Bi\discretionary {-}{}{}Part}, \hyperpage{13}
+  \item {Bi\discretionary {-}{}{}Set}, \hyperpage{14}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{15}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{15}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{15}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{16}
+  \item {Bi\discretionary {-}{}{}Subset}, \hyperpage{16}
+  \item {Bottleneck\discretionary {-}{}{}Objective\discretionary {-}{}{}Value}, 
+		\hyperpage{17}
+
+  \indexspace
+
+  \item {Complete\discretionary {-}{}{}Graph}, \hyperpage{17}
+  \item {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}
+    \subitem {Abstract\discretionary {-}{}{}Set}, \hyperpage{11}
+    \subitem {Bi\discretionary {-}{}{}Set}, \hyperpage{15}
+    \subitem {Graph}, \hyperpage{22}
+    \subitem {Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}, 
+		\hyperpage{25}
+    \subitem {Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}, 
+		\hyperpage{26}
+    \subitem {Hierarchical\discretionary {-}{}{}Set}, \hyperpage{28}
+    \subitem {Multi\discretionary {-}{}{}Set}, \hyperpage{37}
+    \subitem {N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}, 
+		\hyperpage{41}
+    \subitem {Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}, 
+		\hyperpage{44}
+    \subitem {Nonconstrained\discretionary {-}{}{}Set}, \hyperpage{46}
+    \subitem {Ordered\discretionary {-}{}{}Set}, \hyperpage{50}
+    \subitem {Ring}, \hyperpage{58}
+
+  \indexspace
+
+  \item {Data\discretionary {-}{}{}Point\discretionary {-}{}{}Struct}, 
+		\hyperpage{18}
+  \item {Dataset}, \hyperpage{18}
+  \item {Datatree}, \hyperpage{19}
+
+  \indexspace
+
+  \item {Filiform\discretionary {-}{}{}Graph}, \hyperpage{20}
+
+  \indexspace
+
+  \item {get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}
+    \subitem {Multi\discretionary {-}{}{}Set}, \hyperpage{38}
+  \item {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}
+    \subitem {Abstract\discretionary {-}{}{}Set}, \hyperpage{11}
+    \subitem {Bi\discretionary {-}{}{}Set}, \hyperpage{15}
+    \subitem {Graph}, \hyperpage{22}
+    \subitem {Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}, 
+		\hyperpage{25}
+    \subitem {Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}, 
+		\hyperpage{27}
+    \subitem {Hierarchical\discretionary {-}{}{}Set}, \hyperpage{28}
+    \subitem {Multi\discretionary {-}{}{}Set}, \hyperpage{38}
+    \subitem {N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}, 
+		\hyperpage{41}
+    \subitem {Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}, 
+		\hyperpage{44}
+    \subitem {Nonconstrained\discretionary {-}{}{}Set}, \hyperpage{46}
+    \subitem {Ordered\discretionary {-}{}{}Set}, \hyperpage{50}
+    \subitem {Ring}, \hyperpage{59}
+  \item {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}
+    \subitem {Abstract\discretionary {-}{}{}Set}, \hyperpage{11}
+  \item {get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}
+    \subitem {Multi\discretionary {-}{}{}Set}, \hyperpage{38}
+  \item {Graph}, \hyperpage{20}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{22}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{22}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{22}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{22}
+  \item {Graph\discretionary {-}{}{}Component}, \hyperpage{22}
+
+  \indexspace
+
+  \item {H\discretionary {-}{}{}H\discretionary {-}{}{}Node}, 
+		\hyperpage{23}
+  \item {H\discretionary {-}{}{}Node}, \hyperpage{30}
+  \item {H\discretionary {-}{}{}O\discretionary {-}{}{}Node}, 
+		\hyperpage{31}
+  \item {Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}, 
+		\hyperpage{24}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{25}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{25}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{25}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{25}
+  \item {Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}, 
+		\hyperpage{26}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{26}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{27}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{27}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{27}
+  \item {Hierarchical\discretionary {-}{}{}Set}, \hyperpage{27}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{28}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{28}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{29}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{29}
+  \item {Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}, 
+		\hyperpage{29}
+    \subitem {Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}, 
+		\hyperpage{30}
+    \subitem {Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}, 
+		\hyperpage{30}
+
+  \indexspace
+
+  \item {Information\discretionary {-}{}{}Bottleneck}, \hyperpage{32}
+  \item {init\discretionary {-}{}{}Reached}
+    \subitem {Uni\discretionary {-}{}{}Set}, \hyperpage{62}
+
+  \indexspace
+
+  \item {Logarithmic\discretionary {-}{}{}Score}, \hyperpage{32}
+    \subitem {Logarithmic\discretionary {-}{}{}Score}, \hyperpage{33}
+    \subitem {Logarithmic\discretionary {-}{}{}Score}, \hyperpage{33}
+  \item {Logarithmic\discretionary {-}{}{}Score\discretionary {-}{}{}Value}, 
+		\hyperpage{33}
+
+  \indexspace
+
+  \item {Multi\discretionary {-}{}{}Part}, \hyperpage{34}
+  \item {Multi\discretionary {-}{}{}Set}, \hyperpage{35}
+    \subitem {$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set}, 
+		\hyperpage{36}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{37}
+    \subitem {get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}, 
+		\hyperpage{38}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{38}
+    \subitem {get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}, 
+		\hyperpage{38}
+    \subitem {Multi\discretionary {-}{}{}Set}, \hyperpage{36}
+    \subitem {Multi\discretionary {-}{}{}Set}, \hyperpage{36}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{38}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{38}
+  \item {Multi\discretionary {-}{}{}Subset}, \hyperpage{39}
+
+  \indexspace
+
+  \item {N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Node}, 
+		\hyperpage{39}
+  \item {N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}, 
+		\hyperpage{40}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{41}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{41}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{41}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{41}
+  \item {Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}, 
+		\hyperpage{43}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{44}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{44}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{44}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{44}
+  \item {Nonconstrained\discretionary {-}{}{}Set}, \hyperpage{45}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{46}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{46}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{46}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{46}
+
+  \indexspace
+
+  \item {Objective\discretionary {-}{}{}Function}, \hyperpage{47}
+    \subitem {Objective\discretionary {-}{}{}Function}, \hyperpage{47}
+    \subitem {Objective\discretionary {-}{}{}Function}, \hyperpage{47}
+  \item {Objective\discretionary {-}{}{}Value}, \hyperpage{48}
+  \item {Ordered\discretionary {-}{}{}Datatree}, \hyperpage{48}
+  \item {Ordered\discretionary {-}{}{}Set}, \hyperpage{49}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{50}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{50}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{50}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{51}
+  \item {Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}, 
+		\hyperpage{51}
+    \subitem {Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}, 
+		\hyperpage{52}
+    \subitem {Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}, 
+		\hyperpage{52}
+
+  \indexspace
+
+  \item {Part}, \hyperpage{52}
+  \item {Partition}, \hyperpage{53}
+  \item {Prediction\discretionary {-}{}{}Dataset}, \hyperpage{53}
+    \subitem {add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}, 
+		\hyperpage{54, 55}
+    \subitem {add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}, 
+		\hyperpage{55}
+    \subitem {Prediction\discretionary {-}{}{}Dataset}, \hyperpage{54}
+    \subitem {Prediction\discretionary {-}{}{}Dataset}, \hyperpage{54}
+  \item {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}
+    \subitem {Abstract\discretionary {-}{}{}Set}, \hyperpage{11}
+    \subitem {Bi\discretionary {-}{}{}Set}, \hyperpage{15}
+    \subitem {Graph}, \hyperpage{22}
+    \subitem {Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}, 
+		\hyperpage{25}
+    \subitem {Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}, 
+		\hyperpage{27}
+    \subitem {Hierarchical\discretionary {-}{}{}Set}, \hyperpage{29}
+    \subitem {Multi\discretionary {-}{}{}Set}, \hyperpage{38}
+    \subitem {N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}, 
+		\hyperpage{41}
+    \subitem {Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}, 
+		\hyperpage{44}
+    \subitem {Nonconstrained\discretionary {-}{}{}Set}, \hyperpage{46}
+    \subitem {Ordered\discretionary {-}{}{}Set}, \hyperpage{50}
+    \subitem {Ring}, \hyperpage{59}
+  \item {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}
+    \subitem {Abstract\discretionary {-}{}{}Set}, \hyperpage{13}
+  \item {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V}
+    \subitem {Abstract\discretionary {-}{}{}Set}, \hyperpage{13}
+
+  \indexspace
+
+  \item {Random\discretionary {-}{}{}Graph}, \hyperpage{55}
+  \item {Relative\discretionary {-}{}{}Entropy}, \hyperpage{56}
+  \item {Relative\discretionary {-}{}{}Objective\discretionary {-}{}{}Value}, 
+		\hyperpage{57}
+  \item {Ring}, \hyperpage{57}
+    \subitem {compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{58}
+    \subitem {get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{59}
+    \subitem {print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}, 
+		\hyperpage{59}
+    \subitem {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}, 
+		\hyperpage{59}
+  \item {Ring\discretionary {-}{}{}Graph}, \hyperpage{59}
+
+  \indexspace
+
+  \item {set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}
+    \subitem {Abstract\discretionary {-}{}{}Set}, \hyperpage{13}
+    \subitem {Bi\discretionary {-}{}{}Set}, \hyperpage{16}
+    \subitem {Graph}, \hyperpage{22}
+    \subitem {Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}, 
+		\hyperpage{25}
+    \subitem {Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}, 
+		\hyperpage{27}
+    \subitem {Hierarchical\discretionary {-}{}{}Set}, \hyperpage{29}
+    \subitem {Multi\discretionary {-}{}{}Set}, \hyperpage{38}
+    \subitem {N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}, 
+		\hyperpage{41}
+    \subitem {Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}, 
+		\hyperpage{44}
+    \subitem {Nonconstrained\discretionary {-}{}{}Set}, \hyperpage{46}
+    \subitem {Ordered\discretionary {-}{}{}Set}, \hyperpage{51}
+    \subitem {Ring}, \hyperpage{59}
+
+  \indexspace
+
+  \item {Timer}, \hyperpage{60}
+  \item {Tree\discretionary {-}{}{}To\discretionary {-}{}{}Add}, 
+		\hyperpage{60}
+
+  \indexspace
+
+  \item {Uni\discretionary {-}{}{}Set}, \hyperpage{61}
+    \subitem {init\discretionary {-}{}{}Reached}, \hyperpage{62}
+    \subitem {Uni\discretionary {-}{}{}Set}, \hyperpage{62}
+    \subitem {Uni\discretionary {-}{}{}Set}, \hyperpage{62}
+  \item {Uni\discretionary {-}{}{}Subset}, \hyperpage{62}
+    \subitem {Uni\discretionary {-}{}{}Subset}, \hyperpage{63}
+    \subitem {Uni\discretionary {-}{}{}Subset}, \hyperpage{63}
+
+\end{theindex}
