@@ -54,7 +54,10 @@ int main (int argc, char *argv[]) {
     srand(time(NULL));
 
 	//testLogarithmicScore ();
-	getBinningComputationTime ();
+	//getBinningComputationTime ();
+	optimalBinningOfVoterModel ();
+	
+	//testGraph();
 	
 	return EXIT_SUCCESS;
 }

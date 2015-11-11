@@ -93,9 +93,10 @@ void endCSVLine (std::ofstream &file);
 
 void closeOutputCSV (std::ofstream &file);
 
+double string2double (std::string str);
 std::string int2string (int value);
-std::string float2string (float value);
-std::string double2string (double value);
+std::string float2string (float value, int prec = 10);
+std::string double2string (double value, int prec = 10);
 time_t date2time (std::string date);
 
 #endif

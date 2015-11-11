@@ -39,5 +39,6 @@
 
 void testLogarithmicScore ();
 void getBinningComputationTime ();
+void optimalBinningOfVoterModel ();
 
 #endif

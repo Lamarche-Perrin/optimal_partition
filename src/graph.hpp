@@ -82,13 +82,13 @@ public:
     void addEdge (int v1, int v2);
     void buildFromBinary (int index);
 
-    bool areAdjacent(int v1, int v2);
-    bool areAdjacent(int v1, Vertices *v2);
-    bool areAdjacent(Vertices *v1, int v2);
-    bool areAdjacent(Vertices *v1, Vertices *v2);
-    bool areAdjacent(int v1, VVertices *v2);
-    bool areAdjacent(VVertices *v1, int v2);
-    bool areAdjacent(VVertices *v1, VVertices *v2);
+    bool areAdjacent (int v1, int v2);
+    bool areAdjacent (int v1, Vertices *v2);
+    bool areAdjacent (Vertices *v1, int v2);
+    bool areAdjacent (Vertices *v1, Vertices *v2);
+    bool areAdjacent (int v1, VVertices *v2);
+    bool areAdjacent (VVertices *v1, int v2);
+    bool areAdjacent (VVertices *v1, VVertices *v2);
 
     Vertices *getAdjacentVertices (int v, int vMax = -1);
     void printVertices (Vertices *V);

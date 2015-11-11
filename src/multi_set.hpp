@@ -42,6 +42,7 @@
 
 #include "uni_set.hpp"
 #include "abstract_set.hpp"
+#include "voter_graph.hpp"
 
 
 /*!
@@ -54,10 +55,10 @@
 
 class UniSet;
 class UniSubset;
-
 class MultiSubset;
 typedef std::list<MultiSubset*> MultiSubsetSet;
 typedef std::list<MultiSubsetSet*> MultiSubsetSetSet;
+
 
 /*!
  * \class MultiSet
@@ -66,6 +67,8 @@ typedef std::list<MultiSubsetSet*> MultiSubsetSetSet;
 class MultiSet: public AbstractSet
 {
 	friend MultiSubset;
+	friend VoterDataSet;
+	
 public:
 	int dimension; /** \brief Number of dimensions */
 	int atomicMultiSubsetNumber; /** \brief Number of elements (e.g., atomic feasible subsets) */
@@ -90,11 +93,18 @@ public:
 	virtual ~MultiSet ();
 
 	/*!
-	 * Access to an element (e.g., atomic feasible subset) from its index
-	 * /param The index of the element to access
+	 * Access to an element (e.g., atomic feasible subset) from its index IN THE CASE OF A ONE-DIMENSIONAL SET
+	 * /param index : The index of the element to access
 	 * /return A pointer to the unique atomic feasible subset that contains the element
 	 */
 	MultiSubset *getAtomicMultiSubset (int index);
+
+	/*!
+	 * Access to an element (e.g., atomic feasible subset) from its indices
+	 * /param indices : The indices of the element to access
+	 * /return A pointer to the unique atomic feasible subset that contains the element
+	 */
+	MultiSubset *getAtomicMultiSubset (int *indices);
 
 	/*!
 	 * Access to a random element (e.g., atomic feasible subset)

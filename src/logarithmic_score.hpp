@@ -87,6 +87,8 @@ private:
 	int preSize, postSize;
 	int *trainCountArray;
 	int trainCountTotal;
+	int *testCountArray;
+	int testCountTotal;
 	int prior;
    
 };

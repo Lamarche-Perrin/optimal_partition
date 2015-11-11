@@ -49,6 +49,7 @@ UniSet::UniSet (UniSubset *firstSubset)
 	firstUniSubset = firstSubset;
 	uniSubsetArray = 0;
 	atomicUniSubsetArray = 0;
+	voterMeasurement = 0;
 }
 
 
@@ -194,6 +195,13 @@ int HierarchicalUniSet::buildHierarchy (UniSubset *subset, int d, int i)
 	}
 	
 	return i;
+}
+
+
+GraphBasedUniSet::GraphBasedUniSet (Graph *g) : UniSet (0)
+{
+	graph = g;
+	
 }
 
 

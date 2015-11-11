@@ -39,6 +39,7 @@
 #define INCLUDE_PARTITION
 
 #include <list>
+#include <iostream>
 
 #include "objective_function.hpp"
 
@@ -67,6 +68,10 @@ typedef std::list<Partition*> PartitionList;
 class Part
 {
 public:
+    int id;
+    int size;		
+    int num;
+	
 	std::list<int> *individuals;
 	ObjectiveValue *value;
 	
@@ -75,8 +80,9 @@ public:
 	Part (Datatree *node, ObjectiveValue *value = 0);
 	virtual ~Part ();
 	
-	void addIndividual (int i, bool front = false);
+	void addIndividual (int i, bool front = false, int value = -1);
 	Vertices *getVertices ();
+    bool contains (int i);
 	virtual bool equal (Part *p);
 		
 	virtual void print (bool endl = false);
@@ -131,6 +137,7 @@ public:
 class Partition
 {
 public:
+	int size;
 	double parameter;
 	std::list<Part*> *parts;
 	ObjectiveValue *value;
@@ -140,8 +147,34 @@ public:
 	~Partition ();
 		
 	void addPart (Part *p, bool front = false);
+	Part *findPart (int individual);
+    Part *getPartFromValue (int value);
+
 	bool equal (Partition *p);
 	void print (bool endl = false);
+};
+
+
+class OrderedPartition
+{
+public:
+    int microSize;
+    int *optimalCut;
+    double param;
+    double beta;
+	
+    std::string string;
+    double entropy;
+    double information;
+	
+    OrderedPartition (int s, double p) : microSize(s), param(p) { beta = param / (1 - param); };
+	
+    void print ()
+	{
+	    std::cout << "beta = " << beta << " -> ";
+	    for (int i = 0; i < microSize; i++) { std::cout << optimalCut[i] << "\t"; }
+	    std::cout << std::endl;
+	}
 };
 
 

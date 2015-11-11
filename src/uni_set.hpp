@@ -43,6 +43,9 @@
 #include "bi_set.hpp"
 #include "multi_set.hpp"
 
+#include "graph.hpp"
+#include "voter_graph.hpp"
+
 /*!
  * \file uni_set.hpp
  * \brief Some classes to represent uni-dimensional sets of elements and their algebraic structure (feasible subsets and feasible refinements)
@@ -70,6 +73,8 @@ class UniSet
 	friend BiSubset;
 	friend MultiSet;
 	friend MultiSubset;
+	friend VoterMeasurement;
+	friend VoterDataSet;
 
 public:
 	
@@ -100,8 +105,10 @@ protected:
 
 	UniSubset **atomicUniSubsetArray; /** \brief Array of pointers to all elements (i.e., atomic feasible subsets) */
 	UniSubset **uniSubsetArray; /** \brief Array of pointers to all feasible subsets */
-	UniSubset *firstUniSubset; /** \brief Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets)*/
+	UniSubset *firstUniSubset; /** \brief Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) */
 
+	VoterMeasurement *voterMeasurement; /** \brief (Optional) A one-probe measurement of a voter model that has been used to build this uni-dimensional set */
+	
 	/*!
 	 * \brief Initialise the `reached` field of all feasible subsets to `false` (used by other methods to run through the algebraic structure in a recursive fashion without considering twice the same subset) 
      */
@@ -146,6 +153,14 @@ public:
 
 private:
 	int buildHierarchy (UniSubset *uniSubset, int depth, int index);
+};
+
+
+class GraphBasedUniSet: public UniSet
+{
+public:
+	Graph *graph;
+	GraphBasedUniSet (Graph *graph);
 };
 
 

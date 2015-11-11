@@ -55,12 +55,17 @@ LogarithmicScore::LogarithmicScore (PredictionDataset *ds, int p)
 	trainCountArray = new int [postSize];
 	for (int l = 0; l < postSize; l++) { trainCountArray[l] = prior * preSize; }
 	trainCountTotal = prior * preSize * postSize;
+
+	testCountArray = new int [postSize];
+	for (int l = 0; l < postSize; l++) { testCountArray[l] = 0; }
+	testCountTotal = 0;
 }
 
 
 LogarithmicScore::~LogarithmicScore ()
 {
 	delete [] trainCountArray;
+	delete [] testCountArray;
 }
 
 
@@ -107,6 +112,9 @@ void LogarithmicScore::computeObjectiveValues ()
 		MultiSubset *preValue = dataset->testPreValues->at(n);
 		MultiSubset *postValue = dataset->testPostValues->at(n);
 		int countValue = dataset->testCountValues->at(n);
+
+		testCountArray[postValue->atomicNum] += countValue;
+		testCountTotal += countValue;
 
 		((LogarithmicScoreValue*)preValue->value)->testCountArray[postValue->atomicNum] += countValue;
 		((LogarithmicScoreValue*)preValue->value)->testCountTotal += countValue;
@@ -180,7 +188,9 @@ void LogarithmicScoreValue::compute ()
 	else {
 		score = testCountTotal * log10 (((LogarithmicScore*)objective)->trainCountTotal);
 		for (int l = 0; l < postSize; l++) { score -= testCountArray[l] * log10 (((LogarithmicScore*)objective)->trainCountArray[l]); }
-	}	
+	}
+
+	score /= ((LogarithmicScore*)objective)->testCountTotal;
 }
 
 

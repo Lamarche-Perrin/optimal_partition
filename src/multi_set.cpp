@@ -121,6 +121,23 @@ MultiSubset *MultiSet::getAtomicMultiSubset (int index)
 }
 
 
+MultiSubset *MultiSet::getAtomicMultiSubset (int *indices)
+{
+	for (int num = 0; num < atomicMultiSubsetNumber; num++)
+	{
+		MultiSubset *multiSubset = atomicMultiSubsetArray[num];
+		bool equal = true;
+		for (int d = 0; d < dimension && equal; d++)
+		{
+			UniSubset *uniSubset = multiSubset->uniSubsetArray[d];
+			equal = (indices[d] == uniSubset->indexSet->front());
+		}		
+		if (equal) { return multiSubset; }
+	}
+	return 0;
+}
+
+
 MultiSubset *MultiSet::getRandomAtomicMultiSubset () { return atomicMultiSubsetArray[rand() % atomicMultiSubsetNumber]; }
 
 
@@ -418,7 +435,7 @@ void MultiSubset::computeObjectiveValues ()
 
 	if (isAtomic) { value->compute(); }
 	else {
-		ObjectiveValueSet *qSet = new ObjectiveValueSet();
+		ObjectiveValueSet *qSet = new ObjectiveValueSet ();
 		MultiSubsetSet *multiSubsetSet = *multiSubsetSetSet->begin();
 		for (MultiSubsetSet::iterator it = multiSubsetSet->begin(); it != multiSubsetSet->end(); ++it) { qSet->insert((*it)->value); }
 		value->compute(qSet);

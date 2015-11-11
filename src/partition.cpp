@@ -45,6 +45,9 @@
 
 Part::Part (ObjectiveValue *q)
 {
+    id = -1;
+    size = 0;
+    num = -2;
 	individuals = new std::list<int>();
 	value = q;
 }
@@ -80,10 +83,25 @@ Part::~Part ()
 }
 
 
-void Part::addIndividual (int i, bool front)
+void Part::addIndividual (int i, bool front, int v)
 {
+    size++;
+    if (v != -1)
+    {
+		if (num == -2) { num = v; }
+		else if (num != v) { num = -1; }
+    }
+	
 	if (front) { individuals->push_front(i); }
 	else { individuals->push_back(i); }
+}
+
+
+bool Part::contains (int i)
+{
+    for (std::list<int>::iterator it = individuals->begin(); it != individuals->end(); ++it)
+		if (*it == i) return true;
+    return false;
 }
 
 
@@ -229,6 +247,7 @@ int MultiPart::printSize ()
 
 Partition::Partition (ObjectiveFunction *m, double param)
 {
+	size = 0;
 	parameter = param;
 	parts = new std::list<Part*>();
 	if (m != 0) { value = m->newObjectiveValue(); } else { value = 0; }
@@ -237,6 +256,7 @@ Partition::Partition (ObjectiveFunction *m, double param)
 
 Partition::Partition (Partition *p)
 {
+	size = p->size;
 	parameter = p->parameter;
 	value = p->value;
 
@@ -259,8 +279,40 @@ Partition::~Partition ()
 
 void Partition::addPart (Part *p, bool front)
 {
+	size++;
 	if (front) { parts->push_front(p); } else { parts->push_back(p); }
 	if (p->value != 0) { value->add(p->value); }
+}
+
+
+Part *Partition::findPart (int i)
+{
+    for (std::list<Part*>::iterator it = parts->begin(); it != parts->end(); ++it)
+    {
+		Part *p = *it;
+		if (p->contains(i)) { return p; }
+    }
+    return 0;
+}
+
+
+Part *Partition::getPartFromValue (int v)
+{
+    Part *rp = 0;
+    for (std::list<Part*>::iterator it = parts->begin(); it != parts->end(); ++it)
+    {
+		Part *p = *it;
+		if (p->num == v)
+		{
+			if (rp != 0)
+			{
+				std::cout << "ERROR: several parts with the same value!" << std::endl;
+				return 0;
+			}
+			rp = p;
+		}
+    }
+    return rp;
 }
 
 

@@ -251,9 +251,9 @@ void testNonconstrainedOrderedSet ()
     int size2 = 5;
 
     double values [20] = {	10.5,9,	10,	16,	34.1,
-				9.5,10,	11,	15,	36.1,
-				62.4, 57.6,	57.4,	60,	35.9,
-				62.6, 60,	65.4,	65.6,	33.9};
+							9.5,10,	11,	15,	36.1,
+							62.4, 57.6,	57.4,	60,	35.9,
+							62.6, 60,	65.4,	65.6,	33.9};
 
     double *refValues = 0;
 
@@ -316,12 +316,12 @@ void testHierarchicalHierarchicalSet ()
     int size = 9;
 
     double values [3*3]		= {	54,	30,	4,
-					54,	58,	64,
-					50, 18, 2 };
+								54,	58,	64,
+								50, 18, 2 };
 	
     double refValues [3*3]	= {	13904,	9328,	6160,
-					27808,	18656,	12320,
-					11060,	7420,	4900};
+								27808,	18656,	12320,
+								11060,	7420,	4900};
 
     /*
       double values [3*3]		= {	10,	11,	99,
@@ -373,8 +373,8 @@ void testHierarchicalHierarchicalSet ()
 
 void testGraph ()
 {
-    int graphNb = -1;
-    int size = 7;
+    int graphNb = 10000;
+    int size = 6;
     int edgeNb = size*(size-1)/2;
 	
     Graph *graph;
@@ -383,27 +383,26 @@ void testGraph ()
     int first = 0; int last = std::pow(2,edgeNb); VERBOSE = false;
     if (graphNb >= 0) { first = graphNb; last = graphNb+1; VERBOSE = true; }
 	
-    first = 120000;
     for (int index = first; index < last && !error; index++)
     {
-	std::cout << "GRAPH " << index << std::endl;
-	graph = new Graph(size);
-	graph->buildFromBinary(index);
+		std::cout << "GRAPH " << index << std::endl;
+		graph = new Graph (size);
+		graph->buildFromBinary(index);
 		
-	if (graphNb >= 0) { graph->print(); }
+		if (graphNb >= 0) { graph->print(); }
 		
-	graph->buildDataStructure();
+		graph->buildDataStructure();
 
-	if (graphNb >= 0) { graph->printDataStructure(); }
+		if (graphNb >= 0) { graph->printDataStructure(); }
 
-	bool errorParts = checkParts(graph);
-	error = error || errorParts;
+		bool errorParts = checkParts(graph);
+		error = error || errorParts;
 
-	delete graph;
+		delete graph;
     }
 	
-    if (error) { std::cout << "ERROR: there has been an error!"; }
-    else { std::cout << "-> CHECK SUCCESSFUL!"; }
+    if (error) { std::cout << "ERROR: there has been an error!" << std::endl; }
+    else { std::cout << "-> CHECK SUCCESSFUL!" << std::endl; }
 }
 
 

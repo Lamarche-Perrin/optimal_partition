@@ -47,6 +47,8 @@
  * \date 06/11/2015
  */
 
+class MultiSet;
+class MultiSubset;
 
 /*!
  * \class PredictionDataset

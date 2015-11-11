@@ -384,18 +384,18 @@ std::string int2string (int value)
 	return strValue.str();
 }
 
-std::string float2string (float value)
+std::string float2string (float value, int prec)
 {
 	std::ostringstream strValue;
-	strValue.precision(10);
+	strValue.precision(prec);
 	strValue << std::fixed <<  value;
 	return strValue.str();
 }
 
-std::string double2string (double value)
+std::string double2string (double value, int prec)
 {
 	std::ostringstream strValue;
-	strValue.precision(10);
+	strValue.precision(prec);
 	strValue << std::fixed << value;
 	return strValue.str();
 }
@@ -408,3 +408,5 @@ time_t date2time (std::string date)
 	time.tm_mday = atoi(date.substr(8,2).c_str());
 	return mktime(&time);
 }
+
+double string2double (std::string str) { return atof(str.c_str()); }

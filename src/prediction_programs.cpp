@@ -43,6 +43,7 @@
 #include "logarithmic_score.hpp"
 
 #include "timer.hpp"
+#include "voter_graph.hpp"
 
 #include <stdlib.h>
 #include <cmath>
@@ -245,3 +246,159 @@ void getBinningComputationTime ()
 	}
 }
 
+
+void optimalBinningOfVoterModel ()
+{
+	/*
+	 * Build voter graph with two communities.
+	 */
+	int size = 5;
+	double intraRate = 1.;
+	double interRate = 1./5;
+	double contrarian = 1./(2*size+1);
+
+	//VoterGraph *VG = new TwoCommunitiesVoterGraph (size,size, intraRate,intraRate, interRate,interRate, contrarian,contrarian);
+	VoterGraph *VG = new TwoCommunitiesVoterGraph (size,0, intraRate,0, 0,0, contrarian,0);
+
+	/*
+	 * Build uni-dimensional measurements of the graph.
+	 */
+	VoterMeasurement *agentM = getMeasurement (VG, M_AGENT1, MACRO_STATE);
+	VoterMeasurement *mesoM = getMeasurement (VG, M_MESO1, MACRO_STATE);
+	VoterMeasurement *macroM = getMeasurement (VG, M_MACRO, MACRO_STATE);
+
+	/*
+	 * Get corresponding uni-dimensional ordered set representing the observation space.
+	 */
+	OrderedUniSet *agentSet = agentM->getOrderedUniSet();
+	OrderedUniSet *mesoSet = mesoM->getOrderedUniSet();
+	OrderedUniSet *macroSet = macroM->getOrderedUniSet();
+	OrderedUniSet *postSet = agentM->getOrderedUniSet();
+
+	agentSet->buildDataStructure();
+	mesoSet->buildDataStructure();
+	macroSet->buildDataStructure();
+	postSet->buildDataStructure();
+
+	/*
+	 * Build the pre-measurement (multi-dimensional) and the post-measurement (one-dimensional).
+	 */
+	int dimension = 1;
+	UniSet **setArray = new UniSet* [dimension];
+	//setArray[0] = agentSet;
+	//setArray[1] = mesoSet;
+	setArray[0] = macroSet;
+
+	MultiSet *preM = new MultiSet (setArray, dimension);
+	MultiSet *postM = new MultiSet (macroSet);
+
+	preM->buildDataStructure();
+	postM->buildDataStructure();
+	
+	/*
+	 * Compute a data set of trajectories.
+	 */
+	int time = -1;
+	int delay = 1000;
+	int trainSize = 1000;
+	int testSize = 10;
+	int trainLength = 1;
+	int testLength = 0;
+	
+	VoterDataSet *DS = new VoterDataSet (VG, time, delay, trainSize, testSize, trainLength, testLength);
+
+	/*
+	 * Get the corresponding prediction data set.
+	 */
+	PredictionDataset *PDS = DS->getPredictionDataset (preM, postM);
+	
+	/*
+	 * Build the logarithmic score function associated to the prediction data set.
+	 */
+	int prior = 1;
+	
+	LogarithmicScore *score = new LogarithmicScore (PDS, prior);
+	preM->setObjectiveFunction(score);
+
+	/*
+	 * Compute the values of the objective for each possible multi-dimensional bin of the pre-measurement.
+	 */
+	preM->computeObjectiveValues();
+
+	/*
+	 * Compute the binning that optimises the logarithmic score.
+	 */
+	Partition *partition = preM->getOptimalPartition (0);
+	partition->print();
+
+	/*
+	 * Compare to former algorithm.
+	 */
+	VoterBinning *binning = DS->getOptimalBinning (macroM, macroM, prior);
+	binning->print(true);
+
+	/*
+	 * Free memory.
+	 */
+}
+
+	/*
+	int size = 100;
+	double contrarian = 1./(size+1);
+
+	int time = 10000;
+	int delay = 10;
+	int prior = 1;
+	  
+	int trainSize = 2000;
+	int testSize = 100;
+	int trainLength = 100;
+	int testLength = 0;
+
+	int incrStep = 10;
+
+	
+	std::string fileName = "../data/optbin_small-test.csv";
+	testSize = 50;
+
+	std::ofstream file;
+	deleteCSV(fileName);
+	openOutputCSV(file,fileName);
+	addCSVField(file,"VAR");
+	addCSVField(file,"SCORE");
+	addCSVField(file,"BINS");
+	addCSVField(file,"CUTS",false);
+	endCSVLine(file);
+	
+	
+	CompleteVoterGraph *VG = new CompleteVoterGraph (size,UPDATE_EDGES,contrarian);
+	VoterDataSet *DS = new VoterDataSet (VG, time, delay, trainSize, testSize, trainLength, testLength);
+
+	VoterMeasurement *preM = getMeasurement (VG, M_MACRO, MACRO_STATE);
+	VoterMeasurement *postM = getMeasurement (VG, M_MACRO, MACRO_STATE);
+
+	for (int t = incrStep; t <= trainSize; t += incrStep)
+	{
+		VoterBinning *binning = DS->getOptimalBinning(preM, postM, prior, t);
+		std::cout << "OPTIMAL BINNING FOR " << t << " TRAJECTORIES" << std::endl;
+		binning->print(false);
+
+		addCSVField(file,t);
+		addCSVField(file,binning->score);
+		addCSVField(file,binning->binNumber);
+
+		std::string str = "";
+		for (int i = 0; i < binning->binNumber; i++)
+		{
+			if (i > 0) { str += ","; }
+			str += int2string(binning->cuts[i]);
+		}
+		addCSVField(file,str,false);
+		endCSVLine(file);
+
+		delete binning;
+	}
+	
+	closeOutputCSV(file);
+
+	*/
