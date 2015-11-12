@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,17 +91,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="directory">
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>addPart</b>(Part *p, bool front=false) (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>equal</b>(Partition *p) (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>findPart</b>(int individual) (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>getPartFromValue</b>(int value) (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>parameter</b> (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>Partition</b>(ObjectiveFunction *objective=0, double parameter=0) (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>Partition</b>(Partition *partition) (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0"><td class="entry"><b>parts</b> (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
   <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>print</b>(bool endl=false) (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0"><td class="entry"><b>value</b> (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~Partition</b>() (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>size</b> (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>value</b> (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0"><td class="entry"><b>~Partition</b>() (defined in <a class="el" href="classPartition.html">Partition</a>)</td><td class="entry"><a class="el" href="classPartition.html">Partition</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 19:14:46 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 12 2015 17:01:43 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

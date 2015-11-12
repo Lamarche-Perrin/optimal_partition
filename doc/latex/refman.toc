@@ -3,171 +3,315 @@
 \contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}
 \contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}
 \contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}
-\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}
-\contentsline {chapter}{\numberline {5}Class Documentation}{9}{chapter.5}
-\contentsline {section}{\numberline {5.1}Abstract\discretionary {-}{}{}Set Class Reference}{9}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{10}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Constructor \& Destructor Documentation}{11}{subsection.5.1.2}
-\contentsline {subsubsection}{\numberline {5.1.2.1}$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set}{11}{subsubsection.5.1.2.1}
-\contentsline {subsection}{\numberline {5.1.3}Member Function Documentation}{11}{subsection.5.1.3}
-\contentsline {subsubsection}{\numberline {5.1.3.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{11}{subsubsection.5.1.3.1}
-\contentsline {subsubsection}{\numberline {5.1.3.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{11}{subsubsection.5.1.3.2}
-\contentsline {subsubsection}{\numberline {5.1.3.3}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}{11}{subsubsection.5.1.3.3}
-\contentsline {subsubsection}{\numberline {5.1.3.4}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{12}{subsubsection.5.1.3.4}
-\contentsline {subsubsection}{\numberline {5.1.3.5}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}{13}{subsubsection.5.1.3.5}
-\contentsline {subsubsection}{\numberline {5.1.3.6}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V}{13}{subsubsection.5.1.3.6}
-\contentsline {subsubsection}{\numberline {5.1.3.7}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{13}{subsubsection.5.1.3.7}
-\contentsline {section}{\numberline {5.2}Bi\discretionary {-}{}{}Part Class Reference}{13}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{14}{subsection.5.2.1}
-\contentsline {section}{\numberline {5.3}Bi\discretionary {-}{}{}Set Class Reference}{14}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Member Function Documentation}{15}{subsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{15}{subsubsection.5.3.1.1}
-\contentsline {subsubsection}{\numberline {5.3.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{15}{subsubsection.5.3.1.2}
-\contentsline {subsubsection}{\numberline {5.3.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{15}{subsubsection.5.3.1.3}
-\contentsline {subsubsection}{\numberline {5.3.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{16}{subsubsection.5.3.1.4}
-\contentsline {section}{\numberline {5.4}Bi\discretionary {-}{}{}Subset Class Reference}{16}{section.5.4}
-\contentsline {section}{\numberline {5.5}Bottleneck\discretionary {-}{}{}Objective\discretionary {-}{}{}Value Class Reference}{17}{section.5.5}
-\contentsline {section}{\numberline {5.6}Complete\discretionary {-}{}{}Graph Class Reference}{17}{section.5.6}
-\contentsline {section}{\numberline {5.7}Data\discretionary {-}{}{}Point\discretionary {-}{}{}Struct Struct Reference}{18}{section.5.7}
-\contentsline {section}{\numberline {5.8}Dataset Class Reference}{18}{section.5.8}
-\contentsline {section}{\numberline {5.9}Datatree Class Reference}{19}{section.5.9}
-\contentsline {section}{\numberline {5.10}Filiform\discretionary {-}{}{}Graph Class Reference}{20}{section.5.10}
-\contentsline {section}{\numberline {5.11}Graph Class Reference}{20}{section.5.11}
-\contentsline {subsection}{\numberline {5.11.1}Member Function Documentation}{22}{subsection.5.11.1}
-\contentsline {subsubsection}{\numberline {5.11.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{22}{subsubsection.5.11.1.1}
-\contentsline {subsubsection}{\numberline {5.11.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{22}{subsubsection.5.11.1.2}
-\contentsline {subsubsection}{\numberline {5.11.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{22}{subsubsection.5.11.1.3}
-\contentsline {subsubsection}{\numberline {5.11.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{22}{subsubsection.5.11.1.4}
-\contentsline {section}{\numberline {5.12}Graph\discretionary {-}{}{}Component Class Reference}{22}{section.5.12}
-\contentsline {section}{\numberline {5.13}H\discretionary {-}{}{}H\discretionary {-}{}{}Node Class Reference}{23}{section.5.13}
-\contentsline {section}{\numberline {5.14}Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set Class Reference}{24}{section.5.14}
-\contentsline {subsection}{\numberline {5.14.1}Member Function Documentation}{25}{subsection.5.14.1}
-\contentsline {subsubsection}{\numberline {5.14.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{25}{subsubsection.5.14.1.1}
-\contentsline {subsubsection}{\numberline {5.14.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{25}{subsubsection.5.14.1.2}
-\contentsline {subsubsection}{\numberline {5.14.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{25}{subsubsection.5.14.1.3}
-\contentsline {subsubsection}{\numberline {5.14.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{25}{subsubsection.5.14.1.4}
-\contentsline {section}{\numberline {5.15}Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set Class Reference}{26}{section.5.15}
-\contentsline {subsection}{\numberline {5.15.1}Member Function Documentation}{26}{subsection.5.15.1}
-\contentsline {subsubsection}{\numberline {5.15.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{26}{subsubsection.5.15.1.1}
-\contentsline {subsubsection}{\numberline {5.15.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{27}{subsubsection.5.15.1.2}
-\contentsline {subsubsection}{\numberline {5.15.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{27}{subsubsection.5.15.1.3}
-\contentsline {subsubsection}{\numberline {5.15.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{27}{subsubsection.5.15.1.4}
-\contentsline {section}{\numberline {5.16}Hierarchical\discretionary {-}{}{}Set Class Reference}{27}{section.5.16}
-\contentsline {subsection}{\numberline {5.16.1}Member Function Documentation}{28}{subsection.5.16.1}
-\contentsline {subsubsection}{\numberline {5.16.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{28}{subsubsection.5.16.1.1}
-\contentsline {subsubsection}{\numberline {5.16.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{28}{subsubsection.5.16.1.2}
-\contentsline {subsubsection}{\numberline {5.16.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{29}{subsubsection.5.16.1.3}
-\contentsline {subsubsection}{\numberline {5.16.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{29}{subsubsection.5.16.1.4}
-\contentsline {section}{\numberline {5.17}Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set Class Reference}{29}{section.5.17}
-\contentsline {subsection}{\numberline {5.17.1}Detailed Description}{30}{subsection.5.17.1}
-\contentsline {subsection}{\numberline {5.17.2}Constructor \& Destructor Documentation}{30}{subsection.5.17.2}
-\contentsline {subsubsection}{\numberline {5.17.2.1}Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}{30}{subsubsection.5.17.2.1}
-\contentsline {section}{\numberline {5.18}H\discretionary {-}{}{}Node Class Reference}{30}{section.5.18}
-\contentsline {section}{\numberline {5.19}H\discretionary {-}{}{}O\discretionary {-}{}{}Node Class Reference}{31}{section.5.19}
-\contentsline {section}{\numberline {5.20}Information\discretionary {-}{}{}Bottleneck Class Reference}{32}{section.5.20}
-\contentsline {section}{\numberline {5.21}Logarithmic\discretionary {-}{}{}Score Class Reference}{32}{section.5.21}
-\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{33}{subsection.5.21.1}
-\contentsline {subsection}{\numberline {5.21.2}Constructor \& Destructor Documentation}{33}{subsection.5.21.2}
-\contentsline {subsubsection}{\numberline {5.21.2.1}Logarithmic\discretionary {-}{}{}Score}{33}{subsubsection.5.21.2.1}
-\contentsline {section}{\numberline {5.22}Logarithmic\discretionary {-}{}{}Score\discretionary {-}{}{}Value Class Reference}{33}{section.5.22}
-\contentsline {section}{\numberline {5.23}Multi\discretionary {-}{}{}Part Class Reference}{34}{section.5.23}
-\contentsline {subsection}{\numberline {5.23.1}Detailed Description}{34}{subsection.5.23.1}
-\contentsline {section}{\numberline {5.24}Multi\discretionary {-}{}{}Set Class Reference}{35}{section.5.24}
-\contentsline {subsection}{\numberline {5.24.1}Detailed Description}{36}{subsection.5.24.1}
-\contentsline {subsection}{\numberline {5.24.2}Constructor \& Destructor Documentation}{36}{subsection.5.24.2}
-\contentsline {subsubsection}{\numberline {5.24.2.1}Multi\discretionary {-}{}{}Set}{36}{subsubsection.5.24.2.1}
-\contentsline {subsubsection}{\numberline {5.24.2.2}Multi\discretionary {-}{}{}Set}{36}{subsubsection.5.24.2.2}
-\contentsline {subsubsection}{\numberline {5.24.2.3}$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set}{36}{subsubsection.5.24.2.3}
-\contentsline {subsection}{\numberline {5.24.3}Member Function Documentation}{37}{subsection.5.24.3}
-\contentsline {subsubsection}{\numberline {5.24.3.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{37}{subsubsection.5.24.3.1}
-\contentsline {subsubsection}{\numberline {5.24.3.2}get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}{38}{subsubsection.5.24.3.2}
-\contentsline {subsubsection}{\numberline {5.24.3.3}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{38}{subsubsection.5.24.3.3}
-\contentsline {subsubsection}{\numberline {5.24.3.4}get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}{38}{subsubsection.5.24.3.4}
-\contentsline {subsubsection}{\numberline {5.24.3.5}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{38}{subsubsection.5.24.3.5}
-\contentsline {subsubsection}{\numberline {5.24.3.6}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{38}{subsubsection.5.24.3.6}
-\contentsline {section}{\numberline {5.25}Multi\discretionary {-}{}{}Subset Class Reference}{39}{section.5.25}
-\contentsline {section}{\numberline {5.26}N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Node Class Reference}{39}{section.5.26}
-\contentsline {section}{\numberline {5.27}N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set Class Reference}{40}{section.5.27}
-\contentsline {subsection}{\numberline {5.27.1}Member Function Documentation}{41}{subsection.5.27.1}
-\contentsline {subsubsection}{\numberline {5.27.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{41}{subsubsection.5.27.1.1}
-\contentsline {subsubsection}{\numberline {5.27.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{41}{subsubsection.5.27.1.2}
-\contentsline {subsubsection}{\numberline {5.27.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{41}{subsubsection.5.27.1.3}
-\contentsline {subsubsection}{\numberline {5.27.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{42}{subsubsection.5.27.1.4}
-\contentsline {section}{\numberline {5.28}Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set Class Reference}{43}{section.5.28}
-\contentsline {subsection}{\numberline {5.28.1}Member Function Documentation}{44}{subsection.5.28.1}
-\contentsline {subsubsection}{\numberline {5.28.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{44}{subsubsection.5.28.1.1}
-\contentsline {subsubsection}{\numberline {5.28.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{44}{subsubsection.5.28.1.2}
-\contentsline {subsubsection}{\numberline {5.28.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{44}{subsubsection.5.28.1.3}
-\contentsline {subsubsection}{\numberline {5.28.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{44}{subsubsection.5.28.1.4}
-\contentsline {section}{\numberline {5.29}Nonconstrained\discretionary {-}{}{}Set Class Reference}{45}{section.5.29}
-\contentsline {subsection}{\numberline {5.29.1}Member Function Documentation}{46}{subsection.5.29.1}
-\contentsline {subsubsection}{\numberline {5.29.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{46}{subsubsection.5.29.1.1}
-\contentsline {subsubsection}{\numberline {5.29.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{46}{subsubsection.5.29.1.2}
-\contentsline {subsubsection}{\numberline {5.29.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{46}{subsubsection.5.29.1.3}
-\contentsline {subsubsection}{\numberline {5.29.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{46}{subsubsection.5.29.1.4}
-\contentsline {section}{\numberline {5.30}Objective\discretionary {-}{}{}Function Class Reference}{47}{section.5.30}
-\contentsline {subsection}{\numberline {5.30.1}Detailed Description}{47}{subsection.5.30.1}
-\contentsline {subsection}{\numberline {5.30.2}Constructor \& Destructor Documentation}{47}{subsection.5.30.2}
-\contentsline {subsubsection}{\numberline {5.30.2.1}Objective\discretionary {-}{}{}Function}{47}{subsubsection.5.30.2.1}
-\contentsline {section}{\numberline {5.31}Objective\discretionary {-}{}{}Value Class Reference}{48}{section.5.31}
-\contentsline {section}{\numberline {5.32}Ordered\discretionary {-}{}{}Datatree Class Reference}{48}{section.5.32}
-\contentsline {section}{\numberline {5.33}Ordered\discretionary {-}{}{}Set Class Reference}{49}{section.5.33}
-\contentsline {subsection}{\numberline {5.33.1}Member Function Documentation}{50}{subsection.5.33.1}
-\contentsline {subsubsection}{\numberline {5.33.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{50}{subsubsection.5.33.1.1}
-\contentsline {subsubsection}{\numberline {5.33.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{50}{subsubsection.5.33.1.2}
-\contentsline {subsubsection}{\numberline {5.33.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{51}{subsubsection.5.33.1.3}
-\contentsline {subsubsection}{\numberline {5.33.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{51}{subsubsection.5.33.1.4}
-\contentsline {section}{\numberline {5.34}Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set Class Reference}{51}{section.5.34}
-\contentsline {subsection}{\numberline {5.34.1}Detailed Description}{51}{subsection.5.34.1}
-\contentsline {subsection}{\numberline {5.34.2}Constructor \& Destructor Documentation}{52}{subsection.5.34.2}
-\contentsline {subsubsection}{\numberline {5.34.2.1}Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}{52}{subsubsection.5.34.2.1}
-\contentsline {section}{\numberline {5.35}Part Class Reference}{52}{section.5.35}
-\contentsline {subsection}{\numberline {5.35.1}Detailed Description}{52}{subsection.5.35.1}
-\contentsline {section}{\numberline {5.36}Partition Class Reference}{53}{section.5.36}
-\contentsline {subsection}{\numberline {5.36.1}Detailed Description}{53}{subsection.5.36.1}
-\contentsline {section}{\numberline {5.37}Prediction\discretionary {-}{}{}Dataset Class Reference}{53}{section.5.37}
-\contentsline {subsection}{\numberline {5.37.1}Detailed Description}{54}{subsection.5.37.1}
-\contentsline {subsection}{\numberline {5.37.2}Constructor \& Destructor Documentation}{54}{subsection.5.37.2}
-\contentsline {subsubsection}{\numberline {5.37.2.1}Prediction\discretionary {-}{}{}Dataset}{54}{subsubsection.5.37.2.1}
-\contentsline {subsection}{\numberline {5.37.3}Member Function Documentation}{54}{subsection.5.37.3}
-\contentsline {subsubsection}{\numberline {5.37.3.1}add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}{54}{subsubsection.5.37.3.1}
-\contentsline {subsubsection}{\numberline {5.37.3.2}add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}{55}{subsubsection.5.37.3.2}
-\contentsline {subsubsection}{\numberline {5.37.3.3}add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}{55}{subsubsection.5.37.3.3}
-\contentsline {subsubsection}{\numberline {5.37.3.4}add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}{55}{subsubsection.5.37.3.4}
-\contentsline {section}{\numberline {5.38}Random\discretionary {-}{}{}Graph Class Reference}{55}{section.5.38}
-\contentsline {section}{\numberline {5.39}Relative\discretionary {-}{}{}Entropy Class Reference}{56}{section.5.39}
-\contentsline {section}{\numberline {5.40}Relative\discretionary {-}{}{}Objective\discretionary {-}{}{}Value Class Reference}{57}{section.5.40}
-\contentsline {section}{\numberline {5.41}Ring Class Reference}{57}{section.5.41}
-\contentsline {subsection}{\numberline {5.41.1}Member Function Documentation}{58}{subsection.5.41.1}
-\contentsline {subsubsection}{\numberline {5.41.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{58}{subsubsection.5.41.1.1}
-\contentsline {subsubsection}{\numberline {5.41.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{59}{subsubsection.5.41.1.2}
-\contentsline {subsubsection}{\numberline {5.41.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{59}{subsubsection.5.41.1.3}
-\contentsline {subsubsection}{\numberline {5.41.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{59}{subsubsection.5.41.1.4}
-\contentsline {section}{\numberline {5.42}Ring\discretionary {-}{}{}Graph Class Reference}{59}{section.5.42}
-\contentsline {section}{\numberline {5.43}Timer Class Reference}{60}{section.5.43}
-\contentsline {section}{\numberline {5.44}Tree\discretionary {-}{}{}To\discretionary {-}{}{}Add Struct Reference}{60}{section.5.44}
-\contentsline {section}{\numberline {5.45}Uni\discretionary {-}{}{}Set Class Reference}{61}{section.5.45}
-\contentsline {subsection}{\numberline {5.45.1}Detailed Description}{62}{subsection.5.45.1}
-\contentsline {subsection}{\numberline {5.45.2}Constructor \& Destructor Documentation}{62}{subsection.5.45.2}
-\contentsline {subsubsection}{\numberline {5.45.2.1}Uni\discretionary {-}{}{}Set}{62}{subsubsection.5.45.2.1}
-\contentsline {subsection}{\numberline {5.45.3}Member Function Documentation}{62}{subsection.5.45.3}
-\contentsline {subsubsection}{\numberline {5.45.3.1}init\discretionary {-}{}{}Reached}{62}{subsubsection.5.45.3.1}
-\contentsline {section}{\numberline {5.46}Uni\discretionary {-}{}{}Subset Class Reference}{62}{section.5.46}
+\contentsline {chapter}{\numberline {4}File Index}{9}{chapter.4}
+\contentsline {section}{\numberline {4.1}File List}{9}{section.4.1}
+\contentsline {chapter}{\numberline {5}Class Documentation}{11}{chapter.5}
+\contentsline {section}{\numberline {5.1}Abstract\discretionary {-}{}{}Set Class Reference}{11}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{12}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Constructor \& Destructor Documentation}{13}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set}{13}{subsubsection.5.1.2.1}
+\contentsline {subsection}{\numberline {5.1.3}Member Function Documentation}{13}{subsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.3.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{13}{subsubsection.5.1.3.1}
+\contentsline {subsubsection}{\numberline {5.1.3.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{13}{subsubsection.5.1.3.2}
+\contentsline {subsubsection}{\numberline {5.1.3.3}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}{13}{subsubsection.5.1.3.3}
+\contentsline {subsubsection}{\numberline {5.1.3.4}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{14}{subsubsection.5.1.3.4}
+\contentsline {subsubsection}{\numberline {5.1.3.5}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}{15}{subsubsection.5.1.3.5}
+\contentsline {subsubsection}{\numberline {5.1.3.6}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V}{15}{subsubsection.5.1.3.6}
+\contentsline {subsubsection}{\numberline {5.1.3.7}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{15}{subsubsection.5.1.3.7}
+\contentsline {section}{\numberline {5.2}Bi\discretionary {-}{}{}Part Class Reference}{15}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{16}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}Bi\discretionary {-}{}{}Set Class Reference}{16}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Member Function Documentation}{17}{subsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{17}{subsubsection.5.3.1.1}
+\contentsline {subsubsection}{\numberline {5.3.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{17}{subsubsection.5.3.1.2}
+\contentsline {subsubsection}{\numberline {5.3.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{17}{subsubsection.5.3.1.3}
+\contentsline {subsubsection}{\numberline {5.3.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{18}{subsubsection.5.3.1.4}
+\contentsline {section}{\numberline {5.4}Bi\discretionary {-}{}{}Subset Class Reference}{18}{section.5.4}
+\contentsline {section}{\numberline {5.5}Bottleneck\discretionary {-}{}{}Objective\discretionary {-}{}{}Value Class Reference}{19}{section.5.5}
+\contentsline {section}{\numberline {5.6}Chain\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph Class Reference}{19}{section.5.6}
+\contentsline {section}{\numberline {5.7}Complete\discretionary {-}{}{}Graph Class Reference}{20}{section.5.7}
+\contentsline {section}{\numberline {5.8}Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph Class Reference}{20}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Detailed Description}{21}{subsection.5.8.1}
+\contentsline {subsection}{\numberline {5.8.2}Constructor \& Destructor Documentation}{21}{subsection.5.8.2}
+\contentsline {subsubsection}{\numberline {5.8.2.1}Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}{21}{subsubsection.5.8.2.1}
+\contentsline {section}{\numberline {5.9}Data\discretionary {-}{}{}Point\discretionary {-}{}{}Struct Struct Reference}{21}{section.5.9}
+\contentsline {section}{\numberline {5.10}Dataset Class Reference}{21}{section.5.10}
+\contentsline {section}{\numberline {5.11}Datatree Class Reference}{22}{section.5.11}
+\contentsline {section}{\numberline {5.12}Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement Class Reference}{23}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Detailed Description}{23}{subsection.5.12.1}
+\contentsline {subsection}{\numberline {5.12.2}Constructor \& Destructor Documentation}{23}{subsection.5.12.2}
+\contentsline {subsubsection}{\numberline {5.12.2.1}Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}{23}{subsubsection.5.12.2.1}
+\contentsline {section}{\numberline {5.13}Filiform\discretionary {-}{}{}Graph Class Reference}{24}{section.5.13}
+\contentsline {section}{\numberline {5.14}Graph Class Reference}{24}{section.5.14}
+\contentsline {subsection}{\numberline {5.14.1}Member Function Documentation}{26}{subsection.5.14.1}
+\contentsline {subsubsection}{\numberline {5.14.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{26}{subsubsection.5.14.1.1}
+\contentsline {subsubsection}{\numberline {5.14.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{26}{subsubsection.5.14.1.2}
+\contentsline {subsubsection}{\numberline {5.14.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{26}{subsubsection.5.14.1.3}
+\contentsline {subsubsection}{\numberline {5.14.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{26}{subsubsection.5.14.1.4}
+\contentsline {section}{\numberline {5.15}Graph\discretionary {-}{}{}Based\discretionary {-}{}{}Uni\discretionary {-}{}{}Set Class Reference}{26}{section.5.15}
+\contentsline {section}{\numberline {5.16}Graph\discretionary {-}{}{}Component Class Reference}{27}{section.5.16}
+\contentsline {section}{\numberline {5.17}H\discretionary {-}{}{}H\discretionary {-}{}{}Node Class Reference}{28}{section.5.17}
+\contentsline {section}{\numberline {5.18}Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set Class Reference}{28}{section.5.18}
+\contentsline {subsection}{\numberline {5.18.1}Member Function Documentation}{29}{subsection.5.18.1}
+\contentsline {subsubsection}{\numberline {5.18.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{29}{subsubsection.5.18.1.1}
+\contentsline {subsubsection}{\numberline {5.18.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{29}{subsubsection.5.18.1.2}
+\contentsline {subsubsection}{\numberline {5.18.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{30}{subsubsection.5.18.1.3}
+\contentsline {subsubsection}{\numberline {5.18.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{30}{subsubsection.5.18.1.4}
+\contentsline {section}{\numberline {5.19}Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set Class Reference}{30}{section.5.19}
+\contentsline {subsection}{\numberline {5.19.1}Member Function Documentation}{31}{subsection.5.19.1}
+\contentsline {subsubsection}{\numberline {5.19.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{31}{subsubsection.5.19.1.1}
+\contentsline {subsubsection}{\numberline {5.19.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{31}{subsubsection.5.19.1.2}
+\contentsline {subsubsection}{\numberline {5.19.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{32}{subsubsection.5.19.1.3}
+\contentsline {subsubsection}{\numberline {5.19.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{32}{subsubsection.5.19.1.4}
+\contentsline {section}{\numberline {5.20}Hierarchical\discretionary {-}{}{}Set Class Reference}{32}{section.5.20}
+\contentsline {subsection}{\numberline {5.20.1}Member Function Documentation}{33}{subsection.5.20.1}
+\contentsline {subsubsection}{\numberline {5.20.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{33}{subsubsection.5.20.1.1}
+\contentsline {subsubsection}{\numberline {5.20.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{33}{subsubsection.5.20.1.2}
+\contentsline {subsubsection}{\numberline {5.20.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{33}{subsubsection.5.20.1.3}
+\contentsline {subsubsection}{\numberline {5.20.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{34}{subsubsection.5.20.1.4}
+\contentsline {section}{\numberline {5.21}Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set Class Reference}{34}{section.5.21}
+\contentsline {subsection}{\numberline {5.21.1}Detailed Description}{34}{subsection.5.21.1}
+\contentsline {subsection}{\numberline {5.21.2}Constructor \& Destructor Documentation}{35}{subsection.5.21.2}
+\contentsline {subsubsection}{\numberline {5.21.2.1}Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}{35}{subsubsection.5.21.2.1}
+\contentsline {section}{\numberline {5.22}H\discretionary {-}{}{}Node Class Reference}{35}{section.5.22}
+\contentsline {section}{\numberline {5.23}H\discretionary {-}{}{}O\discretionary {-}{}{}Node Class Reference}{36}{section.5.23}
+\contentsline {section}{\numberline {5.24}Information\discretionary {-}{}{}Bottleneck Class Reference}{36}{section.5.24}
+\contentsline {section}{\numberline {5.25}Logarithmic\discretionary {-}{}{}Score Class Reference}{37}{section.5.25}
+\contentsline {subsection}{\numberline {5.25.1}Detailed Description}{37}{subsection.5.25.1}
+\contentsline {subsection}{\numberline {5.25.2}Constructor \& Destructor Documentation}{38}{subsection.5.25.2}
+\contentsline {subsubsection}{\numberline {5.25.2.1}Logarithmic\discretionary {-}{}{}Score}{38}{subsubsection.5.25.2.1}
+\contentsline {section}{\numberline {5.26}Logarithmic\discretionary {-}{}{}Score\discretionary {-}{}{}Value Class Reference}{38}{section.5.26}
+\contentsline {section}{\numberline {5.27}Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement Class Reference}{39}{section.5.27}
+\contentsline {subsection}{\numberline {5.27.1}Detailed Description}{39}{subsection.5.27.1}
+\contentsline {subsection}{\numberline {5.27.2}Constructor \& Destructor Documentation}{39}{subsection.5.27.2}
+\contentsline {subsubsection}{\numberline {5.27.2.1}Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}{39}{subsubsection.5.27.2.1}
+\contentsline {section}{\numberline {5.28}Markov\discretionary {-}{}{}Data\discretionary {-}{}{}Set Class Reference}{39}{section.5.28}
+\contentsline {section}{\numberline {5.29}Markov\discretionary {-}{}{}Process Class Reference}{40}{section.5.29}
+\contentsline {subsection}{\numberline {5.29.1}Detailed Description}{41}{subsection.5.29.1}
+\contentsline {subsection}{\numberline {5.29.2}Constructor \& Destructor Documentation}{41}{subsection.5.29.2}
+\contentsline {subsubsection}{\numberline {5.29.2.1}Markov\discretionary {-}{}{}Process}{41}{subsubsection.5.29.2.1}
+\contentsline {subsection}{\numberline {5.29.3}Member Function Documentation}{41}{subsection.5.29.3}
+\contentsline {subsubsection}{\numberline {5.29.3.1}compute\discretionary {-}{}{}Stationary\discretionary {-}{}{}Distribution}{41}{subsubsection.5.29.3.1}
+\contentsline {subsubsection}{\numberline {5.29.3.2}compute\discretionary {-}{}{}Trajectory}{42}{subsubsection.5.29.3.2}
+\contentsline {subsubsection}{\numberline {5.29.3.3}set\discretionary {-}{}{}Distribution}{42}{subsubsection.5.29.3.3}
+\contentsline {subsubsection}{\numberline {5.29.3.4}set\discretionary {-}{}{}Transition}{42}{subsubsection.5.29.3.4}
+\contentsline {subsubsection}{\numberline {5.29.3.5}set\discretionary {-}{}{}Transition}{42}{subsubsection.5.29.3.5}
+\contentsline {subsection}{\numberline {5.29.4}Member Data Documentation}{42}{subsection.5.29.4}
+\contentsline {subsubsection}{\numberline {5.29.4.1}distribution}{42}{subsubsection.5.29.4.1}
+\contentsline {subsubsection}{\numberline {5.29.4.2}distributions}{42}{subsubsection.5.29.4.2}
+\contentsline {subsubsection}{\numberline {5.29.4.3}last\discretionary {-}{}{}Delay}{43}{subsubsection.5.29.4.3}
+\contentsline {subsubsection}{\numberline {5.29.4.4}last\discretionary {-}{}{}Time}{43}{subsubsection.5.29.4.4}
+\contentsline {subsubsection}{\numberline {5.29.4.5}size}{43}{subsubsection.5.29.4.5}
+\contentsline {subsubsection}{\numberline {5.29.4.6}transition}{43}{subsubsection.5.29.4.6}
+\contentsline {subsubsection}{\numberline {5.29.4.7}transitions}{43}{subsubsection.5.29.4.7}
+\contentsline {section}{\numberline {5.30}Markov\discretionary {-}{}{}Trajectory Class Reference}{43}{section.5.30}
+\contentsline {section}{\numberline {5.31}Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement Class Reference}{43}{section.5.31}
+\contentsline {subsection}{\numberline {5.31.1}Detailed Description}{44}{subsection.5.31.1}
+\contentsline {subsection}{\numberline {5.31.2}Constructor \& Destructor Documentation}{44}{subsection.5.31.2}
+\contentsline {subsubsection}{\numberline {5.31.2.1}Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}{44}{subsubsection.5.31.2.1}
+\contentsline {section}{\numberline {5.32}Multi\discretionary {-}{}{}Part Class Reference}{44}{section.5.32}
+\contentsline {subsection}{\numberline {5.32.1}Detailed Description}{45}{subsection.5.32.1}
+\contentsline {section}{\numberline {5.33}Multi\discretionary {-}{}{}Set Class Reference}{45}{section.5.33}
+\contentsline {subsection}{\numberline {5.33.1}Detailed Description}{46}{subsection.5.33.1}
+\contentsline {subsection}{\numberline {5.33.2}Constructor \& Destructor Documentation}{46}{subsection.5.33.2}
+\contentsline {subsubsection}{\numberline {5.33.2.1}Multi\discretionary {-}{}{}Set}{46}{subsubsection.5.33.2.1}
+\contentsline {subsubsection}{\numberline {5.33.2.2}Multi\discretionary {-}{}{}Set}{47}{subsubsection.5.33.2.2}
+\contentsline {subsubsection}{\numberline {5.33.2.3}Multi\discretionary {-}{}{}Set}{47}{subsubsection.5.33.2.3}
+\contentsline {subsubsection}{\numberline {5.33.2.4}$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set}{47}{subsubsection.5.33.2.4}
+\contentsline {subsection}{\numberline {5.33.3}Member Function Documentation}{47}{subsection.5.33.3}
+\contentsline {subsubsection}{\numberline {5.33.3.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{47}{subsubsection.5.33.3.1}
+\contentsline {subsubsection}{\numberline {5.33.3.2}get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}{47}{subsubsection.5.33.3.2}
+\contentsline {subsubsection}{\numberline {5.33.3.3}get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}{47}{subsubsection.5.33.3.3}
+\contentsline {subsubsection}{\numberline {5.33.3.4}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{47}{subsubsection.5.33.3.4}
+\contentsline {subsubsection}{\numberline {5.33.3.5}get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}{48}{subsubsection.5.33.3.5}
+\contentsline {subsubsection}{\numberline {5.33.3.6}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{48}{subsubsection.5.33.3.6}
+\contentsline {subsubsection}{\numberline {5.33.3.7}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{48}{subsubsection.5.33.3.7}
+\contentsline {section}{\numberline {5.34}Multi\discretionary {-}{}{}Subset Class Reference}{48}{section.5.34}
+\contentsline {section}{\numberline {5.35}N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Node Class Reference}{49}{section.5.35}
+\contentsline {section}{\numberline {5.36}N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set Class Reference}{50}{section.5.36}
+\contentsline {subsection}{\numberline {5.36.1}Member Function Documentation}{51}{subsection.5.36.1}
+\contentsline {subsubsection}{\numberline {5.36.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{51}{subsubsection.5.36.1.1}
+\contentsline {subsubsection}{\numberline {5.36.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{52}{subsubsection.5.36.1.2}
+\contentsline {subsubsection}{\numberline {5.36.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{52}{subsubsection.5.36.1.3}
+\contentsline {subsubsection}{\numberline {5.36.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{52}{subsubsection.5.36.1.4}
+\contentsline {section}{\numberline {5.37}Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set Class Reference}{52}{section.5.37}
+\contentsline {subsection}{\numberline {5.37.1}Member Function Documentation}{53}{subsection.5.37.1}
+\contentsline {subsubsection}{\numberline {5.37.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{53}{subsubsection.5.37.1.1}
+\contentsline {subsubsection}{\numberline {5.37.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{54}{subsubsection.5.37.1.2}
+\contentsline {subsubsection}{\numberline {5.37.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{54}{subsubsection.5.37.1.3}
+\contentsline {subsubsection}{\numberline {5.37.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{54}{subsubsection.5.37.1.4}
+\contentsline {section}{\numberline {5.38}Nonconstrained\discretionary {-}{}{}Set Class Reference}{54}{section.5.38}
+\contentsline {subsection}{\numberline {5.38.1}Member Function Documentation}{55}{subsection.5.38.1}
+\contentsline {subsubsection}{\numberline {5.38.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{55}{subsubsection.5.38.1.1}
+\contentsline {subsubsection}{\numberline {5.38.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{55}{subsubsection.5.38.1.2}
+\contentsline {subsubsection}{\numberline {5.38.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{56}{subsubsection.5.38.1.3}
+\contentsline {subsubsection}{\numberline {5.38.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{56}{subsubsection.5.38.1.4}
+\contentsline {section}{\numberline {5.39}Objective\discretionary {-}{}{}Function Class Reference}{56}{section.5.39}
+\contentsline {subsection}{\numberline {5.39.1}Detailed Description}{57}{subsection.5.39.1}
+\contentsline {subsection}{\numberline {5.39.2}Constructor \& Destructor Documentation}{57}{subsection.5.39.2}
+\contentsline {subsubsection}{\numberline {5.39.2.1}Objective\discretionary {-}{}{}Function}{57}{subsubsection.5.39.2.1}
+\contentsline {section}{\numberline {5.40}Objective\discretionary {-}{}{}Value Class Reference}{57}{section.5.40}
+\contentsline {section}{\numberline {5.41}Ordered\discretionary {-}{}{}Datatree Class Reference}{58}{section.5.41}
+\contentsline {section}{\numberline {5.42}Ordered\discretionary {-}{}{}Partition Class Reference}{59}{section.5.42}
+\contentsline {section}{\numberline {5.43}Ordered\discretionary {-}{}{}Set Class Reference}{59}{section.5.43}
+\contentsline {subsection}{\numberline {5.43.1}Member Function Documentation}{60}{subsection.5.43.1}
+\contentsline {subsubsection}{\numberline {5.43.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{60}{subsubsection.5.43.1.1}
+\contentsline {subsubsection}{\numberline {5.43.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{60}{subsubsection.5.43.1.2}
+\contentsline {subsubsection}{\numberline {5.43.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{61}{subsubsection.5.43.1.3}
+\contentsline {subsubsection}{\numberline {5.43.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{61}{subsubsection.5.43.1.4}
+\contentsline {section}{\numberline {5.44}Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set Class Reference}{61}{section.5.44}
+\contentsline {subsection}{\numberline {5.44.1}Detailed Description}{61}{subsection.5.44.1}
+\contentsline {subsection}{\numberline {5.44.2}Constructor \& Destructor Documentation}{62}{subsection.5.44.2}
+\contentsline {subsubsection}{\numberline {5.44.2.1}Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}{62}{subsubsection.5.44.2.1}
+\contentsline {section}{\numberline {5.45}Part Class Reference}{62}{section.5.45}
+\contentsline {subsection}{\numberline {5.45.1}Detailed Description}{63}{subsection.5.45.1}
+\contentsline {section}{\numberline {5.46}Partition Class Reference}{63}{section.5.46}
 \contentsline {subsection}{\numberline {5.46.1}Detailed Description}{63}{subsection.5.46.1}
-\contentsline {subsection}{\numberline {5.46.2}Constructor \& Destructor Documentation}{63}{subsection.5.46.2}
-\contentsline {subsubsection}{\numberline {5.46.2.1}Uni\discretionary {-}{}{}Subset}{63}{subsubsection.5.46.2.1}
-\contentsline {chapter}{\numberline {6}File Documentation}{65}{chapter.6}
-\contentsline {section}{\numberline {6.1}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/abstract\discretionary {-}{}{}\_\discretionary {-}{}{}set.hpp File Reference}{65}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{65}{subsection.6.1.1}
-\contentsline {section}{\numberline {6.2}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/logarithmic\discretionary {-}{}{}\_\discretionary {-}{}{}score.hpp File Reference}{65}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{66}{subsection.6.2.1}
-\contentsline {section}{\numberline {6.3}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/multi\discretionary {-}{}{}\_\discretionary {-}{}{}set.hpp File Reference}{66}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{66}{subsection.6.3.1}
-\contentsline {section}{\numberline {6.4}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/objective\discretionary {-}{}{}\_\discretionary {-}{}{}function.hpp File Reference}{67}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{67}{subsection.6.4.1}
-\contentsline {section}{\numberline {6.5}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/prediction\discretionary {-}{}{}\_\discretionary {-}{}{}dataset.hpp File Reference}{67}{section.6.5}
-\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{68}{subsection.6.5.1}
-\contentsline {section}{\numberline {6.6}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/uni\discretionary {-}{}{}\_\discretionary {-}{}{}set.hpp File Reference}{68}{section.6.6}
-\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{68}{subsection.6.6.1}
-\contentsline {chapter}{Index}{69}{section*.107}
+\contentsline {section}{\numberline {5.47}Prediction\discretionary {-}{}{}Dataset Class Reference}{63}{section.5.47}
+\contentsline {subsection}{\numberline {5.47.1}Detailed Description}{64}{subsection.5.47.1}
+\contentsline {subsection}{\numberline {5.47.2}Constructor \& Destructor Documentation}{64}{subsection.5.47.2}
+\contentsline {subsubsection}{\numberline {5.47.2.1}Prediction\discretionary {-}{}{}Dataset}{64}{subsubsection.5.47.2.1}
+\contentsline {subsection}{\numberline {5.47.3}Member Function Documentation}{65}{subsection.5.47.3}
+\contentsline {subsubsection}{\numberline {5.47.3.1}add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}{65}{subsubsection.5.47.3.1}
+\contentsline {subsubsection}{\numberline {5.47.3.2}add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}{65}{subsubsection.5.47.3.2}
+\contentsline {subsubsection}{\numberline {5.47.3.3}add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}{65}{subsubsection.5.47.3.3}
+\contentsline {subsubsection}{\numberline {5.47.3.4}add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}{65}{subsubsection.5.47.3.4}
+\contentsline {subsubsection}{\numberline {5.47.3.5}print}{66}{subsubsection.5.47.3.5}
+\contentsline {section}{\numberline {5.48}Random\discretionary {-}{}{}Graph Class Reference}{66}{section.5.48}
+\contentsline {section}{\numberline {5.49}Relative\discretionary {-}{}{}Entropy Class Reference}{66}{section.5.49}
+\contentsline {section}{\numberline {5.50}Relative\discretionary {-}{}{}Objective\discretionary {-}{}{}Value Class Reference}{67}{section.5.50}
+\contentsline {section}{\numberline {5.51}Ring Class Reference}{68}{section.5.51}
+\contentsline {subsection}{\numberline {5.51.1}Member Function Documentation}{69}{subsection.5.51.1}
+\contentsline {subsubsection}{\numberline {5.51.1.1}compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{69}{subsubsection.5.51.1.1}
+\contentsline {subsubsection}{\numberline {5.51.1.2}get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{69}{subsubsection.5.51.1.2}
+\contentsline {subsubsection}{\numberline {5.51.1.3}print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}{69}{subsubsection.5.51.1.3}
+\contentsline {subsubsection}{\numberline {5.51.1.4}set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}{70}{subsubsection.5.51.1.4}
+\contentsline {section}{\numberline {5.52}Ring\discretionary {-}{}{}Graph Class Reference}{70}{section.5.52}
+\contentsline {section}{\numberline {5.53}Timer Class Reference}{70}{section.5.53}
+\contentsline {section}{\numberline {5.54}Tree\discretionary {-}{}{}To\discretionary {-}{}{}Add Struct Reference}{71}{section.5.54}
+\contentsline {section}{\numberline {5.55}Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph Class Reference}{71}{section.5.55}
+\contentsline {subsection}{\numberline {5.55.1}Detailed Description}{72}{subsection.5.55.1}
+\contentsline {subsection}{\numberline {5.55.2}Constructor \& Destructor Documentation}{72}{subsection.5.55.2}
+\contentsline {subsubsection}{\numberline {5.55.2.1}Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}{72}{subsubsection.5.55.2.1}
+\contentsline {subsection}{\numberline {5.55.3}Member Function Documentation}{72}{subsection.5.55.3}
+\contentsline {subsubsection}{\numberline {5.55.3.1}get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}{72}{subsubsection.5.55.3.1}
+\contentsline {subsubsection}{\numberline {5.55.3.2}get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}{73}{subsubsection.5.55.3.2}
+\contentsline {subsubsection}{\numberline {5.55.3.3}get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Process}{73}{subsubsection.5.55.3.3}
+\contentsline {subsection}{\numberline {5.55.4}Member Data Documentation}{73}{subsection.5.55.4}
+\contentsline {subsubsection}{\numberline {5.55.4.1}community1}{73}{subsubsection.5.55.4.1}
+\contentsline {subsubsection}{\numberline {5.55.4.2}community2}{73}{subsubsection.5.55.4.2}
+\contentsline {subsubsection}{\numberline {5.55.4.3}contrarian1}{73}{subsubsection.5.55.4.3}
+\contentsline {subsubsection}{\numberline {5.55.4.4}contrarian2}{73}{subsubsection.5.55.4.4}
+\contentsline {subsubsection}{\numberline {5.55.4.5}inter\discretionary {-}{}{}Rate1}{73}{subsubsection.5.55.4.5}
+\contentsline {subsubsection}{\numberline {5.55.4.6}inter\discretionary {-}{}{}Rate2}{74}{subsubsection.5.55.4.6}
+\contentsline {subsubsection}{\numberline {5.55.4.7}intra\discretionary {-}{}{}Rate1}{74}{subsubsection.5.55.4.7}
+\contentsline {subsubsection}{\numberline {5.55.4.8}intra\discretionary {-}{}{}Rate2}{74}{subsubsection.5.55.4.8}
+\contentsline {subsubsection}{\numberline {5.55.4.9}size1}{74}{subsubsection.5.55.4.9}
+\contentsline {subsubsection}{\numberline {5.55.4.10}size2}{74}{subsubsection.5.55.4.10}
+\contentsline {section}{\numberline {5.56}Uni\discretionary {-}{}{}Set Class Reference}{74}{section.5.56}
+\contentsline {subsection}{\numberline {5.56.1}Detailed Description}{75}{subsection.5.56.1}
+\contentsline {subsection}{\numberline {5.56.2}Constructor \& Destructor Documentation}{75}{subsection.5.56.2}
+\contentsline {subsubsection}{\numberline {5.56.2.1}Uni\discretionary {-}{}{}Set}{75}{subsubsection.5.56.2.1}
+\contentsline {subsection}{\numberline {5.56.3}Member Function Documentation}{75}{subsection.5.56.3}
+\contentsline {subsubsection}{\numberline {5.56.3.1}init\discretionary {-}{}{}Reached}{75}{subsubsection.5.56.3.1}
+\contentsline {section}{\numberline {5.57}Uni\discretionary {-}{}{}Subset Class Reference}{75}{section.5.57}
+\contentsline {subsection}{\numberline {5.57.1}Detailed Description}{76}{subsection.5.57.1}
+\contentsline {subsection}{\numberline {5.57.2}Constructor \& Destructor Documentation}{76}{subsection.5.57.2}
+\contentsline {subsubsection}{\numberline {5.57.2.1}Uni\discretionary {-}{}{}Subset}{76}{subsubsection.5.57.2.1}
+\contentsline {section}{\numberline {5.58}Voter\discretionary {-}{}{}Binning Class Reference}{77}{section.5.58}
+\contentsline {section}{\numberline {5.59}Voter\discretionary {-}{}{}Data\discretionary {-}{}{}Set Class Reference}{77}{section.5.59}
+\contentsline {section}{\numberline {5.60}Voter\discretionary {-}{}{}Edge Class Reference}{78}{section.5.60}
+\contentsline {subsection}{\numberline {5.60.1}Detailed Description}{78}{subsection.5.60.1}
+\contentsline {subsection}{\numberline {5.60.2}Constructor \& Destructor Documentation}{78}{subsection.5.60.2}
+\contentsline {subsubsection}{\numberline {5.60.2.1}Voter\discretionary {-}{}{}Edge}{78}{subsubsection.5.60.2.1}
+\contentsline {subsection}{\numberline {5.60.3}Member Data Documentation}{78}{subsection.5.60.3}
+\contentsline {subsubsection}{\numberline {5.60.3.1}node1}{78}{subsubsection.5.60.3.1}
+\contentsline {subsubsection}{\numberline {5.60.3.2}node2}{78}{subsubsection.5.60.3.2}
+\contentsline {subsubsection}{\numberline {5.60.3.3}weight}{78}{subsubsection.5.60.3.3}
+\contentsline {section}{\numberline {5.61}Voter\discretionary {-}{}{}Graph Class Reference}{79}{section.5.61}
+\contentsline {subsection}{\numberline {5.61.1}Detailed Description}{80}{subsection.5.61.1}
+\contentsline {subsection}{\numberline {5.61.2}Constructor \& Destructor Documentation}{80}{subsection.5.61.2}
+\contentsline {subsubsection}{\numberline {5.61.2.1}Voter\discretionary {-}{}{}Graph}{80}{subsubsection.5.61.2.1}
+\contentsline {subsection}{\numberline {5.61.3}Member Function Documentation}{80}{subsection.5.61.3}
+\contentsline {subsubsection}{\numberline {5.61.3.1}add\discretionary {-}{}{}Edge}{80}{subsubsection.5.61.3.1}
+\contentsline {subsubsection}{\numberline {5.61.3.2}add\discretionary {-}{}{}Node}{80}{subsubsection.5.61.3.2}
+\contentsline {subsubsection}{\numberline {5.61.3.3}get\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}{80}{subsubsection.5.61.3.3}
+\contentsline {subsubsection}{\numberline {5.61.3.4}get\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}{81}{subsubsection.5.61.3.4}
+\contentsline {subsubsection}{\numberline {5.61.3.5}get\discretionary {-}{}{}Markov\discretionary {-}{}{}Process}{81}{subsubsection.5.61.3.5}
+\contentsline {subsection}{\numberline {5.61.4}Member Data Documentation}{81}{subsection.5.61.4}
+\contentsline {subsubsection}{\numberline {5.61.4.1}edge\discretionary {-}{}{}Number}{81}{subsubsection.5.61.4.1}
+\contentsline {subsubsection}{\numberline {5.61.4.2}edge\discretionary {-}{}{}Set}{81}{subsubsection.5.61.4.2}
+\contentsline {subsubsection}{\numberline {5.61.4.3}edge\discretionary {-}{}{}Weight}{81}{subsubsection.5.61.4.3}
+\contentsline {subsubsection}{\numberline {5.61.4.4}node\discretionary {-}{}{}Map}{81}{subsubsection.5.61.4.4}
+\contentsline {subsubsection}{\numberline {5.61.4.5}node\discretionary {-}{}{}Number}{81}{subsubsection.5.61.4.5}
+\contentsline {subsubsection}{\numberline {5.61.4.6}node\discretionary {-}{}{}Set}{81}{subsubsection.5.61.4.6}
+\contentsline {subsubsection}{\numberline {5.61.4.7}node\discretionary {-}{}{}Weight}{82}{subsubsection.5.61.4.7}
+\contentsline {subsubsection}{\numberline {5.61.4.8}process}{82}{subsubsection.5.61.4.8}
+\contentsline {subsubsection}{\numberline {5.61.4.9}update\discretionary {-}{}{}Process}{82}{subsubsection.5.61.4.9}
+\contentsline {section}{\numberline {5.62}Voter\discretionary {-}{}{}Measurement Class Reference}{82}{section.5.62}
+\contentsline {subsection}{\numberline {5.62.1}Detailed Description}{83}{subsection.5.62.1}
+\contentsline {subsection}{\numberline {5.62.2}Constructor \& Destructor Documentation}{83}{subsection.5.62.2}
+\contentsline {subsubsection}{\numberline {5.62.2.1}Voter\discretionary {-}{}{}Measurement}{83}{subsubsection.5.62.2.1}
+\contentsline {subsection}{\numberline {5.62.3}Member Function Documentation}{83}{subsection.5.62.3}
+\contentsline {subsubsection}{\numberline {5.62.3.1}add\discretionary {-}{}{}Probe}{83}{subsubsection.5.62.3.1}
+\contentsline {subsubsection}{\numberline {5.62.3.2}print}{83}{subsubsection.5.62.3.2}
+\contentsline {subsection}{\numberline {5.62.4}Member Data Documentation}{83}{subsection.5.62.4}
+\contentsline {subsubsection}{\numberline {5.62.4.1}graph}{83}{subsubsection.5.62.4.1}
+\contentsline {subsubsection}{\numberline {5.62.4.2}metric\discretionary {-}{}{}Map}{83}{subsubsection.5.62.4.2}
+\contentsline {subsubsection}{\numberline {5.62.4.3}partition}{83}{subsubsection.5.62.4.3}
+\contentsline {subsubsection}{\numberline {5.62.4.4}probe\discretionary {-}{}{}Map}{84}{subsubsection.5.62.4.4}
+\contentsline {subsubsection}{\numberline {5.62.4.5}probe\discretionary {-}{}{}Number}{84}{subsubsection.5.62.4.5}
+\contentsline {subsubsection}{\numberline {5.62.4.6}type}{84}{subsubsection.5.62.4.6}
+\contentsline {section}{\numberline {5.63}Voter\discretionary {-}{}{}Measurement\discretionary {-}{}{}State Class Reference}{84}{section.5.63}
+\contentsline {section}{\numberline {5.64}Voter\discretionary {-}{}{}Measurement\discretionary {-}{}{}Trajectory Class Reference}{84}{section.5.64}
+\contentsline {section}{\numberline {5.65}Voter\discretionary {-}{}{}Node Class Reference}{85}{section.5.65}
+\contentsline {subsection}{\numberline {5.65.1}Detailed Description}{85}{subsection.5.65.1}
+\contentsline {subsection}{\numberline {5.65.2}Constructor \& Destructor Documentation}{85}{subsection.5.65.2}
+\contentsline {subsubsection}{\numberline {5.65.2.1}Voter\discretionary {-}{}{}Node}{85}{subsubsection.5.65.2.1}
+\contentsline {subsection}{\numberline {5.65.3}Member Data Documentation}{86}{subsection.5.65.3}
+\contentsline {subsubsection}{\numberline {5.65.3.1}contrarian}{86}{subsubsection.5.65.3.1}
+\contentsline {subsubsection}{\numberline {5.65.3.2}id}{86}{subsubsection.5.65.3.2}
+\contentsline {subsubsection}{\numberline {5.65.3.3}in\discretionary {-}{}{}Edge\discretionary {-}{}{}Number}{86}{subsubsection.5.65.3.3}
+\contentsline {subsubsection}{\numberline {5.65.3.4}in\discretionary {-}{}{}Edge\discretionary {-}{}{}Set}{86}{subsubsection.5.65.3.4}
+\contentsline {subsubsection}{\numberline {5.65.3.5}in\discretionary {-}{}{}Edge\discretionary {-}{}{}Weight}{86}{subsubsection.5.65.3.5}
+\contentsline {subsubsection}{\numberline {5.65.3.6}out\discretionary {-}{}{}Edge\discretionary {-}{}{}Number}{86}{subsubsection.5.65.3.6}
+\contentsline {subsubsection}{\numberline {5.65.3.7}out\discretionary {-}{}{}Edge\discretionary {-}{}{}Set}{86}{subsubsection.5.65.3.7}
+\contentsline {subsubsection}{\numberline {5.65.3.8}out\discretionary {-}{}{}Edge\discretionary {-}{}{}Weight}{86}{subsubsection.5.65.3.8}
+\contentsline {subsubsection}{\numberline {5.65.3.9}weight}{86}{subsubsection.5.65.3.9}
+\contentsline {section}{\numberline {5.66}Voter\discretionary {-}{}{}Probe Class Reference}{86}{section.5.66}
+\contentsline {subsection}{\numberline {5.66.1}Detailed Description}{87}{subsection.5.66.1}
+\contentsline {subsection}{\numberline {5.66.2}Constructor \& Destructor Documentation}{87}{subsection.5.66.2}
+\contentsline {subsubsection}{\numberline {5.66.2.1}Voter\discretionary {-}{}{}Probe}{87}{subsubsection.5.66.2.1}
+\contentsline {subsection}{\numberline {5.66.3}Member Function Documentation}{87}{subsection.5.66.3}
+\contentsline {subsubsection}{\numberline {5.66.3.1}add\discretionary {-}{}{}Node}{87}{subsubsection.5.66.3.1}
+\contentsline {subsubsection}{\numberline {5.66.3.2}add\discretionary {-}{}{}Nodes}{87}{subsubsection.5.66.3.2}
+\contentsline {subsubsection}{\numberline {5.66.3.3}print}{88}{subsubsection.5.66.3.3}
+\contentsline {subsubsection}{\numberline {5.66.3.4}set\discretionary {-}{}{}Node\discretionary {-}{}{}Set}{88}{subsubsection.5.66.3.4}
+\contentsline {subsection}{\numberline {5.66.4}Member Data Documentation}{88}{subsection.5.66.4}
+\contentsline {subsubsection}{\numberline {5.66.4.1}graph}{88}{subsubsection.5.66.4.1}
+\contentsline {subsubsection}{\numberline {5.66.4.2}node\discretionary {-}{}{}Number}{88}{subsubsection.5.66.4.2}
+\contentsline {subsubsection}{\numberline {5.66.4.3}node\discretionary {-}{}{}Set}{88}{subsubsection.5.66.4.3}
+\contentsline {section}{\numberline {5.67}Voter\discretionary {-}{}{}State Class Reference}{88}{section.5.67}
+\contentsline {section}{\numberline {5.68}Voter\discretionary {-}{}{}Trajectory Class Reference}{89}{section.5.68}
+\contentsline {chapter}{\numberline {6}File Documentation}{91}{chapter.6}
+\contentsline {section}{\numberline {6.1}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/abstract\discretionary {-}{}{}\_\discretionary {-}{}{}set.hpp File Reference}{91}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{91}{subsection.6.1.1}
+\contentsline {section}{\numberline {6.2}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/logarithmic\discretionary {-}{}{}\_\discretionary {-}{}{}score.hpp File Reference}{91}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{92}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/markov\discretionary {-}{}{}\_\discretionary {-}{}{}process.hpp File Reference}{92}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{92}{subsection.6.3.1}
+\contentsline {section}{\numberline {6.4}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/multi\discretionary {-}{}{}\_\discretionary {-}{}{}set.hpp File Reference}{93}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{93}{subsection.6.4.1}
+\contentsline {section}{\numberline {6.5}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/objective\discretionary {-}{}{}\_\discretionary {-}{}{}function.hpp File Reference}{93}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{94}{subsection.6.5.1}
+\contentsline {section}{\numberline {6.6}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/prediction\discretionary {-}{}{}\_\discretionary {-}{}{}dataset.hpp File Reference}{94}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{94}{subsection.6.6.1}
+\contentsline {section}{\numberline {6.7}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/uni\discretionary {-}{}{}\_\discretionary {-}{}{}set.hpp File Reference}{94}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{95}{subsection.6.7.1}
+\contentsline {section}{\numberline {6.8}/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.hpp File Reference}{95}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{97}{subsection.6.8.1}
+\contentsline {subsection}{\numberline {6.8.2}Enumeration Type Documentation}{97}{subsection.6.8.2}
+\contentsline {subsubsection}{\numberline {6.8.2.1}Measurement\discretionary {-}{}{}Type}{97}{subsubsection.6.8.2.1}
+\contentsline {subsubsection}{\numberline {6.8.2.2}Update\discretionary {-}{}{}Process}{98}{subsubsection.6.8.2.2}
+\contentsline {subsubsection}{\numberline {6.8.2.3}Voter\discretionary {-}{}{}Metric}{98}{subsubsection.6.8.2.3}
+\contentsline {chapter}{Index}{99}{section*.158}

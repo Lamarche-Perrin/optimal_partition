@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -128,14 +129,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define INCLUDE_INFORMATION_BOTTLENECK</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="objective__function_8hpp.html">objective_function.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;markov_process.hpp&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="markov__process_8hpp.html">markov_process.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="classInformationBottleneck.html">   44</a></span>&#160;<span class="keyword">class </span><a class="code" href="classInformationBottleneck.html">InformationBottleneck</a>: <span class="keyword">public</span> <a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;{</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        MarkovProcess *process;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <a class="code" href="classMarkovProcess.html">MarkovProcess</a> *process;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classInformationBottleneck.html">InformationBottleneck</a> (MarkovProcess *process);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <a class="code" href="classInformationBottleneck.html">InformationBottleneck</a> (<a class="code" href="classMarkovProcess.html">MarkovProcess</a> *process);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        ~<a class="code" href="classInformationBottleneck.html">InformationBottleneck</a> ();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classInformationBottleneck.html#a10e4ace575f79977f3f6d2f39403dd84">setRandom</a> ();</div>
@@ -178,10 +179,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classInformationBottleneck_html_a10e4ace575f79977f3f6d2f39403dd84"><div class="ttname"><a href="classInformationBottleneck.html#a10e4ace575f79977f3f6d2f39403dd84">InformationBottleneck::setRandom</a></div><div class="ttdeci">void setRandom()</div><div class="ttdoc">Randomly set the initial data from which the objective function is computed. </div><div class="ttdef"><b>Definition:</b> information_bottleneck.cpp:56</div></div>
 <div class="ttc" id="classBottleneckObjectiveValue_html"><div class="ttname"><a href="classBottleneckObjectiveValue.html">BottleneckObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> information_bottleneck.hpp:61</div></div>
 <div class="ttc" id="classInformationBottleneck_html"><div class="ttname"><a href="classInformationBottleneck.html">InformationBottleneck</a></div><div class="ttdef"><b>Definition:</b> information_bottleneck.hpp:44</div></div>
+<div class="ttc" id="classMarkovProcess_html"><div class="ttname"><a href="classMarkovProcess.html">MarkovProcess</a></div><div class="ttdoc">A finite Markov chain described by a discrete state space, an initial distribution, and a transition kernel. </div><div class="ttdef"><b>Definition:</b> markov_process.hpp:60</div></div>
+<div class="ttc" id="markov__process_8hpp_html"><div class="ttname"><a href="markov__process_8hpp.html">markov_process.hpp</a></div><div class="ttdoc">Class to build a finite Markov chain. </div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 19:14:43 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 12 2015 17:01:40 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

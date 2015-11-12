@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -117,12 +117,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abbe62c3accdcc1234035cd8149b540f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abbe62c3accdcc1234035cd8149b540f0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Part</b> (<a class="el" href="classDatatree.html">Datatree</a> *node, <a class="el" href="classObjectiveValue.html">ObjectiveValue</a> *value=0)</td></tr>
 <tr class="separator:abbe62c3accdcc1234035cd8149b540f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa711a575b6b5bb0080b4e9fa7e20bbe1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa711a575b6b5bb0080b4e9fa7e20bbe1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>addIndividual</b> (int i, bool front=false)</td></tr>
-<tr class="separator:aa711a575b6b5bb0080b4e9fa7e20bbe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5392674db4c546b35c5a87dec8d204"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f5392674db4c546b35c5a87dec8d204"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>addIndividual</b> (int i, bool front=false, int value=-1)</td></tr>
+<tr class="separator:a4f5392674db4c546b35c5a87dec8d204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa5a500dd200b320ffd3a51868cc79fb0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa5a500dd200b320ffd3a51868cc79fb0"></a>
 Vertices *&#160;</td><td class="memItemRight" valign="bottom"><b>getVertices</b> ()</td></tr>
 <tr class="separator:aa5a500dd200b320ffd3a51868cc79fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad63cc5e3df656d4b847a6ad948dbf3d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aad63cc5e3df656d4b847a6ad948dbf3d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>contains</b> (int i)</td></tr>
+<tr class="separator:aad63cc5e3df656d4b847a6ad948dbf3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b37a2433f60fba0c5dcce393e4f5a86"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b37a2433f60fba0c5dcce393e4f5a86"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>equal</b> (<a class="el" href="classPart.html">Part</a> *p)</td></tr>
 <tr class="separator:a8b37a2433f60fba0c5dcce393e4f5a86"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,6 +138,15 @@ virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>printSize</b> 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a838bf6b7710a67f982193a0dcc2f102f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a838bf6b7710a67f982193a0dcc2f102f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>id</b></td></tr>
+<tr class="separator:a838bf6b7710a67f982193a0dcc2f102f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1048e12cbb00ea6f98edebcab1d05d92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1048e12cbb00ea6f98edebcab1d05d92"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
+<tr class="separator:a1048e12cbb00ea6f98edebcab1d05d92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac964043da9eea5854384a45ee809a29d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac964043da9eea5854384a45ee809a29d"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>num</b></td></tr>
+<tr class="separator:ac964043da9eea5854384a45ee809a29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a12f364b91efb5702af492cbdef1990fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12f364b91efb5702af492cbdef1990fe"></a>
 std::list&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>individuals</b></td></tr>
 <tr class="separator:a12f364b91efb5702af492cbdef1990fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -151,7 +163,7 @@ std::list&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>i
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 19:14:46 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 12 2015 17:01:43 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

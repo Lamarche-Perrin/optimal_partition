@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['multipart',['MultiPart',['../classMultiPart.html',1,'']]],
-  ['multiset',['MultiSet',['../classMultiSet.html',1,'']]],
-  ['multisubset',['MultiSubset',['../classMultiSubset.html',1,'']]]
+  ['logarithmicscore',['LogarithmicScore',['../classLogarithmicScore.html',1,'']]],
+  ['logarithmicscorevalue',['LogarithmicScoreValue',['../classLogarithmicScoreValue.html',1,'']]]
 ];

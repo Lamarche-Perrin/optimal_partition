@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['randomgraph',['RandomGraph',['../classRandomGraph.html',1,'']]],
-  ['relativeentropy',['RelativeEntropy',['../classRelativeEntropy.html',1,'']]],
-  ['relativeobjectivevalue',['RelativeObjectiveValue',['../classRelativeObjectiveValue.html',1,'']]],
-  ['ring',['Ring',['../classRing.html',1,'']]],
-  ['ringgraph',['RingGraph',['../classRingGraph.html',1,'']]]
+  ['part',['Part',['../classPart.html',1,'']]],
+  ['partition',['Partition',['../classPartition.html',1,'']]],
+  ['predictiondataset',['PredictionDataset',['../classPredictionDataset.html',1,'']]]
 ];

@@ -107,7 +107,8 @@ protected:
 	UniSubset **uniSubsetArray; /** \brief Array of pointers to all feasible subsets */
 	UniSubset *firstUniSubset; /** \brief Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) */
 
-	VoterMeasurement *voterMeasurement; /** \brief (Optional) A one-probe measurement of a voter model that has been used to build this uni-dimensional set */
+	VoterMeasurement *voterMeasurement; /** \brief (Optional) A probe measurement of a voter model that has been used to build this uni-dimensional set */
+	VoterProbe *voterProbe; /** \brief (Optional) A probe of a voter model that has been used to build this uni-dimensional set */
 	
 	/*!
 	 * \brief Initialise the `reached` field of all feasible subsets to `false` (used by other methods to run through the algebraic structure in a recursive fashion without considering twice the same subset) 

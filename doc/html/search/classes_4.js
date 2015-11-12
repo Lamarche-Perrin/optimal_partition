@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['filiformgraph',['FiliformGraph',['../classFiliformGraph.html',1,'']]]
+  ['emptyvotermeasurement',['EmptyVoterMeasurement',['../classEmptyVoterMeasurement.html',1,'']]]
 ];

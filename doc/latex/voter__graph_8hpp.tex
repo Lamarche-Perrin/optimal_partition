@@ -1,0 +1,246 @@
+\hypertarget{voter__graph_8hpp}{\section{/home/lamarche/programming/optimal\-\_\-partition/src/voter\-\_\-graph.hpp File Reference}
+\label{voter__graph_8hpp}\index{/home/lamarche/programming/optimal\-\_\-partition/src/voter\-\_\-graph.\-hpp@{/home/lamarche/programming/optimal\-\_\-partition/src/voter\-\_\-graph.\-hpp}}
+}
+
+
+Classes to build an interaction graph (nodes and edges) describing a Voter Model and some observation tools (probes and measurements)  
+
+
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}markov\-\_\-process.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}partition.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}uni\-\_\-set.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}multi\-\_\-set.\-hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}prediction\-\_\-dataset.\-hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classVoterNode}{Voter\-Node}
+\begin{DoxyCompactList}\small\item\em A node of the interaction graph. \end{DoxyCompactList}\item 
+class \hyperlink{classVoterEdge}{Voter\-Edge}
+\begin{DoxyCompactList}\small\item\em An edge of the interaction graph. \end{DoxyCompactList}\item 
+class \hyperlink{classVoterGraph}{Voter\-Graph}
+\begin{DoxyCompactList}\small\item\em The interaction graph describing a Voter Model. \end{DoxyCompactList}\item 
+class \hyperlink{classCompleteVoterGraph}{Complete\-Voter\-Graph}
+\begin{DoxyCompactList}\small\item\em An interaction graph with edges between each pair of nodes (in both direction, with equal weight for each edge) \end{DoxyCompactList}\item 
+class \hyperlink{classTwoCommunitiesVoterGraph}{Two\-Communities\-Voter\-Graph}
+\begin{DoxyCompactList}\small\item\em An interaction graph consisting in two communities of nodes (complete graph within each community, complete interaction between the two communities, possibly with different weights) \end{DoxyCompactList}\item 
+class \hyperlink{classChainVoterGraph}{Chain\-Voter\-Graph}
+\item 
+class \hyperlink{classVoterProbe}{Voter\-Probe}
+\begin{DoxyCompactList}\small\item\em A probe to observe the Voter Model according to a subset of nodes. \end{DoxyCompactList}\item 
+class \hyperlink{classVoterMeasurement}{Voter\-Measurement}
+\begin{DoxyCompactList}\small\item\em A measurement to observe the Voter Model according set of probes. \end{DoxyCompactList}\item 
+class \hyperlink{classMacroVoterMeasurement}{Macro\-Voter\-Measurement}
+\begin{DoxyCompactList}\small\item\em A measurement consisting in one probe observing all nodes of the interaction graph. \end{DoxyCompactList}\item 
+class \hyperlink{classMicroVoterMeasurement}{Micro\-Voter\-Measurement}
+\begin{DoxyCompactList}\small\item\em A measurement consisting in one probe for each node of the interaction graph. \end{DoxyCompactList}\item 
+class \hyperlink{classEmptyVoterMeasurement}{Empty\-Voter\-Measurement}
+\begin{DoxyCompactList}\small\item\em A measurement without any probe (no observation) \end{DoxyCompactList}\item 
+class \hyperlink{classVoterState}{Voter\-State}
+\item 
+class \hyperlink{classVoterMeasurementState}{Voter\-Measurement\-State}
+\item 
+class \hyperlink{classVoterTrajectory}{Voter\-Trajectory}
+\item 
+class \hyperlink{classVoterMeasurementTrajectory}{Voter\-Measurement\-Trajectory}
+\item 
+class \hyperlink{classVoterDataSet}{Voter\-Data\-Set}
+\item 
+class \hyperlink{classVoterBinning}{Voter\-Binning}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{voter__graph_8hpp_a35921a1d3f69847688d66c815e0527ee}{typedef std\-::set\\*
+$<$ \hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$ $>$ {\bfseries Measurement\-Set}}\label{voter__graph_8hpp_a35921a1d3f69847688d66c815e0527ee}
+
+\item 
+\hypertarget{voter__graph_8hpp_a75337f0f5077602d27d364ff7798fbd7}{typedef std\-::set$<$ std\-::pair\\*
+$<$ \hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7}{Measurement\-Type}, \hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} $>$ $>$ {\bfseries Spec\-Measurement\-Set}}\label{voter__graph_8hpp_a75337f0f5077602d27d364ff7798fbd7}
+
+\item 
+\hypertarget{voter__graph_8hpp_ad92d68f7d054fb4d6a048e867a7c3f67}{typedef std\-::map\\*
+$<$ \hyperlink{classVoterMeasurementState}{Voter\-Measurement\-State} $\ast$, int $\ast$ $>$ {\bfseries Probability\-Map}}\label{voter__graph_8hpp_ad92d68f7d054fb4d6a048e867a7c3f67}
+
+\item 
+\hypertarget{voter__graph_8hpp_a25fb7c0ad3d878ce3efc4090a7cfd537}{typedef std\-::pair\\*
+$<$ Probability\-Map $\ast$, int $\ast$ $>$ {\bfseries Probability\-Pair}}\label{voter__graph_8hpp_a25fb7c0ad3d878ce3efc4090a7cfd537}
+
+\item 
+\hypertarget{voter__graph_8hpp_a33e4e9dc3130f4cf2812288a12862fd4}{typedef std\-::map\\*
+$<$ \hyperlink{classVoterMeasurementState}{Voter\-Measurement\-State} \\*
+$\ast$, Probability\-Pair $\ast$ $>$ {\bfseries Transition\-Map}}\label{voter__graph_8hpp_a33e4e9dc3130f4cf2812288a12862fd4}
+
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} \{ \\*
+\hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5a24b3f95ee25ae00ace7b4a23a5b14f51}{M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E}, 
+\hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5a9665d518f54e664b5eef2df2abab71df}{M\-A\-J\-O\-R\-I\-T\-Y}, 
+{\bfseries M\-A\-J\-\_\-1\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-2\-P\-C}, 
+\\*
+{\bfseries M\-A\-J\-\_\-3\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-4\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-5\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-6\-P\-C}, 
+\\*
+{\bfseries M\-A\-J\-\_\-7\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-8\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-9\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-10\-P\-C}, 
+\\*
+{\bfseries M\-A\-J\-\_\-20\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-30\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-40\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-50\-P\-C}, 
+\\*
+{\bfseries M\-A\-J\-\_\-60\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-70\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-80\-P\-C}, 
+{\bfseries M\-A\-J\-\_\-90\-P\-C}, 
+\\*
+{\bfseries M\-A\-J\-\_\-2\-B}, 
+{\bfseries M\-A\-J\-\_\-3\-B}, 
+{\bfseries M\-A\-J\-\_\-4\-B}, 
+{\bfseries M\-A\-J\-\_\-6\-B}, 
+\\*
+{\bfseries M\-A\-J\-\_\-8\-B}, 
+{\bfseries M\-A\-J\-\_\-10\-B}, 
+{\bfseries M\-A\-J\-\_\-12\-B}, 
+{\bfseries M\-A\-J\-\_\-20\-B}, 
+\\*
+{\bfseries M\-A\-J\-\_\-40\-B}, 
+\hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5a98c18bb584fb183b82a56273e82e8294}{A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em A metric associated to a probe. \end{DoxyCompactList}\item 
+enum \hyperlink{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35a}{Update\-Process} \{ \hyperlink{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35aa6ad0c87e611bfeadd367737761894c70}{U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S}, 
+\hyperlink{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35aa01d100088352e1a7d3a34c9a66d0f951}{U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S}
+ \}
+\begin{DoxyCompactList}\small\item\em The way a Voter Model evolves at each simulation step, by randomly choosing a node or an edge for interaction. \end{DoxyCompactList}\item 
+enum \hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7}{Measurement\-Type} \{ \\*
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7aa1f036df973cca52be7bdba20572129a}{M\-\_\-\-M\-I\-C\-R\-O}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a592fede240b8f61c0314f7874730563f}{M\-\_\-\-A\-G\-E\-N\-T1}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7ae305f82c16f754bf6fef777a0816232d}{M\-\_\-\-M\-E\-S\-O1}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a0809ac472ab7bf9223dfb601147c69a0}{M\-\_\-\-M\-E\-S\-O2}, 
+\\*
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a487bc62b8a3093ced0adb601d41bc1f2}{M\-\_\-\-M\-A\-C\-R\-O}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a3e108d351b7ac049b4c589a96a8e4f58}{M\-\_\-\-E\-M\-P\-T\-Y}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a9389756863d026a7bb3b071e3f05cf13}{M\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7ae13c4107c10f290b7bcfefe91e684ee8}{M\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}, 
+\\*
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a90f433e2621364a7aecc4bdff37f1842}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a5fb57276c26dbda1d1296c1e419f995e}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}, 
+{\bfseries M\-\_\-\-A\-L\-L\-N\-E\-I\-G\-H\-B\-O\-R\-H\-O\-O\-D\-S}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a47bc8c0999633275e6739e97e010a64d}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1}, 
+\\*
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a9d5767bef22383ddf1bc1d7283b25015}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O2}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a30103f9eb07b1bfce3e21628b85a3c2d}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-A\-C\-R\-O}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a8b82d5ebca69da9ff387912643b5aa5d}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}, 
+\hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a619f3325004a2e96f88190dd5ce4be36}{M\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}
+ \}
+\begin{DoxyCompactList}\small\item\em A specific measurement in the case of a two-\/communities interaction graphs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{voter__graph_8hpp_ad3c97b666dc8ab2bbce451d9b60abc1d}{void {\bfseries add\-Measurement} (Measurement\-Set $\ast$set, \hyperlink{classVoterGraph}{Voter\-Graph} $\ast$V\-G, \hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7}{Measurement\-Type} type, \hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} metric)}\label{voter__graph_8hpp_ad3c97b666dc8ab2bbce451d9b60abc1d}
+
+\item 
+\hypertarget{voter__graph_8hpp_a713cbf444f3a25a8f0156f8ab3cb2c98}{void {\bfseries add\-Multi\-Measurement} (Measurement\-Set $\ast$set, \hyperlink{classVoterGraph}{Voter\-Graph} $\ast$V\-G, \hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7}{Measurement\-Type} type, \hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} metric)}\label{voter__graph_8hpp_a713cbf444f3a25a8f0156f8ab3cb2c98}
+
+\item 
+\hypertarget{voter__graph_8hpp_a4d09af0fd55a012d017643eab4c5618e}{\hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$ {\bfseries get\-Measurement} (\hyperlink{classVoterGraph}{Voter\-Graph} $\ast$V\-G, \hyperlink{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7}{Measurement\-Type} type, \hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} metric=\hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5a24b3f95ee25ae00ace7b4a23a5b14f51}{M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E}, int binning=0)}\label{voter__graph_8hpp_a4d09af0fd55a012d017643eab4c5618e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Classes to build an interaction graph (nodes and edges) describing a Voter Model and some observation tools (probes and measurements) \begin{DoxyAuthor}{Author}
+Robin Lamarche-\/\-Perrin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22/01/2015 
+\end{DoxyDate}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7}{\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!Measurement\-Type@{Measurement\-Type}}
+\index{Measurement\-Type@{Measurement\-Type}!voter_graph.hpp@{voter\-\_\-graph.\-hpp}}
+\subsubsection[{Measurement\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Measurement\-Type}}}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7}
+
+
+A specific measurement in the case of a two-\/communities interaction graphs. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\-\_\-\-M\-I\-C\-R\-O@{M\-\_\-\-M\-I\-C\-R\-O}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-M\-I\-C\-R\-O@{M\-\_\-\-M\-I\-C\-R\-O}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7aa1f036df973cca52be7bdba20572129a}{M\-\_\-\-M\-I\-C\-R\-O}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7aa1f036df973cca52be7bdba20572129a}
+}]Microscopic state \index{M\-\_\-\-A\-G\-E\-N\-T1@{M\-\_\-\-A\-G\-E\-N\-T1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1@{M\-\_\-\-A\-G\-E\-N\-T1}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a592fede240b8f61c0314f7874730563f}{M\-\_\-\-A\-G\-E\-N\-T1}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a592fede240b8f61c0314f7874730563f}
+}]State of the first node in community 1 \index{M\-\_\-\-M\-E\-S\-O1@{M\-\_\-\-M\-E\-S\-O1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-M\-E\-S\-O1@{M\-\_\-\-M\-E\-S\-O1}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7ae305f82c16f754bf6fef777a0816232d}{M\-\_\-\-M\-E\-S\-O1}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7ae305f82c16f754bf6fef777a0816232d}
+}]Aggregated state of all nodes in community 1 \index{M\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-M\-E\-S\-O2}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-M\-E\-S\-O2}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a0809ac472ab7bf9223dfb601147c69a0}{M\-\_\-\-M\-E\-S\-O2}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a0809ac472ab7bf9223dfb601147c69a0}
+}]Aggregated state of all nodes in community 2 \index{M\-\_\-\-M\-A\-C\-R\-O@{M\-\_\-\-M\-A\-C\-R\-O}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-M\-A\-C\-R\-O@{M\-\_\-\-M\-A\-C\-R\-O}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a487bc62b8a3093ced0adb601d41bc1f2}{M\-\_\-\-M\-A\-C\-R\-O}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a487bc62b8a3093ced0adb601d41bc1f2}
+}]Aggregated state of nodes in both communities \index{M\-\_\-\-E\-M\-P\-T\-Y@{M\-\_\-\-E\-M\-P\-T\-Y}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-E\-M\-P\-T\-Y@{M\-\_\-\-E\-M\-P\-T\-Y}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a3e108d351b7ac049b4c589a96a8e4f58}{M\-\_\-\-E\-M\-P\-T\-Y}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a3e108d351b7ac049b4c589a96a8e4f58}
+}]No observation \index{M\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a9389756863d026a7bb3b071e3f05cf13}{M\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a9389756863d026a7bb3b071e3f05cf13}
+}]Aggregated state of node subsets of all sizes within community 1 \index{M\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1@{M\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1@{M\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7ae13c4107c10f290b7bcfefe91e684ee8}{M\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7ae13c4107c10f290b7bcfefe91e684ee8}
+}]Aggregated state of node subsets of some sizes within community 1 \index{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a90f433e2621364a7aecc4bdff37f1842}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a90f433e2621364a7aecc4bdff37f1842}
+}]Join measurement (see above) \index{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a5fb57276c26dbda1d1296c1e419f995e}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a5fb57276c26dbda1d1296c1e419f995e}
+}]Join measurement (see above) \index{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a47bc8c0999633275e6739e97e010a64d}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a47bc8c0999633275e6739e97e010a64d}
+}]Join measurement (see above) \index{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O2}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O2}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a9d5767bef22383ddf1bc1d7283b25015}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O2}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a9d5767bef22383ddf1bc1d7283b25015}
+}]Join measurement (see above) \index{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-A\-C\-R\-O@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-A\-C\-R\-O}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-A\-C\-R\-O@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-A\-C\-R\-O}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a30103f9eb07b1bfce3e21628b85a3c2d}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-A\-C\-R\-O}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a30103f9eb07b1bfce3e21628b85a3c2d}
+}]Join measurement (see above) \index{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a8b82d5ebca69da9ff387912643b5aa5d}{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a8b82d5ebca69da9ff387912643b5aa5d}
+}]Join measurement (see above) \index{M\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a619f3325004a2e96f88190dd5ce4be36}{M\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}\label{voter__graph_8hpp_ad35f880f44d18d9c643f02c4057034f7a619f3325004a2e96f88190dd5ce4be36}
+}]Join measurement (see above) \end{description}
+\end{Desc}
+\hypertarget{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35a}{\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!Update\-Process@{Update\-Process}}
+\index{Update\-Process@{Update\-Process}!voter_graph.hpp@{voter\-\_\-graph.\-hpp}}
+\subsubsection[{Update\-Process}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Update\-Process}}}\label{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35a}
+
+
+The way a Voter Model evolves at each simulation step, by randomly choosing a node or an edge for interaction. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S@{U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S@{U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35aa6ad0c87e611bfeadd367737761894c70}{U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S}\label{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35aa6ad0c87e611bfeadd367737761894c70}
+}]Node-\/driven interactions\-: A node is chosen at each simulation step, it acts on one of its outcoming nodes \index{U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S@{U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S@{U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S}}\item[{\em 
+\hypertarget{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35aa01d100088352e1a7d3a34c9a66d0f951}{U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S}\label{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35aa01d100088352e1a7d3a34c9a66d0f951}
+}]Edge-\/driven interactions\-: An edge is chosen at each simulation step, its incoming node acts on its outcoming node \end{description}
+\end{Desc}
+\hypertarget{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!Voter\-Metric@{Voter\-Metric}}
+\index{Voter\-Metric@{Voter\-Metric}!voter_graph.hpp@{voter\-\_\-graph.\-hpp}}
+\subsubsection[{Voter\-Metric}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Voter\-Metric}}}\label{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}
+
+
+A metric associated to a probe. 
+
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E@{M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E@{M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E}}\item[{\em 
+\hypertarget{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5a24b3f95ee25ae00ace7b4a23a5b14f51}{M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E}\label{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5a24b3f95ee25ae00ace7b4a23a5b14f51}
+}]The probe returns the number of observed nodes in state 1 \index{M\-A\-J\-O\-R\-I\-T\-Y@{M\-A\-J\-O\-R\-I\-T\-Y}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-A\-J\-O\-R\-I\-T\-Y@{M\-A\-J\-O\-R\-I\-T\-Y}}\item[{\em 
+\hypertarget{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5a9665d518f54e664b5eef2df2abab71df}{M\-A\-J\-O\-R\-I\-T\-Y}\label{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5a9665d518f54e664b5eef2df2abab71df}
+}]The probe returns 0 (resp. 1) if the majority of agents are in state 0 (resp. 1), and N\-A if there is a strict equality \index{A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S@{A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}}\index{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S@{A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S}}\item[{\em 
+\hypertarget{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5a98c18bb584fb183b82a56273e82e8294}{A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S}\label{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5a98c18bb584fb183b82a56273e82e8294}
+}]The probe returns the probability that one of the observed nodes will change during the next simulation step \end{description}
+\end{Desc}

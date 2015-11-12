@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -208,13 +209,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="classAbstractSet_html"><div class="ttname"><a href="classAbstractSet.html">AbstractSet</a></div><div class="ttdoc">Abstract class defining a set of elements that one wants to partition while optimising some (decompos...</div><div class="ttdef"><b>Definition:</b> abstract_set.hpp:59</div></div>
-<div class="ttc" id="classPartition_html"><div class="ttname"><a href="classPartition.html">Partition</a></div><div class="ttdoc">A partition is a collection of pairwise-disjoint and covering subsets (parts) of a set of elements...</div><div class="ttdef"><b>Definition:</b> partition.hpp:131</div></div>
+<div class="ttc" id="classPartition_html"><div class="ttname"><a href="classPartition.html">Partition</a></div><div class="ttdoc">A partition is a collection of pairwise-disjoint and covering subsets (parts) of a set of elements...</div><div class="ttdef"><b>Definition:</b> partition.hpp:137</div></div>
 <div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div><div class="ttdef"><b>Definition:</b> objective_function.hpp:57</div></div>
 <div class="ttc" id="classBiSet_html"><div class="ttname"><a href="classBiSet.html">BiSet</a></div><div class="ttdef"><b>Definition:</b> bi_set.hpp:53</div></div>
 <div class="ttc" id="classBiSet_html_addab16bb60c987ae2f08f23dbbc30864"><div class="ttname"><a href="classBiSet.html#addab16bb60c987ae2f08f23dbbc30864">BiSet::setRandom</a></div><div class="ttdeci">void setRandom()</div><div class="ttdoc">Randomly set the algebraic constraints for quick experiments (warning: this method is not always impl...</div><div class="ttdef"><b>Definition:</b> bi_set.cpp:70</div></div>
 <div class="ttc" id="classObjectiveValue_html"><div class="ttname"><a href="classObjectiveValue.html">ObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:101</div></div>
 <div class="ttc" id="classBiSubset_html"><div class="ttname"><a href="classBiSubset.html">BiSubset</a></div><div class="ttdef"><b>Definition:</b> bi_set.hpp:84</div></div>
-<div class="ttc" id="classUniSet_html"><div class="ttname"><a href="classUniSet.html">UniSet</a></div><div class="ttdoc">A uni-dimensional set of elements and its algebraic structure (feasible subsets and feasible refineme...</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:67</div></div>
+<div class="ttc" id="classUniSet_html"><div class="ttname"><a href="classUniSet.html">UniSet</a></div><div class="ttdoc">A uni-dimensional set of elements and its algebraic structure (feasible subsets and feasible refineme...</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:70</div></div>
 <div class="ttc" id="uni__set_8hpp_html"><div class="ttname"><a href="uni__set_8hpp.html">uni_set.hpp</a></div><div class="ttdoc">Some classes to represent uni-dimensional sets of elements and their algebraic structure (feasible su...</div></div>
 <div class="ttc" id="classBiSet_html_ae630d13ca1803d3c0d0422f839d8806a"><div class="ttname"><a href="classBiSet.html#ae630d13ca1803d3c0d0422f839d8806a">BiSet::normalizeObjectiveValues</a></div><div class="ttdeci">void normalizeObjectiveValues()</div><div class="ttdoc">Finish computing the value of the objective function for each feasible part when normalisation is req...</div><div class="ttdef"><b>Definition:</b> bi_set.cpp:126</div></div>
 <div class="ttc" id="abstract__set_8hpp_html"><div class="ttname"><a href="abstract__set_8hpp.html">abstract_set.hpp</a></div><div class="ttdoc">Abstract class defining a set of elements that one wants to partition while optimising some (decompos...</div></div>
@@ -222,7 +223,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classBiSet_html_ad8abd03c606bb3e3bdac6037c1b955a6"><div class="ttname"><a href="classBiSet.html#ad8abd03c606bb3e3bdac6037c1b955a6">BiSet::printOptimalPartition</a></div><div class="ttdeci">void printOptimalPartition(double parameter)</div><div class="ttdoc">Compute and print a partition that fits with the algebraic constraints and that optimises the objecti...</div><div class="ttdef"><b>Definition:</b> bi_set.cpp:147</div></div>
 <div class="ttc" id="classBiSet_html_a5f79a8811a0638bcfc418c100b4f67af"><div class="ttname"><a href="classBiSet.html#a5f79a8811a0638bcfc418c100b4f67af">BiSet::getOptimalPartition</a></div><div class="ttdeci">Partition * getOptimalPartition(double parameter)</div><div class="ttdoc">Compute and return a partition that fits with the algebraic constraints and that optimises the object...</div><div class="ttdef"><b>Definition:</b> bi_set.cpp:153</div></div>
 <div class="ttc" id="classBiSet_html_ad2ee8efa76c2d023d60cb8d203b4b365"><div class="ttname"><a href="classBiSet.html#ad2ee8efa76c2d023d60cb8d203b4b365">BiSet::computeObjectiveValues</a></div><div class="ttdeci">void computeObjectiveValues()</div><div class="ttdoc">Compute the value of the objective function for each feasible part (warning: setObjectiveFunction (Ob...</div><div class="ttdef"><b>Definition:</b> bi_set.cpp:118</div></div>
-<div class="ttc" id="classUniSubset_html"><div class="ttname"><a href="classUniSubset.html">UniSubset</a></div><div class="ttdoc">A feasible subset associated to a uni-dimensional set of elements (UniSet) </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:156</div></div>
+<div class="ttc" id="classUniSubset_html"><div class="ttname"><a href="classUniSubset.html">UniSubset</a></div><div class="ttdoc">A feasible subset associated to a uni-dimensional set of elements (UniSet) </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:172</div></div>
 <div class="ttc" id="classBiSet_html_aa81de5cee7bae0c86493b31ceb5199b8"><div class="ttname"><a href="classBiSet.html#aa81de5cee7bae0c86493b31ceb5199b8">BiSet::setObjectiveFunction</a></div><div class="ttdeci">void setObjectiveFunction(ObjectiveFunction *m)</div><div class="ttdoc">Set the objective that one wants to optimise. </div><div class="ttdef"><b>Definition:</b> bi_set.cpp:73</div></div>
 <div class="ttc" id="classBiSet_html_aabdac7b50292f744157c3ffd0b37f648"><div class="ttname"><a href="classBiSet.html#aabdac7b50292f744157c3ffd0b37f648">BiSet::printObjectiveValues</a></div><div class="ttdeci">void printObjectiveValues()</div><div class="ttdoc">Print the value of the objective function for each feasible part. </div><div class="ttdef"><b>Definition:</b> bi_set.cpp:133</div></div>
 <div class="ttc" id="classBiSet_html_aec73ba21855b517d003d3c02b14fbcec"><div class="ttname"><a href="classBiSet.html#aec73ba21855b517d003d3c02b14fbcec">BiSet::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Print the set and its algebraic constraints. </div><div class="ttdef"><b>Definition:</b> bi_set.cpp:81</div></div>
@@ -230,7 +231,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 19:14:43 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 12 2015 17:01:40 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

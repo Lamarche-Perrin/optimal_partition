@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,8 +102,9 @@ Inheritance diagram for UniSet:</div>
  <div class="center">
   <img src="classUniSet.png" usemap="#UniSet_map" alt=""/>
   <map id="UniSet_map" name="UniSet_map">
-<area href="classHierarchicalUniSet.html" title="A uni-dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy. " alt="HierarchicalUniSet" shape="rect" coords="0,56,118,80"/>
-<area href="classOrderedUniSet.html" title="A uni-dimensional set of elements with a total order, and such that the feasible subsets are all the ..." alt="OrderedUniSet" shape="rect" coords="128,56,246,80"/>
+<area href="classGraphBasedUniSet.html" alt="GraphBasedUniSet" shape="rect" coords="0,56,118,80"/>
+<area href="classHierarchicalUniSet.html" title="A uni-dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy. " alt="HierarchicalUniSet" shape="rect" coords="128,56,246,80"/>
+<area href="classOrderedUniSet.html" title="A uni-dimensional set of elements with a total order, and such that the feasible subsets are all the ..." alt="OrderedUniSet" shape="rect" coords="256,56,374,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -128,7 +129,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a140f02dfb3f186cbc49fe28d238aa2e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a140f02dfb3f186cbc49fe28d238aa2e1">initReached</a> ()</td></tr>
-<tr class="memdesc:a140f02dfb3f186cbc49fe28d238aa2e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets)  <a href="#a140f02dfb3f186cbc49fe28d238aa2e1">More...</a><br/></td></tr>
+<tr class="memdesc:a140f02dfb3f186cbc49fe28d238aa2e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Optional) A probe of a voter model that has been used to build this uni-dimensional set  <a href="#a140f02dfb3f186cbc49fe28d238aa2e1">More...</a><br/></td></tr>
 <tr class="separator:a140f02dfb3f186cbc49fe28d238aa2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
@@ -152,6 +153,14 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <a class="el" href="classUniSubset.html">UniSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">firstUniSubset</a></td></tr>
 <tr class="memdesc:a8b2ca464176feddcd8d96c75514eba6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of pointers to all feasible subsets. <br/></td></tr>
 <tr class="separator:a8b2ca464176feddcd8d96c75514eba6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c4bf064154e0a7baf8126b7fbe56d24"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7c4bf064154e0a7baf8126b7fbe56d24"></a>
+<a class="el" href="classVoterMeasurement.html">VoterMeasurement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a7c4bf064154e0a7baf8126b7fbe56d24">voterMeasurement</a></td></tr>
+<tr class="memdesc:a7c4bf064154e0a7baf8126b7fbe56d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) <br/></td></tr>
+<tr class="separator:a7c4bf064154e0a7baf8126b7fbe56d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f7c0c9a9b7dd5a9607201cfa478d567"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f7c0c9a9b7dd5a9607201cfa478d567"></a>
+<a class="el" href="classVoterProbe.html">VoterProbe</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a3f7c0c9a9b7dd5a9607201cfa478d567">voterProbe</a></td></tr>
+<tr class="memdesc:a3f7c0c9a9b7dd5a9607201cfa478d567"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Optional) A probe measurement of a voter model that has been used to build this uni-dimensional set <br/></td></tr>
+<tr class="separator:a3f7c0c9a9b7dd5a9607201cfa478d567"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A uni-dimensional set of elements and its algebraic structure (feasible subsets and feasible refinements) </p>
@@ -202,7 +211,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </table>
 </div><div class="memdoc">
 
-<p>Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) </p>
+<p>(Optional) A probe of a voter model that has been used to build this uni-dimensional set </p>
 <p>Initialise the <code>reached</code> field of all feasible subsets to <code>false</code> (used by other methods to run through the algebraic structure in a recursive fashion without considering twice the same subset) </p>
 
 </div>
@@ -214,7 +223,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 19:14:46 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 12 2015 17:01:44 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -14,7 +14,7 @@ Class to represent a data set for the prediction of a post-\/measurement from th
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classPredictionDataset_a5a2d75a4affa2b76dbb631f2f79c217e}{Prediction\-Dataset} (\hyperlink{classMultiSet}{Multi\-Set} $\ast$pre\-Measurement, \hyperlink{classMultiSet}{Multi\-Set} $\ast$post\-Measurement)
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em The number of observations associated to a couple (pre-\/value, post-\/value) \end{DoxyCompactList}\item 
 \hypertarget{classPredictionDataset_a9a30fa528fa4a2507a1a0a5fe8c74269}{\hyperlink{classPredictionDataset_a9a30fa528fa4a2507a1a0a5fe8c74269}{$\sim$\-Prediction\-Dataset} ()}\label{classPredictionDataset_a9a30fa528fa4a2507a1a0a5fe8c74269}
 
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
@@ -25,7 +25,9 @@ void \hyperlink{classPredictionDataset_a097fc45e897544af6b5215a26fa41527}{add\-T
 void \hyperlink{classPredictionDataset_a9615dd7ab9f8dd04fb2fb28d68bd96b1}{add\-Train\-Value} (int pre\-Index, int post\-Index, int count=1)
 \begin{DoxyCompactList}\small\item\em Add a couple of (pre and post) observations to the train set {\bfseries in the case of one-\/dimensional measurements} \end{DoxyCompactList}\item 
 void \hyperlink{classPredictionDataset_a8298f94fac0d5b3761effdb20405417a}{add\-Test\-Value} (int pre\-Index, int post\-Index, int count=1)
-\begin{DoxyCompactList}\small\item\em Add a couple of (pre and post) observations to the test set {\bfseries in the case of one-\/dimensional measurements} \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Add a couple of (pre and post) observations to the test set {\bfseries in the case of one-\/dimensional measurements} \end{DoxyCompactList}\item 
+void \hyperlink{classPredictionDataset_a2d4d421a0299c9f965965f1d3797316e}{print} ()
+\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -44,9 +46,9 @@ void \hyperlink{classPredictionDataset_a8298f94fac0d5b3761effdb20405417a}{add\-T
 \hypertarget{classPredictionDataset_af4fdcf7cfd236a99a73f18d630199291}{std\-::vector$<$ int $>$ $\ast$ \hyperlink{classPredictionDataset_af4fdcf7cfd236a99a73f18d630199291}{train\-Count\-Values}}\label{classPredictionDataset_af4fdcf7cfd236a99a73f18d630199291}
 
 \begin{DoxyCompactList}\small\item\em A vector of post-\/observations that are used to train the predictor. \end{DoxyCompactList}\item 
-\hypertarget{classPredictionDataset_a6ef1712f6f3e944cad7f966b123c44d4}{std\-::vector$<$ \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ $>$ $\ast$ {\bfseries test\-Pre\-Values}}\label{classPredictionDataset_a6ef1712f6f3e944cad7f966b123c44d4}
+\hypertarget{classPredictionDataset_a6ef1712f6f3e944cad7f966b123c44d4}{std\-::vector$<$ \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ $>$ $\ast$ \hyperlink{classPredictionDataset_a6ef1712f6f3e944cad7f966b123c44d4}{test\-Pre\-Values}}\label{classPredictionDataset_a6ef1712f6f3e944cad7f966b123c44d4}
 
-\item 
+\begin{DoxyCompactList}\small\item\em The number of observations associated to a couple (pre-\/value, post-\/value) \end{DoxyCompactList}\item 
 \hypertarget{classPredictionDataset_ab6ed50cd17878109b9a41ebb6db172ea}{std\-::vector$<$ \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ $>$ $\ast$ \hyperlink{classPredictionDataset_ab6ed50cd17878109b9a41ebb6db172ea}{test\-Post\-Values}}\label{classPredictionDataset_ab6ed50cd17878109b9a41ebb6db172ea}
 
 \begin{DoxyCompactList}\small\item\em A vector of pre-\/observations that are used to test the predictor. \end{DoxyCompactList}\item 
@@ -69,9 +71,9 @@ Class to represent a data set for the prediction of a post-\/measurement from th
 )}}\label{classPredictionDataset_a5a2d75a4affa2b76dbb631f2f79c217e}
 
 
-Constructor. 
+The number of observations associated to a couple (pre-\/value, post-\/value) 
 
-
+Constructor 
 \begin{DoxyParams}{Parameters}
 {\em pre\-Measurement} & \-: The pre-\/measurement modelled as a structured multi-\/dimensional set of elements (the possible observation values) \\
 \hline
@@ -169,7 +171,14 @@ Add a couple of (pre and post) observations to the train set {\bfseries in the c
 {\em count} & \-: The number of times the couple has been observed \\
 \hline
 \end{DoxyParams}
-
+\hypertarget{classPredictionDataset_a2d4d421a0299c9f965965f1d3797316e}{\index{Prediction\-Dataset@{Prediction\-Dataset}!print@{print}}
+\index{print@{print}!PredictionDataset@{Prediction\-Dataset}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void Prediction\-Dataset\-::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classPredictionDataset_a2d4d421a0299c9f965965f1d3797316e}
+/brief Print the data set. 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 

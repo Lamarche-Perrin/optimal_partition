@@ -156,6 +156,9 @@ LogarithmicScoreValue::LogarithmicScoreValue (LogarithmicScore *m)
 	testCountArray = new int [postSize];
 	for (int l = 0; l < postSize; l++) { testCountArray[l] = 0; }
 	testCountTotal = 0;
+
+	score = 0;
+	infinite = false;
 }
 
 
@@ -174,6 +177,7 @@ void LogarithmicScoreValue::add (ObjectiveValue *v)
 	trainCountTotal += value->trainCountTotal;
 	testCountTotal += value->testCountTotal;
 	score += value->score;
+	infinite = infinite || value->infinite;
 }
 
 
@@ -182,12 +186,26 @@ void LogarithmicScoreValue::compute ()
 	if (trainCountTotal > 0)
 	{
 		score = testCountTotal * log10 (trainCountTotal);
-		for (int l = 0; l < postSize; l++) { score -= testCountArray[l] * log10 (trainCountArray[l]); }
+		for (int l = 0; l < postSize; l++)
+		{
+			if (testCountArray[l] > 0)
+			{
+				score -= testCountArray[l] * log10 (trainCountArray[l]);
+				if (trainCountArray[l] == 0) { infinite = true; }				
+			}
+		}
 	}
 	
 	else {
 		score = testCountTotal * log10 (((LogarithmicScore*)objective)->trainCountTotal);
-		for (int l = 0; l < postSize; l++) { score -= testCountArray[l] * log10 (((LogarithmicScore*)objective)->trainCountArray[l]); }
+		for (int l = 0; l < postSize; l++)
+		{
+			if (testCountArray[l] > 0)
+			{
+				score -= testCountArray[l] * log10 (((LogarithmicScore*)objective)->trainCountArray[l]);
+				if (((LogarithmicScore*)objective)->trainCountArray[l] == 0) { infinite = true; }
+			}
+		}
 	}
 
 	score /= ((LogarithmicScore*)objective)->testCountTotal;
@@ -243,21 +261,32 @@ void LogarithmicScoreValue::print (bool v)
 	{
 		std::cout << std::endl
 				  << "   trainCountTotal = " << std::setw(5) << std::setprecision(5) << trainCountTotal << std::endl
-				  << "   trainCountArray = [" << std::setw(5) << std::setprecision(5) << trainCountArray[0] << ", ";
-		for (int l = 1; l < postSize; l++) { std::cout << std::setw(5) << std::setprecision(5) << trainCountArray[l]; }
+				  << "   trainCountArray = [" << std::setw(5) << std::setprecision(5) << trainCountArray[0];
+		for (int l = 1; l < postSize; l++) { std::cout << ", " << std::setw(5) << std::setprecision(5) << trainCountArray[l]; }
 
 		std::cout << "]" << std::endl
 				  << "   testCountTotal = " << std::setw(5) << std::setprecision(5) << testCountTotal << std::endl
-				  << "   testCountArray = [" << std::setw(5) << std::setprecision(5) << testCountArray[0] << ", ";
-		for (int l = 1; l < postSize; l++) { std::cout << std::setw(5) << std::setprecision(5) << testCountArray[l]; }
+				  << "   testCountArray = [" << std::setw(5) << std::setprecision(5) << testCountArray[0];
+		for (int l = 1; l < postSize; l++) { std::cout << ", " << std::setw(5) << std::setprecision(5) << testCountArray[l]; }
 
 		std::cout << "]" << std::endl
-				  << "   score = " << std::setw(5) << std::setprecision(5) << score << std::endl;
-	} else {
-		std::cout << " -> score = " << std::setw(5) << std::setprecision(5) << score << std::endl;
+				  << "   score = ";
+		
+		if (infinite) { std::cout << "infinite" << std::endl; }
+		else { std::cout << std::setw(5) << std::setprecision(5) << score << std::endl; }	
+	}
+
+	else {
+		std::cout << " -> score = ";
+		if (infinite) { std::cout << "infinite" << std::endl; }
+		else { std::cout << std::setw(5) << std::setprecision(5) << score << std::endl; }
 	}
 }
 
 
-double LogarithmicScoreValue::getValue (double param) { return score; }
+double LogarithmicScoreValue::getValue (double param)
+{
+	if (infinite) { return HUGE_VAL; }
+	return score;
+}
 

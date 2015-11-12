@@ -1,9 +1,16 @@
 var searchData=
 [
-  ['objective_5ffunction_2ehpp',['objective_function.hpp',['../objective__function_8hpp.html',1,'']]],
-  ['objectivefunction',['ObjectiveFunction',['../classObjectiveFunction.html',1,'ObjectiveFunction'],['../classObjectiveFunction.html#a227885b9e68935571bf25d36689f029a',1,'ObjectiveFunction::ObjectiveFunction()']]],
-  ['objectivevalue',['ObjectiveValue',['../classObjectiveValue.html',1,'']]],
-  ['ordereddatatree',['OrderedDatatree',['../classOrderedDatatree.html',1,'']]],
-  ['orderedset',['OrderedSet',['../classOrderedSet.html',1,'']]],
-  ['ordereduniset',['OrderedUniSet',['../classOrderedUniSet.html',1,'OrderedUniSet'],['../classOrderedUniSet.html#ac09b90d14eda5aed31fcb11114591ef5',1,'OrderedUniSet::OrderedUniSet()']]]
+  ['newobjectivevalue',['newObjectiveValue',['../classInformationBottleneck.html#af710cb93d1be643a5f67c5d879669b8b',1,'InformationBottleneck::newObjectiveValue()'],['../classLogarithmicScore.html#ab64011283bff491364cdffb0420dc89b',1,'LogarithmicScore::newObjectiveValue()'],['../classObjectiveFunction.html#a4d302f7cdf40ca80d6d186cbf8851b8f',1,'ObjectiveFunction::newObjectiveValue()'],['../classRelativeEntropy.html#a88c993870571948119498a5004879730',1,'RelativeEntropy::newObjectiveValue()']]],
+  ['nhonode',['NHONode',['../classNHONode.html',1,'']]],
+  ['nhoset',['NHOSet',['../classNHOSet.html',1,'']]],
+  ['node1',['node1',['../classVoterEdge.html#aaa3e4febee48a905652ba142b8a48b7e',1,'VoterEdge']]],
+  ['node2',['node2',['../classVoterEdge.html#a2483bd0524c590213c0abd33f7a5de2b',1,'VoterEdge']]],
+  ['nodemap',['nodeMap',['../classVoterGraph.html#a73838569fae5c5c96efadb1f121f5a90',1,'VoterGraph']]],
+  ['nodenumber',['nodeNumber',['../classVoterGraph.html#a7557cf918e298cf5d5558f7323fe8f35',1,'VoterGraph::nodeNumber()'],['../classVoterProbe.html#af0a20a6fc8a68f3ace3384cbbd6aa39f',1,'VoterProbe::nodeNumber()']]],
+  ['nodeset',['nodeSet',['../classVoterGraph.html#ab4c1bdbd12ebccd735841471984dfeec',1,'VoterGraph::nodeSet()'],['../classVoterProbe.html#ae51e09098a03f3e064c8a1a8182a2eeb',1,'VoterProbe::nodeSet()']]],
+  ['nodeweight',['nodeWeight',['../classVoterGraph.html#a8108f0b182d1ca41ef567f7b729fe749',1,'VoterGraph']]],
+  ['nonconstrainedorderedset',['NonconstrainedOrderedSet',['../classNonconstrainedOrderedSet.html',1,'']]],
+  ['nonconstrainedset',['NonconstrainedSet',['../classNonconstrainedSet.html',1,'']]],
+  ['normalizeobjectivevalues',['normalizeObjectiveValues',['../classAbstractSet.html#ae871ecbb69614c1028c3c688b90061b3',1,'AbstractSet::normalizeObjectiveValues()'],['../classBiSet.html#ae630d13ca1803d3c0d0422f839d8806a',1,'BiSet::normalizeObjectiveValues()'],['../classGraph.html#ad475ae837e3a0ba750ea9e7975ff1887',1,'Graph::normalizeObjectiveValues()'],['../classHierarchicalHierarchicalSet.html#ad165d39a55c23f442f4e74ca8a44a670',1,'HierarchicalHierarchicalSet::normalizeObjectiveValues()'],['../classHierarchicalOrderedSet.html#a7ee23f9f75bd6351c47751898ea02c18',1,'HierarchicalOrderedSet::normalizeObjectiveValues()'],['../classHierarchicalSet.html#aa0a14ba33f5942aed3f5b2901ae3821b',1,'HierarchicalSet::normalizeObjectiveValues()'],['../classMultiSet.html#a67169c2a6ee3b807ddbda0a6a67372a9',1,'MultiSet::normalizeObjectiveValues()'],['../classNHOSet.html#a19a2fa37a137eb7ff2459c5c6a0f9eb4',1,'NHOSet::normalizeObjectiveValues()'],['../classNonconstrainedOrderedSet.html#acf86c9802cb55ff5d41379b9de4f2b6b',1,'NonconstrainedOrderedSet::normalizeObjectiveValues()'],['../classNonconstrainedSet.html#a8f9d197b844e06d1efc08215f6c38f88',1,'NonconstrainedSet::normalizeObjectiveValues()'],['../classOrderedSet.html#afde0eaeefc1cda5945dd77112de30604',1,'OrderedSet::normalizeObjectiveValues()'],['../classRing.html#a95cc78007a2a9f2b3cfe09b33777d9c8',1,'Ring::normalizeObjectiveValues()']]],
+  ['num',['num',['../classUniSubset.html#a0b5a528a9edcc11061baff6ca4ce2657',1,'UniSubset']]]
 ];

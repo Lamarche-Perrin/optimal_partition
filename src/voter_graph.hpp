@@ -48,6 +48,7 @@
 
 #include <map>
 #include <cstdlib>
+#include <vector>
 
 #include "markov_process.hpp"
 #include "partition.hpp"
@@ -375,9 +376,6 @@ public :
 
 
 
-
-
-
 /*!
  * \class VoterProbe
  * \brief A probe to observe the Voter Model according to a subset of nodes
@@ -467,6 +465,7 @@ public:
 	int getCardinality ();
 	VoterMeasurementState *getState (VoterState *state);
 	OrderedUniSet *getOrderedUniSet ();
+	std::vector<OrderedUniSet*> *getOrderedUniSetVector ();
 	
     /*!
      * \brief Print the measurement details
@@ -618,6 +617,7 @@ public:
 
 	void estimateTransitionMap (VoterMeasurement *preM, VoterMeasurement *postM);
 	void printTransitionMap ();
+	void print (int size = -1);
 
     double getLogScore (VoterMeasurement *preM, VoterMeasurement *postM, int prior = 0);
     double getQuadScore (VoterMeasurement *preM, VoterMeasurement *postM, int prior = 0);

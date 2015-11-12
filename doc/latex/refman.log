@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.24)  9 NOV 2015 19:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.9.24)  12 NOV 2015 17:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1044,12 +1044,12 @@ LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <7> not available
 (Font)              Font shape `T1/phv/b/n' tried instead on input line 71.
 LaTeX Font Info:    Font shape `T1/phv/b/n' will be
 (Font)              scaled to size 6.29996pt on input line 71.
- [4] [5] [6])
+ [4] [5] [6]
+[7] [8] [9] [10])
 \tf@toc=\write5
 \openout5 = `refman.toc'.
 
-
-[7] [8
+ [11] [12
 
 ]
 Package hyperref Info: Option `pageanchor' set `true' on input line 130.
@@ -1092,98 +1092,94 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 Chapter 3.
 (./annotated.tex [5
 
-]) [6]
+] [6]) [7] [8
+
+]
 Chapter 4.
 (./files.tex
 
-LaTeX Warning: Reference `bi__set_8hpp' on page 7 undefined on input line 4.
+LaTeX Warning: Reference `bi__set_8hpp' on page 9 undefined on input line 4.
 
 
-LaTeX Warning: Reference `bidimensional__relative__entropy_8hpp' on page 7 unde
+LaTeX Warning: Reference `bidimensional__relative__entropy_8hpp' on page 9 unde
 fined on input line 5.
 
 
-LaTeX Warning: Reference `check__graph__datatree_8hpp' on page 7 undefined on i
+LaTeX Warning: Reference `check__graph__datatree_8hpp' on page 9 undefined on i
 nput line 6.
 
 
-LaTeX Warning: Reference `csv__tools_8hpp' on page 7 undefined on input line 7.
+LaTeX Warning: Reference `csv__tools_8hpp' on page 9 undefined on input line 7.
 
 
 
-LaTeX Warning: Reference `dataset_8hpp' on page 7 undefined on input line 8.
+LaTeX Warning: Reference `dataset_8hpp' on page 9 undefined on input line 8.
 
 
-LaTeX Warning: Reference `datatree_8hpp' on page 7 undefined on input line 9.
+LaTeX Warning: Reference `datatree_8hpp' on page 9 undefined on input line 9.
 
 
-LaTeX Warning: Reference `graph_8hpp' on page 7 undefined on input line 10.
+LaTeX Warning: Reference `graph_8hpp' on page 9 undefined on input line 10.
 
 
-LaTeX Warning: Reference `hierarchical__hierarchical__set_8hpp' on page 7 undef
+LaTeX Warning: Reference `hierarchical__hierarchical__set_8hpp' on page 9 undef
 ined on input line 11.
 
 
-LaTeX Warning: Reference `hierarchical__ordered__set_8hpp' on page 7 undefined 
+LaTeX Warning: Reference `hierarchical__ordered__set_8hpp' on page 9 undefined 
 on input line 12.
 
 
-LaTeX Warning: Reference `hierarchical__set_8hpp' on page 7 undefined on input 
+LaTeX Warning: Reference `hierarchical__set_8hpp' on page 9 undefined on input 
 line 13.
 
 
-LaTeX Warning: Reference `information__bottleneck_8hpp' on page 7 undefined on 
+LaTeX Warning: Reference `information__bottleneck_8hpp' on page 9 undefined on 
 input line 14.
 
 
-LaTeX Warning: Reference `main_8hpp' on page 7 undefined on input line 16.
+LaTeX Warning: Reference `main_8hpp' on page 9 undefined on input line 16.
 
 
-LaTeX Warning: Reference `NHO__set_8hpp' on page 7 undefined on input line 18.
+LaTeX Warning: Reference `NHO__set_8hpp' on page 9 undefined on input line 19.
 
 
-LaTeX Warning: Reference `nonconstrained__ordered__set_8hpp' on page 7 undefine
-d on input line 19.
+LaTeX Warning: Reference `nonconstrained__ordered__set_8hpp' on page 9 undefine
+d on input line 20.
 
 
-LaTeX Warning: Reference `nonconstrained__set_8hpp' on page 7 undefined on inpu
-t line 20.
+LaTeX Warning: Reference `nonconstrained__set_8hpp' on page 9 undefined on inpu
+t line 21.
 
 
-LaTeX Warning: Reference `orderedset_8hpp' on page 7 undefined on input line 22
+LaTeX Warning: Reference `orderedset_8hpp' on page 9 undefined on input line 23
 .
 
 
-LaTeX Warning: Reference `partition_8hpp' on page 7 undefined on input line 23.
+LaTeX Warning: Reference `partition_8hpp' on page 9 undefined on input line 24.
 
 
 
-LaTeX Warning: Reference `prediction__programs_8hpp' on page 7 undefined on inp
-ut line 25.
+LaTeX Warning: Reference `prediction__programs_8hpp' on page 9 undefined on inp
+ut line 26.
 
 
-LaTeX Warning: Reference `programs_8hpp' on page 7 undefined on input line 26.
+LaTeX Warning: Reference `programs_8hpp' on page 9 undefined on input line 27.
 
 
-LaTeX Warning: Reference `relative__entropy_8hpp' on page 7 undefined on input 
-line 27.
+LaTeX Warning: Reference `relative__entropy_8hpp' on page 9 undefined on input 
+line 28.
 
 
-LaTeX Warning: Reference `ring_8hpp' on page 7 undefined on input line 28.
+LaTeX Warning: Reference `ring_8hpp' on page 9 undefined on input line 29.
 
 
-LaTeX Warning: Reference `timer_8hpp' on page 7 undefined on input line 29.
+LaTeX Warning: Reference `timer_8hpp' on page 9 undefined on input line 30.
 
-
-Underfull \vbox (badness 7291) has occurred while \output is active []
-
- [7
-
-])
-[8]
+[9]) [10]
 Chapter 5.
 (./classAbstractSet.tex
-<classAbstractSet.pdf, id=1150, 501.875pt x 676.68808pt>
+<classAbstractSet.pdf, id=1990, 501.875pt x 676.68808pt>
 File: classAbstractSet.pdf Graphic file (type pdf)
 
 <use classAbstractSet.pdf>
@@ -1198,7 +1194,7 @@ LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [9
+ [11
 
  <./classAbstractSet.pdf>]
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9> not available
@@ -1211,7 +1207,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 37.
- [10]
+ [12]
 LaTeX Font Info:    Font shape `T1/phv/bc/n' will be
 (Font)              scaled to size 8.99994pt on input line 74.
 
@@ -1249,243 +1245,308 @@ Underfull \hbox (badness 10000) detected at line 141
 [][][]
  []
 
-[11] [12]) (./classBiPart.tex
-<classBiPart.pdf, id=1290, 501.875pt x 743.51776pt>
+[13] [14]) (./classBiPart.tex
+<classBiPart.pdf, id=2130, 501.875pt x 743.51776pt>
 File: classBiPart.pdf Graphic file (type pdf)
  <use classBiPart.pdf>
 Package pdftex.def Info: classBiPart.pdf used on input line 16.
 (pdftex.def)             Requested size: 38.40479pt x 56.9055pt.
 
-[13 <./classBiPart.pdf>]) (./classBiSet.tex
-<classBiSet.pdf, id=1331, 501.875pt x 472.3547pt>
+[15 <./classBiPart.pdf>]) (./classBiSet.tex
+<classBiSet.pdf, id=2171, 501.875pt x 472.3547pt>
 File: classBiSet.pdf Graphic file (type pdf)
  <use classBiSet.pdf>
 Package pdftex.def Info: classBiSet.pdf used on input line 7.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
- [14 <./classBiSet.pdf>]
+ [16 <./classBiSet.pdf>]
 Underfull \hbox (badness 10000) detected at line 105
 [][][]
  []
 
-[15]) (./classBiSubset.tex) (./classBottleneckObjectiveValue.tex
-<classBottleneckObjectiveValue.pdf, id=1412, 501.875pt x 243.32907pt>
+[17]) (./classBiSubset.tex) (./classBottleneckObjectiveValue.tex
+<classBottleneckObjectiveValue.pdf, id=2252, 501.875pt x 243.32907pt>
 File: classBottleneckObjectiveValue.pdf Graphic file (type pdf)
 
 <use classBottleneckObjectiveValue.pdf>
 Package pdftex.def Info: classBottleneckObjectiveValue.pdf used on input line 7
 .
 (pdftex.def)             Requested size: 117.36629pt x 56.9055pt.
- [16]) (./classCompleteGraph.tex
-<classCompleteGraph.pdf, id=1447, 501.875pt x 562.85281pt>
+ [18]) (./classChainVoterGraph.tex
+<classChainVoterGraph.pdf, id=2287, 501.875pt x 337.39049pt>
+File: classChainVoterGraph.pdf Graphic file (type pdf)
+
+<use classChainVoterGraph.pdf>
+Package pdftex.def Info: classChainVoterGraph.pdf used on input line 7.
+(pdftex.def)             Requested size: 84.6437pt x 56.9055pt.
+ [19 <./classBottleneckObjectiveValue.pdf> <./classChainVoterGraph.pdf>]) (./cl
+assCompleteGraph.tex
+<classCompleteGraph.pdf, id=2326, 501.875pt x 562.85281pt>
 File: classCompleteGraph.pdf Graphic file (type pdf)
 
 <use classCompleteGraph.pdf>
 Package pdftex.def Info: classCompleteGraph.pdf used on input line 7.
 (pdftex.def)             Requested size: 76.10506pt x 85.35826pt.
- [17 <./classBottleneckObjectiveValue.pdf> <./classCompleteGraph.pdf>]) (./stru
-ctDataPointStruct.tex) (./classDataset.tex [18])
-(./classDatatree.tex [19]) (./classFiliformGraph.tex
-<classFiliformGraph.pdf, id=1579, 501.875pt x 620.8796pt>
+) (./classCompleteVoterGraph.tex
+<classCompleteVoterGraph.pdf, id=2327, 501.875pt x 290.94696pt>
+File: classCompleteVoterGraph.pdf Graphic file (type pdf)
+
+<use classCompleteVoterGraph.pdf>
+Package pdftex.def Info: classCompleteVoterGraph.pdf used on input line 16.
+(pdftex.def)             Requested size: 98.16005pt x 56.9055pt.
+ [20 <./classCompleteGraph.pdf> <./classCompleteVoterGraph.pdf>]
+
+LaTeX Font Warning: Font shape `T1/pcr/bc/it' undefined
+(Font)              using `T1/pcr/bc/n' instead on input line 39.
+
+) (./structDataPointStruct.tex) (./classDataset.tex [21]) (./classDatatree.tex
+[22]) (./classEmptyVoterMeasurement.tex
+<classEmptyVoterMeasurement.pdf, id=2442, 501.875pt x 249.38168pt>
+File: classEmptyVoterMeasurement.pdf Graphic file (type pdf)
+
+<use classEmptyVoterMeasurement.pdf>
+Package pdftex.def Info: classEmptyVoterMeasurement.pdf used on input line 16.
+(pdftex.def)             Requested size: 114.51752pt x 56.9055pt.
+ [23 <./classEmptyVoterMeasurement.pdf>])
+(./classFiliformGraph.tex
+<classFiliformGraph.pdf, id=2474, 501.875pt x 620.8796pt>
 File: classFiliformGraph.pdf Graphic file (type pdf)
 
 <use classFiliformGraph.pdf>
 Package pdftex.def Info: classFiliformGraph.pdf used on input line 7.
 (pdftex.def)             Requested size: 68.99078pt x 85.35826pt.
 ) (./classGraph.tex
-<classGraph.pdf, id=1580, 501.875pt x 140.71571pt>
+<classGraph.pdf, id=2475, 501.875pt x 140.71571pt>
 File: classGraph.pdf Graphic file (type pdf)
  <use classGraph.pdf>
 Package pdftex.def Info: classGraph.pdf used on input line 7.
 (pdftex.def)             Requested size: 304.44322pt x 85.35826pt.
 
-[20 <./classFiliformGraph.pdf> <./classGraph.pdf>] [21]
+[24 <./classFiliformGraph.pdf> <./classGraph.pdf>] [25]
 Underfull \hbox (badness 10000) detected at line 162
 [][][]
  []
 
-) (./classGraphComponent.tex [22]) (./classHHNode.tex [23])
+) (./classGraphBasedUniSet.tex
+<classGraphBasedUniSet.pdf, id=2562, 501.875pt x 318.65047pt>
+File: classGraphBasedUniSet.pdf Graphic file (type pdf)
+
+<use classGraphBasedUniSet.pdf>
+Package pdftex.def Info: classGraphBasedUniSet.pdf used on input line 7.
+(pdftex.def)             Requested size: 89.6214pt x 56.9055pt.
+ [26]) (./classGraphComponent.tex)
+(./classHHNode.tex [27 <./classGraphBasedUniSet.pdf>])
 (./classHierarchicalHierarchicalSet.tex
-<classHierarchicalHierarchicalSet.pdf, id=1732, 501.875pt x 225.5627pt>
+<classHierarchicalHierarchicalSet.pdf, id=2617, 501.875pt x 225.5627pt>
 File: classHierarchicalHierarchicalSet.pdf Graphic file (type pdf)
 
 <use classHierarchicalHierarchicalSet.pdf>
 Package pdftex.def Info: classHierarchicalHierarchicalSet.pdf used on input lin
 e 7.
 (pdftex.def)             Requested size: 126.60947pt x 56.9055pt.
- [24 <./classHierarchicalHierarchicalSet.pdf>]
+ [28 <./classHierarchicalHierarchicalSet.pdf>] [29]
 Underfull \hbox (badness 10000) detected at line 93
 [][][]
  []
 
-) (./classHierarchicalOrderedSet.tex [25]
-<classHierarchicalOrderedSet.pdf, id=1791, 501.875pt x 257.37154pt>
+) (./classHierarchicalOrderedSet.tex
+<classHierarchicalOrderedSet.pdf, id=2697, 501.875pt x 257.37154pt>
 File: classHierarchicalOrderedSet.pdf Graphic file (type pdf)
 
 <use classHierarchicalOrderedSet.pdf>
 Package pdftex.def Info: classHierarchicalOrderedSet.pdf used on input line 7.
 (pdftex.def)             Requested size: 110.9642pt x 56.9055pt.
- [26 <./classHierarchicalOrderedSet.pdf>]
+ [30 <./classHierarchicalOrderedSet.pdf>]
 Underfull \hbox (badness 10000) detected at line 90
 [][][]
  []
 
-) (./classHierarchicalSet.tex
-<classHierarchicalSet.pdf, id=1839, 501.875pt x 371.75888pt>
+[31]) (./classHierarchicalSet.tex
+<classHierarchicalSet.pdf, id=2750, 501.875pt x 371.75888pt>
 File: classHierarchicalSet.pdf Graphic file (type pdf)
 
 <use classHierarchicalSet.pdf>
 Package pdftex.def Info: classHierarchicalSet.pdf used on input line 7.
 (pdftex.def)             Requested size: 76.81725pt x 56.9055pt.
- [27 <./classHierarchicalSet.pdf>] [28]
+ [32 <./classHierarchicalSet.pdf>]
 Underfull \hbox (badness 10000) detected at line 87
 [][][]
  []
 
-) (./classHierarchicalUniSet.tex
-<classHierarchicalUniSet.pdf, id=1891, 501.875pt x 318.65047pt>
+[33]) (./classHierarchicalUniSet.tex
+<classHierarchicalUniSet.pdf, id=2802, 501.875pt x 318.65047pt>
 File: classHierarchicalUniSet.pdf Graphic file (type pdf)
 
 <use classHierarchicalUniSet.pdf>
 Package pdftex.def Info: classHierarchicalUniSet.pdf used on input line 16.
 (pdftex.def)             Requested size: 89.6214pt x 56.9055pt.
- [29 <./classHierarchicalUniSet.pdf>])
-(./classHNode.tex [30]) (./classHONode.tex) (./classInformationBottleneck.tex
-<classInformationBottleneck.pdf, id=1951, 501.875pt x 286.7814pt>
+ [34 <./classHierarchicalUniSet.pdf>])
+(./classHNode.tex) (./classHONode.tex [35]) (./classInformationBottleneck.tex
+<classInformationBottleneck.pdf, id=2867, 501.875pt x 286.7814pt>
 File: classInformationBottleneck.pdf Graphic file (type pdf)
 
 <use classInformationBottleneck.pdf>
 Package pdftex.def Info: classInformationBottleneck.pdf used on input line 7.
 (pdftex.def)             Requested size: 99.58444pt x 56.9055pt.
- [31]) (./classLogarithmicScore.tex
-<classLogarithmicScore.pdf, id=1990, 501.875pt x 326.41951pt>
+ [36 <./classInformationBottleneck.pdf>])
+(./classLogarithmicScore.tex
+<classLogarithmicScore.pdf, id=2911, 501.875pt x 326.41951pt>
 File: classLogarithmicScore.pdf Graphic file (type pdf)
 
 <use classLogarithmicScore.pdf>
 Package pdftex.def Info: classLogarithmicScore.pdf used on input line 16.
 (pdftex.def)             Requested size: 87.49248pt x 56.9055pt.
- [32 <./classInformationBottleneck.pdf> <./classLogarithmicScore.pdf>]
-
-LaTeX Font Warning: Font shape `T1/pcr/bc/it' undefined
-(Font)              using `T1/pcr/bc/n' instead on input line 62.
-
-) (./classLogarithmicScoreValue.tex
-<classLogarithmicScoreValue.pdf, id=2030, 501.875pt x 264.14685pt>
+ [37 <./classLogarithmicScore.pdf>])
+(./classLogarithmicScoreValue.tex
+<classLogarithmicScoreValue.pdf, id=2950, 501.875pt x 264.14685pt>
 File: classLogarithmicScoreValue.pdf Graphic file (type pdf)
 
 <use classLogarithmicScoreValue.pdf>
 Package pdftex.def Info: classLogarithmicScoreValue.pdf used on input line 7.
 (pdftex.def)             Requested size: 108.11543pt x 56.9055pt.
- [33 <./classLogarithmicScoreValue.pdf>])
-(./classMultiPart.tex <classMultiPart.pdf, id=2060, 501.875pt x 573.57286pt>
+) (./classMacroVoterMeasurement.tex
+[38 <./classLogarithmicScoreValue.pdf>]
+<classMacroVoterMeasurement.pdf, id=2985, 501.875pt x 244.81462pt>
+File: classMacroVoterMeasurement.pdf Graphic file (type pdf)
+
+<use classMacroVoterMeasurement.pdf>
+Package pdftex.def Info: classMacroVoterMeasurement.pdf used on input line 16.
+(pdftex.def)             Requested size: 116.6541pt x 56.9055pt.
+) (./classMarkovDataSet.tex [39 <./classMacroVoterMeasurement.pdf>]) (./classMa
+rkovProcess.tex [40]
+Underfull \hbox (badness 10000) detected at line 115
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 118
+[][][]
+ []
+
+[41]
+Underfull \hbox (badness 10000) detected at line 140
+[][][]
+ []
+
+[42]) (./classMarkovTrajectory.tex) (./classMicroVoterMeasurement.tex
+<classMicroVoterMeasurement.pdf, id=3109, 501.875pt x 250.9375pt>
+File: classMicroVoterMeasurement.pdf Graphic file (type pdf)
+
+<use classMicroVoterMeasurement.pdf>
+Package pdftex.def Info: classMicroVoterMeasurement.pdf used on input line 16.
+(pdftex.def)             Requested size: 113.80533pt x 56.9055pt.
+ [43]) (./classMultiPart.tex
+<classMultiPart.pdf, id=3128, 501.875pt x 573.57286pt>
 File: classMultiPart.pdf Graphic file (type pdf)
 
 <use classMultiPart.pdf>
 Package pdftex.def Info: classMultiPart.pdf used on input line 16.
 (pdftex.def)             Requested size: 49.79222pt x 56.9055pt.
-) (./classMultiSet.tex [34 <./classMultiPart.pdf>]
-<classMultiSet.pdf, id=2096, 501.875pt x 472.3547pt>
+ [44 <./classMicroVoterMeasurement.pdf> <./classMultiPart.pdf>]) (./classMultiS
+et.tex
+<classMultiSet.pdf, id=3159, 501.875pt x 472.3547pt>
 File: classMultiSet.pdf Graphic file (type pdf)
  <use classMultiSet.pdf>
 Package pdftex.def Info: classMultiSet.pdf used on input line 16.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
 
-[35 <./classMultiSet.pdf>]
+[45 <./classMultiSet.pdf>] [46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 144.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\sim' on input line 144.
+(hyperref)                removing `math shift' on input line 164.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 144.
+(hyperref)                removing `\sim' on input line 164.
 
-[36] [37]
-Underfull \hbox (badness 10000) detected at line 191
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 164.
+
+[47]
+Underfull \hbox (badness 10000) detected at line 218
 [][][]
  []
 
-) (./classMultiSubset.tex [38]) (./classNHONode.tex [39]) (./classNHOSet.tex
-<classNHOSet.pdf, id=2249, 501.875pt x 472.3547pt>
+) (./classMultiSubset.tex [48]) (./classNHONode.tex) (./classNHOSet.tex
+<classNHOSet.pdf, id=3288, 501.875pt x 472.3547pt>
 File: classNHOSet.pdf Graphic file (type pdf)
  <use classNHOSet.pdf>
 Package pdftex.def Info: classNHOSet.pdf used on input line 7.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
 
-[40 <./classNHOSet.pdf>]
+[49] [50 <./classNHOSet.pdf>] [51]
 Underfull \hbox (badness 10000) detected at line 96
 [][][]
  []
 
-[41] [42]) (./classNonconstrainedOrderedSet.tex
-<classNonconstrainedOrderedSet.pdf, id=2319, 501.875pt x 229.42714pt>
+) (./classNonconstrainedOrderedSet.tex
+<classNonconstrainedOrderedSet.pdf, id=3385, 501.875pt x 229.42714pt>
 File: classNonconstrainedOrderedSet.pdf Graphic file (type pdf)
 
 <use classNonconstrainedOrderedSet.pdf>
 Package pdftex.def Info: classNonconstrainedOrderedSet.pdf used on input line 7
 .
 (pdftex.def)             Requested size: 124.48056pt x 56.9055pt.
- [43 <./classNonconstrainedOrderedSet.pdf>]
+ [52 <./classNonconstrainedOrderedSet.pdf>] [53]
 Underfull \hbox (badness 10000) detected at line 96
 [][][]
  []
 
-[44]) (./classNonconstrainedSet.tex
-<classNonconstrainedSet.pdf, id=2373, 501.875pt x 316.1411pt>
+) (./classNonconstrainedSet.tex
+<classNonconstrainedSet.pdf, id=3440, 501.875pt x 316.1411pt>
 File: classNonconstrainedSet.pdf Graphic file (type pdf)
 
 <use classNonconstrainedSet.pdf>
 Package pdftex.def Info: classNonconstrainedSet.pdf used on input line 7.
 (pdftex.def)             Requested size: 90.33359pt x 56.9055pt.
- [45 <./classNonconstrainedSet.pdf>]
+ [54 <./classNonconstrainedSet.pdf>] [55]
 Underfull \hbox (badness 10000) detected at line 102
 [][][]
  []
 
-) (./classObjectiveFunction.tex [46]
-<classObjectiveFunction.pdf, id=2431, 501.875pt x 95.59715pt>
+) (./classObjectiveFunction.tex
+<classObjectiveFunction.pdf, id=3498, 501.875pt x 95.59715pt>
 File: classObjectiveFunction.pdf Graphic file (type pdf)
 
 <use classObjectiveFunction.pdf>
 Package pdftex.def Info: classObjectiveFunction.pdf used on input line 16.
 (pdftex.def)             Requested size: 298.75334pt x 56.9055pt.
-) (./classObjectiveValue.tex [47 <./classObjectiveFunction.pdf>] <classObjectiv
-eValue.pdf, id=2464, 501.875pt x 81.11304pt>
+ [56 <./classObjectiveFunction.pdf>])
+(./classObjectiveValue.tex
+<classObjectiveValue.pdf, id=3523, 501.875pt x 81.11304pt>
 File: classObjectiveValue.pdf Graphic file (type pdf)
 
 <use classObjectiveValue.pdf>
 Package pdftex.def Info: classObjectiveValue.pdf used on input line 7.
 (pdftex.def)             Requested size: 352.10652pt x 56.9055pt.
-) (./classOrderedDatatree.tex [48 <./classObjectiveValue.pdf>]) (./classOrdered
-Set.tex
-<classOrderedSet.pdf, id=2520, 501.875pt x 466.8642pt>
+ [57 <./classObjectiveValue.pdf>])
+(./classOrderedDatatree.tex [58]) (./classOrderedPartition.tex)
+(./classOrderedSet.tex <classOrderedSet.pdf, id=3609, 501.875pt x 466.8642pt>
 File: classOrderedSet.pdf Graphic file (type pdf)
 
 <use classOrderedSet.pdf>
 Package pdftex.def Info: classOrderedSet.pdf used on input line 7.
 (pdftex.def)             Requested size: 61.17198pt x 56.9055pt.
- [49 <./classOrderedSet.pdf>]
+ [59 <./classOrderedSet.pdf>]
 Underfull \hbox (badness 10000) detected at line 99
 [][][]
  []
 
-[50]) (./classOrderedUniSet.tex
-<classOrderedUniSet.pdf, id=2594, 501.875pt x 386.06232pt>
+[60]) (./classOrderedUniSet.tex
+<classOrderedUniSet.pdf, id=3676, 501.875pt x 386.06232pt>
 File: classOrderedUniSet.pdf Graphic file (type pdf)
 
 <use classOrderedUniSet.pdf>
 Package pdftex.def Info: classOrderedUniSet.pdf used on input line 16.
 (pdftex.def)             Requested size: 73.97614pt x 56.9055pt.
- [51 <./classOrderedUniSet.pdf>]) (./classPart.tex
-<classPart.pdf, id=2612, 501.875pt x 286.7814pt>
+ [61 <./classOrderedUniSet.pdf>]) (./classPart.tex
+<classPart.pdf, id=3694, 501.875pt x 286.7814pt>
 File: classPart.pdf Graphic file (type pdf)
  <use classPart.pdf>
 Package pdftex.def Info: classPart.pdf used on input line 16.
 (pdftex.def)             Requested size: 99.58444pt x 56.9055pt.
-)
-(./classPartition.tex [52 <./classPart.pdf>]) (./classPredictionDataset.tex
+ [62 <./classPart.pdf>]) (./classPartition.tex) (./classPredictionDataset.tex [
+63]
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <9> not available
 (Font)              Font shape `T1/phv/b/it' tried instead on input line 26.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <9> not available
@@ -1493,65 +1554,135 @@ LaTeX Font Info:    Font shape `T1/phv/b/it' in size <9> not available
 LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
 (Font)              scaled to size 8.09995pt on input line 26.
 
-[53] [54]) (./classRandomGraph.tex
-<classRandomGraph.pdf, id=2708, 501.875pt x 602.25pt>
+[64] [65]) (./classRandomGraph.tex
+<classRandomGraph.pdf, id=3806, 501.875pt x 602.25pt>
 File: classRandomGraph.pdf Graphic file (type pdf)
 
 <use classRandomGraph.pdf>
 Package pdftex.def Info: classRandomGraph.pdf used on input line 7.
 (pdftex.def)             Requested size: 71.12737pt x 85.35826pt.
-
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
- [55])
-(./classRelativeEntropy.tex
-<classRelativeEntropy.pdf, id=2713, 501.875pt x 326.41951pt>
+) (./classRelativeEntropy.tex
+<classRelativeEntropy.pdf, id=3807, 501.875pt x 326.41951pt>
 File: classRelativeEntropy.pdf Graphic file (type pdf)
 
 <use classRelativeEntropy.pdf>
 Package pdftex.def Info: classRelativeEntropy.pdf used on input line 7.
 (pdftex.def)             Requested size: 87.49248pt x 56.9055pt.
- [56 <./classRandomGraph.pdf> <./classRelativeEntropy.pdf>]) (./classRelativeOb
+ [66 <./classRandomGraph.pdf> <./classRelativeEntropy.pdf>]) (./classRelativeOb
 jectiveValue.tex
-<classRelativeObjectiveValue.pdf, id=2752, 501.875pt x 264.14685pt>
+<classRelativeObjectiveValue.pdf, id=3833, 501.875pt x 264.14685pt>
 File: classRelativeObjectiveValue.pdf Graphic file (type pdf)
 
 <use classRelativeObjectiveValue.pdf>
 Package pdftex.def Info: classRelativeObjectiveValue.pdf used on input line 7.
 (pdftex.def)             Requested size: 108.11543pt x 56.9055pt.
-) (./classRing.tex
-<classRing.pdf, id=2758, 501.875pt x 472.3547pt>
+ [67 <./classRelativeObjectiveValue.pdf>]) (./classRing.tex <classRing.pdf, id=
+3871, 501.875pt x 472.3547pt>
 File: classRing.pdf Graphic file (type pdf)
- <use classRing.pdf>
+
+<use classRing.pdf>
 Package pdftex.def Info: classRing.pdf used on input line 7.
 (pdftex.def)             Requested size: 60.4598pt x 56.9055pt.
- [57 <./classRelativeObjectiveValue.pdf> <./classRing.pdf>] [58]
+ [68 <./classRing.pdf>]
 Underfull \hbox (badness 10000) detected at line 120
 [][][]
  []
 
-) (./classRingGraph.tex <classRingGraph.pdf, id=2841, 501.875pt x 708.52705pt>
+[69]) (./classRingGraph.tex
+<classRingGraph.pdf, id=3940, 501.875pt x 708.52705pt>
 File: classRingGraph.pdf Graphic file (type pdf)
 
 <use classRingGraph.pdf>
 Package pdftex.def Info: classRingGraph.pdf used on input line 7.
 (pdftex.def)             Requested size: 60.4598pt x 85.35826pt.
+) (./classTimer.tex [70 <./classRingGraph.pdf>])
+(./structTreeToAdd.tex) (./classTwoCommunitiesVoterGraph.tex
+<classTwoCommunitiesVoterGraph.pdf, id=3961, 501.875pt x 224.29799pt>
+File: classTwoCommunitiesVoterGraph.pdf Graphic file (type pdf)
 
-Underfull \vbox (badness 1371) has occurred while \output is active []
+<use classTwoCommunitiesVoterGraph.pdf>
+Package pdftex.def Info: classTwoCommunitiesVoterGraph.pdf used on input line 1
+6.
+(pdftex.def)             Requested size: 127.32167pt x 56.9055pt.
+ [71 <./classTwoCommunitiesVoterGraph.pdf>] [72]
+Underfull \hbox (badness 10000) detected at line 124
+[][][]
+ []
 
- [59])
-(./classTimer.tex) (./structTreeToAdd.tex [60 <./classRingGraph.pdf>])
-(./classUniSet.tex <classUniSet.pdf, id=2878, 501.875pt x 159.32523pt>
+
+Underfull \hbox (badness 10000) detected at line 143
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 157
+[][][]
+ []
+
+[73]) (./classUniSet.tex <classUniSet.pdf, id=4044, 501.875pt x 106.21683pt>
 File: classUniSet.pdf Graphic file (type pdf)
 
 <use classUniSet.pdf>
 Package pdftex.def Info: classUniSet.pdf used on input line 16.
-(pdftex.def)             Requested size: 179.25047pt x 56.9055pt.
- [61 <./classUniSet.pdf>]) (./classUniSubset.tex
+(pdftex.def)             Requested size: 268.87953pt x 56.9055pt.
+ [74 <./classUniSet.pdf>]) (./classUniSubset.tex [75]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <9> not available
 (Font)              Font shape `T1/pcr/m/sl' tried instead on input line 41.
- [62])
-[63] [64
+)
+(./classVoterBinning.tex [76]) (./classVoterDataSet.tex) (./classVoterEdge.tex
+[77] [78]) (./classVoterGraph.tex
+<classVoterGraph.pdf, id=4201, 501.875pt x 74.76933pt>
+File: classVoterGraph.pdf Graphic file (type pdf)
+
+<use classVoterGraph.pdf>
+Package pdftex.def Info: classVoterGraph.pdf used on input line 16.
+(pdftex.def)             Requested size: 381.98033pt x 56.9055pt.
+ [79 <./classVoterGraph.pdf>]
+Underfull \hbox (badness 10000) detected at line 123
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 145
+[][][]
+ []
+
+[80]
+Underfull \hbox (badness 10000) detected at line 167
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 186
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 200
+[][][]
+ []
+
+[81]) (./classVoterMeasurement.tex
+<classVoterMeasurement.pdf, id=4283, 501.875pt x 81.60487pt>
+File: classVoterMeasurement.pdf Graphic file (type pdf)
+
+<use classVoterMeasurement.pdf>
+Package pdftex.def Info: classVoterMeasurement.pdf used on input line 16.
+(pdftex.def)             Requested size: 349.98526pt x 56.9055pt.
+ [82 <./classVoterMeasurement.pdf>] [83])
+(./classVoterMeasurementState.tex) (./classVoterMeasurementTrajectory.tex
+[84]) (./classVoterNode.tex
+Underfull \hbox (badness 10000) detected at line 70
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 73
+[][][]
+ []
+
+[85]) (./classVoterProbe.tex [86] [87]) (./classVoterState.tex [88])
+(./classVoterTrajectory.tex) [89] [90
 
 ]
 Chapter 6.
@@ -1575,7 +1706,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
  []
 
-[65]
+[91]
 Underfull \hbox (badness 10000) detected at line 21
 [][][]
  []
@@ -1585,9 +1716,14 @@ Underfull \hbox (badness 10000) detected at line 24
 [][][]
  []
 
-) (./multi__set_8hpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--12
+) (./markov__process_8hpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--11
 
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 29
+[][][]
  []
 
 
@@ -1595,17 +1731,27 @@ Underfull \hbox (badness 10000) detected at line 32
 [][][]
  []
 
+) (./multi__set_8hpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--13
 
-Underfull \hbox (badness 10000) detected at line 35
+ []
+
+[92]
+Underfull \hbox (badness 10000) detected at line 33
 [][][]
  []
 
-) (./objective__function_8hpp.tex [66]
+
+Underfull \hbox (badness 10000) detected at line 36
+[][][]
+ []
+
+) (./objective__function_8hpp.tex
 Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-
+[93]
 Underfull \hbox (badness 10000) detected at line 27
 [][][]
  []
@@ -1620,7 +1766,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--10
 
  []
 
-[67]
+
 Underfull \hbox (badness 10000) detected at line 18
 [][][]
  []
@@ -1631,21 +1777,57 @@ Underfull \hbox (badness 10000) detected at line 21
  []
 
 ) (./uni__set_8hpp.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--12
+Underfull \hbox (badness 10000) in paragraph at lines 9--14
 
  []
 
-
-Underfull \hbox (badness 10000) detected at line 38
+[94]
+Underfull \hbox (badness 10000) detected at line 42
 [][][]
  []
 
 
-Underfull \hbox (badness 10000) detected at line 41
+Underfull \hbox (badness 10000) detected at line 45
 [][][]
  []
 
-) [68] (./refman.ind
+) (./voter__graph_8hpp.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--17
+
+ []
+
+[95] [96]
+Underfull \hbox (badness 10000) detected at line 162
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 165
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 179
+[][][]
+ []
+
+LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 183.
+LaTeX Font Info:    Font shape `T1/phv/b/it' in size <10> not available
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 183.
+LaTeX Font Info:    Font shape `T1/phv/b/sl' will be
+(Font)              scaled to size 8.99994pt on input line 183.
+[97]
+Underfull \hbox (badness 10000) detected at line 221
+[][][]
+ []
+
+
+Underfull \hbox (badness 10000) detected at line 237
+[][][]
+ []
+
+) [98] (./refman.ind
 Overfull \hbox (18.03305pt too wide) in paragraph at lines 7--9
 []\T1/phv/m/n/10 /home/lamarche/programming/optimal-_-partition/src/abstract-
  []
@@ -1657,33 +1839,36 @@ Overfull \hbox (29.75076pt too wide) in paragraph at lines 9--11
  []
 
 
-Overfull \hbox (21.39903pt too wide) in paragraph at lines 13--15
+Overfull \hbox (15.43228pt too wide) in paragraph at lines 11--13
+[]\T1/phv/m/n/10 /home/lamarche/programming/optimal-_-partition/src/markov-
+ []
+
+
+Overfull \hbox (21.39903pt too wide) in paragraph at lines 15--17
 []\T1/phv/m/n/10 /home/lamarche/programming/optimal-_-partition/src/objective-
  []
 
 
-Overfull \hbox (25.12491pt too wide) in paragraph at lines 15--17
+Overfull \hbox (25.12491pt too wide) in paragraph at lines 17--19
 []\T1/phv/m/n/10 /home/lamarche/programming/optimal-_-partition/src/prediction-
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 17--19
+Underfull \hbox (badness 10000) in paragraph at lines 19--21
 []\T1/phv/m/n/10 /home/lamarche/programming/optimal-_-partition/src/uni-
  []
 
-[69
+[99
 
-] [70] [71
-
-])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 203.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 203.
+] [100] [101] [102] [103])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 227.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 227.
  (./refman.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 203.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 203.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 227.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 227.
 Package rerunfilecheck Info: File `refman.out' has not changed.
-(rerunfilecheck)             Checksum: 0AC4DE2C282356AF3C39AB2D60FBFC00;33550.
+(rerunfilecheck)             Checksum: 99A62F8EF9D5DAC3607B1B24AFA95EE4;57979.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1691,16 +1876,16 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 203.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 227.
  ) 
 Here is how much of TeX's memory you used:
- 14418 strings out of 493935
- 251314 string characters out of 6157755
- 293336 words of memory out of 5000000
- 16295 multiletter control sequences out of 15000+600000
- 82114 words of font info for 113 fonts, out of 8000000 for 9000
+ 15429 strings out of 493935
+ 288499 string characters out of 6157755
+ 310624 words of memory out of 5000000
+ 16768 multiletter control sequences out of 15000+600000
+ 84970 words of font info for 115 fonts, out of 8000000 for 9000
  766 hyphenation exceptions out of 8191
- 48i,13n,43p,990b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 48i,13n,43p,1084b,536s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
@@ -1711,10 +1896,10 @@ urw/courier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic
 e/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8ac.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/urw/helvetic/uhvro8a.pfb>
-Output written on refman.pdf (79 pages, 403242 bytes).
+Output written on refman.pdf (115 pages, 551391 bytes).
 PDF statistics:
- 3467 PDF objects out of 3580 (max. 8388607)
- 3283 compressed objects within 33 object streams
- 1065 named destinations out of 1200 (max. 500000)
- 1535 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5446 PDF objects out of 6186 (max. 8388607)
+ 5189 compressed objects within 52 object streams
+ 1554 named destinations out of 1728 (max. 500000)
+ 2732 words of extra memory for PDF output out of 10000 (max. 10000000)
 

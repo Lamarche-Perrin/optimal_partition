@@ -94,4 +94,22 @@ void PredictionDataset::addTestValue (int preIndex, int postIndex, int count)
 }
 
 
+void PredictionDataset::print ()
+{
+	std::cout << "TRAIN SET:" << std::endl;
+	for (unsigned int i = 0; i < trainPreValues->size(); i++)
+	{
+		trainPreValues->at(i)->print();
+		trainPostValues->at(i)->print();
+		std::cout << trainCountValues->at(i) << std::endl;
+	}
+
+	std::cout << "TEST SET:" << std::endl;
+	for (unsigned int i = 0; i < testPreValues->size(); i++)
+	{
+		testPreValues->at(i)->print();
+		testPostValues->at(i)->print();
+		std::cout << testCountValues->at(i) << std::endl;
+	}
+}
 

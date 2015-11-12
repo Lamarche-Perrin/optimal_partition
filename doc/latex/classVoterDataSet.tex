@@ -1,0 +1,66 @@
+\hypertarget{classVoterDataSet}{\section{Voter\-Data\-Set Class Reference}
+\label{classVoterDataSet}\index{Voter\-Data\-Set@{Voter\-Data\-Set}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classVoterDataSet_a85862f252fad49f884e47db2f5a5674c}{{\bfseries Voter\-Data\-Set} (\hyperlink{classVoterGraph}{Voter\-Graph} $\ast$graph, int time, int delay, int train\-Size, int test\-Size, int train\-Length, int test\-Length)}\label{classVoterDataSet_a85862f252fad49f884e47db2f5a5674c}
+
+\item 
+\hypertarget{classVoterDataSet_adcfbf83886552504da000223c188d8a8}{\hyperlink{classPredictionDataset}{Prediction\-Dataset} $\ast$ {\bfseries get\-Prediction\-Dataset} (\hyperlink{classMultiSet}{Multi\-Set} $\ast$pre\-Set, \hyperlink{classMultiSet}{Multi\-Set} $\ast$post\-Set)}\label{classVoterDataSet_adcfbf83886552504da000223c188d8a8}
+
+\item 
+\hypertarget{classVoterDataSet_af70ae2bf803da48a2d9e8d63fe3ff734}{void {\bfseries estimate\-Transition\-Map} (\hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$pre\-M, \hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$post\-M)}\label{classVoterDataSet_af70ae2bf803da48a2d9e8d63fe3ff734}
+
+\item 
+\hypertarget{classVoterDataSet_ad012aba1d9993327593f7cddc325d51c}{void {\bfseries print\-Transition\-Map} ()}\label{classVoterDataSet_ad012aba1d9993327593f7cddc325d51c}
+
+\item 
+\hypertarget{classVoterDataSet_ad089568197304bede968974c3d2d9f30}{void {\bfseries print} (int size=-\/1)}\label{classVoterDataSet_ad089568197304bede968974c3d2d9f30}
+
+\item 
+\hypertarget{classVoterDataSet_a2a979b77b09ed30a92335423ebe21d12}{double {\bfseries get\-Log\-Score} (\hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$pre\-M, \hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$post\-M, int prior=0)}\label{classVoterDataSet_a2a979b77b09ed30a92335423ebe21d12}
+
+\item 
+\hypertarget{classVoterDataSet_a5c641ff7d0ce7a150ef8ebd46bc4da5e}{double {\bfseries get\-Quad\-Score} (\hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$pre\-M, \hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$post\-M, int prior=0)}\label{classVoterDataSet_a5c641ff7d0ce7a150ef8ebd46bc4da5e}
+
+\item 
+\hypertarget{classVoterDataSet_aaab30a1a42a992b61a66107353bb89c6}{\hyperlink{classVoterBinning}{Voter\-Binning} $\ast$ {\bfseries get\-Optimal\-Binning} (\hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$pre\-M, \hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$post\-M, int prior=0, int real\-Train\-Size=-\/1, bool verbose=false)}\label{classVoterDataSet_aaab30a1a42a992b61a66107353bb89c6}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classVoterDataSet_afc4d76589e0112bb5c8e30730074231e}{\hyperlink{classVoterGraph}{Voter\-Graph} $\ast$ {\bfseries graph}}\label{classVoterDataSet_afc4d76589e0112bb5c8e30730074231e}
+
+\item 
+\hypertarget{classVoterDataSet_a50a2e44a9d6d99d3254e3da816f76aff}{int {\bfseries time}}\label{classVoterDataSet_a50a2e44a9d6d99d3254e3da816f76aff}
+
+\item 
+\hypertarget{classVoterDataSet_a32c0fb1d14c53d2c10a28463f9e44a7f}{int {\bfseries delay}}\label{classVoterDataSet_a32c0fb1d14c53d2c10a28463f9e44a7f}
+
+\item 
+\hypertarget{classVoterDataSet_a8aadcc50a4094f7d43f3172c70ae5f73}{int {\bfseries train\-Size}}\label{classVoterDataSet_a8aadcc50a4094f7d43f3172c70ae5f73}
+
+\item 
+\hypertarget{classVoterDataSet_a068aae3fc53a52217cc9014ba21090dd}{int {\bfseries test\-Size}}\label{classVoterDataSet_a068aae3fc53a52217cc9014ba21090dd}
+
+\item 
+\hypertarget{classVoterDataSet_ad7cb5062b8c67a26ee50939d54027748}{int {\bfseries train\-Length}}\label{classVoterDataSet_ad7cb5062b8c67a26ee50939d54027748}
+
+\item 
+\hypertarget{classVoterDataSet_a89ce0e2c44631818736ca7f71056f6c0}{int {\bfseries test\-Length}}\label{classVoterDataSet_a89ce0e2c44631818736ca7f71056f6c0}
+
+\item 
+\hypertarget{classVoterDataSet_a07299f2883a8ec069d9821a877351725}{\hyperlink{classVoterTrajectory}{Voter\-Trajectory} $\ast$$\ast$ {\bfseries trajectories}}\label{classVoterDataSet_a07299f2883a8ec069d9821a877351725}
+
+\item 
+\hypertarget{classVoterDataSet_a0f0ee88cf6290a0a679982a5fef315b0}{Transition\-Map $\ast$ {\bfseries trans\-Map}}\label{classVoterDataSet_a0f0ee88cf6290a0a679982a5fef315b0}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{voter__graph_8hpp}{voter\-\_\-graph.\-hpp}\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/voter\-\_\-graph.\-cpp\end{DoxyCompactItemize}

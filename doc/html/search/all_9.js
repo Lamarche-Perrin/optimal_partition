@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['multi_5fset_2ehpp',['multi_set.hpp',['../multi__set_8hpp.html',1,'']]],
-  ['multipart',['MultiPart',['../classMultiPart.html',1,'']]],
-  ['multiset',['MultiSet',['../classMultiSet.html',1,'MultiSet'],['../classMultiSet.html#aa6ec2e2e6ef524acde12c795629f08c8',1,'MultiSet::MultiSet(UniSet *uniSet)'],['../classMultiSet.html#abafc2f4fb50484d3aabdd744dc1d6cc5',1,'MultiSet::MultiSet(UniSet **uniSetArray, int dimension)']]],
-  ['multisubset',['MultiSubset',['../classMultiSubset.html',1,'']]],
-  ['multisubsetnumber',['multiSubsetNumber',['../classMultiSet.html#a9c0c781a33f40bb2cd28110805572b7a',1,'MultiSet']]]
+  ['lastdelay',['lastDelay',['../classMarkovProcess.html#a5fa10a819200afd87b558332b6e351a6',1,'MarkovProcess']]],
+  ['lasttime',['lastTime',['../classMarkovProcess.html#a5eddf681cb7bc196a248813ba42b516f',1,'MarkovProcess']]],
+  ['logarithmic_5fscore_2ehpp',['logarithmic_score.hpp',['../logarithmic__score_8hpp.html',1,'']]],
+  ['logarithmicscore',['LogarithmicScore',['../classLogarithmicScore.html',1,'LogarithmicScore'],['../classLogarithmicScore.html#a4fba67dfac53087dbfde7cb825501c97',1,'LogarithmicScore::LogarithmicScore()']]],
+  ['logarithmicscorevalue',['LogarithmicScoreValue',['../classLogarithmicScoreValue.html',1,'']]]
 ];

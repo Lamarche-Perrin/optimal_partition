@@ -1,10 +1,22 @@
 var searchData=
 [
-  ['hhnode',['HHNode',['../classHHNode.html',1,'']]],
-  ['hierarchicalhierarchicalset',['HierarchicalHierarchicalSet',['../classHierarchicalHierarchicalSet.html',1,'']]],
-  ['hierarchicalorderedset',['HierarchicalOrderedSet',['../classHierarchicalOrderedSet.html',1,'']]],
-  ['hierarchicalset',['HierarchicalSet',['../classHierarchicalSet.html',1,'']]],
-  ['hierarchicaluniset',['HierarchicalUniSet',['../classHierarchicalUniSet.html',1,'HierarchicalUniSet'],['../classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0',1,'HierarchicalUniSet::HierarchicalUniSet()']]],
-  ['hnode',['HNode',['../classHNode.html',1,'']]],
-  ['honode',['HONode',['../classHONode.html',1,'']]]
+  ['getatomicmultisubset',['getAtomicMultiSubset',['../classMultiSet.html#a48a6504163110d377db974d6ea5bd8fe',1,'MultiSet::getAtomicMultiSubset(int index)'],['../classMultiSet.html#a91d471ce84161187ab63f56199c74ab3',1,'MultiSet::getAtomicMultiSubset(int *indices)']]],
+  ['getcompactmarkovpartition',['getCompactMarkovPartition',['../classTwoCommunitiesVoterGraph.html#a4dd6976ed1e02c761f6c4bd85bbf0f0c',1,'TwoCommunitiesVoterGraph::getCompactMarkovPartition(VoterProbe *probe, VoterMetric metric)'],['../classTwoCommunitiesVoterGraph.html#a13a1a7b219d0669f750a4281edf9aecf',1,'TwoCommunitiesVoterGraph::getCompactMarkovPartition(VoterMeasurement *measurement)']]],
+  ['getcompactmarkovprocess',['getCompactMarkovProcess',['../classTwoCommunitiesVoterGraph.html#ac3e7b13e297275475e8f073ccfcac7d1',1,'TwoCommunitiesVoterGraph']]],
+  ['getdistribution',['getDistribution',['../classMarkovProcess.html#afa7edaa775112df8dd4fc5007034d7e7',1,'MarkovProcess']]],
+  ['getentropy',['getEntropy',['../classMarkovProcess.html#ad1d295d33c8abc5bdabea3eeaf33b553',1,'MarkovProcess']]],
+  ['getinformationflow',['getInformationFlow',['../classMarkovProcess.html#aec53ead60326b0b92d46fe20ad393036',1,'MarkovProcess']]],
+  ['getmarkovpartition',['getMarkovPartition',['../classVoterGraph.html#a04231db4297c6a1d4232c5403b202d71',1,'VoterGraph::getMarkovPartition(VoterProbe *probe, VoterMetric metric)'],['../classVoterGraph.html#a2c0a299c1249cc04e011d0f507467007',1,'VoterGraph::getMarkovPartition(VoterMeasurement *measurement)']]],
+  ['getmarkovprocess',['getMarkovProcess',['../classVoterGraph.html#acc86929339ec0a0ce2946146919b1eb7',1,'VoterGraph']]],
+  ['getmutualinformation',['getMutualInformation',['../classMarkovProcess.html#a37aa6fee427f28a0d44dc369a2fd3b6a',1,'MarkovProcess']]],
+  ['getnextentropy',['getNextEntropy',['../classMarkovProcess.html#a44e748cd2a12c20ec65e4d2c1975518f',1,'MarkovProcess']]],
+  ['getnextprobability',['getNextProbability',['../classMarkovProcess.html#ab17f4ae9fa56c009553a5d50e899a84b',1,'MarkovProcess::getNextProbability(int nextIndividual, int currentIndividual, int delay)'],['../classMarkovProcess.html#a254635ef2e405073dd19aa14aa4ec365',1,'MarkovProcess::getNextProbability(Part *nextPart, int currentIndividual, int delay)'],['../classMarkovProcess.html#a72033d86b846a06449a005f796ec14c1',1,'MarkovProcess::getNextProbability(Part *nextPart, Part *currentPart, int delay, int time)']]],
+  ['getoptimalpartition',['getOptimalPartition',['../classAbstractSet.html#a48fd08c4b61ed46946bed6e19cd11194',1,'AbstractSet::getOptimalPartition()'],['../classBiSet.html#a5f79a8811a0638bcfc418c100b4f67af',1,'BiSet::getOptimalPartition()'],['../classGraph.html#a044d5401c498aa0c2d213986e7d747ca',1,'Graph::getOptimalPartition()'],['../classHierarchicalHierarchicalSet.html#ab7f3e53d68e2a0191d37cd3febdaa285',1,'HierarchicalHierarchicalSet::getOptimalPartition()'],['../classHierarchicalOrderedSet.html#a627ce416d730e03c9d807366e4a79a78',1,'HierarchicalOrderedSet::getOptimalPartition()'],['../classHierarchicalSet.html#a1f7b6ed6c57f17fcdee7c7c2bfbe4925',1,'HierarchicalSet::getOptimalPartition()'],['../classMultiSet.html#a338a036d443609e814b8c8ff414cce7e',1,'MultiSet::getOptimalPartition()'],['../classNHOSet.html#a2269a3b8f493512859660d3a457303d7',1,'NHOSet::getOptimalPartition()'],['../classNonconstrainedOrderedSet.html#a56bc624037070551d43a72685bbe2347',1,'NonconstrainedOrderedSet::getOptimalPartition()'],['../classNonconstrainedSet.html#a7d340ab2e3c6f0cb30b2375311376245',1,'NonconstrainedSet::getOptimalPartition()'],['../classOrderedSet.html#ac347be002f2b52ebc08ef6fdb6214f08',1,'OrderedSet::getOptimalPartition()'],['../classRing.html#ac9566fc23a18846375886fed4680b55a',1,'Ring::getOptimalPartition()']]],
+  ['getoptimalpartitionlist',['getOptimalPartitionList',['../classAbstractSet.html#af92c6c087fdb14e2426a1bf30960195e',1,'AbstractSet']]],
+  ['getprobability',['getProbability',['../classMarkovProcess.html#ad49d1ff46d5bf94e45a8b218b676c203',1,'MarkovProcess::getProbability(int individual, int currentTime)'],['../classMarkovProcess.html#afe80afb9c456631a9168c762058d3cd2',1,'MarkovProcess::getProbability(Part *part, int currentTime)']]],
+  ['getrandomatomicmultisubset',['getRandomAtomicMultiSubset',['../classMultiSet.html#afe3111c90692136b5141a4c5b96e2da3',1,'MultiSet']]],
+  ['gettransition',['getTransition',['../classMarkovProcess.html#a39c87840da9b238d7c33bd5ad23d538d',1,'MarkovProcess']]],
+  ['graph',['Graph',['../classGraph.html',1,'Graph'],['../classVoterProbe.html#add099ac2ac20a5f6a0e3616e78639497',1,'VoterProbe::graph()'],['../classVoterMeasurement.html#a8d22d4b78f7e2f4c747f5716c4885351',1,'VoterMeasurement::graph()']]],
+  ['graphbaseduniset',['GraphBasedUniSet',['../classGraphBasedUniSet.html',1,'']]],
+  ['graphcomponent',['GraphComponent',['../classGraphComponent.html',1,'']]]
 ];

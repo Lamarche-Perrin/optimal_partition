@@ -23,9 +23,13 @@ Inheritance diagram for Multi\-Set\-:\begin{figure}[H]
 \begin{DoxyCompactList}\small\item\em Number of feasible subsets. \end{DoxyCompactList}\item 
 \hyperlink{classMultiSet_abafc2f4fb50484d3aabdd744dc1d6cc5}{Multi\-Set} (\hyperlink{classUniSet}{Uni\-Set} $\ast$$\ast$uni\-Set\-Array, int dimension)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classMultiSet_ace92943f7461b6f683c7c4da76408e73}{Multi\-Set} (std\-::vector$<$ \hyperlink{classUniSet}{Uni\-Set} $\ast$ $>$ $\ast$uni\-Set\-Vector)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classMultiSet_a3ad638b1613083b97a53ea58e9060a4d}{$\sim$\-Multi\-Set} ()
 \item 
 \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ \hyperlink{classMultiSet_a48a6504163110d377db974d6ea5bd8fe}{get\-Atomic\-Multi\-Subset} (int index)
+\item 
+\hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ \hyperlink{classMultiSet_a91d471ce84161187ab63f56199c74ab3}{get\-Atomic\-Multi\-Subset} (int $\ast$indices)
 \item 
 \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$ \hyperlink{classMultiSet_afe3111c90692136b5141a4c5b96e2da3}{get\-Random\-Atomic\-Multi\-Subset} ()
 \item 
@@ -135,6 +139,22 @@ Constructor.
 {\em dimension} & \-: Number of uni-\/dimensional sets \\
 \hline
 \end{DoxyParams}
+\hypertarget{classMultiSet_ace92943f7461b6f683c7c4da76408e73}{\index{Multi\-Set@{Multi\-Set}!Multi\-Set@{Multi\-Set}}
+\index{Multi\-Set@{Multi\-Set}!MultiSet@{Multi\-Set}}
+\subsubsection[{Multi\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Multi\-Set\-::\-Multi\-Set (
+\begin{DoxyParamCaption}
+\item[{std\-::vector$<$ {\bf Uni\-Set} $\ast$ $>$ $\ast$}]{uni\-Set\-Vector}
+\end{DoxyParamCaption}
+)}}\label{classMultiSet_ace92943f7461b6f683c7c4da76408e73}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em uni\-Set\-Vector} & \-: Vector of pointers to uni-\/dimensional sets from which the Cartesian product is computed \\
+\hline
+\end{DoxyParams}
 \hypertarget{classMultiSet_a3ad638b1613083b97a53ea58e9060a4d}{\index{Multi\-Set@{Multi\-Set}!$\sim$\-Multi\-Set@{$\sim$\-Multi\-Set}}
 \index{$\sim$\-Multi\-Set@{$\sim$\-Multi\-Set}!MultiSet@{Multi\-Set}}
 \subsubsection[{$\sim$\-Multi\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Multi\-Set\-::$\sim$\-Multi\-Set (
@@ -172,7 +192,14 @@ Implements \hyperlink{classAbstractSet_acfc3004f18192f38e32bb7a5a12ec8df}{Abstra
 \item[{int}]{index}
 \end{DoxyParamCaption}
 )}}\label{classMultiSet_a48a6504163110d377db974d6ea5bd8fe}
-Access to an element (e.\-g., atomic feasible subset) from its index /param The index of the element to access /return A pointer to the unique atomic feasible subset that contains the element \hypertarget{classMultiSet_a338a036d443609e814b8c8ff414cce7e}{\index{Multi\-Set@{Multi\-Set}!get\-Optimal\-Partition@{get\-Optimal\-Partition}}
+Access to an element (e.\-g., atomic feasible subset) from its index I\-N T\-H\-E C\-A\-S\-E O\-F A O\-N\-E-\/\-D\-I\-M\-E\-N\-S\-I\-O\-N\-A\-L S\-E\-T /param index \-: The index of the element to access /return A pointer to the unique atomic feasible subset that contains the element \hypertarget{classMultiSet_a91d471ce84161187ab63f56199c74ab3}{\index{Multi\-Set@{Multi\-Set}!get\-Atomic\-Multi\-Subset@{get\-Atomic\-Multi\-Subset}}
+\index{get\-Atomic\-Multi\-Subset@{get\-Atomic\-Multi\-Subset}!MultiSet@{Multi\-Set}}
+\subsubsection[{get\-Atomic\-Multi\-Subset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Multi\-Subset} $\ast$ Multi\-Set\-::get\-Atomic\-Multi\-Subset (
+\begin{DoxyParamCaption}
+\item[{int $\ast$}]{indices}
+\end{DoxyParamCaption}
+)}}\label{classMultiSet_a91d471ce84161187ab63f56199c74ab3}
+Access to an element (e.\-g., atomic feasible subset) from its indices /param indices \-: The indices of the element to access /return A pointer to the unique atomic feasible subset that contains the element \hypertarget{classMultiSet_a338a036d443609e814b8c8ff414cce7e}{\index{Multi\-Set@{Multi\-Set}!get\-Optimal\-Partition@{get\-Optimal\-Partition}}
 \index{get\-Optimal\-Partition@{get\-Optimal\-Partition}!MultiSet@{Multi\-Set}}
 \subsubsection[{get\-Optimal\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition} $\ast$ Multi\-Set\-::get\-Optimal\-Partition (
 \begin{DoxyParamCaption}

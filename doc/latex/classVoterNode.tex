@@ -1,0 +1,111 @@
+\hypertarget{classVoterNode}{\section{Voter\-Node Class Reference}
+\label{classVoterNode}\index{Voter\-Node@{Voter\-Node}}
+}
+
+
+A node of the interaction graph.  
+
+
+
+
+{\ttfamily \#include $<$voter\-\_\-graph.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVoterNode_a2a776a4a502a6087f44f8b3451d6debc}{Voter\-Node} (int \hyperlink{classVoterNode_a93568292fdcb41d849f54f586c598fbc}{id}, double \hyperlink{classVoterNode_a06aa43e2603a2c8ee7540c754ef1fce2}{weight}=1, double \hyperlink{classVoterNode_ae913afddad8f917f649e406fa1334b25}{contrarian}=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classVoterNode_af5714338e00b415ff5838239646079fa}{\hyperlink{classVoterNode_af5714338e00b415ff5838239646079fa}{$\sim$\-Voter\-Node} ()}\label{classVoterNode_af5714338e00b415ff5838239646079fa}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classVoterNode_a93568292fdcb41d849f54f586c598fbc}{id}
+\item 
+double \hyperlink{classVoterNode_a06aa43e2603a2c8ee7540c754ef1fce2}{weight}
+\item 
+double \hyperlink{classVoterNode_ae913afddad8f917f649e406fa1334b25}{contrarian}
+\item 
+int \hyperlink{classVoterNode_a630068d0551e05d9a7bf3eff1f3b1202}{in\-Edge\-Weight}
+\item 
+int \hyperlink{classVoterNode_a9bd696aaa21ecf7b01bc877a6eaff534}{in\-Edge\-Number}
+\item 
+std\-::set$<$ \hyperlink{classVoterEdge}{Voter\-Edge} $\ast$ $>$ $\ast$ \hyperlink{classVoterNode_a753832f3c6b57995fce832169250a520}{in\-Edge\-Set}
+\item 
+int \hyperlink{classVoterNode_ae092216c9048f14155b2e580236ab6a9}{out\-Edge\-Weight}
+\item 
+int \hyperlink{classVoterNode_ad02a5823353dd4f1e0a1b9965553a1ef}{out\-Edge\-Number}
+\item 
+std\-::set$<$ \hyperlink{classVoterEdge}{Voter\-Edge} $\ast$ $>$ $\ast$ \hyperlink{classVoterNode_abbeb36b008f12217d080f9eb287ae9de}{out\-Edge\-Set}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A node of the interaction graph. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVoterNode_a2a776a4a502a6087f44f8b3451d6debc}{\index{Voter\-Node@{Voter\-Node}!Voter\-Node@{Voter\-Node}}
+\index{Voter\-Node@{Voter\-Node}!VoterNode@{Voter\-Node}}
+\subsubsection[{Voter\-Node}]{\setlength{\rightskip}{0pt plus 5cm}Voter\-Node\-::\-Voter\-Node (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{double}]{w = {\ttfamily 1}, }
+\item[{double}]{c = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classVoterNode_a2a776a4a502a6087f44f8b3451d6debc}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & \-: Unique id within the graph \\
+\hline
+{\em weight} & \-: Determines the probability to select this node (relatively to other nodes) at each simulation step when the update\-Process variable of the graph is set to U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S \\
+\hline
+{\em contrarian} & \-: Contrarian rate of the node\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Robin Lamarche-\/\-Perrin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22/01/2015 
+\end{DoxyDate}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classVoterNode_ae913afddad8f917f649e406fa1334b25}{\index{Voter\-Node@{Voter\-Node}!contrarian@{contrarian}}
+\index{contrarian@{contrarian}!VoterNode@{Voter\-Node}}
+\subsubsection[{contrarian}]{\setlength{\rightskip}{0pt plus 5cm}double Voter\-Node\-::contrarian}}\label{classVoterNode_ae913afddad8f917f649e406fa1334b25}
+Contrarian rate of the node \hypertarget{classVoterNode_a93568292fdcb41d849f54f586c598fbc}{\index{Voter\-Node@{Voter\-Node}!id@{id}}
+\index{id@{id}!VoterNode@{Voter\-Node}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}int Voter\-Node\-::id}}\label{classVoterNode_a93568292fdcb41d849f54f586c598fbc}
+Unique id within the graph \hypertarget{classVoterNode_a9bd696aaa21ecf7b01bc877a6eaff534}{\index{Voter\-Node@{Voter\-Node}!in\-Edge\-Number@{in\-Edge\-Number}}
+\index{in\-Edge\-Number@{in\-Edge\-Number}!VoterNode@{Voter\-Node}}
+\subsubsection[{in\-Edge\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Voter\-Node\-::in\-Edge\-Number}}\label{classVoterNode_a9bd696aaa21ecf7b01bc877a6eaff534}
+Sum of the weight of incoming edges \hypertarget{classVoterNode_a753832f3c6b57995fce832169250a520}{\index{Voter\-Node@{Voter\-Node}!in\-Edge\-Set@{in\-Edge\-Set}}
+\index{in\-Edge\-Set@{in\-Edge\-Set}!VoterNode@{Voter\-Node}}
+\subsubsection[{in\-Edge\-Set}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<${\bf Voter\-Edge}$\ast$$>$$\ast$ Voter\-Node\-::in\-Edge\-Set}}\label{classVoterNode_a753832f3c6b57995fce832169250a520}
+Set of incoming edges \hypertarget{classVoterNode_a630068d0551e05d9a7bf3eff1f3b1202}{\index{Voter\-Node@{Voter\-Node}!in\-Edge\-Weight@{in\-Edge\-Weight}}
+\index{in\-Edge\-Weight@{in\-Edge\-Weight}!VoterNode@{Voter\-Node}}
+\subsubsection[{in\-Edge\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}int Voter\-Node\-::in\-Edge\-Weight}}\label{classVoterNode_a630068d0551e05d9a7bf3eff1f3b1202}
+Sum of the weight of incoming nodes \hypertarget{classVoterNode_ad02a5823353dd4f1e0a1b9965553a1ef}{\index{Voter\-Node@{Voter\-Node}!out\-Edge\-Number@{out\-Edge\-Number}}
+\index{out\-Edge\-Number@{out\-Edge\-Number}!VoterNode@{Voter\-Node}}
+\subsubsection[{out\-Edge\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Voter\-Node\-::out\-Edge\-Number}}\label{classVoterNode_ad02a5823353dd4f1e0a1b9965553a1ef}
+Sum of the weight of outcoming edges \hypertarget{classVoterNode_abbeb36b008f12217d080f9eb287ae9de}{\index{Voter\-Node@{Voter\-Node}!out\-Edge\-Set@{out\-Edge\-Set}}
+\index{out\-Edge\-Set@{out\-Edge\-Set}!VoterNode@{Voter\-Node}}
+\subsubsection[{out\-Edge\-Set}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<${\bf Voter\-Edge}$\ast$$>$$\ast$ Voter\-Node\-::out\-Edge\-Set}}\label{classVoterNode_abbeb36b008f12217d080f9eb287ae9de}
+Set of outcoming edges \hypertarget{classVoterNode_ae092216c9048f14155b2e580236ab6a9}{\index{Voter\-Node@{Voter\-Node}!out\-Edge\-Weight@{out\-Edge\-Weight}}
+\index{out\-Edge\-Weight@{out\-Edge\-Weight}!VoterNode@{Voter\-Node}}
+\subsubsection[{out\-Edge\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}int Voter\-Node\-::out\-Edge\-Weight}}\label{classVoterNode_ae092216c9048f14155b2e580236ab6a9}
+Sum of the weight of outcoming nodes \hypertarget{classVoterNode_a06aa43e2603a2c8ee7540c754ef1fce2}{\index{Voter\-Node@{Voter\-Node}!weight@{weight}}
+\index{weight@{weight}!VoterNode@{Voter\-Node}}
+\subsubsection[{weight}]{\setlength{\rightskip}{0pt plus 5cm}double Voter\-Node\-::weight}}\label{classVoterNode_a06aa43e2603a2c8ee7540c754ef1fce2}
+Determines the probability to select this node (relatively to other nodes) at each simulation step when the update\-Process variable of the graph is set to U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{voter__graph_8hpp}{voter\-\_\-graph.\-hpp}\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/voter\-\_\-graph.\-cpp\end{DoxyCompactItemize}

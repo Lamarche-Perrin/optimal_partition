@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['indexset',['indexSet',['../classUniSubset.html#a32f7ed1b58639b5184c7c0321b08e6a1',1,'UniSubset']]],
-  ['isatomic',['isAtomic',['../classUniSubset.html#a33f088ffb21e664508cfbfb75341513a',1,'UniSubset']]]
+  ['distribution',['distribution',['../classMarkovProcess.html#ab08fd1641b1f866be6a7e3dcca7ed575',1,'MarkovProcess']]],
+  ['distributions',['distributions',['../classMarkovProcess.html#a8e5ced320dd6b0a41c2f38f316c37cbf',1,'MarkovProcess']]]
 ];

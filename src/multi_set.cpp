@@ -71,6 +71,23 @@ MultiSet::MultiSet (UniSet **strArray, int dim)
 }
 
 
+MultiSet::MultiSet (std::vector<UniSet*> *strVector)
+{
+	dimension = strVector->size();
+	uniSetArray = new UniSet* [dimension];
+	
+	for (int d = 0; d < dimension; d++)
+		uniSetArray[d] = strVector->at(d);
+
+	multiSubsetNumber = 0;
+	atomicMultiSubsetNumber = 0;
+	
+	firstMultiSubset = 0;
+	multiSubsetArray = 0;
+	atomicMultiSubsetArray = 0;
+}
+
+
 MultiSet::~MultiSet ()
 {
 	for (int num = 0; num < multiSubsetNumber; num++) { delete multiSubsetArray[num]; }

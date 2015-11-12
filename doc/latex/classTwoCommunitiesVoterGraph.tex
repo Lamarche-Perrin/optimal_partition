@@ -1,0 +1,198 @@
+\hypertarget{classTwoCommunitiesVoterGraph}{\section{Two\-Communities\-Voter\-Graph Class Reference}
+\label{classTwoCommunitiesVoterGraph}\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}}
+}
+
+
+An interaction graph consisting in two communities of nodes (complete graph within each community, complete interaction between the two communities, possibly with different weights)  
+
+
+
+
+{\ttfamily \#include $<$voter\-\_\-graph.\-hpp$>$}
+
+Inheritance diagram for Two\-Communities\-Voter\-Graph\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classTwoCommunitiesVoterGraph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classTwoCommunitiesVoterGraph_a63c60c10b48a21413f7f60033448024e}{Two\-Communities\-Voter\-Graph} (int \hyperlink{classTwoCommunitiesVoterGraph_a3c9db0ac7e58d875ab3ce277bf74b284}{size1}, int \hyperlink{classTwoCommunitiesVoterGraph_a8b88457f020773b984e0d8c85d9ee502}{size2}, double \hyperlink{classTwoCommunitiesVoterGraph_a96a32ba7529177a7f6b73e827a57791e}{intra\-Rate1}, double \hyperlink{classTwoCommunitiesVoterGraph_a6e7ea06e014d75b7bf18441885e07e1e}{intra\-Rate2}, double \hyperlink{classTwoCommunitiesVoterGraph_af08c3b9a6e6f1dc8659a38ecd2d1afde}{inter\-Rate1}, double \hyperlink{classTwoCommunitiesVoterGraph_afab8bb5994f7fd1370d7d81caf7277d4}{inter\-Rate2}, double \hyperlink{classTwoCommunitiesVoterGraph_a883bf57bf07fb2e59f05df65df859a46}{contrarian1}, double \hyperlink{classTwoCommunitiesVoterGraph_a4274a05f5e2ceae57de1f0e71493b9a4}{contrarian2}, int update=\hyperlink{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35aa01d100088352e1a7d3a34c9a66d0f951}{U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classTwoCommunitiesVoterGraph_ab74e186e76188e7de8ae11359ad1e55e}{\hyperlink{classTwoCommunitiesVoterGraph_ab74e186e76188e7de8ae11359ad1e55e}{$\sim$\-Two\-Communities\-Voter\-Graph} ()}\label{classTwoCommunitiesVoterGraph_ab74e186e76188e7de8ae11359ad1e55e}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classMarkovProcess}{Markov\-Process} $\ast$ \hyperlink{classTwoCommunitiesVoterGraph_ac3e7b13e297275475e8f073ccfcac7d1}{get\-Compact\-Markov\-Process} ()
+\begin{DoxyCompactList}\small\item\em Build the Markov chain associated to the graph, lumped according to the macro-\/state of community 1, the macro-\/state of community 2, and the state of the first agent in community 1. \end{DoxyCompactList}\item 
+\hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classTwoCommunitiesVoterGraph_a4dd6976ed1e02c761f6c4bd85bbf0f0c}{get\-Compact\-Markov\-Partition} (\hyperlink{classVoterProbe}{Voter\-Probe} $\ast$probe, \hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} metric)
+\begin{DoxyCompactList}\small\item\em Build the partition of the lumped Markov chain state space (see get\-Compact\-Markov\-Process) associated to a probe with a given metric (e.\-g., M\-E\-T\-R\-I\-C\-\_\-\-M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E of M\-E\-T\-R\-I\-C\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S) \end{DoxyCompactList}\item 
+\hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classTwoCommunitiesVoterGraph_a13a1a7b219d0669f750a4281edf9aecf}{get\-Compact\-Markov\-Partition} (\hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$measurement)
+\begin{DoxyCompactList}\small\item\em Build the partition of the lumped Markov chain state space (see get\-Compact\-Markov\-Process) associated to a measurement (i.\-e., a set of probes) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classTwoCommunitiesVoterGraph_a3c9db0ac7e58d875ab3ce277bf74b284}{size1}
+\item 
+int \hyperlink{classTwoCommunitiesVoterGraph_a8b88457f020773b984e0d8c85d9ee502}{size2}
+\item 
+double \hyperlink{classTwoCommunitiesVoterGraph_a96a32ba7529177a7f6b73e827a57791e}{intra\-Rate1}
+\item 
+double \hyperlink{classTwoCommunitiesVoterGraph_a6e7ea06e014d75b7bf18441885e07e1e}{intra\-Rate2}
+\item 
+double \hyperlink{classTwoCommunitiesVoterGraph_af08c3b9a6e6f1dc8659a38ecd2d1afde}{inter\-Rate1}
+\item 
+double \hyperlink{classTwoCommunitiesVoterGraph_afab8bb5994f7fd1370d7d81caf7277d4}{inter\-Rate2}
+\item 
+double \hyperlink{classTwoCommunitiesVoterGraph_a883bf57bf07fb2e59f05df65df859a46}{contrarian1}
+\item 
+double \hyperlink{classTwoCommunitiesVoterGraph_a4274a05f5e2ceae57de1f0e71493b9a4}{contrarian2}
+\item 
+std\-::set$<$ \hyperlink{classVoterNode}{Voter\-Node} $\ast$ $>$ $\ast$ \hyperlink{classTwoCommunitiesVoterGraph_a354768f44c0a3daa6d0a70a20df77af5}{community1}
+\item 
+std\-::set$<$ \hyperlink{classVoterNode}{Voter\-Node} $\ast$ $>$ $\ast$ \hyperlink{classTwoCommunitiesVoterGraph_a7c918c6733474caa86bc2d217bd2cb4d}{community2}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An interaction graph consisting in two communities of nodes (complete graph within each community, complete interaction between the two communities, possibly with different weights) 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classTwoCommunitiesVoterGraph_a63c60c10b48a21413f7f60033448024e}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}}
+\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{Two\-Communities\-Voter\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Two\-Communities\-Voter\-Graph\-::\-Two\-Communities\-Voter\-Graph (
+\begin{DoxyParamCaption}
+\item[{int}]{size1, }
+\item[{int}]{size2, }
+\item[{double}]{intra\-Rate1, }
+\item[{double}]{intra\-Rate2, }
+\item[{double}]{inter\-Rate1, }
+\item[{double}]{inter\-Rate2, }
+\item[{double}]{contrarian1, }
+\item[{double}]{contrarian2, }
+\item[{int}]{update = {\ttfamily {\bf U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S}}}
+\end{DoxyParamCaption}
+)}}\label{classTwoCommunitiesVoterGraph_a63c60c10b48a21413f7f60033448024e}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size1} & \-: The size of community 1 \\
+\hline
+{\em size2} & \-: The size of community 2 \\
+\hline
+{\em intra\-Rate1} & \-: The weight of edges within community 1 \\
+\hline
+{\em intra\-Rate2} & \-: The weight of edges within community 2 \\
+\hline
+{\em inter\-Rate1} & \-: The weight of edges from community 1 to community 2 \\
+\hline
+{\em inter\-Rate2} & \-: The weight of edges from community 2 to community 1 \\
+\hline
+{\em contrarian1} & \-: The contrarian rate of nodes in community 1 \\
+\hline
+{\em contrarian2} & \-: The contrarian rate of nodes in community 2 \\
+\hline
+{\em update} & \-: How the system evolves at each simulation step (U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S or U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classTwoCommunitiesVoterGraph_a4dd6976ed1e02c761f6c4bd85bbf0f0c}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!get\-Compact\-Markov\-Partition@{get\-Compact\-Markov\-Partition}}
+\index{get\-Compact\-Markov\-Partition@{get\-Compact\-Markov\-Partition}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{get\-Compact\-Markov\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition} $\ast$ Two\-Communities\-Voter\-Graph\-::get\-Compact\-Markov\-Partition (
+\begin{DoxyParamCaption}
+\item[{{\bf Voter\-Probe} $\ast$}]{probe, }
+\item[{{\bf Voter\-Metric}}]{metric}
+\end{DoxyParamCaption}
+)}}\label{classTwoCommunitiesVoterGraph_a4dd6976ed1e02c761f6c4bd85bbf0f0c}
+
+
+Build the partition of the lumped Markov chain state space (see get\-Compact\-Markov\-Process) associated to a probe with a given metric (e.\-g., M\-E\-T\-R\-I\-C\-\_\-\-M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E of M\-E\-T\-R\-I\-C\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em probe} & \-: The probe used to partition the lumped state space \\
+\hline
+{\em metric} & \-: The metric of the probe (e.\-g., M\-E\-T\-R\-I\-C\-\_\-\-M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E of M\-E\-T\-R\-I\-C\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed partition over the lumped state space 
+\end{DoxyReturn}
+\hypertarget{classTwoCommunitiesVoterGraph_a13a1a7b219d0669f750a4281edf9aecf}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!get\-Compact\-Markov\-Partition@{get\-Compact\-Markov\-Partition}}
+\index{get\-Compact\-Markov\-Partition@{get\-Compact\-Markov\-Partition}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{get\-Compact\-Markov\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition} $\ast$ Two\-Communities\-Voter\-Graph\-::get\-Compact\-Markov\-Partition (
+\begin{DoxyParamCaption}
+\item[{{\bf Voter\-Measurement} $\ast$}]{measurement}
+\end{DoxyParamCaption}
+)}}\label{classTwoCommunitiesVoterGraph_a13a1a7b219d0669f750a4281edf9aecf}
+
+
+Build the partition of the lumped Markov chain state space (see get\-Compact\-Markov\-Process) associated to a measurement (i.\-e., a set of probes) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em measurement} & \-: The measurement used to partition the lumped state space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed partition over the lumped state space 
+\end{DoxyReturn}
+\hypertarget{classTwoCommunitiesVoterGraph_ac3e7b13e297275475e8f073ccfcac7d1}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!get\-Compact\-Markov\-Process@{get\-Compact\-Markov\-Process}}
+\index{get\-Compact\-Markov\-Process@{get\-Compact\-Markov\-Process}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{get\-Compact\-Markov\-Process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Markov\-Process} $\ast$ Two\-Communities\-Voter\-Graph\-::get\-Compact\-Markov\-Process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classTwoCommunitiesVoterGraph_ac3e7b13e297275475e8f073ccfcac7d1}
+
+
+Build the Markov chain associated to the graph, lumped according to the macro-\/state of community 1, the macro-\/state of community 2, and the state of the first agent in community 1. 
+
+\begin{DoxyReturn}{Returns}
+The computed lumped Markov chain 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classTwoCommunitiesVoterGraph_a354768f44c0a3daa6d0a70a20df77af5}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!community1@{community1}}
+\index{community1@{community1}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{community1}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<${\bf Voter\-Node}$\ast$$>$$\ast$ Two\-Communities\-Voter\-Graph\-::community1}}\label{classTwoCommunitiesVoterGraph_a354768f44c0a3daa6d0a70a20df77af5}
+The set of nodes in community 1 \hypertarget{classTwoCommunitiesVoterGraph_a7c918c6733474caa86bc2d217bd2cb4d}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!community2@{community2}}
+\index{community2@{community2}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{community2}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<${\bf Voter\-Node}$\ast$$>$$\ast$ Two\-Communities\-Voter\-Graph\-::community2}}\label{classTwoCommunitiesVoterGraph_a7c918c6733474caa86bc2d217bd2cb4d}
+The set of nodes in community 2 \hypertarget{classTwoCommunitiesVoterGraph_a883bf57bf07fb2e59f05df65df859a46}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!contrarian1@{contrarian1}}
+\index{contrarian1@{contrarian1}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{contrarian1}]{\setlength{\rightskip}{0pt plus 5cm}double Two\-Communities\-Voter\-Graph\-::contrarian1}}\label{classTwoCommunitiesVoterGraph_a883bf57bf07fb2e59f05df65df859a46}
+The contrarian rate of nodes in community 1 \hypertarget{classTwoCommunitiesVoterGraph_a4274a05f5e2ceae57de1f0e71493b9a4}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!contrarian2@{contrarian2}}
+\index{contrarian2@{contrarian2}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{contrarian2}]{\setlength{\rightskip}{0pt plus 5cm}double Two\-Communities\-Voter\-Graph\-::contrarian2}}\label{classTwoCommunitiesVoterGraph_a4274a05f5e2ceae57de1f0e71493b9a4}
+The contrarian rate of nodes in community 2 \hypertarget{classTwoCommunitiesVoterGraph_af08c3b9a6e6f1dc8659a38ecd2d1afde}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!inter\-Rate1@{inter\-Rate1}}
+\index{inter\-Rate1@{inter\-Rate1}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{inter\-Rate1}]{\setlength{\rightskip}{0pt plus 5cm}double Two\-Communities\-Voter\-Graph\-::inter\-Rate1}}\label{classTwoCommunitiesVoterGraph_af08c3b9a6e6f1dc8659a38ecd2d1afde}
+The weight of edges from community 1 to community 2 \hypertarget{classTwoCommunitiesVoterGraph_afab8bb5994f7fd1370d7d81caf7277d4}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!inter\-Rate2@{inter\-Rate2}}
+\index{inter\-Rate2@{inter\-Rate2}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{inter\-Rate2}]{\setlength{\rightskip}{0pt plus 5cm}double Two\-Communities\-Voter\-Graph\-::inter\-Rate2}}\label{classTwoCommunitiesVoterGraph_afab8bb5994f7fd1370d7d81caf7277d4}
+The weight of edges from community 2 to community 1 \hypertarget{classTwoCommunitiesVoterGraph_a96a32ba7529177a7f6b73e827a57791e}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!intra\-Rate1@{intra\-Rate1}}
+\index{intra\-Rate1@{intra\-Rate1}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{intra\-Rate1}]{\setlength{\rightskip}{0pt plus 5cm}double Two\-Communities\-Voter\-Graph\-::intra\-Rate1}}\label{classTwoCommunitiesVoterGraph_a96a32ba7529177a7f6b73e827a57791e}
+The weight of edges within community 1 \hypertarget{classTwoCommunitiesVoterGraph_a6e7ea06e014d75b7bf18441885e07e1e}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!intra\-Rate2@{intra\-Rate2}}
+\index{intra\-Rate2@{intra\-Rate2}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{intra\-Rate2}]{\setlength{\rightskip}{0pt plus 5cm}double Two\-Communities\-Voter\-Graph\-::intra\-Rate2}}\label{classTwoCommunitiesVoterGraph_a6e7ea06e014d75b7bf18441885e07e1e}
+The weight of edges within community 2 \hypertarget{classTwoCommunitiesVoterGraph_a3c9db0ac7e58d875ab3ce277bf74b284}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!size1@{size1}}
+\index{size1@{size1}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{size1}]{\setlength{\rightskip}{0pt plus 5cm}int Two\-Communities\-Voter\-Graph\-::size1}}\label{classTwoCommunitiesVoterGraph_a3c9db0ac7e58d875ab3ce277bf74b284}
+The size of community 1 \hypertarget{classTwoCommunitiesVoterGraph_a8b88457f020773b984e0d8c85d9ee502}{\index{Two\-Communities\-Voter\-Graph@{Two\-Communities\-Voter\-Graph}!size2@{size2}}
+\index{size2@{size2}!TwoCommunitiesVoterGraph@{Two\-Communities\-Voter\-Graph}}
+\subsubsection[{size2}]{\setlength{\rightskip}{0pt plus 5cm}int Two\-Communities\-Voter\-Graph\-::size2}}\label{classTwoCommunitiesVoterGraph_a8b88457f020773b984e0d8c85d9ee502}
+The size of community 2 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{voter__graph_8hpp}{voter\-\_\-graph.\-hpp}\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/voter\-\_\-graph.\-cpp\end{DoxyCompactItemize}

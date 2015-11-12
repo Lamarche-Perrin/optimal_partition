@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hierarchicaluniset',['HierarchicalUniSet',['../classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0',1,'HierarchicalUniSet']]]
+  ['filledges',['fillEdges',['../classVoterGraph.html#aa86a23e7d5984c3c6bbea76f193b73ae',1,'VoterGraph']]]
 ];

@@ -1,0 +1,238 @@
+\hypertarget{classVoterGraph}{\section{Voter\-Graph Class Reference}
+\label{classVoterGraph}\index{Voter\-Graph@{Voter\-Graph}}
+}
+
+
+The interaction graph describing a Voter Model.  
+
+
+
+
+{\ttfamily \#include $<$voter\-\_\-graph.\-hpp$>$}
+
+Inheritance diagram for Voter\-Graph\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVoterGraph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVoterGraph_aa5e00e0f2d2d8de10a217633d4594814}{Voter\-Graph} (int update=\hyperlink{voter__graph_8hpp_ab3bec55c359e4ed771339c8bc61fc35aa01d100088352e1a7d3a34c9a66d0f951}{U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classVoterGraph_a84a3f081c6e15cf8d1635d6ee6d5e51e}{virtual \hyperlink{classVoterGraph_a84a3f081c6e15cf8d1635d6ee6d5e51e}{$\sim$\-Voter\-Graph} ()}\label{classVoterGraph_a84a3f081c6e15cf8d1635d6ee6d5e51e}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hypertarget{classVoterGraph_aacb7bbd4bcc7f923b2784b0bcefcd1a3}{void \hyperlink{classVoterGraph_aacb7bbd4bcc7f923b2784b0bcefcd1a3}{print} ()}\label{classVoterGraph_aacb7bbd4bcc7f923b2784b0bcefcd1a3}
+
+\begin{DoxyCompactList}\small\item\em Print the graph structure and details. \end{DoxyCompactList}\item 
+\hyperlink{classVoterNode}{Voter\-Node} $\ast$ \hyperlink{classVoterGraph_af53017970f3ac08838b67f4a09171b92}{add\-Node} (double weight=1, double contrarian=0)
+\begin{DoxyCompactList}\small\item\em Add a node to the graph. \end{DoxyCompactList}\item 
+\hyperlink{classVoterEdge}{Voter\-Edge} $\ast$ \hyperlink{classVoterGraph_a1f6b8be82800577c45908102251f1e35}{add\-Edge} (\hyperlink{classVoterNode}{Voter\-Node} $\ast$node1, \hyperlink{classVoterNode}{Voter\-Node} $\ast$node2, double weight=1)
+\begin{DoxyCompactList}\small\item\em Add an edge to the graph. \end{DoxyCompactList}\item 
+\hypertarget{classVoterGraph_aa86a23e7d5984c3c6bbea76f193b73ae}{void \hyperlink{classVoterGraph_aa86a23e7d5984c3c6bbea76f193b73ae}{fill\-Edges} ()}\label{classVoterGraph_aa86a23e7d5984c3c6bbea76f193b73ae}
+
+\begin{DoxyCompactList}\small\item\em Add an edge between each pair of nodes in the graph (in both direction, with equal weight for each edge) \end{DoxyCompactList}\item 
+\hypertarget{classVoterGraph_ac408a931308f3cfd441b0f6a3c9eb6be}{\hyperlink{classVoterNode}{Voter\-Node} $\ast$ {\bfseries get\-Random\-Node} ()}\label{classVoterGraph_ac408a931308f3cfd441b0f6a3c9eb6be}
+
+\item 
+\hypertarget{classVoterGraph_a2750643b2dc5bd91fda44a7d79c56c85}{\hyperlink{classVoterNode}{Voter\-Node} $\ast$ {\bfseries get\-Uniform\-Random\-Node} ()}\label{classVoterGraph_a2750643b2dc5bd91fda44a7d79c56c85}
+
+\item 
+\hypertarget{classVoterGraph_a3fcc3956fd3d18bb81e1a237527742e1}{\hyperlink{classVoterEdge}{Voter\-Edge} $\ast$ {\bfseries get\-Random\-Edge} (\hyperlink{classVoterNode}{Voter\-Node} $\ast$node)}\label{classVoterGraph_a3fcc3956fd3d18bb81e1a237527742e1}
+
+\item 
+\hyperlink{classMarkovProcess}{Markov\-Process} $\ast$ \hyperlink{classVoterGraph_acc86929339ec0a0ce2946146919b1eb7}{get\-Markov\-Process} ()
+\begin{DoxyCompactList}\small\item\em Build the Markov chain associated to the described Voter Model. \end{DoxyCompactList}\item 
+\hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classVoterGraph_a04231db4297c6a1d4232c5403b202d71}{get\-Markov\-Partition} (\hyperlink{classVoterProbe}{Voter\-Probe} $\ast$probe, \hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} metric)
+\begin{DoxyCompactList}\small\item\em Build the partition of the Markov chain state space associated to a probe with a given metric (e.\-g., M\-E\-T\-R\-I\-C\-\_\-\-M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E of M\-E\-T\-R\-I\-C\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S) \end{DoxyCompactList}\item 
+\hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classVoterGraph_a2c0a299c1249cc04e011d0f507467007}{get\-Markov\-Partition} (\hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$measurement)
+\begin{DoxyCompactList}\small\item\em Build the partition of the Markov chain state space associated to a measurement (i.\-e., a set of probes) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classVoterGraph_a11db0ef474064d44adb3ea22df8199ee}{update\-Process}
+\item 
+\hypertarget{classVoterGraph_ab763f203d68f64cf3740d1c4ac7f29d7}{int {\bfseries complete}}\label{classVoterGraph_ab763f203d68f64cf3740d1c4ac7f29d7}
+
+\item 
+int \hyperlink{classVoterGraph_a7557cf918e298cf5d5558f7323fe8f35}{node\-Number}
+\item 
+int \hyperlink{classVoterGraph_a6840594abf9c606b4ac8c7cac88cdf9b}{edge\-Number}
+\item 
+double \hyperlink{classVoterGraph_a8108f0b182d1ca41ef567f7b729fe749}{node\-Weight}
+\item 
+double \hyperlink{classVoterGraph_a33dc5727bd80818f0d4e89c17303d7c8}{edge\-Weight}
+\item 
+std\-::map$<$ int, \hyperlink{classVoterNode}{Voter\-Node} $\ast$ $>$ $\ast$ \hyperlink{classVoterGraph_a73838569fae5c5c96efadb1f121f5a90}{node\-Map}
+\item 
+std\-::set$<$ \hyperlink{classVoterNode}{Voter\-Node} $\ast$ $>$ $\ast$ \hyperlink{classVoterGraph_ab4c1bdbd12ebccd735841471984dfeec}{node\-Set}
+\item 
+std\-::set$<$ \hyperlink{classVoterEdge}{Voter\-Edge} $\ast$ $>$ $\ast$ \hyperlink{classVoterGraph_a712b0ec4b780579721b7b6bca8fd409e}{edge\-Set}
+\item 
+\hyperlink{classMarkovProcess}{Markov\-Process} $\ast$ \hyperlink{classVoterGraph_a94b668c67f423d3a4ce25d5605a467cb}{process}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The interaction graph describing a Voter Model. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVoterGraph_aa5e00e0f2d2d8de10a217633d4594814}{\index{Voter\-Graph@{Voter\-Graph}!Voter\-Graph@{Voter\-Graph}}
+\index{Voter\-Graph@{Voter\-Graph}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{Voter\-Graph}]{\setlength{\rightskip}{0pt plus 5cm}Voter\-Graph\-::\-Voter\-Graph (
+\begin{DoxyParamCaption}
+\item[{int}]{update = {\ttfamily {\bf U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S}}}
+\end{DoxyParamCaption}
+)}}\label{classVoterGraph_aa5e00e0f2d2d8de10a217633d4594814}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em update} & \-: How the system evolves at each simulation step (U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S or U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S) \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVoterGraph_a1f6b8be82800577c45908102251f1e35}{\index{Voter\-Graph@{Voter\-Graph}!add\-Edge@{add\-Edge}}
+\index{add\-Edge@{add\-Edge}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{add\-Edge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Voter\-Edge} $\ast$ Voter\-Graph\-::add\-Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf Voter\-Node} $\ast$}]{node1, }
+\item[{{\bf Voter\-Node} $\ast$}]{node2, }
+\item[{double}]{weight = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classVoterGraph_a1f6b8be82800577c45908102251f1e35}
+
+
+Add an edge to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node1} & \-: Incoming node \\
+\hline
+{\em node2} & \-: outcoming node \\
+\hline
+{\em weight} & \-: Determines the probability to select the edge to be added (relatively to other edges) at each simulation step when the update\-Process variable of the graph is set to U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The added edge 
+\end{DoxyReturn}
+\hypertarget{classVoterGraph_af53017970f3ac08838b67f4a09171b92}{\index{Voter\-Graph@{Voter\-Graph}!add\-Node@{add\-Node}}
+\index{add\-Node@{add\-Node}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{add\-Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Voter\-Node} $\ast$ Voter\-Graph\-::add\-Node (
+\begin{DoxyParamCaption}
+\item[{double}]{weight = {\ttfamily 1}, }
+\item[{double}]{contrarian = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classVoterGraph_af53017970f3ac08838b67f4a09171b92}
+
+
+Add a node to the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weight} & \-: Determines the probability to select the node to be added (relatively to other nodes) at each simulation step when the update\-Process variable of the graph is set to U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S \\
+\hline
+{\em contrarian} & \-: The contrarian rate of the node to be added \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The added node 
+\end{DoxyReturn}
+\hypertarget{classVoterGraph_a04231db4297c6a1d4232c5403b202d71}{\index{Voter\-Graph@{Voter\-Graph}!get\-Markov\-Partition@{get\-Markov\-Partition}}
+\index{get\-Markov\-Partition@{get\-Markov\-Partition}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{get\-Markov\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition} $\ast$ Voter\-Graph\-::get\-Markov\-Partition (
+\begin{DoxyParamCaption}
+\item[{{\bf Voter\-Probe} $\ast$}]{probe, }
+\item[{{\bf Voter\-Metric}}]{metric}
+\end{DoxyParamCaption}
+)}}\label{classVoterGraph_a04231db4297c6a1d4232c5403b202d71}
+
+
+Build the partition of the Markov chain state space associated to a probe with a given metric (e.\-g., M\-E\-T\-R\-I\-C\-\_\-\-M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E of M\-E\-T\-R\-I\-C\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em probe} & \-: The probe used to partition the state space \\
+\hline
+{\em metric} & \-: The metric of the probe (e.\-g., M\-E\-T\-R\-I\-C\-\_\-\-M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E of M\-E\-T\-R\-I\-C\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed partition 
+\end{DoxyReturn}
+\hypertarget{classVoterGraph_a2c0a299c1249cc04e011d0f507467007}{\index{Voter\-Graph@{Voter\-Graph}!get\-Markov\-Partition@{get\-Markov\-Partition}}
+\index{get\-Markov\-Partition@{get\-Markov\-Partition}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{get\-Markov\-Partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition} $\ast$ Voter\-Graph\-::get\-Markov\-Partition (
+\begin{DoxyParamCaption}
+\item[{{\bf Voter\-Measurement} $\ast$}]{measurement}
+\end{DoxyParamCaption}
+)}}\label{classVoterGraph_a2c0a299c1249cc04e011d0f507467007}
+
+
+Build the partition of the Markov chain state space associated to a measurement (i.\-e., a set of probes) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em measurement} & \-: The measurement used to partition the state space \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The computed partition 
+\end{DoxyReturn}
+\hypertarget{classVoterGraph_acc86929339ec0a0ce2946146919b1eb7}{\index{Voter\-Graph@{Voter\-Graph}!get\-Markov\-Process@{get\-Markov\-Process}}
+\index{get\-Markov\-Process@{get\-Markov\-Process}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{get\-Markov\-Process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Markov\-Process} $\ast$ Voter\-Graph\-::get\-Markov\-Process (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classVoterGraph_acc86929339ec0a0ce2946146919b1eb7}
+
+
+Build the Markov chain associated to the described Voter Model. 
+
+\begin{DoxyReturn}{Returns}
+The computed Markov chain 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classVoterGraph_a6840594abf9c606b4ac8c7cac88cdf9b}{\index{Voter\-Graph@{Voter\-Graph}!edge\-Number@{edge\-Number}}
+\index{edge\-Number@{edge\-Number}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{edge\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Voter\-Graph\-::edge\-Number}}\label{classVoterGraph_a6840594abf9c606b4ac8c7cac88cdf9b}
+The total number of edges in the graph \hypertarget{classVoterGraph_a712b0ec4b780579721b7b6bca8fd409e}{\index{Voter\-Graph@{Voter\-Graph}!edge\-Set@{edge\-Set}}
+\index{edge\-Set@{edge\-Set}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{edge\-Set}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<${\bf Voter\-Edge}$\ast$$>$$\ast$ Voter\-Graph\-::edge\-Set}}\label{classVoterGraph_a712b0ec4b780579721b7b6bca8fd409e}
+The set of all edges \hypertarget{classVoterGraph_a33dc5727bd80818f0d4e89c17303d7c8}{\index{Voter\-Graph@{Voter\-Graph}!edge\-Weight@{edge\-Weight}}
+\index{edge\-Weight@{edge\-Weight}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{edge\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}double Voter\-Graph\-::edge\-Weight}}\label{classVoterGraph_a33dc5727bd80818f0d4e89c17303d7c8}
+The sum of the weight of all edges \hypertarget{classVoterGraph_a73838569fae5c5c96efadb1f121f5a90}{\index{Voter\-Graph@{Voter\-Graph}!node\-Map@{node\-Map}}
+\index{node\-Map@{node\-Map}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{node\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int,{\bf Voter\-Node}$\ast$$>$$\ast$ Voter\-Graph\-::node\-Map}}\label{classVoterGraph_a73838569fae5c5c96efadb1f121f5a90}
+The map of all nodes organized by id \hypertarget{classVoterGraph_a7557cf918e298cf5d5558f7323fe8f35}{\index{Voter\-Graph@{Voter\-Graph}!node\-Number@{node\-Number}}
+\index{node\-Number@{node\-Number}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{node\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Voter\-Graph\-::node\-Number}}\label{classVoterGraph_a7557cf918e298cf5d5558f7323fe8f35}
+The total number of nodes in the graph \hypertarget{classVoterGraph_ab4c1bdbd12ebccd735841471984dfeec}{\index{Voter\-Graph@{Voter\-Graph}!node\-Set@{node\-Set}}
+\index{node\-Set@{node\-Set}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{node\-Set}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<${\bf Voter\-Node}$\ast$$>$$\ast$ Voter\-Graph\-::node\-Set}}\label{classVoterGraph_ab4c1bdbd12ebccd735841471984dfeec}
+The set of all nodes \hypertarget{classVoterGraph_a8108f0b182d1ca41ef567f7b729fe749}{\index{Voter\-Graph@{Voter\-Graph}!node\-Weight@{node\-Weight}}
+\index{node\-Weight@{node\-Weight}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{node\-Weight}]{\setlength{\rightskip}{0pt plus 5cm}double Voter\-Graph\-::node\-Weight}}\label{classVoterGraph_a8108f0b182d1ca41ef567f7b729fe749}
+The sum of the weight of all nodes \hypertarget{classVoterGraph_a94b668c67f423d3a4ce25d5605a467cb}{\index{Voter\-Graph@{Voter\-Graph}!process@{process}}
+\index{process@{process}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Markov\-Process}$\ast$ Voter\-Graph\-::process}}\label{classVoterGraph_a94b668c67f423d3a4ce25d5605a467cb}
+The Markov chain associated to the described Voter Model \hypertarget{classVoterGraph_a11db0ef474064d44adb3ea22df8199ee}{\index{Voter\-Graph@{Voter\-Graph}!update\-Process@{update\-Process}}
+\index{update\-Process@{update\-Process}!VoterGraph@{Voter\-Graph}}
+\subsubsection[{update\-Process}]{\setlength{\rightskip}{0pt plus 5cm}int Voter\-Graph\-::update\-Process}}\label{classVoterGraph_a11db0ef474064d44adb3ea22df8199ee}
+How the system evolves at each simulation step (U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S or U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S) 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{voter__graph_8hpp}{voter\-\_\-graph.\-hpp}\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/voter\-\_\-graph.\-cpp\end{DoxyCompactItemize}

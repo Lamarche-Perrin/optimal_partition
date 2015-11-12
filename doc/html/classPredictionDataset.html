@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5a2d75a4affa2b76dbb631f2f79c217e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a5a2d75a4affa2b76dbb631f2f79c217e">PredictionDataset</a> (<a class="el" href="classMultiSet.html">MultiSet</a> *preMeasurement, <a class="el" href="classMultiSet.html">MultiSet</a> *postMeasurement)</td></tr>
-<tr class="memdesc:a5a2d75a4affa2b76dbb631f2f79c217e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a5a2d75a4affa2b76dbb631f2f79c217e">More...</a><br/></td></tr>
+<tr class="memdesc:a5a2d75a4affa2b76dbb631f2f79c217e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of observations associated to a couple (pre-value, post-value)  <a href="#a5a2d75a4affa2b76dbb631f2f79c217e">More...</a><br/></td></tr>
 <tr class="separator:a5a2d75a4affa2b76dbb631f2f79c217e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a30fa528fa4a2507a1a0a5fe8c74269"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a30fa528fa4a2507a1a0a5fe8c74269"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a9a30fa528fa4a2507a1a0a5fe8c74269">~PredictionDataset</a> ()</td></tr>
@@ -117,6 +117,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8298f94fac0d5b3761effdb20405417a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a8298f94fac0d5b3761effdb20405417a">addTestValue</a> (int preIndex, int postIndex, int count=1)</td></tr>
 <tr class="memdesc:a8298f94fac0d5b3761effdb20405417a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a couple of (pre and post) observations to the test set <b>in the case of one-dimensional measurements</b>  <a href="#a8298f94fac0d5b3761effdb20405417a">More...</a><br/></td></tr>
 <tr class="separator:a8298f94fac0d5b3761effdb20405417a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d4d421a0299c9f965965f1d3797316e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a2d4d421a0299c9f965965f1d3797316e">print</a> ()</td></tr>
+<tr class="separator:a2d4d421a0299c9f965965f1d3797316e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -140,7 +142,8 @@ std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a
 <tr class="memdesc:af4fdcf7cfd236a99a73f18d630199291"><td class="mdescLeft">&#160;</td><td class="mdescRight">A vector of post-observations that are used to train the predictor. <br/></td></tr>
 <tr class="separator:af4fdcf7cfd236a99a73f18d630199291"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ef1712f6f3e944cad7f966b123c44d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ef1712f6f3e944cad7f966b123c44d4"></a>
-std::vector&lt; <a class="el" href="classMultiSubset.html">MultiSubset</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>testPreValues</b></td></tr>
+std::vector&lt; <a class="el" href="classMultiSubset.html">MultiSubset</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a6ef1712f6f3e944cad7f966b123c44d4">testPreValues</a></td></tr>
+<tr class="memdesc:a6ef1712f6f3e944cad7f966b123c44d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of observations associated to a couple (pre-value, post-value) <br/></td></tr>
 <tr class="separator:a6ef1712f6f3e944cad7f966b123c44d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6ed50cd17878109b9a41ebb6db172ea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6ed50cd17878109b9a41ebb6db172ea"></a>
 std::vector&lt; <a class="el" href="classMultiSubset.html">MultiSubset</a> * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#ab6ed50cd17878109b9a41ebb6db172ea">testPostValues</a></td></tr>
@@ -178,7 +181,8 @@ std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a
       </table>
 </div><div class="memdoc">
 
-<p>Constructor. </p>
+<p>The number of observations associated to a couple (pre-value, post-value) </p>
+<p>Constructor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">preMeasurement</td><td>: The pre-measurement modelled as a structured multi-dimensional set of elements (the possible observation values) </td></tr>
@@ -358,6 +362,22 @@ std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a
 
 </div>
 </div>
+<a class="anchor" id="a2d4d421a0299c9f965965f1d3797316e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PredictionDataset::print </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>/brief Print the data set. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/lamarche/programming/optimal_partition/src/<a class="el" href="prediction__dataset_8hpp_source.html">prediction_dataset.hpp</a></li>
 <li>/home/lamarche/programming/optimal_partition/src/prediction_dataset.cpp</li>
@@ -365,7 +385,7 @@ std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 19:14:46 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 12 2015 17:01:43 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

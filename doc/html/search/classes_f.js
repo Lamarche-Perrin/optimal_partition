@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['uniset',['UniSet',['../classUniSet.html',1,'']]],
-  ['unisubset',['UniSubset',['../classUniSubset.html',1,'']]]
+  ['timer',['Timer',['../classTimer.html',1,'']]],
+  ['treetoadd',['TreeToAdd',['../structTreeToAdd.html',1,'']]],
+  ['twocommunitiesvotergraph',['TwoCommunitiesVoterGraph',['../classTwoCommunitiesVoterGraph.html',1,'']]]
 ];

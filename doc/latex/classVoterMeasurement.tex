@@ -1,0 +1,151 @@
+\hypertarget{classVoterMeasurement}{\section{Voter\-Measurement Class Reference}
+\label{classVoterMeasurement}\index{Voter\-Measurement@{Voter\-Measurement}}
+}
+
+
+A measurement to observe the Voter Model according set of probes.  
+
+
+
+
+{\ttfamily \#include $<$voter\-\_\-graph.\-hpp$>$}
+
+Inheritance diagram for Voter\-Measurement\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classVoterMeasurement}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVoterMeasurement_a0668249876e48af0ae246a554b30195c}{Voter\-Measurement} (\hyperlink{classVoterGraph}{Voter\-Graph} $\ast$\hyperlink{classVoterMeasurement_a8d22d4b78f7e2f4c747f5716c4885351}{graph}, std\-::string \hyperlink{classVoterMeasurement_ad4471a133827f052622a84c4a451aabe}{type})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classVoterMeasurement_a2cbd2d015fad1579c21dc62dd2511fe6}{\hyperlink{classVoterMeasurement_a2cbd2d015fad1579c21dc62dd2511fe6}{$\sim$\-Voter\-Measurement} ()}\label{classVoterMeasurement_a2cbd2d015fad1579c21dc62dd2511fe6}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classVoterMeasurement_a4dc0ed5870875acb3a8651ca25ff2b74}{add\-Probe} (\hyperlink{classVoterProbe}{Voter\-Probe} $\ast$probe, \hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} metric, int binning=0)
+\begin{DoxyCompactList}\small\item\em Add a probe to the measurement. \end{DoxyCompactList}\item 
+\hypertarget{classVoterMeasurement_a43a426ee79a1e1a91cf1bf148309a746}{int {\bfseries get\-Cardinality} ()}\label{classVoterMeasurement_a43a426ee79a1e1a91cf1bf148309a746}
+
+\item 
+\hypertarget{classVoterMeasurement_a671dc85ea1e4912705905f8d5b3e1538}{\hyperlink{classVoterMeasurementState}{Voter\-Measurement\-State} $\ast$ {\bfseries get\-State} (\hyperlink{classVoterState}{Voter\-State} $\ast$state)}\label{classVoterMeasurement_a671dc85ea1e4912705905f8d5b3e1538}
+
+\item 
+\hypertarget{classVoterMeasurement_af98d474992d62273b18d1fd5cd02b670}{\hyperlink{classOrderedUniSet}{Ordered\-Uni\-Set} $\ast$ {\bfseries get\-Ordered\-Uni\-Set} ()}\label{classVoterMeasurement_af98d474992d62273b18d1fd5cd02b670}
+
+\item 
+\hypertarget{classVoterMeasurement_ae8315a82eb68a5ce8777d56a8840b70c}{std\-::vector$<$ \hyperlink{classOrderedUniSet}{Ordered\-Uni\-Set} $\ast$ $>$ $\ast$ {\bfseries get\-Ordered\-Uni\-Set\-Vector} ()}\label{classVoterMeasurement_ae8315a82eb68a5ce8777d56a8840b70c}
+
+\item 
+void \hyperlink{classVoterMeasurement_a9164cbbbf69d83a6ca5d8cda0951dcd5}{print} (bool endl=false)
+\begin{DoxyCompactList}\small\item\em Print the measurement details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVoterGraph}{Voter\-Graph} $\ast$ \hyperlink{classVoterMeasurement_a8d22d4b78f7e2f4c747f5716c4885351}{graph}
+\item 
+std\-::string \hyperlink{classVoterMeasurement_ad4471a133827f052622a84c4a451aabe}{type}
+\item 
+\hyperlink{classPartition}{Partition} $\ast$ \hyperlink{classVoterMeasurement_aa3879b092c573e4ba4f45531a4f57e5b}{partition}
+\item 
+int \hyperlink{classVoterMeasurement_a8cd0709289a4d1af82586d4b09c5a43a}{probe\-Number}
+\item 
+std\-::map$<$ int, \hyperlink{classVoterProbe}{Voter\-Probe} $\ast$ $>$ $\ast$ \hyperlink{classVoterMeasurement_abdee5af4a48de3334ace791912033e28}{probe\-Map}
+\item 
+std\-::map$<$ int, \hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} $>$ $\ast$ \hyperlink{classVoterMeasurement_a27a9133a8ff11810c10c06b647a3ce85}{metric\-Map}
+\item 
+\hypertarget{classVoterMeasurement_aa1c7b4114980191441d4911d9b226de5}{std\-::map$<$ int, int $>$ $\ast$ {\bfseries binning\-Map}}\label{classVoterMeasurement_aa1c7b4114980191441d4911d9b226de5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A measurement to observe the Voter Model according set of probes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVoterMeasurement_a0668249876e48af0ae246a554b30195c}{\index{Voter\-Measurement@{Voter\-Measurement}!Voter\-Measurement@{Voter\-Measurement}}
+\index{Voter\-Measurement@{Voter\-Measurement}!VoterMeasurement@{Voter\-Measurement}}
+\subsubsection[{Voter\-Measurement}]{\setlength{\rightskip}{0pt plus 5cm}Voter\-Measurement\-::\-Voter\-Measurement (
+\begin{DoxyParamCaption}
+\item[{{\bf Voter\-Graph} $\ast$}]{graph, }
+\item[{std\-::string}]{type}
+\end{DoxyParamCaption}
+)}}\label{classVoterMeasurement_a0668249876e48af0ae246a554b30195c}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \-: The interaction graph to be observed \\
+\hline
+{\em type} & \-: The name of the measurement \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVoterMeasurement_a4dc0ed5870875acb3a8651ca25ff2b74}{\index{Voter\-Measurement@{Voter\-Measurement}!add\-Probe@{add\-Probe}}
+\index{add\-Probe@{add\-Probe}!VoterMeasurement@{Voter\-Measurement}}
+\subsubsection[{add\-Probe}]{\setlength{\rightskip}{0pt plus 5cm}void Voter\-Measurement\-::add\-Probe (
+\begin{DoxyParamCaption}
+\item[{{\bf Voter\-Probe} $\ast$}]{probe, }
+\item[{{\bf Voter\-Metric}}]{metric, }
+\item[{int}]{binning = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classVoterMeasurement_a4dc0ed5870875acb3a8651ca25ff2b74}
+
+
+Add a probe to the measurement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \-: The probe to be added \\
+\hline
+{\em metric} & \-: The metric associated to the added probe (e.\-g., M\-E\-T\-R\-I\-C\-\_\-\-M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E of M\-E\-T\-R\-I\-C\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVoterMeasurement_a9164cbbbf69d83a6ca5d8cda0951dcd5}{\index{Voter\-Measurement@{Voter\-Measurement}!print@{print}}
+\index{print@{print}!VoterMeasurement@{Voter\-Measurement}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void Voter\-Measurement\-::print (
+\begin{DoxyParamCaption}
+\item[{bool}]{endl = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classVoterMeasurement_a9164cbbbf69d83a6ca5d8cda0951dcd5}
+
+
+Print the measurement details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em endl} & \-: Line break after printing if true \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classVoterMeasurement_a8d22d4b78f7e2f4c747f5716c4885351}{\index{Voter\-Measurement@{Voter\-Measurement}!graph@{graph}}
+\index{graph@{graph}!VoterMeasurement@{Voter\-Measurement}}
+\subsubsection[{graph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Voter\-Graph}$\ast$ Voter\-Measurement\-::graph}}\label{classVoterMeasurement_a8d22d4b78f7e2f4c747f5716c4885351}
+The interaction graph to be observed \hypertarget{classVoterMeasurement_a27a9133a8ff11810c10c06b647a3ce85}{\index{Voter\-Measurement@{Voter\-Measurement}!metric\-Map@{metric\-Map}}
+\index{metric\-Map@{metric\-Map}!VoterMeasurement@{Voter\-Measurement}}
+\subsubsection[{metric\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int,{\bf Voter\-Metric}$>$$\ast$ Voter\-Measurement\-::metric\-Map}}\label{classVoterMeasurement_a27a9133a8ff11810c10c06b647a3ce85}
+The map of metrics (e.\-g., M\-E\-T\-R\-I\-C\-\_\-\-M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E of M\-E\-T\-R\-I\-C\-\_\-\-A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S) associated to each constituting probe organized by probe numbers \hypertarget{classVoterMeasurement_aa3879b092c573e4ba4f45531a4f57e5b}{\index{Voter\-Measurement@{Voter\-Measurement}!partition@{partition}}
+\index{partition@{partition}!VoterMeasurement@{Voter\-Measurement}}
+\subsubsection[{partition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Partition}$\ast$ Voter\-Measurement\-::partition}}\label{classVoterMeasurement_aa3879b092c573e4ba4f45531a4f57e5b}
+The partition of the Markov chain state space corresponding to the measurement \hypertarget{classVoterMeasurement_abdee5af4a48de3334ace791912033e28}{\index{Voter\-Measurement@{Voter\-Measurement}!probe\-Map@{probe\-Map}}
+\index{probe\-Map@{probe\-Map}!VoterMeasurement@{Voter\-Measurement}}
+\subsubsection[{probe\-Map}]{\setlength{\rightskip}{0pt plus 5cm}std\-::map$<$int,{\bf Voter\-Probe}$\ast$$>$$\ast$ Voter\-Measurement\-::probe\-Map}}\label{classVoterMeasurement_abdee5af4a48de3334ace791912033e28}
+The map of constituting probes organized by probe numbers \hypertarget{classVoterMeasurement_a8cd0709289a4d1af82586d4b09c5a43a}{\index{Voter\-Measurement@{Voter\-Measurement}!probe\-Number@{probe\-Number}}
+\index{probe\-Number@{probe\-Number}!VoterMeasurement@{Voter\-Measurement}}
+\subsubsection[{probe\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Voter\-Measurement\-::probe\-Number}}\label{classVoterMeasurement_a8cd0709289a4d1af82586d4b09c5a43a}
+The number of probes constituting the measurement \hypertarget{classVoterMeasurement_ad4471a133827f052622a84c4a451aabe}{\index{Voter\-Measurement@{Voter\-Measurement}!type@{type}}
+\index{type@{type}!VoterMeasurement@{Voter\-Measurement}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Voter\-Measurement\-::type}}\label{classVoterMeasurement_ad4471a133827f052622a84c4a451aabe}
+The name of the measurement 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{voter__graph_8hpp}{voter\-\_\-graph.\-hpp}\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/voter\-\_\-graph.\-cpp\end{DoxyCompactItemize}

@@ -34,7 +34,7 @@ Inheritance diagram for Uni\-Set\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 void \hyperlink{classUniSet_a140f02dfb3f186cbc49fe28d238aa2e1}{init\-Reached} ()
-\begin{DoxyCompactList}\small\item\em Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em (Optional) A probe of a voter model that has been used to build this uni-\/dimensional set \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -52,7 +52,13 @@ void \hyperlink{classUniSet_a140f02dfb3f186cbc49fe28d238aa2e1}{init\-Reached} ()
 \begin{DoxyCompactList}\small\item\em Array of pointers to all elements (i.\-e., atomic feasible subsets) \end{DoxyCompactList}\item 
 \hypertarget{classUniSet_a8b2ca464176feddcd8d96c75514eba6b}{\hyperlink{classUniSubset}{Uni\-Subset} $\ast$ \hyperlink{classUniSet_a8b2ca464176feddcd8d96c75514eba6b}{first\-Uni\-Subset}}\label{classUniSet_a8b2ca464176feddcd8d96c75514eba6b}
 
-\begin{DoxyCompactList}\small\item\em Array of pointers to all feasible subsets. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Array of pointers to all feasible subsets. \end{DoxyCompactList}\item 
+\hypertarget{classUniSet_a7c4bf064154e0a7baf8126b7fbe56d24}{\hyperlink{classVoterMeasurement}{Voter\-Measurement} $\ast$ \hyperlink{classUniSet_a7c4bf064154e0a7baf8126b7fbe56d24}{voter\-Measurement}}\label{classUniSet_a7c4bf064154e0a7baf8126b7fbe56d24}
+
+\begin{DoxyCompactList}\small\item\em Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) \end{DoxyCompactList}\item 
+\hypertarget{classUniSet_a3f7c0c9a9b7dd5a9607201cfa478d567}{\hyperlink{classVoterProbe}{Voter\-Probe} $\ast$ \hyperlink{classUniSet_a3f7c0c9a9b7dd5a9607201cfa478d567}{voter\-Probe}}\label{classUniSet_a3f7c0c9a9b7dd5a9607201cfa478d567}
+
+\begin{DoxyCompactList}\small\item\em (Optional) A probe measurement of a voter model that has been used to build this uni-\/dimensional set \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -87,7 +93,7 @@ Constructor.
 )\hspace{0.3cm}{\ttfamily [protected]}}}\label{classUniSet_a140f02dfb3f186cbc49fe28d238aa2e1}
 
 
-Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) 
+(Optional) A probe of a voter model that has been used to build this uni-\/dimensional set 
 
 Initialise the {\ttfamily reached} field of all feasible subsets to {\ttfamily false} (used by other methods to run through the algebraic structure in a recursive fashion without considering twice the same subset) 
 

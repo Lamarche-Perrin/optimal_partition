@@ -63,11 +63,11 @@ public:
 
 	std::vector<MultiSubset*> *trainPreValues; /** \brief A vector of pre-observations that are used to train the predictor */
 	std::vector<MultiSubset*> *trainPostValues; /** \brief A vector of post-observations that are used to train the predictor */
-	std::vector<int> *trainCountValues;
+	std::vector<int> *trainCountValues; /** \brief The number of observations associated to a couple (pre-value, post-value) */
 
 	std::vector<MultiSubset*> *testPreValues; /** \brief A vector of pre-observations that are used to test the predictor */
 	std::vector<MultiSubset*> *testPostValues; /** \brief A vector of post-observations that are used to test the predictor */
-	std::vector<int> *testCountValues;
+	std::vector<int> *testCountValues; /** \brief The number of observations associated to a couple (pre-value, post-value) */
 
 	/*!
 	 * \brief Constructor
@@ -118,6 +118,11 @@ public:
 	 */
 	void addTestValue (int preIndex, int postIndex, int count = 1);
 
+	
+	/*!
+	 * /brief Print the data set.
+	 */
+	void print ();
 };
 
 #endif

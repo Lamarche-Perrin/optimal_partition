@@ -1445,9 +1445,27 @@ OrderedUniSet *VoterMeasurement::getOrderedUniSet ()
 {
 	if (probeNumber != 1) { std::cout << "ERROR: cannot get ordered uni-dimensional set from multi-probe measurement!"; return 0; }
 
-	OrderedUniSet *uniSet = new OrderedUniSet (probeMap->at(0)->nodeNumber+1);
+	VoterProbe *probe = probeMap->at(0);
+	OrderedUniSet *uniSet = new OrderedUniSet (probe->nodeNumber+1);
 	uniSet->voterMeasurement = this;
+	uniSet->voterProbe = probe;
 	return uniSet;
+}
+
+
+std::vector<OrderedUniSet*> *VoterMeasurement::getOrderedUniSetVector ()
+{
+	std::vector<OrderedUniSet*> *setVector = new std::vector<OrderedUniSet*> ();
+
+	for (int p = 0; p < probeNumber; p++)
+	{
+		VoterProbe *probe = probeMap->at(p);
+		OrderedUniSet *uniSet = new OrderedUniSet (probe->nodeNumber+1);
+		uniSet->voterMeasurement = this;
+		uniSet->voterProbe = probe;
+		setVector->push_back(uniSet);
+	}
+	return setVector;
 }
 
 
@@ -1799,18 +1817,25 @@ PredictionDataset *VoterDataSet::getPredictionDataset (MultiSet *preSet, MultiSe
 			int *preIndices = new int [preSet->dimension];
 			for (int d = 0; d < preSet->dimension; d++)
 			{
+				/*
 				VoterMeasurementState *preS = preSet->uniSetArray[d]->voterMeasurement->getState(traj->states[l]);
 				preIndices[d] = preS->probeStates[0];
+				*/
+				preIndices[d] = preSet->uniSetArray[d]->voterProbe->getState(traj->states[l],MACRO_STATE);
 			}
 
 			int *postIndices = new int [postSet->dimension];
 			for (int d = 0; d < postSet->dimension; d++)
 			{
+				/*
 				VoterMeasurementState *postS = postSet->uniSetArray[d]->voterMeasurement->getState(traj->states[l+delay]);
 				postIndices[d] = postS->probeStates[0];
+				*/
+				postIndices[d] = postSet->uniSetArray[d]->voterProbe->getState(traj->states[l+delay],MACRO_STATE);
 			}
 
 			dataset->addTrainValue (preSet->getAtomicMultiSubset(preIndices), postSet->getAtomicMultiSubset(postIndices));
+			dataset->addTestValue (preSet->getAtomicMultiSubset(preIndices), postSet->getAtomicMultiSubset(postIndices));
 		}
 	}
 
@@ -1825,15 +1850,21 @@ PredictionDataset *VoterDataSet::getPredictionDataset (MultiSet *preSet, MultiSe
 			int *preIndices = new int [preSet->dimension];
 			for (int d = 0; d < preSet->dimension; d++)
 			{
+				/*
 				VoterMeasurementState *preS = preSet->uniSetArray[d]->voterMeasurement->getState(traj->states[l]);
 				preIndices[d] = preS->probeStates[0];
+				*/
+				preIndices[d] = preSet->uniSetArray[d]->voterProbe->getState(traj->states[l],MACRO_STATE);
 			}
 
 			int *postIndices = new int [postSet->dimension];
 			for (int d = 0; d < postSet->dimension; d++)
 			{
+				/*
 				VoterMeasurementState *postS = postSet->uniSetArray[d]->voterMeasurement->getState(traj->states[l+delay]);
 				postIndices[d] = postS->probeStates[0];
+				*/
+				postIndices[d] = postSet->uniSetArray[d]->voterProbe->getState(traj->states[l+delay],MACRO_STATE);
 			}
 
 			dataset->addTestValue (preSet->getAtomicMultiSubset(preIndices), postSet->getAtomicMultiSubset(postIndices));
@@ -1916,6 +1947,24 @@ void VoterDataSet::printTransitionMap ()
 			std::cout << " with probability " << *count << " / " << *marginCount << " = " << (*count)/((double)*marginCount) << std::endl;
 		}
 	}	
+}
+
+
+void VoterDataSet::print (int size)
+{
+	std::cout << "TRAIN SET:" << std::endl;
+	for (int t = 0; t < trainSize && (size < 0 || t < size); t++)
+	{
+		VoterTrajectory *traj = trajectories[t];
+		traj->print();
+	}
+
+	std::cout << "TEST SET:" << std::endl;
+	for (int t = trainSize; t < trainSize + testSize && (size < 0 || t < trainSize + size); t++)
+	{
+		VoterTrajectory *traj = trajectories[t];
+		traj->print();
+	}
 }
 
 

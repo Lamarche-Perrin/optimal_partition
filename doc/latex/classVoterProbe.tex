@@ -1,0 +1,150 @@
+\hypertarget{classVoterProbe}{\section{Voter\-Probe Class Reference}
+\label{classVoterProbe}\index{Voter\-Probe@{Voter\-Probe}}
+}
+
+
+A probe to observe the Voter Model according to a subset of nodes.  
+
+
+
+
+{\ttfamily \#include $<$voter\-\_\-graph.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVoterProbe_a589eba6cb211385f334b2cad33c7b591}{Voter\-Probe} (\hyperlink{classVoterGraph}{Voter\-Graph} $\ast$\hyperlink{classVoterProbe_add099ac2ac20a5f6a0e3616e78639497}{graph})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classVoterProbe_a13ddd0051f730aa8c5b4c1487ace3e16}{\hyperlink{classVoterProbe_a13ddd0051f730aa8c5b4c1487ace3e16}{$\sim$\-Voter\-Probe} ()}\label{classVoterProbe_a13ddd0051f730aa8c5b4c1487ace3e16}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classVoterProbe_a8d30841b343e791216084d6dd0f0f461}{set\-Node\-Set} (std\-::set$<$ \hyperlink{classVoterNode}{Voter\-Node} $\ast$ $>$ $\ast$set)
+\begin{DoxyCompactList}\small\item\em Set the set of observed nodes. \end{DoxyCompactList}\item 
+void \hyperlink{classVoterProbe_a102e61e3d43b00622f56e746b50aadcb}{add\-Node} (\hyperlink{classVoterNode}{Voter\-Node} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Add an observed node to the probe. \end{DoxyCompactList}\item 
+void \hyperlink{classVoterProbe_a3833f42ffe18c150a127b2c98ff742fe}{add\-Nodes} (unsigned long int i)
+\begin{DoxyCompactList}\small\item\em Add a set of observed nodes to the probe. \end{DoxyCompactList}\item 
+\hypertarget{classVoterProbe_abea87d52f082036e8dd854d11bbc524b}{int {\bfseries get\-Cardinality} (\hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} metric, int binning=0)}\label{classVoterProbe_abea87d52f082036e8dd854d11bbc524b}
+
+\item 
+\hypertarget{classVoterProbe_a9a63c8c39fa31ae71f282105e211a7b7}{int {\bfseries get\-State} (\hyperlink{classVoterState}{Voter\-State} $\ast$state, \hyperlink{voter__graph_8hpp_acb4c45a5ce4a55eee28e54e60409b9c5}{Voter\-Metric} metric, int binning=0)}\label{classVoterProbe_a9a63c8c39fa31ae71f282105e211a7b7}
+
+\item 
+void \hyperlink{classVoterProbe_a73936d4b0b00748cf43e6ec852183f84}{print} (bool endl=false)
+\begin{DoxyCompactList}\small\item\em Print the probe details. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classVoterGraph}{Voter\-Graph} $\ast$ \hyperlink{classVoterProbe_add099ac2ac20a5f6a0e3616e78639497}{graph}
+\item 
+int \hyperlink{classVoterProbe_af0a20a6fc8a68f3ace3384cbbd6aa39f}{node\-Number}
+\item 
+std\-::set$<$ \hyperlink{classVoterNode}{Voter\-Node} $\ast$ $>$ $\ast$ \hyperlink{classVoterProbe_ae51e09098a03f3e064c8a1a8182a2eeb}{node\-Set}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A probe to observe the Voter Model according to a subset of nodes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classVoterProbe_a589eba6cb211385f334b2cad33c7b591}{\index{Voter\-Probe@{Voter\-Probe}!Voter\-Probe@{Voter\-Probe}}
+\index{Voter\-Probe@{Voter\-Probe}!VoterProbe@{Voter\-Probe}}
+\subsubsection[{Voter\-Probe}]{\setlength{\rightskip}{0pt plus 5cm}Voter\-Probe\-::\-Voter\-Probe (
+\begin{DoxyParamCaption}
+\item[{{\bf Voter\-Graph} $\ast$}]{graph}
+\end{DoxyParamCaption}
+)}}\label{classVoterProbe_a589eba6cb211385f334b2cad33c7b591}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \-: The interaction graph to be observed \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classVoterProbe_a102e61e3d43b00622f56e746b50aadcb}{\index{Voter\-Probe@{Voter\-Probe}!add\-Node@{add\-Node}}
+\index{add\-Node@{add\-Node}!VoterProbe@{Voter\-Probe}}
+\subsubsection[{add\-Node}]{\setlength{\rightskip}{0pt plus 5cm}void Voter\-Probe\-::add\-Node (
+\begin{DoxyParamCaption}
+\item[{{\bf Voter\-Node} $\ast$}]{node}
+\end{DoxyParamCaption}
+)}}\label{classVoterProbe_a102e61e3d43b00622f56e746b50aadcb}
+
+
+Add an observed node to the probe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \-: The node to be added \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVoterProbe_a3833f42ffe18c150a127b2c98ff742fe}{\index{Voter\-Probe@{Voter\-Probe}!add\-Nodes@{add\-Nodes}}
+\index{add\-Nodes@{add\-Nodes}!VoterProbe@{Voter\-Probe}}
+\subsubsection[{add\-Nodes}]{\setlength{\rightskip}{0pt plus 5cm}void Voter\-Probe\-::add\-Nodes (
+\begin{DoxyParamCaption}
+\item[{unsigned long int}]{i}
+\end{DoxyParamCaption}
+)}}\label{classVoterProbe_a3833f42ffe18c150a127b2c98ff742fe}
+
+
+Add a set of observed nodes to the probe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & \-: A binary number indicating for each node of the graph if it should (1) or should not (0) be added (the nodes are ordered according to their unique id) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVoterProbe_a73936d4b0b00748cf43e6ec852183f84}{\index{Voter\-Probe@{Voter\-Probe}!print@{print}}
+\index{print@{print}!VoterProbe@{Voter\-Probe}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void Voter\-Probe\-::print (
+\begin{DoxyParamCaption}
+\item[{bool}]{endl = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}}\label{classVoterProbe_a73936d4b0b00748cf43e6ec852183f84}
+
+
+Print the probe details. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em endl} & \-: Line break after printing if true \\
+\hline
+\end{DoxyParams}
+\hypertarget{classVoterProbe_a8d30841b343e791216084d6dd0f0f461}{\index{Voter\-Probe@{Voter\-Probe}!set\-Node\-Set@{set\-Node\-Set}}
+\index{set\-Node\-Set@{set\-Node\-Set}!VoterProbe@{Voter\-Probe}}
+\subsubsection[{set\-Node\-Set}]{\setlength{\rightskip}{0pt plus 5cm}void Voter\-Probe\-::set\-Node\-Set (
+\begin{DoxyParamCaption}
+\item[{std\-::set$<$ {\bf Voter\-Node} $\ast$ $>$ $\ast$}]{set}
+\end{DoxyParamCaption}
+)}}\label{classVoterProbe_a8d30841b343e791216084d6dd0f0f461}
+
+
+Set the set of observed nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \-: The set to be associated \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classVoterProbe_add099ac2ac20a5f6a0e3616e78639497}{\index{Voter\-Probe@{Voter\-Probe}!graph@{graph}}
+\index{graph@{graph}!VoterProbe@{Voter\-Probe}}
+\subsubsection[{graph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Voter\-Graph}$\ast$ Voter\-Probe\-::graph}}\label{classVoterProbe_add099ac2ac20a5f6a0e3616e78639497}
+The interaction graph to be observed \hypertarget{classVoterProbe_af0a20a6fc8a68f3ace3384cbbd6aa39f}{\index{Voter\-Probe@{Voter\-Probe}!node\-Number@{node\-Number}}
+\index{node\-Number@{node\-Number}!VoterProbe@{Voter\-Probe}}
+\subsubsection[{node\-Number}]{\setlength{\rightskip}{0pt plus 5cm}int Voter\-Probe\-::node\-Number}}\label{classVoterProbe_af0a20a6fc8a68f3ace3384cbbd6aa39f}
+The number of observed nodes \hypertarget{classVoterProbe_ae51e09098a03f3e064c8a1a8182a2eeb}{\index{Voter\-Probe@{Voter\-Probe}!node\-Set@{node\-Set}}
+\index{node\-Set@{node\-Set}!VoterProbe@{Voter\-Probe}}
+\subsubsection[{node\-Set}]{\setlength{\rightskip}{0pt plus 5cm}std\-::set$<${\bf Voter\-Node}$\ast$$>$$\ast$ Voter\-Probe\-::node\-Set}}\label{classVoterProbe_ae51e09098a03f3e064c8a1a8182a2eeb}
+The set of observed nodes 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{voter__graph_8hpp}{voter\-\_\-graph.\-hpp}\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/voter\-\_\-graph.\-cpp\end{DoxyCompactItemize}

@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -115,10 +115,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abafc2f4fb50484d3aabdd744dc1d6cc5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#abafc2f4fb50484d3aabdd744dc1d6cc5">MultiSet</a> (<a class="el" href="classUniSet.html">UniSet</a> **uniSetArray, int dimension)</td></tr>
 <tr class="memdesc:abafc2f4fb50484d3aabdd744dc1d6cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#abafc2f4fb50484d3aabdd744dc1d6cc5">More...</a><br/></td></tr>
 <tr class="separator:abafc2f4fb50484d3aabdd744dc1d6cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace92943f7461b6f683c7c4da76408e73"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#ace92943f7461b6f683c7c4da76408e73">MultiSet</a> (std::vector&lt; <a class="el" href="classUniSet.html">UniSet</a> * &gt; *uniSetVector)</td></tr>
+<tr class="memdesc:ace92943f7461b6f683c7c4da76408e73"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#ace92943f7461b6f683c7c4da76408e73">More...</a><br/></td></tr>
+<tr class="separator:ace92943f7461b6f683c7c4da76408e73"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ad638b1613083b97a53ea58e9060a4d"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#a3ad638b1613083b97a53ea58e9060a4d">~MultiSet</a> ()</td></tr>
 <tr class="separator:a3ad638b1613083b97a53ea58e9060a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48a6504163110d377db974d6ea5bd8fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#a48a6504163110d377db974d6ea5bd8fe">getAtomicMultiSubset</a> (int index)</td></tr>
 <tr class="separator:a48a6504163110d377db974d6ea5bd8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91d471ce84161187ab63f56199c74ab3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#a91d471ce84161187ab63f56199c74ab3">getAtomicMultiSubset</a> (int *indices)</td></tr>
+<tr class="separator:a91d471ce84161187ab63f56199c74ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe3111c90692136b5141a4c5b96e2da3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#afe3111c90692136b5141a4c5b96e2da3">getRandomAtomicMultiSubset</a> ()</td></tr>
 <tr class="separator:afe3111c90692136b5141a4c5b96e2da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac2d5ee0afa30a8f565f29204a677cd9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac2d5ee0afa30a8f565f29204a677cd9"></a>
@@ -279,6 +284,30 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ace92943f7461b6f683c7c4da76408e73"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MultiSet::MultiSet </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classUniSet.html">UniSet</a> * &gt; *&#160;</td>
+          <td class="paramname"><em>uniSetVector</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uniSetVector</td><td>: Vector of pointers to uni-dimensional sets from which the Cartesian product is computed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a3ad638b1613083b97a53ea58e9060a4d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -351,7 +380,24 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Access to an element (e.g., atomic feasible subset) from its index /param The index of the element to access /return A pointer to the unique atomic feasible subset that contains the element </p>
+<p>Access to an element (e.g., atomic feasible subset) from its index IN THE CASE OF A ONE-DIMENSIONAL SET /param index : The index of the element to access /return A pointer to the unique atomic feasible subset that contains the element </p>
+
+</div>
+</div>
+<a class="anchor" id="a91d471ce84161187ab63f56199c74ab3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMultiSubset.html">MultiSubset</a> * MultiSet::getAtomicMultiSubset </td>
+          <td>(</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>indices</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Access to an element (e.g., atomic feasible subset) from its indices /param indices : The indices of the element to access /return A pointer to the unique atomic feasible subset that contains the element </p>
 
 </div>
 </div>
@@ -481,7 +527,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 19:14:45 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 12 2015 17:01:43 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

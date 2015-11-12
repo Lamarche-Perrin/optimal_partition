@@ -88,6 +88,12 @@ public:
 	MultiSet (UniSet **uniSetArray, int dimension);
 
 	/*!
+	 * \brief Constructor
+	 * \param uniSetVector : Vector of pointers to uni-dimensional sets from which the Cartesian product is computed
+	 */
+	MultiSet (std::vector<UniSet*> *uniSetVector);
+
+	/*!
 	 * Destructor
 	 */
 	virtual ~MultiSet ();

@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['indexset',['indexSet',['../classUniSubset.html#a32f7ed1b58639b5184c7c0321b08e6a1',1,'UniSubset']]],
-  ['informationbottleneck',['InformationBottleneck',['../classInformationBottleneck.html',1,'']]],
-  ['initreached',['initReached',['../classUniSet.html#a140f02dfb3f186cbc49fe28d238aa2e1',1,'UniSet']]],
-  ['isatomic',['isAtomic',['../classUniSubset.html#a33f088ffb21e664508cfbfb75341513a',1,'UniSubset']]]
+  ['hhnode',['HHNode',['../classHHNode.html',1,'']]],
+  ['hierarchicalhierarchicalset',['HierarchicalHierarchicalSet',['../classHierarchicalHierarchicalSet.html',1,'']]],
+  ['hierarchicalorderedset',['HierarchicalOrderedSet',['../classHierarchicalOrderedSet.html',1,'']]],
+  ['hierarchicalset',['HierarchicalSet',['../classHierarchicalSet.html',1,'']]],
+  ['hierarchicaluniset',['HierarchicalUniSet',['../classHierarchicalUniSet.html',1,'HierarchicalUniSet'],['../classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0',1,'HierarchicalUniSet::HierarchicalUniSet()']]],
+  ['hnode',['HNode',['../classHNode.html',1,'']]],
+  ['honode',['HONode',['../classHONode.html',1,'']]]
 ];

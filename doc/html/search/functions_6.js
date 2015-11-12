@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logarithmicscore',['LogarithmicScore',['../classLogarithmicScore.html#a4fba67dfac53087dbfde7cb825501c97',1,'LogarithmicScore']]]
+  ['hierarchicaluniset',['HierarchicalUniSet',['../classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0',1,'HierarchicalUniSet']]]
 ];

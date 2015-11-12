@@ -102,7 +102,9 @@ public:
 	int *testCountArray;
 	int trainCountTotal;
 	int testCountTotal;
+
 	double score;
+	bool infinite;
 	
 	LogarithmicScoreValue (LogarithmicScore *objective);
 	~LogarithmicScoreValue ();

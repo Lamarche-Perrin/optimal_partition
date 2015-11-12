@@ -49,7 +49,9 @@ UniSet::UniSet (UniSubset *firstSubset)
 	firstUniSubset = firstSubset;
 	uniSubsetArray = 0;
 	atomicUniSubsetArray = 0;
+
 	voterMeasurement = 0;
+	voterProbe = 0;
 }
 
 

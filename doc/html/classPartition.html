@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -107,6 +107,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a63f82a3a75dc0c3d0d27766b2459c9fe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63f82a3a75dc0c3d0d27766b2459c9fe"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>addPart</b> (<a class="el" href="classPart.html">Part</a> *p, bool front=false)</td></tr>
 <tr class="separator:a63f82a3a75dc0c3d0d27766b2459c9fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae21fdef95c1f37a6a677ac145f29b119"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae21fdef95c1f37a6a677ac145f29b119"></a>
+<a class="el" href="classPart.html">Part</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>findPart</b> (int individual)</td></tr>
+<tr class="separator:ae21fdef95c1f37a6a677ac145f29b119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ac69e01cafef5af0fef2e917e6fdf1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76ac69e01cafef5af0fef2e917e6fdf1"></a>
+<a class="el" href="classPart.html">Part</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>getPartFromValue</b> (int value)</td></tr>
+<tr class="separator:a76ac69e01cafef5af0fef2e917e6fdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abced08b339e293866a614b2f21414375"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abced08b339e293866a614b2f21414375"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>equal</b> (<a class="el" href="classPartition.html">Partition</a> *p)</td></tr>
 <tr class="separator:abced08b339e293866a614b2f21414375"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -116,6 +122,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>print</b> (bool endl=
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr class="memitem:a718bdba639f222d90d23480b58caa1f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a718bdba639f222d90d23480b58caa1f9"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>size</b></td></tr>
+<tr class="separator:a718bdba639f222d90d23480b58caa1f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1125b9b5548fa65e98a6dd94279c53bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1125b9b5548fa65e98a6dd94279c53bc"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>parameter</b></td></tr>
 <tr class="separator:a1125b9b5548fa65e98a6dd94279c53bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -135,7 +144,7 @@ std::list&lt; <a class="el" href="classPart.html">Part</a> * &gt; *&#160;</td><t
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 19:14:46 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 12 2015 17:01:43 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -61,6 +61,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="files.html"><span>File&#160;List</span></a></li>
+      <li><a href="globals.html"><span>File&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -156,52 +157,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">int</span> preSize, postSize;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">int</span> *trainCountArray;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">int</span> trainCountTotal;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> prior;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="classLogarithmicScoreValue.html">   95</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLogarithmicScoreValue.html">LogarithmicScoreValue</a>: <span class="keyword">public</span> <a class="code" href="classObjectiveValue.html">ObjectiveValue</a></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">int</span> preSize, postSize;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">int</span> *trainCountArray;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">int</span> *testCountArray;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span> trainCountTotal;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">int</span> testCountTotal;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">double</span> score;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <a class="code" href="classLogarithmicScoreValue.html">LogarithmicScoreValue</a> (<a class="code" href="classLogarithmicScore.html">LogarithmicScore</a> *objective);</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    ~<a class="code" href="classLogarithmicScoreValue.html">LogarithmicScoreValue</a> ();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">void</span> add (<a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *value);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">void</span> compute ();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> compute (<a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *value1, <a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *value2);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> compute (ObjectiveValueSet *valueset);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> normalize (<a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *q);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> print (<span class="keywordtype">bool</span> verbosex = <span class="keyword">true</span>);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">double</span> getValue (<span class="keywordtype">double</span> param);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">int</span> *testCountArray;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">int</span> testCountTotal;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">int</span> prior;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;};</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classLogarithmicScoreValue.html">   97</a></span>&#160;<span class="keyword">class </span><a class="code" href="classLogarithmicScoreValue.html">LogarithmicScoreValue</a>: <span class="keyword">public</span> <a class="code" href="classObjectiveValue.html">ObjectiveValue</a></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;{</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">int</span> preSize, postSize;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">int</span> *trainCountArray;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">int</span> *testCountArray;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">int</span> trainCountTotal;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">int</span> testCountTotal;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">double</span> score;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">bool</span> infinite;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="classLogarithmicScoreValue.html">LogarithmicScoreValue</a> (<a class="code" href="classLogarithmicScore.html">LogarithmicScore</a> *objective);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    ~<a class="code" href="classLogarithmicScoreValue.html">LogarithmicScoreValue</a> ();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> add (<a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *value);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> compute ();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> compute (<a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *value1, <a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *value2);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> compute (ObjectiveValueSet *valueset);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordtype">void</span> normalize (<a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *q);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> print (<span class="keywordtype">bool</span> verbosex = <span class="keyword">true</span>);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">double</span> getValue (<span class="keywordtype">double</span> param);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;};</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="objective__function_8hpp_html"><div class="ttname"><a href="objective__function_8hpp.html">objective_function.hpp</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div></div>
 <div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div><div class="ttdef"><b>Definition:</b> objective_function.hpp:57</div></div>
-<div class="ttc" id="classLogarithmicScore_html_ab64011283bff491364cdffb0420dc89b"><div class="ttname"><a href="classLogarithmicScore.html#ab64011283bff491364cdffb0420dc89b">LogarithmicScore::newObjectiveValue</a></div><div class="ttdeci">ObjectiveValue * newObjectiveValue(int index=-1)</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:82</div></div>
-<div class="ttc" id="classLogarithmicScore_html_add0be2f6175a2aa0ef5e20026f9eb2be"><div class="ttname"><a href="classLogarithmicScore.html#add0be2f6175a2aa0ef5e20026f9eb2be">LogarithmicScore::printObjectiveValues</a></div><div class="ttdeci">void printObjectiveValues(bool verbose=true)</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:117</div></div>
+<div class="ttc" id="classLogarithmicScore_html_ab64011283bff491364cdffb0420dc89b"><div class="ttname"><a href="classLogarithmicScore.html#ab64011283bff491364cdffb0420dc89b">LogarithmicScore::newObjectiveValue</a></div><div class="ttdeci">ObjectiveValue * newObjectiveValue(int index=-1)</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:87</div></div>
+<div class="ttc" id="classLogarithmicScore_html_add0be2f6175a2aa0ef5e20026f9eb2be"><div class="ttname"><a href="classLogarithmicScore.html#add0be2f6175a2aa0ef5e20026f9eb2be">LogarithmicScore::printObjectiveValues</a></div><div class="ttdeci">void printObjectiveValues(bool verbose=true)</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:125</div></div>
 <div class="ttc" id="classObjectiveValue_html"><div class="ttname"><a href="classObjectiveValue.html">ObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:101</div></div>
-<div class="ttc" id="classPredictionDataset_html"><div class="ttname"><a href="classPredictionDataset.html">PredictionDataset</a></div><div class="ttdoc">Class to represent a data set for the prediction of a post-measurement from the knowledge of a pre-me...</div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:55</div></div>
-<div class="ttc" id="classLogarithmicScore_html_ac0a5eb6f03d9afd66a05aded42e6647f"><div class="ttname"><a href="classLogarithmicScore.html#ac0a5eb6f03d9afd66a05aded42e6647f">LogarithmicScore::computeObjectiveValues</a></div><div class="ttdeci">void computeObjectiveValues()</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:90</div></div>
-<div class="ttc" id="classLogarithmicScore_html_a7e3c601e96541b3156b02d84ce6b754e"><div class="ttname"><a href="classLogarithmicScore.html#a7e3c601e96541b3156b02d84ce6b754e">LogarithmicScore::setRandom</a></div><div class="ttdeci">void setRandom()</div><div class="ttdoc">Randomly set the initial data from which the objective function is computed. </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:67</div></div>
+<div class="ttc" id="classPredictionDataset_html"><div class="ttname"><a href="classPredictionDataset.html">PredictionDataset</a></div><div class="ttdoc">Class to represent a data set for the prediction of a post-measurement from the knowledge of a pre-me...</div><div class="ttdef"><b>Definition:</b> prediction_dataset.hpp:57</div></div>
+<div class="ttc" id="classLogarithmicScore_html_ac0a5eb6f03d9afd66a05aded42e6647f"><div class="ttname"><a href="classLogarithmicScore.html#ac0a5eb6f03d9afd66a05aded42e6647f">LogarithmicScore::computeObjectiveValues</a></div><div class="ttdeci">void computeObjectiveValues()</div><div class="ttdoc">This method is called by child classes of AbstractSet (do not use directly) </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:95</div></div>
+<div class="ttc" id="classLogarithmicScore_html_a7e3c601e96541b3156b02d84ce6b754e"><div class="ttname"><a href="classLogarithmicScore.html#a7e3c601e96541b3156b02d84ce6b754e">LogarithmicScore::setRandom</a></div><div class="ttdeci">void setRandom()</div><div class="ttdoc">Randomly set the initial data from which the objective function is computed. </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:72</div></div>
 <div class="ttc" id="prediction__dataset_8hpp_html"><div class="ttname"><a href="prediction__dataset_8hpp.html">prediction_dataset.hpp</a></div><div class="ttdoc">Class to represent a data set for the prediction of a post-measurement from the knowledge of a pre-me...</div></div>
-<div class="ttc" id="classLogarithmicScoreValue_html"><div class="ttname"><a href="classLogarithmicScoreValue.html">LogarithmicScoreValue</a></div><div class="ttdef"><b>Definition:</b> logarithmic_score.hpp:95</div></div>
+<div class="ttc" id="classLogarithmicScoreValue_html"><div class="ttname"><a href="classLogarithmicScoreValue.html">LogarithmicScoreValue</a></div><div class="ttdef"><b>Definition:</b> logarithmic_score.hpp:97</div></div>
 <div class="ttc" id="classLogarithmicScore_html"><div class="ttname"><a href="classLogarithmicScore.html">LogarithmicScore</a></div><div class="ttdoc">Class to define and compute the logarithmic score function in the case of point prediction. </div><div class="ttdef"><b>Definition:</b> logarithmic_score.hpp:58</div></div>
-<div class="ttc" id="classLogarithmicScore_html_a08b425a72eec8a2722bb2f4a9b0486ff"><div class="ttname"><a href="classLogarithmicScore.html#a08b425a72eec8a2722bb2f4a9b0486ff">LogarithmicScore::~LogarithmicScore</a></div><div class="ttdeci">~LogarithmicScore()</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:61</div></div>
+<div class="ttc" id="classLogarithmicScore_html_a08b425a72eec8a2722bb2f4a9b0486ff"><div class="ttname"><a href="classLogarithmicScore.html#a08b425a72eec8a2722bb2f4a9b0486ff">LogarithmicScore::~LogarithmicScore</a></div><div class="ttdeci">~LogarithmicScore()</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:65</div></div>
 <div class="ttc" id="classLogarithmicScore_html_a4fba67dfac53087dbfde7cb825501c97"><div class="ttname"><a href="classLogarithmicScore.html#a4fba67dfac53087dbfde7cb825501c97">LogarithmicScore::LogarithmicScore</a></div><div class="ttdeci">LogarithmicScore(PredictionDataset *dataset, int prior=0)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> logarithmic_score.cpp:46</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 9 2015 19:14:43 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Nov 12 2015 17:01:40 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

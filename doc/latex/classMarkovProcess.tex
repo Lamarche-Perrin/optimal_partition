@@ -1,0 +1,240 @@
+\hypertarget{classMarkovProcess}{\section{Markov\-Process Class Reference}
+\label{classMarkovProcess}\index{Markov\-Process@{Markov\-Process}}
+}
+
+
+A finite Markov chain described by a discrete state space, an initial distribution, and a transition kernel.  
+
+
+
+
+{\ttfamily \#include $<$markov\-\_\-process.\-hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMarkovProcess_a6dbcf0cf4a855b803c57d3e69bb42a7d}{Markov\-Process} (int \hyperlink{classMarkovProcess_ad38170c3a73d113dc152e73bc57d0523}{size})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_a4a6fef2706d69bc5b6957bfc53661597}{\hyperlink{classMarkovProcess_a4a6fef2706d69bc5b6957bfc53661597}{$\sim$\-Markov\-Process} ()}\label{classMarkovProcess_a4a6fef2706d69bc5b6957bfc53661597}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_acee38f7c8f384f9be422c965a0efc4fb}{void \hyperlink{classMarkovProcess_acee38f7c8f384f9be422c965a0efc4fb}{print} ()}\label{classMarkovProcess_acee38f7c8f384f9be422c965a0efc4fb}
+
+\begin{DoxyCompactList}\small\item\em Print the Markov chain structure and details. \end{DoxyCompactList}\item 
+void \hyperlink{classMarkovProcess_a2942db4262f73c20cc49bfebaf0df101}{set\-Distribution} (double $\ast$array)
+\begin{DoxyCompactList}\small\item\em Set the initial distribution. \end{DoxyCompactList}\item 
+void \hyperlink{classMarkovProcess_a687c9c983ac090f2ba40d028c6f04786}{set\-Transition} (double $\ast$array)
+\begin{DoxyCompactList}\small\item\em Set the transition kernel. \end{DoxyCompactList}\item 
+void \hyperlink{classMarkovProcess_a4e7f19999ca3e6972507b9e0975f1b6b}{set\-Transition} (int i, double $\ast$array)
+\begin{DoxyCompactList}\small\item\em Set one line of the transition kernel. \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_afa7edaa775112df8dd4fc5007034d7e7}{double $\ast$ \hyperlink{classMarkovProcess_afa7edaa775112df8dd4fc5007034d7e7}{get\-Distribution} (int time)}\label{classMarkovProcess_afa7edaa775112df8dd4fc5007034d7e7}
+
+\begin{DoxyCompactList}\small\item\em Get the state distribution at a given time (-\/1 for the stationary distribution) \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_a39c87840da9b238d7c33bd5ad23d538d}{double $\ast$ \hyperlink{classMarkovProcess_a39c87840da9b238d7c33bd5ad23d538d}{get\-Transition} (int delay)}\label{classMarkovProcess_a39c87840da9b238d7c33bd5ad23d538d}
+
+\begin{DoxyCompactList}\small\item\em Get the transition kernel for a given number of simulation steps (delay) \end{DoxyCompactList}\item 
+void \hyperlink{classMarkovProcess_a77be24a3ccec6e19ba922f932d19e0fa}{compute\-Stationary\-Distribution} (double threshold)
+\begin{DoxyCompactList}\small\item\em Compute the stationary distribution of the Markov chain by iterating the transition kernel. \end{DoxyCompactList}\item 
+\hyperlink{classMarkovTrajectory}{Markov\-Trajectory} $\ast$ \hyperlink{classMarkovProcess_aa0cb98a6e0fde978d037041e40ec78da}{compute\-Trajectory} (int time, int length)
+\begin{DoxyCompactList}\small\item\em Compute a possible trajectory of the Markov chain. \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_ad49d1ff46d5bf94e45a8b218b676c203}{double \hyperlink{classMarkovProcess_ad49d1ff46d5bf94e45a8b218b676c203}{get\-Probability} (int individual, int current\-Time)}\label{classMarkovProcess_ad49d1ff46d5bf94e45a8b218b676c203}
+
+\begin{DoxyCompactList}\small\item\em Get the probability to be in a given state at a given time (-\/1 for the stationary distribution) \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_afe80afb9c456631a9168c762058d3cd2}{double \hyperlink{classMarkovProcess_afe80afb9c456631a9168c762058d3cd2}{get\-Probability} (\hyperlink{classPart}{Part} $\ast$part, int current\-Time)}\label{classMarkovProcess_afe80afb9c456631a9168c762058d3cd2}
+
+\begin{DoxyCompactList}\small\item\em Get the probability to be in a given subset of states at a given time (-\/1 for the stationary distribution) \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_ab17f4ae9fa56c009553a5d50e899a84b}{double \hyperlink{classMarkovProcess_ab17f4ae9fa56c009553a5d50e899a84b}{get\-Next\-Probability} (int next\-Individual, int current\-Individual, int delay)}\label{classMarkovProcess_ab17f4ae9fa56c009553a5d50e899a84b}
+
+\begin{DoxyCompactList}\small\item\em Get the probability to be in a given state after a given delay knowing the current state. \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_a254635ef2e405073dd19aa14aa4ec365}{double \hyperlink{classMarkovProcess_a254635ef2e405073dd19aa14aa4ec365}{get\-Next\-Probability} (\hyperlink{classPart}{Part} $\ast$next\-Part, int current\-Individual, int delay)}\label{classMarkovProcess_a254635ef2e405073dd19aa14aa4ec365}
+
+\begin{DoxyCompactList}\small\item\em Get the probability to be in a given subset of states after a given delay knowing the current state. \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_a72033d86b846a06449a005f796ec14c1}{double \hyperlink{classMarkovProcess_a72033d86b846a06449a005f796ec14c1}{get\-Next\-Probability} (\hyperlink{classPart}{Part} $\ast$next\-Part, \hyperlink{classPart}{Part} $\ast$current\-Part, int delay, int time)}\label{classMarkovProcess_a72033d86b846a06449a005f796ec14c1}
+
+\begin{DoxyCompactList}\small\item\em Get the probability to be in a given subset of states after a given delay knowing the current subset of states at a given time (-\/1 for the stationary distribution) \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_ad1d295d33c8abc5bdabea3eeaf33b553}{double \hyperlink{classMarkovProcess_ad1d295d33c8abc5bdabea3eeaf33b553}{get\-Entropy} (\hyperlink{classPartition}{Partition} $\ast$partition, int current\-Time)}\label{classMarkovProcess_ad1d295d33c8abc5bdabea3eeaf33b553}
+
+\begin{DoxyCompactList}\small\item\em Get the Shannon entropy of the state distribution at a given time (-\/1 for the stationary distribution) when lumped according to a given partition of the state space. \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_a37aa6fee427f28a0d44dc369a2fd3b6a}{double \hyperlink{classMarkovProcess_a37aa6fee427f28a0d44dc369a2fd3b6a}{get\-Mutual\-Information} (\hyperlink{classPartition}{Partition} $\ast$next\-Partition, \hyperlink{classPartition}{Partition} $\ast$current\-Partition, int delay, int time)}\label{classMarkovProcess_a37aa6fee427f28a0d44dc369a2fd3b6a}
+
+\begin{DoxyCompactList}\small\item\em Get the mutual information between the state distribution at a given time (-\/1 for the stationary distribution) and the state distribution after a given delay, when both are lumped according to a given partition of the state space. \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_ac0be13af14b988f167b4f89f313603af}{double {\bfseries get\-Part\-Mutual\-Information} (\hyperlink{classPartition}{Partition} $\ast$next\-Partition, \hyperlink{classPart}{Part} $\ast$current\-Part, int delay, int time)}\label{classMarkovProcess_ac0be13af14b988f167b4f89f313603af}
+
+\item 
+\hypertarget{classMarkovProcess_a44e748cd2a12c20ec65e4d2c1975518f}{double \hyperlink{classMarkovProcess_a44e748cd2a12c20ec65e4d2c1975518f}{get\-Next\-Entropy} (\hyperlink{classPartition}{Partition} $\ast$partition, bool micro, int delay, int time)}\label{classMarkovProcess_a44e748cd2a12c20ec65e4d2c1975518f}
+
+\begin{DoxyCompactList}\small\item\em Get the Shannon entropy of the next state distribution knowing the current state distribution at a given time (-\/1 for the stationary distribution), when the next distribution is lumped according to a given partition of the state space, and when the current partition is also lumped by the same partition (when micro is false) \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_aec53ead60326b0b92d46fe20ad393036}{double \hyperlink{classMarkovProcess_aec53ead60326b0b92d46fe20ad393036}{get\-Information\-Flow} (\hyperlink{classPartition}{Partition} $\ast$partition, int delay, int time)}\label{classMarkovProcess_aec53ead60326b0b92d46fe20ad393036}
+
+\begin{DoxyCompactList}\small\item\em Get the information flow at a given time (-\/1 for the stationary distribution) between the Markov chain lumped according to a given partition of the state space and the microscopic Markov chain. \end{DoxyCompactList}\item 
+\hypertarget{classMarkovProcess_a4c8d809c49857400b349016e21aa71b7}{int $\ast$ {\bfseries get\-Optimal\-Cut} (int micro\-Size, double $\ast$macro\-Entropy, double $\ast$macro\-Information, double beta)}\label{classMarkovProcess_a4c8d809c49857400b349016e21aa71b7}
+
+\item 
+\hypertarget{classMarkovProcess_a7003bcd744b4349509877af23476a3e2}{std\-::set$<$ \hyperlink{classOrderedPartition}{Ordered\-Partition} $\ast$ $>$ $\ast$ {\bfseries get\-Optimal\-Ordered\-Partition} (\hyperlink{classPartition}{Partition} $\ast$next\-Partition, \hyperlink{classPartition}{Partition} $\ast$current\-Partition, int delay, int time, double threshold)}\label{classMarkovProcess_a7003bcd744b4349509877af23476a3e2}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classMarkovProcess_ad38170c3a73d113dc152e73bc57d0523}{size}
+\item 
+double $\ast$ \hyperlink{classMarkovProcess_ab08fd1641b1f866be6a7e3dcca7ed575}{distribution}
+\item 
+std\-::vector$<$ double $\ast$ $>$ $\ast$ \hyperlink{classMarkovProcess_a8e5ced320dd6b0a41c2f38f316c37cbf}{distributions}
+\item 
+int \hyperlink{classMarkovProcess_a5eddf681cb7bc196a248813ba42b516f}{last\-Time}
+\item 
+double $\ast$ \hyperlink{classMarkovProcess_aae914f9e4fa973b5515bebc41508a289}{transition}
+\item 
+std\-::vector$<$ double $\ast$ $>$ $\ast$ \hyperlink{classMarkovProcess_a16e4250dba911530aff3d2766a367e5b}{transitions}
+\item 
+int \hyperlink{classMarkovProcess_a5fa10a819200afd87b558332b6e351a6}{last\-Delay}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A finite Markov chain described by a discrete state space, an initial distribution, and a transition kernel. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classMarkovProcess_a6dbcf0cf4a855b803c57d3e69bb42a7d}{\index{Markov\-Process@{Markov\-Process}!Markov\-Process@{Markov\-Process}}
+\index{Markov\-Process@{Markov\-Process}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{Markov\-Process}]{\setlength{\rightskip}{0pt plus 5cm}Markov\-Process\-::\-Markov\-Process (
+\begin{DoxyParamCaption}
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)}}\label{classMarkovProcess_a6dbcf0cf4a855b803c57d3e69bb42a7d}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & \-: The size of the Markov chain state space\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+Robin Lamarche-\/\-Perrin 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+22/01/2015 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classMarkovProcess_a77be24a3ccec6e19ba922f932d19e0fa}{\index{Markov\-Process@{Markov\-Process}!compute\-Stationary\-Distribution@{compute\-Stationary\-Distribution}}
+\index{compute\-Stationary\-Distribution@{compute\-Stationary\-Distribution}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{compute\-Stationary\-Distribution}]{\setlength{\rightskip}{0pt plus 5cm}void Markov\-Process\-::compute\-Stationary\-Distribution (
+\begin{DoxyParamCaption}
+\item[{double}]{threshold}
+\end{DoxyParamCaption}
+)}}\label{classMarkovProcess_a77be24a3ccec6e19ba922f932d19e0fa}
+
+
+Compute the stationary distribution of the Markov chain by iterating the transition kernel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em threshold} & \-: Determines stationarity by giving the minimal difference between two probability values in two different but consecutive distributions \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Will endlessly loop for periodic Markov chains 
+\end{DoxyWarning}
+\hypertarget{classMarkovProcess_aa0cb98a6e0fde978d037041e40ec78da}{\index{Markov\-Process@{Markov\-Process}!compute\-Trajectory@{compute\-Trajectory}}
+\index{compute\-Trajectory@{compute\-Trajectory}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{compute\-Trajectory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Markov\-Trajectory} $\ast$ Markov\-Process\-::compute\-Trajectory (
+\begin{DoxyParamCaption}
+\item[{int}]{time, }
+\item[{int}]{length}
+\end{DoxyParamCaption}
+)}}\label{classMarkovProcess_aa0cb98a6e0fde978d037041e40ec78da}
+
+
+Compute a possible trajectory of the Markov chain. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & \-: Length of the trajectory \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMarkovProcess_a2942db4262f73c20cc49bfebaf0df101}{\index{Markov\-Process@{Markov\-Process}!set\-Distribution@{set\-Distribution}}
+\index{set\-Distribution@{set\-Distribution}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{set\-Distribution}]{\setlength{\rightskip}{0pt plus 5cm}void Markov\-Process\-::set\-Distribution (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{array}
+\end{DoxyParamCaption}
+)}}\label{classMarkovProcess_a2942db4262f73c20cc49bfebaf0df101}
+
+
+Set the initial distribution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \-: An array of probabilities (summing to 1) with the size of the Markov chain state space \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMarkovProcess_a687c9c983ac090f2ba40d028c6f04786}{\index{Markov\-Process@{Markov\-Process}!set\-Transition@{set\-Transition}}
+\index{set\-Transition@{set\-Transition}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{set\-Transition}]{\setlength{\rightskip}{0pt plus 5cm}void Markov\-Process\-::set\-Transition (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{array}
+\end{DoxyParamCaption}
+)}}\label{classMarkovProcess_a687c9c983ac090f2ba40d028c6f04786}
+
+
+Set the transition kernel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & \-: A 2\-D-\/array of probabilities (summing to 1 within each row) with the square of the size of the Markov chain state space \\
+\hline
+\end{DoxyParams}
+\hypertarget{classMarkovProcess_a4e7f19999ca3e6972507b9e0975f1b6b}{\index{Markov\-Process@{Markov\-Process}!set\-Transition@{set\-Transition}}
+\index{set\-Transition@{set\-Transition}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{set\-Transition}]{\setlength{\rightskip}{0pt plus 5cm}void Markov\-Process\-::set\-Transition (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{double $\ast$}]{array}
+\end{DoxyParamCaption}
+)}}\label{classMarkovProcess_a4e7f19999ca3e6972507b9e0975f1b6b}
+
+
+Set one line of the transition kernel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em j} & \-: The index of the row to be set \\
+\hline
+{\em array} & \-: An array of probabilities (summing to 1) with the size of the Markov chain state space \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classMarkovProcess_ab08fd1641b1f866be6a7e3dcca7ed575}{\index{Markov\-Process@{Markov\-Process}!distribution@{distribution}}
+\index{distribution@{distribution}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{distribution}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ Markov\-Process\-::distribution}}\label{classMarkovProcess_ab08fd1641b1f866be6a7e3dcca7ed575}
+The initial probability distribution of the system state (time 0) \hypertarget{classMarkovProcess_a8e5ced320dd6b0a41c2f38f316c37cbf}{\index{Markov\-Process@{Markov\-Process}!distributions@{distributions}}
+\index{distributions@{distributions}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{distributions}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$\ast$$>$$\ast$ Markov\-Process\-::distributions}}\label{classMarkovProcess_a8e5ced320dd6b0a41c2f38f316c37cbf}
+A vector of probability distributions through time (from 0 to last\-Time) \hypertarget{classMarkovProcess_a5fa10a819200afd87b558332b6e351a6}{\index{Markov\-Process@{Markov\-Process}!last\-Delay@{last\-Delay}}
+\index{last\-Delay@{last\-Delay}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{last\-Delay}]{\setlength{\rightskip}{0pt plus 5cm}int Markov\-Process\-::last\-Delay}}\label{classMarkovProcess_a5fa10a819200afd87b558332b6e351a6}
+The delay of the furthest computed transition kernel in the transitions vector \hypertarget{classMarkovProcess_a5eddf681cb7bc196a248813ba42b516f}{\index{Markov\-Process@{Markov\-Process}!last\-Time@{last\-Time}}
+\index{last\-Time@{last\-Time}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{last\-Time}]{\setlength{\rightskip}{0pt plus 5cm}int Markov\-Process\-::last\-Time}}\label{classMarkovProcess_a5eddf681cb7bc196a248813ba42b516f}
+The time of the furthest computed probability distribution in the distributions vector \hypertarget{classMarkovProcess_ad38170c3a73d113dc152e73bc57d0523}{\index{Markov\-Process@{Markov\-Process}!size@{size}}
+\index{size@{size}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}int Markov\-Process\-::size}}\label{classMarkovProcess_ad38170c3a73d113dc152e73bc57d0523}
+The size of the Markov chain state space \hypertarget{classMarkovProcess_aae914f9e4fa973b5515bebc41508a289}{\index{Markov\-Process@{Markov\-Process}!transition@{transition}}
+\index{transition@{transition}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{transition}]{\setlength{\rightskip}{0pt plus 5cm}double$\ast$ Markov\-Process\-::transition}}\label{classMarkovProcess_aae914f9e4fa973b5515bebc41508a289}
+The transition kernel of the Markov chain (1 step) \hypertarget{classMarkovProcess_a16e4250dba911530aff3d2766a367e5b}{\index{Markov\-Process@{Markov\-Process}!transitions@{transitions}}
+\index{transitions@{transitions}!MarkovProcess@{Markov\-Process}}
+\subsubsection[{transitions}]{\setlength{\rightskip}{0pt plus 5cm}std\-::vector$<$double$\ast$$>$$\ast$ Markov\-Process\-::transitions}}\label{classMarkovProcess_a16e4250dba911530aff3d2766a367e5b}
+A vector of transition kernels for several steps (from 1 to last\-Delay) 
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{markov__process_8hpp}{markov\-\_\-process.\-hpp}\item 
+/home/lamarche/programming/optimal\-\_\-partition/src/markov\-\_\-process.\-cpp\end{DoxyCompactItemize}

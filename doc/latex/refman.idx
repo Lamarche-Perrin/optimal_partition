@@ -1,190 +1,420 @@
-\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}|hyperpage}{9}
-\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set@{$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set}|hyperpage}{11}
-\indexentry{$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set@{$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{11}
-\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{11}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{11}
-\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{11}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{11}
-\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}|hyperpage}{11}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{11}
-\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{11}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{11}
-\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}|hyperpage}{13}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{13}
-\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V}|hyperpage}{13}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{13}
-\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{13}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{13}
-\indexentry{Bi\discretionary {-}{}{}Part@{Bi\discretionary {-}{}{}Part}|hyperpage}{13}
-\indexentry{Bi\discretionary {-}{}{}Set@{Bi\discretionary {-}{}{}Set}|hyperpage}{14}
-\indexentry{Bi\discretionary {-}{}{}Set@{Bi\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{15}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!BiSet@{Bi\discretionary {-}{}{}Set}|hyperpage}{15}
-\indexentry{Bi\discretionary {-}{}{}Set@{Bi\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{15}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!BiSet@{Bi\discretionary {-}{}{}Set}|hyperpage}{15}
-\indexentry{Bi\discretionary {-}{}{}Set@{Bi\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{15}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!BiSet@{Bi\discretionary {-}{}{}Set}|hyperpage}{15}
-\indexentry{Bi\discretionary {-}{}{}Set@{Bi\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{16}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!BiSet@{Bi\discretionary {-}{}{}Set}|hyperpage}{16}
-\indexentry{Bi\discretionary {-}{}{}Subset@{Bi\discretionary {-}{}{}Subset}|hyperpage}{16}
-\indexentry{Bottleneck\discretionary {-}{}{}Objective\discretionary {-}{}{}Value@{Bottleneck\discretionary {-}{}{}Objective\discretionary {-}{}{}Value}|hyperpage}{17}
-\indexentry{Complete\discretionary {-}{}{}Graph@{Complete\discretionary {-}{}{}Graph}|hyperpage}{17}
-\indexentry{Data\discretionary {-}{}{}Point\discretionary {-}{}{}Struct@{Data\discretionary {-}{}{}Point\discretionary {-}{}{}Struct}|hyperpage}{18}
-\indexentry{Dataset@{Dataset}|hyperpage}{18}
-\indexentry{Datatree@{Datatree}|hyperpage}{19}
-\indexentry{Filiform\discretionary {-}{}{}Graph@{Filiform\discretionary {-}{}{}Graph}|hyperpage}{20}
-\indexentry{Graph@{Graph}|hyperpage}{20}
-\indexentry{Graph@{Graph}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{22}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Graph@{Graph}|hyperpage}{22}
-\indexentry{Graph@{Graph}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{22}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Graph@{Graph}|hyperpage}{22}
-\indexentry{Graph@{Graph}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{22}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Graph@{Graph}|hyperpage}{22}
-\indexentry{Graph@{Graph}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{22}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!Graph@{Graph}|hyperpage}{22}
-\indexentry{Graph\discretionary {-}{}{}Component@{Graph\discretionary {-}{}{}Component}|hyperpage}{22}
-\indexentry{H\discretionary {-}{}{}H\discretionary {-}{}{}Node@{H\discretionary {-}{}{}H\discretionary {-}{}{}Node}|hyperpage}{23}
-\indexentry{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}|hyperpage}{24}
-\indexentry{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{25}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalHierarchicalSet@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}|hyperpage}{25}
-\indexentry{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{25}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalHierarchicalSet@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}|hyperpage}{25}
-\indexentry{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{25}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalHierarchicalSet@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}|hyperpage}{25}
-\indexentry{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{25}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!HierarchicalHierarchicalSet@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}|hyperpage}{25}
-\indexentry{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{26}
-\indexentry{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{26}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalOrderedSet@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{26}
-\indexentry{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{27}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalOrderedSet@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{27}
-\indexentry{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{27}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalOrderedSet@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{27}
-\indexentry{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{27}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!HierarchicalOrderedSet@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{27}
-\indexentry{Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Set}|hyperpage}{27}
-\indexentry{Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{28}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalSet@{Hierarchical\discretionary {-}{}{}Set}|hyperpage}{28}
-\indexentry{Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{28}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalSet@{Hierarchical\discretionary {-}{}{}Set}|hyperpage}{28}
-\indexentry{Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{29}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalSet@{Hierarchical\discretionary {-}{}{}Set}|hyperpage}{29}
-\indexentry{Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{29}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!HierarchicalSet@{Hierarchical\discretionary {-}{}{}Set}|hyperpage}{29}
-\indexentry{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{29}
-\indexentry{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}!Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{30}
-\indexentry{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}!HierarchicalUniSet@{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{30}
-\indexentry{H\discretionary {-}{}{}Node@{H\discretionary {-}{}{}Node}|hyperpage}{30}
-\indexentry{H\discretionary {-}{}{}O\discretionary {-}{}{}Node@{H\discretionary {-}{}{}O\discretionary {-}{}{}Node}|hyperpage}{31}
-\indexentry{Information\discretionary {-}{}{}Bottleneck@{Information\discretionary {-}{}{}Bottleneck}|hyperpage}{32}
-\indexentry{Logarithmic\discretionary {-}{}{}Score@{Logarithmic\discretionary {-}{}{}Score}|hyperpage}{32}
-\indexentry{Logarithmic\discretionary {-}{}{}Score@{Logarithmic\discretionary {-}{}{}Score}!Logarithmic\discretionary {-}{}{}Score@{Logarithmic\discretionary {-}{}{}Score}|hyperpage}{33}
-\indexentry{Logarithmic\discretionary {-}{}{}Score@{Logarithmic\discretionary {-}{}{}Score}!LogarithmicScore@{Logarithmic\discretionary {-}{}{}Score}|hyperpage}{33}
-\indexentry{Logarithmic\discretionary {-}{}{}Score\discretionary {-}{}{}Value@{Logarithmic\discretionary {-}{}{}Score\discretionary {-}{}{}Value}|hyperpage}{33}
-\indexentry{Multi\discretionary {-}{}{}Part@{Multi\discretionary {-}{}{}Part}|hyperpage}{34}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}|hyperpage}{35}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}|hyperpage}{36}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{36}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}|hyperpage}{36}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{36}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set@{$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set}|hyperpage}{36}
-\indexentry{$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set@{$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{36}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{37}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{37}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset@{get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}|hyperpage}{38}
-\indexentry{get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset@{get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{38}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{38}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{38}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset@{get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}|hyperpage}{38}
-\indexentry{get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset@{get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{38}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{38}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{38}
-\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{38}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{38}
-\indexentry{Multi\discretionary {-}{}{}Subset@{Multi\discretionary {-}{}{}Subset}|hyperpage}{39}
-\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Node@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Node}|hyperpage}{39}
-\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}|hyperpage}{40}
-\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{41}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NHOSet@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}|hyperpage}{41}
-\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{41}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NHOSet@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}|hyperpage}{41}
-\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{41}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NHOSet@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}|hyperpage}{41}
-\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{41}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!NHOSet@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}|hyperpage}{41}
-\indexentry{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{43}
-\indexentry{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{44}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedOrderedSet@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{44}
-\indexentry{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{44}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedOrderedSet@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{44}
-\indexentry{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{44}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedOrderedSet@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{44}
-\indexentry{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{44}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!NonconstrainedOrderedSet@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{44}
-\indexentry{Nonconstrained\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Set}|hyperpage}{45}
-\indexentry{Nonconstrained\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{46}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedSet@{Nonconstrained\discretionary {-}{}{}Set}|hyperpage}{46}
-\indexentry{Nonconstrained\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{46}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedSet@{Nonconstrained\discretionary {-}{}{}Set}|hyperpage}{46}
-\indexentry{Nonconstrained\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{46}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedSet@{Nonconstrained\discretionary {-}{}{}Set}|hyperpage}{46}
-\indexentry{Nonconstrained\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{46}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!NonconstrainedSet@{Nonconstrained\discretionary {-}{}{}Set}|hyperpage}{46}
-\indexentry{Objective\discretionary {-}{}{}Function@{Objective\discretionary {-}{}{}Function}|hyperpage}{47}
-\indexentry{Objective\discretionary {-}{}{}Function@{Objective\discretionary {-}{}{}Function}!Objective\discretionary {-}{}{}Function@{Objective\discretionary {-}{}{}Function}|hyperpage}{47}
-\indexentry{Objective\discretionary {-}{}{}Function@{Objective\discretionary {-}{}{}Function}!ObjectiveFunction@{Objective\discretionary {-}{}{}Function}|hyperpage}{47}
-\indexentry{Objective\discretionary {-}{}{}Value@{Objective\discretionary {-}{}{}Value}|hyperpage}{48}
-\indexentry{Ordered\discretionary {-}{}{}Datatree@{Ordered\discretionary {-}{}{}Datatree}|hyperpage}{48}
-\indexentry{Ordered\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Set}|hyperpage}{49}
-\indexentry{Ordered\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{50}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!OrderedSet@{Ordered\discretionary {-}{}{}Set}|hyperpage}{50}
-\indexentry{Ordered\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{50}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!OrderedSet@{Ordered\discretionary {-}{}{}Set}|hyperpage}{50}
-\indexentry{Ordered\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{50}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!OrderedSet@{Ordered\discretionary {-}{}{}Set}|hyperpage}{50}
-\indexentry{Ordered\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{51}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!OrderedSet@{Ordered\discretionary {-}{}{}Set}|hyperpage}{51}
-\indexentry{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{51}
-\indexentry{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}!Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{52}
-\indexentry{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}!OrderedUniSet@{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{52}
-\indexentry{Part@{Part}|hyperpage}{52}
-\indexentry{Partition@{Partition}|hyperpage}{53}
-\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{53}
-\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{54}
-\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{54}
-\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!add\discretionary {-}{}{}Test\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}|hyperpage}{54}
-\indexentry{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{54}
-\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!add\discretionary {-}{}{}Test\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}|hyperpage}{55}
-\indexentry{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{55}
-\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!add\discretionary {-}{}{}Train\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}|hyperpage}{55}
-\indexentry{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{55}
-\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!add\discretionary {-}{}{}Train\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}|hyperpage}{55}
-\indexentry{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{55}
-\indexentry{Random\discretionary {-}{}{}Graph@{Random\discretionary {-}{}{}Graph}|hyperpage}{55}
-\indexentry{Relative\discretionary {-}{}{}Entropy@{Relative\discretionary {-}{}{}Entropy}|hyperpage}{56}
-\indexentry{Relative\discretionary {-}{}{}Objective\discretionary {-}{}{}Value@{Relative\discretionary {-}{}{}Objective\discretionary {-}{}{}Value}|hyperpage}{57}
-\indexentry{Ring@{Ring}|hyperpage}{57}
-\indexentry{Ring@{Ring}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{58}
-\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Ring@{Ring}|hyperpage}{58}
-\indexentry{Ring@{Ring}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{59}
-\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Ring@{Ring}|hyperpage}{59}
-\indexentry{Ring@{Ring}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{59}
-\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Ring@{Ring}|hyperpage}{59}
-\indexentry{Ring@{Ring}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{59}
-\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!Ring@{Ring}|hyperpage}{59}
-\indexentry{Ring\discretionary {-}{}{}Graph@{Ring\discretionary {-}{}{}Graph}|hyperpage}{59}
-\indexentry{Timer@{Timer}|hyperpage}{60}
-\indexentry{Tree\discretionary {-}{}{}To\discretionary {-}{}{}Add@{Tree\discretionary {-}{}{}To\discretionary {-}{}{}Add}|hyperpage}{60}
-\indexentry{Uni\discretionary {-}{}{}Set@{Uni\discretionary {-}{}{}Set}|hyperpage}{61}
-\indexentry{Uni\discretionary {-}{}{}Set@{Uni\discretionary {-}{}{}Set}!Uni\discretionary {-}{}{}Set@{Uni\discretionary {-}{}{}Set}|hyperpage}{62}
-\indexentry{Uni\discretionary {-}{}{}Set@{Uni\discretionary {-}{}{}Set}!UniSet@{Uni\discretionary {-}{}{}Set}|hyperpage}{62}
-\indexentry{Uni\discretionary {-}{}{}Set@{Uni\discretionary {-}{}{}Set}!init\discretionary {-}{}{}Reached@{init\discretionary {-}{}{}Reached}|hyperpage}{62}
-\indexentry{init\discretionary {-}{}{}Reached@{init\discretionary {-}{}{}Reached}!UniSet@{Uni\discretionary {-}{}{}Set}|hyperpage}{62}
-\indexentry{Uni\discretionary {-}{}{}Subset@{Uni\discretionary {-}{}{}Subset}|hyperpage}{62}
-\indexentry{Uni\discretionary {-}{}{}Subset@{Uni\discretionary {-}{}{}Subset}!Uni\discretionary {-}{}{}Subset@{Uni\discretionary {-}{}{}Subset}|hyperpage}{63}
-\indexentry{Uni\discretionary {-}{}{}Subset@{Uni\discretionary {-}{}{}Subset}!UniSubset@{Uni\discretionary {-}{}{}Subset}|hyperpage}{63}
-\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/abstract\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/abstract\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp}|hyperpage}{65}
-\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/logarithmic\discretionary {-}{}{}\_\discretionary {-}{}{}score.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/logarithmic\discretionary {-}{}{}\_\discretionary {-}{}{}score.\discretionary {-}{}{}hpp}|hyperpage}{65}
-\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/multi\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/multi\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp}|hyperpage}{66}
-\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/objective\discretionary {-}{}{}\_\discretionary {-}{}{}function.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/objective\discretionary {-}{}{}\_\discretionary {-}{}{}function.\discretionary {-}{}{}hpp}|hyperpage}{67}
-\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/prediction\discretionary {-}{}{}\_\discretionary {-}{}{}dataset.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/prediction\discretionary {-}{}{}\_\discretionary {-}{}{}dataset.\discretionary {-}{}{}hpp}|hyperpage}{67}
-\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/uni\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/uni\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp}|hyperpage}{68}
+\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}|hyperpage}{11}
+\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set@{$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set}|hyperpage}{13}
+\indexentry{$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set@{$\sim $\discretionary {-}{}{}Abstract\discretionary {-}{}{}Set}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{13}
+\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{13}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{13}
+\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{13}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{13}
+\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}|hyperpage}{13}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{13}
+\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{13}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{13}
+\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}|hyperpage}{15}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{15}
+\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V}|hyperpage}{15}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition\discretionary {-}{}{}List\discretionary {-}{}{}In\discretionary {-}{}{}C\discretionary {-}{}{}S\discretionary {-}{}{}V}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{15}
+\indexentry{Abstract\discretionary {-}{}{}Set@{Abstract\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{15}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!AbstractSet@{Abstract\discretionary {-}{}{}Set}|hyperpage}{15}
+\indexentry{Bi\discretionary {-}{}{}Part@{Bi\discretionary {-}{}{}Part}|hyperpage}{15}
+\indexentry{Bi\discretionary {-}{}{}Set@{Bi\discretionary {-}{}{}Set}|hyperpage}{16}
+\indexentry{Bi\discretionary {-}{}{}Set@{Bi\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{17}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!BiSet@{Bi\discretionary {-}{}{}Set}|hyperpage}{17}
+\indexentry{Bi\discretionary {-}{}{}Set@{Bi\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{17}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!BiSet@{Bi\discretionary {-}{}{}Set}|hyperpage}{17}
+\indexentry{Bi\discretionary {-}{}{}Set@{Bi\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{17}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!BiSet@{Bi\discretionary {-}{}{}Set}|hyperpage}{17}
+\indexentry{Bi\discretionary {-}{}{}Set@{Bi\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{18}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!BiSet@{Bi\discretionary {-}{}{}Set}|hyperpage}{18}
+\indexentry{Bi\discretionary {-}{}{}Subset@{Bi\discretionary {-}{}{}Subset}|hyperpage}{18}
+\indexentry{Bottleneck\discretionary {-}{}{}Objective\discretionary {-}{}{}Value@{Bottleneck\discretionary {-}{}{}Objective\discretionary {-}{}{}Value}|hyperpage}{19}
+\indexentry{Chain\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Chain\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{19}
+\indexentry{Complete\discretionary {-}{}{}Graph@{Complete\discretionary {-}{}{}Graph}|hyperpage}{20}
+\indexentry{Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{20}
+\indexentry{Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{21}
+\indexentry{Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!CompleteVoterGraph@{Complete\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{21}
+\indexentry{Data\discretionary {-}{}{}Point\discretionary {-}{}{}Struct@{Data\discretionary {-}{}{}Point\discretionary {-}{}{}Struct}|hyperpage}{21}
+\indexentry{Dataset@{Dataset}|hyperpage}{21}
+\indexentry{Datatree@{Datatree}|hyperpage}{22}
+\indexentry{Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}|hyperpage}{23}
+\indexentry{Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}!Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}|hyperpage}{23}
+\indexentry{Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}!EmptyVoterMeasurement@{Empty\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}|hyperpage}{23}
+\indexentry{Filiform\discretionary {-}{}{}Graph@{Filiform\discretionary {-}{}{}Graph}|hyperpage}{24}
+\indexentry{Graph@{Graph}|hyperpage}{24}
+\indexentry{Graph@{Graph}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{26}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Graph@{Graph}|hyperpage}{26}
+\indexentry{Graph@{Graph}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{26}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Graph@{Graph}|hyperpage}{26}
+\indexentry{Graph@{Graph}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{26}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Graph@{Graph}|hyperpage}{26}
+\indexentry{Graph@{Graph}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{26}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!Graph@{Graph}|hyperpage}{26}
+\indexentry{Graph\discretionary {-}{}{}Based\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Graph\discretionary {-}{}{}Based\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{26}
+\indexentry{Graph\discretionary {-}{}{}Component@{Graph\discretionary {-}{}{}Component}|hyperpage}{27}
+\indexentry{H\discretionary {-}{}{}H\discretionary {-}{}{}Node@{H\discretionary {-}{}{}H\discretionary {-}{}{}Node}|hyperpage}{28}
+\indexentry{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}|hyperpage}{28}
+\indexentry{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{29}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalHierarchicalSet@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}|hyperpage}{29}
+\indexentry{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{29}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalHierarchicalSet@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}|hyperpage}{29}
+\indexentry{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{30}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalHierarchicalSet@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}|hyperpage}{30}
+\indexentry{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{30}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!HierarchicalHierarchicalSet@{Hierarchical\discretionary {-}{}{}Hierarchical\discretionary {-}{}{}Set}|hyperpage}{30}
+\indexentry{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{30}
+\indexentry{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{31}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalOrderedSet@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{31}
+\indexentry{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{31}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalOrderedSet@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{31}
+\indexentry{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{31}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalOrderedSet@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{31}
+\indexentry{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{32}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!HierarchicalOrderedSet@{Hierarchical\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{32}
+\indexentry{Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Set}|hyperpage}{32}
+\indexentry{Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{33}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalSet@{Hierarchical\discretionary {-}{}{}Set}|hyperpage}{33}
+\indexentry{Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{33}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalSet@{Hierarchical\discretionary {-}{}{}Set}|hyperpage}{33}
+\indexentry{Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{33}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!HierarchicalSet@{Hierarchical\discretionary {-}{}{}Set}|hyperpage}{33}
+\indexentry{Hierarchical\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{34}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!HierarchicalSet@{Hierarchical\discretionary {-}{}{}Set}|hyperpage}{34}
+\indexentry{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{34}
+\indexentry{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}!Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{35}
+\indexentry{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}!HierarchicalUniSet@{Hierarchical\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{35}
+\indexentry{H\discretionary {-}{}{}Node@{H\discretionary {-}{}{}Node}|hyperpage}{35}
+\indexentry{H\discretionary {-}{}{}O\discretionary {-}{}{}Node@{H\discretionary {-}{}{}O\discretionary {-}{}{}Node}|hyperpage}{36}
+\indexentry{Information\discretionary {-}{}{}Bottleneck@{Information\discretionary {-}{}{}Bottleneck}|hyperpage}{36}
+\indexentry{Logarithmic\discretionary {-}{}{}Score@{Logarithmic\discretionary {-}{}{}Score}|hyperpage}{37}
+\indexentry{Logarithmic\discretionary {-}{}{}Score@{Logarithmic\discretionary {-}{}{}Score}!Logarithmic\discretionary {-}{}{}Score@{Logarithmic\discretionary {-}{}{}Score}|hyperpage}{38}
+\indexentry{Logarithmic\discretionary {-}{}{}Score@{Logarithmic\discretionary {-}{}{}Score}!LogarithmicScore@{Logarithmic\discretionary {-}{}{}Score}|hyperpage}{38}
+\indexentry{Logarithmic\discretionary {-}{}{}Score\discretionary {-}{}{}Value@{Logarithmic\discretionary {-}{}{}Score\discretionary {-}{}{}Value}|hyperpage}{38}
+\indexentry{Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}|hyperpage}{39}
+\indexentry{Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}!Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}|hyperpage}{39}
+\indexentry{Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}!MacroVoterMeasurement@{Macro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}|hyperpage}{39}
+\indexentry{Markov\discretionary {-}{}{}Data\discretionary {-}{}{}Set@{Markov\discretionary {-}{}{}Data\discretionary {-}{}{}Set}|hyperpage}{39}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}|hyperpage}{40}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}|hyperpage}{41}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{41}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!compute\discretionary {-}{}{}Stationary\discretionary {-}{}{}Distribution@{compute\discretionary {-}{}{}Stationary\discretionary {-}{}{}Distribution}|hyperpage}{41}
+\indexentry{compute\discretionary {-}{}{}Stationary\discretionary {-}{}{}Distribution@{compute\discretionary {-}{}{}Stationary\discretionary {-}{}{}Distribution}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{41}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!compute\discretionary {-}{}{}Trajectory@{compute\discretionary {-}{}{}Trajectory}|hyperpage}{42}
+\indexentry{compute\discretionary {-}{}{}Trajectory@{compute\discretionary {-}{}{}Trajectory}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{42}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!set\discretionary {-}{}{}Distribution@{set\discretionary {-}{}{}Distribution}|hyperpage}{42}
+\indexentry{set\discretionary {-}{}{}Distribution@{set\discretionary {-}{}{}Distribution}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{42}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!set\discretionary {-}{}{}Transition@{set\discretionary {-}{}{}Transition}|hyperpage}{42}
+\indexentry{set\discretionary {-}{}{}Transition@{set\discretionary {-}{}{}Transition}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{42}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!set\discretionary {-}{}{}Transition@{set\discretionary {-}{}{}Transition}|hyperpage}{42}
+\indexentry{set\discretionary {-}{}{}Transition@{set\discretionary {-}{}{}Transition}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{42}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!distribution@{distribution}|hyperpage}{42}
+\indexentry{distribution@{distribution}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{42}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!distributions@{distributions}|hyperpage}{42}
+\indexentry{distributions@{distributions}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{42}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!last\discretionary {-}{}{}Delay@{last\discretionary {-}{}{}Delay}|hyperpage}{42}
+\indexentry{last\discretionary {-}{}{}Delay@{last\discretionary {-}{}{}Delay}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{42}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!last\discretionary {-}{}{}Time@{last\discretionary {-}{}{}Time}|hyperpage}{43}
+\indexentry{last\discretionary {-}{}{}Time@{last\discretionary {-}{}{}Time}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{43}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!size@{size}|hyperpage}{43}
+\indexentry{size@{size}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{43}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!transition@{transition}|hyperpage}{43}
+\indexentry{transition@{transition}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{43}
+\indexentry{Markov\discretionary {-}{}{}Process@{Markov\discretionary {-}{}{}Process}!transitions@{transitions}|hyperpage}{43}
+\indexentry{transitions@{transitions}!MarkovProcess@{Markov\discretionary {-}{}{}Process}|hyperpage}{43}
+\indexentry{Markov\discretionary {-}{}{}Trajectory@{Markov\discretionary {-}{}{}Trajectory}|hyperpage}{43}
+\indexentry{Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}|hyperpage}{43}
+\indexentry{Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}!Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}|hyperpage}{44}
+\indexentry{Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement@{Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}!MicroVoterMeasurement@{Micro\discretionary {-}{}{}Voter\discretionary {-}{}{}Measurement}|hyperpage}{44}
+\indexentry{Multi\discretionary {-}{}{}Part@{Multi\discretionary {-}{}{}Part}|hyperpage}{44}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}|hyperpage}{45}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}|hyperpage}{46}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{46}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}|hyperpage}{47}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{47}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}|hyperpage}{47}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{47}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set@{$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set}|hyperpage}{47}
+\indexentry{$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set@{$\sim $\discretionary {-}{}{}Multi\discretionary {-}{}{}Set}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{47}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{47}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{47}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset@{get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}|hyperpage}{47}
+\indexentry{get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset@{get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{47}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset@{get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}|hyperpage}{47}
+\indexentry{get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset@{get\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{47}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{47}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{47}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset@{get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}|hyperpage}{48}
+\indexentry{get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset@{get\discretionary {-}{}{}Random\discretionary {-}{}{}Atomic\discretionary {-}{}{}Multi\discretionary {-}{}{}Subset}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{48}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{48}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{48}
+\indexentry{Multi\discretionary {-}{}{}Set@{Multi\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{48}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!MultiSet@{Multi\discretionary {-}{}{}Set}|hyperpage}{48}
+\indexentry{Multi\discretionary {-}{}{}Subset@{Multi\discretionary {-}{}{}Subset}|hyperpage}{48}
+\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Node@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Node}|hyperpage}{49}
+\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}|hyperpage}{50}
+\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{51}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NHOSet@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}|hyperpage}{51}
+\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{52}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NHOSet@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}|hyperpage}{52}
+\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{52}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NHOSet@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}|hyperpage}{52}
+\indexentry{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{52}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!NHOSet@{N\discretionary {-}{}{}H\discretionary {-}{}{}O\discretionary {-}{}{}Set}|hyperpage}{52}
+\indexentry{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{52}
+\indexentry{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{53}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedOrderedSet@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{53}
+\indexentry{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{53}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedOrderedSet@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{53}
+\indexentry{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{54}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedOrderedSet@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{54}
+\indexentry{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{54}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!NonconstrainedOrderedSet@{Nonconstrained\discretionary {-}{}{}Ordered\discretionary {-}{}{}Set}|hyperpage}{54}
+\indexentry{Nonconstrained\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Set}|hyperpage}{54}
+\indexentry{Nonconstrained\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{55}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedSet@{Nonconstrained\discretionary {-}{}{}Set}|hyperpage}{55}
+\indexentry{Nonconstrained\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{55}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedSet@{Nonconstrained\discretionary {-}{}{}Set}|hyperpage}{55}
+\indexentry{Nonconstrained\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{56}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!NonconstrainedSet@{Nonconstrained\discretionary {-}{}{}Set}|hyperpage}{56}
+\indexentry{Nonconstrained\discretionary {-}{}{}Set@{Nonconstrained\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{56}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!NonconstrainedSet@{Nonconstrained\discretionary {-}{}{}Set}|hyperpage}{56}
+\indexentry{Objective\discretionary {-}{}{}Function@{Objective\discretionary {-}{}{}Function}|hyperpage}{56}
+\indexentry{Objective\discretionary {-}{}{}Function@{Objective\discretionary {-}{}{}Function}!Objective\discretionary {-}{}{}Function@{Objective\discretionary {-}{}{}Function}|hyperpage}{57}
+\indexentry{Objective\discretionary {-}{}{}Function@{Objective\discretionary {-}{}{}Function}!ObjectiveFunction@{Objective\discretionary {-}{}{}Function}|hyperpage}{57}
+\indexentry{Objective\discretionary {-}{}{}Value@{Objective\discretionary {-}{}{}Value}|hyperpage}{57}
+\indexentry{Ordered\discretionary {-}{}{}Datatree@{Ordered\discretionary {-}{}{}Datatree}|hyperpage}{58}
+\indexentry{Ordered\discretionary {-}{}{}Partition@{Ordered\discretionary {-}{}{}Partition}|hyperpage}{59}
+\indexentry{Ordered\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Set}|hyperpage}{59}
+\indexentry{Ordered\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Set}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{60}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!OrderedSet@{Ordered\discretionary {-}{}{}Set}|hyperpage}{60}
+\indexentry{Ordered\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Set}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{60}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!OrderedSet@{Ordered\discretionary {-}{}{}Set}|hyperpage}{60}
+\indexentry{Ordered\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Set}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{60}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!OrderedSet@{Ordered\discretionary {-}{}{}Set}|hyperpage}{60}
+\indexentry{Ordered\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Set}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{61}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!OrderedSet@{Ordered\discretionary {-}{}{}Set}|hyperpage}{61}
+\indexentry{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{61}
+\indexentry{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}!Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{62}
+\indexentry{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set@{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}!OrderedUniSet@{Ordered\discretionary {-}{}{}Uni\discretionary {-}{}{}Set}|hyperpage}{62}
+\indexentry{Part@{Part}|hyperpage}{62}
+\indexentry{Partition@{Partition}|hyperpage}{63}
+\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{63}
+\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{64}
+\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{64}
+\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!add\discretionary {-}{}{}Test\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}|hyperpage}{65}
+\indexentry{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{65}
+\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!add\discretionary {-}{}{}Test\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}|hyperpage}{65}
+\indexentry{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Test\discretionary {-}{}{}Value}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{65}
+\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!add\discretionary {-}{}{}Train\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}|hyperpage}{65}
+\indexentry{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{65}
+\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!add\discretionary {-}{}{}Train\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}|hyperpage}{65}
+\indexentry{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value@{add\discretionary {-}{}{}Train\discretionary {-}{}{}Value}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{65}
+\indexentry{Prediction\discretionary {-}{}{}Dataset@{Prediction\discretionary {-}{}{}Dataset}!print@{print}|hyperpage}{66}
+\indexentry{print@{print}!PredictionDataset@{Prediction\discretionary {-}{}{}Dataset}|hyperpage}{66}
+\indexentry{Random\discretionary {-}{}{}Graph@{Random\discretionary {-}{}{}Graph}|hyperpage}{66}
+\indexentry{Relative\discretionary {-}{}{}Entropy@{Relative\discretionary {-}{}{}Entropy}|hyperpage}{66}
+\indexentry{Relative\discretionary {-}{}{}Objective\discretionary {-}{}{}Value@{Relative\discretionary {-}{}{}Objective\discretionary {-}{}{}Value}|hyperpage}{67}
+\indexentry{Ring@{Ring}|hyperpage}{68}
+\indexentry{Ring@{Ring}!compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{69}
+\indexentry{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{compute\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Ring@{Ring}|hyperpage}{69}
+\indexentry{Ring@{Ring}!get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{69}
+\indexentry{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Ring@{Ring}|hyperpage}{69}
+\indexentry{Ring@{Ring}!print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}|hyperpage}{69}
+\indexentry{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition@{print\discretionary {-}{}{}Optimal\discretionary {-}{}{}Partition}!Ring@{Ring}|hyperpage}{69}
+\indexentry{Ring@{Ring}!set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}|hyperpage}{70}
+\indexentry{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function@{set\discretionary {-}{}{}Objective\discretionary {-}{}{}Function}!Ring@{Ring}|hyperpage}{70}
+\indexentry{Ring\discretionary {-}{}{}Graph@{Ring\discretionary {-}{}{}Graph}|hyperpage}{70}
+\indexentry{Timer@{Timer}|hyperpage}{70}
+\indexentry{Tree\discretionary {-}{}{}To\discretionary {-}{}{}Add@{Tree\discretionary {-}{}{}To\discretionary {-}{}{}Add}|hyperpage}{71}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{71}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{72}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{72}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}|hyperpage}{72}
+\indexentry{get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{72}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}|hyperpage}{73}
+\indexentry{get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{73}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Process@{get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Process}|hyperpage}{73}
+\indexentry{get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Process@{get\discretionary {-}{}{}Compact\discretionary {-}{}{}Markov\discretionary {-}{}{}Process}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{73}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!community1@{community1}|hyperpage}{73}
+\indexentry{community1@{community1}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{73}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!community2@{community2}|hyperpage}{73}
+\indexentry{community2@{community2}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{73}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!contrarian1@{contrarian1}|hyperpage}{73}
+\indexentry{contrarian1@{contrarian1}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{73}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!contrarian2@{contrarian2}|hyperpage}{73}
+\indexentry{contrarian2@{contrarian2}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{73}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!inter\discretionary {-}{}{}Rate1@{inter\discretionary {-}{}{}Rate1}|hyperpage}{73}
+\indexentry{inter\discretionary {-}{}{}Rate1@{inter\discretionary {-}{}{}Rate1}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{73}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!inter\discretionary {-}{}{}Rate2@{inter\discretionary {-}{}{}Rate2}|hyperpage}{73}
+\indexentry{inter\discretionary {-}{}{}Rate2@{inter\discretionary {-}{}{}Rate2}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{73}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!intra\discretionary {-}{}{}Rate1@{intra\discretionary {-}{}{}Rate1}|hyperpage}{74}
+\indexentry{intra\discretionary {-}{}{}Rate1@{intra\discretionary {-}{}{}Rate1}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{74}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!intra\discretionary {-}{}{}Rate2@{intra\discretionary {-}{}{}Rate2}|hyperpage}{74}
+\indexentry{intra\discretionary {-}{}{}Rate2@{intra\discretionary {-}{}{}Rate2}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{74}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!size1@{size1}|hyperpage}{74}
+\indexentry{size1@{size1}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{74}
+\indexentry{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}!size2@{size2}|hyperpage}{74}
+\indexentry{size2@{size2}!TwoCommunitiesVoterGraph@{Two\discretionary {-}{}{}Communities\discretionary {-}{}{}Voter\discretionary {-}{}{}Graph}|hyperpage}{74}
+\indexentry{Uni\discretionary {-}{}{}Set@{Uni\discretionary {-}{}{}Set}|hyperpage}{74}
+\indexentry{Uni\discretionary {-}{}{}Set@{Uni\discretionary {-}{}{}Set}!Uni\discretionary {-}{}{}Set@{Uni\discretionary {-}{}{}Set}|hyperpage}{75}
+\indexentry{Uni\discretionary {-}{}{}Set@{Uni\discretionary {-}{}{}Set}!UniSet@{Uni\discretionary {-}{}{}Set}|hyperpage}{75}
+\indexentry{Uni\discretionary {-}{}{}Set@{Uni\discretionary {-}{}{}Set}!init\discretionary {-}{}{}Reached@{init\discretionary {-}{}{}Reached}|hyperpage}{75}
+\indexentry{init\discretionary {-}{}{}Reached@{init\discretionary {-}{}{}Reached}!UniSet@{Uni\discretionary {-}{}{}Set}|hyperpage}{75}
+\indexentry{Uni\discretionary {-}{}{}Subset@{Uni\discretionary {-}{}{}Subset}|hyperpage}{75}
+\indexentry{Uni\discretionary {-}{}{}Subset@{Uni\discretionary {-}{}{}Subset}!Uni\discretionary {-}{}{}Subset@{Uni\discretionary {-}{}{}Subset}|hyperpage}{76}
+\indexentry{Uni\discretionary {-}{}{}Subset@{Uni\discretionary {-}{}{}Subset}!UniSubset@{Uni\discretionary {-}{}{}Subset}|hyperpage}{76}
+\indexentry{Voter\discretionary {-}{}{}Binning@{Voter\discretionary {-}{}{}Binning}|hyperpage}{77}
+\indexentry{Voter\discretionary {-}{}{}Data\discretionary {-}{}{}Set@{Voter\discretionary {-}{}{}Data\discretionary {-}{}{}Set}|hyperpage}{77}
+\indexentry{Voter\discretionary {-}{}{}Edge@{Voter\discretionary {-}{}{}Edge}|hyperpage}{78}
+\indexentry{Voter\discretionary {-}{}{}Edge@{Voter\discretionary {-}{}{}Edge}!Voter\discretionary {-}{}{}Edge@{Voter\discretionary {-}{}{}Edge}|hyperpage}{78}
+\indexentry{Voter\discretionary {-}{}{}Edge@{Voter\discretionary {-}{}{}Edge}!VoterEdge@{Voter\discretionary {-}{}{}Edge}|hyperpage}{78}
+\indexentry{Voter\discretionary {-}{}{}Edge@{Voter\discretionary {-}{}{}Edge}!node1@{node1}|hyperpage}{78}
+\indexentry{node1@{node1}!VoterEdge@{Voter\discretionary {-}{}{}Edge}|hyperpage}{78}
+\indexentry{Voter\discretionary {-}{}{}Edge@{Voter\discretionary {-}{}{}Edge}!node2@{node2}|hyperpage}{78}
+\indexentry{node2@{node2}!VoterEdge@{Voter\discretionary {-}{}{}Edge}|hyperpage}{78}
+\indexentry{Voter\discretionary {-}{}{}Edge@{Voter\discretionary {-}{}{}Edge}!weight@{weight}|hyperpage}{78}
+\indexentry{weight@{weight}!VoterEdge@{Voter\discretionary {-}{}{}Edge}|hyperpage}{78}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{79}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{80}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{80}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!add\discretionary {-}{}{}Edge@{add\discretionary {-}{}{}Edge}|hyperpage}{80}
+\indexentry{add\discretionary {-}{}{}Edge@{add\discretionary {-}{}{}Edge}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{80}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!add\discretionary {-}{}{}Node@{add\discretionary {-}{}{}Node}|hyperpage}{80}
+\indexentry{add\discretionary {-}{}{}Node@{add\discretionary {-}{}{}Node}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{80}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!get\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}|hyperpage}{80}
+\indexentry{get\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{80}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!get\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}|hyperpage}{81}
+\indexentry{get\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition@{get\discretionary {-}{}{}Markov\discretionary {-}{}{}Partition}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{81}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!get\discretionary {-}{}{}Markov\discretionary {-}{}{}Process@{get\discretionary {-}{}{}Markov\discretionary {-}{}{}Process}|hyperpage}{81}
+\indexentry{get\discretionary {-}{}{}Markov\discretionary {-}{}{}Process@{get\discretionary {-}{}{}Markov\discretionary {-}{}{}Process}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{81}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!edge\discretionary {-}{}{}Number@{edge\discretionary {-}{}{}Number}|hyperpage}{81}
+\indexentry{edge\discretionary {-}{}{}Number@{edge\discretionary {-}{}{}Number}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{81}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!edge\discretionary {-}{}{}Set@{edge\discretionary {-}{}{}Set}|hyperpage}{81}
+\indexentry{edge\discretionary {-}{}{}Set@{edge\discretionary {-}{}{}Set}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{81}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!edge\discretionary {-}{}{}Weight@{edge\discretionary {-}{}{}Weight}|hyperpage}{81}
+\indexentry{edge\discretionary {-}{}{}Weight@{edge\discretionary {-}{}{}Weight}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{81}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!node\discretionary {-}{}{}Map@{node\discretionary {-}{}{}Map}|hyperpage}{81}
+\indexentry{node\discretionary {-}{}{}Map@{node\discretionary {-}{}{}Map}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{81}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!node\discretionary {-}{}{}Number@{node\discretionary {-}{}{}Number}|hyperpage}{81}
+\indexentry{node\discretionary {-}{}{}Number@{node\discretionary {-}{}{}Number}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{81}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!node\discretionary {-}{}{}Set@{node\discretionary {-}{}{}Set}|hyperpage}{81}
+\indexentry{node\discretionary {-}{}{}Set@{node\discretionary {-}{}{}Set}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{81}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!node\discretionary {-}{}{}Weight@{node\discretionary {-}{}{}Weight}|hyperpage}{81}
+\indexentry{node\discretionary {-}{}{}Weight@{node\discretionary {-}{}{}Weight}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{81}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!process@{process}|hyperpage}{82}
+\indexentry{process@{process}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{82}
+\indexentry{Voter\discretionary {-}{}{}Graph@{Voter\discretionary {-}{}{}Graph}!update\discretionary {-}{}{}Process@{update\discretionary {-}{}{}Process}|hyperpage}{82}
+\indexentry{update\discretionary {-}{}{}Process@{update\discretionary {-}{}{}Process}!VoterGraph@{Voter\discretionary {-}{}{}Graph}|hyperpage}{82}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{82}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}!Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{83}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}!VoterMeasurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{83}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}!add\discretionary {-}{}{}Probe@{add\discretionary {-}{}{}Probe}|hyperpage}{83}
+\indexentry{add\discretionary {-}{}{}Probe@{add\discretionary {-}{}{}Probe}!VoterMeasurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{83}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}!print@{print}|hyperpage}{83}
+\indexentry{print@{print}!VoterMeasurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{83}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}!graph@{graph}|hyperpage}{83}
+\indexentry{graph@{graph}!VoterMeasurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{83}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}!metric\discretionary {-}{}{}Map@{metric\discretionary {-}{}{}Map}|hyperpage}{83}
+\indexentry{metric\discretionary {-}{}{}Map@{metric\discretionary {-}{}{}Map}!VoterMeasurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{83}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}!partition@{partition}|hyperpage}{83}
+\indexentry{partition@{partition}!VoterMeasurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{83}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}!probe\discretionary {-}{}{}Map@{probe\discretionary {-}{}{}Map}|hyperpage}{83}
+\indexentry{probe\discretionary {-}{}{}Map@{probe\discretionary {-}{}{}Map}!VoterMeasurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{83}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}!probe\discretionary {-}{}{}Number@{probe\discretionary {-}{}{}Number}|hyperpage}{84}
+\indexentry{probe\discretionary {-}{}{}Number@{probe\discretionary {-}{}{}Number}!VoterMeasurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{84}
+\indexentry{Voter\discretionary {-}{}{}Measurement@{Voter\discretionary {-}{}{}Measurement}!type@{type}|hyperpage}{84}
+\indexentry{type@{type}!VoterMeasurement@{Voter\discretionary {-}{}{}Measurement}|hyperpage}{84}
+\indexentry{Voter\discretionary {-}{}{}Measurement\discretionary {-}{}{}State@{Voter\discretionary {-}{}{}Measurement\discretionary {-}{}{}State}|hyperpage}{84}
+\indexentry{Voter\discretionary {-}{}{}Measurement\discretionary {-}{}{}Trajectory@{Voter\discretionary {-}{}{}Measurement\discretionary {-}{}{}Trajectory}|hyperpage}{84}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}|hyperpage}{85}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}|hyperpage}{85}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!VoterNode@{Voter\discretionary {-}{}{}Node}|hyperpage}{85}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!contrarian@{contrarian}|hyperpage}{86}
+\indexentry{contrarian@{contrarian}!VoterNode@{Voter\discretionary {-}{}{}Node}|hyperpage}{86}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!id@{id}|hyperpage}{86}
+\indexentry{id@{id}!VoterNode@{Voter\discretionary {-}{}{}Node}|hyperpage}{86}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!in\discretionary {-}{}{}Edge\discretionary {-}{}{}Number@{in\discretionary {-}{}{}Edge\discretionary {-}{}{}Number}|hyperpage}{86}
+\indexentry{in\discretionary {-}{}{}Edge\discretionary {-}{}{}Number@{in\discretionary {-}{}{}Edge\discretionary {-}{}{}Number}!VoterNode@{Voter\discretionary {-}{}{}Node}|hyperpage}{86}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!in\discretionary {-}{}{}Edge\discretionary {-}{}{}Set@{in\discretionary {-}{}{}Edge\discretionary {-}{}{}Set}|hyperpage}{86}
+\indexentry{in\discretionary {-}{}{}Edge\discretionary {-}{}{}Set@{in\discretionary {-}{}{}Edge\discretionary {-}{}{}Set}!VoterNode@{Voter\discretionary {-}{}{}Node}|hyperpage}{86}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!in\discretionary {-}{}{}Edge\discretionary {-}{}{}Weight@{in\discretionary {-}{}{}Edge\discretionary {-}{}{}Weight}|hyperpage}{86}
+\indexentry{in\discretionary {-}{}{}Edge\discretionary {-}{}{}Weight@{in\discretionary {-}{}{}Edge\discretionary {-}{}{}Weight}!VoterNode@{Voter\discretionary {-}{}{}Node}|hyperpage}{86}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!out\discretionary {-}{}{}Edge\discretionary {-}{}{}Number@{out\discretionary {-}{}{}Edge\discretionary {-}{}{}Number}|hyperpage}{86}
+\indexentry{out\discretionary {-}{}{}Edge\discretionary {-}{}{}Number@{out\discretionary {-}{}{}Edge\discretionary {-}{}{}Number}!VoterNode@{Voter\discretionary {-}{}{}Node}|hyperpage}{86}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!out\discretionary {-}{}{}Edge\discretionary {-}{}{}Set@{out\discretionary {-}{}{}Edge\discretionary {-}{}{}Set}|hyperpage}{86}
+\indexentry{out\discretionary {-}{}{}Edge\discretionary {-}{}{}Set@{out\discretionary {-}{}{}Edge\discretionary {-}{}{}Set}!VoterNode@{Voter\discretionary {-}{}{}Node}|hyperpage}{86}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!out\discretionary {-}{}{}Edge\discretionary {-}{}{}Weight@{out\discretionary {-}{}{}Edge\discretionary {-}{}{}Weight}|hyperpage}{86}
+\indexentry{out\discretionary {-}{}{}Edge\discretionary {-}{}{}Weight@{out\discretionary {-}{}{}Edge\discretionary {-}{}{}Weight}!VoterNode@{Voter\discretionary {-}{}{}Node}|hyperpage}{86}
+\indexentry{Voter\discretionary {-}{}{}Node@{Voter\discretionary {-}{}{}Node}!weight@{weight}|hyperpage}{86}
+\indexentry{weight@{weight}!VoterNode@{Voter\discretionary {-}{}{}Node}|hyperpage}{86}
+\indexentry{Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}|hyperpage}{86}
+\indexentry{Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}!Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}|hyperpage}{87}
+\indexentry{Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}!VoterProbe@{Voter\discretionary {-}{}{}Probe}|hyperpage}{87}
+\indexentry{Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}!add\discretionary {-}{}{}Node@{add\discretionary {-}{}{}Node}|hyperpage}{87}
+\indexentry{add\discretionary {-}{}{}Node@{add\discretionary {-}{}{}Node}!VoterProbe@{Voter\discretionary {-}{}{}Probe}|hyperpage}{87}
+\indexentry{Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}!add\discretionary {-}{}{}Nodes@{add\discretionary {-}{}{}Nodes}|hyperpage}{87}
+\indexentry{add\discretionary {-}{}{}Nodes@{add\discretionary {-}{}{}Nodes}!VoterProbe@{Voter\discretionary {-}{}{}Probe}|hyperpage}{87}
+\indexentry{Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}!print@{print}|hyperpage}{88}
+\indexentry{print@{print}!VoterProbe@{Voter\discretionary {-}{}{}Probe}|hyperpage}{88}
+\indexentry{Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}!set\discretionary {-}{}{}Node\discretionary {-}{}{}Set@{set\discretionary {-}{}{}Node\discretionary {-}{}{}Set}|hyperpage}{88}
+\indexentry{set\discretionary {-}{}{}Node\discretionary {-}{}{}Set@{set\discretionary {-}{}{}Node\discretionary {-}{}{}Set}!VoterProbe@{Voter\discretionary {-}{}{}Probe}|hyperpage}{88}
+\indexentry{Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}!graph@{graph}|hyperpage}{88}
+\indexentry{graph@{graph}!VoterProbe@{Voter\discretionary {-}{}{}Probe}|hyperpage}{88}
+\indexentry{Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}!node\discretionary {-}{}{}Number@{node\discretionary {-}{}{}Number}|hyperpage}{88}
+\indexentry{node\discretionary {-}{}{}Number@{node\discretionary {-}{}{}Number}!VoterProbe@{Voter\discretionary {-}{}{}Probe}|hyperpage}{88}
+\indexentry{Voter\discretionary {-}{}{}Probe@{Voter\discretionary {-}{}{}Probe}!node\discretionary {-}{}{}Set@{node\discretionary {-}{}{}Set}|hyperpage}{88}
+\indexentry{node\discretionary {-}{}{}Set@{node\discretionary {-}{}{}Set}!VoterProbe@{Voter\discretionary {-}{}{}Probe}|hyperpage}{88}
+\indexentry{Voter\discretionary {-}{}{}State@{Voter\discretionary {-}{}{}State}|hyperpage}{88}
+\indexentry{Voter\discretionary {-}{}{}Trajectory@{Voter\discretionary {-}{}{}Trajectory}|hyperpage}{89}
+\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/abstract\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/abstract\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp}|hyperpage}{91}
+\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/logarithmic\discretionary {-}{}{}\_\discretionary {-}{}{}score.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/logarithmic\discretionary {-}{}{}\_\discretionary {-}{}{}score.\discretionary {-}{}{}hpp}|hyperpage}{91}
+\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/markov\discretionary {-}{}{}\_\discretionary {-}{}{}process.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/markov\discretionary {-}{}{}\_\discretionary {-}{}{}process.\discretionary {-}{}{}hpp}|hyperpage}{92}
+\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/multi\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/multi\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp}|hyperpage}{93}
+\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/objective\discretionary {-}{}{}\_\discretionary {-}{}{}function.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/objective\discretionary {-}{}{}\_\discretionary {-}{}{}function.\discretionary {-}{}{}hpp}|hyperpage}{93}
+\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/prediction\discretionary {-}{}{}\_\discretionary {-}{}{}dataset.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/prediction\discretionary {-}{}{}\_\discretionary {-}{}{}dataset.\discretionary {-}{}{}hpp}|hyperpage}{94}
+\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/uni\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/uni\discretionary {-}{}{}\_\discretionary {-}{}{}set.\discretionary {-}{}{}hpp}|hyperpage}{94}
+\indexentry{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp@{/home/lamarche/programming/optimal\discretionary {-}{}{}\_\discretionary {-}{}{}partition/src/voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp}|hyperpage}{95}
+\indexentry{voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp@{voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp}!Measurement\discretionary {-}{}{}Type@{Measurement\discretionary {-}{}{}Type}|hyperpage}{97}
+\indexentry{Measurement\discretionary {-}{}{}Type@{Measurement\discretionary {-}{}{}Type}!voter_graph.hpp@{voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp}|hyperpage}{97}
+\indexentry{M\-\_\-\-M\-I\-C\-R\-O@{M\-\_\-\-M\-I\-C\-R\-O}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{97}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-M\-I\-C\-R\-O@{M\-\_\-\-M\-I\-C\-R\-O}|hyperpage}{97}
+\indexentry{M\-\_\-\-A\-G\-E\-N\-T1@{M\-\_\-\-A\-G\-E\-N\-T1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{97}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1@{M\-\_\-\-A\-G\-E\-N\-T1}|hyperpage}{97}
+\indexentry{M\-\_\-\-M\-E\-S\-O1@{M\-\_\-\-M\-E\-S\-O1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{97}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-M\-E\-S\-O1@{M\-\_\-\-M\-E\-S\-O1}|hyperpage}{97}
+\indexentry{M\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-M\-E\-S\-O2}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{97}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-M\-E\-S\-O2}|hyperpage}{97}
+\indexentry{M\-\_\-\-M\-A\-C\-R\-O@{M\-\_\-\-M\-A\-C\-R\-O}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-M\-A\-C\-R\-O@{M\-\_\-\-M\-A\-C\-R\-O}|hyperpage}{98}
+\indexentry{M\-\_\-\-E\-M\-P\-T\-Y@{M\-\_\-\-E\-M\-P\-T\-Y}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-E\-M\-P\-T\-Y@{M\-\_\-\-E\-M\-P\-T\-Y}|hyperpage}{98}
+\indexentry{M\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}|hyperpage}{98}
+\indexentry{M\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1@{M\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1@{M\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}|hyperpage}{98}
+\indexentry{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-A\-L\-L\-S\-I\-Z\-E\-S1}|hyperpage}{98}
+\indexentry{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-S\-O\-M\-E\-S\-I\-Z\-E\-S1}|hyperpage}{98}
+\indexentry{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1}|hyperpage}{98}
+\indexentry{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O2}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O2}|hyperpage}{98}
+\indexentry{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-A\-C\-R\-O@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-A\-C\-R\-O}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-A\-C\-R\-O@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-A\-C\-R\-O}|hyperpage}{98}
+\indexentry{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-A\-G\-E\-N\-T1\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}|hyperpage}{98}
+\indexentry{M\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2@{M\-\_\-\-M\-E\-S\-O1\-\_\-\-M\-E\-S\-O2}|hyperpage}{98}
+\indexentry{voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp@{voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp}!Update\discretionary {-}{}{}Process@{Update\discretionary {-}{}{}Process}|hyperpage}{98}
+\indexentry{Update\discretionary {-}{}{}Process@{Update\discretionary {-}{}{}Process}!voter_graph.hpp@{voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp}|hyperpage}{98}
+\indexentry{U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S@{U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S@{U\-P\-D\-A\-T\-E\-\_\-\-N\-O\-D\-E\-S}|hyperpage}{98}
+\indexentry{U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S@{U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S@{U\-P\-D\-A\-T\-E\-\_\-\-E\-D\-G\-E\-S}|hyperpage}{98}
+\indexentry{voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp@{voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp}!Voter\discretionary {-}{}{}Metric@{Voter\discretionary {-}{}{}Metric}|hyperpage}{98}
+\indexentry{Voter\discretionary {-}{}{}Metric@{Voter\discretionary {-}{}{}Metric}!voter_graph.hpp@{voter\discretionary {-}{}{}\_\discretionary {-}{}{}graph.\discretionary {-}{}{}hpp}|hyperpage}{98}
+\indexentry{M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E@{M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E@{M\-A\-C\-R\-O\-\_\-\-S\-T\-A\-T\-E}|hyperpage}{98}
+\indexentry{M\-A\-J\-O\-R\-I\-T\-Y@{M\-A\-J\-O\-R\-I\-T\-Y}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!M\-A\-J\-O\-R\-I\-T\-Y@{M\-A\-J\-O\-R\-I\-T\-Y}|hyperpage}{98}
+\indexentry{A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S@{A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S}!voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}|hyperpage}{98}
+\indexentry{voter\-\_\-graph.\-hpp@{voter\-\_\-graph.\-hpp}!A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S@{A\-C\-T\-I\-V\-E\-\_\-\-E\-D\-G\-E\-S}|hyperpage}{98}
