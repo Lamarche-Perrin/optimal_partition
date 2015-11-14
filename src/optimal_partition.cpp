@@ -35,75 +35,31 @@
  */
 
 
-#ifndef INCLUDE_NHO_SET
-#define INCLUDE_NHO_SET
+#include <cstdlib>
+#include <iostream>
 
-#include "abstract_set.hpp"
+#include "optimal_partition.hpp"
 
-class NHONode;
-typedef std::set<NHONode*> NHONodeSet;
-
-class NHOSet: public AbstractSet
-{
-public:
-	int NSize;
-	HNode *HHierarchy;
-	int OSize;
-
-	NHODatatree *NHODatatree;
-		
-	NHOSet (int NSize, HNode *HHierarchy, int OSize);
-	virtual ~NHOSet ();
-		
-	void setRandom ();
-	void setObjectiveFunction (ObjectiveFunction *m);
-	void print ();
-
-	void buildDataStructure ();
-	void computeObjectiveValues ();
-	void normalizeObjectiveValues ();
-	void printObjectiveValues ();
-
-	void computeOptimalPartition (double parameter);
-	void printOptimalPartition (double parameter);
-	Partition *getOptimalPartition (double parameter);
-};
+#include "programs.hpp"
+#include "prediction_programs.hpp"
 
 
-class NHONode
-{
-public:
-	int index;
-	int level;
-	std::set<int> *indices;
+#include "uni_set.hpp"
 
-	HONodeSet *children;
-	ObjectiveFunction *objective;
 
-	int size;
-	ObjectiveValue **qualities;
-	double *optimalValues;
-	int *optimalCuts;
-	
-	HONode (int size, int index = -1);
-	virtual ~HONode ();
+bool VERBOSE = false;
+int VERBOSE_TAB = 0;
 
-	int getIndex (int i, int j);
+bool NORMALIZED_OBJECTIVE = true;
 
-	void addChild (HONode *node);
-	void setObjectiveFunction (ObjectiveFunction *m);
-	void print ();
-		
-	void buildDataStructure (int level = 0);
-	void computeObjectiveValues ();
-	void normalizeObjectiveValues (ObjectiveValue *maxQual = 0);
-	void printObjectiveValues ();
 
-	void computeOptimalPartition (double parameter);
-	void printOptimalPartition (double parameter);
-	Partition *getOptimalPartition (double parameter);
-		
-	void buildOptimalPartition (Partition *partition, int pi = 0, int pj = -1);
-};
+int main (int argc, char *argv[]) {
+    srand(time(NULL));
 
-#endif
+	//testLogarithmicScore ();
+	//getBinningComputationTime ();
+	optimalBinningOfVoterModel ();
+
+	return EXIT_SUCCESS;
+}
+

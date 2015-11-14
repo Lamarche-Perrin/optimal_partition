@@ -164,6 +164,49 @@ void MultiSet::initReached()
 }
 
 
+MultiSubset **MultiSet::getOptimalMultiSubset (double parameter, int number)
+{
+	// TODO: THIS METHOD CAN BE OPTIMISED!
+	MultiSubset **subsetArray = new MultiSubset* [number];
+
+	double optimalValue = multiSubsetArray[0]->value->getValue(parameter);
+	subsetArray[0] = multiSubsetArray[0];
+
+	for (int num = 1; num < number; num++)
+	{
+		subsetArray[num] = multiSubsetArray[num];
+
+		double value = multiSubsetArray[num]->value->getValue(parameter);
+		if ((objective->maximize && value < optimalValue) || (!objective->maximize && value > optimalValue)) { optimalValue = value; }
+	}
+	
+	for (int num = number; num < multiSubsetNumber; num++)
+	{
+		double value = multiSubsetArray[num]->value->getValue(parameter);
+		if ((objective->maximize && value > optimalValue) || (!objective->maximize && value < optimalValue))
+		{
+			int nWorst = 0;
+			double worst = subsetArray[nWorst]->value->getValue(parameter);
+			for (int n = 1; n < number; n++)
+			{
+				double v = subsetArray[n]->value->getValue(parameter);
+				if ((objective->maximize && v < worst) || (!objective->maximize && v > worst)) { nWorst = n; worst = v; }				
+			}
+			subsetArray[nWorst] = multiSubsetArray[num];
+
+			optimalValue = subsetArray[0]->value->getValue(parameter);
+			for (int num = 1; num < number; num++)
+			{
+				double v = subsetArray[num]->value->getValue(parameter);
+				if ((objective->maximize && v < optimalValue) || (!objective->maximize && v > optimalValue)) { optimalValue = v; }
+			}
+		}
+	}
+
+	return subsetArray;
+}
+
+
 void MultiSet::setRandom () {}
 
 
@@ -336,32 +379,54 @@ void MultiSubset::setObjectiveFunction (ObjectiveFunction *m)
 		for (int d = 0; d < dimension; d++)
 		{
 			index += *uniSubsetArray[d]->indexSet->begin();
-			if (d+1 < dimension) { index *= uniSubsetArray[d]->uniSet->atomicUniSubsetNumber; }
+			if (d+1 < dimension) { index *= uniSubsetArray[d+1]->uniSet->atomicUniSubsetNumber; }
 		}
 		value = m->newObjectiveValue(index);
 	}
 	else { value = m->newObjectiveValue(); }
 }
 
+/*
+std::string MultiSubset::getName ()
+{
+	bool hasName = true;
+	std::string name = "";
+	for (int d = 0; d < dimension && hasName; d++)
+	{
+		hasName = (uniSubsetArray[d]->name != "");
+		if (d > 0) { name += " x "; }
+		name += uniSubsetArray[d]->name;
+	}
+
+	if (hasName) { return name; } else { return ""; }
+}
+*/
 
 void MultiSubset::print ()
 {
-	std::cout << "[" << num << "] ";
-	printIndexSet(true);
-	for (MultiSubsetSetSet::iterator it1 = multiSubsetSetSet->begin(); it1 != multiSubsetSetSet->end(); ++it1)
-	{
-		MultiSubsetSet *multiSubsetSet = *it1;
+	//std::cout << "[" << num << "] ";
+	printIndexSet();
+	if (isAtomic) { std::cout << " atomic"; }
+	if (value != 0) { std::cout << "   ->   "; value->print(true); }
+	else { std::cout << std::endl; }
 
-		bool first = true;
-		std::cout << " -> ";
-		
-		for (MultiSubsetSet::iterator it2 = multiSubsetSet->begin(); it2 != multiSubsetSet->end(); ++it2)
+	if (value == 0)
+	{
+		for (MultiSubsetSetSet::iterator it1 = multiSubsetSetSet->begin(); it1 != multiSubsetSetSet->end(); ++it1)
 		{
-			MultiSubset *multiSubset = *it2;
-			if (!first) { std::cout << " "; } else { first = false; }
-			multiSubset->printIndexSet();
+			MultiSubsetSet *multiSubsetSet = *it1;
+
+			bool first = true;
+			std::cout << " -> ";
+		
+			for (MultiSubsetSet::iterator it2 = multiSubsetSet->begin(); it2 != multiSubsetSet->end(); ++it2)
+			{
+				MultiSubset *multiSubset = *it2;
+				if (!first) { std::cout << " "; } else { first = false; }
+				multiSubset->printIndexSet();
+			}
+			std::cout << std::endl;
 		}
-		std::cout << std::endl;
 	}
 
 	for (MultiSubsetSetSet::iterator it1 = multiSubsetSetSet->begin(); it1 != multiSubsetSetSet->end(); ++it1)
@@ -385,7 +450,7 @@ void MultiSubset::printIndexSet (bool endl)
 	std::cout << "(";
 	for (int d = 0; d < dimension; d++)
 	{
-		uniSubsetArray[d]->printIndexSet();
+		if (uniSubsetArray[d]->name != "") { std::cout << uniSubsetArray[d]->name; } else { uniSubsetArray[d]->printIndexSet(); }
 		if (d+1 < dimension) { std::cout << ","; }
 	}
 	std::cout << ")";
@@ -553,6 +618,7 @@ void MultiSubset::buildOptimalPartition (Partition *partition)
 			Part *p = new Part();
 			for (IndexSet::iterator it = uniSubsetArray[d]->indexSet->begin(); it != uniSubsetArray[d]->indexSet->end(); ++it) { p->addIndividual(*it); }
 			partArray[d] = p;
+			p->name = uniSubsetArray[d]->name;
 		}
 
 		MultiPart *part = new MultiPart (partArray,dimension,value);

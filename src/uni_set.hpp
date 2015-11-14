@@ -39,6 +39,7 @@
 #define INCLUDE_UNI_SET
 
 #include <list>
+#include <fstream>
 
 #include "bi_set.hpp"
 #include "multi_set.hpp"
@@ -77,6 +78,8 @@ class UniSet
 	friend VoterDataSet;
 
 public:
+	int atomicUniSubsetNumber; /** \brief Number of elements (i.e., atomic feasible subsets)*/
+	int uniSubsetNumber; /** \brief Number of feasible subsets */
 	
 	/*!
      * \brief Constructor
@@ -100,9 +103,6 @@ public:
 	void print ();
 
 protected:
-	int atomicUniSubsetNumber; /** \brief Number of elements (i.e., atomic feasible subsets)*/
-	int uniSubsetNumber; /** \brief Number of feasible subsets */
-
 	UniSubset **atomicUniSubsetArray; /** \brief Array of pointers to all elements (i.e., atomic feasible subsets) */
 	UniSubset **uniSubsetArray; /** \brief Array of pointers to all feasible subsets */
 	UniSubset *firstUniSubset; /** \brief Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) */
@@ -114,6 +114,23 @@ protected:
 	 * \brief Initialise the `reached` field of all feasible subsets to `false` (used by other methods to run through the algebraic structure in a recursive fashion without considering twice the same subset) 
      */
 	void initReached ();
+};
+
+
+/*!
+ * \class UnconstrainedUniSet
+ * \brief A uni-dimensional set of elements with no particular structure, such that all subsets are feasible
+ */
+class UnconstrainedUniSet: public UniSet
+{
+public:
+	int size; /** \brief Number of elements */
+
+	/*!
+	 * \brief Constructor
+	 * \param size : Number of elements
+	 */
+	UnconstrainedUniSet (int size);
 };
 
 
@@ -133,27 +150,42 @@ public:
 	OrderedUniSet (int size);
 
 private:
-	int getIndex (int i, int j);
+	int getCell (int i, int j);
 };
 
 
 /*!
  * \class HierarchicalUniSet
- * \brief A uni-dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy
+ * \brief A uni-dimensional set of elements structured according to a hierarchy (tree), and such that the feasible subsets are all the nodes of the hierarchy (tree)
  */
 class HierarchicalUniSet: public UniSet
 {
 public:
-	int depth; /** \brief Depth of the complete binary hierarchy */
+	/*!
+	 * \brief Constructor
+	 * \param fileName : The location of the CSV file from which the hierarchy should be build: first column should indicate nodes labels, and third column should indicate the corresponding parent (or NULL if top element)
+	 */
+	HierarchicalUniSet (std::string fileName);
+};
+
+
+/*!
+ * \class BinaryTreeUniSet
+ * \brief A uni-dimensional set of elements structured according to a complete binary tree, and such that the feasible subsets are all the nodes of the tree
+ */
+class BinaryTreeUniSet: public UniSet
+{
+public:
+	int depth; /** \brief Depth of the complete binary tree */
 
 	/*!
 	 * \brief Constructor
-	 * \param size : Depth of the complete binary hierarchy
+	 * \param size : Depth of the complete binary tree
 	 */
-	HierarchicalUniSet (int depth);
+	BinaryTreeUniSet (int depth);
 
 private:
-	int buildHierarchy (UniSubset *uniSubset, int depth, int index);
+	int buildTree (UniSubset *uniSubset, int depth, int index);
 };
 
 
@@ -178,6 +210,7 @@ public:
 	int atomicNum; /** \brief If this subset is an element (i.e., an atomic feasible subset), identifier of this subset among all the elements of the associated set; if not, always equal to `-1` */
 	int num; /** \brief Identifier of this subset among all the feasible subsets of the associated set */
 
+	std::string name; /** \brief Name of this subset */
 	IndexSet *indexSet; /** \brief Indexes of all the elements in this subset (only one index / one element in the case of an atomic subset) */
 	UniSubsetSetSet *uniSubsetSetSet; /** \brief Set of the refinements of this subset, that is the set of all partitions of this subset that are made of other feasible subsets; this hence properly defines the algebraic structure */
 

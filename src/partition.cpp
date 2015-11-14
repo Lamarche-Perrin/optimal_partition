@@ -50,6 +50,7 @@ Part::Part (ObjectiveValue *q)
     num = -2;
 	individuals = new std::list<int>();
 	value = q;
+	name = "";
 }
 
 
@@ -62,12 +63,14 @@ Part::Part (Datatree *node, ObjectiveValue *q)
 		node = node->parent;
 	}
 	value = q;
+	name = "";
 }
 
 
 Part::Part (Part *p)
 {
 	value = p->value;
+	name = p->name;
 
 	individuals = new std::list<int>();
 	for (std::list<int>::iterator it = p->individuals->begin(); it != p->individuals->end(); ++it)
@@ -137,14 +140,19 @@ bool Part::equal (Part *p)
 
 void Part::print (bool endl)
 {
-	std::cout << "{";
-	bool first = true;
-	for (std::list<int>::iterator it = individuals->begin(); it != individuals->end(); ++it)
-	{
-		if (first) { first = false; } else { std::cout << ","; }
-		std::cout << (*it);
+	if (name != "") { std::cout << name; }
+
+	else {
+		std::cout << "{";
+		bool first = true;
+		for (std::list<int>::iterator it = individuals->begin(); it != individuals->end(); ++it)
+		{
+			if (first) { first = false; } else { std::cout << ","; }
+			std::cout << (*it);
+		}
+		std::cout << "}";
 	}
-	std::cout << "}";
+	
 	if (endl) { std::cout << std::endl; }
 }
 
@@ -228,11 +236,14 @@ bool MultiPart::equal (Part *p)
 
 void MultiPart::print (bool endl)
 {
+	std::cout << "{";
 	for (int d = 0; d < dimension; d++)
 	{
 		partArray[d]->print();
-		if (d+1 < dimension) { std::cout << "x"; }
+		if (d+1 < dimension) { std::cout << " x "; }
 	}
+	
+	std::cout << "}";
 	if (endl) { std::cout << std::endl; }
 }
 

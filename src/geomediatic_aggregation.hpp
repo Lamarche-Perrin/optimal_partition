@@ -35,30 +35,8 @@
  */
 
 
-#include <cstdlib>
-#include <iostream>
-
-#include "main.hpp"
-
-#include "programs.hpp"
-#include "prediction_programs.hpp"
+#ifndef INCLUDE_GEOMEDIATIC_AGGREGATION
+#define INCLUDE_GEOMEDIATIC_AGGREGATION
 
 
-bool VERBOSE = false;
-int VERBOSE_TAB = 0;
-
-bool NORMALIZED_OBJECTIVE = true;
-
-
-int main (int argc, char *argv[]) {
-    srand(time(NULL));
-
-	//testLogarithmicScore ();
-	//getBinningComputationTime ();
-	optimalBinningOfVoterModel ();
-	
-	//testGraph();
-	
-	return EXIT_SUCCESS;
-}
-
+#endif

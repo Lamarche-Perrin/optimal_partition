@@ -38,8 +38,10 @@
 
 #include <iostream>
 #include <list>
+#include <cmath>
 
 #include "uni_set.hpp"
+#include "csv_tools.hpp"
 
 
 UniSet::UniSet (UniSubset *firstSubset)
@@ -126,18 +128,87 @@ void UniSet::print ()
 }
 
 
+UnconstrainedUniSet::UnconstrainedUniSet (int s) : UniSet (0)
+{
+	size = s;
+	long unsigned int subsetNb = std::pow(2,size);
+	UniSubset **subsetArray = new UniSubset* [subsetNb];
+
+	int index = 0;
+	for (long unsigned int i = 0; i < subsetNb; i++)
+	{
+		int elementNb = 0;
+		bool boolArray [size];
+
+		long unsigned int j = i;
+		for (int s = 0; s < size; s++)
+		{
+			boolArray[s] = (j % 2 == 1);
+			if (boolArray[s]) { elementNb++; }
+			j = j >> 1;
+		}
+
+		if (elementNb == 1) { subsetArray[i] = new UniSubset (index++); }
+		else { subsetArray[i] = new UniSubset (); }
+	}
+
+	for (long unsigned int i = 1; i < subsetNb; i++)
+	{
+		long unsigned int elementNb = 0;
+		std::vector<int> elementPos;
+
+		long unsigned int j = i;
+		for (int s = 0; s < size; s++)
+		{
+			if (j % 2 == 1) { elementPos.push_back(s); elementNb++; }
+			j = j >> 1;
+		}
+
+		//std::cout << "subset " << i << " (" << elementNb << ")";
+		//if (subsetArray[i]->isAtomic) { std::cout << " atomic"; }
+		//std::cout << std::endl;
+
+		for (long unsigned int k = 1; k < pow(2,elementNb-1); k++)
+		{
+			long unsigned int k1 = 1 << elementPos[elementNb-1];
+			long unsigned int k2 = 0;
+
+			long unsigned int l = k;
+			for (unsigned long int s = 0; s < elementNb-1; s++)
+			{
+				if (l % 2 == 0) { k1 += 1 << elementPos[s]; } else { k2 += 1 << elementPos[s]; }
+				l = l >> 1;
+			}
+
+			UniSubsetSet *subsetSet = new UniSubsetSet ();
+			subsetSet->push_back(subsetArray[k1]);
+			subsetSet->push_back(subsetArray[k2]);
+			subsetArray[i]->addUniSubsetSet(subsetSet);			
+			//std::cout << "-> " << k1 << " " << k2 << std::endl;
+		}
+	}
+
+	firstUniSubset = subsetArray[subsetNb-1];
+	//std::cout << "first subset " << (subsetNb-1) << std::endl;
+	delete [] subsetArray;
+}
+
+
 OrderedUniSet::OrderedUniSet (int s) : UniSet (0)
 {
 	size = s;
-	
 	int size2 = size*(size+1)/2;
+
 	UniSubset **subsetArray = new UniSubset* [size2];
 	for (int j = 0; j < size; j++)
 		for (int i = 0; i < size-j; i++)
 		{
 			int index = -1;
 			if (j == 0) { index = i; }
-			subsetArray[getIndex(i,j)] = new UniSubset (index);
+			subsetArray[getCell(i,j)] = new UniSubset (index);
+
+			if (j == 0) { subsetArray[getCell(i,j)]->name = "[" + int2string(i) + "]"; }
+			else { subsetArray[getCell(i,j)]->name = "[" + int2string(i) + "," + int2string(i+j) + "]"; }
 		}
 
 	for (int j = 0; j < size; j++)
@@ -145,31 +216,82 @@ OrderedUniSet::OrderedUniSet (int s) : UniSet (0)
 			for (int c = 0; c < j; c++)
 			{
 				UniSubsetSet *subsetSet = new UniSubsetSet ();
-				subsetSet->push_back(subsetArray[getIndex(i,c)]);
-				subsetSet->push_back(subsetArray[getIndex(i+c+1,j-c-1)]);
-				subsetArray[getIndex(i,j)]->addUniSubsetSet(subsetSet);
+				subsetSet->push_back(subsetArray[getCell(i,c)]);
+				subsetSet->push_back(subsetArray[getCell(i+c+1,j-c-1)]);
+				subsetArray[getCell(i,j)]->addUniSubsetSet(subsetSet);
 			}
 
-	firstUniSubset = subsetArray[getIndex(0,size-1)];
+	firstUniSubset = subsetArray[getCell(0,size-1)];
 	delete [] subsetArray;
 }
 
 
-int OrderedUniSet::getIndex (int i, int j) { return j*size-j*(j-1)/2+i; }
+int OrderedUniSet::getCell (int i, int j) { return j*size-j*(j-1)/2+i; }
 
 
-HierarchicalUniSet::HierarchicalUniSet (int d) : UniSet (0)
+HierarchicalUniSet::HierarchicalUniSet (std::string fileName) : UniSet (0)
+{
+	int index = 0;
+	std::map<std::string,std::string> parentMap;
+	std::map<std::string,UniSubset*> subsetMap;
+
+	std::ifstream file;
+	openInputCSV (file, fileName);
+
+	CSVLine line;
+	while (hasCSVLine (file))
+	{
+		getCSVLine (file, line);
+		parentMap.insert(std::make_pair(line[0],line[2]));
+	}
+
+	for (std::map<std::string,std::string>::iterator it1 = parentMap.begin(); it1 != parentMap.end(); it1++)
+	{
+		std::string name = it1->first;
+		std::string parent = it1->second;
+		
+		bool atomic = true;
+		for (std::map<std::string,std::string>::iterator it2 = parentMap.begin(); it2 != parentMap.end() && atomic; it2++)
+			atomic = (it2->second != name);
+
+		UniSubset *subset;
+		if (atomic) { subset = new UniSubset(index++); }
+		else { subset = new UniSubset(); }
+
+		subset->name = name;
+		subsetMap.insert (std::make_pair(name,subset));
+		if (parent == "NULL") { firstUniSubset = subset; }
+	}
+
+	for (std::map<std::string,UniSubset*>::iterator it1 = subsetMap.begin(); it1 != subsetMap.end(); it1++)
+	{
+		std::string name = it1->first;
+		UniSubset *subset = it1->second;
+
+		if (subset->isAtomic) { continue; }
+
+		UniSubsetSet *subsetSet = new UniSubsetSet ();
+		for (std::map<std::string,std::string>::iterator it2 = parentMap.begin(); it2 != parentMap.end(); it2++)
+		{
+			if (it2->second == name) { subsetSet->push_back(subsetMap.at(it2->first)); }
+		}
+		subset->addUniSubsetSet(subsetSet);
+	}	
+}
+
+
+BinaryTreeUniSet::BinaryTreeUniSet (int d) : UniSet (0)
 {
 	depth = d;
 	if (d == 0) { firstUniSubset = new UniSubset (0); }
 	else {
 		firstUniSubset = new UniSubset ();
-		buildHierarchy(firstUniSubset,d-1,0);
+		buildTree (firstUniSubset,d-1,0);
 	}
 }
 
 
-int HierarchicalUniSet::buildHierarchy (UniSubset *subset, int d, int i)
+int BinaryTreeUniSet::buildTree (UniSubset *subset, int d, int i)
 {
 	UniSubset *subset1;
 	UniSubset *subset2;
@@ -177,7 +299,7 @@ int HierarchicalUniSet::buildHierarchy (UniSubset *subset, int d, int i)
 	if (d == 0)
 	{
 		subset1 = new UniSubset (i++);
-		subset2 = new UniSubset (i++);		
+		subset2 = new UniSubset (i++);
 	}
 
 	else {
@@ -192,8 +314,8 @@ int HierarchicalUniSet::buildHierarchy (UniSubset *subset, int d, int i)
 
 	if (d > 0)
 	{
-		i = buildHierarchy(subset1,d-1,i);
-		i = buildHierarchy(subset2,d-1,i);
+		i = buildTree(subset1,d-1,i);
+		i = buildTree(subset2,d-1,i);
 	}
 	
 	return i;
@@ -202,8 +324,7 @@ int HierarchicalUniSet::buildHierarchy (UniSubset *subset, int d, int i)
 
 GraphBasedUniSet::GraphBasedUniSet (Graph *g) : UniSet (0)
 {
-	graph = g;
-	
+	graph = g;	
 }
 
 
@@ -211,6 +332,7 @@ UniSubset::UniSubset (int index)
 {
 	uniSet = 0;
 
+	name = "";
 	num = -1;
 	atomicNum = -1;
 	isAtomic = false;
@@ -234,7 +356,8 @@ UniSubset::~UniSubset ()
 
 void UniSubset::print ()
 {
-	printIndexSet(true);
+	if (name != "") { std::cout << "[" << name << "]"; } else { printIndexSet(); }
+	
 	for (UniSubsetSetSet::iterator it1 = uniSubsetSetSet->begin(); it1 != uniSubsetSetSet->end(); ++it1)
 	{
 		UniSubsetSet *uniSubsetSet = *it1;
@@ -246,10 +369,10 @@ void UniSubset::print ()
 		{
 			UniSubset *uniSubset = *it2;
 			if (!first) { std::cout << " "; } else { first = false; }
-			uniSubset->printIndexSet();
+			if (uniSubset->name != "") { std::cout << "[" << uniSubset->name << "]"; } else { uniSubset->printIndexSet(); }
 		}
-		std::cout << std::endl;
 	}
+	std::cout << std::endl;
 	
 	for (UniSubsetSetSet::iterator it1 = uniSubsetSetSet->begin(); it1 != uniSubsetSetSet->end(); ++it1)
 	{

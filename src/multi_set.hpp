@@ -117,6 +117,13 @@ public:
 	 * /return A pointer to the unique atomic feasible subset that contains the element
 	 */
 	MultiSubset *getRandomAtomicMultiSubset ();
+
+	/*!
+	 * Get optimal subsets ordered according to their objective values
+	 * /param number : The number of optimal subset to return
+	 * /return An array of pointers to subsets ordered according to their objective values
+	 */
+	MultiSubset **getOptimalMultiSubset (double parameter, int number);
 	
 	void setRandom ();
 	void setObjectiveFunction (ObjectiveFunction *objective);
@@ -170,6 +177,8 @@ public:
 
 	void print ();
 	void printIndexSet (bool endl = false);
+	//std::string getName ();
+
 	void addMultiSubsetSet (MultiSubsetSet *multiSubsetSet);
 	void setObjectiveFunction (ObjectiveFunction *m);
 

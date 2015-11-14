@@ -71,6 +71,7 @@ public:
     int id;
     int size;		
     int num;
+	std::string name;
 	
 	std::list<int> *individuals;
 	ObjectiveValue *value;

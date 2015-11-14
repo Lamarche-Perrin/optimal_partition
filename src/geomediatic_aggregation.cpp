@@ -34,21 +34,57 @@
  * with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <cstdlib>
+#include <iostream>
 
-#ifndef INCLUDE_PROGRAMS
-#define INCLUDE_PROGRAMS
+#include "geomediatic_aggregation.hpp"
+#include "uni_set.hpp"
+#include "multi_set.hpp"
+#include "relative_entropy.hpp"
 
-void EbolaAggregation();
-void testHierarchicalSet ();
-void testOrderedSet ();
-void testNonconstrainedSet ();
-void testHierarchicalOrderedSet ();
-void testNonconstrainedOrderedSet ();
-void testHierarchicalHierarchicalSet ();
-void testGraph ();
-void testGraphWithSlyce ();
-void testBiSet ();
-void testMultiSet ();
-void aggregateGeomediaticCube ();
+bool VERBOSE = false;
+int VERBOSE_TAB = 0;
 
-#endif
+
+int main (int argc, char *argv[])
+{
+    srand(time(NULL));
+
+	UniSet *hierarchy = new HierarchicalUniSet ("../input/GEOMEDIA/smallWUTS.csv");
+	hierarchy->buildDataStructure();
+	//hierarchy->print();
+	//std::cout << hierarchy->atomicUniSubsetNumber << std::endl;
+
+	UniSet *dates = new OrderedUniSet (10);
+	dates->buildDataStructure();
+	//dates->print();
+	//std::cout << dates->atomicUniSubsetNumber << std::endl;
+
+	UniSet *media = new UnconstrainedUniSet (5);
+	media->buildDataStructure();
+	//media->print();
+	//std::cout << media->atomicUniSubsetNumber << std::endl;
+
+	UniSet *setArray [3] = {hierarchy, dates, media};
+	MultiSet *multiSet = new MultiSet (setArray,3);
+	multiSet->buildDataStructure();
+	//multiSet->print();
+	//std::cout << multiSet->atomicMultiSubsetNumber << std::endl;
+	
+    RelativeEntropy *objective = new RelativeEntropy (multiSet->atomicMultiSubsetNumber);
+	objective->setRandom();
+	
+    multiSet->setObjectiveFunction(objective);
+    multiSet->computeObjectiveValues();
+    multiSet->normalizeObjectiveValues();
+
+	//multiSet->getOptimalPartition(0.6)->print();
+
+	//multiSet->print();
+	MultiSubset **subsetArray = multiSet->getOptimalMultiSubset (1, 10);
+	for (int n = 0; n < 10; n++) { subsetArray[n]->print(); }
+
+	return EXIT_SUCCESS;
+}
+
+

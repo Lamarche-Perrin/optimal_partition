@@ -41,6 +41,8 @@
 #include <vector>
 #include <string>
 #include <time.h>
+#include <sstream>
+#include <fstream>
 
 #include "dataset.hpp"
 #include "graph.hpp"
@@ -51,7 +53,7 @@ extern int VERBOSE_TAB;
 const bool CSV_QUOTES = false;
 const char QUOTE_CHAR = '"';
 const char ESCAPE_CHAR = '\\';
-const char FIELD_DELIM = ',';
+const char FIELD_DELIM = ';';
 const char LINE_DELIM = '\n';
 
 const int DATE_INDEX = 3;
@@ -74,7 +76,7 @@ void openInputCSV (std::ifstream &file, std::string fileName);
 bool isInputCSVEmpty(std::ifstream &file);
 bool hasCSVLine (std::ifstream &file);
 void getCSVLine (std::ifstream &file, CSVLine &line, int sizeMax = 8);
-void printCSVLine (std::vector<std::string> &line);
+void printCSVLine (CSVLine &line);
 void parseCSVFile (std::string fileName);
 int getCSVSize (std::string fileName);
 void closeInputCSV (std::ifstream &file);
