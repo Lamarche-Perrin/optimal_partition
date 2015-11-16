@@ -311,8 +311,8 @@ void optimalBinningOfVoterModel ()
 	 */
 	int time = 0;
 	int delay = 1;
-	int trainSize = 100000;
-	int testSize = 100;
+	int trainSize = 1000;
+	int testSize = 0;
 	int trainLength = 1;
 	int testLength = 0;
 	
