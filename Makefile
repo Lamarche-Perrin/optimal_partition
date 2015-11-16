@@ -9,11 +9,11 @@ EXECUTABLE=$(SOURCESB:.cpp=)
 
 all: $(EXECUTABLE)
 
-$(EXECUTABLE): $(OBJECTSA) $(OBJECTSB)
-	$(CC) $(LDFLAGS) $(OBJECTSA) $@.o -o $@
+$(EXECUTABLE): $(OBJECTSA:%=src/%) $(OBJECTSB:%=src/%)
+	$(CC) $(LDFLAGS) $(OBJECTSA:%=src/%) src/$@.o -o bin/$@
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) $*.cpp -o $@
+src/%.o: src/%.cpp
+	$(CC) $(CFLAGS) src/$*.cpp -o $@
 
 clean:
-	rm -f $(OBJECTSA) $(OBJECTSB) $(EXECUTABLE)
+	rm -f $(OBJECTSA:%=src/%) $(OBJECTSB:%=src/%) $(EXECUTABLE:%=bin/%)

@@ -84,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classUniSet-members.html">List of all members</a>  </div>
@@ -102,16 +103,18 @@ Inheritance diagram for UniSet:</div>
  <div class="center">
   <img src="classUniSet.png" usemap="#UniSet_map" alt=""/>
   <map id="UniSet_map" name="UniSet_map">
-<area href="classGraphBasedUniSet.html" alt="GraphBasedUniSet" shape="rect" coords="0,56,118,80"/>
-<area href="classHierarchicalUniSet.html" title="A uni-dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy. " alt="HierarchicalUniSet" shape="rect" coords="128,56,246,80"/>
-<area href="classOrderedUniSet.html" title="A uni-dimensional set of elements with a total order, and such that the feasible subsets are all the ..." alt="OrderedUniSet" shape="rect" coords="256,56,374,80"/>
+<area href="classBinaryTreeUniSet.html" title="A uni-dimensional set of elements structured according to a complete binary tree, and such that the f..." alt="BinaryTreeUniSet" shape="rect" coords="0,56,129,80"/>
+<area href="classGraphBasedUniSet.html" alt="GraphBasedUniSet" shape="rect" coords="139,56,268,80"/>
+<area href="classHierarchicalUniSet.html" title="A uni-dimensional set of elements structured according to a hierarchy (tree), and such that the feasi..." alt="HierarchicalUniSet" shape="rect" coords="278,56,407,80"/>
+<area href="classOrderedUniSet.html" title="A uni-dimensional set of elements with a total order, and such that the feasible subsets are all the ..." alt="OrderedUniSet" shape="rect" coords="417,56,546,80"/>
+<area href="classUnconstrainedUniSet.html" title="A uni-dimensional set of elements with no particular structure, such that all subsets are feasible..." alt="UnconstrainedUniSet" shape="rect" coords="556,56,685,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a7e7a24e0c074fff21442f8ac9c5cd6aa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a7e7a24e0c074fff21442f8ac9c5cd6aa">UniSet</a> (<a class="el" href="classUniSubset.html">UniSubset</a> *<a class="el" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">firstUniSubset</a>)</td></tr>
-<tr class="memdesc:a7e7a24e0c074fff21442f8ac9c5cd6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a7e7a24e0c074fff21442f8ac9c5cd6aa">More...</a><br/></td></tr>
+<tr class="memdesc:a7e7a24e0c074fff21442f8ac9c5cd6aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of feasible subsets.  <a href="#a7e7a24e0c074fff21442f8ac9c5cd6aa">More...</a><br/></td></tr>
 <tr class="separator:a7e7a24e0c074fff21442f8ac9c5cd6aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a702d623676d4b30b832bdf17c1768fbe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a702d623676d4b30b832bdf17c1768fbe"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a702d623676d4b30b832bdf17c1768fbe">~UniSet</a> ()</td></tr>
@@ -126,6 +129,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a6a7601a93553783b443f4b4c65e3b1e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the current state of the set and its algebraic structure. <br/></td></tr>
 <tr class="separator:a6a7601a93553783b443f4b4c65e3b1e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:addac67921c058dc9ffa2074b3d59151f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addac67921c058dc9ffa2074b3d59151f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>atomicUniSubsetNumber</b></td></tr>
+<tr class="separator:addac67921c058dc9ffa2074b3d59151f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159ec0413efd05616c2f2445b7d8b2b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a159ec0413efd05616c2f2445b7d8b2b5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">uniSubsetNumber</a></td></tr>
+<tr class="memdesc:a159ec0413efd05616c2f2445b7d8b2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of elements (i.e., atomic feasible subsets) <br/></td></tr>
+<tr class="separator:a159ec0413efd05616c2f2445b7d8b2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a140f02dfb3f186cbc49fe28d238aa2e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a140f02dfb3f186cbc49fe28d238aa2e1">initReached</a> ()</td></tr>
@@ -134,16 +147,8 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:addac67921c058dc9ffa2074b3d59151f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addac67921c058dc9ffa2074b3d59151f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>atomicUniSubsetNumber</b></td></tr>
-<tr class="separator:addac67921c058dc9ffa2074b3d59151f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a159ec0413efd05616c2f2445b7d8b2b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a159ec0413efd05616c2f2445b7d8b2b5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">uniSubsetNumber</a></td></tr>
-<tr class="memdesc:a159ec0413efd05616c2f2445b7d8b2b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of elements (i.e., atomic feasible subsets) <br/></td></tr>
-<tr class="separator:a159ec0413efd05616c2f2445b7d8b2b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16746d02b5503c5d8c62fe4dff46c5b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16746d02b5503c5d8c62fe4dff46c5b3"></a>
-<a class="el" href="classUniSubset.html">UniSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3">atomicUniSubsetArray</a></td></tr>
-<tr class="memdesc:a16746d02b5503c5d8c62fe4dff46c5b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of feasible subsets. <br/></td></tr>
+<a class="el" href="classUniSubset.html">UniSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>atomicUniSubsetArray</b></td></tr>
 <tr class="separator:a16746d02b5503c5d8c62fe4dff46c5b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a154ae422d9f248c8b50f39d575f9b3c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a154ae422d9f248c8b50f39d575f9b3c0"></a>
 <a class="el" href="classUniSubset.html">UniSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a154ae422d9f248c8b50f39d575f9b3c0">uniSubsetArray</a></td></tr>
@@ -179,7 +184,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
       </table>
 </div><div class="memdoc">
 
-<p>Constructor. </p>
+<p>Number of feasible subsets. </p>
+<p>Constructor </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">firstUniSubset</td><td>: Top subset in the lattice of feasible subsets </td></tr>
@@ -217,13 +223,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/lamarche/programming/optimal_partition/src/<a class="el" href="uni__set_8hpp_source.html">uni_set.hpp</a></li>
-<li>/home/lamarche/programming/optimal_partition/src/uni_set.cpp</li>
+<li>src/<a class="el" href="uni__set_8hpp_source.html">uni_set.hpp</a></li>
+<li>src/uni_set.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 12 2015 17:01:44 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 16 2015 16:05:40 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

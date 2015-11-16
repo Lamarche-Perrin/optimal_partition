@@ -17,15 +17,20 @@ add_header
 \*R\*
 *.backup
 
-# Data files
-data/*
-!data/*.R
-
 # Source files
 src/*
 !src/*.cpp
 !src/*.hpp
 !src/Makefile
+
+# Input files
+
+# Output files
+output/*
+!output/*.R
+
+#Binary files
+bin/*
 
 # Backup files
 backup/

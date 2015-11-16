@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>Optimal Partition: /home/lamarche/programming/optimal_partition/src/multi_set.hpp Source File</title>
+<title>Optimal Partition: src/multi_set.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -164,105 +164,110 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> *<a class="code" href="classMultiSet.html#a48a6504163110d377db974d6ea5bd8fe">getAtomicMultiSubset</a> (<span class="keywordtype">int</span> *indices);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> *<a class="code" href="classMultiSet.html#afe3111c90692136b5141a4c5b96e2da3">getRandomAtomicMultiSubset</a> ();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#aac2d5ee0afa30a8f565f29204a677cd9">setRandom</a> ();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#a0c7e6fb6d2eb064cf6bf2fe7e810726a">setObjectiveFunction</a> (<a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a> *objective);</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#ab08f0a90d249cecc0f7931caa2632f48">print</a> ();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#aba70d435622c677be1223d652b038697">buildDataStructure</a> ();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#a3818a284a0b82daef5daec126bbc402b">computeObjectiveValues</a> ();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#a67169c2a6ee3b807ddbda0a6a67372a9">normalizeObjectiveValues</a> ();</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#a3b42f5d74bd694d2da9c291027d9de22">printObjectiveValues</a> ();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#ac6dd8ba2c14844029e5ac13d40519305">computeOptimalPartition</a> (<span class="keywordtype">double</span> parameter);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#a5f8567d28993d4e5c6c314cc5dbca188">printOptimalPartition</a> (<span class="keywordtype">double</span> parameter);</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <a class="code" href="classPartition.html">Partition</a> *<a class="code" href="classMultiSet.html#a338a036d443609e814b8c8ff414cce7e">getOptimalPartition</a> (<span class="keywordtype">double</span> parameter);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="classUniSet.html">UniSet</a> **uniSetArray;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> **<a class="code" href="classMultiSet.html#aabac7439b455032f959bb6ce9d145f7e">getOptimalMultiSubset</a> (<span class="keywordtype">double</span> parameter, <span class="keywordtype">int</span> number);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#aac2d5ee0afa30a8f565f29204a677cd9">setRandom</a> ();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#a0c7e6fb6d2eb064cf6bf2fe7e810726a">setObjectiveFunction</a> (<a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a> *objective);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#ab08f0a90d249cecc0f7931caa2632f48">print</a> ();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#aba70d435622c677be1223d652b038697">buildDataStructure</a> ();</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#a3818a284a0b82daef5daec126bbc402b">computeObjectiveValues</a> ();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#a67169c2a6ee3b807ddbda0a6a67372a9">normalizeObjectiveValues</a> ();</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#a3b42f5d74bd694d2da9c291027d9de22">printObjectiveValues</a> ();</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> *firstMultiSubset;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> **multiSubsetArray;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> **atomicMultiSubsetArray;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#ac6dd8ba2c14844029e5ac13d40519305">computeOptimalPartition</a> (<span class="keywordtype">double</span> parameter);</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classMultiSet.html#a5f8567d28993d4e5c6c314cc5dbca188">printOptimalPartition</a> (<span class="keywordtype">double</span> parameter);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <a class="code" href="classPartition.html">Partition</a> *<a class="code" href="classMultiSet.html#a338a036d443609e814b8c8ff414cce7e">getOptimalPartition</a> (<span class="keywordtype">double</span> parameter);</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordtype">int</span> getNum (<span class="keywordtype">int</span> *multiNum);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">int</span> *getMultiNum (<span class="keywordtype">int</span> num);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keywordtype">void</span> initReached ();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;};</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <a class="code" href="classUniSet.html">UniSet</a> **uniSetArray;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> *firstMultiSubset;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> **multiSubsetArray;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> **atomicMultiSubsetArray;</div>
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
-<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="classMultiSubset.html">  148</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMultiSubset.html">MultiSubset</a></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordtype">int</span> dimension;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <a class="code" href="classUniSubset.html">UniSubset</a> **uniSubsetArray;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keywordtype">int</span> getNum (<span class="keywordtype">int</span> *multiNum);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    <span class="keywordtype">int</span> *getMultiNum (<span class="keywordtype">int</span> num);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">void</span> initReached ();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;};</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">int</span> num;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">int</span> atomicNum;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordtype">bool</span> isAtomic;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">bool</span> reached;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    </div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    MultiSubsetSetSet *multiSubsetSetSet;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <a class="code" href="classMultiSet.html">MultiSet</a> *multiSet;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a> *objective;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *value;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">double</span> optimalValue;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    MultiSubsetSet *optimalCut;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> (<a class="code" href="classUniSubset.html">UniSubset</a> **uniSubsetArray, <span class="keywordtype">int</span> dimension);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    ~<a class="code" href="classMultiSubset.html">MultiSubset</a> ();</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordtype">void</span> print ();</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">void</span> printIndexSet (<span class="keywordtype">bool</span> endl = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">void</span> addMultiSubsetSet (MultiSubsetSet *multiSubsetSet);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> setObjectiveFunction (<a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a> *m);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">void</span> buildDataStructure ();</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordtype">void</span> computeObjectiveValues ();</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">void</span> normalizeObjectiveValues (<a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *maxQual = 0);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">void</span> printObjectiveValues ();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordtype">void</span> computeOptimalPartition (<span class="keywordtype">double</span> parameter);</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">void</span> printOptimalPartition (<span class="keywordtype">double</span> parameter);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">void</span> buildOptimalPartition (<a class="code" href="classPartition.html">Partition</a> *partition);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;};</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="classMultiSubset_html"><div class="ttname"><a href="classMultiSubset.html">MultiSubset</a></div><div class="ttdef"><b>Definition:</b> multi_set.hpp:148</div></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classMultiSubset.html">  155</a></span>&#160;<span class="keyword">class </span><a class="code" href="classMultiSubset.html">MultiSubset</a></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">int</span> dimension;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <a class="code" href="classUniSubset.html">UniSubset</a> **uniSubsetArray;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordtype">int</span> num;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">int</span> atomicNum;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    </div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">bool</span> isAtomic;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">bool</span> reached;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    MultiSubsetSetSet *multiSubsetSetSet;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <a class="code" href="classMultiSet.html">MultiSet</a> *multiSet;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a> *objective;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *value;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">double</span> optimalValue;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    MultiSubsetSet *optimalCut;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="classMultiSubset.html">MultiSubset</a> (<a class="code" href="classUniSubset.html">UniSubset</a> **uniSubsetArray, <span class="keywordtype">int</span> dimension);</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    ~<a class="code" href="classMultiSubset.html">MultiSubset</a> ();</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordtype">void</span> print ();</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordtype">void</span> printIndexSet (<span class="keywordtype">bool</span> endl = <span class="keyword">false</span>);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="comment">//std::string getName ();</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">void</span> addMultiSubsetSet (MultiSubsetSet *multiSubsetSet);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">void</span> setObjectiveFunction (<a class="code" href="classObjectiveFunction.html">ObjectiveFunction</a> *m);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">void</span> buildDataStructure ();</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">void</span> computeObjectiveValues ();</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordtype">void</span> normalizeObjectiveValues (<a class="code" href="classObjectiveValue.html">ObjectiveValue</a> *maxQual = 0);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    <span class="keywordtype">void</span> printObjectiveValues ();</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="keywordtype">void</span> computeOptimalPartition (<span class="keywordtype">double</span> parameter);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="keywordtype">void</span> printOptimalPartition (<span class="keywordtype">double</span> parameter);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">void</span> buildOptimalPartition (<a class="code" href="classPartition.html">Partition</a> *partition);</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;};</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="classMultiSubset_html"><div class="ttname"><a href="classMultiSubset.html">MultiSubset</a></div><div class="ttdef"><b>Definition:</b> multi_set.hpp:155</div></div>
 <div class="ttc" id="classAbstractSet_html"><div class="ttname"><a href="classAbstractSet.html">AbstractSet</a></div><div class="ttdoc">Abstract class defining a set of elements that one wants to partition while optimising some (decompos...</div><div class="ttdef"><b>Definition:</b> abstract_set.hpp:59</div></div>
-<div class="ttc" id="classPartition_html"><div class="ttname"><a href="classPartition.html">Partition</a></div><div class="ttdoc">A partition is a collection of pairwise-disjoint and covering subsets (parts) of a set of elements...</div><div class="ttdef"><b>Definition:</b> partition.hpp:137</div></div>
-<div class="ttc" id="classMultiSet_html_a67169c2a6ee3b807ddbda0a6a67372a9"><div class="ttname"><a href="classMultiSet.html#a67169c2a6ee3b807ddbda0a6a67372a9">MultiSet::normalizeObjectiveValues</a></div><div class="ttdeci">void normalizeObjectiveValues()</div><div class="ttdoc">Finish computing the value of the objective function for each feasible part when normalisation is req...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:244</div></div>
+<div class="ttc" id="classPartition_html"><div class="ttname"><a href="classPartition.html">Partition</a></div><div class="ttdoc">A partition is a collection of pairwise-disjoint and covering subsets (parts) of a set of elements...</div><div class="ttdef"><b>Definition:</b> partition.hpp:138</div></div>
+<div class="ttc" id="classMultiSet_html_a67169c2a6ee3b807ddbda0a6a67372a9"><div class="ttname"><a href="classMultiSet.html#a67169c2a6ee3b807ddbda0a6a67372a9">MultiSet::normalizeObjectiveValues</a></div><div class="ttdeci">void normalizeObjectiveValues()</div><div class="ttdoc">Finish computing the value of the objective function for each feasible part when normalisation is req...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:287</div></div>
 <div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div><div class="ttdef"><b>Definition:</b> objective_function.hpp:57</div></div>
+<div class="ttc" id="classMultiSet_html_aabac7439b455032f959bb6ce9d145f7e"><div class="ttname"><a href="classMultiSet.html#aabac7439b455032f959bb6ce9d145f7e">MultiSet::getOptimalMultiSubset</a></div><div class="ttdeci">MultiSubset ** getOptimalMultiSubset(double parameter, int number)</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:167</div></div>
 <div class="ttc" id="classMultiSet_html_a3ad638b1613083b97a53ea58e9060a4d"><div class="ttname"><a href="classMultiSet.html#a3ad638b1613083b97a53ea58e9060a4d">MultiSet::~MultiSet</a></div><div class="ttdeci">virtual ~MultiSet()</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:91</div></div>
 <div class="ttc" id="classMultiSet_html_aa6ec2e2e6ef524acde12c795629f08c8"><div class="ttname"><a href="classMultiSet.html#aa6ec2e2e6ef524acde12c795629f08c8">MultiSet::MultiSet</a></div><div class="ttdeci">MultiSet(UniSet *uniSet)</div><div class="ttdoc">Number of feasible subsets. </div><div class="ttdef"><b>Definition:</b> multi_set.cpp:45</div></div>
 <div class="ttc" id="classObjectiveValue_html"><div class="ttname"><a href="classObjectiveValue.html">ObjectiveValue</a></div><div class="ttdef"><b>Definition:</b> objective_function.hpp:101</div></div>
-<div class="ttc" id="classMultiSet_html_aac2d5ee0afa30a8f565f29204a677cd9"><div class="ttname"><a href="classMultiSet.html#aac2d5ee0afa30a8f565f29204a677cd9">MultiSet::setRandom</a></div><div class="ttdeci">void setRandom()</div><div class="ttdoc">Randomly set the algebraic constraints for quick experiments (warning: this method is not always impl...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:167</div></div>
-<div class="ttc" id="classMultiSet_html_a5f8567d28993d4e5c6c314cc5dbca188"><div class="ttname"><a href="classMultiSet.html#a5f8567d28993d4e5c6c314cc5dbca188">MultiSet::printOptimalPartition</a></div><div class="ttdeci">void printOptimalPartition(double parameter)</div><div class="ttdoc">Compute and print a partition that fits with the algebraic constraints and that optimises the objecti...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:266</div></div>
-<div class="ttc" id="classUniSet_html"><div class="ttname"><a href="classUniSet.html">UniSet</a></div><div class="ttdoc">A uni-dimensional set of elements and its algebraic structure (feasible subsets and feasible refineme...</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:70</div></div>
-<div class="ttc" id="classMultiSet_html_aba70d435622c677be1223d652b038697"><div class="ttname"><a href="classMultiSet.html#aba70d435622c677be1223d652b038697">MultiSet::buildDataStructure</a></div><div class="ttdeci">void buildDataStructure()</div><div class="ttdoc">Build a proper data structure to represent the set and its algebraic constraints (warning: this metho...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:186</div></div>
+<div class="ttc" id="classMultiSet_html_aac2d5ee0afa30a8f565f29204a677cd9"><div class="ttname"><a href="classMultiSet.html#aac2d5ee0afa30a8f565f29204a677cd9">MultiSet::setRandom</a></div><div class="ttdeci">void setRandom()</div><div class="ttdoc">Randomly set the algebraic constraints for quick experiments (warning: this method is not always impl...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:210</div></div>
+<div class="ttc" id="classMultiSet_html_a5f8567d28993d4e5c6c314cc5dbca188"><div class="ttname"><a href="classMultiSet.html#a5f8567d28993d4e5c6c314cc5dbca188">MultiSet::printOptimalPartition</a></div><div class="ttdeci">void printOptimalPartition(double parameter)</div><div class="ttdoc">Compute and print a partition that fits with the algebraic constraints and that optimises the objecti...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:309</div></div>
+<div class="ttc" id="classUniSet_html"><div class="ttname"><a href="classUniSet.html">UniSet</a></div><div class="ttdoc">A uni-dimensional set of elements and its algebraic structure (feasible subsets and feasible refineme...</div><div class="ttdef"><b>Definition:</b> uni_set.hpp:71</div></div>
+<div class="ttc" id="classMultiSet_html_aba70d435622c677be1223d652b038697"><div class="ttname"><a href="classMultiSet.html#aba70d435622c677be1223d652b038697">MultiSet::buildDataStructure</a></div><div class="ttdeci">void buildDataStructure()</div><div class="ttdoc">Build a proper data structure to represent the set and its algebraic constraints (warning: this metho...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:229</div></div>
 <div class="ttc" id="classVoterDataSet_html"><div class="ttname"><a href="classVoterDataSet.html">VoterDataSet</a></div><div class="ttdef"><b>Definition:</b> voter_graph.hpp:596</div></div>
-<div class="ttc" id="classMultiSet_html_a3b42f5d74bd694d2da9c291027d9de22"><div class="ttname"><a href="classMultiSet.html#a3b42f5d74bd694d2da9c291027d9de22">MultiSet::printObjectiveValues</a></div><div class="ttdeci">void printObjectiveValues()</div><div class="ttdoc">Print the value of the objective function for each feasible part. </div><div class="ttdef"><b>Definition:</b> multi_set.cpp:251</div></div>
+<div class="ttc" id="classMultiSet_html_a3b42f5d74bd694d2da9c291027d9de22"><div class="ttname"><a href="classMultiSet.html#a3b42f5d74bd694d2da9c291027d9de22">MultiSet::printObjectiveValues</a></div><div class="ttdeci">void printObjectiveValues()</div><div class="ttdoc">Print the value of the objective function for each feasible part. </div><div class="ttdef"><b>Definition:</b> multi_set.cpp:294</div></div>
 <div class="ttc" id="uni__set_8hpp_html"><div class="ttname"><a href="uni__set_8hpp.html">uni_set.hpp</a></div><div class="ttdoc">Some classes to represent uni-dimensional sets of elements and their algebraic structure (feasible su...</div></div>
 <div class="ttc" id="abstract__set_8hpp_html"><div class="ttname"><a href="abstract__set_8hpp.html">abstract_set.hpp</a></div><div class="ttdoc">Abstract class defining a set of elements that one wants to partition while optimising some (decompos...</div></div>
-<div class="ttc" id="classMultiSet_html_a3818a284a0b82daef5daec126bbc402b"><div class="ttname"><a href="classMultiSet.html#a3818a284a0b82daef5daec126bbc402b">MultiSet::computeObjectiveValues</a></div><div class="ttdeci">void computeObjectiveValues()</div><div class="ttdoc">Compute the value of the objective function for each feasible part (warning: setObjectiveFunction (Ob...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:236</div></div>
-<div class="ttc" id="classMultiSet_html_ab08f0a90d249cecc0f7931caa2632f48"><div class="ttname"><a href="classMultiSet.html#ab08f0a90d249cecc0f7931caa2632f48">MultiSet::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Print the set and its algebraic constraints. </div><div class="ttdef"><b>Definition:</b> multi_set.cpp:178</div></div>
-<div class="ttc" id="classMultiSet_html_a0c7e6fb6d2eb064cf6bf2fe7e810726a"><div class="ttname"><a href="classMultiSet.html#a0c7e6fb6d2eb064cf6bf2fe7e810726a">MultiSet::setObjectiveFunction</a></div><div class="ttdeci">void setObjectiveFunction(ObjectiveFunction *objective)</div><div class="ttdoc">Set the objective that one wants to optimise. </div><div class="ttdef"><b>Definition:</b> multi_set.cpp:170</div></div>
+<div class="ttc" id="classMultiSet_html_a3818a284a0b82daef5daec126bbc402b"><div class="ttname"><a href="classMultiSet.html#a3818a284a0b82daef5daec126bbc402b">MultiSet::computeObjectiveValues</a></div><div class="ttdeci">void computeObjectiveValues()</div><div class="ttdoc">Compute the value of the objective function for each feasible part (warning: setObjectiveFunction (Ob...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:279</div></div>
+<div class="ttc" id="classMultiSet_html_ab08f0a90d249cecc0f7931caa2632f48"><div class="ttname"><a href="classMultiSet.html#ab08f0a90d249cecc0f7931caa2632f48">MultiSet::print</a></div><div class="ttdeci">void print()</div><div class="ttdoc">Print the set and its algebraic constraints. </div><div class="ttdef"><b>Definition:</b> multi_set.cpp:221</div></div>
+<div class="ttc" id="classMultiSet_html_a0c7e6fb6d2eb064cf6bf2fe7e810726a"><div class="ttname"><a href="classMultiSet.html#a0c7e6fb6d2eb064cf6bf2fe7e810726a">MultiSet::setObjectiveFunction</a></div><div class="ttdeci">void setObjectiveFunction(ObjectiveFunction *objective)</div><div class="ttdoc">Set the objective that one wants to optimise. </div><div class="ttdef"><b>Definition:</b> multi_set.cpp:213</div></div>
 <div class="ttc" id="classMultiSet_html_afe3111c90692136b5141a4c5b96e2da3"><div class="ttname"><a href="classMultiSet.html#afe3111c90692136b5141a4c5b96e2da3">MultiSet::getRandomAtomicMultiSubset</a></div><div class="ttdeci">MultiSubset * getRandomAtomicMultiSubset()</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:158</div></div>
-<div class="ttc" id="classUniSubset_html"><div class="ttname"><a href="classUniSubset.html">UniSubset</a></div><div class="ttdoc">A feasible subset associated to a uni-dimensional set of elements (UniSet) </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:172</div></div>
+<div class="ttc" id="classUniSubset_html"><div class="ttname"><a href="classUniSubset.html">UniSubset</a></div><div class="ttdoc">A feasible subset associated to a uni-dimensional set of elements (UniSet) </div><div class="ttdef"><b>Definition:</b> uni_set.hpp:204</div></div>
 <div class="ttc" id="voter__graph_8hpp_html"><div class="ttname"><a href="voter__graph_8hpp.html">voter_graph.hpp</a></div><div class="ttdoc">Classes to build an interaction graph (nodes and edges) describing a Voter Model and some observation...</div></div>
 <div class="ttc" id="classMultiSet_html_a3084e5afaa18d1f19a38f7139f827cfc"><div class="ttname"><a href="classMultiSet.html#a3084e5afaa18d1f19a38f7139f827cfc">MultiSet::atomicMultiSubsetNumber</a></div><div class="ttdeci">int atomicMultiSubsetNumber</div><div class="ttdoc">Number of dimensions. </div><div class="ttdef"><b>Definition:</b> multi_set.hpp:74</div></div>
-<div class="ttc" id="classMultiSet_html_a338a036d443609e814b8c8ff414cce7e"><div class="ttname"><a href="classMultiSet.html#a338a036d443609e814b8c8ff414cce7e">MultiSet::getOptimalPartition</a></div><div class="ttdeci">Partition * getOptimalPartition(double parameter)</div><div class="ttdoc">Compute and return a partition that fits with the algebraic constraints and that optimises the object...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:272</div></div>
+<div class="ttc" id="classMultiSet_html_a338a036d443609e814b8c8ff414cce7e"><div class="ttname"><a href="classMultiSet.html#a338a036d443609e814b8c8ff414cce7e">MultiSet::getOptimalPartition</a></div><div class="ttdeci">Partition * getOptimalPartition(double parameter)</div><div class="ttdoc">Compute and return a partition that fits with the algebraic constraints and that optimises the object...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:315</div></div>
 <div class="ttc" id="classMultiSet_html_a9c0c781a33f40bb2cd28110805572b7a"><div class="ttname"><a href="classMultiSet.html#a9c0c781a33f40bb2cd28110805572b7a">MultiSet::multiSubsetNumber</a></div><div class="ttdeci">int multiSubsetNumber</div><div class="ttdoc">Number of elements (e.g., atomic feasible subsets) </div><div class="ttdef"><b>Definition:</b> multi_set.hpp:75</div></div>
-<div class="ttc" id="classMultiSet_html_ac6dd8ba2c14844029e5ac13d40519305"><div class="ttname"><a href="classMultiSet.html#ac6dd8ba2c14844029e5ac13d40519305">MultiSet::computeOptimalPartition</a></div><div class="ttdeci">void computeOptimalPartition(double parameter)</div><div class="ttdoc">Compute a partition that fits with the algebraic constraints and that optimises the objective functio...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:259</div></div>
+<div class="ttc" id="classMultiSet_html_ac6dd8ba2c14844029e5ac13d40519305"><div class="ttname"><a href="classMultiSet.html#ac6dd8ba2c14844029e5ac13d40519305">MultiSet::computeOptimalPartition</a></div><div class="ttdeci">void computeOptimalPartition(double parameter)</div><div class="ttdoc">Compute a partition that fits with the algebraic constraints and that optimises the objective functio...</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:302</div></div>
 <div class="ttc" id="classMultiSet_html_a48a6504163110d377db974d6ea5bd8fe"><div class="ttname"><a href="classMultiSet.html#a48a6504163110d377db974d6ea5bd8fe">MultiSet::getAtomicMultiSubset</a></div><div class="ttdeci">MultiSubset * getAtomicMultiSubset(int index)</div><div class="ttdef"><b>Definition:</b> multi_set.cpp:124</div></div>
 <div class="ttc" id="classMultiSet_html"><div class="ttname"><a href="classMultiSet.html">MultiSet</a></div><div class="ttdoc">A multi-dimensional set of elements based on the Cartesian product of several uni-dimensional sets (U...</div><div class="ttdef"><b>Definition:</b> multi_set.hpp:67</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 12 2015 17:01:40 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 16 2015 16:05:37 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

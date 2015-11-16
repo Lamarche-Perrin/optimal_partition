@@ -1,5 +1,5 @@
-\hypertarget{uni__set_8hpp}{\section{/home/lamarche/programming/optimal\-\_\-partition/src/uni\-\_\-set.hpp File Reference}
-\label{uni__set_8hpp}\index{/home/lamarche/programming/optimal\-\_\-partition/src/uni\-\_\-set.\-hpp@{/home/lamarche/programming/optimal\-\_\-partition/src/uni\-\_\-set.\-hpp}}
+\hypertarget{uni__set_8hpp}{\section{src/uni\-\_\-set.hpp File Reference}
+\label{uni__set_8hpp}\index{src/uni\-\_\-set.\-hpp@{src/uni\-\_\-set.\-hpp}}
 }
 
 
@@ -7,6 +7,7 @@ Some classes to represent uni-\/dimensional sets of elements and their algebraic
 
 
 {\ttfamily \#include $<$list$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
 {\ttfamily \#include \char`\"{}bi\-\_\-set.\-hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}multi\-\_\-set.\-hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}graph.\-hpp\char`\"{}}\\*
@@ -16,10 +17,14 @@ Some classes to represent uni-\/dimensional sets of elements and their algebraic
 \item 
 class \hyperlink{classUniSet}{Uni\-Set}
 \begin{DoxyCompactList}\small\item\em A uni-\/dimensional set of elements and its algebraic structure (feasible subsets and feasible refinements) \end{DoxyCompactList}\item 
+class \hyperlink{classUnconstrainedUniSet}{Unconstrained\-Uni\-Set}
+\begin{DoxyCompactList}\small\item\em A uni-\/dimensional set of elements with no particular structure, such that all subsets are feasible. \end{DoxyCompactList}\item 
 class \hyperlink{classOrderedUniSet}{Ordered\-Uni\-Set}
 \begin{DoxyCompactList}\small\item\em A uni-\/dimensional set of elements with a total order, and such that the feasible subsets are all the intervals induced by this order. \end{DoxyCompactList}\item 
 class \hyperlink{classHierarchicalUniSet}{Hierarchical\-Uni\-Set}
-\begin{DoxyCompactList}\small\item\em A uni-\/dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A uni-\/dimensional set of elements structured according to a hierarchy (tree), and such that the feasible subsets are all the nodes of the hierarchy (tree) \end{DoxyCompactList}\item 
+class \hyperlink{classBinaryTreeUniSet}{Binary\-Tree\-Uni\-Set}
+\begin{DoxyCompactList}\small\item\em A uni-\/dimensional set of elements structured according to a complete binary tree, and such that the feasible subsets are all the nodes of the tree. \end{DoxyCompactList}\item 
 class \hyperlink{classGraphBasedUniSet}{Graph\-Based\-Uni\-Set}
 \item 
 class \hyperlink{classUniSubset}{Uni\-Subset}

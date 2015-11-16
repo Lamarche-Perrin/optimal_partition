@@ -3,7 +3,7 @@
 }
 
 
-A uni-\/dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy.  
+A uni-\/dimensional set of elements structured according to a hierarchy (tree), and such that the feasible subsets are all the nodes of the hierarchy (tree)  
 
 
 
@@ -19,40 +19,34 @@ Inheritance diagram for Hierarchical\-Uni\-Set\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{classHierarchicalUniSet_ab6bfd19708056eb61eb0cd297a96aef0}{Hierarchical\-Uni\-Set} (int depth)
-\begin{DoxyCompactList}\small\item\em Depth of the complete binary hierarchy. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-\hypertarget{classHierarchicalUniSet_a3b87358df90ea24612e82df44c4eac04}{int {\bfseries depth}}\label{classHierarchicalUniSet_a3b87358df90ea24612e82df44c4eac04}
-
-\end{DoxyCompactItemize}
+\hyperlink{classHierarchicalUniSet_aeb0f207ca4c762dcbf825b05a0839d6b}{Hierarchical\-Uni\-Set} (std\-::string file\-Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
 \subsection{Detailed Description}
-A uni-\/dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy. 
+A uni-\/dimensional set of elements structured according to a hierarchy (tree), and such that the feasible subsets are all the nodes of the hierarchy (tree) 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{classHierarchicalUniSet_ab6bfd19708056eb61eb0cd297a96aef0}{\index{Hierarchical\-Uni\-Set@{Hierarchical\-Uni\-Set}!Hierarchical\-Uni\-Set@{Hierarchical\-Uni\-Set}}
+\hypertarget{classHierarchicalUniSet_aeb0f207ca4c762dcbf825b05a0839d6b}{\index{Hierarchical\-Uni\-Set@{Hierarchical\-Uni\-Set}!Hierarchical\-Uni\-Set@{Hierarchical\-Uni\-Set}}
 \index{Hierarchical\-Uni\-Set@{Hierarchical\-Uni\-Set}!HierarchicalUniSet@{Hierarchical\-Uni\-Set}}
 \subsubsection[{Hierarchical\-Uni\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Hierarchical\-Uni\-Set\-::\-Hierarchical\-Uni\-Set (
 \begin{DoxyParamCaption}
-\item[{int}]{depth}
+\item[{std\-::string}]{file\-Name}
 \end{DoxyParamCaption}
-)}}\label{classHierarchicalUniSet_ab6bfd19708056eb61eb0cd297a96aef0}
+)}}\label{classHierarchicalUniSet_aeb0f207ca4c762dcbf825b05a0839d6b}
 
 
-Depth of the complete binary hierarchy. 
+Constructor. 
 
-Constructor 
+
 \begin{DoxyParams}{Parameters}
-{\em size} & \-: Depth of the complete binary hierarchy \\
+{\em file\-Name} & \-: The location of the C\-S\-V file from which the hierarchy should be build\-: first column should indicate nodes labels, and third column should indicate the corresponding parent (or N\-U\-L\-L if top element) \\
 \hline
 \end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-/home/lamarche/programming/optimal\-\_\-partition/src/\hyperlink{uni__set_8hpp}{uni\-\_\-set.\-hpp}\item 
-/home/lamarche/programming/optimal\-\_\-partition/src/uni\-\_\-set.\-cpp\end{DoxyCompactItemize}
+src/\hyperlink{uni__set_8hpp}{uni\-\_\-set.\-hpp}\item 
+src/uni\-\_\-set.\-cpp\end{DoxyCompactItemize}

@@ -126,6 +126,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a91d471ce84161187ab63f56199c74ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe3111c90692136b5141a4c5b96e2da3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#afe3111c90692136b5141a4c5b96e2da3">getRandomAtomicMultiSubset</a> ()</td></tr>
 <tr class="separator:afe3111c90692136b5141a4c5b96e2da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabac7439b455032f959bb6ce9d145f7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMultiSubset.html">MultiSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#aabac7439b455032f959bb6ce9d145f7e">getOptimalMultiSubset</a> (double parameter, int number)</td></tr>
+<tr class="separator:aabac7439b455032f959bb6ce9d145f7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac2d5ee0afa30a8f565f29204a677cd9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aac2d5ee0afa30a8f565f29204a677cd9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#aac2d5ee0afa30a8f565f29204a677cd9">setRandom</a> ()</td></tr>
 <tr class="memdesc:aac2d5ee0afa30a8f565f29204a677cd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Randomly set the algebraic constraints for quick experiments (warning: this method is not always implemented) <br/></td></tr>
@@ -401,6 +403,33 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="aabac7439b455032f959bb6ce9d145f7e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMultiSubset.html">MultiSubset</a> ** MultiSet::getOptimalMultiSubset </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>parameter</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>number</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get optimal subsets ordered according to their objective values /param number : The number of optimal subset to return /return An array of pointers to subsets ordered according to their objective values </p>
+
+</div>
+</div>
 <a class="anchor" id="a338a036d443609e814b8c8ff414cce7e"></a>
 <div class="memitem">
 <div class="memproto">
@@ -521,13 +550,13 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/lamarche/programming/optimal_partition/src/<a class="el" href="multi__set_8hpp_source.html">multi_set.hpp</a></li>
-<li>/home/lamarche/programming/optimal_partition/src/multi_set.cpp</li>
+<li>src/<a class="el" href="multi__set_8hpp_source.html">multi_set.hpp</a></li>
+<li>src/multi_set.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 12 2015 17:01:43 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 16 2015 16:05:39 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

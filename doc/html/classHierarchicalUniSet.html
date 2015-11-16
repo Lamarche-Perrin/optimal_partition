@@ -84,14 +84,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classHierarchicalUniSet-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">HierarchicalUniSet Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A uni-dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy.  
+<p>A uni-dimensional set of elements structured according to a hierarchy (tree), and such that the feasible subsets are all the nodes of the hierarchy (tree)  
  <a href="classHierarchicalUniSet.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="uni__set_8hpp_source.html">uni_set.hpp</a>&gt;</code></p>
@@ -107,12 +106,12 @@ Inheritance diagram for HierarchicalUniSet:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab6bfd19708056eb61eb0cd297a96aef0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHierarchicalUniSet.html#ab6bfd19708056eb61eb0cd297a96aef0">HierarchicalUniSet</a> (int depth)</td></tr>
-<tr class="memdesc:ab6bfd19708056eb61eb0cd297a96aef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Depth of the complete binary hierarchy.  <a href="#ab6bfd19708056eb61eb0cd297a96aef0">More...</a><br/></td></tr>
-<tr class="separator:ab6bfd19708056eb61eb0cd297a96aef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0f207ca4c762dcbf825b05a0839d6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHierarchicalUniSet.html#aeb0f207ca4c762dcbf825b05a0839d6b">HierarchicalUniSet</a> (std::string fileName)</td></tr>
+<tr class="memdesc:aeb0f207ca4c762dcbf825b05a0839d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#aeb0f207ca4c762dcbf825b05a0839d6b">More...</a><br/></td></tr>
+<tr class="separator:aeb0f207ca4c762dcbf825b05a0839d6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classUniSet"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classUniSet')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classUniSet.html">UniSet</a></td></tr>
 <tr class="memitem:a7e7a24e0c074fff21442f8ac9c5cd6aa inherit pub_methods_classUniSet"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a7e7a24e0c074fff21442f8ac9c5cd6aa">UniSet</a> (<a class="el" href="classUniSubset.html">UniSubset</a> *<a class="el" href="classUniSet.html#a8b2ca464176feddcd8d96c75514eba6b">firstUniSubset</a>)</td></tr>
-<tr class="memdesc:a7e7a24e0c074fff21442f8ac9c5cd6aa inherit pub_methods_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a7e7a24e0c074fff21442f8ac9c5cd6aa">More...</a><br/></td></tr>
+<tr class="memdesc:a7e7a24e0c074fff21442f8ac9c5cd6aa inherit pub_methods_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of feasible subsets.  <a href="#a7e7a24e0c074fff21442f8ac9c5cd6aa">More...</a><br/></td></tr>
 <tr class="separator:a7e7a24e0c074fff21442f8ac9c5cd6aa inherit pub_methods_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a702d623676d4b30b832bdf17c1768fbe inherit pub_methods_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a702d623676d4b30b832bdf17c1768fbe"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a702d623676d4b30b832bdf17c1768fbe">~UniSet</a> ()</td></tr>
@@ -127,29 +126,23 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memdesc:a6a7601a93553783b443f4b4c65e3b1e8 inherit pub_methods_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the current state of the set and its algebraic structure. <br/></td></tr>
 <tr class="separator:a6a7601a93553783b443f4b4c65e3b1e8 inherit pub_methods_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a3b87358df90ea24612e82df44c4eac04"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3b87358df90ea24612e82df44c4eac04"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>depth</b></td></tr>
-<tr class="separator:a3b87358df90ea24612e82df44c4eac04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_attribs_classUniSet"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classUniSet')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classUniSet.html">UniSet</a></td></tr>
+<tr class="memitem:addac67921c058dc9ffa2074b3d59151f inherit pub_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addac67921c058dc9ffa2074b3d59151f"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>atomicUniSubsetNumber</b></td></tr>
+<tr class="separator:addac67921c058dc9ffa2074b3d59151f inherit pub_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159ec0413efd05616c2f2445b7d8b2b5 inherit pub_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a159ec0413efd05616c2f2445b7d8b2b5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">uniSubsetNumber</a></td></tr>
+<tr class="memdesc:a159ec0413efd05616c2f2445b7d8b2b5 inherit pub_attribs_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of elements (i.e., atomic feasible subsets) <br/></td></tr>
+<tr class="separator:a159ec0413efd05616c2f2445b7d8b2b5 inherit pub_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classUniSet"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classUniSet')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classUniSet.html">UniSet</a></td></tr>
 <tr class="memitem:a140f02dfb3f186cbc49fe28d238aa2e1 inherit pro_methods_classUniSet"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a140f02dfb3f186cbc49fe28d238aa2e1">initReached</a> ()</td></tr>
 <tr class="memdesc:a140f02dfb3f186cbc49fe28d238aa2e1 inherit pro_methods_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">(Optional) A probe of a voter model that has been used to build this uni-dimensional set  <a href="#a140f02dfb3f186cbc49fe28d238aa2e1">More...</a><br/></td></tr>
 <tr class="separator:a140f02dfb3f186cbc49fe28d238aa2e1 inherit pro_methods_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classUniSet"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classUniSet')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classUniSet.html">UniSet</a></td></tr>
-<tr class="memitem:addac67921c058dc9ffa2074b3d59151f inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="addac67921c058dc9ffa2074b3d59151f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>atomicUniSubsetNumber</b></td></tr>
-<tr class="separator:addac67921c058dc9ffa2074b3d59151f inherit pro_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a159ec0413efd05616c2f2445b7d8b2b5 inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a159ec0413efd05616c2f2445b7d8b2b5"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a159ec0413efd05616c2f2445b7d8b2b5">uniSubsetNumber</a></td></tr>
-<tr class="memdesc:a159ec0413efd05616c2f2445b7d8b2b5 inherit pro_attribs_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of elements (i.e., atomic feasible subsets) <br/></td></tr>
-<tr class="separator:a159ec0413efd05616c2f2445b7d8b2b5 inherit pro_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16746d02b5503c5d8c62fe4dff46c5b3 inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a16746d02b5503c5d8c62fe4dff46c5b3"></a>
-<a class="el" href="classUniSubset.html">UniSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3">atomicUniSubsetArray</a></td></tr>
-<tr class="memdesc:a16746d02b5503c5d8c62fe4dff46c5b3 inherit pro_attribs_classUniSet"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of feasible subsets. <br/></td></tr>
+<a class="el" href="classUniSubset.html">UniSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>atomicUniSubsetArray</b></td></tr>
 <tr class="separator:a16746d02b5503c5d8c62fe4dff46c5b3 inherit pro_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a154ae422d9f248c8b50f39d575f9b3c0 inherit pro_attribs_classUniSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a154ae422d9f248c8b50f39d575f9b3c0"></a>
 <a class="el" href="classUniSubset.html">UniSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSet.html#a154ae422d9f248c8b50f39d575f9b3c0">uniSubsetArray</a></td></tr>
@@ -169,27 +162,26 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="separator:a3f7c0c9a9b7dd5a9607201cfa478d567 inherit pro_attribs_classUniSet"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A uni-dimensional set of elements structured according to a complete binary hierarchy, and such that the feasible subsets are all the nodes of the hierarchy. </p>
+<div class="textblock"><p>A uni-dimensional set of elements structured according to a hierarchy (tree), and such that the feasible subsets are all the nodes of the hierarchy (tree) </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ab6bfd19708056eb61eb0cd297a96aef0"></a>
+<a class="anchor" id="aeb0f207ca4c762dcbf825b05a0839d6b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">HierarchicalUniSet::HierarchicalUniSet </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>depth</em></td><td>)</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>fileName</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Depth of the complete binary hierarchy. </p>
-<p>Constructor </p>
+<p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">size</td><td>: Depth of the complete binary hierarchy </td></tr>
+    <tr><td class="paramname">fileName</td><td>: The location of the CSV file from which the hierarchy should be build: first column should indicate nodes labels, and third column should indicate the corresponding parent (or NULL if top element) </td></tr>
   </table>
   </dd>
 </dl>
@@ -197,13 +189,13 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/lamarche/programming/optimal_partition/src/<a class="el" href="uni__set_8hpp_source.html">uni_set.hpp</a></li>
-<li>/home/lamarche/programming/optimal_partition/src/uni_set.cpp</li>
+<li>src/<a class="el" href="uni__set_8hpp_source.html">uni_set.hpp</a></li>
+<li>src/uni_set.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Nov 12 2015 17:01:42 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Nov 16 2015 16:05:38 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

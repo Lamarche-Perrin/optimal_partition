@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['name',['name',['../classUniSubset.html#accf967a0475f78b1998fa3aaa2a6ae8e',1,'UniSubset']]],
   ['node1',['node1',['../classVoterEdge.html#aaa3e4febee48a905652ba142b8a48b7e',1,'VoterEdge']]],
   ['node2',['node2',['../classVoterEdge.html#a2483bd0524c590213c0abd33f7a5de2b',1,'VoterEdge']]],
   ['nodemap',['nodeMap',['../classVoterGraph.html#a73838569fae5c5c96efadb1f121f5a90',1,'VoterGraph']]],

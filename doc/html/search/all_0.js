@@ -11,6 +11,5 @@ var searchData=
   ['addtrainvalue',['addTrainValue',['../classPredictionDataset.html#ae2d6c192122c2f9f7a1b3232b486d86c',1,'PredictionDataset::addTrainValue(MultiSubset *preValue, MultiSubset *postValue, int count=1)'],['../classPredictionDataset.html#a9615dd7ab9f8dd04fb2fb28d68bd96b1',1,'PredictionDataset::addTrainValue(int preIndex, int postIndex, int count=1)']]],
   ['addunisubsetset',['addUniSubsetSet',['../classUniSubset.html#a7000de6419fa5cdd69b577dbdb6f4b59',1,'UniSubset']]],
   ['atomicmultisubsetnumber',['atomicMultiSubsetNumber',['../classMultiSet.html#a3084e5afaa18d1f19a38f7139f827cfc',1,'MultiSet']]],
-  ['atomicnum',['atomicNum',['../classUniSubset.html#af111f69a265de0069e5705ce2c222f45',1,'UniSubset']]],
-  ['atomicunisubsetarray',['atomicUniSubsetArray',['../classUniSet.html#a16746d02b5503c5d8c62fe4dff46c5b3',1,'UniSet']]]
+  ['atomicnum',['atomicNum',['../classUniSubset.html#af111f69a265de0069e5705ce2c222f45',1,'UniSubset']]]
 ];

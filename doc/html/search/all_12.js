@@ -10,7 +10,7 @@ var searchData=
   ['votermeasurementtrajectory',['VoterMeasurementTrajectory',['../classVoterMeasurementTrajectory.html',1,'']]],
   ['votermetric',['VoterMetric',['../voter__graph_8hpp.html#acb4c45a5ce4a55eee28e54e60409b9c5',1,'voter_graph.hpp']]],
   ['voternode',['VoterNode',['../classVoterNode.html',1,'VoterNode'],['../classVoterNode.html#a2a776a4a502a6087f44f8b3451d6debc',1,'VoterNode::VoterNode()']]],
-  ['voterprobe',['VoterProbe',['../classVoterProbe.html',1,'VoterProbe'],['../classUniSet.html#a3f7c0c9a9b7dd5a9607201cfa478d567',1,'UniSet::voterProbe()'],['../classVoterProbe.html#a589eba6cb211385f334b2cad33c7b591',1,'VoterProbe::VoterProbe()']]],
+  ['voterprobe',['VoterProbe',['../classVoterProbe.html',1,'VoterProbe'],['../classVoterProbe.html#a589eba6cb211385f334b2cad33c7b591',1,'VoterProbe::VoterProbe()'],['../classUniSet.html#a3f7c0c9a9b7dd5a9607201cfa478d567',1,'UniSet::voterProbe()']]],
   ['voterstate',['VoterState',['../classVoterState.html',1,'']]],
   ['votertrajectory',['VoterTrajectory',['../classVoterTrajectory.html',1,'']]]
 ];
