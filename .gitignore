@@ -24,6 +24,10 @@ src/*
 !src/Makefile
 
 # Input files
+input/*
+!input/GEOMEDIA
+!input/GEOMEDIA/*.R
+!input/GEOMEDIA/*.csv
 
 # Output files
 output/*
