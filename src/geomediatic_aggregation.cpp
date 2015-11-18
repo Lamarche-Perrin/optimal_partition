@@ -36,37 +36,88 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <fstream>
 
 #include "geomediatic_aggregation.hpp"
 #include "uni_set.hpp"
 #include "multi_set.hpp"
 #include "relative_entropy.hpp"
 
+#include "csv_tools.hpp"
+
 bool VERBOSE = false;
 int VERBOSE_TAB = 0;
-
 
 int main (int argc, char *argv[])
 {
     srand(time(NULL));
 
-	UniSet *hierarchy = new HierarchicalUniSet ("../input/GEOMEDIA/smallWUTS.csv");
-	hierarchy->buildDataStructure();
-	//hierarchy->print();
-	//std::cout << hierarchy->atomicUniSubsetNumber << std::endl;
+	// Declare and instantiate data files
+	std::string cubeFileName = "input/GEOMEDIA/smallCube.csv";
+	std::string hierarchyFileName = "input/GEOMEDIA/WUTS.csv";
 
-	UniSet *dates = new OrderedUniSet (10);
-	dates->buildDataStructure();
-	//dates->print();
-	//std::cout << dates->atomicUniSubsetNumber << std::endl;
+	// Declare variables
+	int dimension;
+	int *sizeArray;
+	std::string *dimArray;
+	std::string *labels;
+	
+	UniSet **setArray;
 
-	UniSet *media = new UnconstrainedUniSet (5);
-	media->buildDataStructure();
-	//media->print();
-	//std::cout << media->atomicUniSubsetNumber << std::endl;
+	// Open data file
+	CSVLine line;
+	std::ifstream cubeFile;
+	openInputCSV (cubeFile, cubeFileName);
 
-	UniSet *setArray [3] = {hierarchy, dates, media};
-	MultiSet *multiSet = new MultiSet (setArray,3);
+	// Get number of dimensions
+	if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
+	getCSVLine (cubeFile, line);
+	
+	dimension = string2int(line[0]);
+
+	// Get types of dimensions
+	if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
+	getCSVLine (cubeFile, line);
+
+	dimArray = new std::string [dimension];
+	for (int d = 0; d < dimension; d++) { dimArray[d] = line[d]; }
+
+	// Get sizes of dimensions
+	if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
+	getCSVLine (cubeFile, line);
+
+	sizeArray = new int [dimension];
+	for (int d = 0; d < dimension; d++) { sizeArray[d] = string2int(line[d]); }
+
+	// Print list of dimensions
+	for (int d = 0; d < dimension; d++)
+	{
+		if (d > 0) { std::cout << " x "; }
+		std::cout << dimArray[d] << "(" << sizeArray[d] << ")";
+	}
+	std::cout << std::endl;
+
+	// Build corresponding uni-dimensional sets
+	setArray = new UniSet* [dimension];	
+	for (int d = 0; d < dimension; d++)
+	{
+		if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
+		getCSVLine (cubeFile, line);
+
+		labels = new std::string [sizeArray[d]];
+		for (int l = 0; l < sizeArray[d]; l++) { labels[l] = line[l]; }
+
+		if (dimArray[d] == "media") { setArray[d] = new UnconstrainedUniSet (sizeArray[d], labels); }
+		else if (dimArray[d] == "time") { setArray[d] = new OrderedUniSet (sizeArray[d], labels); }
+		else if (dimArray[d] == "space") { setArray[d] = new HierarchicalUniSet (hierarchyFileName, sizeArray[d], labels); }
+		
+		setArray[d]->buildDataStructure ();
+	}
+
+	closeInputCSV (cubeFile);
+
+	
+	MultiSet *multiSet = new MultiSet (setArray, dimension);
 	multiSet->buildDataStructure();
 	//multiSet->print();
 	//std::cout << multiSet->atomicMultiSubsetNumber << std::endl;
@@ -81,9 +132,10 @@ int main (int argc, char *argv[])
 	//multiSet->getOptimalPartition(0.6)->print();
 
 	//multiSet->print();
-	MultiSubset **subsetArray = multiSet->getOptimalMultiSubset (1, 10);
-	for (int n = 0; n < 10; n++) { subsetArray[n]->print(); }
-
+	int subsetNumber = 10;
+	MultiSubset **subsetArray = multiSet->getOptimalMultiSubset (0.5, subsetNumber);
+	for (int n = 0; n < subsetNumber; n++) { subsetArray[n]->print(); }
+	
 	return EXIT_SUCCESS;
 }
 

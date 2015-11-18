@@ -451,7 +451,7 @@ void MultiSubset::printIndexSet (bool endl)
 	for (int d = 0; d < dimension; d++)
 	{
 		if (uniSubsetArray[d]->name != "") { std::cout << uniSubsetArray[d]->name; } else { uniSubsetArray[d]->printIndexSet(); }
-		if (d+1 < dimension) { std::cout << ","; }
+		if (d+1 < dimension) { std::cout << ", "; }
 	}
 	std::cout << ")";
 	if (endl) { std::cout << std::endl; }

@@ -153,6 +153,7 @@ public:
 
 	bool equal (Partition *p);
 	void print (bool endl = false);
+	void printAsOrderedBiSet (std::string *labelMatrix = 0);
 };
 
 

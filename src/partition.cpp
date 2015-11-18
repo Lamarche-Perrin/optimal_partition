@@ -38,6 +38,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <algorithm>
 
 #include "partition.hpp"
 #include "datatree.hpp"
@@ -365,3 +366,74 @@ void Partition::print (bool endl)
 }
 
 
+void Partition::printAsOrderedBiSet (std::string *labelMatrix)
+{
+	int size1 = 0; int size2 = 0;
+	for (std::list<Part*>::iterator it = parts->begin(); it != parts->end(); ++it)
+	{
+		MultiPart *part = (MultiPart*) *it;
+		if (part->dimension != 2) { std::cout << "ERROR: Call of printAsOrderedBiSet only allowed on bi-dimensional partitions!" << std::endl; }
+
+		Part *part1 = part->partArray[0];
+		Part *part2 = part->partArray[1];
+		int tmax1 = *std::max_element (part1->individuals->begin(), part1->individuals->end());
+		int tmax2 = *std::max_element (part2->individuals->begin(), part2->individuals->end());
+		size1 = std::max(size1,tmax1);
+		size2 = std::max(size2,tmax2);
+	}
+	size1++; size2++;
+
+	bool bottom [size1*size2]; bool right [size1*size2];
+	for (int s = 0; s < size1*size2; s++) { bottom[s] = false; right[s] = false; }
+
+	for (std::list<Part*>::iterator it = parts->begin(); it != parts->end(); ++it)
+	{
+		MultiPart *part = (MultiPart*) *it;
+		Part *part1 = part->partArray[0];
+		Part *part2 = part->partArray[1];
+
+		int tmin1 = *std::min_element (part1->individuals->begin(), part1->individuals->end());
+		int tmax1 = *std::max_element (part1->individuals->begin(), part1->individuals->end());
+
+		int tmin2 = *std::min_element (part2->individuals->begin(), part2->individuals->end());
+		int tmax2 = *std::max_element (part2->individuals->begin(), part2->individuals->end());
+
+		for (int i1 = tmin1; i1 <= tmax1; i1++)
+		{
+			if (tmin2-1 >= 0) { bottom[i1 + (tmin2-1)*size1] = true; }
+			bottom[i1 + tmax2*size1] = true;
+		}
+		
+		for (int i2 = tmin2; i2 <= tmax2; i2++)
+		{
+			if (tmin1-1 >= 0) { right[(tmin1-1) + i2*size1] = true; }
+			right[tmax1 + i2*size1] = true;
+		}
+	}
+
+	for (int i2 = 0; i2 < size2; i2++)
+	{
+		for (int i1 = 0; i1 < size1; i1++)
+		{
+			std::cout << "+";
+			if (i2 == 0 || bottom[i1+(i2-1)*size1]) { std::cout << "---"; } else { std::cout << "   "; }
+		}
+		std::cout << "+" << std::endl;
+
+		for (int l = 0; l < 1; l++)
+		{
+			for (int i1 = 0; i1 < size1; i1++)
+			{
+				if (i1 == 0 || right[(i1-1)+i2*size1]) { std::cout << "|"; } else { std::cout << " "; }
+				std::cout << " ";
+				if (labelMatrix != 0) { std::cout << labelMatrix[i1+i2*size1]; } else { std::cout << " "; }
+				std::cout << " ";
+			}
+			std::cout << "|" << std::endl;
+		}
+	}
+
+	std::cout << "+";
+	for (int i1 = 0; i1 < size1; i1++) { std::cout << "---+"; }
+	std::cout << std::endl;
+}

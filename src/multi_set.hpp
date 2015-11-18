@@ -43,7 +43,7 @@
 #include "uni_set.hpp"
 #include "abstract_set.hpp"
 #include "voter_graph.hpp"
-
+#include "quadratic_score.hpp"
 
 /*!
  * \file multi_set.hpp
@@ -71,8 +71,12 @@ class MultiSet: public AbstractSet
 	
 public:
 	int dimension; /** \brief Number of dimensions */
-	int atomicMultiSubsetNumber; /** \brief Number of elements (e.g., atomic feasible subsets) */
+	int atomicMultiSubsetNumber; /** \brief Number of elements (i.e., atomic feasible subsets) */
 	int multiSubsetNumber; /** \brief Number of feasible subsets */
+
+	MultiSubset *firstMultiSubset; /** \brief Top element in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) */
+	MultiSubset **atomicMultiSubsetArray; /** \brief Array of pointers to all elements (i.e., atomic feasible subsets) */
+	MultiSubset **multiSubsetArray; /** \brief Array of pointers to all feasible subsets */
 
 	/*!
 	 * \brief Constructor for a one-dimensional set
@@ -99,21 +103,21 @@ public:
 	virtual ~MultiSet ();
 
 	/*!
-	 * Access to an element (e.g., atomic feasible subset) from its index IN THE CASE OF A ONE-DIMENSIONAL SET
+	 * Access to an element (i.e., atomic feasible subset) from its index IN THE CASE OF A ONE-DIMENSIONAL SET
 	 * /param index : The index of the element to access
 	 * /return A pointer to the unique atomic feasible subset that contains the element
 	 */
 	MultiSubset *getAtomicMultiSubset (int index);
 
 	/*!
-	 * Access to an element (e.g., atomic feasible subset) from its indices
+	 * Access to an element (i.e., atomic feasible subset) from its indices
 	 * /param indices : The indices of the element to access
 	 * /return A pointer to the unique atomic feasible subset that contains the element
 	 */
 	MultiSubset *getAtomicMultiSubset (int *indices);
 
 	/*!
-	 * Access to a random element (e.g., atomic feasible subset)
+	 * Access to a random element (i.e., atomic feasible subset)
 	 * /return A pointer to the unique atomic feasible subset that contains the element
 	 */
 	MultiSubset *getRandomAtomicMultiSubset ();
@@ -140,10 +144,6 @@ public:
 
 protected:
 	UniSet **uniSetArray;
-
-	MultiSubset *firstMultiSubset;
-	MultiSubset **multiSubsetArray;
-	MultiSubset **atomicMultiSubsetArray;
 
 	int getNum (int *multiNum);
 	int *getMultiNum (int num);

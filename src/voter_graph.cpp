@@ -1835,7 +1835,7 @@ PredictionDataset *VoterDataSet::getPredictionDataset (MultiSet *preSet, MultiSe
 			}
 
 			dataset->addTrainValue (preSet->getAtomicMultiSubset(preIndices), postSet->getAtomicMultiSubset(postIndices));
-			dataset->addTestValue (preSet->getAtomicMultiSubset(preIndices), postSet->getAtomicMultiSubset(postIndices));
+			//dataset->addTestValue (preSet->getAtomicMultiSubset(preIndices), postSet->getAtomicMultiSubset(postIndices));
 		}
 	}
 

@@ -35,42 +35,41 @@
  */
 
 
-#ifndef INCLUDE_LOGARITHMIC_SCORE
-#define INCLUDE_LOGARITHMIC_SCORE
+#ifndef INCLUDE_QUADRATIC_SCORE
+#define INCLUDE_QUADRATIC_SCORE
 
 #include "objective_function.hpp"
 #include "prediction_dataset.hpp"
 
 /*!
- * \file logarithmic_score.hpp
- * \brief Classes to define and compute the logarithmic score function in the case of point prediction
+ * \file quadratic_score.hpp
+ * \brief Classes to define and compute the quadratic score function in the case of point prediction
  * \author Robin Lamarche-Perrin
  * \date 06/11/2015
  */
 
 
-class LogarithmicScoreValue;
+class QuadraticScoreValue;
 
 /*!
- * \class LogarithmicScore
- * \brief Class to define and compute the logarithmic score function in the case of point prediction
+ * \class QuadraticScore
+ * \brief Class to define and compute the quadratic score function in the case of point prediction
  */
-class LogarithmicScore: public ObjectiveFunction
+class QuadraticScore: public ObjectiveFunction
 {
-	friend LogarithmicScoreValue;
+	friend QuadraticScoreValue;
 	
 public:
 	/*!
 	 * \brief Constructor
 	 * \param dataset : The prediction data set that is use to evaluate the score function (from a train set and a test set both containing pre-observations and post-observations)
-	 * \param prior : A prior giving the number of times each couple of (pre and post) observations has been observed in addition to the train set
 	 */
-	LogarithmicScore (PredictionDataset *dataset, int prior = 0);
+	QuadraticScore (PredictionDataset *dataset);
 
 	/*!
 	 * \brief Destructor
 	 */
-	~LogarithmicScore ();
+	~QuadraticScore ();
 	
 	void setRandom ();
 	ObjectiveValue *newObjectiveValue (int index = -1);
@@ -82,19 +81,17 @@ public:
 	double getIntermediaryUnit (double uMin, double uMax);
 
 private:
-	PredictionDataset *dataset;
+	PredictionDataset *dataset; /** /brief The prediction data set that is use to evaluate the score function (from a train set and a test set both containing pre-observations and post-observations) */
 
 	int preSize, postSize;
 	int *trainCountArray;
 	int trainCountTotal;
 	int *testCountArray;
 	int testCountTotal;
-	int prior;
-   
 };
 
 
-class LogarithmicScoreValue: public ObjectiveValue
+class QuadraticScoreValue: public ObjectiveValue
 {
 public:
 	int preSize, postSize;
@@ -104,10 +101,9 @@ public:
 	int testCountTotal;
 
 	double score;
-	bool infinite;
 	
-	LogarithmicScoreValue (LogarithmicScore *objective);
-	~LogarithmicScoreValue ();
+	QuadraticScoreValue (QuadraticScore *objective);
+	~QuadraticScoreValue ();
 		
 	void add (ObjectiveValue *value);
 	void compute ();

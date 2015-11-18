@@ -80,7 +80,11 @@ class UniSet
 public:
 	int atomicUniSubsetNumber; /** \brief Number of elements (i.e., atomic feasible subsets)*/
 	int uniSubsetNumber; /** \brief Number of feasible subsets */
-	
+
+	UniSubset *firstUniSubset; /** \brief Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) */
+	UniSubset **atomicUniSubsetArray; /** \brief Array of pointers to all elements (i.e., atomic feasible subsets) */
+	UniSubset **uniSubsetArray; /** \brief Array of pointers to all feasible subsets */
+
 	/*!
      * \brief Constructor
 	 * \param firstUniSubset : Top subset in the lattice of feasible subsets
@@ -103,10 +107,6 @@ public:
 	void print ();
 
 protected:
-	UniSubset **atomicUniSubsetArray; /** \brief Array of pointers to all elements (i.e., atomic feasible subsets) */
-	UniSubset **uniSubsetArray; /** \brief Array of pointers to all feasible subsets */
-	UniSubset *firstUniSubset; /** \brief Top subset in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) */
-
 	VoterMeasurement *voterMeasurement; /** \brief (Optional) A probe measurement of a voter model that has been used to build this uni-dimensional set */
 	VoterProbe *voterProbe; /** \brief (Optional) A probe of a voter model that has been used to build this uni-dimensional set */
 	
@@ -129,8 +129,9 @@ public:
 	/*!
 	 * \brief Constructor
 	 * \param size : Number of elements
+	 * \param labels : (Optional) Labels for the atomic elements
 	 */
-	UnconstrainedUniSet (int size);
+	UnconstrainedUniSet (int size, std::string *labels = 0);
 };
 
 
@@ -146,8 +147,9 @@ public:
 	/*!
 	 * \brief Constructor
 	 * \param size : Number of ordered elements
+	 * \param labels : (Optional) Labels for the atomic elements
 	 */
-	OrderedUniSet (int size);
+	OrderedUniSet (int size, std::string *labels = 0);
 
 private:
 	int getCell (int i, int j);
@@ -166,6 +168,14 @@ public:
 	 * \param fileName : The location of the CSV file from which the hierarchy should be build: first column should indicate nodes labels, and third column should indicate the corresponding parent (or NULL if top element)
 	 */
 	HierarchicalUniSet (std::string fileName);
+
+	/*!
+	 * \brief Constructor
+	 * \param fileName : The location of the CSV file from which the hierarchy should be build: first column should indicate nodes labels, and third column should indicate the corresponding parent (or NULL if top element)
+	 * \param size : Number of atomic elements that are actually selected to build the hierarchy (filter)
+	 * \param labels : Labels of the atomic elements that are selected (filter)
+	 */
+	HierarchicalUniSet (std::string fileName, int size, std::string *labels = 0);
 };
 
 

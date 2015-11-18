@@ -73,7 +73,7 @@ Dataset *getDatasetFromCSV (std::string inputFileName, std::string labelsFileNam
 //void writeDataToCSV(data &data, std::string fileName);
 
 void openInputCSV (std::ifstream &file, std::string fileName);
-bool isInputCSVEmpty(std::ifstream &file);
+bool isInputCSVEmpty (std::ifstream &file);
 bool hasCSVLine (std::ifstream &file);
 void getCSVLine (std::ifstream &file, CSVLine &line, int sizeMax = 8);
 void printCSVLine (CSVLine &line);
@@ -95,6 +95,7 @@ void endCSVLine (std::ofstream &file);
 
 void closeOutputCSV (std::ofstream &file);
 
+int string2int (std::string str);
 double string2double (std::string str);
 std::string int2string (int value);
 std::string float2string (float value, int prec = 10);

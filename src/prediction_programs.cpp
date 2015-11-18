@@ -35,12 +35,15 @@
  */
 
 
+
 #include "prediction_programs.hpp"
 
 #include "uni_set.hpp"
 #include "multi_set.hpp"
+
 #include "prediction_dataset.hpp"
 #include "logarithmic_score.hpp"
+#include "quadratic_score.hpp"
 
 #include "timer.hpp"
 #include "voter_graph.hpp"
@@ -252,20 +255,21 @@ void optimalBinningOfVoterModel ()
 	/*
 	 * Build voter graph with two communities.
 	 */
-	int size = 6;
+	int size = 7;
 	double intraRate = 1.;
-	double interRate = 1./5;
-	double contrarian = 0; //1./(size+1);
+	double interRate = 0.9;
+	double contrarian = 0; //1./(size+1); //1./(2*size+1);
 
-	//VoterGraph *VG = new TwoCommunitiesVoterGraph (size,size, intraRate,intraRate, interRate,interRate, contrarian,contrarian);
-	VoterGraph *VG = new TwoCommunitiesVoterGraph (size,0, intraRate,0, 0,0, contrarian,0);
+	VoterGraph *VG = new TwoCommunitiesVoterGraph (size,size, intraRate,intraRate, interRate,interRate, contrarian,contrarian);
+	//VoterGraph *VG = new TwoCommunitiesVoterGraph (size,0, intraRate,0, interRate,0, contrarian,0);
 
 	/*
 	 * Build uni-dimensional measurements of the graph.
 	 */
 	VoterMeasurement *microM = getMeasurement (VG, M_MICRO, MACRO_STATE);
 	VoterMeasurement *agentM = getMeasurement (VG, M_AGENT1, MACRO_STATE);
-	VoterMeasurement *mesoM = getMeasurement (VG, M_MESO1, MACRO_STATE);
+	VoterMeasurement *meso1M = getMeasurement (VG, M_MESO1, MACRO_STATE);
+	VoterMeasurement *meso2M = getMeasurement (VG, M_MESO2, MACRO_STATE);
 	VoterMeasurement *macroM = getMeasurement (VG, M_MACRO, MACRO_STATE);
 
 	VoterMeasurement *postM = getMeasurement (VG, M_MACRO, MACRO_STATE);
@@ -279,12 +283,14 @@ void optimalBinningOfVoterModel ()
 		microSetVector->at(p)->buildDataStructure();
 
 	OrderedUniSet *agentSet = agentM->getOrderedUniSet();
-	OrderedUniSet *mesoSet = mesoM->getOrderedUniSet();
+	OrderedUniSet *meso1Set = meso1M->getOrderedUniSet();
+	OrderedUniSet *meso2Set = meso2M->getOrderedUniSet();
 	OrderedUniSet *macroSet = macroM->getOrderedUniSet();
 	OrderedUniSet *postSet = postM->getOrderedUniSet();
 
 	agentSet->buildDataStructure();
-	mesoSet->buildDataStructure();
+	meso1Set->buildDataStructure();
+	meso2Set->buildDataStructure();
 	macroSet->buildDataStructure();
 	postSet->buildDataStructure();
 
@@ -293,12 +299,11 @@ void optimalBinningOfVoterModel ()
 	 */
 	std::vector<UniSet*> *setVector = new std::vector<UniSet*>();
 
-	for (unsigned int p = 0; p < microSetVector->size(); p++)
-		setVector->push_back(microSetVector->at(p));
-
-	//setArray[dimension++] = agentSet;
-	//setArray[dimension++] = mesoSet;
+	//for (unsigned int p = 0; p < microSetVector->size(); p++) { setVector->push_back(microSetVector->at(p)); }
+	//setVector->push_back(agentSet);
+	//setVector->push_back(meso2Set);
 	setVector->push_back(macroSet);
+	setVector->push_back(meso1Set);
 
 	MultiSet *preMultiSet = new MultiSet (setVector);
 	MultiSet *postMultiSet = new MultiSet (postSet);
@@ -310,9 +315,9 @@ void optimalBinningOfVoterModel ()
 	 * Compute a data set of trajectories.
 	 */
 	int time = 0;
-	int delay = 1;
+	int delay = 2;
 	int trainSize = 1000;
-	int testSize = 0;
+	int testSize = 1000000;
 	int trainLength = 1;
 	int testLength = 0;
 	
@@ -328,9 +333,10 @@ void optimalBinningOfVoterModel ()
 	/*
 	 * Build the logarithmic score function associated to the prediction data set.
 	 */
-	int prior = 0;
+	//int prior = 0;
 	
-	LogarithmicScore *score = new LogarithmicScore (PDS, prior);
+	//LogarithmicScore *score = new LogarithmicScore (PDS, prior);
+	QuadraticScore *score = new QuadraticScore (PDS);
 	preMultiSet->setObjectiveFunction(score);
 
 	/*
@@ -343,8 +349,18 @@ void optimalBinningOfVoterModel ()
 	 * Compute the binning that optimises the logarithmic score.
 	 */
 	Partition *partition = preMultiSet->getOptimalPartition (0);
-	partition->print();
 
+	int size1 = size*2+1; int size2 = size+1;
+	std::string *labels = new std::string [size1*size2];
+	for (int i1 = 0; i1 < size1; i1++)
+		for (int i2 = 0; i2 < size2; i2++)
+			if (i1 < i2 || i2+size2 <= i1) { labels[i1+i2*size1] = "X"; }
+			else { labels[i1+i2*size1] = " "; }
+	
+	partition->printAsOrderedBiSet (labels);
+	partition->print();
+	delete [] labels;
+	
 	/*
 	 * Compare to former algorithm.
 	 */

@@ -128,7 +128,7 @@ void UniSet::print ()
 }
 
 
-UnconstrainedUniSet::UnconstrainedUniSet (int s) : UniSet (0)
+UnconstrainedUniSet::UnconstrainedUniSet (int s, std::string *labels) : UniSet (0)
 {
 	size = s;
 	long unsigned int subsetNb = std::pow(2,size);
@@ -148,8 +148,32 @@ UnconstrainedUniSet::UnconstrainedUniSet (int s) : UniSet (0)
 			j = j >> 1;
 		}
 
-		if (elementNb == 1) { subsetArray[i] = new UniSubset (index++); }
-		else { subsetArray[i] = new UniSubset (); }
+		if (elementNb == 1)
+		{
+			subsetArray[i] = new UniSubset (index);
+			if (labels != 0) { subsetArray[i]->name = "{" + labels[index] + "}"; }
+			index++;
+		}
+		
+		else {
+			subsetArray[i] = new UniSubset ();
+			
+			if (labels != 0)
+			{
+				bool first = true;
+				std::string label = "{";
+				for (int s = 0; s < size; s++)
+				{
+					if (boolArray[s])
+					{
+						if (!first) { label += ", "; } else { first = false; }
+						label += labels[s];
+					}
+				}
+				label += "}";
+				subsetArray[i]->name = label;
+			}
+		}
 	}
 
 	for (long unsigned int i = 1; i < subsetNb; i++)
@@ -194,7 +218,7 @@ UnconstrainedUniSet::UnconstrainedUniSet (int s) : UniSet (0)
 }
 
 
-OrderedUniSet::OrderedUniSet (int s) : UniSet (0)
+OrderedUniSet::OrderedUniSet (int s, std::string *labels) : UniSet (0)
 {
 	size = s;
 	int size2 = size*(size+1)/2;
@@ -207,8 +231,16 @@ OrderedUniSet::OrderedUniSet (int s) : UniSet (0)
 			if (j == 0) { index = i; }
 			subsetArray[getCell(i,j)] = new UniSubset (index);
 
-			if (j == 0) { subsetArray[getCell(i,j)]->name = "[" + int2string(i) + "]"; }
-			else { subsetArray[getCell(i,j)]->name = "[" + int2string(i) + "," + int2string(i+j) + "]"; }
+			if (labels != 0)
+			{
+				if (j == 0) { subsetArray[getCell(i,j)]->name = "[" + labels[i] + "]"; }
+				else { subsetArray[getCell(i,j)]->name = "[" + labels[i] + ", " + labels[i+j] + "]"; }				
+			}
+
+			else {
+				if (j == 0) { subsetArray[getCell(i,j)]->name = "[" + int2string(i) + "]"; }
+				else { subsetArray[getCell(i,j)]->name = "[" + int2string(i) + ", " + int2string(i+j) + "]"; }				
+			}
 		}
 
 	for (int j = 0; j < size; j++)
@@ -245,6 +277,8 @@ HierarchicalUniSet::HierarchicalUniSet (std::string fileName) : UniSet (0)
 		parentMap.insert(std::make_pair(line[0],line[2]));
 	}
 
+	closeInputCSV (file);
+
 	for (std::map<std::string,std::string>::iterator it1 = parentMap.begin(); it1 != parentMap.end(); it1++)
 	{
 		std::string name = it1->first;
@@ -274,6 +308,67 @@ HierarchicalUniSet::HierarchicalUniSet (std::string fileName) : UniSet (0)
 		for (std::map<std::string,std::string>::iterator it2 = parentMap.begin(); it2 != parentMap.end(); it2++)
 		{
 			if (it2->second == name) { subsetSet->push_back(subsetMap.at(it2->first)); }
+		}
+		subset->addUniSubsetSet(subsetSet);
+	}	
+}
+
+
+HierarchicalUniSet::HierarchicalUniSet (std::string fileName, int size, std::string *labels) : UniSet (0)
+{
+	// TODO: This method can surely be optimised!
+	std::map<std::string,std::string> parentMap;
+	std::map<std::string,UniSubset*> subsetMap;
+	std::list<std::string> subsetList;
+
+	// Read file
+	std::ifstream file;
+	openInputCSV (file, fileName);
+
+	CSVLine line;
+	while (hasCSVLine (file))
+	{
+		getCSVLine (file, line);
+		parentMap.insert(std::make_pair(line[0],line[2]));
+	}
+	closeInputCSV (file);
+
+	// Select micro-elements
+	for (int s = 0; s < size; s++)
+	{
+		UniSubset *subset = new UniSubset(s);
+		subset->name = labels[s];
+		subsetMap.insert (std::make_pair(labels[s],subset));
+		subsetList.push_back(parentMap[labels[s]]);
+	}
+
+	// Add parent nodes
+	while (!subsetList.empty())
+	{
+		std::string name = subsetList.front();
+		std::string parent = parentMap[name];
+		subsetList.pop_front();
+
+		if (subsetMap.find(name) != subsetMap.end()) { continue; }
+	
+		UniSubset *subset = new UniSubset();
+		subset->name = name;
+		subsetMap.insert (std::make_pair(name,subset));
+		if (parent != "NULL") { subsetList.push_back(parent); } else { firstUniSubset = subset; }
+	}
+
+	// Build refinement for each node
+	for (std::map<std::string,UniSubset*>::iterator it1 = subsetMap.begin(); it1 != subsetMap.end(); it1++)
+	{
+		std::string name = it1->first;
+		UniSubset *subset = it1->second;
+
+		if (subset->isAtomic) { continue; }
+
+		UniSubsetSet *subsetSet = new UniSubsetSet ();
+		for (std::map<std::string,std::string>::iterator it2 = parentMap.begin(); it2 != parentMap.end(); it2++)
+		{
+			if (it2->second == name && subsetMap.find(it2->first) != subsetMap.end()) { subsetSet->push_back(subsetMap.at(it2->first)); }
 		}
 		subset->addUniSubsetSet(subsetSet);
 	}	
