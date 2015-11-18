@@ -2,6 +2,7 @@
 optimal_partition
 header
 add_header
+gmon.out
 
 # C++ and Dev-C++
 *.o

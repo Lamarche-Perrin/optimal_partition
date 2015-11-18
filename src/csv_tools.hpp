@@ -75,6 +75,7 @@ Dataset *getDatasetFromCSV (std::string inputFileName, std::string labelsFileNam
 void openInputCSV (std::ifstream &file, std::string fileName);
 bool isInputCSVEmpty (std::ifstream &file);
 bool hasCSVLine (std::ifstream &file);
+void nextCSVLine (std::ifstream &file);
 void getCSVLine (std::ifstream &file, CSVLine &line, int sizeMax = 8);
 void printCSVLine (CSVLine &line);
 void parseCSVFile (std::string fileName);

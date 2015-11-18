@@ -55,7 +55,8 @@ int main (int argc, char *argv[])
 	// Declare and instantiate data files
 	std::string cubeFileName = "input/GEOMEDIA/smallCube.csv";
 	std::string hierarchyFileName = "input/GEOMEDIA/WUTS.csv";
-
+	std::string modelFileName = "input/GEOMEDIA/smallModel_ST.csv";
+	
 	// Declare variables
 	int dimension;
 	int *sizeArray;
@@ -102,7 +103,7 @@ int main (int argc, char *argv[])
 	for (int d = 0; d < dimension; d++)
 	{
 		if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
-		getCSVLine (cubeFile, line);
+		getCSVLine (cubeFile, line, sizeArray[d]);
 
 		labels = new std::string [sizeArray[d]];
 		for (int l = 0; l < sizeArray[d]; l++) { labels[l] = line[l]; }
@@ -114,28 +115,54 @@ int main (int argc, char *argv[])
 		setArray[d]->buildDataStructure ();
 	}
 
-	closeInputCSV (cubeFile);
-
-	
+	// Build resulting multi-dimensional set
 	MultiSet *multiSet = new MultiSet (setArray, dimension);
 	multiSet->buildDataStructure();
+	int elementNb = multiSet->atomicMultiSubsetNumber;
 	//multiSet->print();
 	//std::cout << multiSet->atomicMultiSubsetNumber << std::endl;
-	
-    RelativeEntropy *objective = new RelativeEntropy (multiSet->atomicMultiSubsetNumber);
-	objective->setRandom();
-	
+
+	// Get values and build objective function
+	if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
+	getCSVLine (cubeFile, line, elementNb);
+
+	double *values = new double [elementNb];
+	for (int i = 0; i < elementNb; i++) { values[i] = string2int(line[i]); }
+
+	double *refValues = 0;
+	if (modelFileName != "")
+	{
+		std::ifstream modelFile;
+		openInputCSV (modelFile, modelFileName);
+
+		for (int i = 0; i < 3+dimension; i++)
+		{
+			if (!hasCSVLine (modelFile)) { closeInputCSV (modelFile); return EXIT_FAILURE; }
+			nextCSVLine (modelFile);
+		}
+
+		if (!hasCSVLine (modelFile)) { closeInputCSV (modelFile); return EXIT_FAILURE; }
+		getCSVLine (modelFile, line, elementNb);
+
+		refValues = new double [elementNb];
+		for (int i = 0; i < elementNb; i++) { refValues[i] = string2int(line[i]); }
+		
+		closeInputCSV (modelFile);
+	}
+
+    RelativeEntropy *objective = new RelativeEntropy (elementNb, values, refValues);
+
+	// Run algorithm
     multiSet->setObjectiveFunction(objective);
     multiSet->computeObjectiveValues();
     multiSet->normalizeObjectiveValues();
-
 	//multiSet->getOptimalPartition(0.6)->print();
-
-	//multiSet->print();
+	
 	int subsetNumber = 10;
 	MultiSubset **subsetArray = multiSet->getOptimalMultiSubset (0.5, subsetNumber);
 	for (int n = 0; n < subsetNumber; n++) { subsetArray[n]->print(); }
 	
+	closeInputCSV (cubeFile);
 	return EXIT_SUCCESS;
 }
 

@@ -276,6 +276,51 @@ void getCSVLine (std::ifstream &file, CSVLine &line, int sizeMax)
 	}
 }
 
+void nextCSVLine (std::ifstream &file)
+{
+	bool inQuote(false);
+	bool escaping(false);
+	
+	while (file.good() && file.peek() != EOF)
+	{
+		char c;
+		file.get(c);
+
+		switch (c)
+		{
+			case QUOTE_CHAR:
+				if (CSV_QUOTES)
+				{
+					if (escaping) { }
+					else { inQuote = !inQuote; }
+					escaping = false;
+				}
+				break;
+				
+			case ESCAPE_CHAR:
+				escaping = true;
+				break;
+
+			case FIELD_DELIM:
+				escaping = false;
+			break;
+
+			case LINE_DELIM:
+				if (inQuote == true) { }
+				else {
+					return;
+				}
+				escaping = false;
+				break;
+
+			default:
+				escaping = false;
+				break;
+		}
+	}
+}
+
+
 void printCSVLine (CSVLine &line)
 {
 	for (CSVLine::iterator it = line.begin(); it != line.end(); ++it) { std::cout << "[" << *it << "] "; }

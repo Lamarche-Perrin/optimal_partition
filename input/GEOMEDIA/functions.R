@@ -301,6 +301,30 @@ filterDataModelsByOrder <- function (dataModels,
 }
 
 
+cutDataCube <- function (dataCube,
+                         media=NULL,
+                         time=NULL,
+                         space=NULL)
+{
+    return (filterDataCube (dataCube,
+                            mediaList = c(media),
+                            timeFirst = time, timeLast = time,
+                            spaceList = c(space)))
+}
+
+
+cutDataModels <- function (dataModels,
+                           media=NULL,
+                           time=NULL,
+                           space=NULL)
+{
+    for (model in names(dataModels)) {
+        dataModels[[model]] <- cutDataCube (dataModels[[model]], media, time, space)
+    }
+    return (dataModels)
+}
+
+
 getDataModels <- function (dataCube) {
 
     media <- dimnames(dataCube)[[1]]
@@ -362,21 +386,36 @@ getDataModels <- function (dataCube) {
 
 
 readDataCube <- function (fileName) {
-    dim <- scan (file=fileName, sep=";", nlines=1)
-    d <- scan (file=fileName, sep=";", skip=length(dim)+1, nlines=1)
+    d <- scan (file=fileName, sep=";", nlines=1)
+    names <- scan (file=fileName, what="character", sep=";", skip=1, nlines=1)
+    dim <- scan (file=fileName, sep=";", skip=2, nlines=1)
+    d <- scan (file=fileName, sep=";", skip=length(dim)+3, nlines=1)
     dimnames <- list()
     for (i in 1:length(dim)) {
-        dimnames[[i]] <- scan (file=fileName, what="character",
-                               sep=";", skip=i, nlines=1, na.strings="NULL")
+        dimnames[[names[i]]] <- scan (file=fileName, what="character",
+                               sep=";", skip=i+2, nlines=1, na.strings="NULL")
     }
     
     return (array(d,dim,dimnames))
 }
 
 
+readDataModels <- function (fileName) {
+    dataModels <- list()
+    name <- substr(fileName,1,nchar(fileName)-4)
+    extension <- substr(fileName,nchar(fileName)-3,nchar(fileName))
+    for (model in c("MS","MS+MT","MS+MT+ST","MS+ST","MT","MT+ST","ST")) {
+        dataModels[[model]] <- readDataCube (fileName=paste(name,"_",model,extension,sep=""))
+    }
+    return (dataModels)
+}
+
+
 
 writeDataCube <- function (dataCube, fileName) {   
-    write.table (t(dim(dataCube)), file=fileName, sep=";", quote=FALSE, row.names=FALSE, col.names=FALSE)
+    write.table (t(length(dim(dataCube))), file=fileName, sep=";", quote=FALSE, row.names=FALSE, col.names=FALSE)
+    write.table (t(names(dimnames(dataCube))), file=fileName, sep=";", quote=FALSE, row.names=FALSE, col.names=FALSE, append=TRUE)
+    write.table (t(dim(dataCube)), file=fileName, sep=";", quote=FALSE, row.names=FALSE, col.names=FALSE, append=TRUE)
     lapply (dimnames(dataCube), function(x) write.table(t(x), file=fileName, sep=";", quote=FALSE, row.names=FALSE, col.names=FALSE, append=TRUE))
     write.table (t(as.vector(dataCube)), file=fileName, sep=";", quote=FALSE, row.names=FALSE, col.names=FALSE, append=TRUE)
 }
