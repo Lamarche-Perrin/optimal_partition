@@ -37,6 +37,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <fstream>
+#include <getopt.h>
+//#include <unistd.h>
 
 #include "geomediatic_aggregation.hpp"
 #include "uni_set.hpp"
@@ -48,14 +50,86 @@
 bool VERBOSE = false;
 int VERBOSE_TAB = 0;
 
+struct globalArgs_t
+{
+	std::string cubeFileName;
+	std::string modelFileName;
+	std::string outputFileName;
+	std::string hierarchyFileName;
+	double parameter;
+	double threshold;
+	int optimalSubsetNumber;
+    int verbosity;
+} globalArgs;
+
+static const char *optString = "d:m:o:h:s:t:l:v?";
+
+static const struct option longOpts[] = {
+    {"data", required_argument, NULL, 'd'},
+    {"model", required_argument, NULL, 'm'},
+    {"output", required_argument, NULL, 'o'},
+    {"hierarchy", required_argument, NULL, 'h'},
+    {"scale", required_argument, NULL, 's'},
+    {"threshold", required_argument, NULL, 't'},
+    {"optimal-list", required_argument, NULL, 'l'},
+    {"verbose", no_argument, NULL, 'v'},
+    {"help", no_argument, NULL, '?'}
+};
+
+void usage (void)
+{
+	std::cout <<
+		"Usage: geomediatic_aggregation --data dataFile.csv" << std::endl <<
+		"Options:" << std::endl <<
+		"-h | --help           Print this help." << std::endl <<
+		//"-v | --verbose        More output" << std::endl <<
+		"-d | --data           File containing the data (observed values). Required." << std::endl <<
+		"-m | --model          File containing the model (expected values). If not specified: a uniform model is used." << std::endl <<
+		"-o | --output         File to which the results should be printed. If not specified: results are displayed in the terminal." << std::endl <<
+		"-h | --hierarchy      File describing a hierarchy for spatial aggregation. Required only if the data file contains a spatial dimension." << std::endl <<
+		"-s | --scale          A float between 0 and 1 describing the aggregation scale. If not specified: multiple scales are computed (see --threshold option)." << std::endl <<
+		"-t | --threshold      The minimal distance between two consecutive scales. Not used if a unique scale is specified (see --scale option). If not specified: 0.01." << std::endl <<
+		"-l | --optimal-list   Return the list of the N best aggregates instead of the optimal partition, where N is specified after this option." << std::endl;
+    exit (EXIT_FAILURE);
+}
+
+
 int main (int argc, char *argv[])
 {
     srand(time(NULL));
+    int opt = 0;
+	int longIndex;
+    
+    // Initialize globalArgs
+    globalArgs.cubeFileName = "";
+    globalArgs.modelFileName = "";
+    globalArgs.outputFileName = "";
+    globalArgs.hierarchyFileName = "";
+    globalArgs.parameter = -1;
+    globalArgs.threshold = 0.01;
+    globalArgs.optimalSubsetNumber = 0;
+    globalArgs.verbosity = 0;
 
-	// Declare and instantiate data files
-	std::string cubeFileName = "input/GEOMEDIA/smallCube.csv";
-	std::string hierarchyFileName = "input/GEOMEDIA/WUTS.csv";
-	std::string modelFileName = "input/GEOMEDIA/smallModel_ST.csv";
+	// Read program parameters
+	opt = getopt_long (argc, argv, optString, longOpts, &longIndex);
+    while (opt != -1)
+	{
+        switch (opt)
+		{
+		case 'd': globalArgs.cubeFileName = optarg; break;
+		case 'm': globalArgs.modelFileName = optarg; break;
+		case 'o': globalArgs.outputFileName = optarg; break;
+		case 'h': globalArgs.hierarchyFileName = optarg; break;
+		case 's': globalArgs.parameter = string2double(optarg); break;
+		case 't': globalArgs.threshold = string2double(optarg); break;
+		case 'l': globalArgs.optimalSubsetNumber = string2int(optarg); break;
+		case 'v': globalArgs.verbosity++; break;
+		case '?': usage(); break;
+		default: break;
+        }
+        
+        opt = getopt_long (argc, argv, optString, longOpts, &longIndex);
+    }
 	
 	// Declare variables
 	int dimension;
@@ -68,7 +142,7 @@ int main (int argc, char *argv[])
 	// Open data file
 	CSVLine line;
 	std::ifstream cubeFile;
-	openInputCSV (cubeFile, cubeFileName);
+	openInputCSV (cubeFile, globalArgs.cubeFileName);
 
 	// Get number of dimensions
 	if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
@@ -110,7 +184,7 @@ int main (int argc, char *argv[])
 
 		if (dimArray[d] == "media") { setArray[d] = new UnconstrainedUniSet (sizeArray[d], labels); }
 		else if (dimArray[d] == "time") { setArray[d] = new OrderedUniSet (sizeArray[d], labels); }
-		else if (dimArray[d] == "space") { setArray[d] = new HierarchicalUniSet (hierarchyFileName, sizeArray[d], labels); }
+		else if (dimArray[d] == "space") { setArray[d] = new HierarchicalUniSet (globalArgs.hierarchyFileName, sizeArray[d], labels); }
 		
 		setArray[d]->buildDataStructure ();
 	}
@@ -130,10 +204,10 @@ int main (int argc, char *argv[])
 	for (int i = 0; i < elementNb; i++) { values[i] = string2int(line[i]); }
 
 	double *refValues = 0;
-	if (modelFileName != "")
+	if (globalArgs.modelFileName != "")
 	{
 		std::ifstream modelFile;
-		openInputCSV (modelFile, modelFileName);
+		openInputCSV (modelFile, globalArgs.modelFileName);
 
 		for (int i = 0; i < 3+dimension; i++)
 		{
@@ -152,17 +226,88 @@ int main (int argc, char *argv[])
 
     RelativeEntropy *objective = new RelativeEntropy (elementNb, values, refValues);
 
-	// Run algorithm
+	closeInputCSV (cubeFile);
+
+	// Run algorithm and print results
     multiSet->setObjectiveFunction(objective);
     multiSet->computeObjectiveValues();
     multiSet->normalizeObjectiveValues();
-	//multiSet->getOptimalPartition(0.6)->print();
 	
-	int subsetNumber = 10;
-	MultiSubset **subsetArray = multiSet->getOptimalMultiSubset (0.5, subsetNumber);
-	for (int n = 0; n < subsetNumber; n++) { subsetArray[n]->print(); }
+	if (globalArgs.optimalSubsetNumber > 0)
+	{
+		MultiSubset **subsetArray = multiSet->getOptimalMultiSubset (globalArgs.parameter, globalArgs.optimalSubsetNumber);
+		for (int n = 0; n < globalArgs.optimalSubsetNumber; n++) { subsetArray[n]->print(); }
+	}
+
+	else {
+		if (globalArgs.parameter >= 0) { multiSet->getOptimalPartition(globalArgs.parameter)->print(); }
+
+		else {
+			if (globalArgs.outputFileName == "") { multiSet->printOptimalPartitionList(globalArgs.threshold); }
+
+			else {
+				PartitionList *partitionList = multiSet->getOptimalPartitionList(globalArgs.threshold);
 	
-	closeInputCSV (cubeFile);
+				std::ofstream outputFile;
+				openOutputCSV (outputFile, globalArgs.outputFileName, true);
+
+				//addCSVField (outputFile, "PARTITION_ID");
+				addCSVField (outputFile, "SCALE");
+				for (int d = 0; d < dimension; d++) { addCSVField (outputFile, "DIM_"+int2string(d+1)); }
+				addCSVField (outputFile, "DATA");
+				addCSVField (outputFile, "MODEL");
+				addCSVField (outputFile, "COMPLEXITY_REDUCTION");
+				addCSVField (outputFile, "INFORMATION_LOSS",false);
+				endCSVLine (outputFile);
+
+				int num = 0;
+				for (PartitionList::iterator it = partitionList->begin(); it != partitionList->end(); ++it)
+				{
+					Partition *partition = *it;
+
+					/*
+					  addCSVField (outputFile, num);
+					  addCSVField (outputFile, partition->parameter);
+
+					  for (int d = 0; d < dimension; d++) { addCSVField (outputFile, ""); }
+
+					  RelativeObjectiveValue *q = (RelativeObjectiveValue*) partition->value;
+					  addCSVField (outputFile, q->sumValue);
+					  addCSVField (outputFile, q->sumRefValue);
+					  addCSVField (outputFile, q->sizeReduction);
+					  addCSVField (outputFile, q->divergence, false);
+
+					  endCSVLine (outputFile);
+					*/
+					
+					for (std::list<Part*>::iterator it1 = partition->parts->begin(); it1 != partition->parts->end(); ++it1)
+					{
+						MultiPart *multiPart = (MultiPart*) *it1;
+						//addCSVField (outputFile, num);
+						addCSVField (outputFile, partition->parameter);
+
+						for (int d = 0; d < dimension; d++) { addCSVField (outputFile, multiPart->partArray[d]->name); }
+
+						RelativeObjectiveValue *q = (RelativeObjectiveValue*) multiPart->value;
+						addCSVField (outputFile, q->sumValue);
+						addCSVField (outputFile, q->sumRefValue);
+						addCSVField (outputFile, q->sizeReduction);
+						addCSVField (outputFile, q->divergence, false);
+
+						endCSVLine (outputFile);
+					}
+		
+					num++;
+				}
+
+				closeOutputCSV(outputFile);
+	
+				for (PartitionList::iterator it = partitionList->begin(); it != partitionList->end(); ++it) { delete *it; }
+				delete partitionList;
+			}
+		}
+	}
+	
 	return EXIT_SUCCESS;
 }
 
