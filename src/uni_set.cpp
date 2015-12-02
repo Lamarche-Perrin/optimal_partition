@@ -218,10 +218,15 @@ UnconstrainedUniSet::UnconstrainedUniSet (int s, std::string *labels) : UniSet (
 }
 
 
-OrderedUniSet::OrderedUniSet (int s, std::string *labels) : UniSet (0)
+OrderedUniSet::OrderedUniSet (int size, std::string *labels) : UniSet (0) { buildOrderedUniSet (size, labels); }
+
+OrderedUniSet::OrderedUniSet (double start, double end, int size, std::string *labels) : UniSet (0) { buildOrderedUniSet (size, labels, true, start, end); }
+
+void OrderedUniSet::buildOrderedUniSet (int s, std::string *labels, bool range, double start, double end)
 {
 	size = s;
 	int size2 = size*(size+1)/2;
+	double rangeLength = (end-start)/size;
 
 	UniSubset **subsetArray = new UniSubset* [size2];
 	for (int j = 0; j < size; j++)
@@ -229,17 +234,25 @@ OrderedUniSet::OrderedUniSet (int s, std::string *labels) : UniSet (0)
 		{
 			int index = -1;
 			if (j == 0) { index = i; }
-			subsetArray[getCell(i,j)] = new UniSubset (index);
+			UniSubset *uniSubset = new UniSubset (index);
+			subsetArray[getCell(i,j)] = uniSubset;
+			
+			if (range) { uniSubset->setRange (start + i*rangeLength, start + (i+j+1)*rangeLength); }
 
 			if (labels != 0)
 			{
-				if (j == 0) { subsetArray[getCell(i,j)]->name = "[" + labels[i] + "]"; }
-				else { subsetArray[getCell(i,j)]->name = "[" + labels[i] + ", " + labels[i+j] + "]"; }				
+				if (j == 0) { uniSubset->name = "[" + labels[i] + "]"; }
+				else { uniSubset->name = "[" + labels[i] + ", " + labels[i+j] + "]"; }				
 			}
 
+			else if (range)
+			{
+				uniSubset->name = "[" + double2string(uniSubset->start,1) + ", " + double2string(uniSubset->end,1) + "]";
+			}
+			
 			else {
-				if (j == 0) { subsetArray[getCell(i,j)]->name = "[" + int2string(i) + "]"; }
-				else { subsetArray[getCell(i,j)]->name = "[" + int2string(i) + ", " + int2string(i+j) + "]"; }				
+				if (j == 0) { uniSubset->name = "[" + int2string(i) + "]"; }
+				else { uniSubset->name = "[" + int2string(i) + ", " + int2string(i+j) + "]"; }				
 			}
 		}
 
@@ -433,6 +446,10 @@ UniSubset::UniSubset (int index)
 	isAtomic = false;
 	reached = false;
 
+	range = false;
+	start = 0;
+	end = 0;
+	
 	uniSubsetSetSet = new UniSubsetSetSet();
 	indexSet = new IndexSet();
 	
@@ -446,6 +463,14 @@ UniSubset::~UniSubset ()
 	for (UniSubsetSetSet::iterator it = uniSubsetSetSet->begin(); it != uniSubsetSetSet->end(); ++it) { delete *it; }
 	delete uniSubsetSetSet;
 	delete indexSet;
+}
+
+
+void UniSubset::setRange (double s, double e)
+{
+	range = true;
+	start = s;
+	end = e;
 }
 
 

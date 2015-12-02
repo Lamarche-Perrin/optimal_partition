@@ -84,6 +84,24 @@ public:
 
 	
 	/*!
+	 * \brief Add a couple of (pre and post) observations to the train set <b>in the case a range has been defined for all uni-dimensional sets</b>
+	 * \param preValues : An array of real values that have been pre-observed, thus referring to uni-dimensional elements in the pre-measurement
+	 * \param postValues : An array of real values that have been post-observed, thus referring to uni-dimensional elements in the post-measurement
+	 * \param count : The number of times the couple has been observed
+	 */
+	void addTrainValue (double *preValues, double *postValues, int count = 1);
+
+
+	/*!
+	 * \brief Add a couple of (pre and post) observations to the test set <b>in the case a range has been defined for all uni-dimensional sets</b>
+	 * \param preValues : An array of real values that have been pre-observed, thus referring to uni-dimensional elements in the pre-measurement
+	 * \param postValues : An array of real values that have been post-observed, thus referring to uni-dimensional elements in the post-measurement
+	 * \param count : The number of times the couple has been observed
+	 */
+	void addTestValue (double *preValues, double *postValues, int count = 1);
+
+	
+	/*!
 	 * \brief Add a couple of (pre and post) observations to the train set
 	 * \param preValue : A pointer to the feasible subset that have been pre-observed in the multi-dimensional set representing the pre-measurement. It should always be an element of the set, that is an atomic feasible subset
 	 * \param preValue : A pointer to the feasible subset that have been post-observed in the multi-dimensional set representing the pre-measurement. It should always be an element of the set, that is an atomic feasible subset
@@ -99,7 +117,7 @@ public:
 	 * \param count : The number of times the couple has been observed
 	 */
 	void addTestValue (MultiSubset *preValue, MultiSubset *postValue, int count = 1);
-
+	
 	
 	/*!
 	 * \brief Add a couple of (pre and post) observations to the train set <b>in the case of one-dimensional measurements</b>

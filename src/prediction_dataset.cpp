@@ -66,6 +66,18 @@ PredictionDataset::~PredictionDataset ()
 }
 
 
+void PredictionDataset::addTrainValue (double *preValues, double *postValues, int count)
+{
+	addTrainValue(preMultiSet->getAtomicMultiSubset(preValues), postMultiSet->getAtomicMultiSubset(postValues), count);	
+}
+
+
+void PredictionDataset::addTestValue (double *preValues, double *postValues, int count)
+{
+	addTestValue(preMultiSet->getAtomicMultiSubset(preValues), postMultiSet->getAtomicMultiSubset(postValues), count);	
+}
+
+
 void PredictionDataset::addTrainValue (MultiSubset *preValue, MultiSubset *postValue, int count)
 {
 	trainPreValues->push_back(preValue);

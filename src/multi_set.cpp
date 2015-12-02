@@ -134,6 +134,8 @@ MultiSubset *MultiSet::getAtomicMultiSubset (int index)
 		UniSubset *subset = atomicMultiSubsetArray[num]->uniSubsetArray[0];
 		if (subset->isAtomic && index == subset->indexSet->front()) { return atomicMultiSubsetArray[num]; }
 	}
+
+	std::cout << "ERROR: atomic subset not found!" << std::endl;
 	return 0;
 }
 
@@ -151,7 +153,28 @@ MultiSubset *MultiSet::getAtomicMultiSubset (int *indices)
 		}		
 		if (equal) { return multiSubset; }
 	}
+
+	std::cout << "ERROR: atomic subset not found!" << std::endl;
 	return 0;
+}
+
+
+MultiSubset *MultiSet::getAtomicMultiSubset (double *values)
+{
+	for (int num = 0; num < atomicMultiSubsetNumber; num++)
+	{
+		MultiSubset *multiSubset = atomicMultiSubsetArray[num];
+		bool within = true;
+		for (int d = 0; d < dimension && within; d++)
+		{
+			UniSubset *uniSubset = multiSubset->uniSubsetArray[d];
+			within = (values[d] >= uniSubset->start && values[d] < uniSubset->end);
+		}
+		if (within) { return multiSubset; }
+	}
+
+	std::cout << "ERROR: atomic subset not found!" << std::endl;
+	return 0;	
 }
 
 

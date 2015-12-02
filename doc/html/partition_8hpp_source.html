@@ -219,33 +219,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">bool</span> equal (<a class="code" href="classPartition.html">Partition</a> *p);</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">void</span> print (<span class="keywordtype">bool</span> endl = <span class="keyword">false</span>);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;};</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordtype">void</span> printAsOrderedBiSet (std::string *labelMatrix = 0);</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;};</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="classOrderedPartition.html">  159</a></span>&#160;<span class="keyword">class </span><a class="code" href="classOrderedPartition.html">OrderedPartition</a></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;{</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordtype">int</span> microSize;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">int</span> *optimalCut;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">double</span> param;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">double</span> beta;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::string string;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">double</span> entropy;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">double</span> information;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    </div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <a class="code" href="classOrderedPartition.html">OrderedPartition</a> (<span class="keywordtype">int</span> s, <span class="keywordtype">double</span> p) : microSize(s), param(p) { beta = param / (1 - param); };</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordtype">void</span> print ()</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;beta = &quot;</span> &lt;&lt; beta &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span>;</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; microSize; i++) { std::cout &lt;&lt; optimalCut[i] &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span>; }</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;};</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="classOrderedPartition.html">  160</a></span>&#160;<span class="keyword">class </span><a class="code" href="classOrderedPartition.html">OrderedPartition</a></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;{</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordtype">int</span> microSize;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">int</span> *optimalCut;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordtype">double</span> param;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordtype">double</span> beta;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    </div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    std::string string;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordtype">double</span> entropy;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordtype">double</span> information;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <a class="code" href="classOrderedPartition.html">OrderedPartition</a> (<span class="keywordtype">int</span> s, <span class="keywordtype">double</span> p) : microSize(s), param(p) { beta = param / (1 - param); };</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> print ()</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    {</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;beta = &quot;</span> &lt;&lt; beta &lt;&lt; <span class="stringliteral">&quot; -&gt; &quot;</span>;</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; microSize; i++) { std::cout &lt;&lt; optimalCut[i] &lt;&lt; <span class="stringliteral">&quot;\t&quot;</span>; }</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    }</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;};</div>
 <div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="objective__function_8hpp_html"><div class="ttname"><a href="objective__function_8hpp.html">objective_function.hpp</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div></div>
 <div class="ttc" id="classPartition_html"><div class="ttname"><a href="classPartition.html">Partition</a></div><div class="ttdoc">A partition is a collection of pairwise-disjoint and covering subsets (parts) of a set of elements...</div><div class="ttdef"><b>Definition:</b> partition.hpp:138</div></div>
 <div class="ttc" id="classObjectiveFunction_html"><div class="ttname"><a href="classObjectiveFunction.html">ObjectiveFunction</a></div><div class="ttdoc">Abstract class defining an objective function to be associated to a constrained set in order to defin...</div><div class="ttdef"><b>Definition:</b> objective_function.hpp:57</div></div>
@@ -253,12 +254,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classBiPart_html"><div class="ttname"><a href="classBiPart.html">BiPart</a></div><div class="ttdoc">A bi-part is a subset of a bi-dimensional set of elements (individuals) </div><div class="ttdef"><b>Definition:</b> partition.hpp:98</div></div>
 <div class="ttc" id="classDatatree_html"><div class="ttname"><a href="classDatatree.html">Datatree</a></div><div class="ttdef"><b>Definition:</b> datatree.hpp:64</div></div>
 <div class="ttc" id="classMultiPart_html"><div class="ttname"><a href="classMultiPart.html">MultiPart</a></div><div class="ttdoc">A multi-part is a subset of a multi-dimensional set of elements (individuals) </div><div class="ttdef"><b>Definition:</b> partition.hpp:118</div></div>
-<div class="ttc" id="classOrderedPartition_html"><div class="ttname"><a href="classOrderedPartition.html">OrderedPartition</a></div><div class="ttdef"><b>Definition:</b> partition.hpp:159</div></div>
+<div class="ttc" id="classOrderedPartition_html"><div class="ttname"><a href="classOrderedPartition.html">OrderedPartition</a></div><div class="ttdef"><b>Definition:</b> partition.hpp:160</div></div>
 <div class="ttc" id="classPart_html"><div class="ttname"><a href="classPart.html">Part</a></div><div class="ttdoc">A part is a subset of a set of elements (individuals) represented by integers. </div><div class="ttdef"><b>Definition:</b> partition.hpp:68</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 16 2015 16:05:37 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 2 2015 18:58:50 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

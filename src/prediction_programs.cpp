@@ -374,3 +374,95 @@ void optimalBinningOfVoterModel ()
 	 */
 }
 
+
+void minimalExample ()
+{
+	/*
+	 * Build two uni-dimensional ordered sets.
+	 */
+	int size1 = 5;
+	int size2 = 10;
+	
+	OrderedUniSet *GDP = new OrderedUniSet (0,100,size1);
+	OrderedUniSet *growth = new OrderedUniSet (-5,5,size2);
+
+	GDP->buildDataStructure();
+	growth->buildDataStructure();
+
+	//GDP->print();
+	//growth->print();
+
+	
+	/*
+	 * Build the pre-measurement (multi-dimensional) and the post-measurement (one-dimensional).
+	 */
+	std::vector<UniSet*> *setVector = new std::vector<UniSet*>();
+	setVector->push_back(GDP);
+	setVector->push_back(growth);
+
+	MultiSet *preMultiSet = new MultiSet (setVector);
+	MultiSet *postMultiSet = new MultiSet (GDP);
+
+	preMultiSet->buildDataStructure();
+	postMultiSet->buildDataStructure();
+
+	//preMultiSet->print();
+	//postMultiSet->print();
+
+	
+	/*
+	 * Build an artificial prediction dataset.
+	 */
+	PredictionDataset *PDS = new PredictionDataset (preMultiSet, postMultiSet);
+
+	double *preValues = new double [2];
+	double *postValues = new double [1];
+	int count;
+
+	// TRAIN
+	preValues[0] = 50; preValues[1] = 0.9; postValues[0] = 50; count = 3;
+	PDS->addTrainValue (preValues, postValues, count);
+
+	preValues[0] = 59; preValues[1] = -2.3; postValues[0] = 55; count = 1;
+	PDS->addTrainValue (preValues, postValues, count);
+
+	preValues[0] = 20; preValues[1] = 4.0; postValues[0] = 27; count = 1;
+	PDS->addTrainValue (preValues, postValues, count);
+
+	// TEST
+	preValues[0] = 52; preValues[1] = -2.1; postValues[0] = 50; count = 2;
+	PDS->addTestValue (preValues, postValues, count);
+
+	preValues[0] = 21; preValues[1] = 4.5; postValues[0] = 32; count = 1;
+	PDS->addTestValue (preValues, postValues, count);
+
+	//PDS->print();
+
+	
+	/*
+	 * Build the quadratic score function associated to the prediction data set.
+	 */
+	QuadraticScore *score = new QuadraticScore (PDS);
+	preMultiSet->setObjectiveFunction(score);
+	preMultiSet->computeObjectiveValues();
+
+	//preMultiSet->printObjectiveValues();
+
+	
+	/*
+	 * Compute the binning that optimises the quadratic score.
+	 */
+	Partition *partition = preMultiSet->getOptimalPartition (0);
+	
+	partition->printAsOrderedBiSet ();
+	partition->print();
+
+	
+	/*
+	 * Free memory.
+	 */
+	delete preMultiSet;
+	delete postMultiSet;
+	delete PDS;
+	delete partition;
+}

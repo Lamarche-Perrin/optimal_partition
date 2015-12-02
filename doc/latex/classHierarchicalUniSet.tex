@@ -20,6 +20,8 @@ Inheritance diagram for Hierarchical\-Uni\-Set\-:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classHierarchicalUniSet_aeb0f207ca4c762dcbf825b05a0839d6b}{Hierarchical\-Uni\-Set} (std\-::string file\-Name)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classHierarchicalUniSet_ac5b9ec80cf2089ddb73cfabbac2407b4}{Hierarchical\-Uni\-Set} (std\-::string file\-Name, int size, std\-::string $\ast$labels=0)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -42,6 +44,28 @@ Constructor.
 
 \begin{DoxyParams}{Parameters}
 {\em file\-Name} & \-: The location of the C\-S\-V file from which the hierarchy should be build\-: first column should indicate nodes labels, and third column should indicate the corresponding parent (or N\-U\-L\-L if top element) \\
+\hline
+\end{DoxyParams}
+\hypertarget{classHierarchicalUniSet_ac5b9ec80cf2089ddb73cfabbac2407b4}{\index{Hierarchical\-Uni\-Set@{Hierarchical\-Uni\-Set}!Hierarchical\-Uni\-Set@{Hierarchical\-Uni\-Set}}
+\index{Hierarchical\-Uni\-Set@{Hierarchical\-Uni\-Set}!HierarchicalUniSet@{Hierarchical\-Uni\-Set}}
+\subsubsection[{Hierarchical\-Uni\-Set}]{\setlength{\rightskip}{0pt plus 5cm}Hierarchical\-Uni\-Set\-::\-Hierarchical\-Uni\-Set (
+\begin{DoxyParamCaption}
+\item[{std\-::string}]{file\-Name, }
+\item[{int}]{size, }
+\item[{std\-::string $\ast$}]{labels = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{classHierarchicalUniSet_ac5b9ec80cf2089ddb73cfabbac2407b4}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\-Name} & \-: The location of the C\-S\-V file from which the hierarchy should be build\-: first column should indicate nodes labels, and third column should indicate the corresponding parent (or N\-U\-L\-L if top element) \\
+\hline
+{\em size} & \-: Number of atomic elements that are actually selected to build the hierarchy (filter) \\
+\hline
+{\em labels} & \-: Labels of the atomic elements that are selected (filter) \\
 \hline
 \end{DoxyParams}
 

@@ -18,6 +18,10 @@ Class to represent a data set for the prediction of a post-\/measurement from th
 \hypertarget{classPredictionDataset_a9a30fa528fa4a2507a1a0a5fe8c74269}{\hyperlink{classPredictionDataset_a9a30fa528fa4a2507a1a0a5fe8c74269}{$\sim$\-Prediction\-Dataset} ()}\label{classPredictionDataset_a9a30fa528fa4a2507a1a0a5fe8c74269}
 
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classPredictionDataset_adb6c93538580ea8ce7b482fc8bc6f6b7}{add\-Train\-Value} (double $\ast$pre\-Values, double $\ast$post\-Values, int count=1)
+\begin{DoxyCompactList}\small\item\em Add a couple of (pre and post) observations to the train set {\bfseries in the case a range has been defined for all uni-\/dimensional sets} \end{DoxyCompactList}\item 
+void \hyperlink{classPredictionDataset_ad9e633c08b0ab2af46248c6a66bf00ba}{add\-Test\-Value} (double $\ast$pre\-Values, double $\ast$post\-Values, int count=1)
+\begin{DoxyCompactList}\small\item\em Add a couple of (pre and post) observations to the test set {\bfseries in the case a range has been defined for all uni-\/dimensional sets} \end{DoxyCompactList}\item 
 void \hyperlink{classPredictionDataset_ae2d6c192122c2f9f7a1b3232b486d86c}{add\-Train\-Value} (\hyperlink{classMultiSubset}{Multi\-Subset} $\ast$pre\-Value, \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$post\-Value, int count=1)
 \begin{DoxyCompactList}\small\item\em Add a couple of (pre and post) observations to the train set. \end{DoxyCompactList}\item 
 void \hyperlink{classPredictionDataset_a097fc45e897544af6b5215a26fa41527}{add\-Test\-Value} (\hyperlink{classMultiSubset}{Multi\-Subset} $\ast$pre\-Value, \hyperlink{classMultiSubset}{Multi\-Subset} $\ast$post\-Value, int count=1)
@@ -83,6 +87,28 @@ Constructor
 
 
 \subsection{Member Function Documentation}
+\hypertarget{classPredictionDataset_ad9e633c08b0ab2af46248c6a66bf00ba}{\index{Prediction\-Dataset@{Prediction\-Dataset}!add\-Test\-Value@{add\-Test\-Value}}
+\index{add\-Test\-Value@{add\-Test\-Value}!PredictionDataset@{Prediction\-Dataset}}
+\subsubsection[{add\-Test\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Prediction\-Dataset\-::add\-Test\-Value (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{pre\-Values, }
+\item[{double $\ast$}]{post\-Values, }
+\item[{int}]{count = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classPredictionDataset_ad9e633c08b0ab2af46248c6a66bf00ba}
+
+
+Add a couple of (pre and post) observations to the test set {\bfseries in the case a range has been defined for all uni-\/dimensional sets} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pre\-Values} & \-: An array of real values that have been pre-\/observed, thus referring to uni-\/dimensional elements in the pre-\/measurement \\
+\hline
+{\em post\-Values} & \-: An array of real values that have been post-\/observed, thus referring to uni-\/dimensional elements in the post-\/measurement \\
+\hline
+{\em count} & \-: The number of times the couple has been observed \\
+\hline
+\end{DoxyParams}
 \hypertarget{classPredictionDataset_a097fc45e897544af6b5215a26fa41527}{\index{Prediction\-Dataset@{Prediction\-Dataset}!add\-Test\-Value@{add\-Test\-Value}}
 \index{add\-Test\-Value@{add\-Test\-Value}!PredictionDataset@{Prediction\-Dataset}}
 \subsubsection[{add\-Test\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Prediction\-Dataset\-::add\-Test\-Value (
@@ -123,6 +149,28 @@ Add a couple of (pre and post) observations to the test set {\bfseries in the ca
 {\em pre\-Index} & \-: The index of the element that has been pre-\/observed in the one-\/dimensional set representing the pre-\/measurement \\
 \hline
 {\em post\-Index} & \-: The index of the element that has been post-\/observed in the one-\/dimensional set representing the pre-\/measurement \\
+\hline
+{\em count} & \-: The number of times the couple has been observed \\
+\hline
+\end{DoxyParams}
+\hypertarget{classPredictionDataset_adb6c93538580ea8ce7b482fc8bc6f6b7}{\index{Prediction\-Dataset@{Prediction\-Dataset}!add\-Train\-Value@{add\-Train\-Value}}
+\index{add\-Train\-Value@{add\-Train\-Value}!PredictionDataset@{Prediction\-Dataset}}
+\subsubsection[{add\-Train\-Value}]{\setlength{\rightskip}{0pt plus 5cm}void Prediction\-Dataset\-::add\-Train\-Value (
+\begin{DoxyParamCaption}
+\item[{double $\ast$}]{pre\-Values, }
+\item[{double $\ast$}]{post\-Values, }
+\item[{int}]{count = {\ttfamily 1}}
+\end{DoxyParamCaption}
+)}}\label{classPredictionDataset_adb6c93538580ea8ce7b482fc8bc6f6b7}
+
+
+Add a couple of (pre and post) observations to the train set {\bfseries in the case a range has been defined for all uni-\/dimensional sets} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pre\-Values} & \-: An array of real values that have been pre-\/observed, thus referring to uni-\/dimensional elements in the pre-\/measurement \\
+\hline
+{\em post\-Values} & \-: An array of real values that have been post-\/observed, thus referring to uni-\/dimensional elements in the post-\/measurement \\
 \hline
 {\em count} & \-: The number of times the couple has been observed \\
 \hline

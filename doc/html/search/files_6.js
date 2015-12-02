@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['voter_5fgraph_2ehpp',['voter_graph.hpp',['../voter__graph_8hpp.html',1,'']]]
+  ['uni_5fset_2ehpp',['uni_set.hpp',['../uni__set_8hpp.html',1,'']]]
 ];

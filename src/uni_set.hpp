@@ -151,8 +151,18 @@ public:
 	 */
 	OrderedUniSet (int size, std::string *labels = 0);
 
+	/*!
+	 * \brief Constructor
+	 * \param start : Starting value of the range of real values associated to this uni-dimensional set
+	 * \param end : Ending value of the range of real values associated to this uni-dimensional set
+	 * \param size : Number of ordered elements
+	 * \param labels : (Optional) Labels for the atomic elements
+	 */
+	OrderedUniSet (double start, double end, int size, std::string *labels = 0);
+
 private:
 	int getCell (int i, int j);
+	void buildOrderedUniSet (int size, std::string *labels, bool range = false, double start = 0, double end = 0);
 };
 
 
@@ -220,6 +230,10 @@ public:
 	int atomicNum; /** \brief If this subset is an element (i.e., an atomic feasible subset), identifier of this subset among all the elements of the associated set; if not, always equal to `-1` */
 	int num; /** \brief Identifier of this subset among all the feasible subsets of the associated set */
 
+	bool range; /** \brief True if this subset is associated to a range of real values (see start and end in this case) */
+	double start; /** \brief If range is true, the starting value of the range to which this subset is associated */
+	double end; /** \brief If range is true, the ending value of the range to which this subset is associated */
+	
 	std::string name; /** \brief Name of this subset */
 	IndexSet *indexSet; /** \brief Indexes of all the elements in this subset (only one index / one element in the case of an atomic subset) */
 	UniSubsetSetSet *uniSubsetSetSet; /** \brief Set of the refinements of this subset, that is the set of all partitions of this subset that are made of other feasible subsets; this hence properly defines the algebraic structure */
@@ -235,6 +249,14 @@ public:
 	 */
 	~UniSubset ();
 
+
+	/*!
+	 * \brief Set the range of real values to which this subset is associated
+	 * \param start : the starting value of the range
+	 * \param end : the ending value of the range
+	 */
+	void setRange (double start, double end);
+	
 	/*!
 	 * \brief Print the actual state of this subset
 	 */

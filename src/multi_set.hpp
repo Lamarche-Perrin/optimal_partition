@@ -103,7 +103,7 @@ public:
 	virtual ~MultiSet ();
 
 	/*!
-	 * Access to an element (i.e., atomic feasible subset) from its index IN THE CASE OF A ONE-DIMENSIONAL SET
+	 * Access to an element (i.e., atomic feasible subset) from its index <b>in the case of a one-dimensional set</b>
 	 * /param index : The index of the element to access
 	 * /return A pointer to the unique atomic feasible subset that contains the element
 	 */
@@ -116,6 +116,13 @@ public:
 	 */
 	MultiSubset *getAtomicMultiSubset (int *indices);
 
+	/*!
+	 * Access to an element (i.e., atomic feasible subset) from an array of real values <b>in the case a range has been defined for all uni-dimensional sets</b>
+	 * /param values : An array of real values within the defined ranges
+	 * /return A pointer to the unique atomic feasible subset that contains the element
+	 */
+	MultiSubset *getAtomicMultiSubset (double *values);
+	
 	/*!
 	 * Access to a random element (i.e., atomic feasible subset)
 	 * /return A pointer to the unique atomic feasible subset that contains the element

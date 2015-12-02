@@ -110,7 +110,7 @@ Inheritance diagram for MultiSet:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa6ec2e2e6ef524acde12c795629f08c8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#aa6ec2e2e6ef524acde12c795629f08c8">MultiSet</a> (<a class="el" href="classUniSet.html">UniSet</a> *uniSet)</td></tr>
-<tr class="memdesc:aa6ec2e2e6ef524acde12c795629f08c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of feasible subsets.  <a href="#aa6ec2e2e6ef524acde12c795629f08c8">More...</a><br/></td></tr>
+<tr class="memdesc:aa6ec2e2e6ef524acde12c795629f08c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of pointers to all feasible subsets.  <a href="#aa6ec2e2e6ef524acde12c795629f08c8">More...</a><br/></td></tr>
 <tr class="separator:aa6ec2e2e6ef524acde12c795629f08c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abafc2f4fb50484d3aabdd744dc1d6cc5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#abafc2f4fb50484d3aabdd744dc1d6cc5">MultiSet</a> (<a class="el" href="classUniSet.html">UniSet</a> **uniSetArray, int dimension)</td></tr>
 <tr class="memdesc:abafc2f4fb50484d3aabdd744dc1d6cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#abafc2f4fb50484d3aabdd744dc1d6cc5">More...</a><br/></td></tr>
@@ -124,6 +124,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a48a6504163110d377db974d6ea5bd8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a91d471ce84161187ab63f56199c74ab3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#a91d471ce84161187ab63f56199c74ab3">getAtomicMultiSubset</a> (int *indices)</td></tr>
 <tr class="separator:a91d471ce84161187ab63f56199c74ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee151d663695e02987e8b515bd511e67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#aee151d663695e02987e8b515bd511e67">getAtomicMultiSubset</a> (double *values)</td></tr>
+<tr class="separator:aee151d663695e02987e8b515bd511e67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe3111c90692136b5141a4c5b96e2da3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#afe3111c90692136b5141a4c5b96e2da3">getRandomAtomicMultiSubset</a> ()</td></tr>
 <tr class="separator:afe3111c90692136b5141a4c5b96e2da3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabac7439b455032f959bb6ce9d145f7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classMultiSubset.html">MultiSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#aabac7439b455032f959bb6ce9d145f7e">getOptimalMultiSubset</a> (double parameter, int number)</td></tr>
@@ -189,8 +191,20 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 <tr class="separator:a3084e5afaa18d1f19a38f7139f827cfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c0c781a33f40bb2cd28110805572b7a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9c0c781a33f40bb2cd28110805572b7a"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#a9c0c781a33f40bb2cd28110805572b7a">multiSubsetNumber</a></td></tr>
-<tr class="memdesc:a9c0c781a33f40bb2cd28110805572b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of elements (e.g., atomic feasible subsets) <br/></td></tr>
+<tr class="memdesc:a9c0c781a33f40bb2cd28110805572b7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of elements (i.e., atomic feasible subsets) <br/></td></tr>
 <tr class="separator:a9c0c781a33f40bb2cd28110805572b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18ee544d9b59a83e08eb8143432644ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18ee544d9b59a83e08eb8143432644ac"></a>
+<a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#a18ee544d9b59a83e08eb8143432644ac">firstMultiSubset</a></td></tr>
+<tr class="memdesc:a18ee544d9b59a83e08eb8143432644ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of feasible subsets. <br/></td></tr>
+<tr class="separator:a18ee544d9b59a83e08eb8143432644ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75fc7f1d1ee81e81456df4158c1c0a28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75fc7f1d1ee81e81456df4158c1c0a28"></a>
+<a class="el" href="classMultiSubset.html">MultiSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#a75fc7f1d1ee81e81456df4158c1c0a28">atomicMultiSubsetArray</a></td></tr>
+<tr class="memdesc:a75fc7f1d1ee81e81456df4158c1c0a28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Top element in the lattice of feasible subsets (assumed to be unique and to include all feasible subsets) <br/></td></tr>
+<tr class="separator:a75fc7f1d1ee81e81456df4158c1c0a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab842b49495968659d979987e2d3285ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab842b49495968659d979987e2d3285ef"></a>
+<a class="el" href="classMultiSubset.html">MultiSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMultiSet.html#ab842b49495968659d979987e2d3285ef">multiSubsetArray</a></td></tr>
+<tr class="memdesc:ab842b49495968659d979987e2d3285ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array of pointers to all elements (i.e., atomic feasible subsets) <br/></td></tr>
+<tr class="separator:ab842b49495968659d979987e2d3285ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classAbstractSet"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classAbstractSet')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classAbstractSet.html">AbstractSet</a></td></tr>
 <tr class="memitem:a0217447a042827703e1ea7655f0fc099 inherit pub_attribs_classAbstractSet"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0217447a042827703e1ea7655f0fc099"></a>
 <a class="el" href="classObjectiveFunction.html">ObjectiveFunction</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>objective</b></td></tr>
@@ -213,15 +227,6 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ab52285f20752971019c8af0e7b8107f7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab52285f20752971019c8af0e7b8107f7"></a>
 <a class="el" href="classUniSet.html">UniSet</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>uniSetArray</b></td></tr>
 <tr class="separator:ab52285f20752971019c8af0e7b8107f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18ee544d9b59a83e08eb8143432644ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a18ee544d9b59a83e08eb8143432644ac"></a>
-<a class="el" href="classMultiSubset.html">MultiSubset</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>firstMultiSubset</b></td></tr>
-<tr class="separator:a18ee544d9b59a83e08eb8143432644ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab842b49495968659d979987e2d3285ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab842b49495968659d979987e2d3285ef"></a>
-<a class="el" href="classMultiSubset.html">MultiSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>multiSubsetArray</b></td></tr>
-<tr class="separator:ab842b49495968659d979987e2d3285ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a75fc7f1d1ee81e81456df4158c1c0a28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75fc7f1d1ee81e81456df4158c1c0a28"></a>
-<a class="el" href="classMultiSubset.html">MultiSubset</a> **&#160;</td><td class="memItemRight" valign="bottom"><b>atomicMultiSubsetArray</b></td></tr>
-<tr class="separator:a75fc7f1d1ee81e81456df4158c1c0a28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A multi-dimensional set of elements based on the Cartesian product of several uni-dimensional sets (<a class="el" href="classUniSet.html" title="A uni-dimensional set of elements and its algebraic structure (feasible subsets and feasible refineme...">UniSet</a>) and their algebraic structures (feasible subsets and feasible refinements) </p>
@@ -240,7 +245,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Number of feasible subsets. </p>
+<p>Array of pointers to all feasible subsets. </p>
 <p>Constructor for a one-dimensional set </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -382,7 +387,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Access to an element (e.g., atomic feasible subset) from its index IN THE CASE OF A ONE-DIMENSIONAL SET /param index : The index of the element to access /return A pointer to the unique atomic feasible subset that contains the element </p>
+<p>Access to an element (i.e., atomic feasible subset) from its index <b>in the case of a one-dimensional set</b> /param index : The index of the element to access /return A pointer to the unique atomic feasible subset that contains the element </p>
 
 </div>
 </div>
@@ -399,7 +404,24 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Access to an element (e.g., atomic feasible subset) from its indices /param indices : The indices of the element to access /return A pointer to the unique atomic feasible subset that contains the element </p>
+<p>Access to an element (i.e., atomic feasible subset) from its indices /param indices : The indices of the element to access /return A pointer to the unique atomic feasible subset that contains the element </p>
+
+</div>
+</div>
+<a class="anchor" id="aee151d663695e02987e8b515bd511e67"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classMultiSubset.html">MultiSubset</a> * MultiSet::getAtomicMultiSubset </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>values</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Access to an element (i.e., atomic feasible subset) from an array of real values <b>in the case a range has been defined for all uni-dimensional sets</b> /param values : An array of real values within the defined ranges /return A pointer to the unique atomic feasible subset that contains the element </p>
 
 </div>
 </div>
@@ -477,7 +499,7 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Access to a random element (e.g., atomic feasible subset) /return A pointer to the unique atomic feasible subset that contains the element </p>
+<p>Access to a random element (i.e., atomic feasible subset) /return A pointer to the unique atomic feasible subset that contains the element </p>
 
 </div>
 </div>
@@ -556,7 +578,7 @@ Protected Attributes</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 16 2015 16:05:39 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 2 2015 18:58:52 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

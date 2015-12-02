@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getatomicmultisubset',['getAtomicMultiSubset',['../classMultiSet.html#a48a6504163110d377db974d6ea5bd8fe',1,'MultiSet::getAtomicMultiSubset(int index)'],['../classMultiSet.html#a91d471ce84161187ab63f56199c74ab3',1,'MultiSet::getAtomicMultiSubset(int *indices)']]],
+  ['getatomicmultisubset',['getAtomicMultiSubset',['../classMultiSet.html#a48a6504163110d377db974d6ea5bd8fe',1,'MultiSet::getAtomicMultiSubset(int index)'],['../classMultiSet.html#a91d471ce84161187ab63f56199c74ab3',1,'MultiSet::getAtomicMultiSubset(int *indices)'],['../classMultiSet.html#aee151d663695e02987e8b515bd511e67',1,'MultiSet::getAtomicMultiSubset(double *values)']]],
   ['getcompactmarkovpartition',['getCompactMarkovPartition',['../classTwoCommunitiesVoterGraph.html#a4dd6976ed1e02c761f6c4bd85bbf0f0c',1,'TwoCommunitiesVoterGraph::getCompactMarkovPartition(VoterProbe *probe, VoterMetric metric)'],['../classTwoCommunitiesVoterGraph.html#a13a1a7b219d0669f750a4281edf9aecf',1,'TwoCommunitiesVoterGraph::getCompactMarkovPartition(VoterMeasurement *measurement)']]],
   ['getcompactmarkovprocess',['getCompactMarkovProcess',['../classTwoCommunitiesVoterGraph.html#ac3e7b13e297275475e8f073ccfcac7d1',1,'TwoCommunitiesVoterGraph']]],
   ['getdistribution',['getDistribution',['../classMarkovProcess.html#afa7edaa775112df8dd4fc5007034d7e7',1,'MarkovProcess']]],
@@ -17,6 +17,7 @@ var searchData=
   ['getprobability',['getProbability',['../classMarkovProcess.html#ad49d1ff46d5bf94e45a8b218b676c203',1,'MarkovProcess::getProbability(int individual, int currentTime)'],['../classMarkovProcess.html#afe80afb9c456631a9168c762058d3cd2',1,'MarkovProcess::getProbability(Part *part, int currentTime)']]],
   ['getrandomatomicmultisubset',['getRandomAtomicMultiSubset',['../classMultiSet.html#afe3111c90692136b5141a4c5b96e2da3',1,'MultiSet']]],
   ['gettransition',['getTransition',['../classMarkovProcess.html#a39c87840da9b238d7c33bd5ad23d538d',1,'MarkovProcess']]],
+  ['globalargs_5ft',['globalArgs_t',['../structglobalArgs__t.html',1,'']]],
   ['graph',['Graph',['../classGraph.html',1,'Graph'],['../classVoterProbe.html#add099ac2ac20a5f6a0e3616e78639497',1,'VoterProbe::graph()'],['../classVoterMeasurement.html#a8d22d4b78f7e2f4c747f5716c4885351',1,'VoterMeasurement::graph()']]],
   ['graphbaseduniset',['GraphBasedUniSet',['../classGraphBasedUniSet.html',1,'']]],
   ['graphcomponent',['GraphComponent',['../classGraphComponent.html',1,'']]]

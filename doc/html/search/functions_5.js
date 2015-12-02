@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['getatomicmultisubset',['getAtomicMultiSubset',['../classMultiSet.html#a48a6504163110d377db974d6ea5bd8fe',1,'MultiSet::getAtomicMultiSubset(int index)'],['../classMultiSet.html#a91d471ce84161187ab63f56199c74ab3',1,'MultiSet::getAtomicMultiSubset(int *indices)']]],
+  ['getatomicmultisubset',['getAtomicMultiSubset',['../classMultiSet.html#a48a6504163110d377db974d6ea5bd8fe',1,'MultiSet::getAtomicMultiSubset(int index)'],['../classMultiSet.html#a91d471ce84161187ab63f56199c74ab3',1,'MultiSet::getAtomicMultiSubset(int *indices)'],['../classMultiSet.html#aee151d663695e02987e8b515bd511e67',1,'MultiSet::getAtomicMultiSubset(double *values)']]],
   ['getcompactmarkovpartition',['getCompactMarkovPartition',['../classTwoCommunitiesVoterGraph.html#a4dd6976ed1e02c761f6c4bd85bbf0f0c',1,'TwoCommunitiesVoterGraph::getCompactMarkovPartition(VoterProbe *probe, VoterMetric metric)'],['../classTwoCommunitiesVoterGraph.html#a13a1a7b219d0669f750a4281edf9aecf',1,'TwoCommunitiesVoterGraph::getCompactMarkovPartition(VoterMeasurement *measurement)']]],
   ['getcompactmarkovprocess',['getCompactMarkovProcess',['../classTwoCommunitiesVoterGraph.html#ac3e7b13e297275475e8f073ccfcac7d1',1,'TwoCommunitiesVoterGraph']]],
   ['getdistribution',['getDistribution',['../classMarkovProcess.html#afa7edaa775112df8dd4fc5007034d7e7',1,'MarkovProcess']]],

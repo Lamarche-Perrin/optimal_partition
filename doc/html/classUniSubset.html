@@ -105,6 +105,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a84519a983473e56ad479d29baff45a34">~UniSubset</a> ()</td></tr>
 <tr class="memdesc:a84519a983473e56ad479d29baff45a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
 <tr class="separator:a84519a983473e56ad479d29baff45a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37228283b3d2884f16ec06c523af9791"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a37228283b3d2884f16ec06c523af9791">setRange</a> (double <a class="el" href="classUniSubset.html#af66bade84710d674e3e29b0ebfe16871">start</a>, double <a class="el" href="classUniSubset.html#a05f26ad45250f4adba9dc4eae35d3f72">end</a>)</td></tr>
+<tr class="memdesc:a37228283b3d2884f16ec06c523af9791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the range of real values to which this subset is associated.  <a href="#a37228283b3d2884f16ec06c523af9791">More...</a><br/></td></tr>
+<tr class="separator:a37228283b3d2884f16ec06c523af9791"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1be7871c599958a13258e51b01832c25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1be7871c599958a13258e51b01832c25"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a1be7871c599958a13258e51b01832c25">print</a> ()</td></tr>
 <tr class="memdesc:a1be7871c599958a13258e51b01832c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print the actual state of this subset. <br/></td></tr>
@@ -135,9 +138,21 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a0b5a528a9edcc11061baff6ca4ce2657">num</a></td></tr>
 <tr class="memdesc:a0b5a528a9edcc11061baff6ca4ce2657"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this subset is an element (i.e., an atomic feasible subset), identifier of this subset among all the elements of the associated set; if not, always equal to <code>-1</code> <br/></td></tr>
 <tr class="separator:a0b5a528a9edcc11061baff6ca4ce2657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc06eeeac6327c077a1aca2e7f6b02d7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acc06eeeac6327c077a1aca2e7f6b02d7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#acc06eeeac6327c077a1aca2e7f6b02d7">range</a></td></tr>
+<tr class="memdesc:acc06eeeac6327c077a1aca2e7f6b02d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier of this subset among all the feasible subsets of the associated set. <br/></td></tr>
+<tr class="separator:acc06eeeac6327c077a1aca2e7f6b02d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af66bade84710d674e3e29b0ebfe16871"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af66bade84710d674e3e29b0ebfe16871"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#af66bade84710d674e3e29b0ebfe16871">start</a></td></tr>
+<tr class="memdesc:af66bade84710d674e3e29b0ebfe16871"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if this subset is associated to a range of real values (see start and end in this case) <br/></td></tr>
+<tr class="separator:af66bade84710d674e3e29b0ebfe16871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05f26ad45250f4adba9dc4eae35d3f72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a05f26ad45250f4adba9dc4eae35d3f72"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a05f26ad45250f4adba9dc4eae35d3f72">end</a></td></tr>
+<tr class="memdesc:a05f26ad45250f4adba9dc4eae35d3f72"><td class="mdescLeft">&#160;</td><td class="mdescRight">If range is true, the starting value of the range to which this subset is associated. <br/></td></tr>
+<tr class="separator:a05f26ad45250f4adba9dc4eae35d3f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accf967a0475f78b1998fa3aaa2a6ae8e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="accf967a0475f78b1998fa3aaa2a6ae8e"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#accf967a0475f78b1998fa3aaa2a6ae8e">name</a></td></tr>
-<tr class="memdesc:accf967a0475f78b1998fa3aaa2a6ae8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Identifier of this subset among all the feasible subsets of the associated set. <br/></td></tr>
+<tr class="memdesc:accf967a0475f78b1998fa3aaa2a6ae8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If range is true, the ending value of the range to which this subset is associated. <br/></td></tr>
 <tr class="separator:accf967a0475f78b1998fa3aaa2a6ae8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a32f7ed1b58639b5184c7c0321b08e6a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a32f7ed1b58639b5184c7c0321b08e6a1"></a>
 IndexSet *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classUniSubset.html#a32f7ed1b58639b5184c7c0321b08e6a1">indexSet</a></td></tr>
@@ -176,6 +191,42 @@ UniSubsetSetSet *&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a37228283b3d2884f16ec06c523af9791"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UniSubset::setRange </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>start</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>end</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the range of real values to which this subset is associated. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">start</td><td>: the starting value of the range </td></tr>
+    <tr><td class="paramname">end</td><td>: the ending value of the range </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/<a class="el" href="uni__set_8hpp_source.html">uni_set.hpp</a></li>
 <li>src/uni_set.cpp</li>
@@ -183,7 +234,7 @@ UniSubsetSetSet *&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 16 2015 16:05:40 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 2 2015 18:58:54 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

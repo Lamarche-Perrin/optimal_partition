@@ -53,13 +53,15 @@ int VERBOSE_TAB = 0;
 bool NORMALIZED_OBJECTIVE = true;
 
 
-int main (int argc, char *argv[]) {
+int main (int argc, char *argv[])
+{
     srand(time(NULL));
 
 	//testLogarithmicScore ();
 	//getBinningComputationTime ();
-	optimalBinningOfVoterModel ();
-
+	//optimalBinningOfVoterModel ();
+	minimalExample ();
+	
 	return EXIT_SUCCESS;
 }
 

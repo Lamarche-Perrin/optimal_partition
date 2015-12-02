@@ -105,6 +105,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#a9a30fa528fa4a2507a1a0a5fe8c74269">~PredictionDataset</a> ()</td></tr>
 <tr class="memdesc:a9a30fa528fa4a2507a1a0a5fe8c74269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br/></td></tr>
 <tr class="separator:a9a30fa528fa4a2507a1a0a5fe8c74269"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb6c93538580ea8ce7b482fc8bc6f6b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#adb6c93538580ea8ce7b482fc8bc6f6b7">addTrainValue</a> (double *preValues, double *postValues, int count=1)</td></tr>
+<tr class="memdesc:adb6c93538580ea8ce7b482fc8bc6f6b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a couple of (pre and post) observations to the train set <b>in the case a range has been defined for all uni-dimensional sets</b>  <a href="#adb6c93538580ea8ce7b482fc8bc6f6b7">More...</a><br/></td></tr>
+<tr class="separator:adb6c93538580ea8ce7b482fc8bc6f6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9e633c08b0ab2af46248c6a66bf00ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#ad9e633c08b0ab2af46248c6a66bf00ba">addTestValue</a> (double *preValues, double *postValues, int count=1)</td></tr>
+<tr class="memdesc:ad9e633c08b0ab2af46248c6a66bf00ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a couple of (pre and post) observations to the test set <b>in the case a range has been defined for all uni-dimensional sets</b>  <a href="#ad9e633c08b0ab2af46248c6a66bf00ba">More...</a><br/></td></tr>
+<tr class="separator:ad9e633c08b0ab2af46248c6a66bf00ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2d6c192122c2f9f7a1b3232b486d86c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPredictionDataset.html#ae2d6c192122c2f9f7a1b3232b486d86c">addTrainValue</a> (<a class="el" href="classMultiSubset.html">MultiSubset</a> *preValue, <a class="el" href="classMultiSubset.html">MultiSubset</a> *postValue, int count=1)</td></tr>
 <tr class="memdesc:ae2d6c192122c2f9f7a1b3232b486d86c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a couple of (pre and post) observations to the train set.  <a href="#ae2d6c192122c2f9f7a1b3232b486d86c">More...</a><br/></td></tr>
 <tr class="separator:ae2d6c192122c2f9f7a1b3232b486d86c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -194,6 +200,48 @@ std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ad9e633c08b0ab2af46248c6a66bf00ba"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PredictionDataset::addTestValue </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>preValues</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>postValues</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a couple of (pre and post) observations to the test set <b>in the case a range has been defined for all uni-dimensional sets</b> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preValues</td><td>: An array of real values that have been pre-observed, thus referring to uni-dimensional elements in the pre-measurement </td></tr>
+    <tr><td class="paramname">postValues</td><td>: An array of real values that have been post-observed, thus referring to uni-dimensional elements in the post-measurement </td></tr>
+    <tr><td class="paramname">count</td><td>: The number of times the couple has been observed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a097fc45e897544af6b5215a26fa41527"></a>
 <div class="memitem">
 <div class="memproto">
@@ -271,6 +319,48 @@ std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a
   <table class="params">
     <tr><td class="paramname">preIndex</td><td>: The index of the element that has been pre-observed in the one-dimensional set representing the pre-measurement </td></tr>
     <tr><td class="paramname">postIndex</td><td>: The index of the element that has been post-observed in the one-dimensional set representing the pre-measurement </td></tr>
+    <tr><td class="paramname">count</td><td>: The number of times the couple has been observed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="adb6c93538580ea8ce7b482fc8bc6f6b7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PredictionDataset::addTrainValue </td>
+          <td>(</td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>preValues</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>postValues</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em> = <code>1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Add a couple of (pre and post) observations to the train set <b>in the case a range has been defined for all uni-dimensional sets</b> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">preValues</td><td>: An array of real values that have been pre-observed, thus referring to uni-dimensional elements in the pre-measurement </td></tr>
+    <tr><td class="paramname">postValues</td><td>: An array of real values that have been post-observed, thus referring to uni-dimensional elements in the post-measurement </td></tr>
     <tr><td class="paramname">count</td><td>: The number of times the couple has been observed </td></tr>
   </table>
   </dd>
@@ -385,7 +475,7 @@ std::vector&lt; int &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Nov 16 2015 16:05:40 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Dec 2 2015 18:58:53 for Optimal Partition by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

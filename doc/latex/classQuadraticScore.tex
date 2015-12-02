@@ -1,0 +1,76 @@
+\hypertarget{classQuadraticScore}{\section{Quadratic\-Score Class Reference}
+\label{classQuadraticScore}\index{Quadratic\-Score@{Quadratic\-Score}}
+}
+
+
+Class to define and compute the quadratic score function in the case of point prediction.  
+
+
+
+
+{\ttfamily \#include $<$quadratic\-\_\-score.\-hpp$>$}
+
+Inheritance diagram for Quadratic\-Score\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classQuadraticScore}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classQuadraticScore_ae3c806c1c92d908975e2946559dae71e}{Quadratic\-Score} (\hyperlink{classPredictionDataset}{Prediction\-Dataset} $\ast$dataset)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hypertarget{classQuadraticScore_af76ec32d4ad9923c7f5b0b31abcd2fbb}{\hyperlink{classQuadraticScore_af76ec32d4ad9923c7f5b0b31abcd2fbb}{$\sim$\-Quadratic\-Score} ()}\label{classQuadraticScore_af76ec32d4ad9923c7f5b0b31abcd2fbb}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hypertarget{classQuadraticScore_a949e5c16a84d44a48a36fc4f32aa31c3}{void \hyperlink{classQuadraticScore_a949e5c16a84d44a48a36fc4f32aa31c3}{set\-Random} ()}\label{classQuadraticScore_a949e5c16a84d44a48a36fc4f32aa31c3}
+
+\begin{DoxyCompactList}\small\item\em Randomly set the initial data from which the objective function is computed. \end{DoxyCompactList}\item 
+\hypertarget{classQuadraticScore_a175321640c2eb17b264d91b91e7fd70e}{\hyperlink{classObjectiveValue}{Objective\-Value} $\ast$ \hyperlink{classQuadraticScore_a175321640c2eb17b264d91b91e7fd70e}{new\-Objective\-Value} (int index=-\/1)}\label{classQuadraticScore_a175321640c2eb17b264d91b91e7fd70e}
+
+\begin{DoxyCompactList}\small\item\em This method is called by child classes of \hyperlink{classAbstractSet}{Abstract\-Set} (do not use directly) \end{DoxyCompactList}\item 
+\hypertarget{classQuadraticScore_a669920b5c4612bd70dc830a8fa82ea71}{void \hyperlink{classQuadraticScore_a669920b5c4612bd70dc830a8fa82ea71}{compute\-Objective\-Values} ()}\label{classQuadraticScore_a669920b5c4612bd70dc830a8fa82ea71}
+
+\begin{DoxyCompactList}\small\item\em This method is called by child classes of \hyperlink{classAbstractSet}{Abstract\-Set} (do not use directly) \end{DoxyCompactList}\item 
+\hypertarget{classQuadraticScore_a2f8c56dd472c1d53b407bb8af2fb0868}{void \hyperlink{classQuadraticScore_a2f8c56dd472c1d53b407bb8af2fb0868}{print\-Objective\-Values} (bool verbose=true)}\label{classQuadraticScore_a2f8c56dd472c1d53b407bb8af2fb0868}
+
+\begin{DoxyCompactList}\small\item\em This method is called by child classes of \hyperlink{classAbstractSet}{Abstract\-Set} (do not use directly) \end{DoxyCompactList}\item 
+\hypertarget{classQuadraticScore_a83b7d1ba48b1526523b14c7490a211fa}{double {\bfseries get\-Parameter} (double unit)}\label{classQuadraticScore_a83b7d1ba48b1526523b14c7490a211fa}
+
+\item 
+\hypertarget{classQuadraticScore_a630eb1cc98dbaa1b7ae8ff3ef6cc21bd}{double {\bfseries get\-Unit\-Distance} (double u\-Min, double u\-Max)}\label{classQuadraticScore_a630eb1cc98dbaa1b7ae8ff3ef6cc21bd}
+
+\item 
+\hypertarget{classQuadraticScore_a7716bede5c53ecf6d195582bd22a62a6}{double {\bfseries get\-Intermediary\-Unit} (double u\-Min, double u\-Max)}\label{classQuadraticScore_a7716bede5c53ecf6d195582bd22a62a6}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class to define and compute the quadratic score function in the case of point prediction. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classQuadraticScore_ae3c806c1c92d908975e2946559dae71e}{\index{Quadratic\-Score@{Quadratic\-Score}!Quadratic\-Score@{Quadratic\-Score}}
+\index{Quadratic\-Score@{Quadratic\-Score}!QuadraticScore@{Quadratic\-Score}}
+\subsubsection[{Quadratic\-Score}]{\setlength{\rightskip}{0pt plus 5cm}Quadratic\-Score\-::\-Quadratic\-Score (
+\begin{DoxyParamCaption}
+\item[{{\bf Prediction\-Dataset} $\ast$}]{dataset}
+\end{DoxyParamCaption}
+)}}\label{classQuadraticScore_ae3c806c1c92d908975e2946559dae71e}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dataset} & \-: The prediction data set that is use to evaluate the score function (from a train set and a test set both containing pre-\/observations and post-\/observations) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{quadratic__score_8hpp}{quadratic\-\_\-score.\-hpp}\item 
+src/quadratic\-\_\-score.\-cpp\end{DoxyCompactItemize}
