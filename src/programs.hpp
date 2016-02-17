@@ -38,7 +38,6 @@
 #ifndef INCLUDE_PROGRAMS
 #define INCLUDE_PROGRAMS
 
-void EbolaAggregation();
 void testHierarchicalSet ();
 void testOrderedSet ();
 void testNonconstrainedSet ();
@@ -49,6 +48,9 @@ void testGraph ();
 void testGraphWithSlyce ();
 void testBiSet ();
 void testMultiSet ();
-void aggregateGeomediaticCube ();
+void testGraphCompression ();
+
+void ebolaAggregation();
+//void aggregateGeomediaticCube ();
 
 #endif

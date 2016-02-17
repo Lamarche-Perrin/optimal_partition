@@ -43,7 +43,6 @@
 #include "programs.hpp"
 #include "prediction_programs.hpp"
 
-
 #include "uni_set.hpp"
 
 
@@ -57,10 +56,11 @@ int main (int argc, char *argv[])
 {
     srand(time(NULL));
 
+	testGraphCompression();
 	//testLogarithmicScore ();
 	//getBinningComputationTime ();
 	//optimalBinningOfVoterModel ();
-	minimalExample ();
+	//minimalExample ();
 	
 	return EXIT_SUCCESS;
 }

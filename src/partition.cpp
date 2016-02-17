@@ -245,6 +245,7 @@ void MultiPart::print (bool endl)
 	}
 	
 	std::cout << "}";
+	if (value != 0) { std::cout << " ("; value->print(false); std::cout << ")"; }
 	if (endl) { std::cout << std::endl; }
 }
 

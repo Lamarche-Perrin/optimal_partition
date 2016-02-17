@@ -64,81 +64,6 @@
 #include "multi_set.hpp"
 
 
-void EbolaAggregation ()
-{
-
-    Timer timer;
-    timer.start(0,"DOWNLOAD DATA");
-    timer.startTime();
-    timer.startMemory();
-	
-    std::string valuesFileName = "data/GEOMEDIA/Ebola/data_weeks.csv";
-    std::string labelsFileName1 = "data/GEOMEDIA/Ebola/flows.csv";
-    std::string labelsFileName2 = "data/GEOMEDIA/Ebola/weeks.csv";
-    std::string outputFileName = "data/GEOMEDIA/Ebola/agg_marge_flows_weeks.csv";
-
-    Dataset *data = getDatasetFromCSV (valuesFileName,labelsFileName1,labelsFileName2,true,true);
-    data->print();
-
-/*
-// TIME
-for (int i = 0; i < data->size1; i++)
-{
-timer.step("BUILD STRUCTURE");
-
-OrderedSet *set = new OrderedSet(data->size2);	
-set->buildDataStructure();
-
-timer.step("FILL STRUCTURE");
-
-std::string label = data->getLabel1(i);
-RelativeEntropy *m = new RelativeEntropy(data->size2,data->getValues2(label),data->getRefValues2(label));
-
-set->setObjectiveFunction(m);
-set->computeObjectiveValues();
-set->normalizeObjectiveValues();
-	
-timer.step("COMPUTE PARTITIONS");
-	
-outputFileName = "data/GEOMEDIA/Ebola/time_days/" + label + ".csv";
-set->printOptimalPartitionListInCSV(0.1,data,2,outputFileName);
-	
-delete m;
-delete set;
-}
-*/
-
-    // MEDIA x TIME
-    timer.step("BUILD STRUCTURE");
-
-    NonconstrainedOrderedSet *set = new NonconstrainedOrderedSet(data->size1,data->size2);	
-    set->buildDataStructure();
-
-    timer.step("FILL STRUCTURE");
-
-    RelativeEntropy *m = new RelativeEntropy(data->size1*data->size2,data->getValues(false),data->getRefValues(false));
-
-    set->setObjectiveFunction(m);
-    set->computeObjectiveValues();
-    set->normalizeObjectiveValues();
-
-    timer.step("COMPUTE PARTITIONS");
-
-    //set->print();
-    //set->printOptimalPartitionList(0.1);
-    set->printOptimalPartitionListInCSV(0.1,data,0,outputFileName);
-
-    delete m;
-    delete set;
-
-	
-
-    delete data;
-	
-    timer.stopTime();
-    timer.stopMemory();
-    timer.stop();
-}
 
 
 
@@ -668,3 +593,174 @@ void testMultiSet ()
 
 }
 
+
+
+void ebolaAggregation ()
+{
+
+    Timer timer;
+    timer.start(0,"DOWNLOAD DATA");
+    timer.startTime();
+    timer.startMemory();
+	
+    std::string valuesFileName = "data/GEOMEDIA/Ebola/data_weeks.csv";
+    std::string labelsFileName1 = "data/GEOMEDIA/Ebola/flows.csv";
+    std::string labelsFileName2 = "data/GEOMEDIA/Ebola/weeks.csv";
+    std::string outputFileName = "data/GEOMEDIA/Ebola/agg_marge_flows_weeks.csv";
+
+    Dataset *data = getDatasetFromCSV (valuesFileName,labelsFileName1,labelsFileName2,true,true);
+    data->print();
+
+/*
+// TIME
+for (int i = 0; i < data->size1; i++)
+{
+timer.step("BUILD STRUCTURE");
+
+OrderedSet *set = new OrderedSet(data->size2);	
+set->buildDataStructure();
+
+timer.step("FILL STRUCTURE");
+
+std::string label = data->getLabel1(i);
+RelativeEntropy *m = new RelativeEntropy(data->size2,data->getValues2(label),data->getRefValues2(label));
+
+set->setObjectiveFunction(m);
+set->computeObjectiveValues();
+set->normalizeObjectiveValues();
+	
+timer.step("COMPUTE PARTITIONS");
+	
+outputFileName = "data/GEOMEDIA/Ebola/time_days/" + label + ".csv";
+set->printOptimalPartitionListInCSV(0.1,data,2,outputFileName);
+	
+delete m;
+delete set;
+}
+*/
+
+    // MEDIA x TIME
+    timer.step("BUILD STRUCTURE");
+
+    NonconstrainedOrderedSet *set = new NonconstrainedOrderedSet(data->size1,data->size2);	
+    set->buildDataStructure();
+
+    timer.step("FILL STRUCTURE");
+
+    RelativeEntropy *m = new RelativeEntropy(data->size1*data->size2,data->getValues(false),data->getRefValues(false));
+
+    set->setObjectiveFunction(m);
+    set->computeObjectiveValues();
+    set->normalizeObjectiveValues();
+
+    timer.step("COMPUTE PARTITIONS");
+
+    //set->print();
+    //set->printOptimalPartitionList(0.1);
+    set->printOptimalPartitionListInCSV(0.1,data,0,outputFileName);
+
+    delete m;
+    delete set;
+
+	
+
+    delete data;
+	
+    timer.stopTime();
+    timer.stopMemory();
+    timer.stop();
+}
+
+
+
+void testGraphCompression ()
+{
+	Timer timer;
+    timer.start(0,"START");
+    timer.startTime();
+    timer.startMemory();
+
+	int size = 9;
+	UnconstrainedUniSet *startVertices = new UnconstrainedUniSet (size);
+	startVertices->buildDataStructure();
+
+	UnconstrainedUniSet *endVertices = new UnconstrainedUniSet (size);
+	endVertices->buildDataStructure();
+
+	std::vector<UniSet*> *setVector = new std::vector<UniSet*>();
+	setVector->push_back(startVertices);
+	setVector->push_back(endVertices);
+
+	MultiSet *multiSet = new MultiSet (setVector);
+	multiSet->buildDataStructure();
+	
+	timer.step("BUILD STRUCTURE");
+
+
+	double values [9*9] = {
+		0, 617, 289, 313, 140, 1455, 43, 152, 8946,
+		624, 0, 1243, 1104, 560, 7829, 124, 249, 16679,
+		284, 1359, 0, 520, 282, 2752, 79, 109, 8307,
+		302, 1062, 491, 0, 171, 2344, 48, 92, 8163,
+		124, 661, 271, 165, 0, 1242, 42, 80, 3087,
+		1382, 6607, 2336, 2364, 869, 0, 1426, 886, 50398,
+		116, 312, 178, 166, 81, 4700, 0, 229, 4407,
+		280, 397, 184, 161, 132, 2243, 331, 0, 6225,
+		8702, 16107, 7463, 8554, 2869, 51894, 1559, 3677, 0
+	};
+
+	/*
+	double refValues [9*9] = {
+		0, 1249, 574, 615, 235, 3429, 168, 252, 4891,
+		1293, 0, 1363, 1460, 558, 8148, 400, 599, 11623,
+		623, 1430, 0, 704, 269, 3927, 193, 289, 5601,
+		577, 1324, 608, 0, 249, 3634, 178, 267, 5184,
+		258, 593, 272, 292, 0, 1627, 80, 120, 2321,
+		3015, 6923, 3179, 3406, 1303, 0, 932, 1397, 27109,
+		464, 1064, 489, 524, 200, 2922, 0, 215, 4168,
+		453, 1040, 477, 512, 196, 2854, 140, 0, 4071,
+		4587, 10532, 4837, 5183, 1982, 28914, 1418, 2126, 0
+	};
+	*/
+
+	
+	double *refValues = new double [size*size];
+	for (int i = 0; i < size; i++)
+		for (int j = 0; j < size; j++)
+			if (i == j) { refValues[i+j*size] = 0; }
+			else { refValues[i+j*size] = 1; }
+	
+	
+/*
+	double values [10*10] = {
+		0.50, 0.14, 0.69, 0.35, 0.37, 0.66, 0.22, 0.79, 0.70, 0.15,
+		0.14, 0.50, 0.14, 0.72, 0.63, 0.25, 0.60, 0.08, 0.12, 0.58,
+		0.69, 0.14, 0.50, 0.16, 0.37, 0.73, 0.32, 0.80, 0.80, 0.21,
+		0.35, 0.72, 0.16, 0.50, 0.76, 0.26, 0.79, 0.10, 0.08, 0.54,
+		0.37, 0.63, 0.37, 0.76, 0.50, 0.19, 0.78, 0.30, 0.23, 0.49,
+		0.66, 0.25, 0.73, 0.26, 0.19, 0.50, 0.34, 0.73, 0.69, 0.32,
+		0.22, 0.60, 0.32, 0.79, 0.78, 0.34, 0.50, 0.19, 0.18, 0.49,
+		0.79, 0.08, 0.80, 0.10, 0.30, 0.73, 0.19, 0.50, 0.89, 0.28,
+		0.70, 0.12, 0.80, 0.08, 0.23, 0.69, 0.18, 0.89, 0.50, 0.23,
+		0.15, 0.58, 0.21, 0.54, 0.49, 0.32, 0.49, 0.28, 0.23, 0.50
+	};
+*/
+ 
+    RelativeEntropy *m = new RelativeEntropy (size*size, values, refValues);
+	//m->setRandom();
+ 
+    multiSet->setObjectiveFunction(m);
+    multiSet->computeObjectiveValues();
+    multiSet->normalizeObjectiveValues();
+
+	timer.step("BUILD MEASURE");
+
+
+    multiSet->printOptimalPartitionList(0.05);
+
+	timer.step("COMPUTE OPTIMAL PARTITION");
+
+    timer.stopTime();
+    timer.stopMemory();
+    timer.stop();
+}
