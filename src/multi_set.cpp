@@ -38,6 +38,7 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <algorithm>
 
 #include "multi_set.hpp"
 
@@ -121,6 +122,31 @@ int *MultiSet::getMultiNum (int num)
 }
 
 
+int MultiSet::getAtomicNum (int *atomicMultiNum)
+{
+	int atomicNum = 0;
+	for (int d = dimension-1; d >= 0; d--)
+	{
+		if (d < dimension-1) { atomicNum *= uniSetArray[d]->atomicUniSubsetNumber; }
+		atomicNum += atomicMultiNum[d];
+	}
+	return atomicNum;
+}
+
+
+int *MultiSet::getAtomicMultiNum (int atomicNum)
+{
+	int *atomicMultiNum = new int [dimension];
+	for (int d = 0; d < dimension; d++)
+	{
+		atomicMultiNum[d] = atomicNum % uniSetArray[d]->atomicUniSubsetNumber;
+		atomicNum -= atomicMultiNum[d];
+		atomicNum /= uniSetArray[d]->atomicUniSubsetNumber;
+	}
+	return atomicMultiNum;
+}
+
+
 MultiSubset *MultiSet::getAtomicMultiSubset (int index)
 {
 	if (dimension > 1)
@@ -184,6 +210,12 @@ MultiSubset *MultiSet::getRandomAtomicMultiSubset () { return atomicMultiSubsetA
 void MultiSet::initReached()
 {
 	for (int num = 0; num < multiSubsetNumber; num++) { multiSubsetArray[num]->reached = false; }
+}
+
+
+void MultiSet::initAtomicReached()
+{
+	for (int atomicNum = 0; atomicNum < atomicMultiSubsetNumber; atomicNum++) { atomicMultiSubsetArray[atomicNum]->reached = false; }
 }
 
 
@@ -343,6 +375,99 @@ Partition *MultiSet::getOptimalPartition (double parameter)
 	return partition;
 }
 
+
+void MultiSet::approximateOptimalPartition (ObjectiveFunction *m, double parameter)
+{
+	// BUILD ARRAY OF ATOMIC MULTISUBSETS
+ 	int atomicNumber = 1;
+	for (int d = 0; d < dimension; d++) { atomicNumber *= uniSetArray[d]->atomicUniSubsetNumber; }
+
+	MultiSubset **atomicArray = new MultiSubset* [atomicNumber];		
+	
+	for (int atomicNum = 0; atomicNum < atomicNumber; atomicNum++)
+	{
+		int *atomicMultiNum = getAtomicMultiNum(atomicNum);
+		UniSubset **subsetArray = new UniSubset* [dimension];
+		for (int d = 0; d < dimension; d++) { subsetArray[d] = uniSetArray[d]->atomicUniSubsetArray[atomicMultiNum[d]]; }
+
+		MultiSubset *atomic = new MultiSubset (subsetArray, dimension);
+		atomicMultiSubsetArray[atomicNum] = atomic;
+		atomicArray[atomicNum] = atomic;
+
+		atomic->multiSet = this;
+		atomic->atomicNum = atomicNum;
+		atomic->isAtomic = true;
+		atomic->objective = m;
+		atomic->value = m->newObjectiveValue(atomicNum);
+			
+		delete [] atomicMultiNum;
+	}
+
+	initAtomicReached();
+	std::random_shuffle (&atomicArray[0], &atomicArray[atomicNumber]);
+	int unreachedIndex = 0;
+	
+	// SELECT AN UNCOVERED ATOMIC MULTISUBSET
+	while (unreachedIndex < atomicNumber)
+	{
+		while (atomicArray[unreachedIndex]->reached && unreachedIndex < atomicNumber) { unreachedIndex++; }
+
+		if (unreachedIndex < atomicNumber)
+		{		
+			// CREATE LIST OF NEXT MULTISUBSETS
+			MultiSubset *atomic = atomicArray[unreachedIndex];
+
+			MultiSubsetSet nextSubsetSet;
+			for (int d = 0; d < dimension; d++)
+			{	
+				for (UniSubsetPairSet::iterator it1 = atomic->uniSubsetArray[d]->parentSet->begin(); it1 != atomic->uniSubsetArray[d]->parentSet->end(); ++it1)
+				{
+					UniSubset *parent = (*it1)->first;
+					UniSubsetSet *addedUniSubsets = (*it1)->second;
+
+					// CREATE NEXT MULTISUBSET
+					UniSubset **subsetArray = new UniSubset* [dimension];
+					for (int dp = 0; dp < dimension; dp++) { subsetArray[dp] = atomic->uniSubsetArray[dp]; }
+					subsetArray[d] = parent;
+					
+					MultiSubset *subset = new MultiSubset (subsetArray, dimension);
+					subset->multiSet = this;
+
+					
+					// COMPUTE NEW OBJECTIVE VALUE
+					subset->objective = m;
+					subset->value = m->newObjectiveValue();
+
+					ObjectiveValueSet *valueSet = new ObjectiveValueSet ();
+					valueSet->insert(atomic->value);
+
+					int *multiNum = new int [dimension];
+					for (int dp = 0; dp < dimension; dp++) { multiNum[dp] = atomic->uniSubsetArray[dp]->atomicNum; }
+					for (UniSubsetSet::iterator it2 = addedUniSubsets->begin(); it2 != addedUniSubsets->end(); ++it2)
+					{
+						multiNum[d] = (*it2)->atomicNum;
+						valueSet->insert(atomicArray[getAtomicNum(multiNum)]->value);
+					}
+					delete multiNum;
+					
+					subset->value->compute(valueSet);
+					delete valueSet;
+
+					nextSubsetSet.push_back(subset);
+				}
+			}
+			
+			// SELECT BEST NEXT MULTISUBSET
+
+			// UPDATE LIST OF NEXT MULTISUBSETS
+
+		
+		}
+	}
+
+	for (int atomicNum = 0; atomicNum < atomicNumber; atomicNum++) { delete atomicArray[atomicNum]; }
+	delete [] atomicArray;
+}
 
 
 MultiSubset::MultiSubset (UniSubset **subsetArray, int dim)

@@ -149,12 +149,18 @@ public:
 	void printOptimalPartition (double parameter);
 	Partition *getOptimalPartition (double parameter);
 
+	void approximateOptimalPartition (ObjectiveFunction *m, double parameter);
+
 protected:
 	UniSet **uniSetArray;
 
 	int getNum (int *multiNum);
+	int getAtomicNum (int *multiNum);
 	int *getMultiNum (int num);
+	int *getAtomicMultiNum (int num);
+
 	void initReached ();
+	void initAtomicReached ();
 };
 
 

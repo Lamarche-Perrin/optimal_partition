@@ -3,6 +3,7 @@ optimal_partition
 header
 add_header
 gmon.out
+EU_script
 
 # C++ and Dev-C++
 *.o

@@ -64,6 +64,9 @@ typedef std::list<UniSubset*> UniSubsetSet;
 typedef std::list<UniSubsetSet*> UniSubsetSetSet;
 typedef std::list<int> IndexSet;
 
+typedef std::pair<UniSubset*,UniSubsetSet*> UniSubsetPair;
+typedef std::set<UniSubsetPair*> UniSubsetPairSet;
+
 /*!
  * \class UniSet
  * \brief A uni-dimensional set of elements and its algebraic structure (feasible subsets and feasible refinements)
@@ -237,7 +240,9 @@ public:
 	std::string name; /** \brief Name of this subset */
 	IndexSet *indexSet; /** \brief Indexes of all the elements in this subset (only one index / one element in the case of an atomic subset) */
 	UniSubsetSetSet *uniSubsetSetSet; /** \brief Set of the refinements of this subset, that is the set of all partitions of this subset that are made of other feasible subsets; this hence properly defines the algebraic structure */
-
+	UniSubsetPairSet *childSet; /** \brief Set of feasible subsets that are contained by this subset */
+	UniSubsetPairSet *parentSet; /** \brief Set of feasible subsets that contain this subset */
+	
 	/*!
 	 * \brief Constructor
 	 * \param index : The index of the unique element in the case of an atomic subset

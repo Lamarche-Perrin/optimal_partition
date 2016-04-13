@@ -47,7 +47,7 @@
 RelativeEntropy::RelativeEntropy (int s, double *val, double *refVal)
 {
 	size = s;
-	maximize = true;
+	maximize = false;
 	values = new double [size];
 	refValues = new double [size];
 

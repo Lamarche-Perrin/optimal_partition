@@ -452,6 +452,8 @@ UniSubset::UniSubset (int index)
 	
 	uniSubsetSetSet = new UniSubsetSetSet();
 	indexSet = new IndexSet();
+	childSet = new UniSubsetPairSet();
+	parentSet = new UniSubsetPairSet();
 	
 	if (index != -1) { indexSet->push_back(index); }
 	isAtomic = (index != -1);
@@ -463,6 +465,8 @@ UniSubset::~UniSubset ()
 	for (UniSubsetSetSet::iterator it = uniSubsetSetSet->begin(); it != uniSubsetSetSet->end(); ++it) { delete *it; }
 	delete uniSubsetSetSet;
 	delete indexSet;
+	delete childSet;
+	delete parentSet;
 }
 
 

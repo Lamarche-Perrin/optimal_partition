@@ -53,9 +53,9 @@ int VERBOSE_TAB = 0;
 struct globalArgs_t
 {
 	std::string cubeFileName;
-	std::string modelFileName;
 	std::string outputFileName;
 	std::string hierarchyFileName;
+	int modelLineNum;
 	double parameter;
 	double threshold;
 	int optimalSubsetNumber;
@@ -82,9 +82,8 @@ void usage (void)
 		"Usage: geomediatic_aggregation --data dataFile.csv" << std::endl <<
 		"Options:" << std::endl <<
 		"-h | --help           Print this help." << std::endl <<
-		//"-v | --verbose        More output" << std::endl <<
 		"-d | --data           File containing the data (observed values). Required." << std::endl <<
-		"-m | --model          File containing the model (expected values). If not specified: a uniform model is used." << std::endl <<
+		"-m | --model          Line number after the data containing the model (expected values). If not specified: a uniform model is used." << std::endl <<
 		"-o | --output         File to which the results should be printed. If not specified: results are displayed in the terminal." << std::endl <<
 		"-h | --hierarchy      File describing a hierarchy for spatial aggregation. Required only if the data file contains a spatial dimension." << std::endl <<
 		"-s | --scale          A float between 0 and 1 describing the aggregation scale. If not specified: multiple scales are computed (see --threshold option)." << std::endl <<
@@ -102,7 +101,7 @@ int main (int argc, char *argv[])
     
     // Initialize globalArgs
     globalArgs.cubeFileName = "";
-    globalArgs.modelFileName = "";
+    globalArgs.modelLineNum = 0;
     globalArgs.outputFileName = "";
     globalArgs.hierarchyFileName = "";
     globalArgs.parameter = -1;
@@ -117,7 +116,7 @@ int main (int argc, char *argv[])
         switch (opt)
 		{
 		case 'd': globalArgs.cubeFileName = optarg; break;
-		case 'm': globalArgs.modelFileName = optarg; break;
+		case 'm': globalArgs.modelLineNum = string2int(optarg); break;
 		case 'o': globalArgs.outputFileName = optarg; break;
 		case 'h': globalArgs.hierarchyFileName = optarg; break;
 		case 's': globalArgs.parameter = string2double(optarg); break;
@@ -184,8 +183,9 @@ int main (int argc, char *argv[])
 
 		if (dimArray[d] == "media") { setArray[d] = new UnconstrainedUniSet (sizeArray[d], labels); }
 		else if (dimArray[d] == "time") { setArray[d] = new OrderedUniSet (sizeArray[d], labels); }
-		else if (dimArray[d] == "space") { setArray[d] = new HierarchicalUniSet (globalArgs.hierarchyFileName, sizeArray[d], labels); }
-		
+		else if (dimArray[d] == "space") { setArray[d] = new UnconstrainedUniSet (sizeArray[d], labels); }
+		//else if (dimArray[d] == "space") { setArray[d] = new HierarchicalUniSet (globalArgs.hierarchyFileName, sizeArray[d], labels); }
+
 		setArray[d]->buildDataStructure ();
 	}
 
@@ -193,8 +193,13 @@ int main (int argc, char *argv[])
 	MultiSet *multiSet = new MultiSet (setArray, dimension);
 	multiSet->buildDataStructure();
 	int elementNb = multiSet->atomicMultiSubsetNumber;
+
 	//multiSet->print();
 	//std::cout << multiSet->atomicMultiSubsetNumber << std::endl;
+
+	// Skip one line
+	if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
+	getCSVLine (cubeFile, line);
 
 	// Get values and build objective function
 	if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
@@ -204,24 +209,21 @@ int main (int argc, char *argv[])
 	for (int i = 0; i < elementNb; i++) { values[i] = string2int(line[i]); }
 
 	double *refValues = 0;
-	if (globalArgs.modelFileName != "")
+	if (globalArgs.modelLineNum > 0)
 	{
-		std::ifstream modelFile;
-		openInputCSV (modelFile, globalArgs.modelFileName);
-
-		for (int i = 0; i < 3+dimension; i++)
+		// Skip some lines
+		for (int i = 1; i < globalArgs.modelLineNum; i++)
 		{
-			if (!hasCSVLine (modelFile)) { closeInputCSV (modelFile); return EXIT_FAILURE; }
-			nextCSVLine (modelFile);
+			if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
+			getCSVLine (cubeFile, line, elementNb);
 		}
 
-		if (!hasCSVLine (modelFile)) { closeInputCSV (modelFile); return EXIT_FAILURE; }
-		getCSVLine (modelFile, line, elementNb);
+		// Get refvalues and build objective function
+		if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
+		getCSVLine (cubeFile, line, elementNb);
 
 		refValues = new double [elementNb];
 		for (int i = 0; i < elementNb; i++) { refValues[i] = string2int(line[i]); }
-		
-		closeInputCSV (modelFile);
 	}
 
     RelativeEntropy *objective = new RelativeEntropy (elementNb, values, refValues);
