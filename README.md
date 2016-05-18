@@ -35,10 +35,11 @@ You should have received a copy of the GNU General Public License along
 with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
-## Clone and compile
+## Clone and Compile
 
 You need to have **git**, **gcc** and **make** installed and working on your machine.
 
+Then, run:
 ```
 git clone https://github.com/Lamarche-Perrin/optimal_partition.git
 cd optimal_partition
@@ -48,14 +49,18 @@ make
 ## Directories
 
 Sources: `optimal_partition/src/`
+
 Binaries: `optimal_partition/bin/`
+
 Documentation: `optimal_partition/doc/html/index.html`
 
 
 ## Geomediatic Aggregation (end-user program)
 
 Source: `src/geomediatic_aggregation.cpp`
+
 Binary: `bin/geomediatic_aggregation`
+
 For example, run:
 ```
 bin/geomediatic_aggregation --help
@@ -65,9 +70,10 @@ bin/geomediatic_aggregation --data input/GEOMEDIA/EU_cube.csv --output output/EU
 ## Library of Test Programs (specialized programs)
 
 Sources: `src/programs.cpp`
+
 Binary: `src/optimal_parition`
 
-Uncomment program of interest in `src/optimal_partition.cpp`
+Uncomment program of interest in `src/optimal_partition.cpp`.
 Then run:
 ```
 make
