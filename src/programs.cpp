@@ -56,6 +56,7 @@
 #include "nonconstrained_ordered_set.hpp"
 
 #include "relative_entropy.hpp"
+#include "information_criterion.hpp"
 #include "logarithmic_score.hpp"
 #include "prediction_dataset.hpp"
 
@@ -697,16 +698,16 @@ void testGraphCompression ()
 	timer.step("BUILD STRUCTURE");
 
 
-	double values [9*9] = {
-		0, 617, 289, 313, 140, 1455, 43, 152, 8946,
-		624, 0, 1243, 1104, 560, 7829, 124, 249, 16679,
-		284, 1359, 0, 520, 282, 2752, 79, 109, 8307,
-		302, 1062, 491, 0, 171, 2344, 48, 92, 8163,
-		124, 661, 271, 165, 0, 1242, 42, 80, 3087,
-		1382, 6607, 2336, 2364, 869, 0, 1426, 886, 50398,
-		116, 312, 178, 166, 81, 4700, 0, 229, 4407,
-		280, 397, 184, 161, 132, 2243, 331, 0, 6225,
-		8702, 16107, 7463, 8554, 2869, 51894, 1559, 3677, 0
+	double values [9*9] = {	
+		0, 302, 491, 92, 171, 48, 1062, 2344, 8163,
+		313, 0, 289, 152, 140, 43, 617, 1455, 8946,
+		520, 284, 0, 109, 282, 79, 1359, 2752, 8307,
+		161, 280, 184, 0, 132, 331, 397, 2243, 6225,
+		165, 124, 271, 80, 0, 42, 661, 1242, 3087,
+		166, 116, 178, 229, 81, 0, 312, 4700, 4407,
+		1104, 624, 1243, 249, 560, 124, 0, 7829, 16679,
+		2364, 1382, 2336, 886, 869, 1426, 6607, 0, 50398,
+		8554, 8702, 7463, 3677, 2869, 1559, 16107, 51894, 0
 	};
 
 	/*
@@ -746,7 +747,7 @@ void testGraphCompression ()
 	};
 */
  
-    RelativeEntropy *m = new RelativeEntropy (size*size, values, refValues);
+    InformationCriterion *m = new InformationCriterion (size*size, values, refValues);
 	//m->setRandom();
  
     multiSet->setObjectiveFunction(m);
@@ -755,9 +756,67 @@ void testGraphCompression ()
 
 	timer.step("BUILD MEASURE");
 
+	//multiSet->getOptimalPartition(0.000001)->print();
+    //multiSet->printOptimalPartitionList(0.01);
 
-    multiSet->printOptimalPartitionList(0.05);
+	
+	PartitionList *partitionList = multiSet->getOptimalPartitionList(0.000001);
+	
+	std::ofstream outputFile;
+	openOutputCSV (outputFile, "output/output.graph.6.worst.csv", true);
 
+	addCSVField (outputFile, "SCALE");
+	addCSVField (outputFile, "AGG1");
+	addCSVField (outputFile, "AGG2");
+	addCSVField (outputFile, "DATA");
+	addCSVField (outputFile, "MODEL");
+	addCSVField (outputFile, "COMPLEXITY");
+	addCSVField (outputFile, "INFORMATION_LOSS",false);
+	endCSVLine (outputFile);
+
+	int num = 0;
+	for (PartitionList::iterator it = partitionList->begin(); it != partitionList->end(); ++it)
+	{
+		Partition *partition = *it;
+
+		for (std::list<Part*>::iterator it1 = partition->parts->begin(); it1 != partition->parts->end(); ++it1)
+		{
+			MultiPart *multiPart = (MultiPart*) *it1;
+			addCSVField (outputFile, partition->parameter);
+			
+			std::string part1 = ""; bool first1 = true;
+			for (std::list<int>::iterator it2 = multiPart->partArray[0]->individuals->begin(); it2 != multiPart->partArray[0]->individuals->end(); ++it2)
+			{
+				if (!first1) { part1 = "," + part1; } else { first1 = false; }
+				part1 = int2string(*it2) + part1;
+			}
+			addCSVField (outputFile, part1);
+
+			std::string part2 = ""; bool first2 = true;
+			for (std::list<int>::iterator it2 = multiPart->partArray[1]->individuals->begin(); it2 != multiPart->partArray[1]->individuals->end(); ++it2)
+			{
+				if (!first2) { part2 = "," + part2; } else { first2 = false; }
+				part2 = int2string(*it2) + part2;
+			}
+			addCSVField (outputFile, part2);
+
+			CriterionObjectiveValue *q = (CriterionObjectiveValue*) multiPart->value;
+			addCSVField (outputFile, q->sumValue);
+			addCSVField (outputFile, q->sumRefValue);
+			addCSVField (outputFile, q->size);
+			addCSVField (outputFile, q->divergence, false);
+
+			endCSVLine (outputFile);
+		}
+		
+		num++;
+	}
+
+	closeOutputCSV(outputFile);
+	
+	for (PartitionList::iterator it = partitionList->begin(); it != partitionList->end(); ++it) { delete *it; }
+	delete partitionList;
+	
 	timer.step("COMPUTE OPTIMAL PARTITION");
 
     timer.stopTime();
