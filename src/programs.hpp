@@ -45,7 +45,6 @@ void testHierarchicalOrderedSet ();
 void testNonconstrainedOrderedSet ();
 void testHierarchicalHierarchicalSet ();
 void testGraph ();
-void testGraphWithSlyce ();
 void testBiSet ();
 void testMultiSet ();
 void testGraphCompression ();

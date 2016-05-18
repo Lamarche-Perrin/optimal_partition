@@ -48,17 +48,14 @@ make
 
 ## Directories
 
-Sources: `optimal_partition/src/`
-
-Binaries: `optimal_partition/bin/`
-
-Documentation: `optimal_partition/doc/html/index.html`
+Sources: `src/`<br/>
+Binaries: `bin/`<br/>
+Documentation: `doc/html/index.html`
 
 
 ## Geomediatic Aggregation (end-user program)
 
-Source: `src/geomediatic_aggregation.cpp`
-
+Source: `src/geomediatic_aggregation.cpp`<br/>
 Binary: `bin/geomediatic_aggregation`
 
 For example, run:
@@ -67,14 +64,12 @@ bin/geomediatic_aggregation --help
 bin/geomediatic_aggregation --data input/GEOMEDIA/EU_cube.csv --output output/EU_partitions.csv --model ST --threshold 0.1
 ```
 
-## Library of Test Programs (specialized programs)
+## Library of Tests (specialized programs)
 
-Sources: `src/programs.cpp`
-
+Sources: `src/programs.cpp`<br/>
 Binary: `src/optimal_parition`
 
-Uncomment program of interest in `src/optimal_partition.cpp`.
-Then run:
+Uncomment the program of interest in `src/optimal_partition.cpp`, then run:
 ```
 make
 bin/optimal_partition

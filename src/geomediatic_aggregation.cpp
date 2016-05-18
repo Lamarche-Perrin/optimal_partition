@@ -38,12 +38,12 @@
 #include <iostream>
 #include <fstream>
 #include <getopt.h>
-//#include <unistd.h>
+#include <algorithm>
 
 #include "geomediatic_aggregation.hpp"
 #include "uni_set.hpp"
 #include "multi_set.hpp"
-#include "relative_entropy.hpp"
+#include "information_criterion.hpp"
 
 #include "csv_tools.hpp"
 
@@ -55,20 +55,21 @@ struct globalArgs_t
 	std::string cubeFileName;
 	std::string outputFileName;
 	std::string hierarchyFileName;
-	int modelLineNum;
+	std::string model;
 	double parameter;
 	double threshold;
 	int optimalSubsetNumber;
     int verbosity;
 } globalArgs;
 
-static const char *optString = "d:m:o:h:s:t:l:v?";
+static const char *optString = "d:m:o:s:t:l:v?";
+//static const char *optString = "d:m:o:h:s:t:l:v?";
 
 static const struct option longOpts[] = {
     {"data", required_argument, NULL, 'd'},
     {"model", required_argument, NULL, 'm'},
     {"output", required_argument, NULL, 'o'},
-    {"hierarchy", required_argument, NULL, 'h'},
+    //{"hierarchy", required_argument, NULL, 'h'},
     {"scale", required_argument, NULL, 's'},
     {"threshold", required_argument, NULL, 't'},
     {"optimal-list", required_argument, NULL, 'l'},
@@ -83,9 +84,9 @@ void usage (void)
 		"Options:" << std::endl <<
 		"-h | --help           Print this help." << std::endl <<
 		"-d | --data           File containing the data (observed values). Required." << std::endl <<
-		"-m | --model          Line number after the data containing the model (expected values). If not specified: a uniform model is used." << std::endl <<
+		"-m | --model          Data model (expected values) used for the aggregation. If not specified: a uniform model is implied." << std::endl <<
 		"-o | --output         File to which the results should be printed. If not specified: results are displayed in the terminal." << std::endl <<
-		"-h | --hierarchy      File describing a hierarchy for spatial aggregation. Required only if the data file contains a spatial dimension." << std::endl <<
+		//"-h | --hierarchy      File describing a hierarchy for spatial aggregation. Required only if the data file contains a spatial dimension." << std::endl <<
 		"-s | --scale          A float between 0 and 1 describing the aggregation scale. If not specified: multiple scales are computed (see --threshold option)." << std::endl <<
 		"-t | --threshold      The minimal distance between two consecutive scales. Not used if a unique scale is specified (see --scale option). If not specified: 0.01." << std::endl <<
 		"-l | --optimal-list   Return the list of the N best aggregates instead of the optimal partition, where N is specified after this option." << std::endl;
@@ -101,7 +102,7 @@ int main (int argc, char *argv[])
     
     // Initialize globalArgs
     globalArgs.cubeFileName = "";
-    globalArgs.modelLineNum = 0;
+    globalArgs.model = "";
     globalArgs.outputFileName = "";
     globalArgs.hierarchyFileName = "";
     globalArgs.parameter = -1;
@@ -116,7 +117,7 @@ int main (int argc, char *argv[])
         switch (opt)
 		{
 		case 'd': globalArgs.cubeFileName = optarg; break;
-		case 'm': globalArgs.modelLineNum = string2int(optarg); break;
+		case 'm': globalArgs.model = optarg; break;
 		case 'o': globalArgs.outputFileName = optarg; break;
 		case 'h': globalArgs.hierarchyFileName = optarg; break;
 		case 's': globalArgs.parameter = string2double(optarg); break;
@@ -135,6 +136,7 @@ int main (int argc, char *argv[])
 	int *sizeArray;
 	std::string *dimArray;
 	std::string *labels;
+	std::vector<std::string> models;
 	
 	UniSet **setArray;
 
@@ -163,14 +165,6 @@ int main (int argc, char *argv[])
 	sizeArray = new int [dimension];
 	for (int d = 0; d < dimension; d++) { sizeArray[d] = string2int(line[d]); }
 
-	// Print list of dimensions
-	for (int d = 0; d < dimension; d++)
-	{
-		if (d > 0) { std::cout << " x "; }
-		std::cout << dimArray[d] << "(" << sizeArray[d] << ")";
-	}
-	std::cout << std::endl;
-
 	// Build corresponding uni-dimensional sets
 	setArray = new UniSet* [dimension];	
 	for (int d = 0; d < dimension; d++)
@@ -194,39 +188,50 @@ int main (int argc, char *argv[])
 	multiSet->buildDataStructure();
 	int elementNb = multiSet->atomicMultiSubsetNumber;
 
-	//multiSet->print();
-	//std::cout << multiSet->atomicMultiSubsetNumber << std::endl;
+	// Print list of dimensions
+	for (int d = 0; d < dimension; d++)
+	{
+		if (d > 0) { std::cout << " x "; }
+		std::cout << dimArray[d] << "(" << sizeArray[d] << ")";
+	}
+	std::cout << " -> " << elementNb << " cells" << std::endl;
 
-	// Skip one line
+	// Get model names
 	if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
-	getCSVLine (cubeFile, line);
-
+	getCSVLine (cubeFile, models);
+	
 	// Get values and build objective function
 	if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
 	getCSVLine (cubeFile, line, elementNb);
 
+	double sumValues = 0;
 	double *values = new double [elementNb];
-	for (int i = 0; i < elementNb; i++) { values[i] = string2int(line[i]); }
-
+	for (int i = 0; i < elementNb; i++) { values[i] = string2double(line[i]); sumValues += values[i]; }
+	
 	double *refValues = 0;
-	if (globalArgs.modelLineNum > 0)
+	if (globalArgs.model != "")
 	{
-		// Skip some lines
-		for (int i = 1; i < globalArgs.modelLineNum; i++)
-		{
+		unsigned int modelLineNum = std::find (models.begin(), models.end(), globalArgs.model) - models.begin();
+		if (modelLineNum >= models.size() || modelLineNum == 0) { std:: cout << "Warning: model " << globalArgs.model << " not found. Uniform model implied instead." << std::endl; }
+
+		else {
+			// Skip some lines
+			for (unsigned int i = 1; i < modelLineNum; i++)
+			{
+				if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
+				getCSVLine (cubeFile, line, elementNb);
+			}
+
+			// Get refvalues and build objective function
 			if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
 			getCSVLine (cubeFile, line, elementNb);
+
+			refValues = new double [elementNb];
+			for (int i = 0; i < elementNb; i++) { refValues[i] = string2double(line[i]); }
 		}
-
-		// Get refvalues and build objective function
-		if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }
-		getCSVLine (cubeFile, line, elementNb);
-
-		refValues = new double [elementNb];
-		for (int i = 0; i < elementNb; i++) { refValues[i] = string2int(line[i]); }
 	}
 
-    RelativeEntropy *objective = new RelativeEntropy (elementNb, values, refValues);
+    InformationCriterion *objective = new InformationCriterion (elementNb, values, refValues);
 
 	closeInputCSV (cubeFile);
 
@@ -242,7 +247,44 @@ int main (int argc, char *argv[])
 	}
 
 	else {
-		if (globalArgs.parameter >= 0) { multiSet->getOptimalPartition(globalArgs.parameter)->print(); }
+		if (globalArgs.parameter >= 0) {
+			if (globalArgs.outputFileName == "") { multiSet->getOptimalPartition(globalArgs.parameter)->print(); }
+
+			else {
+				Partition *partition = multiSet->getOptimalPartition(globalArgs.parameter);
+	
+				std::ofstream outputFile;
+				openOutputCSV (outputFile, globalArgs.outputFileName, true);
+
+				addCSVField (outputFile, "SCALE");
+				for (int d = 0; d < dimension; d++) { addCSVField (outputFile, "DIM_"+int2string(d+1)); }
+				addCSVField (outputFile, "DATA");
+				addCSVField (outputFile, "MODEL");
+				addCSVField (outputFile, "SIZE");
+				addCSVField (outputFile, "INFORMATION_LOSS",false);
+				endCSVLine (outputFile);
+
+				for (std::list<Part*>::iterator it1 = partition->parts->begin(); it1 != partition->parts->end(); ++it1)
+				{
+					MultiPart *multiPart = (MultiPart*) *it1;
+					addCSVField (outputFile, partition->parameter);
+
+					for (int d = 0; d < dimension; d++) { addCSVField (outputFile, multiPart->partArray[d]->name); }
+
+					CriterionObjectiveValue *q = (CriterionObjectiveValue*) multiPart->value;
+					addCSVField (outputFile, q->sumValue);
+					addCSVField (outputFile, q->sumRefValue);
+					addCSVField (outputFile, q->size);
+					addCSVField (outputFile, q->divergence, false);
+
+					endCSVLine (outputFile);
+				}
+		
+				closeOutputCSV(outputFile);
+	
+				delete partition;
+			}
+		}
 
 		else {
 			if (globalArgs.outputFileName == "") { multiSet->printOptimalPartitionList(globalArgs.threshold); }
@@ -253,12 +295,11 @@ int main (int argc, char *argv[])
 				std::ofstream outputFile;
 				openOutputCSV (outputFile, globalArgs.outputFileName, true);
 
-				//addCSVField (outputFile, "PARTITION_ID");
 				addCSVField (outputFile, "SCALE");
 				for (int d = 0; d < dimension; d++) { addCSVField (outputFile, "DIM_"+int2string(d+1)); }
 				addCSVField (outputFile, "DATA");
 				addCSVField (outputFile, "MODEL");
-				addCSVField (outputFile, "COMPLEXITY_REDUCTION");
+				addCSVField (outputFile, "SIZE");
 				addCSVField (outputFile, "INFORMATION_LOSS",false);
 				endCSVLine (outputFile);
 
@@ -266,34 +307,18 @@ int main (int argc, char *argv[])
 				for (PartitionList::iterator it = partitionList->begin(); it != partitionList->end(); ++it)
 				{
 					Partition *partition = *it;
-
-					/*
-					  addCSVField (outputFile, num);
-					  addCSVField (outputFile, partition->parameter);
-
-					  for (int d = 0; d < dimension; d++) { addCSVField (outputFile, ""); }
-
-					  RelativeObjectiveValue *q = (RelativeObjectiveValue*) partition->value;
-					  addCSVField (outputFile, q->sumValue);
-					  addCSVField (outputFile, q->sumRefValue);
-					  addCSVField (outputFile, q->sizeReduction);
-					  addCSVField (outputFile, q->divergence, false);
-
-					  endCSVLine (outputFile);
-					*/
 					
 					for (std::list<Part*>::iterator it1 = partition->parts->begin(); it1 != partition->parts->end(); ++it1)
 					{
 						MultiPart *multiPart = (MultiPart*) *it1;
-						//addCSVField (outputFile, num);
 						addCSVField (outputFile, partition->parameter);
 
 						for (int d = 0; d < dimension; d++) { addCSVField (outputFile, multiPart->partArray[d]->name); }
 
-						RelativeObjectiveValue *q = (RelativeObjectiveValue*) multiPart->value;
+						CriterionObjectiveValue *q = (CriterionObjectiveValue*) multiPart->value;
 						addCSVField (outputFile, q->sumValue);
 						addCSVField (outputFile, q->sumRefValue);
-						addCSVField (outputFile, q->sizeReduction);
+						addCSVField (outputFile, q->size);
 						addCSVField (outputFile, q->divergence, false);
 
 						endCSVLine (outputFile);

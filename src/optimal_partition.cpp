@@ -56,11 +56,16 @@ int main (int argc, char *argv[])
 {
     srand(time(NULL));
 
-	testGraphCompression();
-	//testLogarithmicScore ();
-	//getBinningComputationTime ();
-	//optimalBinningOfVoterModel ();
-	//minimalExample ();
+	//testHierarchicalSet();
+	//testOrderedSet();
+	//testNonconstrainedSet();
+	//testHierarchicalOrderedSet();
+	//testNonconstrainedOrderedSet();
+	//testHierarchicalHierarchicalSet();
+	//testGraph();
+	testBiSet();
+	//testMultiSet();
+	//testGraphCompression();
 	
 	return EXIT_SUCCESS;
 }
