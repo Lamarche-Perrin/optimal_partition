@@ -1,3 +1,7 @@
+# Optimal Partition
+
+## License
+
 This program is a toolbox to solve special versions of the Set Partitioning
 Problem, that is the combinatorial optimisation of a decomposable objective
 over a set of feasible partitions (defined according to specific algebraic
@@ -29,3 +33,43 @@ more details.
 
 You should have received a copy of the GNU General Public License along
 with this program. If not, see <http://www.gnu.org/licenses/>.
+
+
+## Clone and compile
+
+You need to have **git**, **gcc** and **make** installed and working on your machine.
+
+```
+git clone https://github.com/Lamarche-Perrin/optimal_partition.git
+cd optimal_partition
+make
+```
+
+## Directories
+
+Sources: `optimal_partition/src/`
+Binaries: `optimal_partition/bin/`
+Documentation: `optimal_partition/doc/html/index.html`
+
+
+## Geomediatic Aggregation (end-user program)
+
+Source: `src/geomediatic_aggregation.cpp`
+Binary: `bin/geomediatic_aggregation`
+For example, run:
+```
+bin/geomediatic_aggregation --help
+bin/geomediatic_aggregation --data input/GEOMEDIA/EU_cube.csv --output output/EU_partitions.csv --model ST --threshold 0.1
+```
+
+## Library of Test Programs (specialized programs)
+
+Sources: `src/programs.cpp`
+Binary: `src/optimal_parition`
+
+Uncomment program of interest in `src/optimal_partition.cpp`
+Then run:
+```
+make
+bin/optimal_partition
+```
