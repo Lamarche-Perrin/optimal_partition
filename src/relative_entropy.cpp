@@ -187,8 +187,7 @@ void RelativeObjectiveValue::print (bool v)
 				  << "   gain = " << std::setw(5) << std::setprecision(3) << sizeReduction
 				  << "   loss = " << std::setw(5) << std::setprecision(3) << divergence << std::endl;
 	} else {
-		std::cout << sumValue << ", " << (
-			sumValue / sumRefValue);
+		std::cout << sumValue << ", " << (sumValue / sumRefValue);
 		//std::cout << "value = " << std::setw(5) << std::setprecision(3) << sumValue
 		//<< "   refvalue = " << std::setw(5) << std::setprecision(3) << sumRefValue << std::endl;
 	}
