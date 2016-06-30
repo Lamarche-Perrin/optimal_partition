@@ -25,11 +25,14 @@ src/*
 !src/*.hpp
 !src/Makefile
 
+# R files
+R/*
+!R/*.R
+
 # Input files
 input/*
-!input/GEOMEDIA
-!input/GEOMEDIA/*.R
-!input/GEOMEDIA/*.csv
+!input/geomedia
+!input/geomedia/*.csv
 
 # Output files
 output/*

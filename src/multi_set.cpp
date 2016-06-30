@@ -524,10 +524,10 @@ void MultiSubset::setObjectiveFunction (ObjectiveFunction *m)
 	if (isAtomic)
 	{
 		int index = 0;
-		for (int d = 0; d < dimension; d++)
+		for (int d = dimension-1; d >= 0; d--)
 		{
 			index += *uniSubsetArray[d]->indexSet->begin();
-			if (d+1 < dimension) { index *= uniSubsetArray[d+1]->uniSet->atomicUniSubsetNumber; }
+			if (d > 0) { index *= uniSubsetArray[d]->uniSet->atomicUniSubsetNumber; }
 		}
 		value = m->newObjectiveValue(index);
 	}

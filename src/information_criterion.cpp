@@ -47,7 +47,7 @@
 InformationCriterion::InformationCriterion (int s, double *val, double *refVal)
 {
 	size = s;
-	maximize = false;
+	maximize = true;
 	values = new double [size];
 	refValues = new double [size];
 
@@ -122,7 +122,7 @@ void CriterionObjectiveValue::add (ObjectiveValue *q)
 	sumRefValue += value->sumRefValue;
 	microInfo += value->microInfo;
 	divergence += value->divergence;
-	size += 1;
+	size += value->size;
 }
 
 
@@ -144,8 +144,8 @@ void CriterionObjectiveValue::compute (ObjectiveValue *q1, ObjectiveValue *q2)
 	sumValue = rq1->sumValue + rq2->sumValue;
 	sumRefValue = rq1->sumRefValue + rq2->sumRefValue;
 	microInfo = rq1->microInfo + rq2->microInfo;
-	size = 1;
-				
+	size = rq1->size + rq2->size;
+	
 	if (sumValue > 0) { divergence = - microInfo - sumValue * log2(sumValue/sumRefValue); }
 	else { divergence = 0; }
 }
@@ -156,7 +156,7 @@ void CriterionObjectiveValue::compute (ObjectiveValueSet *valueSet)
 	sumValue = 0;
 	sumRefValue = 0;
 	microInfo = 0;
-	size = 1;
+	size = 0;
 	for (ObjectiveValueSet::iterator it = valueSet->begin(); it != valueSet->end(); ++it)
 	{
 		CriterionObjectiveValue *rq = (CriterionObjectiveValue *) (*it);
@@ -164,6 +164,7 @@ void CriterionObjectiveValue::compute (ObjectiveValueSet *valueSet)
 		sumValue += rq->sumValue;
 		sumRefValue += rq->sumRefValue;
 		microInfo += rq->microInfo;
+		size += rq->size;
 	}
 	
 	if (sumValue > 0) { divergence = - microInfo - sumValue * log2(sumValue/sumRefValue); }
@@ -192,7 +193,7 @@ void CriterionObjectiveValue::print (bool v)
 
 double CriterionObjectiveValue::getValue (double param)
 {
-	if (param >= 0) return size + param * divergence;
-	return divergence;
+	if (param >= 0) return (size-1) - param * divergence;
+	return -divergence;
 }
 

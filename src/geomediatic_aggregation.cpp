@@ -44,6 +44,7 @@
 #include "uni_set.hpp"
 #include "multi_set.hpp"
 #include "information_criterion.hpp"
+#include "relative_entropy.hpp"
 
 #include "csv_tools.hpp"
 
@@ -231,7 +232,8 @@ int main (int argc, char *argv[])
 		}
 	}
 
-    InformationCriterion *objective = new InformationCriterion (elementNb, values, refValues);
+    //InformationCriterion *objective = new InformationCriterion (elementNb, values, refValues);
+	RelativeEntropy *objective = new RelativeEntropy (elementNb, values, refValues);
 
 	closeInputCSV (cubeFile);
 
@@ -260,7 +262,7 @@ int main (int argc, char *argv[])
 				for (int d = 0; d < dimension; d++) { addCSVField (outputFile, "DIM_"+int2string(d+1)); }
 				addCSVField (outputFile, "DATA");
 				addCSVField (outputFile, "MODEL");
-				addCSVField (outputFile, "SIZE");
+				addCSVField (outputFile, "SIZE_REDUCTION");
 				addCSVField (outputFile, "INFORMATION_LOSS",false);
 				endCSVLine (outputFile);
 
@@ -271,10 +273,11 @@ int main (int argc, char *argv[])
 
 					for (int d = 0; d < dimension; d++) { addCSVField (outputFile, multiPart->partArray[d]->name); }
 
-					CriterionObjectiveValue *q = (CriterionObjectiveValue*) multiPart->value;
+					RelativeObjectiveValue *q = (RelativeObjectiveValue*) multiPart->value;
+					//CriterionObjectiveValue *q = (CriterionObjectiveValue*) multiPart->value;
 					addCSVField (outputFile, q->sumValue);
 					addCSVField (outputFile, q->sumRefValue);
-					addCSVField (outputFile, q->size);
+					addCSVField (outputFile, q->sizeReduction);
 					addCSVField (outputFile, q->divergence, false);
 
 					endCSVLine (outputFile);
