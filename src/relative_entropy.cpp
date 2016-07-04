@@ -54,6 +54,7 @@ RelativeEntropy::RelativeEntropy (int s, double *val, double *refVal)
 	if (val != 0) { for (int i = 0; i < size; i++) { values[i] = val[i]; } }
 	if (refVal != 0 && val != 0) { for (int i = 0; i < size; i++) { refValues[i] = refVal[i]; } }
 	if (refVal == 0 && val != 0) { for (int i = 0; i < size; i++) { refValues[i] = 1; } }
+	//for (int i = 0; i < size; i++) { std::cout << i << " = " << values[i] << " / " << refValues[i] << std::endl; }
 }
 
 
@@ -187,9 +188,8 @@ void RelativeObjectiveValue::print (bool v)
 				  << "   gain = " << std::setw(5) << std::setprecision(3) << sizeReduction
 				  << "   loss = " << std::setw(5) << std::setprecision(3) << divergence << std::endl;
 	} else {
-		std::cout << sumValue << ", " << (sumValue / sumRefValue);
-		//std::cout << "value = " << std::setw(5) << std::setprecision(3) << sumValue
-		//<< "   refvalue = " << std::setw(5) << std::setprecision(3) << sumRefValue << std::endl;
+		std::cout << "value = " << std::setw(5) << std::setprecision(3) << sumValue
+				  << "   refvalue = " << std::setw(5) << std::setprecision(3) << sumRefValue << std::endl;
 	}
 }
 

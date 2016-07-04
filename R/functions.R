@@ -11,6 +11,8 @@
 #' @name functions-package
 NULL
 
+library(ggplot2)
+library(stringr)
 
 #' From dataset to data cube
 #' 
@@ -387,4 +389,281 @@ writeDataCube <- function (dataCube, dataModels = NULL, fileName) {
     write.table (t(as.vector(dataCube)), file=fileName, sep=";", quote=FALSE, row.names=FALSE, col.names=FALSE, append=TRUE)
     lapply (dataModels, function(x) write.table(t(as.vector(x)), file=fileName, sep=";", quote=FALSE, row.names=FALSE, col.names=FALSE, append=TRUE))
     x <- 0
+}
+
+#' Reading a data cube
+#'
+#' Reading a data cube (and its eventual data models) from a CSV file that has the following structure.
+#' - Line #1: Number of dimensions (always 3 in the case of a data cube)
+#' - Line #2: Name of dimensions (always "media", "time", and "space" in the case of a data cube)
+#' - Line #3: List of media identifiers ("media" dimension)
+#' - Line #4: List of dates ("time" dimension)
+#' - Line #5: List of countries ("space" dimension)
+#' - Line #6: List of data models recorded in the next lines. ("data" corresponds to the initial data, with no model.)
+#' - Next lines: The data associated to the initial cube or its models, in the order given by the line #6. This data is presented as a list of floating numbers corresponding to the reading of the cube while beginning with the first dimension ("media"), then the second ("time"), and the third ("space").
+#'
+#' @param fileName The name of the file from where the data cube should be read.
+#' @examples
+#' dataModels <- getDataModelsFromDataCube ()
+#' print(dataModels)
+readDataCube <- function (fileName) {
+    d <- scan (file=fileName, sep=";", nlines=1)
+    names <- scan (file=fileName, what="character", sep=";", skip=1, nlines=1)
+    dim <- scan (file=fileName, sep=";", skip=2, nlines=1)
+    models <- scan (file=fileName, sep=";", what="character", skip=length(dim)+3, nlines=1)
+
+    dimnames <- list()
+    for (i in 1:length(dim)) {
+        dimnames[[names[i]]] <- scan (file=fileName, what="character",
+                                      sep=";", skip=i+2, nlines=1, na.strings="NULL")
+    }
+
+    n <- 1
+    dataCube <- list()
+    for (model in models) {
+        d <- scan (file=fileName, sep=";", skip=length(dim)+3+n, nlines=1)
+        dataCube[[model]] <- array(d,dim,dimnames)
+        n <- n+1
+    }
+    
+    return (dataCube)
+}
+
+
+
+printHeatmaps <- function (
+                           cubeFileName,
+                           partitionFileName,
+                           outputName,
+                           xdim, ydim, xorder = NULL, yorder = NULL,
+                           log = TRUE
+                           ) {
+    
+    cube <- readDataCube (cubeFileName)
+
+    xlist <- dimnames(cube$data)[[xdim]]
+    if (!is.null(xorder)) { xlist <- xorder }
+
+    ylist <- dimnames(cube$data)[[ydim]]
+    if (!is.null(yorder)) { ylist <- yorder }
+
+    partitions <- read.csv (partitionFileName, sep = ";")
+
+    lmin <- 0
+    lmax <- 0
+    for (scale in unique (partitions$SCALE)) {
+
+        data <- partitions[partitions$SCALE == scale,]
+        partNb <- 1
+        for (i in seq(1,nrow(data))) {
+            row <- data[i,]
+            sign <- 0
+            if (row$DATA > row$MODEL) {            
+                if (log) {
+                    sign <- - (ppois (row$DATA, row$MODEL, lower.tail = FALSE, log.p=TRUE) + log(2))
+                } else {
+                    sign <- 1 - 2*ppois (row$DATA, row$MODEL, lower.tail = FALSE)
+                }
+            }
+
+            if (row$DATA < row$MODEL) {
+                if (log) {
+                    sign <- ppois (row$DATA, row$MODEL, lower.tail = TRUE, log.p=TRUE) + log(2)
+                } else {
+                    sign <- -(1 - 2*ppois (row$DATA, row$MODEL, lower.tail = TRUE)) 
+                }
+            }
+            lmin <- min(sign,lmin,na.rm=TRUE)
+            lmax <- max(sign,lmax,na.rm=TRUE)
+        }
+    }
+
+
+    if (xdim == "media") { xfield <- "DIM_1" }
+    if (xdim == "time") { xfield <- "DIM_2" }
+    if (xdim == "space") { xfield <- "DIM_3" }
+
+    if (ydim == "media") { yfield <- "DIM_1" }
+    if (ydim == "time") { yfield <- "DIM_2" }
+    if (ydim == "space") { yfield <- "DIM_3" }
+
+    maxNum <- length(unique(partitions$SCALE))
+    maxNum <- ceiling(log10(maxNum))
+
+    num <- 0
+    for (scale in unique(partitions$SCALE)) {
+        
+        data <- partitions[partitions$SCALE == scale,]
+        informationLoss <- sum(data$INFORMATION_LOSS)
+        sizeReduction <- sum(data$SIZE_REDUCTION)
+        size <- nrow(data)
+                
+        microData <- merge(data.frame(xlist), data.frame(ylist))
+        microData$value <- 0
+        microData$sign <- 0
+        microData$partNb <- 0
+        
+        microData$up <- FALSE
+        microData$down <- FALSE
+        microData$left <- FALSE
+        microData$right <- FALSE
+        
+        microData$x <- match(microData$xlist,xlist)
+        microData$y <- match(microData$ylist,ylist)
+        
+        partNb <- 1
+        for (i in seq(1,nrow(data))) {
+            row <- data[i,]
+
+            if (xdim == "media" || xdim == "space") {
+                strxlist <- as.character(row[,xfield])
+                strxlist <- substr(strxlist, 2, nchar(strxlist)-1)
+                pxlist <- strsplit(strxlist,', ')[[1]]
+            }
+            
+            if (xdim == "time") {                
+                strxlist <- as.character(row[,xfield])
+                strxlist <- substr(strxlist, 2, nchar(strxlist)-1)
+                pxlist <- strsplit(strxlist,', ')[[1]]
+                if (length(pxlist) > 1) { pxlist <- xlist[xlist >= pxlist[1] & xlist <= pxlist[2]] }
+            }
+
+            if (ydim == "media" || ydim == "space") {
+                strylist <- as.character(row[,yfield])
+                strylist <- substr(strylist, 2, nchar(strylist)-1)
+                pylist <- strsplit(strylist,', ')[[1]]
+            }
+            
+            if (ydim == "time") {                
+                strylist <- as.character(row[,yfield])
+                strylist <- substr(strylist, 2, nchar(strylist)-1)
+                pylist <- strsplit(strylist,', ')[[1]]
+                if (length(pylist) > 1) { pylist <- ylist[ylist >= pylist[1] & ylist <= pylist[2]] }
+            }
+
+            sign <- 0
+            if (row$DATA > row$MODEL) {            
+                if (log) {
+                    sign <- - (ppois (row$DATA, row$MODEL, lower.tail = FALSE, log.p=TRUE) + log(2))
+                } else {
+                    sign <- 1 - 2*ppois (row$DATA, row$MODEL, lower.tail = FALSE)
+                }
+            }
+
+            if (row$DATA < row$MODEL) {
+                if (log) {
+                    sign <- ppois (row$DATA, row$MODEL, lower.tail = TRUE, log.p=TRUE) + log(2)
+                } else {
+                    sign <- -(1 - 2*ppois (row$DATA, row$MODEL, lower.tail = TRUE)) 
+                }
+            }
+            
+            for (x in pxlist) {
+                for (y in pylist) {
+                    microData[microData$xlist == x & microData$ylist == y,"value"] <- row$DATA
+                    microData[microData$xlist == x & microData$ylist == y,"sign"] <- sign
+                    microData[microData$xlist == x & microData$ylist == y,"partNb"] <- partNb
+                }
+            }
+            partNb <- partNb+1
+        }
+
+        for (i in seq(1,nrow(microData))) {
+            row <- microData[i,]
+            
+            if (row$x == 1) {
+                microData[i,"left"] <- TRUE
+            } else {
+                if (microData[microData$x == row$x - 1 & microData$y == row$y,"partNb"] != row$partNb) { microData[i,"left"] <- TRUE }
+            }
+            
+            if (row$x == length(xlist)) {
+                microData[i,"right"] <- TRUE
+            } else {
+                if (microData[microData$x == row$x + 1 & microData$y == row$y,"partNb"] != row$partNb) { microData[i,"right"] <- TRUE }
+            }
+            
+            if (row$y == 1) {
+                microData[i,"up"] <- TRUE
+            } else {
+                if (microData[microData$x == row$x & microData$y == row$y - 1,"partNb"] != row$partNb) { microData[i,"up"] <- TRUE }
+            }
+            
+            if (row$y == length(ylist)) {
+                microData[i,"down"] <- TRUE
+            } else {
+                if (microData[microData$x == row$x & microData$y == row$y + 1,"partNb"] != row$partNb) { microData[i,"down"] <- TRUE }
+            }    
+        }
+        
+        microData$label <- microData$partNb
+        
+        for (i in seq(1,nrow(microData))) {
+            row <- microData[i,]
+            
+            if (row$x != 1 && microData[microData$x == row$x - 1 & microData$y == row$y,"partNb"] == row$partNb) { microData[i,"label"] <- "" }
+            
+            if (row$y != 1 && microData[microData$x == row$x & microData$y == row$y - 1,"partNb"] == row$partNb) { microData[i,"label"] <- "" }
+        }
+        
+        
+        x <- c()
+        y <- c()
+        xe <- c()
+        ye <- c()
+        
+        for (i in seq(1,nrow(microData))) {  
+            row <- microData[i,]
+            
+            if (row$up) {
+                x <- c(x,row$x - 0.5)
+                y <- c(y,row$y - 0.5)
+                xe <- c(xe,row$x + 0.5)
+                ye <- c(ye,row$y - 0.5)
+            }
+
+            if (row$down) {
+                x <- c(x,row$x - 0.5)
+                y <- c(y,row$y + 0.5)
+                xe <- c(xe,row$x + 0.5)
+                ye <- c(ye,row$y + 0.5)
+            }
+            
+            if (row$left) {
+                x <- c(x,row$x - 0.5)
+                y <- c(y,row$y + 0.5)
+                xe <- c(xe,row$x - 0.5)
+                ye <- c(ye,row$y - 0.5)
+            }
+            
+            if (row$right) {
+                x <- c(x,row$x + 0.5)
+                y <- c(y,row$y + 0.5)
+                xe <- c(xe,row$x + 0.5)
+                ye <- c(ye,row$y - 0.5)
+            }
+            
+        }
+        
+        segments <- data.frame(x,y,xe,ye)
+
+        microData$xlist <- factor(microData$xlist, levels = as.list(xlist))
+        microData$ylist <- factor(microData$ylist, levels = as.list(ylist))
+        
+        ##l <- max(-min(microData$sign), max(microData$sign))
+        l <- max(-lmin,lmax)
+
+        g <- ggplot (microData, aes (x = xlist, y = ylist))
+        g <- g + geom_tile (aes (fill = sign))
+        g <- g + scale_fill_gradient2 (low = "blue", mid="white", high = "red", name="Signif.", limits=c(-l,l))
+        g <- g + ggtitle (paste("",sep="")) ## + xlab (xdim) + ylab (ydim)
+        g <- g + theme (axis.text.x = element_text(angle = 90, hjust = 1))
+        g <- g + geom_segment(data=segments,aes(x=x,y=y,xend=xe,yend=ye))
+        g <- g + geom_text(aes(label = label), size=3)
+        
+        strNum <- str_pad (num, maxNum, pad = "0")
+        ggsave (file = paste(outputName,".num=",strNum,".scale=",scale,".size=",size,".loss=",informationLoss,".png",sep=""), width=9, height=6)
+
+        num <- num + 1
+    }
 }

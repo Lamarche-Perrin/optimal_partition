@@ -194,8 +194,27 @@ filteredDataCube <- filterDataCube (
     spaceSelection = c("PSE","ISR","RUS","UKR","IRQ","GBR","IND","FRA","USA","CUB","SYR","TUR")
 )
 
-filteredDataCube["fr_FRA_lmonde_int","2014-06-09","PSE"]
-
 filteredDataModels <- filterDataModelsFromDataCube (dataModels, filteredDataCube)
 
 writeDataCube (filteredDataCube, filteredDataModels, "../input/geomedia/ST_cube.csv")
+
+
+smallDataCube <- filterDataCube (
+    dataCube,
+    firstTimeSelection = "2014-06-02",
+    lastTimeSelection = "2014-07-27",
+    mediaSelection = c("fr_FRA_lmonde_int"),
+    spaceSelection = c("PSE","ISR","RUS","UKR","IRQ","GBR","IND","FRA","USA","CUB","SYR","TUR")
+)
+
+smallDataModels <- filterDataModelsFromDataCube (dataModels, smallDataCube)
+
+writeDataCube (smallDataCube, smallDataModels, "../input/geomedia/small.ST.LeMonde.cube.csv")
+
+
+printHeatmaps (
+    cubeFileName = "../input/geomedia/small.ST.LeMonde.cube.csv",
+    partitionFileName = "../output/geomedia/ST.LeMonde/small.ST.LeMonde.ST.partitions.csv",
+    outputName = "../output/geomedia/ST.LeMonde/small.ST.LeMonde.ST.partition",
+    xdim = "time", ydim = "space"
+)

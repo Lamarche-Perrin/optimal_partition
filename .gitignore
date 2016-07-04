@@ -4,6 +4,7 @@ header
 add_header
 gmon.out
 EU_script
+log
 
 # C++ and Dev-C++
 *.o

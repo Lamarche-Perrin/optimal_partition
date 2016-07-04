@@ -241,6 +241,7 @@ int main (int argc, char *argv[])
     multiSet->setObjectiveFunction(objective);
     multiSet->computeObjectiveValues();
     multiSet->normalizeObjectiveValues();
+	//multiSet->printObjectiveValues();
 	
 	if (globalArgs.optimalSubsetNumber > 0)
 	{
@@ -331,7 +332,7 @@ int main (int argc, char *argv[])
 					num++;
 				}
 
-				closeOutputCSV(outputFile);
+				closeOutputCSV (outputFile);
 	
 				for (PartitionList::iterator it = partitionList->begin(); it != partitionList->end(); ++it) { delete *it; }
 				delete partitionList;

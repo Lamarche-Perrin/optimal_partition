@@ -527,7 +527,7 @@ void MultiSubset::setObjectiveFunction (ObjectiveFunction *m)
 		for (int d = dimension-1; d >= 0; d--)
 		{
 			index += *uniSubsetArray[d]->indexSet->begin();
-			if (d > 0) { index *= uniSubsetArray[d]->uniSet->atomicUniSubsetNumber; }
+			if (d > 0) { index *= uniSubsetArray[d-1]->uniSet->atomicUniSubsetNumber; }
 		}
 		value = m->newObjectiveValue(index);
 	}
