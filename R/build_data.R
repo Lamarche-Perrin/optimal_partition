@@ -188,15 +188,15 @@ dataModels <- getDataModelsFromDataCube (dataCube, c("MT","MS","ST"))
 
 filteredDataCube <- filterDataCube (
     dataCube,
-    firstTimeSelection = "2014-06-02",
+    firstTimeSelection = "2014-05-19",
     lastTimeSelection = "2014-10-05",
     mediaSelection = c("fr_FRA_lmonde_int"),
-    spaceSelection = c("PSE","ISR","RUS","UKR","IRQ","GBR","IND","FRA","USA","CUB","SYR","TUR")
+    spaceSelection = c("PSE","ISR","RUS","UKR","IRQ","GBR","IND","CHN","USA","CUB","SYR","TUR","EGY","PAK","DEU")
 )
 
 filteredDataModels <- filterDataModelsFromDataCube (dataModels, filteredDataCube)
 
-writeDataCube (filteredDataCube, filteredDataModels, "../input/geomedia/ST_cube.csv")
+writeDataCube (filteredDataCube, filteredDataModels, "../input/geomedia/ST.LeMonde.cube.2.csv")
 
 
 smallDataCube <- filterDataCube (
@@ -212,9 +212,35 @@ smallDataModels <- filterDataModelsFromDataCube (dataModels, smallDataCube)
 writeDataCube (smallDataCube, smallDataModels, "../input/geomedia/small.ST.LeMonde.cube.csv")
 
 
+## print heatmaps
+
 printHeatmaps (
     cubeFileName = "../input/geomedia/small.ST.LeMonde.cube.csv",
     partitionFileName = "../output/geomedia/ST.LeMonde/small.ST.LeMonde.ST.partitions.csv",
     outputName = "../output/geomedia/ST.LeMonde/small.ST.LeMonde.ST.partition",
     xdim = "time", ydim = "space"
 )
+
+printHeatmaps (
+    cubeFileName = "../input/geomedia/ST.LeMonde.cube.csv",
+    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.ST.partitions.csv",
+    outputName = "../output/geomedia/ST.LeMonde/ST/ST.LeMonde.ST.partition",
+    xdim = "time", ydim = "space"
+)
+
+printHeatmaps (
+    cubeFileName = "../input/geomedia/ST.LeMonde.cube.csv",
+    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.MS.partitions.csv",
+    outputName = "../output/geomedia/ST.LeMonde/MS/ST.LeMonde.MS.partition",
+    xdim = "time", ydim = "space"
+)
+
+printHeatmaps (
+    cubeFileName = "../input/geomedia/ST.LeMonde.cube.csv",
+    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.MT.partitions.csv",
+    outputName = "../output/geomedia/ST.LeMonde/MT/ST.LeMonde.MT.partition",
+    xdim = "time", ydim = "space"
+)
+
+
+
