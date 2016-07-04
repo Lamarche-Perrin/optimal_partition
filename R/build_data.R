@@ -191,12 +191,12 @@ filteredDataCube <- filterDataCube (
     firstTimeSelection = "2014-05-19",
     lastTimeSelection = "2014-10-05",
     mediaSelection = c("fr_FRA_lmonde_int"),
-    spaceSelection = c("PSE","ISR","RUS","UKR","IRQ","GBR","IND","CHN","USA","CUB","SYR","TUR","EGY","PAK","DEU")
+    spaceSelection = c("PSE","ISR","RUS","UKR","IRQ","GBR","IND","USA","CUB","SYR","TUR","PAK")
 )
 
 filteredDataModels <- filterDataModelsFromDataCube (dataModels, filteredDataCube)
 
-writeDataCube (filteredDataCube, filteredDataModels, "../input/geomedia/ST.LeMonde.cube.2.csv")
+writeDataCube (filteredDataCube, filteredDataModels, "../input/geomedia/ST.LeMonde.2.cube.csv")
 
 
 smallDataCube <- filterDataCube (
