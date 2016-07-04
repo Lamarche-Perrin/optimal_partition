@@ -189,7 +189,7 @@ dataModels <- getDataModelsFromDataCube (dataCube, c("MT","MS","ST"))
 filteredDataCube <- filterDataCube (
     dataCube,
     firstTimeSelection = "2014-01-06",
-    lastTimeSelection = "2014-12-29",
+    lastTimeSelection = "2014-06-30",
     mediaSelection = c("fr_FRA_lmonde_int"),
     spaceSelection = c("USA","UKR","RUS","CHN","IRQ","SYR","ISR","PSE","IRN","IND","PAK","CUB")
 )
