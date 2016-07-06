@@ -112,12 +112,6 @@ writeDataCube (smallDataCube, smallDataModels, "MS_2014-12-15.csv")
 rm(list = ls())
 source("functions.R")
 
-smallMediaList <- c(
-    "fr_FRA_lmonde_int",
-    "fr_BEL_lesoir_int",
-    "es_ESP_elpais_int"
-)
-
 mediaList <- c(
     "fr_FRA_lmonde_int",
     "fr_BEL_lesoir_int",
@@ -140,39 +134,32 @@ dataCube <- getDataCubeFromDataset (
     itemField = "ID", mediaField1 = "Name_Flux", mediaField2 = "feed",
     timeField = "time", spaceField = "TAG_country", tagField = "TAG_ebola",
     timeLevel = "week",
-    firstTimeSelection = "2014-01-06",
-    lastTimeSelection = "2014-06-30",
+    firstTimeSelection = "2014-04-28",
+    lastTimeSelection = "2014-10-26",
     onlyWithGeoTag = TRUE,
     onlyInternational = TRUE,
     onlyWithThemeTag = FALSE
 )
 
-dataModels <- getDataModels (dataCube, c("MT","MS","ST"))
+dataModels <- getDataModelsFromDataCube (dataCube, c("MT","MS","ST"))
 
-UKRDataCube <- filterDataCube (dataCube, mediaList=mediaList, spaceList=c("UKR"))
+UKRDataCube <- filterDataCube (dataCube, mediaSelection=mediaList, spaceSelection=c("UKR"))
 UKRDataModels <- filterDataModelsFromDataCube (dataModels, UKRDataCube)
-writeDataCube (UKRDataCube, UKRDataModels, "MT.UKR.1.cube.csv")
+writeDataCube (UKRDataCube, UKRDataModels, "../input/geomedia/MT.UKR.2.cube.csv")
 
 smallDataCube <- filterDataCube (dataCube, timeFirst="2013-12-30", timeLast="2014-02-27", mediaList=smallMediaList, spaceList=c("UKR"))
 smallDataModels <- filterDataModelsFromDataCube (dataModels, smallDataCube)
 writeDataCube (smallDataCube, smallDataModels, "small_UKR_cube.csv")
 
 
-
-
-
-
-dataCube <- getDatacubeFromDataset (
-    datasetDirectory = "../input/Geomedia_extract_AGENDA",
-    themeTag = "Ebola",
-    mediaSelection = c("fr_FRA_lmonde_int","fr_BEL_lesoir_int","es_ESP_elpais_int"),
-    countrySelection = c("FRA","DEU"),
-    firstDateSelection = "2014-01-01",
-    lastDateSelection = "2014-12-31",
-    timeLevel = "week",
-    onlyInternational = TRUE
+printHeatmaps (
+    partitionFileName = "../output/geomedia/MT.UKR/MT.UKR.1.MS.partitions.csv",
+    outputName = "../output/geomedia/MT.UKR/MS/MT.UKR.1.MS.partition",
+    xdim = "time", ydim = "media", dataModel = TRUE, log = TRUE
 )
-dataCube
+
+
+
 
 
 ## SPATIO-TEMPORAL EXPERIMENT
