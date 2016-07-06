@@ -180,8 +180,11 @@ dataCube <- getDataCubeFromDataset (
     itemField = "ID", mediaField1 = "Name_Flux", mediaField2 = "feed",
     timeField = "time", spaceField = "TAG_country", tagField = "TAG_ebola",
     timeLevel = "week",
+    firstTimeSelection = "2014-01-06",
+    lastTimeSelection = "2014-06-30",
     onlyWithGeoTag = TRUE,
-    onlyInternational = TRUE
+    onlyInternational = TRUE,
+    onlyWithThemeTag = FALSE
 )
 
 dataModels <- getDataModelsFromDataCube (dataCube, c("MT","MS","ST"))
@@ -221,26 +224,106 @@ printHeatmaps (
     xdim = "time", ydim = "space"
 )
 
+
+
 printHeatmaps (
-    cubeFileName = "../input/geomedia/ST.LeMonde.cube.csv",
-    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.ST.partitions.csv",
-    outputName = "../output/geomedia/ST.LeMonde/ST/ST.LeMonde.ST.partition",
+    cubeFileName = "../input/geomedia/ST.LeMonde.3.cube.csv",
+    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.3.ST.partitions.csv",
+    outputName = "../output/geomedia/ST.LeMonde/ST/ST.LeMonde.3.ST.partition",
     xdim = "time", ydim = "space"
 )
 
 printHeatmaps (
-    cubeFileName = "../input/geomedia/ST.LeMonde.cube.csv",
-    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.MS.partitions.csv",
-    outputName = "../output/geomedia/ST.LeMonde/MS/ST.LeMonde.MS.partition",
+    cubeFileName = "../input/geomedia/ST.LeMonde.3.cube.csv",
+    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.3.MS.partitions.csv",
+    outputName = "../output/geomedia/ST.LeMonde/MS/ST.LeMonde.3.MS.partition",
     xdim = "time", ydim = "space"
 )
 
 printHeatmaps (
-    cubeFileName = "../input/geomedia/ST.LeMonde.cube.csv",
-    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.MT.partitions.csv",
-    outputName = "../output/geomedia/ST.LeMonde/MT/ST.LeMonde.MT.partition",
+    cubeFileName = "../input/geomedia/ST.LeMonde.3.cube.csv",
+    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.3.MT.partitions.csv",
+    outputName = "../output/geomedia/ST.LeMonde/MT/ST.LeMonde.3.MT.partition",
     xdim = "time", ydim = "space"
 )
 
 
+## co-citations experiment
 
+rm(list = ls())
+source("functions.R")
+source("functions2.R")
+
+dataCube <- getDataCubeFromDataset2 (
+    datasetDirectory = "../input/Geomedia_extract_AGENDA",
+    mediaFile = "X.Global_metadata.csv",
+    itemFile = "rss_unique_TAG_country_Ebola.csv",
+    itemField = "ID", mediaField1 = "Name_Flux", mediaField2 = "feed",
+    timeField = "time", spaceField = "TAG_country", tagField = "TAG_ebola",
+    firstTimeSelection = "2014-01-01",
+    lastTimeSelection = "2014-12-31",
+    timeLevel = "year",
+    onlyWithGeoTag = TRUE,
+    onlyInternational = FALSE,
+    onlyWithThemeTag = FALSE
+)
+
+dataModels <- getDataModelsFromDataCube2 (dataCube, c("null", "MT","MSS","SST","SS"))
+
+filteredDataCube <- filterDataCube2 (
+    dataCube,
+    mediaSelection = c("fr_FRA_lmonde_int"),
+    spaceSelection = c("USA","IRN","RUS","IRQ","SYR","TUR","DEU","FRA","CHN")
+)
+
+filteredDataModels <- filterDataModelsFromDataCube2 (dataModels, filteredDataCube)
+
+writeDataCube2 (filteredDataCube, filteredDataModels, "../input/geomedia/SS.LeMonde.3.cube.csv")
+
+
+order <- c("FRA","USA","DEU","TUR","SYR","IRN","IRQ","RUS","CHN")
+
+printHeatmaps (
+    partitionFileName = "../output/geomedia/SS.LeMonde/SS.LeMonde.3.null.partitions.csv",
+    outputName = "../output/geomedia/SS.LeMonde/SS.LeMonde.3.null.partition",
+    xdim = "space2", ydim = "space1", dataModel = FALSE, log = TRUE,
+    xorder = order, yorder = rev(order), scale = 0, partId = FALSE
+)
+
+printHeatmaps (
+    partitionFileName = "../output/geomedia/SS.LeMonde/SS.LeMonde.3.SS.partitions.csv",
+    outputName = "../output/geomedia/SS.LeMonde/SS.LeMonde.3.SS.partition",
+    xdim = "space2", ydim = "space1", dataModel = TRUE, log = TRUE,
+    xorder = order, yorder = rev(order), scale = 0, partId = FALSE
+)
+
+printHeatmaps (
+    partitionFileName = "../output/geomedia/SS.LeMonde/SS.LeMonde.3.MSS.partitions.csv",
+    outputName = "../output/geomedia/SS.LeMonde/SS.LeMonde.3.MSS.partition",
+    xdim = "space2", ydim = "space1", dataModel = TRUE, log = TRUE,
+    xorder = order, yorder = rev(order), scale = 0, partId = FALSE
+)
+
+
+
+
+printHeatmaps (
+    partitionFileName = "../output/geomedia/SS.LeMonde/SS.LeMonde.3.null.partitions.csv",
+    outputName = "../output/geomedia/SS.LeMonde/null/SS.LeMonde.3.null.partition",
+    xdim = "space2", ydim = "space1", dataModel = FALSE, log = TRUE,
+    xorder = order, yorder = rev(order)
+)
+
+printHeatmaps (
+    partitionFileName = "../output/geomedia/SS.LeMonde/SS.LeMonde.3.SS.partitions.csv",
+    outputName = "../output/geomedia/SS.LeMonde/SS/SS.LeMonde.3.SS.partition",
+    xdim = "space2", ydim = "space1", dataModel = TRUE, log = TRUE,
+    xorder = order, yorder = rev(order)
+)
+
+printHeatmaps (
+    partitionFileName = "../output/geomedia/SS.LeMonde/SS.LeMonde.3.MSS.partitions.csv",
+    outputName = "../output/geomedia/SS.LeMonde/MSS/SS.LeMonde.3.MSS.partition",
+    xdim = "space2", ydim = "space1", dataModel = TRUE, log = TRUE,
+    xorder = order, yorder = rev(order)
+)

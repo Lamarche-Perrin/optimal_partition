@@ -157,7 +157,12 @@ int main (int argc, char *argv[])
 	getCSVLine (cubeFile, line);
 
 	dimArray = new std::string [dimension];
-	for (int d = 0; d < dimension; d++) { dimArray[d] = line[d]; }
+	for (int d = 0; d < dimension; d++)
+	{
+		std::string type = line[d];
+		type.erase (std::remove_if (type.begin(), type.end(), &isdigit), type.end());
+		dimArray[d] = type;
+	}
 
 	// Get sizes of dimensions
 	if (!hasCSVLine (cubeFile)) { closeInputCSV (cubeFile); return EXIT_FAILURE; }

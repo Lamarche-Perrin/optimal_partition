@@ -744,7 +744,7 @@ void MultiSubset::computeOptimalPartition (double parameter)
 		double value = 0;
 		for (MultiSubsetSet::iterator it2 = multiSubsetSet->begin(); it2 != multiSubsetSet->end(); ++it2) { value += (*it2)->optimalValue; }
 
-		if ((objective->maximize && value > optimalValue) || (!objective->maximize && value < optimalValue))
+		if ((objective->maximize && value >= optimalValue) || (!objective->maximize && value <= optimalValue))
 		{
 			optimalValue = value;
 			optimalCut = multiSubsetSet;

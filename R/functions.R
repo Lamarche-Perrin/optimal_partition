@@ -99,10 +99,12 @@ getDataCubeFromDataset <- function (datasetDirectory,
         if (!is.null (lastTimeSelection))
         { data <- data[data$day <= lastTimeSelection,] }
 
+        if (!is.null (spaceSelection))
+        { data <- data[data[,spaceField] %in% spaceSelection,] }
+
         if (onlyWithGeoTag)
         {
-            if (!is.null (spaceSelection))
-            { data <- data[data[,spaceField] %in% spaceSelection,] }
+            data <- data[!data[,spaceField] == "",]
         }
 
         if (onlyWithThemeTag)
@@ -112,7 +114,12 @@ getDataCubeFromDataset <- function (datasetDirectory,
 
 
         
-        ## Suppress items with no tag and items with only the national tag
+        ## Suppress items with only the national tag
+        if (onlyWithGeoTag) {
+            country <- substring(media,4,6)
+            data <- data[!data[,spaceField] == country,]
+        }
+
         if (onlyInternational) {
             country <- substring(media,4,6)
             data <- data[!data[,spaceField] %in% c("",country),]
@@ -200,7 +207,6 @@ getDataModelsFromDataCube <- function (dataCube, models = NULL) {
     time <- dimnames(dataCube)$time
     space <- dimnames(dataCube)$space
 
-
     ## COMPUTE MARGINAL VALUES
 
     v <- sum(dataCube)
@@ -215,6 +221,9 @@ getDataModelsFromDataCube <- function (dataCube, models = NULL) {
     ## INITIALISE MODELS
 
     dataModels <- list()
+
+    dataModels[["null"]] <- array(NA, dim = c(length(media), length(time), length(space)),
+                                  dimnames = list("media"=media, "time"=time,"space"=space))
 
     if (is.null(models) || "ST+MS+MT" %in% models)
     {
@@ -263,6 +272,8 @@ getDataModelsFromDataCube <- function (dataCube, models = NULL) {
     for (vm in media) {
         for (vt in time) {
             for (vs in space) {
+                dataModels[["null"]][vm,vt,vs] <- 1
+                
                 if (is.null(models) || "ST+MS+MT" %in% models)
                 { dataModels[["ST+MS+MT"]][vm,vt,vs] <- (M[vm] * T[vt] * S[vs]) / (v * v) }
 
@@ -315,7 +326,6 @@ filterDataCube <- function (dataCube,
     timeList <- dimnames(dataCube)$time
     if (!is.null(firstTimeSelection) && !is.null(lastTimeSelection)) { timeList <- timeList[timeList >= firstTimeSelection & timeList <= lastTimeSelection] }
 
-    if (is.null(spaceSelection)) { return (dataCube[mediaSelection,timeList]) }
     return (dataCube[mediaSelection,timeList,spaceSelection,drop=FALSE])
 }
 
@@ -431,67 +441,116 @@ readDataCube <- function (fileName) {
 
 
 
-printHeatmaps <- function (
-                           cubeFileName,
-                           partitionFileName,
+printHeatmaps <- function (partitionFileName,
                            outputName,
+                           scales = NULL,
                            xdim, ydim, xorder = NULL, yorder = NULL,
-                           log = TRUE
+                           log = FALSE, dataModel = FALSE,
+                           partId = TRUE
                            ) {
-    
-    cube <- readDataCube (cubeFileName)
 
-    xlist <- dimnames(cube$data)[[xdim]]
-    if (!is.null(xorder)) { xlist <- xorder }
+    if (xdim == "media") { xfield <- "DIM_1" }
+    if (xdim == "time") { xfield <- "DIM_2" }
+    if (xdim == "space") { xfield <- "DIM_3" }
+    if (xdim == "space1") { xfield <- "DIM_3" }
+    if (xdim == "space2") { xfield <- "DIM_4" }
 
-    ylist <- dimnames(cube$data)[[ydim]]
-    if (!is.null(yorder)) { ylist <- yorder }
+    if (ydim == "media") { yfield <- "DIM_1" }
+    if (ydim == "time") { yfield <- "DIM_2" }
+    if (ydim == "space") { yfield <- "DIM_3" }
+    if (ydim == "space1") { yfield <- "DIM_3" }
+    if (ydim == "space2") { yfield <- "DIM_4" }
 
     partitions <- read.csv (partitionFileName, sep = ";")
 
+    xlist <- c()
+    ylist <- c()
+    sumValue <- 0
+
+    if (is.null(scales)) { scales <- unique(partitions$SCALE) }
+    scale <- scales[1]
+    data <- partitions[partitions$SCALE == scale,]
+    for (i in seq(1,nrow(data))) {
+        row <- data[i,]
+
+        sumValue <- sumValue + row$DATA
+        
+        if (xdim == "media" || xdim == "space" || xdim == "space1" || xdim == "space2") {
+            strxlist <- as.character(row[,xfield])
+            strxlist <- substr(strxlist, 2, nchar(strxlist)-1)
+            pxlist <- strsplit(strxlist,', ')[[1]]
+        }
+        
+        if (xdim == "time") {                
+            strxlist <- as.character(row[,xfield])
+            strxlist <- substr(strxlist, 2, nchar(strxlist)-1)
+            pxlist <- strsplit(strxlist,', ')[[1]]
+            if (length(pxlist) > 1) { pxlist <- xlist[xlist >= pxlist[1] & xlist <= pxlist[2]] }
+        }
+
+        xlist <- c(xlist,pxlist)
+
+        if (ydim == "media" || ydim == "space" || ydim == "space1" || ydim == "space2") {
+            strylist <- as.character(row[,yfield])
+            strylist <- substr(strylist, 2, nchar(strylist)-1)
+            pylist <- strsplit(strylist,', ')[[1]]
+        }
+        
+        if (ydim == "time") {                
+            strylist <- as.character(row[,yfield])
+            strylist <- substr(strylist, 2, nchar(strylist)-1)
+            pylist <- strsplit(strylist,', ')[[1]]
+            if (length(pylist) > 1) { pylist <- ylist[ylist >= pylist[1] & ylist <= pylist[2]] }
+        }
+
+        ylist <- c(ylist,pylist)
+    }
+
+    if (!is.null(xorder)) { xlist <- xorder }
+    if (!is.null(yorder)) { ylist <- yorder }
+
     lmin <- 0
     lmax <- 0
-    for (scale in unique (partitions$SCALE)) {
+    for (scale in scales) {
 
         data <- partitions[partitions$SCALE == scale,]
         partNb <- 1
         for (i in seq(1,nrow(data))) {
             row <- data[i,]
-            sign <- 0
-            if (row$DATA > row$MODEL) {            
-                if (log) {
-                    sign <- - (ppois (row$DATA, row$MODEL, lower.tail = FALSE, log.p=TRUE) + log(2))
-                } else {
-                    sign <- 1 - 2*ppois (row$DATA, row$MODEL, lower.tail = FALSE)
-                }
-            }
 
-            if (row$DATA < row$MODEL) {
-                if (log) {
-                    sign <- ppois (row$DATA, row$MODEL, lower.tail = TRUE, log.p=TRUE) + log(2)
-                } else {
-                    sign <- -(1 - 2*ppois (row$DATA, row$MODEL, lower.tail = TRUE)) 
+            if (!dataModel) {
+                sign <- row$DATA / row$MODEL
+            }
+            
+            if (dataModel) {
+                sign <- 0
+                if (row$DATA > row$MODEL) {            
+                    if (log) {
+                        sign <- - (ppois (row$DATA, row$MODEL, lower.tail = FALSE, log.p=TRUE) + log(2))
+                    } else {
+                        sign <- 1 - 2*ppois (row$DATA, row$MODEL, lower.tail = FALSE)
+                    }
+                }
+
+                if (row$DATA < row$MODEL) {
+                    if (log) {
+                        sign <- ppois (row$DATA, row$MODEL, lower.tail = TRUE, log.p=TRUE) + log(2)
+                    } else {
+                        sign <- -(1 - 2*ppois (row$DATA, row$MODEL, lower.tail = TRUE)) 
+                    }
                 }
             }
+            
             lmin <- min(sign,lmin,na.rm=TRUE)
             lmax <- max(sign,lmax,na.rm=TRUE)
         }
     }
 
-
-    if (xdim == "media") { xfield <- "DIM_1" }
-    if (xdim == "time") { xfield <- "DIM_2" }
-    if (xdim == "space") { xfield <- "DIM_3" }
-
-    if (ydim == "media") { yfield <- "DIM_1" }
-    if (ydim == "time") { yfield <- "DIM_2" }
-    if (ydim == "space") { yfield <- "DIM_3" }
-
     maxNum <- length(unique(partitions$SCALE))
     maxNum <- ceiling(log10(maxNum))
 
     num <- 0
-    for (scale in unique(partitions$SCALE)) {
+    for (scale in scales) {
         
         data <- partitions[partitions$SCALE == scale,]
         informationLoss <- sum(data$INFORMATION_LOSS)
@@ -515,7 +574,7 @@ printHeatmaps <- function (
         for (i in seq(1,nrow(data))) {
             row <- data[i,]
 
-            if (xdim == "media" || xdim == "space") {
+            if (xdim == "media" || xdim == "space" || xdim == "space1" || xdim == "space2") {
                 strxlist <- as.character(row[,xfield])
                 strxlist <- substr(strxlist, 2, nchar(strxlist)-1)
                 pxlist <- strsplit(strxlist,', ')[[1]]
@@ -528,7 +587,7 @@ printHeatmaps <- function (
                 if (length(pxlist) > 1) { pxlist <- xlist[xlist >= pxlist[1] & xlist <= pxlist[2]] }
             }
 
-            if (ydim == "media" || ydim == "space") {
+            if (ydim == "media" || ydim == "space" || ydim == "space1" || ydim == "space2") {
                 strylist <- as.character(row[,yfield])
                 strylist <- substr(strylist, 2, nchar(strylist)-1)
                 pylist <- strsplit(strylist,', ')[[1]]
@@ -541,20 +600,30 @@ printHeatmaps <- function (
                 if (length(pylist) > 1) { pylist <- ylist[ylist >= pylist[1] & ylist <= pylist[2]] }
             }
 
-            sign <- 0
-            if (row$DATA > row$MODEL) {            
-                if (log) {
-                    sign <- - (ppois (row$DATA, row$MODEL, lower.tail = FALSE, log.p=TRUE) + log(2))
-                } else {
-                    sign <- 1 - 2*ppois (row$DATA, row$MODEL, lower.tail = FALSE)
-                }
+            if (!dataModel) {
+                sign <- row$DATA / row$MODEL
             }
 
-            if (row$DATA < row$MODEL) {
-                if (log) {
-                    sign <- ppois (row$DATA, row$MODEL, lower.tail = TRUE, log.p=TRUE) + log(2)
+            if (dataModel) {
+                if (row$MODEL == 0) {
+                    sign <- NaN
                 } else {
-                    sign <- -(1 - 2*ppois (row$DATA, row$MODEL, lower.tail = TRUE)) 
+                    sign <- 0
+                    if (row$DATA > row$MODEL) {            
+                        if (log) {
+                            sign <- - (ppois (row$DATA, row$MODEL, lower.tail = FALSE, log.p=TRUE) + log(2))
+                        } else {
+                            sign <- 1 - 2*ppois (row$DATA, row$MODEL, lower.tail = FALSE)
+                        }
+                    }
+
+                    if (row$DATA < row$MODEL) {
+                        if (log) {
+                            sign <- ppois (row$DATA, row$MODEL, lower.tail = TRUE, log.p=TRUE) + log(2)
+                        } else {
+                            sign <- -(1 - 2*ppois (row$DATA, row$MODEL, lower.tail = TRUE)) 
+                        }
+                    }
                 }
             }
             
@@ -650,17 +719,31 @@ printHeatmaps <- function (
         microData$xlist <- factor(microData$xlist, levels = as.list(xlist))
         microData$ylist <- factor(microData$ylist, levels = as.list(ylist))
         
-        ##l <- max(-min(microData$sign), max(microData$sign))
-        l <- max(-lmin,lmax)
+        if (!dataModel) {
+            l <- lmax
 
-        g <- ggplot (microData, aes (x = xlist, y = ylist))
-        g <- g + geom_tile (aes (fill = sign))
-        g <- g + scale_fill_gradient2 (low = "blue", mid="white", high = "red", name="Signif.", limits=c(-l,l))
-        g <- g + ggtitle (paste("",sep="")) ## + xlab (xdim) + ylab (ydim)
-        g <- g + theme (axis.text.x = element_text(angle = 90, hjust = 1))
-        g <- g + geom_segment(data=segments,aes(x=x,y=y,xend=xe,yend=ye))
-        g <- g + geom_text(aes(label = label), size=3)
-        
+            g <- ggplot (microData, aes (x = xlist, y = ylist))
+            g <- g + geom_tile (aes (fill = sign))
+            g <- g + scale_fill_gradient (low = "white", high = "black", na.value = "white", name="Citations", limits=c(0,l))
+            g <- g + ggtitle (paste("",sep="")) + xlab (xdim) + ylab (ydim)
+            g <- g + theme (axis.text.x = element_text(angle = 90, hjust = 1, size=13, color="black"))
+            g <- g + theme (axis.text.y = element_text(size=13, color="black"))
+            g <- g + geom_segment(data=segments,aes(x=x,y=y,xend=xe,yend=ye))
+            if (partId) { g <- g + geom_text(aes(label = label), size=3) }
+        }
+
+        if (dataModel) {
+            l <- max(-lmin,lmax)
+
+            g <- ggplot (microData, aes (x = xlist, y = ylist))
+            g <- g + geom_tile (aes (fill = sign))
+            g <- g + scale_fill_gradient2 (low = "blue", mid="white", high = "red", na.value = "grey", name="Signif.", limits=c(-l,l))
+            g <- g + ggtitle (paste("",sep="")) + xlab (xdim) + ylab (ydim)
+            g <- g + theme (axis.text.x = element_text(angle = 90, hjust = 1))
+            g <- g + geom_segment(data=segments,aes(x=x,y=y,xend=xe,yend=ye))
+            if (partId) { g <- g + geom_text(aes(label = label), size=3) }
+        }
+
         strNum <- str_pad (num, maxNum, pad = "0")
         ggsave (file = paste(outputName,".num=",strNum,".scale=",scale,".size=",size,".loss=",informationLoss,".png",sep=""), width=9, height=6)
 
