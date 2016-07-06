@@ -443,7 +443,7 @@ readDataCube <- function (fileName) {
 
 printHeatmaps <- function (partitionFileName,
                            outputName,
-                           scales = NULL,
+                           scales = NULL, firstNum = 0,
                            xdim, ydim, xorder = NULL, yorder = NULL,
                            log = FALSE, dataModel = FALSE,
                            partId = TRUE
@@ -468,7 +468,7 @@ printHeatmaps <- function (partitionFileName,
     sumValue <- 0
 
     if (is.null(scales)) { scales <- unique(partitions$SCALE) }
-    scale <- scales[1]
+    scale <- unique(partitions$SCALE)[1]
     data <- partitions[partitions$SCALE == scale,]
     for (i in seq(1,nrow(data))) {
         row <- data[i,]
@@ -505,6 +505,9 @@ printHeatmaps <- function (partitionFileName,
 
         ylist <- c(ylist,pylist)
     }
+
+    xlist <- unique(xlist)
+    ylist <- unique(ylist)
 
     if (!is.null(xorder)) { xlist <- xorder }
     if (!is.null(yorder)) { ylist <- yorder }
@@ -549,7 +552,7 @@ printHeatmaps <- function (partitionFileName,
     maxNum <- length(unique(partitions$SCALE))
     maxNum <- ceiling(log10(maxNum))
 
-    num <- 0
+    num <- firstNum
     for (scale in scales) {
         
         data <- partitions[partitions$SCALE == scale,]

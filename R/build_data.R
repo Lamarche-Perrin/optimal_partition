@@ -109,6 +109,9 @@ writeDataCube (smallDataCube, smallDataModels, "MS_2014-12-15.csv")
 
 ## UKR EXPERIMENT
 
+rm(list = ls())
+source("functions.R")
+
 smallMediaList <- c(
     "fr_FRA_lmonde_int",
     "fr_BEL_lesoir_int",
@@ -130,21 +133,25 @@ mediaList <- c(
     "en_SGP_twoday_int"
 )
 
-dataCube <- getDataCube (
-    dataDirectory = "Geomedia_extract_AGENDA_titre&desc",
-    eventTag = "Ebola",
-    mediaSelection = mediaList,
-    firstDateSelection="2013-12-30",
-    lastDateSelection="2014-12-29",
-    timeLevel = "month",
-    onlyInternationalItems = TRUE
+dataCube <- getDataCubeFromDataset (
+    datasetDirectory = "../input/Geomedia_extract_AGENDA",
+    mediaFile = "X.Global_metadata.csv",
+    itemFile = "rss_unique_TAG_country_Ebola.csv",
+    itemField = "ID", mediaField1 = "Name_Flux", mediaField2 = "feed",
+    timeField = "time", spaceField = "TAG_country", tagField = "TAG_ebola",
+    timeLevel = "week",
+    firstTimeSelection = "2014-01-06",
+    lastTimeSelection = "2014-06-30",
+    onlyWithGeoTag = TRUE,
+    onlyInternational = TRUE,
+    onlyWithThemeTag = FALSE
 )
 
 dataModels <- getDataModels (dataCube, c("MT","MS","ST"))
 
-UKRDataCube <- filterDataCube (dataCube, timeFirst="2013-12-30", timeLast="2014-11-29", mediaList=mediaList, spaceList=c("UKR"))
+UKRDataCube <- filterDataCube (dataCube, mediaList=mediaList, spaceList=c("UKR"))
 UKRDataModels <- filterDataModelsFromDataCube (dataModels, UKRDataCube)
-writeDataCube (UKRDataCube, UKRDataModels, "UKR_cube.csv")
+writeDataCube (UKRDataCube, UKRDataModels, "MT.UKR.1.cube.csv")
 
 smallDataCube <- filterDataCube (dataCube, timeFirst="2013-12-30", timeLast="2014-02-27", mediaList=smallMediaList, spaceList=c("UKR"))
 smallDataModels <- filterDataModelsFromDataCube (dataModels, smallDataCube)
@@ -199,7 +206,7 @@ filteredDataCube <- filterDataCube (
 
 filteredDataModels <- filterDataModelsFromDataCube (dataModels, filteredDataCube)
 
-writeDataCube (filteredDataCube, filteredDataModels, "../input/geomedia/ST.LeMonde.3.cube.csv")
+writeDataCube (filteredDataCube, filteredDataModels, "../input/geomedia/ST.LeMonde.4.cube.csv")
 
 
 smallDataCube <- filterDataCube (
@@ -218,33 +225,24 @@ writeDataCube (smallDataCube, smallDataModels, "../input/geomedia/small.ST.LeMon
 ## print heatmaps
 
 printHeatmaps (
-    cubeFileName = "../input/geomedia/small.ST.LeMonde.cube.csv",
-    partitionFileName = "../output/geomedia/ST.LeMonde/small.ST.LeMonde.ST.partitions.csv",
-    outputName = "../output/geomedia/ST.LeMonde/small.ST.LeMonde.ST.partition",
-    xdim = "time", ydim = "space"
-)
-
-
-
-printHeatmaps (
-    cubeFileName = "../input/geomedia/ST.LeMonde.3.cube.csv",
-    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.3.ST.partitions.csv",
-    outputName = "../output/geomedia/ST.LeMonde/ST/ST.LeMonde.3.ST.partition",
-    xdim = "time", ydim = "space"
+    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.4.ST.partitions.csv",
+    outputName = "../output/geomedia/ST.LeMonde/ST/ST.LeMonde.4.ST.partition",
+    xdim = "time", ydim = "space", dataModel = TRUE, log = TRUE,
+    yorder = c("SYR","IRN","PAK","ISR","PSE","RUS","UKR","CHN","USA","CUB","IND","IRQ")
 )
 
 printHeatmaps (
-    cubeFileName = "../input/geomedia/ST.LeMonde.3.cube.csv",
-    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.3.MS.partitions.csv",
-    outputName = "../output/geomedia/ST.LeMonde/MS/ST.LeMonde.3.MS.partition",
-    xdim = "time", ydim = "space"
+    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.4.MS.partitions.csv",
+    outputName = "../output/geomedia/ST.LeMonde/MS/ST.LeMonde.4.MS.partition",
+    xdim = "time", ydim = "space", dataModel = TRUE, log = TRUE,
+    yorder = c("SYR","IRN","PAK","ISR","PSE","RUS","UKR","CHN","USA","CUB","IND","IRQ")
 )
 
 printHeatmaps (
-    cubeFileName = "../input/geomedia/ST.LeMonde.3.cube.csv",
-    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.3.MT.partitions.csv",
-    outputName = "../output/geomedia/ST.LeMonde/MT/ST.LeMonde.3.MT.partition",
-    xdim = "time", ydim = "space"
+    partitionFileName = "../output/geomedia/ST.LeMonde/ST.LeMonde.4.MT.partitions.csv",
+    outputName = "../output/geomedia/ST.LeMonde/MT/ST.LeMonde.4.MT.partition",
+    xdim = "time", ydim = "space", dataModel = TRUE, log = TRUE,
+    yorder = c("SYR","IRN","PAK","ISR","PSE","RUS","UKR","CHN","USA","CUB","IND","IRQ")
 )
 
 
