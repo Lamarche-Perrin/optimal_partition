@@ -32,11 +32,13 @@ R/*
 
 # Input files
 input/*
+!input/graphs
 !input/geomedia
 !input/geomedia/*.csv
 
 # Output files
 output/*
+!output/graphs
 !output/*.R
 
 #Binary files

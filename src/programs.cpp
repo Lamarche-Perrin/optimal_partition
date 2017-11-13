@@ -70,17 +70,21 @@
 
 void testHierarchicalSet ()
 {
-    int size = 5;
-    double values [5] = {24,30,0,4,34};
-    double refValues [5] = {100,110,10,20,50};
+    int size = 8;
+    double values [8] = {24,30,16,4,34,10,12,13};
+    //double refValues [8] = {100,110,10,20,50,20,20,25};
 
     HNode *n11 = new HNode(0);
     HNode *n12 = new HNode(1);
     HNode *n13 = new HNode(2);
     HNode *n21 = new HNode(3);
     HNode *n22 = new HNode(4);
+    HNode *n31 = new HNode(5);
+    HNode *n32 = new HNode(6);
+    HNode *n33 = new HNode(7);
     HNode *n1 = new HNode();
     HNode *n2 = new HNode();
+    HNode *n3 = new HNode();
     HNode *n = new HNode();
 
     n1->addChild(n11);
@@ -88,13 +92,18 @@ void testHierarchicalSet ()
     n1->addChild(n13);
     n2->addChild(n21);
     n2->addChild(n22);
+    n3->addChild(n31);
+    n3->addChild(n32);
+    n3->addChild(n33);
     n->addChild(n1);
     n->addChild(n2);
+    n->addChild(n3);
 	
     HierarchicalSet *set = new HierarchicalSet(n);
     set->buildDataStructure();
 
-    RelativeEntropy *m = new RelativeEntropy(size,values,refValues);
+    RelativeEntropy *m = new RelativeEntropy (size, values, 0, true);
+    //RelativeEntropy *m = new RelativeEntropy (size,values,refValues);
 	
     set->setObjectiveFunction(m);
     set->computeObjectiveValues();
@@ -103,7 +112,7 @@ void testHierarchicalSet ()
     set->print();
     set->printObjectiveValues();
 
-    set->printOptimalPartitionList(0.001);
+    set->printOptimalPartitionList(0.000001);
 
     delete m;
     delete set;
@@ -660,12 +669,16 @@ delete set;
 
 void testGraphCompression ()
 {
+	int size = 8;
+	std::string inputPath = "input/experiments/";
+	std::string outputPath = "output/experiments/";
+	std::string filename = "matrix.64.2";
+
 	Timer timer;
     timer.start(0,"START");
     timer.startTime();
     timer.startMemory();
 
-	int size = 9;
 	UnconstrainedUniSet *startVertices = new UnconstrainedUniSet (size);
 	startVertices->buildDataStructure();
 
@@ -682,26 +695,35 @@ void testGraphCompression ()
 	timer.step("BUILD STRUCTURE");
 
 
-	double values [9*9] = {	
-		0, 302, 491, 92, 171, 48, 1062, 2344, 8163,
-		313, 0, 289, 152, 140, 43, 617, 1455, 8946,
-		520, 284, 0, 109, 282, 79, 1359, 2752, 8307,
-		161, 280, 184, 0, 132, 331, 397, 2243, 6225,
-		165, 124, 271, 80, 0, 42, 661, 1242, 3087,
-		166, 116, 178, 229, 81, 0, 312, 4700, 4407,
-		1104, 624, 1243, 249, 560, 124, 0, 7829, 16679,
-		2364, 1382, 2336, 886, 869, 1426, 6607, 0, 50398,
-		8554, 8702, 7463, 3677, 2869, 1559, 16107, 51894, 0
-	};
-	
-	double *refValues = new double [size*size];
+	std::string inputFilePath = inputPath+filename+".csv";
+	std::ifstream inputFile (inputFilePath.c_str());
+	if (!inputFile) { std::cout << "Cannot open " << inputFilePath << std::endl; }
+
+	std::string line;
+	std::string field;
+	double values [size*size];
+
 	for (int i = 0; i < size; i++)
+	{
+		getline (inputFile, line, '\n');
+		std::istringstream inputLine (line);	
+
 		for (int j = 0; j < size; j++)
-			if (i == j) { refValues[i+j*size] = 0; }
-			else { refValues[i+j*size] = 1; }
+		{
+			inputLine >> field;
+			double value = atof (field.c_str());
+			values[j+i*size] = value;
+		}
+	}
+
+	double *refValues = NULL;
+	// double *refValues = new double [size*size];
+	// for (int i = 0; i < size; i++)
+	// 	for (int j = 0; j < size; j++)
+	// 		if (i == j) { refValues[i+j*size] = 0; }
+	// 		else { refValues[i+j*size] = 1; }
 	 
     InformationCriterion *m = new InformationCriterion (size*size, values, refValues);
-	//m->setRandom();
  
     multiSet->setObjectiveFunction(m);
     multiSet->computeObjectiveValues();
@@ -713,10 +735,11 @@ void testGraphCompression ()
     //multiSet->printOptimalPartitionList(0.01);
 
 	
-	PartitionList *partitionList = multiSet->getOptimalPartitionList(0.000001);
+	PartitionList *partitionList = multiSet->getOptimalPartitionList(0.001);
 	
 	std::ofstream outputFile;
-	openOutputCSV (outputFile, "output/output.graph.6.worst.csv", true);
+	std::string outputFilePath = outputPath+filename+".csv";
+	openOutputCSV (outputFile, outputFilePath, true);
 
 	addCSVField (outputFile, "SCALE");
 	addCSVField (outputFile, "AGG1");

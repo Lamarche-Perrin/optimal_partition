@@ -13,6 +13,7 @@ NULL
 
 library(ggplot2)
 library(stringr)
+library(scales)
 
 #' From dataset to data cube
 #' 
@@ -509,13 +510,16 @@ printHeatmaps <- function (partitionFileName,
     xlist <- unique(xlist)
     ylist <- unique(ylist)
 
+    xlist <- xlist[order(xlist)]
+    ylist <- ylist[order(ylist)]
+
     if (!is.null(xorder)) { xlist <- xorder }
     if (!is.null(yorder)) { ylist <- yorder }
 
     lmin <- 0
     lmax <- 0
     for (scale in scales) {
-
+    
         data <- partitions[partitions$SCALE == scale,]
         partNb <- 1
         for (i in seq(1,nrow(data))) {
@@ -729,8 +733,8 @@ printHeatmaps <- function (partitionFileName,
             g <- g + geom_tile (aes (fill = sign))
             g <- g + scale_fill_gradient (low = "white", high = "black", na.value = "white", name="Citations", limits=c(0,l))
             g <- g + ggtitle (paste("",sep="")) + xlab (xdim) + ylab (ydim)
-            g <- g + theme (axis.text.x = element_text(angle = 90, hjust = 1, size=13, color="black"))
-            g <- g + theme (axis.text.y = element_text(size=13, color="black"))
+            g <- g + theme (axis.text.x = element_text(angle = 90, hjust = 1, size=10, color="black"))
+            g <- g + theme (axis.text.y = element_text(size=10, color="black"))
             g <- g + geom_segment(data=segments,aes(x=x,y=y,xend=xe,yend=ye))
             if (partId) { g <- g + geom_text(aes(label = label), size=3) }
         }
@@ -740,9 +744,11 @@ printHeatmaps <- function (partitionFileName,
 
             g <- ggplot (microData, aes (x = xlist, y = ylist))
             g <- g + geom_tile (aes (fill = sign))
-            g <- g + scale_fill_gradient2 (low = "blue", mid="white", high = "red", na.value = "grey", name="Signif.", limits=c(-l,l))
+            g <- g + scale_fill_gradientn (colours = c("blue","white","red"), values = rescale(c(lmin,0,lmax)), guide = "colorbar", limits=c(lmin,lmax),  na.value = "grey", name="Signif.")
+            ##g <- g + scale_fill_gradient2 (low = "blue", mid="white", high = "red", na.value = "grey", name="Signif.", limits=c(lmin,lmax))
             g <- g + ggtitle (paste("",sep="")) + xlab (xdim) + ylab (ydim)
-            g <- g + theme (axis.text.x = element_text(angle = 90, hjust = 1))
+            g <- g + theme (axis.text.x = element_text(angle = 90, hjust = 1, size=10, color="black"))
+            g <- g + theme (axis.text.y = element_text(size=10, color="black"))
             g <- g + geom_segment(data=segments,aes(x=x,y=y,xend=xe,yend=ye))
             if (partId) { g <- g + geom_text(aes(label = label), size=3) }
         }

@@ -27,20 +27,14 @@ writeDataModels (stDataModels, "stSmallModel.csv")
 ##dataframeCube <- getDataframeCube (dataCube,dataModels)
 
 
+cube <- readDataCube ("EU_cube.csv")
+dimnames(cube$data)
 
+fube <- filterDataCube (cube$data, mediaSelection = c("fr_FRA_lmonde_int"), firstTimeSelection = "2013-12-30", lastTimeSelection = "2013-12-30")
 
+writeDataCube (fube, fileName="S.EU_cube.csv")
+cubefube
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+as.vector(fube)
+dimnames(fube)$space
 

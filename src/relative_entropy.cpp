@@ -44,9 +44,10 @@
 #include "relative_entropy.hpp"
 
 
-RelativeEntropy::RelativeEntropy (int s, double *val, double *refVal)
+RelativeEntropy::RelativeEntropy (int s, double *val, double *refVal, bool e)
 {
 	size = s;
+	entropy = e;
 	maximize = true;
 	values = new double [size];
 	refValues = new double [size];
@@ -102,9 +103,11 @@ RelativeObjectiveValue::RelativeObjectiveValue (RelativeEntropy *m, int id)
 	
 	sumValue = 0;
 	sumRefValue = 0;
+	microEntropy = 0;
 	microInfo = 0;
 	divergence = 0;
 	sizeReduction = 0;
+	entropyReduction = 0;
 }
 
 
@@ -117,9 +120,11 @@ void RelativeObjectiveValue::add (ObjectiveValue *q)
 	
 	sumValue += value->sumValue;
 	sumRefValue += value->sumRefValue;
+	microEntropy += value->microEntropy;
 	microInfo += value->microInfo;
 	divergence += value->divergence;
 	sizeReduction += value->sizeReduction;
+	entropyReduction += value->entropyReduction;
 }
 
 
@@ -127,8 +132,18 @@ void RelativeObjectiveValue::compute ()
 {
 	sumValue = ((RelativeEntropy*)objective)->values[index];
 	sumRefValue = ((RelativeEntropy*)objective)->refValues[index];
-	if (sumValue > 0) { microInfo = - sumValue * log2(sumValue/sumRefValue); } else { microInfo = 0; }
+
+	if (sumValue > 0)
+	{
+		microEntropy = - sumValue * log2(sumValue);
+		microInfo = - sumValue * log2(sumValue/sumRefValue);
+	} else {
+		microEntropy = 0;
+		microInfo = 0;
+	}
+	
 	sizeReduction = 0;
+	entropyReduction = 0;
 	divergence = 0;
 }
 
@@ -140,11 +155,19 @@ void RelativeObjectiveValue::compute (ObjectiveValue *q1, ObjectiveValue *q2)
 
 	sumValue = rq1->sumValue + rq2->sumValue;
 	sumRefValue = rq1->sumRefValue + rq2->sumRefValue;
+	microEntropy = rq1->microEntropy + rq2->microEntropy;
 	microInfo = rq1->microInfo + rq2->microInfo;
-	sizeReduction = rq1->sizeReduction + rq2->sizeReduction + 1;
+	sizeReduction = rq1->sizeReduction + rq2->sizeReduction + 1;	
 				
-	if (sumValue > 0) { divergence = - microInfo - sumValue * log2(sumValue/sumRefValue); }
-	else { divergence = 0; }
+	if (sumValue > 0)
+	{
+		entropyReduction = microEntropy + sumValue * log2(sumValue);
+		divergence = - microInfo - sumValue * log2(sumValue/sumRefValue);
+	}
+	else {
+		entropyReduction = 0;
+		divergence = 0;
+	}
 }
 
 
@@ -152,21 +175,31 @@ void RelativeObjectiveValue::compute (ObjectiveValueSet *valueSet)
 {
 	sumValue = 0;
 	sumRefValue = 0;
+	microEntropy = 0;
 	microInfo = 0;
 	sizeReduction = 0;
+	entropyReduction = 0;
 	for (ObjectiveValueSet::iterator it = valueSet->begin(); it != valueSet->end(); ++it)
 	{
 		RelativeObjectiveValue *rq = (RelativeObjectiveValue *) (*it);
 
 		sumValue += rq->sumValue;
 		sumRefValue += rq->sumRefValue;
+		microEntropy += rq->microEntropy;
 		microInfo += rq->microInfo;
 		sizeReduction += rq->sizeReduction + 1;
 	}
 	sizeReduction--;
 				
-	if (sumValue > 0) { divergence = - microInfo - sumValue * log2(sumValue/sumRefValue); }
-	else { divergence = 0; }
+	if (sumValue > 0)
+	{
+		entropyReduction = microEntropy + sumValue * log2(sumValue);
+		divergence = - microInfo - sumValue * log2(sumValue/sumRefValue);
+	}
+	else {
+		entropyReduction = 0;
+		divergence = 0;
+	}
 }
 
 
@@ -175,6 +208,7 @@ void RelativeObjectiveValue::normalize (ObjectiveValue *q)
 	RelativeObjectiveValue *rq = (RelativeObjectiveValue *) q;
 
 	if (rq->sizeReduction > 0) { sizeReduction = sizeReduction / rq->sizeReduction; }
+	if (rq->entropyReduction > 0) { entropyReduction = entropyReduction / rq->entropyReduction; }
 	if (rq->divergence > 0) { divergence /= rq->divergence; }
 }
 
@@ -184,15 +218,23 @@ void RelativeObjectiveValue::print (bool v)
 	if (v)
 	{
 		std::cout << "value = " << std::setw(5) << std::setprecision(3) << sumValue
-				  << "   refvalue = " << std::setw(5) << std::setprecision(3) << sumRefValue
-				  << "   gain = " << std::setw(5) << std::setprecision(3) << sizeReduction
-				  << "   loss = " << std::setw(5) << std::setprecision(3) << divergence << std::endl;
-	} else {
+				  << "   refvalue = " << std::setw(5) << std::setprecision(3) << sumRefValue;
+
+		if (((RelativeEntropy*)objective)->entropy) { std::cout << "   gain = " << std::setw(5) << std::setprecision(3) << entropyReduction; }
+		else { std::cout << "   gain = " << std::setw(5) << std::setprecision(3) << sizeReduction; }
+
+		std::cout << "   loss = " << std::setw(5) << std::setprecision(3) << divergence << std::endl;
+	}
+	else {
 		std::cout << "value = " << std::setw(5) << std::setprecision(3) << sumValue
 				  << "   refvalue = " << std::setw(5) << std::setprecision(3) << sumRefValue << std::endl;
 	}
 }
 
 
-double RelativeObjectiveValue::getValue (double param) { return param * sizeReduction - (1-param) * divergence; }
+double RelativeObjectiveValue::getValue (double param)
+{
+	if (((RelativeEntropy*)objective)->entropy) { return param * entropyReduction - (1-param) * divergence; }
+	else { return param * sizeReduction - (1-param) * divergence; }
+}
 

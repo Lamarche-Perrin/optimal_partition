@@ -45,10 +45,11 @@ class RelativeEntropy: public ObjectiveFunction
 {
 public:
 	int size;
+	bool entropy;
 	double *values;
 	double *refValues;
 		
-	RelativeEntropy (int size, double *values = 0, double *refValues = 0);
+	RelativeEntropy (int size, double *values = 0, double *refValues = 0, bool entropy = false);
 	~RelativeEntropy ();
 		
 	void setRandom ();
@@ -68,9 +69,11 @@ public:
 	int index;
 	double sumValue;
 	double sumRefValue;
+	double microEntropy;
 	double microInfo;
 	double divergence;
 	double sizeReduction;
+	double entropyReduction;
 		
 	RelativeObjectiveValue (RelativeEntropy *objective, int index = -1);
 	~RelativeObjectiveValue ();

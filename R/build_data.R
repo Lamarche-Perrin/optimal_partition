@@ -113,18 +113,18 @@ rm(list = ls())
 source("functions.R")
 
 mediaList <- c(
-    "fr_FRA_lmonde_int",
     "fr_BEL_lesoir_int",
     "es_ESP_elpais_int",
-    "en_GBR_guardi_int",
-    "en_USA_nytime_int",
-    "en_AUS_austra_int",
     "en_CAN_starca_int",
-    "en_NZL_nzhera_int",
+    "fr_FRA_lmonde_int",
+    "en_JPN_jatime_int",
+    "en_USA_nytime_int",
+    "en_SGP_twoday_int",
     "en_CHN_mopost_int",
     "en_IND_tindia_int",
-    "en_JPN_jatime_int",
-    "en_SGP_twoday_int"
+    "en_AUS_austra_int",
+    "en_GBR_guardi_int",
+    "en_NZL_nzhera_int"
 )
 
 dataCube <- getDataCubeFromDataset (
@@ -152,12 +152,48 @@ smallDataModels <- filterDataModelsFromDataCube (dataModels, smallDataCube)
 writeDataCube (smallDataCube, smallDataModels, "small_UKR_cube.csv")
 
 
-printHeatmaps (
-    partitionFileName = "../output/geomedia/MT.UKR/MT.UKR.1.MS.partitions.csv",
-    outputName = "../output/geomedia/MT.UKR/MS/MT.UKR.1.MS.partition",
-    xdim = "time", ydim = "media", dataModel = TRUE, log = TRUE
+mediaList <- c(
+    "es_ESP_elpais_int",
+    "fr_BEL_lesoir_int",
+    "en_CAN_starca_int",
+    "fr_FRA_lmonde_int",
+    "en_JPN_jatime_int",
+    "en_SGP_twoday_int",
+    "en_AUS_austra_int",
+    "en_USA_nytime_int",
+    "en_CHN_mopost_int",
+    "en_IND_tindia_int",
+    "en_GBR_guardi_int",
+    "en_NZL_nzhera_int"
 )
 
+printHeatmaps (
+    partitionFileName = "../output/geomedia/MT.UKR/MT.UKR.2.MS.partitions.csv",
+    outputName = "../output/geomedia/MT.UKR/MS/MT.UKR.2.MS.partition",
+    xdim = "time", ydim = "media", dataModel = TRUE, log = TRUE,
+    yorder = rev(mediaList),
+    partId = TRUE,
+    scales = c("0","0.125","0.25","0.5","0.625","0.75")
+)
+
+
+printHeatmaps (
+    partitionFileName = "../output/geomedia/MT.UKR/MT.UKR.2.ST.partitions.csv",
+    outputName = "../output/geomedia/MT.UKR/ST/MT.UKR.2.ST.partition",
+    xdim = "time", ydim = "media", dataModel = TRUE, log = TRUE,
+    yorder = rev(mediaList),
+    partId = TRUE,
+    scales = c("0","0.125","0.25","0.5","0.625","0.75")
+)
+
+printHeatmaps (
+    partitionFileName = "../output/geomedia/MT.UKR/MT.UKR.2.MT.partitions.csv",
+    outputName = "../output/geomedia/MT.UKR/MT/MT.UKR.2.MT.partition",
+    xdim = "time", ydim = "media", dataModel = TRUE, log = TRUE,
+    yorder = rev(mediaList),
+    partId = TRUE,
+    scales = c("0","0.125","0.25","0.5","0.625","0.75")
+)
 
 
 

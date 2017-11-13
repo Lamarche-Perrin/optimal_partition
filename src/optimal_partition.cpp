@@ -63,9 +63,9 @@ int main (int argc, char *argv[])
 	//testNonconstrainedOrderedSet();
 	//testHierarchicalHierarchicalSet();
 	//testGraph();
-	testBiSet();
+	//testBiSet();
 	//testMultiSet();
-	//testGraphCompression();
+	testGraphCompression();
 	
 	return EXIT_SUCCESS;
 }

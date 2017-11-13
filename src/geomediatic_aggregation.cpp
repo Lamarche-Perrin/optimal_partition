@@ -63,14 +63,14 @@ struct globalArgs_t
     int verbosity;
 } globalArgs;
 
-static const char *optString = "d:m:o:s:t:l:v?";
-//static const char *optString = "d:m:o:h:s:t:l:v?";
+//static const char *optString = "d:m:o:s:t:l:v?";
+static const char *optString = "d:m:o:h:s:t:l:v?";
 
 static const struct option longOpts[] = {
     {"data", required_argument, NULL, 'd'},
     {"model", required_argument, NULL, 'm'},
     {"output", required_argument, NULL, 'o'},
-    //{"hierarchy", required_argument, NULL, 'h'},
+    {"hierarchy", required_argument, NULL, 'h'},
     {"scale", required_argument, NULL, 's'},
     {"threshold", required_argument, NULL, 't'},
     {"optimal-list", required_argument, NULL, 'l'},
@@ -87,7 +87,7 @@ void usage (void)
 		"-d | --data           File containing the data (observed values). Required." << std::endl <<
 		"-m | --model          Data model (expected values) used for the aggregation. If not specified: a uniform model is implied." << std::endl <<
 		"-o | --output         File to which the results should be printed. If not specified: results are displayed in the terminal." << std::endl <<
-		//"-h | --hierarchy      File describing a hierarchy for spatial aggregation. Required only if the data file contains a spatial dimension." << std::endl <<
+		"-h | --hierarchy      File describing a hierarchy for spatial aggregation. If not specified: no constraint will be assumed on spatial dimensions." << std::endl <<
 		"-s | --scale          A float between 0 and 1 describing the aggregation scale. If not specified: multiple scales are computed (see --threshold option)." << std::endl <<
 		"-t | --threshold      The minimal distance between two consecutive scales. Not used if a unique scale is specified (see --scale option). If not specified: 0.01." << std::endl <<
 		"-l | --optimal-list   Return the list of the N best aggregates instead of the optimal partition, where N is specified after this option." << std::endl;
@@ -183,8 +183,11 @@ int main (int argc, char *argv[])
 
 		if (dimArray[d] == "media") { setArray[d] = new UnconstrainedUniSet (sizeArray[d], labels); }
 		else if (dimArray[d] == "time") { setArray[d] = new OrderedUniSet (sizeArray[d], labels); }
-		else if (dimArray[d] == "space") { setArray[d] = new UnconstrainedUniSet (sizeArray[d], labels); }
-		//else if (dimArray[d] == "space") { setArray[d] = new HierarchicalUniSet (globalArgs.hierarchyFileName, sizeArray[d], labels); }
+		else if (dimArray[d] == "space")
+		{
+			if (globalArgs.hierarchyFileName == "") { setArray[d] = new UnconstrainedUniSet (sizeArray[d], labels); }
+			else { setArray[d] = new HierarchicalUniSet (globalArgs.hierarchyFileName, sizeArray[d], labels); }
+		}
 
 		setArray[d]->buildDataStructure ();
 	}
