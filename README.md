@@ -53,6 +53,18 @@ Binaries: `bin/`<br/>
 Documentation: `doc/html/index.html`
 
 
+## Graph Compression (end-user program)
+
+Source: `src/graph_compression.cpp`<br/>
+Binary: `bin/graph_compression`
+
+For example, run:
+```
+bin/graph_compression --help
+bin/graph_compression --verbose --size 8 --input input/graphs/matrix.size\=8.prob\=0.75.csv --output output/graphs/matrix.size\=8.prob\=0.75.csv --threshold 0.001
+```
+
+
 ## Geomediatic Aggregation (end-user program)
 
 Source: `src/geomediatic_aggregation.cpp`<br/>
@@ -62,17 +74,6 @@ For example, run:
 ```
 bin/geomediatic_aggregation --help
 bin/geomediatic_aggregation --data input/GEOMEDIA/EU_cube.csv --output output/EU_partitions.csv --model ST --threshold 0.1
-```
-
-## Graph Compression (end-user program)
-
-Source: `src/graph_compression.cpp`<br/>
-Binary: `bin/graph_compression`
-
-For example, run:
-```
-bin/graph_compression --help
-bin/graph_compression -v -s 8 -i input/graphs/matrix.size\=8.prob\=0.33.csv -o output/graphs/matrix.size\=8.prob\=0.33.csv -t 0.001
 ```
 
 ## Library of Tests (specialized programs)
