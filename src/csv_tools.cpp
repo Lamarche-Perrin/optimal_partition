@@ -393,7 +393,7 @@ void addCSVField (std::ofstream &file, double field, bool endField, int prec)
 {
 	int p = -1;
 	if (prec != 0) { p = file.precision(); file.precision(prec); }
-	file << std::fixed << field;
+	file << field; // std::fixed << 
 	if (endField) { endCSVField(file); }
 	if (p != -1) { file.precision(p); }
 }

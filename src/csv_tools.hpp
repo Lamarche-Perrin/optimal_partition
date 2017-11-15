@@ -86,7 +86,7 @@ void openOutputCSV (std::ofstream &file, std::string fileName, bool erase = fals
 
 void addCSVLine (std::ofstream &file, std::vector<std::string> &line);
 void addCSVField (std::ofstream &file, int field, bool endField = true);
-void addCSVField (std::ofstream &file, double field, bool endField = true, int prec = 0);
+void addCSVField (std::ofstream &file, double field, bool endField = true, int prec = 15);
 void addCSVField (std::ofstream &file, std::string field, bool endField = true);
 void addCSVNAField (std::ofstream &file, bool endField = true);
 void addCSVNULLField (std::ofstream &file, bool endField = true);
@@ -99,8 +99,8 @@ void closeOutputCSV (std::ofstream &file);
 int string2int (std::string str);
 double string2double (std::string str);
 std::string int2string (int value);
-std::string float2string (float value, int prec = 10);
-std::string double2string (double value, int prec = 10);
+std::string float2string (float value, int prec = 15);
+std::string double2string (double value, int prec = 15);
 time_t date2time (std::string date);
 
 #endif

@@ -24,3 +24,21 @@ for (prob in probs) {
     lines (rates, min.objectives, lty=1, lwd=2, col=col)
     col <- col+1
 }
+
+dev.off()
+
+
+
+results <- read.table ('matrix.size=8.exp=2.csv', sep=';', header=TRUE)
+
+rate <- results$RATE[65]
+loss <- sum (results[results$RATE == rate,'INFORMATION_LOSS'])
+reduc <- sum (results[results$RATE == rate,'SIZE_REDUCTION'])
+
+orate <- 0.000061
+objectives <- ((1-orate) * loss - orate * reduc)
+min.objectives <- pmin (objectives, min.objectives)
+}
+
+lines (rates, min.objectives, lty=1, lwd=2, col=col)
+col <- col+1

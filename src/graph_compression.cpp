@@ -151,12 +151,12 @@ int main (int argc, char *argv[])
 	std::string field;
 	double values [globalArgs.size*globalArgs.size];
 
-	for (int i = 0; i < globalArgs.size; i++)
+	for (int j = 0; j < globalArgs.size; j++)
 	{
 		getline (inputFile, line, '\n');
 		std::istringstream inputLine (line);	
 
-		for (int j = 0; j < globalArgs.size; j++)
+		for (int i = 0; i < globalArgs.size; i++)
 		{
 			inputLine >> field;
 			double value = atof (field.c_str());
