@@ -104,7 +104,8 @@ public:
 	ObjectiveFunction *objective;
 		
 	virtual ~ObjectiveValue ();
-		
+	
+	virtual bool equal (ObjectiveValue *value, int prec = 15) = 0;
 	virtual void add (ObjectiveValue *value) = 0;
 	virtual void compute () = 0;
 	virtual void compute (ObjectiveValue *value1, ObjectiveValue *value2) = 0;

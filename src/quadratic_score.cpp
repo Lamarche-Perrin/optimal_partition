@@ -167,6 +167,14 @@ QuadraticScoreValue::~QuadraticScoreValue ()
 }
 
 
+bool QuadraticScoreValue::equal (ObjectiveValue *v, int prec)
+{
+	double factor = pow(10,prec);
+	QuadraticScoreValue *value = (QuadraticScoreValue*) v;
+	return (round(score*factor) == round(value->score*factor));
+}
+
+
 void QuadraticScoreValue::add (ObjectiveValue *v)
 {
 	QuadraticScoreValue *value = (QuadraticScoreValue*) v;

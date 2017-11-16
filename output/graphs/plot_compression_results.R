@@ -1,44 +1,5 @@
-size <- 8
-probs <- c(1,3/4,2/3,1/2)
+source('plot_functions.R')
 
-rates <- seq(0,1,0.001)
-col <- 1
+plot_objective ('matrix.size=8.exp=4.csv')
+plot_solutions ('matrix.size=8.exp=4.csv')
 
-pdf ('results.pdf')
-plot (0, xlim=c(0,1), ylim=c(-1,0), xlab='Compression rate', ylab='Information criterion')
-
-
-for (prob in probs) {
-    input <- paste ("matrix.size=",size,".prob=",round(prob,2),".csv", sep="")
-    results <- read.table (input, sep=';', header=TRUE)
-
-    min.objectives <- rates*0
-    for (rate in unique(results$RATE)) {
-        loss <- sum (results[results$RATE == rate,'INFORMATION_LOSS'])
-        reduc <- sum (results[results$RATE == rate,'SIZE_REDUCTION'])
-
-        objectives <- ((1-rates) * loss - rates * reduc)
-        min.objectives <- pmin (objectives, min.objectives)
-    }
-
-    lines (rates, min.objectives, lty=1, lwd=2, col=col)
-    col <- col+1
-}
-
-dev.off()
-
-
-
-results <- read.table ('matrix.size=8.exp=2.csv', sep=';', header=TRUE)
-
-rate <- results$RATE[65]
-loss <- sum (results[results$RATE == rate,'INFORMATION_LOSS'])
-reduc <- sum (results[results$RATE == rate,'SIZE_REDUCTION'])
-
-orate <- 0.000061
-objectives <- ((1-orate) * loss - orate * reduc)
-min.objectives <- pmin (objectives, min.objectives)
-}
-
-lines (rates, min.objectives, lty=1, lwd=2, col=col)
-col <- col+1

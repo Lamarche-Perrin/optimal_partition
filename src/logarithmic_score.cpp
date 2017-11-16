@@ -169,6 +169,14 @@ LogarithmicScoreValue::~LogarithmicScoreValue ()
 }
 
 
+bool LogarithmicScoreValue::equal (ObjectiveValue *v, int prec)
+{
+	double factor = pow(10,prec);
+	LogarithmicScoreValue *value = (LogarithmicScoreValue*) v;
+	return ((infinite && value->infinite) || round(score*factor) == round(value->score*factor));
+}
+
+
 void LogarithmicScoreValue::add (ObjectiveValue *v)
 {
 	LogarithmicScoreValue *value = (LogarithmicScoreValue*) v;

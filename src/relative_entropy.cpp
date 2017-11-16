@@ -114,6 +114,14 @@ RelativeObjectiveValue::RelativeObjectiveValue (RelativeEntropy *m, int id)
 RelativeObjectiveValue::~RelativeObjectiveValue () {}
 
 
+bool RelativeObjectiveValue::equal (ObjectiveValue *q, int prec)
+{
+	double factor = pow(10,prec);
+	RelativeObjectiveValue *value = (RelativeObjectiveValue *) q;
+	return (round(divergence*factor) == round(value->divergence*factor) && round(sizeReduction*factor) == round(value->sizeReduction*factor) && round(entropyReduction*factor) == round(value->entropyReduction*factor));
+}
+
+
 void RelativeObjectiveValue::add (ObjectiveValue *q)
 {
 	RelativeObjectiveValue *value = (RelativeObjectiveValue *) q;

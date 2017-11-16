@@ -114,6 +114,14 @@ CriterionObjectiveValue::CriterionObjectiveValue (InformationCriterion *m, int i
 CriterionObjectiveValue::~CriterionObjectiveValue () {}
 
 
+bool CriterionObjectiveValue::equal (ObjectiveValue *q, int prec)
+{
+	double factor = pow(10,prec);
+	CriterionObjectiveValue *value = (CriterionObjectiveValue *) q;
+	return (round(divergence*factor) == round(value->divergence*factor) && size == value->size);
+}
+
+
 void CriterionObjectiveValue::add (ObjectiveValue *q)
 {
 	CriterionObjectiveValue *value = (CriterionObjectiveValue *) q;

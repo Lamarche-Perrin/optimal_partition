@@ -175,7 +175,8 @@ PartitionList *AbstractSet::getOptimalPartitionList (double threshold)
 		}
 		else
 		{
-			if (!newPartition->equal(currentPartition))
+			if (!newPartition->value->equal(currentPartition->value))
+			//if (!newPartition->equal(currentPartition))
 			{
 				currentPartition = newPartition;
 				++it;

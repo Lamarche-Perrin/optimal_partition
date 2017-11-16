@@ -109,6 +109,7 @@ public:
 	LogarithmicScoreValue (LogarithmicScore *objective);
 	~LogarithmicScoreValue ();
 		
+	bool equal (ObjectiveValue *value, int prec = 15);
 	void add (ObjectiveValue *value);
 	void compute ();
 	void compute (ObjectiveValue *value1, ObjectiveValue *value2);
