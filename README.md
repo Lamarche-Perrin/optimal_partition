@@ -1,7 +1,5 @@
 # Optimal Partition
 
-## License
-
 This program is a toolbox to solve special versions of the Set Partitioning
 Problem, that is the combinatorial optimisation of a decomposable objective
 over a set of feasible partitions (defined according to specific algebraic
@@ -17,6 +15,8 @@ Technical Report 105/2014, Max-Planck-Institute for Mathematics in the
 Sciences, Leipzig, Germany, May 2014.
 
 <http://www.mis.mpg.de/publications/preprints/2014/prepr2014-105.html>
+
+## License
 
 Copyright © 2015 Robin Lamarche-Perrin
 (<Robin.Lamarche-Perrin@lip6.fr>)
